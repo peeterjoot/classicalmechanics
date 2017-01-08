@@ -1,6 +1,5 @@
 THISDIR := classicalmechanics
 THISBOOK := $(THISDIR)
-#BASEVER := 0b70618
 
 include ../latex/make.bookvars
 
