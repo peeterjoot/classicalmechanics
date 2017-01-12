@@ -3,7 +3,7 @@ THISBOOK := $(THISDIR)
 
 include ../latex/make.bookvars
 
-FIGURES := ../../figures/$(THISBOOK)
+FIGURES := ../figures/$(THISBOOK)
 
 #ONCEFLAGS := -justonce
 
