@@ -1,6 +1,12 @@
 THISDIR := classicalmechanics
 THISBOOK := $(THISDIR)
 
+export BOOKSUBVER := 1
+export BOOKMAJVER := 0
+export REVCOUNTSTART := 1
+
+VER := $(shell grep Version .revinfo/gitCommitDateAsMyTime.tex | sed 's/.*{//;s/.xspace.*//;')
+
 include ../latex/make.bookvars
 
 FIGURES := ../figures/$(THISBOOK)
