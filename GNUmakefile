@@ -27,5 +27,12 @@ GENERATED_SOURCES += cronology.tex
 
 include ../latex/make.rules
 
+dist:
+	cp GAelectrodynamics.pdf GAelectrodynamics.$(VER).pdf
+
+# a for annotate (releases).
+tag:
+	git tag -a GAelectrodynamics.$(VER).pdf
+
 #backmatter.tex : ../classicthesis_mine/backmatter.tex
 #	cp $< $@
