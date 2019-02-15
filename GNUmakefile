@@ -1,12 +1,7 @@
 THISDIR := classicalmechanics
 THISBOOK := $(THISDIR)
 
-export BOOKSUBVER := 1
-export BOOKMAJVER := 0
-export REVISIONNUMBER := 11
-
-VER := $(shell grep Version .revinfo/gitCommitDateAsMyTime.tex | sed 's/.*{//;s/.xspace.*//;')
-
+include make.revision
 include ../latex/make.bookvars
 
 FIGURES := ../figures/$(THISBOOK)
@@ -26,13 +21,6 @@ GENERATED_SOURCES += cronology.tex
 #ONCEFLAGS := -justonce
 
 include ../latex/make.rules
-
-dist:
-	cp GAelectrodynamics.pdf GAelectrodynamics.$(VER).pdf
-
-# a for annotate (releases).
-tag:
-	git tag -a GAelectrodynamics.$(VER).pdf
 
 #backmatter.tex : ../classicthesis_mine/backmatter.tex
 #	cp $< $@
