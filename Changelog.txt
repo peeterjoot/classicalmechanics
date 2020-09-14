@@ -3,3 +3,4 @@ classicalmechanics.V0.1.12.pdf (in progress.)
 - update email address
 - listing hyphenation fix.
 - url fixes.
+- thethe.py fixes.

@@ -61,27 +61,22 @@ m \ddot{x}_\mu &= {q} F_{\mu\alpha} \dot{x}^\alpha
 We then saw in \citep{gabookII:PJenMtensor}
 %in equations \eqnref{eqn:stressEnTen:miracle} and
 %\eqnref{eqn:stressEnTen:covariantTensor}
-that the
-the covariant form of the energy momentum tensor relation was
-
+that the covariant form of the energy momentum tensor relation was
 \begin{equation}\label{eqn:stressEnergyNoethers:100}
 \begin{aligned}
 T^{\mu\nu} &= {\epsilon_0} \left( F^{\alpha\mu} {F^{\nu}}_{\alpha} + \inv{4} F^{\alpha\beta} F_{\alpha\beta} \eta^{\mu\nu} \right) \\
-\partial_\nu T^{\mu\nu} &= F^{\alpha\mu} J_\alpha/c
+\partial_\nu T^{\mu\nu} &= F^{\alpha\mu} J_\alpha/c.
 \end{aligned}
 \end{equation}
-
-this has identical structure (FIXME: sign error here?) to the
-covariant Lorentz force equation.
+This has identical structure (FIXME: sign error here?) to the covariant Lorentz force equation.
 
 Now the energy momentum conservation equations above did not require
 the Lorentz force equations at all for their derivation, nor have we
 used the Lorentz force interaction Lagrangian to arrive at them.
 With Maxwell's equation and the Lorentz force equation together (
 or the equivalent field and interaction Lagrangians) we have
-the complete specification of classical electrodynamics.  Curiously
-it
-appears that we have most of the structure of the Lorentz force equation
+the complete specification of classical electrodynamics.
+Curiously it appears that we have most of the structure of the Lorentz force equation
 (except for the association with mass) all in embedded in Maxwell's equation
 or the Maxwell field Lagrangian.
 
@@ -491,7 +486,7 @@ This is
 \begin{aligned}
 \frac{\delta (\partial_\mu F^\mu)}{\delta \phi}
 &=
--\partial_{\sigma \mu} \PD{(\partial_\sigma \phi)}{F^\mu}
+-\partial_{\sigma \mu} \PD{(\partial_\sigma \phi)}{F^\mu}.
 \end{aligned}
 \end{equation}
 
@@ -499,15 +494,11 @@ I do not think we have any right asserting that this is zero for arbitrary \(F^\
 if the Taylor expansion of \(F^\mu\) with respect to variables \(\phi\), and \(\partial_\sigma \phi\) has
 no higher than first order terms in the field variables \(\partial_\sigma \phi\), we will
 certainly have a zero variational derivative and a corresponding symmetry.
-
 \subsubsection{More examples to confirm the symmetry requirements}
-
-As a confirmation that a zero in \eqnref{eqn:stressEnergyNoethers:requiredZeroForSymmetry} requires linear field derivatives,
-lets lets try two more example calculations.
+As a confirmation that a zero in \eqnref{eqn:stressEnergyNoethers:requiredZeroForSymmetry} requires linear field derivatives, lets try two more example calculations.
 
 First with non-linear
 powers of \(\phi\) to show that we have more freedom to construct the function first powers.  Let
-
 \begin{equation}\label{eqn:stressEnergyNoethers:520}
 \begin{aligned}
 F^1 &= \phi^2 \\
@@ -1950,30 +1941,20 @@ So we have a concrete example of the adjoint applied to the gradient, and for th
 Here the arrows notation has been dropped, where it is implied that this derivative acts on all neighboring vectors either unidirectionally or bidirectionally
 as appropriate.
 
-Now, this adjoint tensor is a curious beastie.  Intuition says this this one will have a Lorentz invariant length.  A moment of reflection
+Now, this adjoint tensor is a curious beastie.  Intuition says this one will have a Lorentz invariant length.  A moment of reflection
 shows that this is in fact the case since the adjoint was fully expanded in \eqnref{eqn:stressEnergyNoethers:adjointEqualsZero}.  That vector is zero, and the
 length is therefore also necessarily invariant.
-
 \subsection{TODO}
-
 How about the energy and momentum split in this adjoint form?  Could also write out adjoint in index
 notation for comparison to non-adjoint tensor in index form.
-
 \section{Electrostatics Poisson Equation}
-
 \subsection{Lagrangian and spatial Noether current}
-
 \begin{equation}\label{eqn:stressEnergyNoethers:2020}
-\begin{aligned}
-\LL &= -\frac{\epsilon_0}{2} (\spacegrad \phi)^2 + \rho \phi
-\end{aligned}
+\LL = -\frac{\epsilon_0}{2} (\spacegrad \phi)^2 + \rho \phi.
 \end{equation}
-
 Evaluating this yields the desired \(\spacegrad^2 \phi = -\rho/\epsilon_0\), or \(\spacegrad \cdot \BE = \rho/\epsilon_0\).
-
 \subsection{Energy momentum tensor}
 In this particular case we then have
-
 \begin{equation}\label{eqn:stressEnergyNoethers:2040}
 \begin{aligned}
 T(\Ba)
