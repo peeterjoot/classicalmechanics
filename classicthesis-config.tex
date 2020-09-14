@@ -42,7 +42,7 @@
 \newcommand{\myTitle}{Classical Mechanics\xspace}
 \newcommand{\mySubtitle}{Independent study and phy354 notes and problems\xspace}
 \newcommand{\myDegree}{}
-\newcommand{\myName}{Peeter Joot\ peeterjoot@protonmail.com\xspace}
+\newcommand{\myName}{Peeter Joot\ peeterjoot@pm.me\xspace}
 \newcommand{\myProf}{}
 \newcommand{\myOtherProf}{}
 \newcommand{\mySupervisor}{}
@@ -124,6 +124,12 @@
 % 5. Setup code listings
 % ****************************************************************************************************
 \usepackage{listings}
+\let\origlstlisting=\lstlisting
+\let\endoriglstlisting=\endlstlisting
+\renewenvironment{lstlisting}
+    {\mathcode`\-=\hyphenmathcode
+     \everymath{}\mathsurround=0pt\origlstlisting}
+    {\endoriglstlisting}
 %\lstset{emph={trueIndex,root},emphstyle=\color{BlueViolet}}%\underbar} % for special keywords
 \lstset{language=[LaTeX]Tex,%C++,
     keywordstyle=\color{RoyalBlue},%\bfseries,
