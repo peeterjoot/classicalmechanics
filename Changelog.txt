@@ -4,3 +4,5 @@ classicalmechanics.V0.1.12.pdf (in progress.)
 - listing hyphenation fix.
 - url fixes.
 - thethe.py fixes.
+- switch to 6x9 format
+- move chapter headings into chapters.tex
