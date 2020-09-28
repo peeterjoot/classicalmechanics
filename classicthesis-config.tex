@@ -28,11 +28,81 @@
 % ********************************************************************
 
 % ********************************************************************
+%
+% http://tex.stackexchange.com/questions/3676/too-many-math-alphabets-error
+%
+% adding \usepackage{txfonts} % \ointclockwise
+%
+% caused too many alphabets error.  se workaround:
+
+\newcommand{\bmmax}{0}
+\newcommand{\hmmax}{0}
+
+% ********************************************************************
+% https://tex.stackexchange.com/a/348976/15
+\BeforeTOCHead[toc]{\cleardoublepage\pdfbookmark{\contentsname}{toc}}
+\BeforeTOCHead[lof]{\cleardoublepage\pdfbookmark{\listfigurename}{lof}}
+
+% ********************************************************************
 % Triggers for this config
 % ********************************************************************
 \usepackage{ifthen}
+\usepackage{censor}
 \newboolean{enable-backrefs} % enable backrefs in the bibliography
 \setboolean{enable-backrefs}{true} % true false
+
+%% \newboolean{redacted}
+%% \usepackage{redacted}
+%%
+%% \newcommand{\withproblemsets}[1]{%
+%% \ifthenelse{\boolean{redacted}}%
+%% {%
+%% \textcolor{Maroon}{%
+%% PROBLEM SET RELATED MATERIAL REDACTED IN THIS DOCUMENT.%
+%% %
+%% PLEASE FEEL FREE TO EMAIL ME FOR THE FULL VERSION IF YOU AREN'T TAKING THE COURSE.%
+%% }%
+%% %
+%% \input{censor1pg.tex}%
+%% %
+%% \textcolor{Maroon}{%
+%% END-REDACTION%
+%% }%
+%% }%
+%% {#1}%
+%% }
+%%
+%% \newcommand{\withproblemsetsParagraph}[1]{%
+%% \ifthenelse{\boolean{redacted}}%
+%% {%
+%% \textcolor{Maroon}{%
+%% PROBLEM SET RELATED MATERIAL REDACTED IN THIS DOCUMENT.%
+%% %
+%% PLEASE FEEL FREE TO EMAIL ME FOR THE FULL VERSION IF YOU AREN'T TAKING THE COURSE.%
+%% }%
+%% %
+%% \input{censor1p.tex}%
+%% %\input{censor1p.tex}%
+%% %\input{censor1p.tex}%
+%% %
+%% \textcolor{Maroon}{%
+%% END-REDACTION%
+%% }%
+%% }%
+%% {#1}%
+%% }
+%%
+%% \newcommand{\withproblemsetsMessage}[1]{%
+%% \ifthenelse{\boolean{redacted}}%
+%% {%
+%% #1%
+%% }%
+%% {\relax}%
+%% }
+
+% ****************************************************************************************************
+
+
 % ****************************************************************************************************
 
 
@@ -42,7 +112,8 @@
 \newcommand{\myTitle}{Classical Mechanics\xspace}
 \newcommand{\mySubtitle}{Independent study and phy354 notes and problems\xspace}
 \newcommand{\myDegree}{}
-\newcommand{\myName}{Peeter Joot\ peeterjoot@pm.me\xspace}
+\newcommand{\myName}{Peeter Joot\xspace}
+%\newcommand{\myName}{Peeter Joot\ peeterjoot@pm.me\xspace}
 \newcommand{\myProf}{}
 \newcommand{\myOtherProf}{}
 \newcommand{\mySupervisor}{}
@@ -51,13 +122,9 @@
 \newcommand{\myUni}{}
 \newcommand{\myLocation}{}
 %----------------------
-   %\newcommand{\myTime}{Aug 2012}
+   %\newcommand{\myTime}{June 2012}
    \input{./.revinfo/gitCommitDateAsMyTime.tex}
 %----------------------
-%\newcommand{\myVersion}{version v.2\xspace}
-% v.1 changelog: http://wp.me/ppf39-Nz
-% next version if posted:
-% https://sites.google.com/site/peeterjoot2/math2013/classicalmechanics.pdf?revision=2
 
 % ********************************************************************
 % Setup, finetuning, and useful commands
@@ -157,9 +224,15 @@
 % ********************************************************************
 % Using PDFLaTeX
 % ********************************************************************
-\PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels}{hyperref}
+\PassOptionsToPackage{pdftex,hyperfootnotes=false,pdfpagelabels,hyperindex=true}{hyperref}
 	\usepackage{hyperref}  % backref linktocpage pagebackref
+%----------------------
 \pdfcompresslevel=9
+% http://tex.stackexchange.com/questions/52317/pdftex-warning-version-allowed
+%\pdfminorversion=5
+\pdfminorversion=7
+\pdfobjcompresslevel=3
+%----------------------
 \pdfadjustspacing=1
 \PassOptionsToPackage{pdftex}{graphicx}
 	\usepackage{graphicx}
@@ -246,6 +319,17 @@
     }{\relax}
 \makeatother
 
+% https://tex.stackexchange.com/questions/95488/list-of-figures-and-page-numbering
+% https://tex.stackexchange.com/a/95616/15
+\makeatletter
+\newcommand{\emptypage}[1]{%
+  \cleardoublepage
+  \begingroup
+  \let\ps@plain\ps@empty
+  \pagestyle{empty}
+  #1
+  \cleardoublepage}
+\makeatletter
 
 % ****************************************************************************************************
 % 7. Last calls before the bar closes
@@ -262,7 +346,7 @@
 % ********************************************************************
 % Last, but not least...
 % ********************************************************************
-\usepackage{classicthesis}
+\usepackage[sixbynine]{../latex/classicthesis_mine/classicthesis}
 % ****************************************************************************************************
 
 
@@ -296,7 +380,44 @@
 % http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Layout#The_Easy_Way
 % replaces manual settings (\parindent, \parskip, \topmargin, ...)
 %\usepackage[margin=3.0cm]{geometry}
-\usepackage[left=3cm,right=4cm]{geometry}
+%\usepackage[left=3cm,right=4cm]{geometry}
+
+% this boolean is now crippled by hardcoding 6x9 in:
+% 1) config.tex above:
+%   \usepackage[sixbynine]{classicthesis} % customized ancient version of classicthesis.sty
+% 2) GAelectrodynamic.tex: paper=6in:9in
+\newboolean{use-lettersize}
+\setboolean{use-lettersize}{false}
+%\setboolean{use-lettersize}{true}
+
+\newboolean{print-version}
+
+\ifthenelse{\boolean{use-lettersize}}
+{
+   % http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Layout#The_Easy_Way
+   % replaces manual settings (\parindent, \parskip, \topmargin, ...)
+   %\usepackage[margin=3.0cm]{geometry}
+   % default:
+   \usepackage[left=3cm,right=4cm]{geometry}
+   %\usepackage[left=2cm,right=1.9cm,top=2.1cm,bottom=1.9cm]{geometry}
+
+   \setboolean{print-version}{false}
+}
+{
+   %\usepackage[paperheight=9in,paperwidth=6in,left=2cm,right=1.7cm,top=1.7cm,bottom=2cm]{geometry}
+   %\usepackage[paperheight=9in,paperwidth=6in,left=2cm,right=1.9cm,top=1.9cm,bottom=2.2cm]{geometry}
+
+   % first print version: GAelectrodynamics.V0.1.14.6x9.pdf
+   % margins on the bottom look a bit big.
+   %\usepackage[paperheight=9in,paperwidth=6in,left=2cm,right=2cm,top=1.9cm,bottom=2.2cm]{geometry}
+   \usepackage[paperheight=9in,paperwidth=6in,left=2cm,right=2cm,top=1.9cm,bottom=1.5cm]{geometry}
+
+   % this is the size of the Landau and Lifshitz books (as measured with a ruler)
+   %\usepackage[paperheight=9.61in,paperwidth=6.69in,left=2cm,right=1.9cm,top=1.9cm,bottom=1.8cm]{geometry}
+
+   %\setboolean{print-version}{true}
+   \setboolean{print-version}{false}
+}
 
 \PassOptionsToPackage{answerdelayed}{exercise}
 \usepackage{peeters_layout}
