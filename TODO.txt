@@ -1,3 +1,32 @@
+
+- Proofing checklist:
+
+   - Convert parts to chapters, first converting section -> subsection or paragraph.  review existing subsections/paragraphs.
+   - Fix gutter overflow issues.
+   - Blank line purge.
+   - Equation grammar.
+   - Spell check.
+   - Periods for chapters, examples, figures, section, subsection, paragraphs.
+   - Run urlcheckerpy
+   - Run thethe.py
+   - Don't use dmath+aligned:  grep -nB1 {aligned} `cat thefiles` | grep {dmath}
+   - Look for dmaths in makeproblem, makeexamples, and itemize that lead to inset equation numbers.
+   - Check for equations that overlap equation numbers.
+   - Check the size of the figures.
+   - Check indexes for entries with different spelling/case.
+   - Make sure all the indexing is done.  at least chapter,section,paragraph,problems
+
+
+
+   - make dist, tag
+   - push
+   - copy to kdp, leanpub, landing page.
+   - bump version.
+
+
+
+=========
+
    - solve and write up the other phy354 problem sets and the midterm and final.  problem set 2 i/p.  want to look at the E - q \phi and do a comparison between the relativistic and non-rel results to see how they compare for small v.
 
    - have at least one complete lecture on paper and some partially written up lecture notes to finish up and add here.

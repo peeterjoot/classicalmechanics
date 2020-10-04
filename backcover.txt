@@ -1,0 +1,5 @@
+This book contains a large quantity of solved problems and study notes for classical mechanics.
+- A collection of miscellaneous notes and problems for my personal (independent) classical mechanics studies.  A fair amount of those notes were originally in my collection of Geometric (Clifford) Algebra related material so may assume some knowledge of that subject.
+- My notes for some of the PHY354 lectures I attended.  That class was taught by Prof. Erich Poppitz.  I audited some of the Wednesday lectures since the timing was convenient.  I took occasional notes, did the first problem set, and a subset of problem set 2.
+- Some assigned problems from the first two problems sets for PHY354.
+- Miscellaneous worked problems from other sources.
