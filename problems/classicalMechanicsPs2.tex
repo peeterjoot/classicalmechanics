@@ -24,20 +24,20 @@
 \makeproblem{Symmetries and conservation laws in external E.M. fields}{classicalMechanicsPs2:problem:1}
 {
 {2012 PHY354 Problem set 2, problem 1}
-
+%
 Let us continue studying the Lagrangian of Problem 1 of Homework 1, namely, its symmetries, and the relevant conserved quantities. To this end, we will consider various cases of external scalar and vector potentials.
-
+%
 \makesubproblem{Consider first the case of time-independent \(\BA\) and \(\phi\). Find the expression for the conserved energy, \(\calE\), of the particle.}{classicalMechanicsPs2:problem:1:1}
 \makesubproblem{For external \(\BA\) and \(\phi\) dependent on time, find \(d \calE/dt\).}{classicalMechanicsPs2:problem:1:2}
 \makesubproblem{Let now \(\BA\) and \(\phi\) be spatially homogeneous, i.e. \(\Bx\)-independent. Find the conserved momentum. Is it equal to the usual \(m \Bv\)?}{classicalMechanicsPs2:problem:1:3}
 \makesubproblem{Consider motion in the field of an electrostatic source (creating an external static \(\phi(\Bx)\)). Find the angular momentum of the particle. Is it conserved for all \(\phi(\Bx)\)?}{classicalMechanicsPs2:problem:1:4}
 } % makeproblem
-
+%
 \makeanswer{classicalMechanicsPs2:problem:1}{
 \makesubanswer{Conserved energy}{classicalMechanicsPs2:problem:1:1}
-
+%
 Recall the argument for energy conservation, the result of considering time dependence of the Lagrangian.  We have
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:370}
 \ddt{} \LL(q_i, \qdot_i, t)
 =
@@ -52,38 +52,38 @@ Recall the argument for energy conservation, the result of considering time depe
 \ddt{} \left( \PD{\qdot_i}{\LL} \PD{t}{q_i} \right)
 + \PD{t}{\LL}
 \end{dmath}
-
+%
 Rearranging we have the conservation equation
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:390}
 \ddt{} \left( \PD{\qdot_i}{\LL} \qdot_i -\LL \right) + \PD{t}{\LL} = 0.
 \end{dmath}
-
+%
 We define the energy as
-
+%
 \boxedEquation{eqn:classicalMechanicsPs2:410}{
 \calE = \PD{\qdot_i}{\LL} \qdot_i -\LL
 }
-
+%
 so that the when the Lagrangian is independent of time \(\calE\) is conserved, and in general
-
+%
 \begin{equation}\label{eqn:classicalMechanicsPs2:430}
 \ddt{\calE} = - \PD{t}{\LL}.
 \end{equation}
-
+%
 Application to this problem where our Lagrangian is
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:450}
 \LL = \inv{2} m \Bv^2 + q \Bv \cdot \BA - q \phi,
 \end{dmath}
-
+%
 we have
 \begin{dmath}\label{eqn:classicalMechanicsPs2:470}
 \PD{\Bv}{\LL} = m \Bv + q \BA.
 \end{dmath}
-
+%
 so the energy is
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:490}
 \calE =
 \left( m \Bv + \cancel{q \BA} \right) \cdot \Bv -
@@ -91,18 +91,18 @@ so the energy is
 =
 \inv{2} m \Bv^2 + q \phi,
 \end{dmath}
-
+%
 with an end result of
 \boxedEquation{eqn:classicalMechanicsPs2:491}{
 \calE =
 \inv{2} m \Bv^2 + q \phi.
 }
-
+%
 \makesubanswer{Find \(d\calE/dt\)}{classicalMechanicsPs2:problem:1:2}
-
+%
 \paragraph{With direct computation}
 There are two ways we can try this.  One is with direct computation of the derivative from \eqnref{eqn:classicalMechanicsPs2:490}
-
+%
 \begin{dmath*}
 \ddt{\calE}
 =
@@ -114,19 +114,19 @@ q \Bv \cdot (\BE + \spacegrad \phi) + q \cancel{\Bv \cdot \left(\Bv \cross \BB \
 =
 q \Bv \cdot \left(-\cancel{\spacegrad \phi} - \PD{t}{\BA} + \cancel{\spacegrad \phi} \right) + q \PD{t}{\phi}.
 \end{dmath*}
-
+%
 So our end result is
-
+%
 \boxedEquation{eqn:classicalMechanicsPs2:510}{
 \ddt{\calE}
 =
 -q \Bv \cdot \PD{t}{\BA} + q \PD{t}{\phi}.
 }
-
+%
 \paragraph{Using the Lagrangian time partial}
-
+%
 Doing it explicitly as above is the hard way.  We can do it from the conservation identity \eqnref{eqn:classicalMechanicsPs2:430} instead
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:590}
 \ddt{\calE}
 = -\PD{t}{\LL}
@@ -137,25 +137,25 @@ Doing it explicitly as above is the hard way.  We can do it from the conservatio
 =
 -q \Bv \cdot \PD{t}{\BA} + q \PD{t}{\phi},
 \end{dmath}
-
+%
 as before.
-
+%
 \paragraph{Aside: Why not the ``expected'' \(q \Bv \cdot \BE\) result?}
-
+%
 From the relativistic treatment I expected
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:530}
 \ddt{\calE} \questionEquals q \Bv \cdot \BE,
 \end{dmath}
-
+%
 but that's not what we got.  With \(\calE = m \Bv^2/2 + q \phi\), it appears that we get a similar result considering just the Kinetic portion of the energy
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:550}
 \inv{2} m \Bv^2 = \calE - q \phi.
 \end{dmath}
-
+%
 Computing the derivative from above we have
-
+%
 \begin{dmath*}
 \ddt{}\left(
 \inv{2} m \Bv^2 \right)
@@ -170,25 +170,25 @@ q \Bv \cdot \left(
 -\spacegrad \phi
 -\PD{t}{\BA} \right),
 \end{dmath*}
-
+%
 or
 \begin{dmath}\label{eqn:classicalMechanicsPs2:570}
 \ddt{} \left(
 \inv{2} m \Bv^2 \right) = \ddt{} \left( \calE - q \phi \right) = q \Bv \cdot \BE
 \end{dmath}
-
+%
 Looking back to what we did in the relativistic treatment, I see that my confusion was due to the fact that we actually computed
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:530b}
 \ddt{\calE_{\mathrm{kin}}} = q \Bv \cdot \BE,
 \end{dmath}
-
+%
 where \(\calE_{\mathrm{kin}} = \gamma m c^2\).  To first order, removing an additive constant, we have \(\gamma m c^2 \approx m \Bv^2/2\), so everything checks out.
-
+%
 \makesubanswer{Conserved momentum}{classicalMechanicsPs2:problem:1:3}
-
+%
 The conserved momentum followed from a Noether's argument where we compute
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:610}
 \frac{d\LL'}{d\epsilon}
 =
@@ -200,47 +200,47 @@ The conserved momentum followed from a Noether's argument where we compute
 =
 \ddt{} \left( \PD{\qdot_i'}{\LL'} \PD{\epsilon}{q_i'} \right),
 \end{dmath}
-
+%
 where it has been assumed that a perturbed Lagrangian \(\LL'(\epsilon) = \LL(q_i'(\epsilon), \qdot_i'(\epsilon), t)\) also satisfies the Euler Lagrange equations using the transformed coordinates.  With the coordinates transformed by a shift along some constant direction \(\Ba\) as in
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:630}
 \Bx' = \Bx + \epsilon \Ba,
 \end{dmath}
-
+%
 we have \(\PDi{\epsilon}{\Bx'} = \Ba\), so \eqnref{eqn:classicalMechanicsPs2:610} takes the form
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:650}
 \frac{d\LL'}{d\epsilon} = \ddt{} \left( \PD{\xdot_i}{\LL'} a_i \right).
 \end{dmath}
-
+%
 Our shifted Lagrangian for spatially homogeneous potentials \(\phi' = \phi\) and \(\BA' = \BA\) is
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:670}
 \LL' = \inv{2} m {\Bv'}^2 + q \Bv' \cdot \BA - q \phi = \LL,
 \end{dmath}
-
+%
 but \(\Bv' = \Bv\), so we've just got our canonical momentum \(\BM = \PDi{\xdot_i}{\LL}\) within the time derivative, and must have for all \(\Ba\)
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:690}
 \ddt{ \BM } \cdot \Ba = 0.
 \end{dmath}
-
+%
 The conserved momentum is then just
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:710}
 \BM = m \Bv + q \BA.
 \end{dmath}
-
+%
 \makesubanswer{Conserved angular momentum}{classicalMechanicsPs2:problem:1:4}
-
+%
 Does the conserved angular momentum take the same from as \(\Bx \cross \BM\) as we had in a non-velocity dependent Lagrangian?  We can check using the same Noether arguments using the following coordinate transformation
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:730}
 \Bx' = e^{-\epsilon j/2} \Bx e^{\epsilon j/2},
 \end{dmath}
-
+%
 where \(j = \ucap \wedge \vcap\) is the geometric product of two perpendicular unit vectors, and \(\epsilon\) is the magnitude of the rotation.  This gives us
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:750}
 \frac{d\Bx'}{d\epsilon} =
 -\frac{j}{2} e^{-\epsilon j/2} \Bx e^{\epsilon j/2}
@@ -249,15 +249,15 @@ where \(j = \ucap \wedge \vcap\) is the geometric product of two perpendicular u
 \inv{2} \left( \Bx' j - j \Bx' \right)
 = \Bx' \cdot j.
 \end{dmath}
-
+%
 The Noether conservation statement is then
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:770}
 \frac{d\LL'}{d\epsilon} = \ddt{} \left( \PD{\xdot_i}{\LL'} \Be_i \cdot (\Bx' \cdot j) \right)
 \end{dmath}
-
+%
 With a static scalar potential \(\phi(\Bx)\) is our Lagrangian rotation invariant?  We have
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:790}
 \LL'
 =
@@ -265,18 +265,18 @@ With a static scalar potential \(\phi(\Bx)\) is our Lagrangian rotation invarian
 =
 \inv{2} {\Bv}^2 - q \phi(\Bx').
 \end{dmath}
-
+%
 With zero vector potential, our kinetic term is invariant since the squared velocity is invariant, but we require \(\phi(\Bx') = \phi(\Bx)\) for total Lagrangian invariance.  We have that if \(\phi(\Bx) = \phi(\Abs{\Bx})\).
-
+%
 Evaluating the conservation identity \eqnref{eqn:classicalMechanicsPs2:770} at \(\epsilon = 0\) we have
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:810}
 0
 = \ddt{} \left( \BM \cdot (\Bx \cdot j) \right).
 \end{dmath}
-
+%
 We are used to seeing this in dual form using the cross product
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:830}
 \BM \cdot (\Bx \cdot j)
 =
@@ -305,33 +305,33 @@ We are used to seeing this in dual form using the cross product
 =
 I (\BM \cross \Bx) \cdot j.
 \end{dmath}
-
+%
 We are left with
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:910}
 0 = I \frac{d}{dt} (\Bx \cross \BM) \cdot j,
 \end{dmath}
-
+%
 but since \(j\) can be arbitrarily oriented, we have a requirement that
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:930}
 0 = \frac{d}{dt} (\Bx \cross \BM).
 \end{dmath}
-
+%
 This verifies that the our angular momentum is conserved, provided that \(\phi(\Bx) = \phi(\Abs{\Bx})\), and \(\BA = 0\).  With \(\BA = 0\), so that \(\BM = m \Bv + q \BA = m \Bv\) this is just
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:870}
 \Bx \cross \BM = m \Bx \cross \Bv.
 \end{dmath}
-
+%
 Note that the dependency on Geometric Algebra in the Noether's argument above can probably be eliminated by utilizing a rotational transformation of the form
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:871}
 \Bx' = \Bx + \ncap \cross \Bx.
 \end{dmath}
-
+%
 I'd guess (or perhaps recall if I attended that class), that this was the approach used.
-
+%
 %\paragraph{Computing the conserved quantity without use of Geometric Algebra}
 %
 %Consider the expansion of our infinisimal rotation, projecting our vector \(\Bx\) into components lying in the plane of rotation \((\Bx \cdot j) j\) and perpendicular to that plane.  We have
@@ -355,7 +355,7 @@ I'd guess (or perhaps recall if I attended that class), that this was the approa
 %
 %FIXME: messed up.  try on paper first.  One of the mistakes is that j^2 = -1, I've got +1 above.
 }
-
+%
 %\makeoproblem{Integrals of motion in a helix potential}{classicalMechanicsPs2:problem:2}
 %{2012 PHY354 Problem set 2, problem 2}
 %{
@@ -371,7 +371,7 @@ I'd guess (or perhaps recall if I attended that class), that this was the approa
 %% http://books.google.ca/books?id=e-xASAehg1sC&pg=PA21&lpg=PA21&dq=potential+for+an+infinite+cylindrical+helix&source=bl&ots=XPLMLrSh_s&sig=07oTC2n9GB_0svsV1cUXbbvoAZc&hl=en&sa=X&ei=1IfwT9SXMqmR6gGX1e3RBg&ved=0CEEQ6AEwAA#v=onepage&q=potential%20for%20an%20infinite%20cylindrical%20helix&f=false
 %
 %}
-
+%
 %\makeoproblem{``Hidden'' symmetries and integrals of motion}{classicalMechanicsPs2:problem:3}
 %{2012 PHY354 Problem set 2, problem 3}
 %{
@@ -413,7 +413,7 @@ I'd guess (or perhaps recall if I attended that class), that this was the approa
 %\makesubanswer{Is energy conserved}{classicalMechanicsPs2:problem:3:4}
 %TODO.
 %}
-
+%
 %\makeoproblem{Symmetries and conservation laws}{classicalMechanicsPs2:problem:4}
 %{2012 PHY354 Problem set 2, problem 4}
 %{
@@ -447,23 +447,23 @@ I'd guess (or perhaps recall if I attended that class), that this was the approa
 %\makesubanswer{A homogeneous torus}{classicalMechanicsPs2:problem:4:7}
 %TODO.
 %}
-
-\makeproblem{Find components of angular momentum in spherical and cylindrical coordinates}{classicalMechanicsPs2:problem:5}
+%
+\makeproblem{Angular momentum in spherical and cylindrical coordinates.}{classicalMechanicsPs2:problem:5}
 {
 {2012 PHY354 Problem set 2, problem 5}
 \makesubproblem{Find \(M_x, M_y, M_z, \BM^2\) in spherical coordinates \((r, \theta, \phi)\).}{classicalMechanicsPs2:problem:5:1}
 \makesubproblem{Find \(M_x, M_y, M_z, \BM^2\) in cylindrical coordinates \((r, \phi, z)\).}{classicalMechanicsPs2:problem:5:2}
-
+%
 %Everybody should do this once in their lives (and should be able to do at any point thereafter).
 %My SQL-guru, but non-physisist girlfriend, was amused by the additional comment in the statement of the problem ``\textunderline{Everybody} should do this once in their lives (and should be able to do at any point thereafter).
 } % makeproblem
-
+%
 \makeanswer{classicalMechanicsPs2:problem:5}{
-
+%
 \makesubanswer{Spherical coordinates}{classicalMechanicsPs2:problem:5:1}
-
+%
 In Cartesian coordinates our angular momentum is
-
+%
 \begin{equation}\label{eqn:classicalMechanicsPs2:950}
 \begin{aligned}
 \BM
@@ -474,9 +474,9 @@ m (y v_z - z v_y) \xcap
 +m (x v_y - y v_x) \zcap
 \end{aligned}
 \end{equation}
-
+%
 Substituting \(x,y,z\) is easy since we have
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:10}
 \begin{bmatrix}
 x \\
@@ -491,9 +491,9 @@ r
 \cos\theta
 \end{bmatrix},
 \end{dmath}
-
+%
 but the \(\Bv\) substitution requires more work.  We have
-
+%
 \begin{equation}\label{eqn:classicalMechanicsPs2:970}
 \begin{aligned}
 \Bv
@@ -502,7 +502,7 @@ but the \(\Bv\) substitution requires more work.  We have
 &= \rdot \rcap + r \ddt{\rcap}
 \end{aligned}
 \end{equation}
-
+%
 \begin{equation}\label{eqn:classicalMechanicsPs2:990}
 \begin{aligned}
 \ddt{\rcap}
@@ -521,9 +521,9 @@ but the \(\Bv\) substitution requires more work.  We have
 \end{bmatrix}
 \end{aligned}
 \end{equation}
-
+%
 So we have
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:30}
 \Bv =
 \begin{bmatrix}
@@ -532,7 +532,7 @@ So we have
 \rdot \cos\theta -r \sin\theta \thetadot
 \end{bmatrix}
 \end{dmath}
-
+%
 \begin{equation}\label{eqn:classicalMechanicsPs2:1010}
 \begin{aligned}
 \BM &=
@@ -584,9 +584,9 @@ m r
 \end{bmatrix} \\
 \end{aligned}
 \end{equation}
-
+%
 In matrix form, we have (and can read off \(M_x, M_y, M_z\))
-
+%
 \boxedEquation{eqn:classicalMechanicsPs2:50}{
 \BM =
 \inv{2} m r^2
@@ -600,9 +600,9 @@ In matrix form, we have (and can read off \(M_x, M_y, M_z\))
 \phidot
 \end{bmatrix}.
 }
-
+%
 We have also been asked to find \(\BM^2\) and can write this as a quadratic form
-
+%
 \begin{equation}\label{eqn:classicalMechanicsPs2:1030}
 \begin{aligned}
 \BM^2
@@ -639,25 +639,25 @@ We have also been asked to find \(\BM^2\) and can write this as a quadratic form
 \end{bmatrix}  \\
 \end{aligned}
 \end{equation}
-
+%
 This simplifies surprisingly, leaving only
-
+%
 \boxedEquation{eqn:classicalMechanicsPs2:70}{
 \BM^2
 =
 m^2 r^4 \lr{  \thetadot^2 + \sin^2\theta \phidot^2  }.
 }
-
+%
 \makesubanswer{Spherical coordinates - a smarter way}{classicalMechanicsPs2:problem:5:1}
-
+%
 Observe that we have no \(\rdot\) factors in the angular momentum.  This makes sense when we consider that the total angular momentum is
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:190}
 \BM = m r \rcap \cross \Bv,
 \end{dmath}
-
+%
 so the \(\rdot \rcap\) term of the velocity is necessarily killed.  Let us do that simplification first.  We want our velocity completely specified in a \(\{\rcap, \thetacap, \phicap\}\) basis, and note that our basis vectors are
-
+%
 \begin{equation}\label{eqn:classicalMechanicsPs2:210}
 \begin{aligned}
 \rcap &=
@@ -680,9 +680,9 @@ so the \(\rdot \rcap\) term of the velocity is necessarily killed.  Let us do th
 \end{bmatrix} .
 \end{aligned}
 \end{equation}
-
+%
 We wish to rewrite
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:230}
 \ddt{\rcap} =
 \begin{bmatrix}
@@ -695,9 +695,9 @@ We wish to rewrite
 \phidot
 \end{bmatrix},
 \end{dmath}
-
+%
 in terms of these spherical unit vectors and find
-
+%
 \begin{equation}\label{eqn:classicalMechanicsPs2:250}
 \begin{aligned}
 \frac{d\rcap}{dt} \cdot \rcap &= \rcap^\T \ddt{\rcap} = 0  \\
@@ -705,23 +705,23 @@ in terms of these spherical unit vectors and find
 \frac{d\rcap}{dt} \cdot \phicap &= \phicap^\T \ddt{\rcap} = \phidot \sin\theta.
 \end{aligned}
 \end{equation}
-
+%
 So our velocity is
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:270}
 \Bv = \rdot \rcap + r
 \lr{ \thetadot \thetacap + \phidot \sin\theta \phicap }.
 \end{dmath}
-
+%
 As an aside, now that we know the Euler-Lagrange methods, we could also compute this velocity from the spherical free particle Lagrangian by writing out the canonical momentum in vector form.  We have
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:290}
 \LL = \inv{2} m
 \lr{  \rdot^2 + r^2 \thetadot^2 + r^2 \phidot^2 \sin^2 \theta }
 \end{dmath}
-
+%
 We expect our canonical momentum in vector form to be
-
+%
 \begin{equation}\label{eqn:classicalMechanicsPs2:1050}
 \begin{aligned}
 \BP &=
@@ -740,9 +740,9 @@ m
 &= m \Bv
 \end{aligned}
 \end{equation}
-
+%
 This is consistent with \eqnref{eqn:classicalMechanicsPs2:270} calculated hard way, and is a nice verification that the canonical momentum matches the expectation of being nothing more than how to express the momentum in different coordinate systems.  Returning to the angular momentum calculation we have
-
+%
 \begin{equation}\label{eqn:classicalMechanicsPs2:1070}
 \begin{aligned}
 \rcap \cross \Bv
@@ -752,16 +752,16 @@ r \rcap \cross \lr{ \thetadot \thetacap + \phidot \sin\theta \phicap } \\
 r \left( \thetadot \phicap - \phidot \sin\theta \thetacap \right) ,
 \end{aligned}
 \end{equation}
-
+%
 So that our total angular momentum in vector form is
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:310}
 \BM = m r^2
 \left( \thetadot \phicap - \phidot \sin\theta \thetacap \right),
 \end{dmath}
-
+%
 Now, should we wish to extract coordinates with respect to \(x,y,z\) we just have to write our our vectors \(\phicap\) and \(\thetacap\) in the \(\{\Be_1, \Be_2, \Be_3\}\) basis and have
-
+%
 \begin{equation}\label{eqn:classicalMechanicsPs2:1090}
 \begin{aligned}
 \BM
@@ -787,13 +787,13 @@ m r^2
 \end{bmatrix} \\
 \end{aligned}
 \end{equation}
-
+%
 This matches \eqnref{eqn:classicalMechanicsPs2:50}, but all the messy trig is isolated to the calculation of \(\Bv\) in the spherical polar basis.
-
+%
 \makesubanswer{Cylindrical coordinates}{classicalMechanicsPs2:problem:5:2}
-
+%
 This one should be easier.  To start our position vector is
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:90}
 \Br =
 \begin{bmatrix}
@@ -803,9 +803,9 @@ z
 \end{bmatrix}
 = \rho \rhocap + z \zcap.
 \end{dmath}
-
+%
 Our velocity is
-
+%
 \begin{equation}\label{eqn:classicalMechanicsPs2:1110}
 \begin{aligned}
 \Bv
@@ -817,15 +817,15 @@ Our velocity is
 &= \rhodot \rhocap + \rho \phidot \phicap + \zdot \zcap \\
 \end{aligned}
 \end{equation}
-
+%
 Here, I have used the Clifford algebra representation of \(\rhocap\) with the plane bivector \(i = \Be_1 \Be_2\).  In coordinates we have
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:110}
 \phicap = \Be_2
 \lr{ \cos\phi + \Be_1 \Be_2 \sin\phi }
  = -\Be_1 \sin\phi + \Be_2 \cos\phi,
 \end{dmath}
-
+%
 so our velocity in matrix form is
 \begin{dmath}\label{eqn:classicalMechanicsPs2:130}
 \Bv = \rhodot
@@ -855,9 +855,9 @@ so our velocity in matrix form is
 \zdot
 \end{bmatrix}
 \end{dmath}
-
+%
 For our angular momentum we get
-
+%
 \begin{equation}\label{eqn:classicalMechanicsPs2:1130}
 \begin{aligned}
 \BM
@@ -872,9 +872,9 @@ z \lr{ \rhodot \cos\phi - \rho \phidot \sin\phi } - \rho \cos\phi \zdot \\
 \end{bmatrix} \\
 \end{aligned}
 \end{equation}
-
+%
 We can now read off \(M_x, M_y, M_z\) by inspection
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:150}
 \BM =
 m
@@ -890,9 +890,9 @@ m
 \rho^2 \phidot
 \end{bmatrix}.
 \end{dmath}
-
+%
 We also want the (squared) magnitude, which is
-
+%
 \begin{dmath}\label{eqn:classicalMechanicsPs2:170}
 \BM^2
 %=
@@ -910,7 +910,7 @@ m^2 \left(
 \right)
 \end{dmath}
 }
-
+%
 %\vcsinfo
 %\EndArticle
 %\EndNoBibArticle
