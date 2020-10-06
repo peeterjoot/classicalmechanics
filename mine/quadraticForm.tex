@@ -2,26 +2,26 @@
 % Copyright © 2012 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-
+%
 %\chapter{Linear transformations that retain two by two positive definiteness}
 \index{positive definite}
 \index{linear transformation!positive definite}
 \label{chap:quadraticForm}
 %\blogpage{http://sites.google.com/site/peeterjoot/math2009/quadraticForm.pdf}
 %\date{Oct 4, 2009}
-
+%
 \section{Motivation}
-
+%
 Purely for fun, lets study the classes of linear transformations that retain the positive definiteness of a diagonal two by two quadratic form.  Namely, the Hamiltonian
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo1}
 \begin{aligned}
 H = P^2 + Q^2
 \end{aligned}
 \end{equation}
-
+%
 under a change of variables that mixes position and momenta coordinates in phase space
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo2}
 \begin{aligned}
 \Bz' =
@@ -41,25 +41,25 @@ Q
 = A \Bz
 \end{aligned}
 \end{equation}
-
+%
 We want the conditions on the matrix \(A\) such that the quadratic form retains the diagonal nature
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo3a}
 \begin{aligned}
 H = P^2 + Q^2 = p^2 + q^2
 \end{aligned}
 \end{equation}
-
+%
 which in matrix form is
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo3}
 \begin{aligned}
 H = \Bz^\T \Bz = {\Bz'}^\T \Bz'
 \end{aligned}
 \end{equation}
-
+%
 So the task is to solve for the constants on the matrix elements for
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo4}
 \begin{aligned}
 I = A^\T A =
@@ -73,13 +73,13 @@ a      & b \\
 \end{bmatrix}
 \end{aligned}
 \end{equation}
-
+%
 Strictly speaking we can also scale and retain positive definiteness, but that case is not of interest to me right now so I will use this term as described above.
-
+%
 \section{Guts}
-
+%
 The expectation is that this will necessarily include all rotations.  Will there be any other allowable linear transformations?  Written out in full we want the solutions of
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo5a}
 \begin{aligned}
 \begin{bmatrix}
@@ -102,9 +102,9 @@ a      & b \\
 \end{bmatrix}
 \end{aligned}
 \end{equation}
-
+%
 Written out explicitly we have three distinct equations to reduce
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo5}
 \begin{aligned}
 1 = \alpha^2 + a^2
@@ -120,9 +120,9 @@ Written out explicitly we have three distinct equations to reduce
 0 = \alpha \beta + a b
 \end{aligned}
 \end{equation}
-
+%
 Solving for \(a\) in \eqnref{eqn:quadratricForm:voo7} we have
-
+%
 \begin{equation}\label{eqn:quadraticForm:39}
 \begin{aligned}
 a &= -\frac{\alpha \beta}{b} \\
@@ -133,17 +133,17 @@ a &= -\frac{\alpha \beta}{b} \\
 &= \frac{\alpha^2}{b^2}
 \end{aligned}
 \end{equation}
-
+%
 So, provided \(b \ne 0)\), we have a first simplifying identity
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo8}
 \begin{aligned}
 \alpha^2 = b^2
 \end{aligned}
 \end{equation}
-
+%
 Written out to check, this reduces our system of equations
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo9}
 \begin{aligned}
 \begin{bmatrix}
@@ -166,9 +166,9 @@ a      & \pm \alpha \\
 \end{bmatrix}
 \end{aligned}
 \end{equation}
-
+%
 so our equations are now
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo10}
 \begin{aligned}
 1 = \alpha^2 + a^2
@@ -184,17 +184,17 @@ so our equations are now
 0 = \alpha (\beta \pm a )
 \end{aligned}
 \end{equation}
-
+%
 There are two cases to distinguish here.  The first is the more trivial \(\alpha = 0\) case, for which we find \(a^2 = \beta^2 = 1\).  For the other case we have
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo13}
 \begin{aligned}
 \beta = \mp a
 \end{aligned}
 \end{equation}
-
+%
 Again, writing out in full to check, this reduces our system of equations
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo14}
 \begin{aligned}
 \begin{bmatrix}
@@ -217,24 +217,24 @@ a      & \pm \alpha \\
 \end{bmatrix}
 \end{aligned}
 \end{equation}
-
+%
 We have now only one constraint left, and have reduced things to a single degree of freedom
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo15}
 \begin{aligned}
 1 = \alpha^2 + a^2
 \end{aligned}
 \end{equation}
-
+%
 Or
 \begin{equation}\label{eqn:quadratricForm:voo16}
 \begin{aligned}
 \alpha = (1 - a^2)^{1/2}
 \end{aligned}
 \end{equation}
-
+%
 We have already used \(\pm\) to distinguish the roots of \(\alpha = \pm b\), so here lets imply that this square root can take either positive or negative values, but that we are treating the sign of this the same where ever seen.  Our transformation, employing \(a\) as the free variable is now known to take any of the following forms
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo17}
 \begin{aligned}
 A
@@ -255,11 +255,11 @@ a & 0 \\
 \end{bmatrix}
 \end{aligned}
 \end{equation}
-
+%
 The last of these (the \(b=0\) case from earlier) was not considered, but doing so one finds that it produces nothing different from the second form of the transformation above.  That leaves us with two possible forms of linear transformations that are allowable for the desired constraints, the first of which screams for a trigonometric parametrization.
 
 For \(\Abs{a} \le 0\) we can parametrize with \(a = \sin\theta\).  Should we allow complex valued linear transformations?  If so \(a = \cosh(\theta)\) is a reasonable way to parametrize the matrix for the \(a > 0\) case.  The complete set of allowable linear transformations in matrix form are now
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo18}
 \begin{aligned}
 A &=
@@ -279,12 +279,12 @@ A &=
 \end{bmatrix}
 \end{aligned}
 \end{equation}
-
+%
 There are really four different matrices in each of the above.  Removing all the shorthand for clarity we have finally
-
+%
 \begin{equation}\label{eqn:quadraticForm:59}
 \begin{aligned}
-A \in \Bigr\{
+A \in \Bigl\{
 &\begin{bmatrix}
 \cos\theta & - \sin\theta \\
 \sin\theta & \cos\theta \\
@@ -301,7 +301,7 @@ A \in \Bigr\{
 -\cos\theta & \sin\theta \\
 \sin\theta & \cos\theta \\
 \end{bmatrix}, \\
-&
+&\quad
 \begin{bmatrix}
 i \sinh\theta & -\cosh\theta \\
 \cosh\theta  & i \sinh\theta \\
@@ -313,13 +313,12 @@ i \sinh\theta & -\cosh\theta \\
 \begin{bmatrix}
 i \sinh\theta & \cosh\theta \\
 \cosh\theta  & - i \sinh\theta \\
-\end{bmatrix},
+\end{bmatrix}, \\
+&
 \begin{bmatrix}
 -i \sinh\theta & \cosh\theta \\
 \cosh\theta  & i \sinh\theta \\
 \end{bmatrix},
-\\
-&
 \begin{bmatrix}
 0 & 1 \\
 1 & 0 \\
@@ -336,15 +335,15 @@ i \sinh\theta & \cosh\theta \\
 0 & -1 \\
 -1 & 0 \\
 \end{bmatrix}
-\Bigl\}
+\Bigr\}
 \end{aligned}
 \end{equation}
-
+%
 The last four possibilities are now seen to be redundant since they can be incorporated into the \(\theta = \pm \pi/2\) cases of the real trig parameterizations where \(\sin\theta = \pm 1\), and \(\cos\theta = 0\).   Employing a \(\theta' = -\theta\) change of variables, we find that two of the hyperbolic parameterizations are also redundant and can express the reduced solution set as
-
+%
 \begin{equation}\label{eqn:quadratricForm:voo19}
 \begin{aligned}
-A \in \Bigr\{
+A &\in \Bigl\{
 \pm \begin{bmatrix}
 \cos\theta & - \sin\theta \\
 \sin\theta & \cos\theta \\
@@ -352,8 +351,8 @@ A \in \Bigr\{
 \pm \begin{bmatrix}
 \cos\theta & \sin\theta \\
 \sin\theta & - \cos\theta \\
-\end{bmatrix},
-\pm \begin{bmatrix}
+\end{bmatrix}, \\
+&\pm \begin{bmatrix}
 i \sinh\theta & -\cosh\theta \\
 \cosh\theta  & i \sinh\theta \\
 \end{bmatrix},
@@ -361,8 +360,8 @@ i \sinh\theta & -\cosh\theta \\
 i \sinh\theta & \cosh\theta \\
 \cosh\theta  & - i \sinh\theta \\
 \end{bmatrix}
-\Bigl\}
+\Bigr\}
 \end{aligned}
 \end{equation}
-
+%
 I suspect this class of transformations has a name in the grand group classification scheme, but I do not know what it is.
