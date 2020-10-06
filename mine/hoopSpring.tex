@@ -2,26 +2,26 @@
 % Copyright © 2012 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-
+%
 %\chapter{Hoop and spring oscillator problem}
 \index{hoop and spring}
 \label{chap:hoopSpring}
 %\blogpage{http://sites.google.com/site/peeterjoot/math2010/hoopSpring.pdf}
 %\date{June 19, 2010}
-
+%
 \section{Motivation}
-
+%
 Nolan was attempting to setup and solve the equations for the following system \cref{fig:hoopSpring}
-
+%
 \imageFigure{../figures/classicalmechanics/hoopSpring}{Coupled hoop and spring system}{fig:hoopSpring}{0.4}
-
+%
 One mass is connected between two springs to a bar.  That bar moves up and down as forced by the motion of the other mass along a immovable hoop.  While Nolan did not include any gravitational force in his potential terms (ie: system lying on a table perhaps) it does not take much more to include that, and I will do so.  I also include the distance \(L\) to the center of the hoop, which I believe required.
-
+%
 \section{Guts}
-
+%
 The Lagrangian can be written by inspection.  Writing \(x = x_1\), and \(x_2 = R \sin\theta\), we have
-
-\begin{align}\label{eqn:hoopSpring:1}
+%
+\begin{dmath}\label{eqn:hoopSpring:1}
 \LL =
 \inv{2} m_1 \dot{x}^2
 + \inv{2} m_2 R^2 \dot{\theta}^2
@@ -29,10 +29,10 @@ The Lagrangian can be written by inspection.  Writing \(x = x_1\), and \(x_2 = R
 - \inv{2} k_2 ( L + R \sin\theta - x )^2
 - m_1 g x
 - m_2 g ( L + R \sin\theta).
-\end{align}
-
+\end{dmath}
+%
 Evaluation of the Euler-Lagrange equations gives
-
+%
 \begin{subequations}
 \label{eqn:hoopSpring:2}
 \begin{align}
@@ -40,9 +40,9 @@ m_1 \ddot{x} &= - k_1 x + k_2 ( L + R \sin\theta - x ) - m_1 g \\
 m_2 R^2 \ddot{\theta} &= - k_2 ( L + R \sin\theta - x ) R \cos\theta - m_2 g R \cos\theta,
 \end{align}
 \end{subequations}
-
+%
 or
-
+%
 \begin{subequations}
 \label{eqn:hoopSpring:3}
 \begin{align}
@@ -57,9 +57,9 @@ or
 .
 \end{align}
 \end{subequations}
-
+%
 Just like any other coupled pendulum system, this one is non-linear.  There is no obvious way to solve this in closed form, but we could determine a solution in the neighborhood of a point \((x, \theta) = (x_0, \theta_0)\).  Let us switch our dynamical variables to ones that express the deviation from the initial point \(\delta x = x - x_0\), and \(\delta \theta = \theta - \theta_0\), with \(u = (\delta x)'\), and \(v = (\delta \theta)'\).  Our system then takes the form
-
+%
 \begin{subequations}
 \label{eqn:hoopSpring:4}
 \begin{align}
@@ -74,32 +74,32 @@ v' &= g(x,\theta) =
 .
 \end{align}
 \end{subequations}
-
+%
 We can use a first order Taylor approximation of the form \(f(x, \theta) = f(x_0, \theta_0) + f_x(x_0,\theta_0) (\delta x) + f_\theta(x_0,\theta_0) (\delta \theta)\).  So, to first order, our system has the approximation
-
+%
 \begin{subequations}
 \label{eqn:hoopSpring:5}
 \begin{align}
 u' &=
 -x_0 \frac{k_1 + k_2}{m_1}
-+ \frac{k_2 R \sin\theta_0}{m_1}
-- g + \frac{k_2 L }{m_1}
++ \frac{k_2 R \sin\theta_0}{m_1} \\
+&\quad - g + \frac{k_2 L }{m_1}
 -(\delta x) \frac{k_1 + k_2}{m_1}
 + \frac{k_2 R \cos\theta_0}{m_1} (\delta \theta)
 \\
 v' &=
 - \inv{R}\left( \frac{k_2}{m_2} \left( L + R \sin\theta_0 - x_0 \right) +g \right) \cos\theta_0
-+ \frac{k_2 \cos\theta_0}{m_2 R} (\delta x)
-- \inv{R}\left( \frac{k_2}{m_2} \left( \left( L - x_0 \right) \sin\theta_0 + R \right) + g \sin\theta_0 \right) (\delta \theta)
++ \frac{k_2 \cos\theta_0}{m_2 R} (\delta x) \\
+&\quad - \inv{R}\left( \frac{k_2}{m_2} \left( \left( L - x_0 \right) \sin\theta_0 + R \right) + g \sin\theta_0 \right) (\delta \theta)
 \\
 (\delta x)' &= u \\
 (\delta \theta)' &= v
 .
 \end{align}
 \end{subequations}
-
+%
 This would be tidier in matrix form with \(\Bx = (u, v, \delta x, \delta \theta)\)
-
+%
 \begin{align}
 \label{eqn:hoopSpring:6}
 \Bx' &=
@@ -110,8 +110,8 @@ This would be tidier in matrix form with \(\Bx = (u, v, \delta x, \delta \theta)
 - \inv{R}\left( \frac{k_2}{m_2} \left( L + R \sin\theta_0 - x_0 \right) +g \right) \cos\theta_0 \\
 0 \\
 0
-\end{bmatrix}
-+
+\end{bmatrix} \\
+&\quad +
 \begin{bmatrix}
 0 & 0 &
 -\frac{k_1 + k_2}{m_1} & \frac{k_2 R \cos\theta_0}{m_1} \\
@@ -123,9 +123,9 @@ This would be tidier in matrix form with \(\Bx = (u, v, \delta x, \delta \theta)
 \end{bmatrix}\Bx
 .
 \end{align}
-
+%
 This reduces the problem to the solutions of first order equations of the form
-
+%
 \begin{align}\label{eqn:hoopSpring:7}
 \Bx' = \Ba
 + \begin{bmatrix}
@@ -133,15 +133,15 @@ This reduces the problem to the solutions of first order equations of the form
 I & 0
 \end{bmatrix}\Bx = \Ba + \BB \Bx
 \end{align}
-
+%
 where \(\Ba\), and \(A\) are constant matrices.  Such a matrix equation has the solution
-
+%
 \begin{align}\label{eqn:hoopSpring:8}
 \Bx = e^{B t} \Bx_0 + (e^{Bt} - I) B^{-1} \Ba,
 \end{align}
-
+%
 but the zeros in \(B\) should allow the exponential and inverse to be calculated with less work.  That inverse is readily verified to be
-
+%
 \begin{align}\label{eqn:hoopSpring:9}
 B^{-1} =
 \begin{bmatrix}
@@ -149,9 +149,9 @@ B^{-1} =
 A^{-1} & 0
 \end{bmatrix}.
 \end{align}
-
+%
 It is also not hard to show that
-
+%
 \begin{subequations}
 \label{eqn:hoopSpring:10}
 \begin{align}
@@ -167,9 +167,9 @@ A^n & 0
 \end{bmatrix}.
 \end{align}
 \end{subequations}
-
+%
 Together this allows for the power series expansion
-
+%
 \begin{align}\label{eqn:hoopSpring:11}
 e^{Bt} &=
 \begin{bmatrix}
@@ -177,9 +177,9 @@ e^{Bt} &=
 \sinh(t \sqrt{A}) \inv{\sqrt{A}} & \cosh(t \sqrt{A})
 \end{bmatrix}.
 \end{align}
-
+%
 All of the remaining sub matrix expansions should be straightforward to calculate provided the eigenvalues and vectors of \(A\) are calculated.  Specifically, suppose that we have
-
+%
 \begin{align}\label{eqn:hoopSpring:12}
 A = U
 \begin{bmatrix}
@@ -188,7 +188,7 @@ A = U
 \end{bmatrix}
 U^{-1}.
 \end{align}
-
+%
 Then all the perhaps non-obvious functions of matrices expand to just
 \begin{subequations}
 \label{eqn:hoopSpring:13}
@@ -225,5 +225,5 @@ U^{-1} \\
 U^{-1}.
 \end{align}
 \end{subequations}
-
+%
 An interesting question would be how are the eigenvalues and eigenvectors changed with each small change to the initial position \(\Bx_0\) in phase space.  Can these be related to each other?

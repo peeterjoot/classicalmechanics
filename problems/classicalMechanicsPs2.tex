@@ -201,7 +201,12 @@ The conserved momentum followed from a Noether's argument where we compute
 \ddt{} \left( \PD{\qdot_i'}{\LL'} \PD{\epsilon}{q_i'} \right),
 \end{dmath}
 %
-where it has been assumed that a perturbed Lagrangian \(\LL'(\epsilon) = \LL(q_i'(\epsilon), \qdot_i'(\epsilon), t)\) also satisfies the Euler Lagrange equations using the transformed coordinates.  With the coordinates transformed by a shift along some constant direction \(\Ba\) as in
+where it has been assumed that a perturbed Lagrangian
+\begin{equation}\label{eqn:classicalMechanicsPs2:610a}
+\LL'(\epsilon) = \LL(q_i'(\epsilon), \qdot_i'(\epsilon), t),
+\end{equation}
+also satisfies the Euler Lagrange equations using the transformed coordinates.  
+With the coordinates transformed by a shift along some constant direction \(\Ba\) as in
 %
 \begin{dmath}\label{eqn:classicalMechanicsPs2:630}
 \Bx' = \Bx + \epsilon \Ba,
@@ -535,22 +540,22 @@ So we have
 %
 \begin{equation}\label{eqn:classicalMechanicsPs2:1010}
 \begin{aligned}
-\BM &=
-m r
+\frac{\BM}{mr} &=
+%m r
 \begin{bmatrix}
 \sin\theta \sin\phi v_z - \cos\theta v_y \\
 \cos\theta v_x - \sin\theta \cos\phi v_z \\
 \sin\theta \cos\phi v_y - \sin\theta \sin\phi v_x
 \end{bmatrix} \\
 &=
-m r
+%m r
 \begin{bmatrix}
 S_\theta S_\phi (\rdot C_\theta -r S_\theta \thetadot) - C_\theta (\rdot S_\theta S_\phi + r C_\theta S_\phi \thetadot + r S_\theta C_\phi \phidot) \\
 C_\theta (\rdot S_\theta C_\phi + r C_\theta C_\phi \thetadot - r S_\theta S_\phi \phidot) - S_\theta C_\phi (\rdot C_\theta -r S_\theta \thetadot) \\
 S_\theta C_\phi (\rdot S_\theta S_\phi + r C_\theta S_\phi \thetadot + r S_\theta C_\phi \phidot) - S_\theta S_\phi (\rdot S_\theta C_\phi + r C_\theta C_\phi \thetadot - r S_\theta S_\phi \phidot)
 \end{bmatrix} \\
 &=
-m r
+%m r
 \begin{bmatrix}
 \cancel{\rdot C_\theta S_\theta S_\phi }
 - r \thetadot S_\theta^2 S_\phi
@@ -572,7 +577,7 @@ m r
 + r \phidot S_\theta^2 S_\phi^2
 \end{bmatrix} \\
 &=
-m r
+%m r
 \begin{bmatrix}
 - r \thetadot S_\phi
 - r \phidot S_\theta C_\theta C_\phi
@@ -581,7 +586,7 @@ m r
 - r \phidot S_\theta C_\theta S_\phi
 \\
 + r \phidot S_\theta^2
-\end{bmatrix} \\
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
