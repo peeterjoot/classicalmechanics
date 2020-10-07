@@ -539,24 +539,25 @@ So we have
 \end{dmath}
 %
 \begin{equation}\label{eqn:classicalMechanicsPs2:1010}
-\begin{aligned}
-\frac{\BM}{mr} &=
+\frac{\BM}{mr} =
 %m r
 \begin{bmatrix}
 \sin\theta \sin\phi v_z - \cos\theta v_y \\
 \cos\theta v_x - \sin\theta \cos\phi v_z \\
 \sin\theta \cos\phi v_y - \sin\theta \sin\phi v_x
-\end{bmatrix} \\
-&=
-%m r
+\end{bmatrix}.
+\end{equation}
+Expanding this is a bit of a mess, but it eventually simplifies.  We start with
+\begin{equation}\label{eqn:classicalMechanicsPs2:1010a}
 \begin{bmatrix}
 S_\theta S_\phi (\rdot C_\theta -r S_\theta \thetadot) - C_\theta (\rdot S_\theta S_\phi + r C_\theta S_\phi \thetadot + r S_\theta C_\phi \phidot) \\
 C_\theta (\rdot S_\theta C_\phi + r C_\theta C_\phi \thetadot - r S_\theta S_\phi \phidot) - S_\theta C_\phi (\rdot C_\theta -r S_\theta \thetadot) \\
 S_\theta C_\phi (\rdot S_\theta S_\phi + r C_\theta S_\phi \thetadot + r S_\theta C_\phi \phidot) - S_\theta S_\phi (\rdot S_\theta C_\phi + r C_\theta C_\phi \thetadot - r S_\theta S_\phi \phidot)
-\end{bmatrix} \\
-&=
-%m r
-\begin{bmatrix}
+\end{bmatrix},
+\end{equation}
+then
+\begin{equation}\label{eqn:classicalMechanicsPs2:1010b}
+\begin{bsmallmatrix}
 \cancel{\rdot C_\theta S_\theta S_\phi }
 - r \thetadot S_\theta^2 S_\phi
 - \cancel{\rdot S_\theta C_\theta S_\phi }
@@ -575,9 +576,10 @@ S_\theta C_\phi (\rdot S_\theta S_\phi + r C_\theta S_\phi \thetadot + r S_\thet
 - \cancel{\rdot S_\theta^2 S_\phi C_\phi }
 - \cancel{r \thetadot C_\theta S_\theta S_\phi C_\phi }
 + r \phidot S_\theta^2 S_\phi^2
-\end{bmatrix} \\
-&=
-%m r
+\end{bsmallmatrix},
+\end{equation}
+and finally
+\begin{equation}\label{eqn:classicalMechanicsPs2:1010c}
 \begin{bmatrix}
 - r \thetadot S_\phi
 - r \phidot S_\theta C_\theta C_\phi
@@ -587,7 +589,6 @@ S_\theta C_\phi (\rdot S_\theta S_\phi + r C_\theta S_\phi \thetadot + r S_\thet
 \\
 + r \phidot S_\theta^2
 \end{bmatrix}.
-\end{aligned}
 \end{equation}
 %
 In matrix form, we have (and can read off \(M_x, M_y, M_z\))
@@ -619,7 +620,8 @@ We have also been asked to find \(\BM^2\) and can write this as a quadratic form
 \begin{bmatrix}
 -  2 \sin\phi  & 2 \cos\phi  & 0 \\
 - \sin(2\theta) \cos\phi & - \sin(2\theta) \sin\phi  & 1 - \cos(2\theta)
-\end{bmatrix}
+\end{bmatrix} \times \\
+&\quad
 \begin{bmatrix}
 -  2 \sin\phi & - \sin(2\theta) \cos\phi \\
   2 \cos\phi & - \sin(2\theta) \sin\phi \\
@@ -628,7 +630,7 @@ We have also been asked to find \(\BM^2\) and can write this as a quadratic form
 \begin{bmatrix}
 \thetadot \\
 \phidot
-\end{bmatrix} \\
+\end{bmatrix}  \\
 &=
 \inv{4} m^2 r^4
 \begin{bmatrix}
@@ -641,7 +643,7 @@ We have also been asked to find \(\BM^2\) and can write this as a quadratic form
 \begin{bmatrix}
 \thetadot \\
 \phidot
-\end{bmatrix}  \\
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %

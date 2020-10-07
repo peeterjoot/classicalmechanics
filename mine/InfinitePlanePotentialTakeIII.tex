@@ -54,40 +54,36 @@ Attempting to let \textit{Mathematica} evaluate this takes a long time.  Long en
 
 Instead, first evaluating the z' integral we have
 %
-\begin{equation}\label{eqn:InfinitePlanePotentialTakeIII:70}
+\begin{dmath}\label{eqn:InfinitePlanePotentialTakeIII:70}
 \phi (z, \epsilon , r)=\frac{2 \pi  G \sigma }{\epsilon }
 \int _{r' = 0}^{c/\epsilon }\left(\ln \left(\sqrt{\left(r'\right)^2+z^2}+z\right)-\ln \left(\sqrt{\left(r'\right)^2+(z-\epsilon )^2}+z-\epsilon \right)\right)
 dr'
-\end{equation}
+\end{dmath}
 %
 This second integral can then be evaluated in reasonable time:
 %
-\begin{equation}\label{eqn:InfinitePlanePotentialTakeIII:90}
-\begin{aligned}
+\begin{dmath}\label{eqn:InfinitePlanePotentialTakeIII:90}
 \phi (z, \epsilon )
 =
 \frac{2 \pi  G \sigma }{\epsilon ^2}
 \Biggl(
-&c \ln \left(\frac{\sqrt{\frac{c^2}{\epsilon ^2}+z^2}+z}{\sqrt{\frac{c^2}{\epsilon ^2}+(z-\epsilon )^2}+z-\epsilon }\right)
-+ \epsilon z \ln \left(\frac{(z-\epsilon ) \left(\sqrt{c^2+z^2 \epsilon ^2}+c\right)}{z}\right) \\
-&+ \epsilon (\epsilon -z) \ln \left(\sqrt{c^2+\epsilon ^2 (z-\epsilon )^2}+c\right)
+c \ln \left(\frac{\sqrt{\frac{c^2}{\epsilon ^2}+z^2}+z}{\sqrt{\frac{c^2}{\epsilon ^2}+(z-\epsilon )^2}+z-\epsilon }\right)
++ \epsilon z \ln \left(\frac{(z-\epsilon ) \left(\sqrt{c^2+z^2 \epsilon ^2}+c\right)}{z}\right) 
++ \epsilon (\epsilon -z) \ln \left(\sqrt{c^2+\epsilon ^2 (z-\epsilon )^2}+c\right)
 - \epsilon^2  \ln (\epsilon  (z-\epsilon ))
 \Biggr).
-\end{aligned}
-\end{equation}
+\end{dmath}
 %
 Grouping the log terms we have
 %
-\begin{equation}\label{eqn:InfinitePlanePotentialTakeIII:90b}
-\begin{aligned}
+\begin{dmath}\label{eqn:InfinitePlanePotentialTakeIII:90b}
 \phi (z, \epsilon )
 =
 2 \pi  G \sigma  \Biggl(
-&\frac{c}{\epsilon ^2}\ln \left(\frac{\sqrt{c^2+z^2 \epsilon ^2}+z \epsilon }{\sqrt{c^2+\epsilon ^2(z-\epsilon )^2}+\epsilon (z-\epsilon )}\right)
-+ \frac{z}{\epsilon } \ln \left(\frac{(z-\epsilon ) \left(\sqrt{c^2+z^2 \epsilon ^2}+c\right)}{z\left(\sqrt{c^2+\epsilon ^2 (z-\epsilon )^2}+c\right)}\right) \\
-&+ \ln \left(\frac{\sqrt{c^2+\epsilon ^2 (z-\epsilon )^2}+c}{\epsilon  (z-\epsilon )}\right)
+\frac{c}{\epsilon ^2}\ln \left(\frac{\sqrt{c^2+z^2 \epsilon ^2}+z \epsilon }{\sqrt{c^2+\epsilon ^2(z-\epsilon )^2}+\epsilon (z-\epsilon )}\right)
++ \frac{z}{\epsilon } \ln \left(\frac{(z-\epsilon ) \left(\sqrt{c^2+z^2 \epsilon ^2}+c\right)}{z\left(\sqrt{c^2+\epsilon ^2 (z-\epsilon )^2}+c\right)}\right) 
++ \ln \left(\frac{\sqrt{c^2+\epsilon ^2 (z-\epsilon )^2}+c}{\epsilon  (z-\epsilon )}\right)
 \Biggr).
-\end{aligned}
-\end{equation}
+\end{dmath}
 %
 Does this have a limit as \(\epsilon \rightarrow 0\)?  No, the last term is clearly divergent for \(c \neq 0\).

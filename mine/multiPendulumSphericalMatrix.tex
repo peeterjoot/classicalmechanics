@@ -2,18 +2,18 @@
 % Copyright © 2012 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-
+%
 %
 %
 %\input{../peeter_prologue_widescreen.tex}
 %\input{../peeter_prologue_print.tex}
-
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % based on: ../gabook/multiPendulumSpherical2.tex
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%
 %% The new paper is a definite improvement.  I think all is not lost.  There is a
 %% gem in your work, though unpolished and uncut.  But if we trim the excess
 %% material and focus on what facets to highlight, the value of your work would
@@ -83,10 +83,10 @@
 %% insights.  It would a sad loss if nobody gets to read your results.
 %%
 %%
-
+%
 \label{chap:multiPendulumSphericalMatrix}
 %\revisionInfo{multiPendulumSphericalMatrix.tex}
-
+%
 %I quickly realized when doing this that everything I had done with my GA
 %multivector approach can be done in exactly the same way with the
 %traditional coordinate representation.  It will produce exactly the
@@ -95,12 +95,12 @@
 %multivector matrix formalism, then this particular worked example
 %does not likely supply anything really new-not-already-done worthy of a
 %scientific style paper.
-
-
+%
+%
 %This was an attempt to cleanup my previous N spherical pendulum treatment (ie. equations of motion for an idealized chain). Id used matrixes of multivector elements to arrive at an explicit expression for the kinetic energy for this system and then evaluated the Euler-Lagrange equations. I thought initially that this was pretty nifty, but as I was cleaning this up for an attempted arxiv post, I rudely realized that exactly the same result follows by factoring our a column vector of generalized coordinates (an angular velocity vector of sorts) from the scalar energy expressions (factoring a one by one matrix of scalar values into a product of matrixes).
 %
 %No use of geometric algebra is required. Without the use of geometic algebra with its compact representation for the spherical parameterized points on the unit sphere, I dont think Id have even attempted this generalized problem. However, the idea that makes the problem tractable is completely independent of GA, and renders the paper as written just an obfuscated way to tackle it (since only a handful of people know this algebraic approach).
-
+%
 % REWORK: CHANGE THE FOCUS TO WHAT IS NEW.  PUTTING GA ELEMENTS IN MATRIXES.
 % formerly not possible with vector elements since there was no product
 % possible.
@@ -111,7 +111,7 @@
 %Derivations of the equations of motion for the double planar pendulum, and for the single spherical pendulum are readily found as examples or problems in Lagrangian mechanics texts.  The generalization of this, treating the double or multiple pendulums, with the planar constraint removed is less common.  It is shown here that Geometric Algebra is an effective way to tackle the formulation of the equations of motion for the general unconstrained multiple pendulum problem.  The end result is free of any Geometric Algebra, with the equations of motion expressed as a single non-linear matrix algebra equation.
 %Geometric algebra provides a formalism that allows for coordinate and matrix free representations of vectors, linear transformations, and other mathematical structures.  The replacement of matrix techniques with direct geometric algebra methods is a well studied field, but this need not be an exclusive replacement.  While the geometric algebra multivector space does not constitute a field, operations on multivector element matrices can be defined in a consistent fashion.  This use of geometric algebraic objects in matrices provides a hybrid mathematical framework with immediate applications to mathematical physics.
 The dynamics of chain like objects can be idealized as a multiple pendulum, treating the system as a set of point masses, joined by rigid massless connecting rods, and frictionless pivots.  The double planar pendulum and single mass spherical pendulum problems are well treated in Lagrangian physics texts, but due to complexity a similar treatment of the spherical N-pendulum problem is not pervasive.  We show that this problem can be tackled in a direct fashion, even in the general case with multiple masses and no planar constraints.  A matrix factorization of the kinetic energy into allows an explicit and compact specification of the Lagrangian.  Once that is obtained the equations of motion for this generalized pendulum system follow directly.
-
+%
 %1. Around 250 words.
 %2. Begins with 1-2 sentences of Introduction, usually specific information.
 %3. The bulk of the Abstract is the data. This is told by a combination of the
@@ -123,7 +123,7 @@ The dynamics of chain like objects can be idealized as a multiple pendulum, trea
 %5. Somewhere in the abstract (either at the very beginning or very end) is usually a
 %phrase/sentence talking about the importance of work being done, or how it
 %affects the world/science.
-
+%
 %QQ:
 %: %P.S. I am not a fan of mixing matrices and vectors, because matrices with vector
 %: %arguments are not, I believe, properly defined in general.  I prefer to stick
@@ -140,7 +140,7 @@ The dynamics of chain like objects can be idealized as a multiple pendulum, trea
 %: it is an really over specified with too many degrees of freedom.
 %: However, the multivector matrix approach developed there appears to be
 %: quite an effective and powerful tool.
-
+%
 \section{Introduction}
 %2.  An article must have a good introduction.  Notes and assumptions must be
 %discussed in the body within the sections and not labeled as a separate
@@ -175,7 +175,7 @@ The dynamics of chain like objects can be idealized as a multiple pendulum, trea
 %This is the most difficult part of the introduction.  It shall display your
 %mastery and authority in your subject area.
 %
-
+%
 Derivation of the equations of motion for a planar motion constrained double pendulum system and a single spherical pendulum system are given as problems or examples in many texts covering Lagrangian mechanics.  Setup of the Lagrangian, particularly an explicit specification of the system kinetic energy, is the difficult aspect of the multiple mass pendulum problem.  Each mass in the system introduces additional interaction coupling terms, complicating the kinetic energy specification.  In this paper, we use matrix algebra to determine explicitly the Lagrangian for the spherical N pendulum system, and to evaluate the Euler-Lagrange equations for the system.
 
 It is well known that the general specification of the kinetic energy for a system of independent point masses takes the form of a symmetric quadratic form \citep{goldstein1951cm} \citep{hestenes1999nfc}.  However, actually calculating that energy explicitly for the general N-pendulum is likely thought too pedantic for even the most punishing instructor to inflict on students as a problem or example.
@@ -185,7 +185,7 @@ Given a \(3 \times 1\) coordinate vector of velocity components for each mass re
 This paper is primarily a brute force and direct attack on the problem.  It contains no new science, only a systematic treatment of a problem that is omitted from mechanics texts, yet conceptually simple enough to deserve treatment.
 
 The end result of this paper is a complete and explicit specification of the Lagrangian and evaluation of the Euler-Lagrange equations for the chain-like N spherical pendulum system.  While this end result is essentially nothing more than a non-linear set of coupled differential equations, it is believed that the approach used to obtain it has some elegance.  Grouping all the rotational terms of the kinetic into a symmetric kernel appears to be a tidy way to tackle multiple discrete mass problems.  At the very least, the calculation performed can show that a problem perhaps thought to be too messy for a homework exercise yields nicely to an organized and systematic attack.
-
+%
 % TODO:
 %The last part of the introduction is a paragraph enumerating the sections of the
 %paper, pointing out important results.  In movies, this is a preview or trailer.
@@ -195,15 +195,15 @@ The end result of this paper is a complete and explicit specification of the Lag
 %
 % WHERE:
 %The standard orthonormal basis vectors will be denoted \(\Be_1, \Be_2, \Be_3\) with \(\Be_3\) upwards opposing a constant gravitational force of magnitude \(g\).
-
+%
 \section{Diving right in}
-
+%
 We make the simplifying assumptions of point masses, rigid massless connecting rods, and frictionless pivots.
-
+%
 \subsection{Single spherical pendulum}
-
+%
 Using polar angle \(\theta\) and azimuthal angle \(\phi\), and writing \(S_\theta = \sin\theta\), \(C_\phi = \cos\phi\) and so forth, we have for the coordinate vector on the unit sphere
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:250}
 \begin{aligned}
 \rcap =
@@ -214,17 +214,17 @@ S_\phi S_\theta \\
 \end{bmatrix}.
 \end{aligned}
 \end{equation}
-
+%
 The Lagrangian for the pendulum is then
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:251}
 \begin{aligned}
 \LL = \inv{2} m l \dot{\rcap}^T \dot{\rcap} - m g l C_\theta.
 \end{aligned}
 \end{equation}
-
+%
 This is somewhat unsatisfying since the unit vector derivatives have not been evaluated.  Doing so we get
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:260}
 \begin{aligned}
 \dot{\rcap} =
@@ -235,17 +235,17 @@ S_\phi C_\theta \dot{\theta} + C_\phi S_\theta \dot{\phi} \\
 \end{bmatrix}.
 \end{aligned}
 \end{equation}
-
+%
 This however, is an ugly beastie to take the norm of as is.  It is straightforward to show that this norm is just
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:261}
 \begin{aligned}
 \dot{\rcap}^\T \dot{\rcap} = \dot{\theta}^2 + S_\theta^2 \dot{\phi}^2,
 \end{aligned}
 \end{equation}
-
+%
 however, the brute force multiplication that leads to this result is not easily generalized to the multiple pendulum problem.  Instead of actually expanding this now, lets defer that until later and instead write for a coordinate vector of angular velocity components
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:262}
 \begin{aligned}
 \Omega =
@@ -255,9 +255,9 @@ however, the brute force multiplication that leads to this result is not easily 
 \end{bmatrix}.
 \end{aligned}
 \end{equation}
-
+%
 Now the unit polar derivative \eqnref{eqn:multiPendulumSphericalMatrix:260} can be factored as
-
+%
 \begin{subequations}
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:260b}
 \begin{aligned}
@@ -272,9 +272,9 @@ C_\phi C_\theta & S_\phi C_\theta & -S_\theta \\
 \end{aligned}
 \end{equation}
 \end{subequations}
-
+%
 Our Lagrangian now takes the explicit form
-
+%
 \begin{subequations}
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:251b}
 \begin{aligned}
@@ -287,7 +287,7 @@ A A^\T &=
 \end{aligned}
 \end{equation}
 \end{subequations}
-
+%
 \subsection{Spherical double pendulum}
 %
 %A multiple (two) particle spherical pendulum is depicted in \cref{fig:pendulumDouble}
@@ -298,21 +298,21 @@ A A^\T &=
 %\caption{Double spherical pendulum.}\label{fig:pendulumDouble}
 %\end{figure}
 %
-
+%
 Before generalizing to N links, consider the double pendulum.  Let the position of each of the k-th mass (with \( k = 1,2 \)) be
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:700}
 \Bu_k = \Bu_{k-1} + l_k \rcap_k = \sum_{j = 1}^k l_k \rcap_k
 \end{equation}
-
+%
 The unit vectors from the origin to the first mass, or from the first mass to the second have derivatives
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:720}
 \dot{\rcap}_k = {A_k}^\T \dot{\BTheta}_k,
 \end{equation}
-
+%
 where
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:600}
 \begin{aligned}
 A_k
@@ -328,15 +328,15 @@ C_{\phi_k} C_{\theta_k} & S_{\phi_k} C_{\theta_k} & -S_{\theta_k} \\
 \end{bmatrix}.
 \end{aligned}
 \end{equation}
-
+%
 Since
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:740}
 \frac{d\Bu_k}{dt} = \sum_{j = 1}^k l_j A_j^\T \dot{\Theta}_j,
 \end{equation}
-
+%
 The squared velocity of each mass is
-
+%
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:760}
 \Abs{ \frac{d\Bu_k}{dt} }^2
 =
@@ -347,9 +347,9 @@ l_s
 A_r
 A_s^\T \dot{\Theta}_s.
 \end{dmath}
-
+%
 To see the structure of this product, it is helpful to expand this sum completely, something that is feasible for this \( N = 2 \) case.  First for \( k = 1 \) we have just
-
+%
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:780}
 \Abs{ \frac{d\Bu_1}{dt} }^2
 =
@@ -358,9 +358,9 @@ l_1^2
 A_1
 A_1^\T \dot{\Theta}_1,
 \end{dmath}
-
+%
 and for \( k = 2 \) we have
-
+%
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:800}
 \Abs{ \frac{d\Bu_2}{dt} }^2
 =
@@ -452,9 +452,9 @@ l_2 l_1 A_2 A_1^\T & l_2^2 A_2 A_2^\T
 \dot{\Theta}_2 \\
 \end{bmatrix}
 \end{dmath}
-
+%
 Observe that these can be summarized by writing
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:820}
 \begin{aligned}
 B_1^\T &=
@@ -475,9 +475,9 @@ B_k B_k^\T
 \dot{\Theta}
 \end{aligned}
 \end{equation}
-
+%
 The kinetic energy for particle one is
-
+%
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:840}
 K_1 = \inv{2} m_1
 \dot{\Theta}^\T
@@ -493,9 +493,9 @@ A_1^\T  & 0 \\
 \end{bmatrix}
 \dot{\Theta},
 \end{dmath}
-
+%
 and for the second particle
-
+%
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:860}
 K_2 = \inv{2} m_2
 \dot{\Theta}^\T
@@ -510,9 +510,9 @@ l_2 l_1 A_2 A_1^\T & l_2^2 A_2 A_2^\T
 \end{bmatrix}
 \dot{\Theta}.
 \end{dmath}
-
+%
 Summing these we have
-
+%
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:880}
 K =
 \inv{2}
@@ -523,15 +523,15 @@ m_2 l_2 l_1 A_2 A_1^\T & m_2 l_2^2 A_2 A_2^\T
 \end{bmatrix}
 \dot{\Theta}.
 \end{dmath}
-
+%
 For the mass sums let
-
+%
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:900}
 \mu_k \equiv \sum_{j=k}^2 m_j,
 \end{dmath}
-
+%
 so
-
+%
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:920}
 K =
 \inv{2}
@@ -542,48 +542,48 @@ K =
 \end{bmatrix}
 \dot{\Theta}.
 \end{dmath}
-
+%
 If the matrix of quadradic factors is designated \( Q \), so that
-
+%
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:940}
 K =
 \inv{2}
 \dot{\Theta}^\T Q
 \dot{\Theta},
 \end{dmath}
-
+%
 then the (i,j) element of the matrix Q is given by
-
+%
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:960}
 Q_{ij} =
 \mu_{\max(i,j)} l_i l_j A_i A_j^\T.
 \end{dmath}
-
+%
 For the potential energy, things are simplest if that energy is measured from the \( z = 0 \) plane.  The potential energy for mass 1 is
-
+%
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:980}
 T_1 = m_1 g l_1 \cos\theta_1,
 \end{dmath}
-
+%
 and the potential energy for mass 2 is
-
+%
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:1000}
 T_2 = m_2 g \lr{
 l_1 \cos\theta_1 +
 l_2 \cos\theta_2
 }.
 \end{dmath}
-
+%
 The total potential energy for the system is
-
+%
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:1020}
 T
 = (m_1 + m_2) g l_1 \cos\theta_1 + m_2 g l_2 \cos\theta_2
 = \sum_{k = 1}^2 \mu_k g l_k \cos\theta_k.
 \end{dmath}
-
+%
 \subsection{N spherical pendulum}
-
+%
 %4.  Make Section III as the meat of your article.  Divide this section into
 %three parts: A.  Single pendulum, B. Double Pendulum, C. N-Pendulum.  Since you
 %are not limited in the number of pages, subdivide each subsection into two: 1.
@@ -592,7 +592,7 @@ T
 %the two methods are equivalent, so that there is an assurance that the physics
 %is still correct despite the adoption of geometric algebra.
 %
-
+%
 %%%\subsubsection{The Lagrangian}
 %%%
 %%%The position vector for each particle can be expressed relative to the mass it is connected to (or the origin for the first particle), as in
@@ -608,9 +608,9 @@ T
 %%%Observe that the inner product is symmetric since \((A_k A_k^\T)^\T = A_k A_k^\T\).
 %%%
 %%%The normed velocity of the \(k\)th particle is then
-
+%
 Having written things out explicitly for the two particle case, the generalization to N particles is straightforward
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:370}
 \begin{aligned}
 \BTheta^\T &=
@@ -639,7 +639,7 @@ g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
 \LL &= K - \Phi.
 \end{aligned}
 \end{equation}
-
+%
 %%%where the zero matrix in \(B_k\) is a \(N-k\) by one zero.  Summing over all masses and adding in the potential energy we have for the Lagrangian of the system
 %%%
 %%%\begin{subequations}
@@ -718,7 +718,7 @@ g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
 %%%\end{subequations}
 %%%
 After some expansion one can find that the block matrices \(A_i A_j^\T\) contained in \(Q\) are
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:430}
 \begin{aligned}
 \gpgradezeroNoOp{A_i A_j^\T}
@@ -735,9 +735,9 @@ C_{\phi_j - \phi_i} S_{\theta_i} S_{\theta_j}
 \end{bmatrix}.
 \end{aligned}
 \end{equation}
-
+%
 The diagonal blocks are particularly simple and have no \(\phi\) dependence
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:440}
 \begin{aligned}
 \gpgradezeroNoOp{A_i A_i^\T}
@@ -765,17 +765,17 @@ It will be convenient to group the Euler-Lagrange equations into a column vector
 \grad_{\dot{\Bq}} \LL   \equiv {\begin{bmatrix} \PD{\dot{q}_r}{\LL} \end{bmatrix}}_r.
 \end{dmath}
 \end{subequations}
-
+%
 In this form the Euler-Lagrange equations take the form of a single vector equation
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:240}
 \begin{aligned}
 \grad_{\Bq} \LL   = \frac{d}{dt} \grad_{\dot{\Bq}} \LL.
 \end{aligned}
 \end{equation}
-
+%
 We are now set to evaluate these generalized phase space gradients.  For the acceleration terms our computation reduces nicely to a function of only \(\gpgradezeroNoOp{Q}\)
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:620}
 \begin{aligned}
 \frac{d}{dt} \PD{\dot{\theta}_a}{\LL}
@@ -803,9 +803,9 @@ We are now set to evaluate these generalized phase space gradients.  For the acc
 \right),
 \end{aligned}
 \end{equation}
-
+%
 and
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:640}
 \begin{aligned}
 \frac{d}{dt} \PD{\dot{\phi}_a}{\LL}
@@ -833,9 +833,9 @@ and
 \right).
 \end{aligned}
 \end{equation}
-
+%
 The last groupings above made use of \(\gpgradezeroNoOp{Q} = \gpgradezeroNoOp{Q}^\T\), and in particular \((\gpgradezeroNoOp{Q} + \gpgradezeroNoOp{Q}^\T)/2 = \gpgradezeroNoOp{Q}\).  We can now form a column matrix putting all the angular velocity gradient in a tidy block matrix representation
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:460}
 \begin{aligned}
 \grad_{\dot{\BTheta}} \LL =
@@ -847,25 +847,25 @@ The last groupings above made use of \(\gpgradezeroNoOp{Q} = \gpgradezeroNoOp{Q}
 \end{bmatrix}}_r = \gpgradezeroNoOp{Q} \dot{\BTheta}.
 \end{aligned}
 \end{equation}
-
+%
 A small aside on Hamiltonian form.  This velocity gradient is also the conjugate momentum of the Hamiltonian, so if we wish to express the Hamiltonian in terms of conjugate momenta, we require invertability of \(\gpgradezeroNoOp{Q}\) at the point in time that we evaluate things.  Writing
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:470}
 \begin{aligned}
 P_{\BTheta} = \grad_{\dot{\BTheta}} \LL,
 \end{aligned}
 \end{equation}
-
+%
 and noting that \((\gpgradezeroNoOp{Q}^{-1})^\T = \gpgradezeroNoOp{Q}^{-1}\), we get for the kinetic energy portion of the Hamiltonian
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:480}
 \begin{aligned}
 K = \inv{2} {P_{\BTheta}}^\T \gpgradezeroNoOp{Q}^{-1} P_{\BTheta}.
 \end{aligned}
 \end{equation}
-
+%
 Now, the invertiblity of \(\gpgradezeroNoOp{Q}\) cannot be taken for granted.  Even in the single particle case we do not have invertiblity.  For the single particle case we have
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:490}
 \begin{aligned}
 \gpgradezeroNoOp{Q} =
@@ -876,11 +876,11 @@ m l^2
 \end{bmatrix},
 \end{aligned}
 \end{equation}
-
+%
 so at \(\theta = \pm \pi/2\) this quadratic form is singular, and the planar angular momentum becomes a constant of motion.
-
+%
 Returning to the evaluation of the Euler-Lagrange equations, the problem is now reduced to calculating the right hand side of the following system
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:500}
 \begin{aligned}
 \frac{d}{dt} \left( \gpgradezeroNoOp{Q} \dot{\BTheta} \right) =
@@ -892,9 +892,9 @@ Returning to the evaluation of the Euler-Lagrange equations, the problem is now 
 \end{bmatrix}}_r.
 \end{aligned}
 \end{equation}
-
+%
 With back substitution of \eqnref{eqn:multiPendulumSphericalMatrix:430}, and \eqnref{eqn:multiPendulumSphericalMatrix:440} we have a complete and explicit matrix expansion of the left hand side.  For the right hand side taking the \(\theta_a\) and \(\phi_a\) derivatives respectively we get
-
+%
 \begin{subequations}
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:510}
 \begin{aligned}
@@ -926,14 +926,14 @@ With back substitution of \eqnref{eqn:multiPendulumSphericalMatrix:430}, and \eq
 \end{aligned}
 \end{equation}
 \end{subequations}
-
+%
 So to proceed we must consider the \(\gpgradezeroNoOp{A_r A_c^\T}\) partials.  A bit of thought shows that the matrices of partials above are mostly zeros.  Illustrating by example, consider \(\PDi{\theta_2}{\gpgradezeroNoOp{Q}}\), which in block matrix form is
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:530}
-\begin{aligned}
-\PD{\theta_2}{\gpgradezeroNoOp{Q}}
-=
-\begin{bmatrix}
+%\begin{aligned}
+%\PD{\theta_2}{\gpgradezeroNoOp{Q}}
+%=
+\begin{bsmallmatrix}
 0 & \inv{2} \mu_2 l_1 l_2 \gpgradezeroNoOp{A_1 \PD{\theta_2}{A_2}^\T} & 0 & \hdots & 0 \\
 \inv{2} \mu_2 l_2 l_1 \gpgradezeroNoOp{\PD{\theta_2}{A_2} A_1^\T} &
 \inv{2} \mu_2 l_2 l_2 \left(A_2 \PD{\theta_2}{A_2}^\T + \PD{\theta_2}{A_2} A_2^\T \right) &
@@ -942,22 +942,21 @@ So to proceed we must consider the \(\gpgradezeroNoOp{A_r A_c^\T}\) partials.  A
 0 & \inv{2} \mu_3 l_3 l_2 \gpgradezeroNoOp{A_3 \PD{\theta_2}{A_2}^\T} & 0 & \hdots & 0 \\
 0 & \vdots & 0 & \hdots & 0 \\
 0 & \inv{2} \mu_N l_N l_2 \gpgradezeroNoOp{A_N \PD{\theta_2}{A_2}^\T} & 0 & \hdots & 0 \\
-\end{bmatrix}.
-\end{aligned}
+\end{bsmallmatrix}.
+%\end{aligned}
 \end{equation}
-
+%
 Observe that the diagonal term has a scalar plus its transpose, so we can drop the one half factor and one of the summands for a total contribution to \(\PDi{\theta_2}{\LL}\) of just
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:660}
 \begin{aligned}
 \mu_2 {l_2}^2 {\dot{\BTheta}_2}^\T \gpgradezeroNoOp{\PD{\theta_2}{A_2} A_2^\T} \dot{\BTheta}_2.
 \end{aligned}
 \end{equation}
-
-Now consider one of the pairs of off diagonal terms.  Adding these we contributions to \(\PDi{\theta_2}{\LL}\) of
-
-\begin{equation}\label{eqn:multiPendulumSphericalMatrix:680}
-\begin{aligned}
+%
+Now consider one of the pairs of off diagonal terms.  Adding these contributions to \(\PDi{\theta_2}{\LL}\) of
+%
+\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:680}
 \inv{2} \mu_2 l_1 l_2
 {\dot{\BTheta}_1}^\T
 \gpgradezeroNoOp{A_1 \PD{\theta_2}{A_2}^\T}
@@ -966,26 +965,25 @@ Now consider one of the pairs of off diagonal terms.  Adding these we contributi
 {\dot{\BTheta}_2}^\T
 \gpgradezeroNoOp{\PD{\theta_2}{A_2} A_1^\T}
 \dot{\BTheta}_1
-&=
+=
 \inv{2} \mu_2 l_1 l_2
 {\dot{\BTheta}_1}^\T
 \left(
 A_1 \PD{\theta_2}{A_2}^\T
 +A_1 \PD{\theta_2}{A_2}^\T
 \right)
-\dot{\BTheta}_2 \\
-&=
+\dot{\BTheta}_2 
+=
 \mu_2 l_1 l_2
 {\dot{\BTheta}_1}^\T
 \gpgradezeroNoOp{
 A_1 \PD{\theta_2}{A_2}^\T
 }
 \dot{\BTheta}_2.
-\end{aligned}
-\end{equation}
-
+\end{dmath}
+%
 This has exactly the same form as the diagonal term, so summing over all terms we get for the position gradient components of the Euler-Lagrange equation just
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:540}
 \begin{aligned}
 \PD{\theta_a}{\LL}
@@ -1000,9 +998,9 @@ A_k \PD{\theta_a}{A_a}^\T
 -g \mu_a l_a \sin\theta_a,
 \end{aligned}
 \end{equation}
-
+%
 and
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:550}
 \begin{aligned}
 \PD{\phi_a}{\LL}
@@ -1016,11 +1014,11 @@ A_k \PD{\phi_a}{A_a}^\T
 \dot{\BTheta}_a.
 \end{aligned}
 \end{equation}
-
+%
 The only thing that remains to do is evaluate the \(\gpgradezeroNoOp{A_k \PDi{\phi_a}{A_a}^\T}\) matrices.
-
+%
 Utilizing \eqnref{eqn:multiPendulumSphericalMatrix:430}, one obtains easily
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:560}
 \begin{aligned}
 \gpgradezeroNoOp{ A_k \PD{\theta_r}{A_r}^\T }
@@ -1035,9 +1033,9 @@ S_{\theta_k} S_{\theta_r} S_{\phi_k - \phi_r} & S_{\theta_k} C_{\theta_r} C_{\ph
 \end{bmatrix},
 \end{aligned}
 \end{equation}
-
+%
 and
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:570}
 \begin{aligned}
 \gpgradezeroNoOp{ A_k \PD{\phi_r}{A_r}^\T }
@@ -1052,9 +1050,9 @@ S_{\theta_k} C_{\theta_r} C_{\phi_k - \phi_r} & S_{\theta_k} S_{\theta_r} S_{\ph
 \end{bmatrix}.
 \end{aligned}
 \end{equation}
-
+%
 The right hand side of the Euler-Lagrange equations now becomes
-
+%
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:580}
 \begin{aligned}
 \grad_{\BTheta} \LL =
@@ -1075,13 +1073,13 @@ The right hand side of the Euler-Lagrange equations now becomes
 \end{bmatrix}}_r.
 \end{aligned}
 \end{equation}
-
+%
 Between \eqnref{eqn:multiPendulumSphericalMatrix:580}, \eqnref{eqn:multiPendulumSphericalMatrix:460}, and a few other auxiliary relations, all above we have completed the task of evaluating the Euler-Lagrange equations for this multiple particle distinct mass system.  Unfortunately, just as the simple planar pendulum is a non-linear system, so is this.  Possible options for solution are numerical methods or solution restricted to a linear approximation in a small neighborhood of a particular phase space point.
-
+%
 \section{Summary}
-
+%
 Looking back it is hard to tell the trees from the forest.  Here is a summary of the results and definitions of importance.  First the Langrangian itself
-
+%
 \begin{subequations}
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:420s}
 \begin{aligned}
@@ -1117,11 +1115,10 @@ g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
 \end{aligned}
 \end{equation}
 \end{subequations}
-
+%
 Evaluating the Euler-Lagrange equations for the system, we get
-
-\begin{equation}\label{eqn:multiPendulumSphericalMatrix:580s}
-\begin{aligned}
+%
+\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:580s}
 0 = \grad_{\BTheta} \LL - \frac{d}{dt} \left(\grad_{\dot{\BTheta}} \LL \right) =
 \sum_k
 {\begin{bmatrix}
@@ -1140,12 +1137,12 @@ Evaluating the Euler-Lagrange equations for the system, we get
 \end{bmatrix}}_r
 -
 \frac{d}{dt} \left(
-\gpgradezeroNoOp{Q} \dot{\BTheta} \right) .
-\end{aligned}
-\end{equation}
-
+\gpgradezeroNoOp{Q} \dot{\BTheta} \right)
+.
+\end{dmath}
+%
 Making this explicit requires evaluation of some of the matrix products.  With verification in \nbref{multisphericalPendulum.nb}, those are
-
+%
 %\begin{subequations}
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:430s}
 \begin{aligned}
@@ -1184,22 +1181,23 @@ S_{\theta_k} C_{\theta_r} C_{\phi_k - \phi_r} & S_{\theta_k} S_{\theta_r} S_{\ph
 \end{aligned}
 \end{equation}
 %\end{subequations}
-
-
+%
+%
 \section{Conclusions and followup}
-
+%
 This treatment was originally formulated in terms of Geometric Algebra, and matrices of multivector elements were used in the derivation.  Being able to compactly specify 3D rotations in a polar form and then factor those vectors into multivector matrix products provides some interesting power, and leads to a structured approach that would perhaps not be obvious otherwise.
 
 In such a formulation the system ends up with a natural Hermitian formulation, where the Hermitian conjugation operations is defined with the vector products reversed, and the matrix elements transposed.  Because the vector product is not commutative, some additional care is required in the handling and definition of such matrices, but that is not an insurmountable problem.
 
-In retrospect it is clear that the same approach is possible with only matrices, and these notes are the result of ripping out all the multivector and Geometric Algebra references in a somewhat brute force fashion.  Somewhat sadly, the ``pretty'' Geometric Algebra methods originally being explored added some complexity to the problem that is not necessary.  It is common to find Geometric Algebra papers and texts show how superior the new non-matrix methods are, and the approach originally used had what was felt to an elegant synthesis of both matrix and GA methods.  It is believed that there is still a great deal of potential in such a multivector matrix approach, even if, as in this case, such methods only provide the clarity to understand how to tackle the problem with traditional means.
+In retrospect it is clear that the same approach is possible with only matrices, and these notes are the result of ripping out all the multivector and Geometric Algebra references in a somewhat brute force fashion.  Somewhat sadly, the ``pretty'' Geometric Algebra methods originally being explored added some complexity to the problem that is not necessary.  It is common to find Geometric Algebra papers and texts show how superior the new non-matrix methods are, and the approach originally used had what was felt to an elegant synthesis of both matrix and GA methods.  
+%It is believed that there is still a great deal of potential in such a multivector matrix approach, even if, as in this case, such methods only provide the clarity to understand how to tackle the problem with traditional means.
 
-Because the goals changed in the process of assembling these notes, the reader is justified to complain that this stops prematurely.  Lots of math was performed, and then things just end.  There ought to be some followup herein to actually do some physics with the end results obtained.  Sorry about that.
-
+%Because the goals changed in the process of assembling these notes, the reader is justified to complain that this stops prematurely.  Lots of math was performed, and then things just end.  There ought to be some followup herein to actually do some physics with the end results obtained.  Sorry about that.
+%
 %5.  Make section IV as your conclusions.  Write this in three paragraphs: (1)
 %summary of what you did, (2) your conclusion stating the geometric algebra
 %approach is indeed better than the standard approach and provide the reasons,
 %and (3) give a recommendation for future work.
-
+%
 \index{spherical pendulum}
 %\end{document}
