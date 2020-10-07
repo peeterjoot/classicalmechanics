@@ -1,19 +1,12 @@
 
 - Proofing checklist:
 
-   - Convert parts to chapters, first converting section -> subsection or paragraph.  review existing subsections/paragraphs.
-   - Fix gutter overflow issues.
-   - Blank line purge.
+   - Periods for examples, figures, section, subsection, paragraphs.
+   - (Convert parts to chapters), first converting section -> subsection or paragraph.  review existing subsections/paragraphs.
+   - remove unnecessary aligned
+   - switch align env to equation+aligned
    - Equation grammar.
    - Spell check.
-   - Periods for examples, figures, section, subsection, paragraphs.
-   - Run urlcheckerpy
-   - Run thethe.py
-   - Don't use dmath+aligned:  grep -nB1 {aligned} `cat thefiles` | grep {dmath}
-   - Look for dmaths in makeproblem, makeexamples, and itemize that lead to inset equation numbers.
-   - Check for equations that overlap equation numbers.
-   - Check the size of the figures.
-   - Check indexes for entries with different spelling/case.
    - Make sure all the indexing is done.  at least chapter,section,paragraph,problems
 
 

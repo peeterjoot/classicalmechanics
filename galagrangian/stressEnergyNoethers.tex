@@ -359,7 +359,7 @@ added to a single field variable Lagrangian.  This is
 - \sum_{\mu,\sigma} \PD{x^\sigma}{}\PD{(\PDi{x^\sigma}{\phi})}{}
 \left(
    \PD{\phi}{F^\mu} \PD{x^\mu}{\phi}
-   + \sum_\alpha \PD{(\PDi{x^\alpha}{\phi})}{F^\mu} \PD{x^\mu}{(\PDi{x^\alpha}{\phi})} 
+   + \sum_\alpha \PD{(\PDi{x^\alpha}{\phi})}{F^\mu} \PD{x^\mu}{(\PDi{x^\alpha}{\phi})}
 \right) \\
 &=
 \partial_\mu \PD{\phi}{F^\mu}
@@ -499,7 +499,7 @@ certainly have a zero variational derivative and a corresponding symmetry.
 \subsubsection{More examples to confirm the symmetry requirements}
 As a confirmation that a zero in \eqnref{eqn:stressEnergyNoethers:requiredZeroForSymmetry} requires linear field derivatives, lets try two more example calculations.
 
-First with non-linear powers of \(\phi\) to show that we have more freedom to construct the function first powers.  
+First with non-linear powers of \(\phi\) to show that we have more freedom to construct the function first powers.
 Let
 \begin{equation}\label{eqn:stressEnergyNoethers:520}
 \begin{aligned}
@@ -993,7 +993,7 @@ Whereas this unknown field variable derivative operator
 \end{aligned}
 \end{equation}
 %
-is somewhat like a velocity gradient with respect to the field variable.  
+is somewhat like a velocity gradient with respect to the field variable.
 It would be reasonable to expect that this will have a role in the field canonical momentum.
 %
 \subsection{In tensor form}
@@ -1220,12 +1220,12 @@ Writing this out in matrix form (with rows \(\mu\), and columns \(\nu\)), we hav
 \end{equation}
 %
 As mentioned by Jackson, the canonical energy momentum tensor is not necessarily symmetric, and we see that here.
-Do do however, have what is expected for the wave energy in the \(0,0\) element
+We have what is expected for the wave energy in the \(0,0\) element
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:1160}
 \begin{aligned}
 {T^0}_0 &= K + V  \\
-&= \inv{2} (\dotphi^2 + (\spacegrad \phi)^2)
+&= \inv{2} (\dotphi^2 + (\spacegrad \phi)^2).
 \end{aligned}
 \end{equation}
 %
@@ -1310,7 +1310,7 @@ and we can summarize the spacetime translation conservation equations by
 It has been assumed that \(T(\gamma_\mu)\) are four vectors.  If that is the
 cast we ought to have an invariant length.
 
-Let us calculate the vector square of \(T(\gamma_0)\).  
+Let us calculate the vector square of \(T(\gamma_0)\).
 Picking off first column of our tensor in \eqnref{eqn:stressEnergyNoethers:bigTensorMatrix}, we have
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:1260}
@@ -1500,7 +1500,7 @@ terms of the gradient, but what that is now is not clear.
 %
 \subsection{Momentum}
 %
-Now, let us look at the four vector \(T(\gamma_0) = \gamma_\mu{T^\mu}_0\) more carefully.  
+Now, let us look at the four vector \(T(\gamma_0) = \gamma_\mu{T^\mu}_0\) more carefully.
 We have seen the energy term of this, but have not looked at the spatial part (momentum).
 
 We can calculate the spatial component by wedging with the observer unit velocity \(\gamma_0\), and get
@@ -1708,7 +1708,7 @@ This suggests that the form for the relative momentum (spatial) vector for the f
 \end{aligned}
 \end{equation}
 %
-This has been written in a few different ways, looking for something familiar, and not really finding it.  
+This has been written in a few different ways, looking for something familiar, and not really finding it.
 It would be useful to
 revisit this after considering in detail wave momentum in a mechanical sense, perhaps with a limiting argument as given
 in \citep{goldstein1951cm} (ie: one dimensional Lagrangian density considering infinite sequence of springs in a line).
@@ -2116,22 +2116,27 @@ Expanding the divergence is messy but straightforward
 &=
 \frac{\Hbar^2}{4m}
 \gpgradezero{
-\spacegrad \left( \spacegrad \psi (\Ba \spacegrad \psi^\conj + \spacegrad \psi^\conj \Ba) + \spacegrad \psi^\conj
-(\Ba \spacegrad \psi
-+\spacegrad \psi \Ba)
-\right)
-- 2 \spacegrad(\spacegrad \psi \cdot \spacegrad \psi^\conj) \Ba
+   \spacegrad \left( \spacegrad \psi (\Ba \spacegrad \psi^\conj + \spacegrad \psi^\conj \Ba) + \spacegrad \psi^\conj
+   (\Ba \spacegrad \psi
+   +\spacegrad \psi \Ba)
+   \right)
+   - 2 \spacegrad(\spacegrad \psi \cdot \spacegrad \psi^\conj) \Ba
 } \\
    &\quad- \Ba \cdot \spacegrad \left( V \psi \psi^\conj + i\Hbar (\psi \dotpsi^\conj - \psi^\conj \dotpsi) \right) \\
 &=
 \frac{\Hbar^2}{4m}
 \Ba \cdot
 \gpgradeone{
-  \spacegrad \psi^\conj \lrspacegrad \spacegrad \psi
-+ \spacegrad \psi \lrspacegrad \spacegrad \psi^\conj
-+ \spacegrad ( \spacegrad \psi \spacegrad \psi^\conj )
-+ \spacegrad ( \spacegrad \psi^\conj \spacegrad \psi )
--2 \spacegrad(\spacegrad \psi \cdot \spacegrad \psi^\conj)
+     \spacegrad \psi^\conj \lrspacegrad \spacegrad \psi
+   + \spacegrad \psi \lrspacegrad \spacegrad \psi^\conj
+} \\
+&\quad+
+\frac{\Hbar^2}{4m}
+\Ba \cdot
+\gpgradeone{
+     \spacegrad ( \spacegrad \psi \spacegrad \psi^\conj )
+   + \spacegrad ( \spacegrad \psi^\conj \spacegrad \psi )
+   -2 \spacegrad(\spacegrad \psi \cdot \spacegrad \psi^\conj)
 } \\
 &\quad- \Ba \cdot \spacegrad \left( V \psi \psi^\conj + i\Hbar (\psi \dotpsi^\conj - \psi^\conj \dotpsi) \right) \\
 &=
@@ -2356,20 +2361,18 @@ This provides the adjoint energy momentum tensor, albeit in a form that looks li
 %
 We want to write this as a gradient of something, to determine the conserved quantity.  Getting part way is not too hard.
 %
-\begin{equation}\label{eqn:stressEnergyNoethers:2540}
-\begin{aligned}
+\begin{dmath}\label{eqn:stressEnergyNoethers:2540}
 \overbar{T}(\grad)
-&= \frac{\epsilon_0}{2}
+= \frac{\epsilon_0}{2}
 \mathLabelBox{
 \left(
 \gpgradeone{ G_\nu \lrgrad F^\nu } + \grad \cdot (F^\nu \wedge G_\nu)
 \right)
 }{\(\conj\)}
 + \grad \left( \frac{\epsilon_0}{2} (F^\nu \cdot G_\nu + F \cdot F) - A \cdot J/c \right)
-\end{aligned}
-\end{equation}
+\end{dmath}
 %
-It would be nice if these first two terms \(\conj\) cancel.  
+It would be nice if these first two terms \(\conj\) cancel.
 Can we be so lucky?
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:2560}

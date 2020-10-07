@@ -675,9 +675,9 @@ So exponentiating we can collect cosine and sine terms
 e^{At}
 &= I \left( 1 - \frac{k}{m} \frac{t^2}{2!} + \left( \frac{k}{m} \right)^2 \frac{t^4}{4!} + \cdots \right) \\
 &\quad
-+ A\sqrt{\frac{m}{k}} 
-\left( 
-   \sqrt{\frac{k}{m}} - \left(\sqrt{\frac{k}{m}}\right)^3 \frac{t^3}{3!} + \left(\sqrt{\frac{k}{m}}\right)^5 \frac{t^5}{5!} 
++ A\sqrt{\frac{m}{k}}
+\left(
+   \sqrt{\frac{k}{m}} - \left(\sqrt{\frac{k}{m}}\right)^3 \frac{t^3}{3!} + \left(\sqrt{\frac{k}{m}}\right)^5 \frac{t^5}{5!}
 \right) \\
 &=
 I \cos\left(\sqrt{\frac{k}{m}} t\right) + \sqrt{\frac{m}{k}} A \sin\left(\sqrt{\frac{k}{m}} t\right)
@@ -2485,7 +2485,8 @@ The remaining Hamiltonian equations are \(\PDi{\theta_a}{H} = -\dot{P}_{\theta_a
 \PD{\theta_a}{K}
 &=
 \Bp^\T \left( \inv{2} \PD{\theta_a}{(\calI^{-1})} Q \calI^{-1} \right) \Bp
-+\Bp^\T \left( \inv{2} \calI^{-1} \PD{\theta_a}{Q} \calI^{-1} \right) \Bp
++\Bp^\T \left( \inv{2} \calI^{-1} \PD{\theta_a}{Q} \calI^{-1} \right) \Bp \\
+&\quad
 +\Bp^\T \left( \inv{2} \calI^{-1} Q \PD{\theta_a}{(\calI^{-1})} \right) \Bp \\
 &=
 \Bp^\T \PD{\theta_a}{(\calI^{-1})}
@@ -3264,10 +3265,10 @@ Very messy.  Perhaps it would be better not even bothering to expand this explic
 %
 \begin{equation}\label{eqn:hamiltonian:623}
 \begin{aligned}
--\PD{\theta_c}{\calI} &\calI^{-1} \PD{\theta_r}{\calI} 
-= 
+-\PD{\theta_c}{\calI} &\calI^{-1} \PD{\theta_r}{\calI}
+=
 \frac{ -{m_2}^2 {l_1}^2 {l_2}^2
-(\delta_{c1} - \delta_{c2}) (\delta_{r1} - \delta_{r2}) \sin^2\delta}{{l_1}^2 {l_2}^2 m_2 (M - m_2 \cos^2\delta)}  
+(\delta_{c1} - \delta_{c2}) (\delta_{r1} - \delta_{r2}) \sin^2\delta}{{l_1}^2 {l_2}^2 m_2 (M - m_2 \cos^2\delta)}
 \begin{bmatrix}
 0 & 1 \\
 1 & 0
@@ -3279,7 +3280,7 @@ M {l_1}^2 & -m_2 l_1 l_2 \cos\delta \\
 \end{bmatrix} \\
 &=
 \frac{ -{m_2}^2 {l_1}^2 {l_2}^2
-(\delta_{c1} - \delta_{c2}) (\delta_{r1} - \delta_{r2}) \sin^2\delta}{{l_1}^2 {l_2}^2 m_2 (M - m_2 \cos^2\delta)} 
+(\delta_{c1} - \delta_{c2}) (\delta_{r1} - \delta_{r2}) \sin^2\delta}{{l_1}^2 {l_2}^2 m_2 (M - m_2 \cos^2\delta)}
 %\times \\
 %&\quad
 \begin{bmatrix}
@@ -3296,18 +3297,18 @@ With a sandwich of this between \(\dot{\BTheta}^\T\) and \(\dot{\BTheta}\) we ar
 -
 \dot{\BTheta}^\T &
 \PD{\theta_c}{\calI} \calI^{-1} \PD{\theta_r}{\calI}
-\dot{\BTheta} 
+\dot{\BTheta}
 =
 \frac{ -{m_2}^2 {l_1}^2 {l_2}^2
 (\delta_{c1} - \delta_{c2}) (\delta_{r1} - \delta_{r2}) \sin^2\delta}{{l_1}^2 {l_2}^2 m_2 (M - m_2 \cos^2\delta)} \\
 &\qquad
-\left( 
+\left(
    M {l_1}^2 {\dot{\theta}_1}^2
    -
    2
    m_2 l_1 l_2 \cos\delta \dot{\theta_1} \dot{\theta}_2 +
    %-m_2 l_2 l_1 \cos\delta \dot{\theta}_1 \dot{\theta}_2
-   + m_2 {l_2}^2 {\dot{\theta}_2}^2 
+   + m_2 {l_2}^2 {\dot{\theta}_2}^2
 \right).
 \end{aligned}
 \end{equation}
@@ -3327,7 +3328,7 @@ We have a matrix of these scalars over \(r,c\), and that is
 \sin^2\delta}{{l_1}^2 {l_2}^2 m_2 (M - m_2 \cos^2\delta)} \times \\
 &\qquad \left(
    M {l_1}^2 {\dot{\theta}_1}^2 - 2 m_2 l_1 l_2 \cos\delta \dot{\theta_1} \dot{\theta}_2
-   + m_2 {l_2}^2 {\dot{\theta}_2}^2  
+   + m_2 {l_2}^2 {\dot{\theta}_2}^2
 \right)
 \begin{bmatrix}
 -1 &  1 \\
@@ -3346,7 +3347,7 @@ A =
    B & C \\
    \calI^{-1} & -B
    \end{bmatrix}
-}{t=0} 
+}{t=0}
 \end{equation}
 \begin{equation}\label{eqn:hamiltonian:663b}
 \begin{aligned}
@@ -3376,12 +3377,12 @@ C &=
 &\quad
    \left(
       M {l_1}^2 {\dot{\theta}_1}^2 - 2 m_2 l_1 l_2 \cos\delta \dot{\theta_1} \dot{\theta}_2
-      + m_2 {l_2}^2 {\dot{\theta}_2}^2  
+      + m_2 {l_2}^2 {\dot{\theta}_2}^2
    \right)
 \begin{bmatrix}
 -1 & 1 \\
 1 & -1
-\end{bmatrix} 
+\end{bmatrix}
 %\Bigr)
 \\
 &\qquad+
@@ -3398,7 +3399,7 @@ M l_1 g \cos\theta_1 & 0 \\
 \begin{bmatrix}
 m_2 {l_2}^2 & -m_2 l_2 l_1 \cos\delta \\
 -m_2 l_1 l_2 \cos\delta & M {l_1}^2 \\
-\end{bmatrix} 
+\end{bmatrix}
 \end{equation}
 \begin{equation}\label{eqn:hamiltonian:663e}
 b =

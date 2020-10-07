@@ -338,7 +338,7 @@ Without really any loss of generality we can consider an action with a four dime
 \end{aligned}
 \end{equation}
 %
-For the first term we have \(a \cdot \grad \int d^4 x \LL( \overbar{A}^\beta, \partial_\alpha \overbar{A}^\beta)\), but this integral is our stationary action.  
+For the first term we have \(a \cdot \grad \int d^4 x \LL( \overbar{A}^\beta, \partial_\alpha \overbar{A}^\beta)\), but this integral is our stationary action.
 The remainder, to first order in the field variables, can then be expanded and integrated by parts
 %
 \begin{equation}\label{eqn:rotationCurrents:195}
@@ -364,11 +364,11 @@ The remainder, to first order in the field variables, can then be expanded and i
 \lr{
    \left(
       a^\mu
-      \partial_\mu \PD{A^\beta}{\LL} 
+      \partial_\mu \PD{A^\beta}{\LL}
    \right)
    \overbar{A^\beta}
    -
-   \left( 
+   \left(
       \partial_\mu a^\mu
       \PD{A^\beta}{\LL}
    \right)
@@ -556,11 +556,11 @@ The grouping of the first and third terms above simplifies nicely
 %
 \begin{equation}\label{eqn:rotationCurrents:335}
 \begin{aligned}
-\inv{2}
-\gpgradeone{ v^\beta (\grad \Pi_\beta) } +\inv{2} \gpgradeone{ (\grad \Pi_\beta) v^\beta }
+\inv{2} &
+\gpgradeone{ v^\beta (\grad \Pi_\beta) } +\inv{2} \gpgradeone{ (\grad \Pi_\beta) v^\beta } \\
 &=
 v^\beta (\grad \cdot \Pi_\beta)
-+\inv{2} \gpgradeone{ v^\beta (\grad \wedge \Pi_\beta) } +\gpgradeone{ (\grad \wedge \Pi_\beta) v^\beta }  \\
++\inv{2} \gpgradeone{ v^\beta (\grad \wedge \Pi_\beta) } +\gpgradeone{ (\grad \wedge \Pi_\beta) v^\beta }.
 \end{aligned}
 \end{equation}
 %
@@ -657,7 +657,7 @@ Summing over \(\mu\) for the gradient, this reproduces \eqnref{eqn:rotationCurre
 %
 Observe that the Euler-Lagrange field equations are implied in this relationship, so perhaps it has some utility.  Also note that while it is simpler to directly compute this, without having started with the canonical energy momentum tensor, we would not know how the two of these were related.
 %
-\section{Noether current for incremental Lorentz transformation}
+\section{Noether current, infinitesimal Lorentz transformation.}
 %
 Let us assume that we can use the exponential generator of rotations
 %
@@ -938,15 +938,19 @@ Performing a first order Taylor expansion of the Lagrangian around the stationar
 \PD{A^\beta}{\LL} \overbar{A}^\beta
 +\PD{(\partial_\alpha A^\beta)}{\LL} (\partial_\alpha \overbar{A}^\beta)
 \right) \\
-&= \int d^4 x (i \cdot x) \cdot \gamma^\mu \\
+&=
+\int d^4 x (i \cdot x) \cdot \gamma^\mu \\
 &\qquad
 \left(
-\left(\partial_\mu \PD{A^\beta}{\LL}\right) \overbar{A}^\beta
-+\PD{A^\beta}{\LL} \partial_\mu \overbar{A}^\beta
-+
-\left(\partial_\mu \PD{(\partial_\alpha A^\beta)}{\LL}\right) (\partial_\alpha \overbar{A}^\beta)
-+\PD{(\partial_\alpha A^\beta)}{\LL} \partial_\mu (\partial_\alpha \overbar{A}^\beta)
+   \left(\partial_\mu \PD{A^\beta}{\LL}\right) \overbar{A}^\beta
+   +\PD{A^\beta}{\LL} \partial_\mu \overbar{A}^\beta
 \right) \\
+&+\,\int d^4 x (i \cdot x) \cdot \gamma^\mu \\
+&\,\qquad
+\left(
+   \left(\partial_\mu \PD{(\partial_\alpha A^\beta)}{\LL}\right) (\partial_\alpha \overbar{A}^\beta)
+   +\PD{(\partial_\alpha A^\beta)}{\LL} \partial_\mu (\partial_\alpha \overbar{A}^\beta)
+\right).
 \end{aligned}
 \end{equation}
 %
