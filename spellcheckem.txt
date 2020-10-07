@@ -1,11 +1,3 @@
-FrontBackmatter/Bibliography.tex
-FrontBackmatter/Contents.tex
-FrontBackmatter/Dedication.tex
-FrontBackmatter/DirtyTitlepage.tex
-FrontBackmatter/Titleback.tex
-FrontBackmatter/Titlepage.tex
-FrontBackmatter/Version.tex
-FrontBackmatter/copyright.tex
 FrontBackmatter/preface.tex
 appendixchapters.tex
 chapters.tex
