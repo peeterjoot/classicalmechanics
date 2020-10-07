@@ -354,11 +354,13 @@ added to a single field variable Lagrangian.  This is
 - \sum_\sigma \PD{x^\sigma}{}\PD{(\PDi{x^\sigma}{\phi})}{}
 \right) \PD{x^\mu}{F^\mu} \\
 &=
-\sum_\mu \PD{x^\mu}{} \PD{\phi}{F^\mu}
+\sum_\mu \PD{x^\mu}{} \PD{\phi}{F^\mu} \\
+&\quad
 - \sum_{\mu,\sigma} \PD{x^\sigma}{}\PD{(\PDi{x^\sigma}{\phi})}{}
 \left(
-\PD{\phi}{F^\mu} \PD{x^\mu}{\phi}
-+ \sum_\alpha \PD{(\PDi{x^\alpha}{\phi})}{F^\mu} \PD{x^\mu}{(\PDi{x^\alpha}{\phi})} \right) \\
+   \PD{\phi}{F^\mu} \PD{x^\mu}{\phi}
+   + \sum_\alpha \PD{(\PDi{x^\alpha}{\phi})}{F^\mu} \PD{x^\mu}{(\PDi{x^\alpha}{\phi})} 
+\right) \\
 &=
 \partial_\mu \PD{\phi}{F^\mu}
 - \partial_\sigma \PD{(\partial_\sigma \phi)}{}
@@ -1209,14 +1211,12 @@ To compute the tensor, we first need
 Writing this out in matrix form (with rows \(\mu\), and columns \(\nu\)), we have
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:bigTensorMatrix}
-\begin{aligned}
-\begin{bmatrix}
+\begin{bsmallmatrix}
 \inv{2}(\dotphi^2 + \phi_x^2 + \phi_y^2 + \phi_z^2) & \dotphi \phi_x & \dotphi \phi_y & \dotphi \phi_z \\
 -\phi_x \dotphi & \inv{2}(-\dotphi^2 - \phi_x^2 + \phi_y^2 + \phi_z^2) & -\phi_x \phi_y & -\phi_x \phi_z \\
 -\phi_y \dotphi & -\phi_y \phi_x & \inv{2}(-\dotphi^2 + \phi_x^2 - \phi_y^2 + \phi_z^2) & -\phi_y \phi_z \\
 -\phi_z \dotphi & -\phi_z \phi_x & -\phi_z \phi_y & \inv{2}(-\dotphi^2 + \phi_x^2 + \phi_y^2 - \phi_z^2) \\
-\end{bmatrix}
-\end{aligned}
+\end{bsmallmatrix}
 \end{equation}
 %
 As mentioned by Jackson, the canonical energy momentum tensor is not necessarily symmetric, and we see that here.
@@ -1310,8 +1310,8 @@ and we can summarize the spacetime translation conservation equations by
 It has been assumed that \(T(\gamma_\mu)\) are four vectors.  If that is the
 cast we ought to have an invariant length.
 
-Let us calculate the vector square of \(T(\gamma_0)\).  Picking off first column
-of our tensor in \eqnref{eqn:stressEnergyNoethers:bigTensorMatrix}, we have
+Let us calculate the vector square of \(T(\gamma_0)\).  
+Picking off first column of our tensor in \eqnref{eqn:stressEnergyNoethers:bigTensorMatrix}, we have
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:1260}
 \begin{aligned}
@@ -1325,11 +1325,13 @@ of our tensor in \eqnref{eqn:stressEnergyNoethers:bigTensorMatrix}, we have
 - \phi_z^2 \dotphi^2 \\
 &=
  \inv{4}\left( \dotphi^4 + \phi_x^4 + \phi_y^4 + \phi_z^4 \right)
--\inv{2}\left(
-\dotphi^2 \phi_x^2
-+\dotphi^2 \phi_y^2
-+\dotphi^2 \phi_z^2
-\right)
+-\inv{2}
+\left(
+   \dotphi^2 \phi_x^2
+   +\dotphi^2 \phi_y^2
+   +\dotphi^2 \phi_z^2
+\right) \\
+&\quad
 +\inv{2}\left(
 +\phi_x^2 \phi_y^2
 +\phi_y^2 \phi_z^2

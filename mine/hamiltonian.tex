@@ -673,8 +673,12 @@ So exponentiating we can collect cosine and sine terms
 \begin{equation}\label{eqn:hamiltonian:183}
 \begin{aligned}
 e^{At}
-&= I \left( 1 - \frac{k}{m} \frac{t^2}{2!} + \left( \frac{k}{m} \right)^2 \frac{t^4}{4!} + \cdots \right)
-+ A\sqrt{\frac{m}{k}} \left( \sqrt{\frac{k}{m}} - \left(\sqrt{\frac{k}{m}}\right)^3 \frac{t^3}{3!} + \left(\sqrt{\frac{k}{m}}\right)^5 \frac{t^5}{5!} \right) \\
+&= I \left( 1 - \frac{k}{m} \frac{t^2}{2!} + \left( \frac{k}{m} \right)^2 \frac{t^4}{4!} + \cdots \right) \\
+&\quad
++ A\sqrt{\frac{m}{k}} 
+\left( 
+   \sqrt{\frac{k}{m}} - \left(\sqrt{\frac{k}{m}}\right)^3 \frac{t^3}{3!} + \left(\sqrt{\frac{k}{m}}\right)^5 \frac{t^5}{5!} 
+\right) \\
 &=
 I \cos\left(\sqrt{\frac{k}{m}} t\right) + \sqrt{\frac{m}{k}} A \sin\left(\sqrt{\frac{k}{m}} t\right)
 \end{aligned}
@@ -1763,15 +1767,15 @@ If this is somehow mystically free of all math mistakes then we have the final s
 &=
 \left(
 \cos(\omega t)
-\begin{bmatrix}
+\begin{bsmallmatrix}
 1 & 0 \\
 0 & 1
-\end{bmatrix}
+\end{bsmallmatrix}
 +\sin(\omega t)
-\begin{bmatrix}
+\begin{bsmallmatrix}
 0 & -1 \\
 1 & 0
-\end{bmatrix}
+\end{bsmallmatrix}
 \right)
 \left(
 \frac{\dot{\theta}(0)}{\omega}
@@ -1785,8 +1789,8 @@ If this is somehow mystically free of all math mistakes then we have the final s
 \frac{\dot{\theta}_0}{m l^2} \\
 \frac{g}{l} \sin\theta_0 \\
 \end{bmatrix}
-\right)
--\inv{\omega^2}
+\right) \\
+&\quad-\inv{\omega^2}
 \begin{bmatrix}
 \frac{\dot{\theta}_0}{m l^2} \\
 \frac{g}{l} \sin\theta_0 \\
@@ -1799,15 +1803,15 @@ If this is somehow mystically free of all math mistakes then we have the final s
 &=
 \left(
 \cosh(\omega t)
-\begin{bmatrix}
+\begin{bsmallmatrix}
 1 & 0 \\
 0 & 1
-\end{bmatrix}
+\end{bsmallmatrix}
 +\sinh(\omega t)
-\begin{bmatrix}
+\begin{bsmallmatrix}
 0 & 1 \\
 1 & 0
-\end{bmatrix}
+\end{bsmallmatrix}
 \right)
 \left(
 %\Bz_0
@@ -1821,8 +1825,8 @@ If this is somehow mystically free of all math mistakes then we have the final s
 \frac{\dot{\theta}_0}{m l^2} \\
 \frac{g}{l} \sin\theta_0 \\
 \end{bmatrix}
-\right)
-+\inv{\omega^2}
+\right) \\
+&\quad+\inv{\omega^2}
 \begin{bmatrix}
 \frac{\dot{\theta}_0}{m l^2} \\
 \frac{g}{l} \sin\theta_0 \\
@@ -1892,7 +1896,7 @@ Examining the polar solutions is something to return to.  For now, let us avoid 
 %
 These now expressing the dynamics of the system.  The first two equations are just the definitions of the canonical momenta that we started with using the Lagrangian.  Not surprisingly, but unfortunate, we have a non-linear system here like the planar rigid pendulum, so despite this being one of the most simple systems it does not look terribly tractable.  What would it take to linearize this system of equations?
 
-Lets write the state space vector for the system as
+Write the state space vector for the system as
 %
 \begin{equation}\label{eqn:hamiltonian:uoo7}
 \begin{aligned}
@@ -3103,7 +3107,7 @@ m_2 l_2 \sin{\theta_2} \\
 \end{equation}
 %
 Where \(A\) is still to be determined (from \eqnref{eqn:hamiltonian:voo29b}).
-
+%
 One of the elements of \(A\) are the matrix of potential derivatives.  These are
 %
 \begin{equation}\label{eqn:hamiltonian:potentialDerivatives}
@@ -3449,7 +3453,7 @@ In \citep{jackson1975cew}, the Lagrangian for a charged particle is given as (12
 \LL = -m c^2 \sqrt{1 - \Bu^2/c^2} + \frac{e}{c} \Bu \cdot \BA - e \Phi.
 \end{aligned}
 \end{equation}
-
+%
 Let us work in detail from this to the Lorentz force law and the Hamiltonian and from the Hamiltonian again to the Lorentz force law using the Hamiltonian equations.  We should get the same results in each case, and have enough details in doing so to render the text a bit more comprehensible.
 %
 \subsubsection{Canonical momenta}
@@ -3677,7 +3681,7 @@ Let us now go through the exercise of evaluating the Hamiltonian equations.  We 
 \end{equation}
 \end{subequations}
 %
-how far can we go?
+How far can we go?
 
 For the particle velocity we have no \(\Phi\) dependence and get
 %
@@ -3728,11 +3732,11 @@ The only untidy detail left is that \(\BP - e \BA/c\) does not look much like \(
 \end{equation}
 %
 This completes the exercise, and we have now obtained the momentum part of the Lorentz force law.  This is still unsatisfactory from a relativistic context since we do not have momentum and energy on equal footing.  We likely need to utilize a covariant Lagrangian and Hamiltonian formulation to fix up that deficiency.
-%
-\subsection{Covariant force free case}
-%
-TODO.
-%
-\subsection{Covariant Lorentz force}
-%
-TODO.
+%%
+%\subsection{Covariant force free case}
+%%
+%TODO.
+%%
+%\subsection{Covariant Lorentz force}
+%%
+%TODO.

@@ -6,7 +6,7 @@
    - Blank line purge.
    - Equation grammar.
    - Spell check.
-   - Periods for chapters, examples, figures, section, subsection, paragraphs.
+   - Periods for examples, figures, section, subsection, paragraphs.
    - Run urlcheckerpy
    - Run thethe.py
    - Don't use dmath+aligned:  grep -nB1 {aligned} `cat thefiles` | grep {dmath}
