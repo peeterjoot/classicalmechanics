@@ -3,8 +3,6 @@
 
    - Periods for examples, figures, section, subsection, paragraphs.
    - (Convert parts to chapters), first converting section -> subsection or paragraph.  review existing subsections/paragraphs.
-   - remove unnecessary aligned
-   - switch align env to equation+aligned
    - Equation grammar.
    - Spell check.
    - Make sure all the indexing is done.  at least chapter,section,paragraph,problems

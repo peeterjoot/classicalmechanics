@@ -23,9 +23,7 @@ equation Lagrangian, using a limiting argument applied to an infinite
 sequence of connected masses on springs.
 %
 \begin{equation}\label{eqn:wave_lagrangian:oneDimensionalWaveLagrangian}
-\begin{aligned}
 \LL = \inv{2} \left(\mu \left(\PD{t}{\eta}\right)^2 - Y \left(\PD{x}{\eta}\right)^2 \right)
-\end{aligned}
 \end{equation}
 %
 here \(\eta\) was the displacement from the equilibrium position, \(\mu\) is the mass line density and \(Y\) is Young's modulus.
@@ -53,9 +51,7 @@ Which has the expected form
 For a string or film or other wavy material with more degrees of freedom than a string with back and forth motion one can guess the Lagrangian from \eqnref{eqn:wave_lagrangian:oneDimensionalWaveLagrangian}.
 %
 \begin{equation}\label{eqn:wave_lagrangian:moreDimensionalWaveLagrangian}
-\begin{aligned}
 \LL = \inv{2} \left(\mu \left(\PD{t}{\eta}\right)^2 - Y \sum_i \left(\PD{x^i}{\eta}\right)^2 \right)
-\end{aligned}
 \end{equation}
 %
 Calculating the Euler-Lagrange equations gives
@@ -166,7 +162,6 @@ lead to equivalent results.
 Also notable perhaps is a comparison to the four potential Lagrangian in Goldstein:
 %
 \begin{equation}\label{eqn:waveLagrangian:200}
-\begin{aligned}
 \LL =
 -\inv{16\pi} \sum_{\mu,\nu} \left(
 \PD{x_\nu}{A_\mu} - \PD{x_\mu}{A_\nu}
@@ -178,7 +173,6 @@ Also notable perhaps is a comparison to the four potential Lagrangian in Goldste
 \right)^2
 +
 \sum_\mu \frac{j_\mu A_\mu}{c}
-\end{aligned}
 \end{equation}
 %
 This one is considerably more complex looking, and
@@ -192,19 +186,15 @@ equation guessed by comparison to the vibrating string.
 The non-relativistic Lagrangian given by Goldstein (problem 11.3) is
 %
 \begin{equation}\label{eqn:waveLagrangian:220}
-\begin{aligned}
 \LL = \frac{\Hbar^2}{2m}
 (\spacegrad \psi) \cdot (\spacegrad \psi^\conj) + V \psi \psi^\conj + {i \Hbar} \left( \psi \partial_t \psi^\conj - \psi^\conj \partial_t \psi \right)
-\end{aligned}
 \end{equation}
 %
 Again we see the square of the spatial gradient so we expect a (spatial) Laplacian
 in the field equation, which one has:
 %
 \begin{equation}\label{eqn:waveLagrangian:240}
-\begin{aligned}
 \left( \frac{-\Hbar^2}{2m} \spacegrad^2 + V \right) \psi = i \Hbar \PD{t}{\psi}
-\end{aligned}
 \end{equation}
 %
 \subsection{Relativistic case. Klein-Gordon}
@@ -234,17 +224,13 @@ taking vector roots of the scalar operators in the Klein-Gordon equation
 to yield:
 %
 \begin{equation}\label{eqn:waveLagrangian:300}
-\begin{aligned}
 i \Hbar \grad \psi = \pm m c \psi
-\end{aligned}
 \end{equation}
 %
 The Lagrangian for this field equation is
 %
 \begin{equation}\label{eqn:waveLagrangian:320}
-\begin{aligned}
 \LL = mc \overbar{\psi}\psi - {\inv{2}i\Hbar}(\overbar{\psi}\gamma^\mu (\partial_\mu\psi) - (\partial_\mu\overbar{\psi})\gamma^\mu \psi)
-\end{aligned}
 \end{equation}
 %
 Where \(\overbar{\psi} = \gamma_0 \tilde{\psi}\), and \(\tilde{\psi}\) is the reversed field spinor.

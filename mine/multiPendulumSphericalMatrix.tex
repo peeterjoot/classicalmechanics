@@ -218,9 +218,7 @@ S_\phi S_\theta \\
 The Lagrangian for the pendulum is then
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:251}
-\begin{aligned}
 \LL = \inv{2} m l \dot{\rcap}^T \dot{\rcap} - m g l C_\theta.
-\end{aligned}
 \end{equation}
 %
 This is somewhat unsatisfying since the unit vector derivatives have not been evaluated.  Doing so we get
@@ -239,9 +237,7 @@ S_\phi C_\theta \dot{\theta} + C_\phi S_\theta \dot{\phi} \\
 This however, is an ugly beastie to take the norm of as is.  It is straightforward to show that this norm is just
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:261}
-\begin{aligned}
 \dot{\rcap}^\T \dot{\rcap} = \dot{\theta}^2 + S_\theta^2 \dot{\phi}^2,
-\end{aligned}
 \end{equation}
 %
 however, the brute force multiplication that leads to this result is not easily generalized to the multiple pendulum problem.  Instead of actually expanding this now, lets defer that until later and instead write for a coordinate vector of angular velocity components
@@ -769,9 +765,7 @@ It will be convenient to group the Euler-Lagrange equations into a column vector
 In this form the Euler-Lagrange equations take the form of a single vector equation
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:240}
-\begin{aligned}
 \grad_{\Bq} \LL   = \frac{d}{dt} \grad_{\dot{\Bq}} \LL.
-\end{aligned}
 \end{equation}
 %
 We are now set to evaluate these generalized phase space gradients.  For the acceleration terms our computation reduces nicely to a function of only \(\gpgradezeroNoOp{Q}\)
@@ -851,17 +845,13 @@ The last groupings above made use of \(\gpgradezeroNoOp{Q} = \gpgradezeroNoOp{Q}
 A small aside on Hamiltonian form.  This velocity gradient is also the conjugate momentum of the Hamiltonian, so if we wish to express the Hamiltonian in terms of conjugate momenta, we require invertability of \(\gpgradezeroNoOp{Q}\) at the point in time that we evaluate things.  Writing
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:470}
-\begin{aligned}
 P_{\BTheta} = \grad_{\dot{\BTheta}} \LL,
-\end{aligned}
 \end{equation}
 %
 and noting that \((\gpgradezeroNoOp{Q}^{-1})^\T = \gpgradezeroNoOp{Q}^{-1}\), we get for the kinetic energy portion of the Hamiltonian
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:480}
-\begin{aligned}
 K = \inv{2} {P_{\BTheta}}^\T \gpgradezeroNoOp{Q}^{-1} P_{\BTheta}.
-\end{aligned}
 \end{equation}
 %
 Now, the invertiblity of \(\gpgradezeroNoOp{Q}\) cannot be taken for granted.  Even in the single particle case we do not have invertiblity.  For the single particle case we have
@@ -897,7 +887,6 @@ With back substitution of \eqnref{eqn:multiPendulumSphericalMatrix:430}, and \eq
 %
 \begin{subequations}
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:510}
-\begin{aligned}
 \PD{\theta_a}{\LL}
 =
 \inv{2} \dot{\BTheta}^\T
@@ -909,10 +898,8 @@ With back substitution of \eqnref{eqn:multiPendulumSphericalMatrix:430}, and \eq
 \end{bmatrix}}_{rc}
 \dot{\BTheta}
 -g \mu_a l_a \sin\theta_a,
-\end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:520}
-\begin{aligned}
 \PD{\phi_a}{\LL}
 =
 \inv{2} \dot{\BTheta}^\T
@@ -923,7 +910,6 @@ With back substitution of \eqnref{eqn:multiPendulumSphericalMatrix:430}, and \eq
 \right)
 \end{bmatrix}}_{rc}
 \dot{\BTheta}.
-\end{aligned}
 \end{equation}
 \end{subequations}
 %
@@ -949,9 +935,7 @@ So to proceed we must consider the \(\gpgradezeroNoOp{A_r A_c^\T}\) partials.  A
 Observe that the diagonal term has a scalar plus its transpose, so we can drop the one half factor and one of the summands for a total contribution to \(\PDi{\theta_2}{\LL}\) of just
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:660}
-\begin{aligned}
 \mu_2 {l_2}^2 {\dot{\BTheta}_2}^\T \gpgradezeroNoOp{\PD{\theta_2}{A_2} A_2^\T} \dot{\BTheta}_2.
-\end{aligned}
 \end{equation}
 %
 Now consider one of the pairs of off diagonal terms.  Adding these contributions to \(\PDi{\theta_2}{\LL}\) of

@@ -38,9 +38,7 @@ A first order Taylor expansion of a multivariable function
 takes the form
 %
 \begin{equation}\label{eqn:eulerLagrange:42}
-\begin{aligned}
 f(a^i + x^i) \approx f(a^i) + \sum_i (a^i + x^i) \left. \PD{x^i}{f} \right\vert_{x^i = a^i}
-\end{aligned}
 \end{equation}
 %
 In this case the \(x^i\) take the values \(q^i\), and \(\qdot^i\), so the first
@@ -85,15 +83,12 @@ For the optimal solution we want \(\delta S = 0\) for all possible paths \(n^i\)
 \(u' = \ndot^i\), and \(v = \partial \LL/{\partial \qdot^i}\)
 %
 \begin{equation}\label{eqn:eulerLagrange:82}
-\begin{aligned}
 \int u' v = u v - \int u v'
-\end{aligned}
 \end{equation}
 %
 The action variation is then
 %
 \begin{equation}\label{eqn:eulerLagrange:102}
-\begin{aligned}
 \delta S =
 + \sum_i \left. \left( n^i \PD{\qdot^i}{\LL} \right) \right\vert_{\partial \lambda}
 + \sum_i \int d\lambda n^i
@@ -101,16 +96,13 @@ The action variation is then
 \left. \PD{q^i}{\LL} \right\vert_{q^i = \barq^i}
 -\frac{d}{d\lambda} \left. \PD{\qdot^i}{\LL} \right\vert_{q^i = \barq^i}
 \right)
-\end{aligned}
 \end{equation}
 %
 The non-integral term is zero since by definition \(n^i = 0\) on the boundary of the desired integration region, so for the
 total variation to equal zero for all possible paths \(n^i\) one must have
 %
 \begin{equation}\label{eqn:euler_lagrange:eulerlag}
-\begin{aligned}
 \PD{q^i}{\LL} -\frac{d}{d\lambda} \PD{\qdot^i}{\LL} = 0.
-\end{aligned}
 \end{equation}
 %
 Evaluation of these derivatives at the optimal desired paths has been suppressed since these equations now define that path.
@@ -120,18 +112,14 @@ Evaluation of these derivatives at the optimal desired paths has been suppressed
 \citep{goldstein1951cm} calls the quantity \eqnref{eqn:euler_lagrange:eulerlag} the functional derivative
 %
 \begin{equation}\label{eqn:eulerLagrange:122}
-\begin{aligned}
 \frac{\delta S}{\delta q^i} = \PD{q^i}{\LL} -\frac{d}{d\lambda} \PD{\qdot^i}{\LL}
-\end{aligned}
 \end{equation}
 %
 (with higher order derivatives if the Lagrangian has dependencies on more than generalized position and velocity terms).  Goldstein's
 approach is also harder to follow than Feynman's (Goldstein introduces a parameter \(\epsilon\), writing
 %
 \begin{equation}\label{eqn:euler_lagrange:epsilonvariation}
-\begin{aligned}
 q^i = \barq^i + \epsilon n^i
-\end{aligned}
 \end{equation}
 %
 He then takes derivatives under the integral sign for the end result.
@@ -142,9 +130,7 @@ After the integration by parts and subsequent differentiation under integral sig
 discarding all the ``fixed'' \(\barq^i\) contributions to the action leaving:
 %
 \begin{equation}\label{eqn:eulerLagrange:142}
-\begin{aligned}
 \frac{dS}{d\epsilon} = \int d\lambda \sum_i n^i \left. \frac{\delta S}{\delta q^i} \right\vert_{q^i = \barq^i}
-\end{aligned}
 \end{equation}
 %
 Introducing this idea does firm things up, eliminating some hand waving.  To obtain the extremal solution it does
@@ -206,27 +192,21 @@ If \(q^i\), and \(\qdot^i\) satisfy the Euler-Lagrange equations \eqnref{eqn:eul
 %
 If one additionally has
 \begin{equation}\label{eqn:eulerLagrange:182}
-\begin{aligned}
 \PDsq{\alpha}{q^i} =\PDsq{\alpha}{\qdot^i} = 0,
-\end{aligned}
 \end{equation}
 %
 so that \(\PDi{\alpha}{q^i}\), and \(\PDi{\alpha}{\qdot^i}\) are dependent only
 on \(\lambda\), then \eqnref{eqn:euler_lagrange:noethchain} can be written as a total derivative
 %
 \begin{equation}\label{eqn:euler_lagrange:noethTotalDer}
-\begin{aligned}
 \frac{d\LL}{d\alpha} = \frac{d}{d\lambda} \left( \PD{\qdot^i}{\LL} \PD{\alpha}{q^i} \right)
-\end{aligned}
 \end{equation}
 %
 If there is an \(\alpha\) dependence in these derivatives a weaker total derivative statement is still possible, by evaluating the
 Lagrangian derivative and \(\PDi{\alpha}{q^i}\) at some specific constant value of \(\alpha\).  This is
 %
 \begin{equation}\label{eqn:eulerLagrange:202}
-\begin{aligned}
 \left.\frac{d\LL}{d\alpha}\right\vert_{\alpha = \alpha_0} = \frac{d}{d\lambda} \left( \PD{\qdot^i}{\LL} \left.\PD{\alpha}{q^i}\right\vert_{\alpha = \alpha_0} \right)
-\end{aligned}
 \end{equation}
 %
 %
@@ -240,9 +220,7 @@ Given this type of transformation we can write
 \eqnref{eqn:euler_lagrange:noethTotalDer} as
 %
 \begin{equation}\label{eqn:euler_lagrange:ham1}
-\begin{aligned}
 \frac{d\LL}{d\lambda} = \frac{d}{d\lambda} \left( \PD{\qdot^i}{\LL} \PD{\lambda}{q^i} \right)
-\end{aligned}
 \end{equation}
 %
 For this to be valid in this \(\alpha = \lambda\) case, note that the Lagrangian
@@ -292,9 +270,7 @@ Now as before consider the derivative
 In terms of the transformed coordinates the Euler-Lagrange equations require
 %
 \begin{equation}\label{eqn:eulerLagrange:282}
-\begin{aligned}
 \PD{f}{\LL} = \frac{d}{d\lambda} \PD{\fdot}{\LL}
-\end{aligned}
 \end{equation}
 %
 and back-substitution into \eqnref{eqn:euler_lagrange:noethtmp1} gives
@@ -361,9 +337,7 @@ In words, when the transformed Lagrangian is symmetric (not a function of \(\alp
 inner quantity, a generalized momentum velocity product, is constant (conserved)
 %
 \begin{equation}\label{eqn:eulerLagrange:402}
-\begin{aligned}
 \sum_i \PD{{\dot{q'}^i}}{\LL} \PD{\alpha}{{q^i}'} = \text{constant}
-\end{aligned}
 \end{equation}
 %
 Transformations that leave the Lagrangian unchanged have this associated conserved quantity, which dimensionally, assuming a time parametrization, has units of
@@ -401,18 +375,14 @@ I believe there is a missing prime there, and it should read
 Before considering multivector Lagrangians, a step back to the simplest vector Lagrangian is in order
 %
 \begin{equation}\label{eqn:euler_lagrange:simpleKineticLagrangian}
-\begin{aligned}
 \LL = \inv{2}m \dot{\Bx} \cdot \dot{\Bx}
-\end{aligned}
 \end{equation}
 %
 Writing \(\Bx(\lambda) = \overbar{\Bx} + \epsilon \Bn\), and using the variational technique directly the equation of motion for this unforced path should follow directly
 in vector form
 %
 \begin{equation}\label{eqn:eulerLagrange:462}
-\begin{aligned}
 S = \int d\lambda \inv{2} m \dot{\overbar{\Bx}}^2 + \int m d\lambda \epsilon \dot{\overbar{\Bx}} \cdot \dot{\Bn} + \int d\lambda \inv{2} m \epsilon^2 \dot{\overbar{\Bn}}^2
-\end{aligned}
 \end{equation}
 %
 Integration by parts operating directly on the vector function we have
@@ -434,9 +404,7 @@ Introducing shorthand \(\delta S/\delta \Bx\), for a vector functional derivativ
 %
 where the extremal condition is
 \begin{equation}\label{eqn:eulerLagrange:522}
-\begin{aligned}
 \frac{\delta S}{\delta \Bx} = - m \ddot{\overbar{\Bx}} = 0.
-\end{aligned}
 \end{equation}
 %
 Here the expected and desired Euler Lagrange equation for the Lagrangian (constant velocity in some direction dependent on initial conditions) is arrived at directly in vector form without dropping down to coordinates and reassembling them to get back the vector expression.
@@ -471,9 +439,7 @@ If one defines a configuration space position and velocity gradients respectivel
 and forms a configuration space vector with respect to some linearly independent, but not necessarily orthonormal, basis
 %
 \begin{equation}\label{eqn:eulerLagrange:562}
-\begin{aligned}
 \Bq = q^i e_i
-\end{aligned}
 \end{equation}
 %
 then the chain rule dictates the relationship between the configuration vector basis and the basis with which the gradient must be expressed.  In
@@ -511,9 +477,7 @@ Note also that the size of this configuration space does not have to be the same
 by parts yields the Euler-Lagrange equations in a hybrid configuration space vector form
 %
 \begin{equation}\label{eqn:eulerLagrange:642}
-\begin{aligned}
 \grad_{\Bq} \LL = \frac{d}{d\lambda} \grad_{\dot{\Bq}} \LL
-\end{aligned}
 \end{equation}
 %
 When the configuration space equals the geometrical space being operated in (ie: generalized coordinates are regular old coordinates), this
@@ -546,9 +510,7 @@ The conservation of angular momentum case is more interesting.
 Suppose that one has a radial potential applied to a point particle
 %
 \begin{equation}\label{eqn:eulerLagrange:662}
-\begin{aligned}
 \LL = \inv{2}m \dot{\Bx}^2 - \phi(\Abs{\Bx}^k)
-\end{aligned}
 \end{equation}
 %
 and apply a rotational transformation to the coordinates
@@ -596,17 +558,13 @@ The velocity term can be expanded as
 The transformed conjugate momentum is
 %
 \begin{equation}\label{eqn:eulerLagrange:742}
-\begin{aligned}
 \spacegrad_{\Bv'} \inv{2} m {\Bv'}^2 = m \Bv' = \Bp'
-\end{aligned}
 \end{equation}
 %
 so the conserved quantity is
 %
 \begin{equation}\label{eqn:eulerLagrange:762}
-\begin{aligned}
 (i \cdot \Bx') \cdot \Bp' = \text{constant}
-\end{aligned}
 \end{equation}
 %
 Temporarily expressing the bivector for the rotational plane in terms of a dual relationship, \(i = I \Bn\), where \(\Bn\) is a unit normal to the plane we have
@@ -626,9 +584,7 @@ Temporarily expressing the bivector for the rotational plane in terms of a dual 
 Since \(i\) is a constant bivector we have angular momentum (dropping primes), by virtue of Lagrangian transformational symmetry and Noether's theorem the angular momentum
 %
 \begin{equation}\label{eqn:euler_lagrange:angularmomentum}
-\begin{aligned}
 \Bx \wedge \Bp = \text{constant},
-\end{aligned}
 \end{equation}
 %
 is a constant of motion for a point particle Lagrangian in a radial potential field.
@@ -636,9 +592,7 @@ is a constant of motion for a point particle Lagrangian in a radial potential fi
 This is typically expressed in terms of the dual relationship using cross products
 %
 \begin{equation}\label{eqn:eulerLagrange:802}
-\begin{aligned}
 \Bx \cross \Bp = \text{constant}.
-\end{aligned}
 \end{equation}
 %
 Also observe the time derivative of the angular momentum in \eqnref{eqn:euler_lagrange:angularmomentum}
@@ -718,9 +672,7 @@ As an example, consider the Lorentz force Lagrangian.  For
 proper velocity \(v\), four potential \(A\), and positive time metric signature \((\gamma_0)^2 = 1\), the Lorentz force Lagrangian is
 %
 \begin{equation}\label{eqn:euler_lagrange:lorentzforce}
-\begin{aligned}
 \LL = \inv{2}m v \cdot v + q A \cdot v/c
-\end{aligned}
 \end{equation}
 %
 We therefore have
@@ -738,9 +690,7 @@ We therefore have
 Or
 %
 \begin{equation}\label{eqn:eulerLagrange:962}
-\begin{aligned}
 \inv{2} m v^2 + v \cdot \grad_{v} (q A \cdot v/c) - q A \cdot v/c = \kappa
-\end{aligned}
 \end{equation}
 %
 Where \(\kappa\) is some constant.  Since \(\grad_v A^{\mu} = 0\), we have \(\grad_v A\cdot v = A\), and
@@ -824,9 +774,7 @@ Now as before consider the derivative
 In terms of the transformed coordinates the Euler-Lagrange equations require
 %
 \begin{equation}\label{eqn:eulerLagrange:1062}
-\begin{aligned}
 \PD{f^i}{\LL} = \frac{d}{d\lambda} \PD{\fdot^i}{\LL}
-\end{aligned}
 \end{equation}
 %
 and backsubstitution into \eqnref{eqn:euler_lagrange:gnoethtmp1} gives

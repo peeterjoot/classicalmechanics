@@ -33,17 +33,13 @@ Starting with the Lagrangian formalism the Hamiltonian can be found as a conserv
 We can therefore form the difference
 %
 \begin{equation}\label{eqn:hamiltonian:foo1}
-\begin{aligned}
 \frac{d}{dt} \left( \qdot^i \PD{\qdot^i}{\LL} -\LL \right) = 0
-\end{aligned}
 \end{equation}
 %
 and find that this quantity, labeled H, is a constant of motion for the system
 %
 \begin{equation}\label{eqn:hamiltonian:foo2}
-\begin{aligned}
 H \equiv \qdot^i \PD{\qdot^i}{\LL} -\LL = \text{constant}
-\end{aligned}
 \end{equation}
 %
 We will see later that this constant is sometimes the total energy of the system.
@@ -51,17 +47,13 @@ We will see later that this constant is sometimes the total energy of the system
 The \(\qdot^i\) partials of the Lagrangian are called the canonical momentum conjugate to \(q^i\).  Quite a mouthful, so just canonical momenta seems like a good compromise.  We will write (reserving \(p^i = m q^i\) for the non-canonical momenta)
 %
 \begin{equation}\label{eqn:hamiltonian:foo2b}
-\begin{aligned}
 P_i \equiv \PD{\qdot^i}{\LL}
-\end{aligned}
 \end{equation}
 %
 and note that these are the coordinates of a sort of velocity gradient of the Lagrangian.  We have seen these canonical momenta in velocity gradient form previously where it was noted that we could write the Euler-Lagrange equations in vector form in an orthonormal reciprocal frame space as
 %
 \begin{equation}\label{eqn:hamiltonian:foo9}
-\begin{aligned}
 \grad \LL = \frac{d}{dt} \grad_v \LL
-\end{aligned}
 \end{equation}
 %
 where \(\grad_v = e^i \partial \LL/\partial \xdot^i = e^i P_i\), \(\grad = e^i \partial/\partial x^i\), and \(x = e_i x^i\).
@@ -73,9 +65,7 @@ where \(\grad_v = e^i \partial \LL/\partial \xdot^i = e^i P_i\), \(\grad = e^i \
 Following Jackson \citep{jackson1975cew} (section 12.1, relativistic Lorentz force Hamiltonian), this can be written in vector form if the velocity gradient, the vector sum of the momenta conjugate to the \(q^i\)'s is given its own symbol \(\BP\).  He writes
 %
 \begin{equation}\label{eqn:hamiltonian:foo3}
-\begin{aligned}
 H = \Bv \cdot \BP - \LL
-\end{aligned}
 \end{equation}
 %
 This makes most sense when working in orthonormal coordinates, but can be generalized.  Suppose we introduce a pair of reciprocal frame basis for the generalized position and velocity coordinates, writing as vectors in configuration space
@@ -109,17 +99,13 @@ We can now define configuration space position and velocity gradients
 so the conjugate momenta in vector form is now
 %
 \begin{equation}\label{eqn:hamiltonian:foo7}
-\begin{aligned}
 P \equiv \grad_v \LL = f^i \PD{\qdot^i}{\LL}
-\end{aligned}
 \end{equation}
 %
 Our Hamiltonian takes the form
 %
 \begin{equation}\label{eqn:hamiltonian:foo8}
-\begin{aligned}
 H = v \cdot P - \LL
-\end{aligned}
 \end{equation}
 %
 \section{The Hamiltonian principle}
@@ -127,17 +113,13 @@ H = v \cdot P - \LL
 We want to take partials of \eqnref{eqn:hamiltonian:foo2} with respect to \(P_i\) and \(q^i\).  In terms of the canonical momenta we want to differentiate
 %
 \begin{equation}\label{eqn:hamiltonian:hoo1}
-\begin{aligned}
 H \equiv \qdot^i P_i -\LL(q^i, \qdot^i, t)
-\end{aligned}
 \end{equation}
 %
 for the \(P_i\) partial we have
 %
 \begin{equation}\label{eqn:hamiltonian:83}
-\begin{aligned}
 \PD{P_i}{H} = \qdot^i
-\end{aligned}
 \end{equation}
 %
 and for the \(q^i\) partial
@@ -219,25 +201,19 @@ Now, that is just about the most abstract way we can start things off is not it?
 Our very simplest Lagrangian is that of one dimensional purely kinetic motion
 %
 \begin{equation}\label{eqn:hamiltonian:boo1}
-\begin{aligned}
 \LL = \inv{2} m v^2 = \inv{2} m \xdot^2
-\end{aligned}
 \end{equation}
 %
 Our Hamiltonian is in this case just
 %
 \begin{equation}\label{eqn:hamiltonian:boo2}
-\begin{aligned}
 H = \xdot m \xdot - \inv{2} m \xdot = \inv{2} m v^2
-\end{aligned}
 \end{equation}
 %
 The Hamiltonian is just the kinetic energy.  The canonical momentum in this case is also equal to the momentum, so eliminating \(v\) to apply the Hamiltonian equations we have
 %
 \begin{equation}\label{eqn:hamiltonian:boo3}
-\begin{aligned}
 H = \inv{2m} p^2
-\end{aligned}
 \end{equation}
 %
 We have then
@@ -274,17 +250,13 @@ x
 A linear system of this form \(y' = A y\) can be solved by exponentiation with solution
 %
 \begin{equation}\label{eqn:hamiltonian:boo5}
-\begin{aligned}
 y = e^{A t} y_0
-\end{aligned}
 \end{equation}
 %
 In this case our matrix is nilpotent degree 2 so we can exponentiate only requiring up to the first order power
 %
 \begin{equation}\label{eqn:hamiltonian:boo6}
-\begin{aligned}
 e^{A t} = I + A t
-\end{aligned}
 \end{equation}
 %
 specifically
@@ -381,17 +353,13 @@ Or just
 For the gravitational force \(F = - m g \zcap = - \spacegrad \phi\), we have \(\phi = m g z\), and a Lagrangian of
 %
 \begin{equation}\label{eqn:hamiltonian:roo1}
-\begin{aligned}
 \LL = \inv{2} m \Bv^2 - \phi = \inv{2} m \Bv^2 - m g z
-\end{aligned}
 \end{equation}
 %
 Without velocity dependence the canonical momentum is the momentum \(m \Bv\), and our Hamiltonian is
 %
 \begin{equation}\label{eqn:hamiltonian:roo2}
-\begin{aligned}
 H = \inv{2 m} \Bp^2 + m g z
-\end{aligned}
 \end{equation}
 %
 The Hamiltonian equations are
@@ -449,9 +417,7 @@ z \\
 So our problem is now reduced to solving a linear system of the form
 %
 \begin{equation}\label{eqn:hamiltonian:roo5}
-\begin{aligned}
 y' = A y + b
-\end{aligned}
 \end{equation}
 %
 That extra little term \(b\) throws a wrench into things and I am no longer sure how to integrate by inspection.  What can be noted is that we really only have to consider the \(z\) components since we have solved the problem for the \(x\) and \(y\) coordinates in the force free case.  That leaves
@@ -484,17 +450,13 @@ z \\
 Is there any reason that we have to solve in matrix form?  Except for a coolness factor, not really, and we can integrate each equation directly.  For the momentum equation we have
 %
 \begin{equation}\label{eqn:hamiltonian:roo7}
-\begin{aligned}
 p_z = - m g t + p_z(0)
-\end{aligned}
 \end{equation}
 %
 This can be substituted into the position equation for
 %
 \begin{equation}\label{eqn:hamiltonian:roo8}
-\begin{aligned}
 \dot{z} = \inv{m} (p_z(0) - m g t)
-\end{aligned}
 \end{equation}
 %
 Direct integration is now possible for the final solution
@@ -535,17 +497,13 @@ I thought if I wrote this out how to solve \eqnref{eqn:hamiltonian:roo5} may be 
 Like the free particle, the harmonic oscillator is very tractable in a phase space representation.  For a restoring force \(F = - k x \xcap = -\spacegrad \phi\), we have \(\phi = k x^2/2\), and a Lagrangian of
 %
 \begin{equation}\label{eqn:hamiltonian:woo1}
-\begin{aligned}
 \LL = \inv{2} m \Bv^2 - \inv{2} k \Bx^2
-\end{aligned}
 \end{equation}
 %
 Our Hamiltonian is again just the total energy
 %
 \begin{equation}\label{eqn:hamiltonian:woo2}
-\begin{aligned}
 H = \inv{2m} \Bp^2 + \inv{2} k \Bx^2
-\end{aligned}
 \end{equation}
 %
 Evaluating the Hamiltonian equations we have
@@ -738,9 +696,7 @@ Q &= x \sqrt{\frac{k}{2}} - \frac{ p }{\sqrt{2 m}}
 In particular the Hamiltonian is then just
 %
 \begin{equation}\label{eqn:hamiltonian:zoo2}
-\begin{aligned}
 H = P^2 + Q^2
-\end{aligned}
 \end{equation}
 %
 Part of this change of variables, which rotates in phase space, as well as scales, looks like just a way of putting the system into natural units.  We do not however, need the rotation to do that.  Suppose we write for just the scaling change of variables
@@ -813,9 +769,7 @@ Q_s \\
 This first change of variables is nice since it groups the two factors \(k\) and \(m\) into a reciprocal pair.  Since only the ratio is significant to the kinetics it is nice to have that explicit.  Since \(\sqrt{k/m}\) is in fact the angular frequency, we can define
 %
 \begin{equation}\label{eqn:hamiltonian:zoo6}
-\begin{aligned}
 \omega \equiv \sqrt{\frac{k}{m}}
-\end{aligned}
 \end{equation}
 %
 and our system is reduced to
@@ -960,9 +914,7 @@ Q \\
 But multiplying this out one finds that the equations of motion for the state space vector are unchanged by the rotation, and writing \(\Bz = \bigl(\begin{smallmatrix} P \\ Q \\ \end{smallmatrix}\bigr)\) for the state vector, the Hamiltonian equations are
 %
 \begin{equation}\label{eqn:hamiltonian:zoo14}
-\begin{aligned}
 \Bz' = \calI \omega \Bz
-\end{aligned}
 \end{equation}
 %
 This is just as we had before the rotation-like mixing of position and momentum coordinates.  Now it looks like the rotational change of coordinates is related to the raising and lowering operators in the Quantum treatment of the Harmonic oscillator, but it is not clear to me what the advantage is in the classical context?  Perhaps the point is, that at least for the classical Harmonic oscillator, we are free to rotate the phase space vector arbitrarily and not change the equations of motion.  A restriction to the classical domain is required since squaring the results of this 45 degree rotation of the phase space vector requires commutation of the position and momentum coordinates in order for the cross terms to cancel out.
@@ -976,9 +928,7 @@ In gravitational and electrostatic problems are forces are all functions of only
 The very simplest case is the two particle single dimensional Kinetic Lagrangian,
 %
 \begin{equation}\label{eqn:hamiltonian:noo1}
-\begin{aligned}
 \LL = \inv{2} m_1 {\rdot_1}^2 + \inv{2} m_2 {\rdot_2}^2
-\end{aligned}
 \end{equation}
 %
 With a change of variables
@@ -993,9 +943,7 @@ y &= r_2
 and elimination of \(r_1\), and \(r_2\) we have
 %
 \begin{equation}\label{eqn:hamiltonian:noo3}
-\begin{aligned}
 \LL = \inv{2} m_1 (\ydot - \xdot)^2 + \inv{2} m_2 {\ydot}^2
-\end{aligned}
 \end{equation}
 %
 We now need the conjugate momenta in terms of \(\xdot\) and \(\ydot\).  These are
@@ -1060,9 +1008,7 @@ Of these only \(\ydot\) and \(\ydot - \xdot\) are of interest and after a bit of
 From this we find the Lagrangian in terms of the conjugate momenta
 %
 \begin{equation}\label{eqn:hamiltonian:noo8}
-\begin{aligned}
 \LL = \inv{2 m_1} {P_x}^2 + \inv{2 m_2} (P_x + P_y)^2
-\end{aligned}
 \end{equation}
 %
 A quick check shows that \(P_x + P_y = m_2 \rdot_2\), and \(P_x = -m_1 \rdot_1\), so we have agreement with the original Lagrangian.  Generalizing to the three dimensional case is straightforward, and we have
@@ -1217,9 +1163,7 @@ H &= \inv{2 m_1} {\Bp_1}^2 +\inv{2 m_2} {\Bp_2}^2 + \phi_{21}
 There is however an undesirable asymmetry to this expression, in particular a formulation that extends to multiple particles seems desirable.  Let us write instead a slight variation
 %
 \begin{equation}\label{eqn:hamiltonian:moo6}
-\begin{aligned}
 \phi_{ij} = - \frac{G m_i m_j}{\Abs{\Br_i - \Br_j}}
-\end{aligned}
 \end{equation}
 %
 and form a scaled by two double summation over all pairs of potentials
@@ -1239,23 +1183,17 @@ and form a scaled by two double summation over all pairs of potentials
 Having established what seems like an appropriate form for the Lagrangian, we can write the Hamiltonian for the multiparticle gravitational interaction by inspection
 %
 \begin{equation}\label{eqn:hamiltonian:moo9}
-\begin{aligned}
 H = \sum_i \inv{2 m_i} {\Bp_i}^2 + \inv{2} \sum_{i \ne j} \phi_{ij}
-\end{aligned}
 \end{equation}
 %
 This leaves us finally in position to evaluate the Hamiltonian equations, but the result of doing so is rudely nothing more than the Newtonian equations in coordinate form.  We get, for the \(k\)th component of the \(i\)th particle
 %
 \begin{equation}\label{eqn:hamiltonian:moo10}
-\begin{aligned}
 \PD{{p^k}_i}{H} = {\dot{x}^k}_i = \inv{m_i} {p^k}_i
-\end{aligned}
 \end{equation}
 %
 \begin{equation}\label{eqn:hamiltonian:moo11}
-\begin{aligned}
 \PD{{x^k}_i}{H} = -{\dot{p}^k}_i = G \sum_{j \ne i} m_i m_j \frac{{x^k}_i -{x^k}_j}{\Abs{\Br_i - \Br_j}^3}
-\end{aligned}
 \end{equation}
 %
 The state space vector for this system of equations is brutally ugly, and could be put into the following form for example
@@ -1283,17 +1221,13 @@ Where the Hamiltonian equations take the form of a non-linear function on such s
 We have a somewhat sparse equation of the form
 %
 \begin{equation}\label{eqn:hamiltonian:moo13}
-\begin{aligned}
 \frac{d\Bz}{dt} = A(\Bz)
-\end{aligned}
 \end{equation}
 %
 One thing that is possible in such a representation is calculating the first order approximate change in position and momentum moving from one time to a small time later
 %
 \begin{equation}\label{eqn:hamiltonian:moo14}
-\begin{aligned}
 \Bz(t_0 + \Delta t) = \Bz(t_0) + A(\Bz(t_0)) \Delta t
-\end{aligned}
 \end{equation}
 %
 One could conceivably calculate the trajectories in phase space using such increments, and if a small enough time increment is used this can be thought of as solving the gravitational system.  I recall that Feynman did something like this in his lectures, but set up the problem in a more computationally efficient form (it definitely did not have the redundancy built into the Hamiltonian equations).
@@ -1343,9 +1277,7 @@ We can now compute the Hamiltonian equations
 Only in the neighborhood of a particular angle can we write this in matrix form.  Suppose we expand this around \(\theta = \theta_0 + \alpha\).  The sine is then
 %
 \begin{equation}\label{eqn:hamiltonian:yoo5}
-\begin{aligned}
 \sin\theta \approx \sin\theta_0 + \cos\theta_0 \alpha
-\end{aligned}
 \end{equation}
 %
 The linear approximation of the Hamiltonian equations after a change of variables become
@@ -1451,17 +1383,13 @@ a/ m l^2 & 0
 To tidy this up, we want
 %
 \begin{equation}\label{eqn:hamiltonian:yoo9}
-\begin{aligned}
 \Abs{\frac{a}{m l^2}} = \Abs{\frac{m g l \cos\theta_0}{a}}
 %a^2 = m^2 l^4 \frac{g}{l} \cos\theta_0
-\end{aligned}
 \end{equation}
 %
 Or
 \begin{equation}\label{eqn:hamiltonian:yoo9b}
-\begin{aligned}
 a = m l^2 \sqrt{\frac{g}{l} \Abs{\cos\theta_0}}
-\end{aligned}
 \end{equation}
 %
 The result of applying this scaling is quite different above and below the horizontal due to the sign difference in the cosine.  Below the horizontal where \(\theta_0 \in (-\pi/2, \pi/2)\) we get
@@ -1507,41 +1435,31 @@ and above the horizontal where \(\theta_0 \in (\pi/2, 3\pi/2)\) we get
 Since \(\Bigl(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\Bigl)\) has the characteristics of an imaginary number (squaring to the negative of the identity) the homogeneous part of the solution for the change of the phase space vector in the vicinity of any initial angle in the lower half plane is trigonometric.  Similarly the solutions are necessarily hyperbolic in the upper half plane since \(\Bigl(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\Bigl)\) squares to identity.  And around \(\pm \pi/2\) something totally different (return to this later).  The problem is now reduced to solving a non-homogeneous first order matrix equation of the form
 %
 \begin{equation}\label{eqn:hamiltonian:yoo13}
-\begin{aligned}
 \Bz' = \Omega \Bz + \Bb
-\end{aligned}
 \end{equation}
 %
 But we have the good fortune of being able to easily exponentiate and invert this matrix \(\Omega\).  The homogeneous problem
 %
 \begin{equation}\label{eqn:hamiltonian:yoo13h}
-\begin{aligned}
 \Bz' = \Omega \Bz
-\end{aligned}
 \end{equation}
 %
 has the solution
 %
 \begin{equation}\label{eqn:hamiltonian:yoo14}
-\begin{aligned}
 \Bz_h(t) = e^{\Omega t} \Bz_{t=0}
-\end{aligned}
 \end{equation}
 %
 Assuming a specific solution \(z = e^{\Omega t}f(t)\) for the non-homogeneous equation, one finds \(z = \Omega^{-1} (e^{\Omega t} - I) \Bb\).  The complete solution with both the homogeneous and non-homogeneous parts is thus
 %
 \begin{equation}\label{eqn:hamiltonian:yoo15}
-\begin{aligned}
 \Bz(t) = e^{\Omega t} \Bz_0 + \Omega^{-1} (e^{\Omega t} - I) \Bb
-\end{aligned}
 \end{equation}
 %
 Going back to the pendulum problem, lets write
 %
 \begin{equation}\label{eqn:hamiltonian:yoo12o}
-\begin{aligned}
 \omega = \sqrt{\frac{g}{l} \abs{\cos\theta_0}}
-\end{aligned}
 \end{equation}
 %
 Below the horizontal we have
@@ -1843,25 +1761,19 @@ The question of what the form of the solution in the neighborhood of \(\pm \pi/2
 For the spherical rigid pendulum of length \(l\), we have for the distance above the lowest point
 %
 \begin{equation}\label{eqn:hamiltonian:uoo1}
-\begin{aligned}
 h = l (1 + \cos\theta)
-\end{aligned}
 \end{equation}
 %
 (measuring \(\theta\) down from the North pole as conventional).  The Lagrangian is therefore
 %
 \begin{equation}\label{eqn:hamiltonian:uoo2}
-\begin{aligned}
 \LL = \inv{2} m l^2 (\thetadot^2 + \sin^2\theta \phidot^2) - m g l (1 + \cos\theta)
-\end{aligned}
 \end{equation}
 %
 We can drop the constant term, using the simpler Lagrangian
 %
 \begin{equation}\label{eqn:hamiltonian:uoo3}
-\begin{aligned}
 \LL = \inv{2} m l^2 (\thetadot^2 + \sin^2\theta \phidot^2) - m g l \cos\theta
-\end{aligned}
 \end{equation}
 %
 To express the Hamiltonian we need first the conjugate momenta, which are
@@ -1876,9 +1788,7 @@ P_\phi &= \PD{\phidot}{\LL} = m l^2 \sin^2\theta \phidot
 We can now write the Hamiltonian
 %
 \begin{equation}\label{eqn:hamiltonian:uoo5}
-\begin{aligned}
 H = \inv{2 m l^2} \left({P_\theta}^2 + \inv{\sin^2\theta} {P_\phi}^2\right) + m g l \cos\theta
-\end{aligned}
 \end{equation}
 %
 Before going further one sees that there is going to be trouble where \(\sin\theta = 0\).  Curiously, this is at the poles, the most dangling position and the upright.  The south pole is the usual point where we solve the planar pendulum problem using the harmonic oscillator approximation, so it is somewhat curious that the energy of the system appears to go undefined at this point where the position is becoming more defined.  It seems almost like a quantum uncertainty phenomena until one realizes that the momentum conjugate to \(\phi\) is itself proportional to \(\sin^2 \theta\).  By expressing the energy in terms of this \(P_\phi\) momentum we have to avoid looking at the poles for a solution to the equations.  If we go back to the Lagrangian and the Euler-Lagrange equations, this point becomes perfectly tractable since we are no longer dividing through by \(\sin^2\theta\).
@@ -1952,9 +1862,7 @@ The Hamiltonian equations can then be written
 Getting away from the specifics of this particular system is temporarily helpful.  We have a set of equations that we wish to calculate a linear approximation for
 %
 \begin{equation}\label{eqn:hamiltonian:uoo10}
-\begin{aligned}
 \frac{dz_\mu}{dt} = A_\mu(x_\nu) \approx A_\mu(\Bx_0) + \sum_\alpha {\left. \PD{x_\alpha}{A_\mu} \right\vert}_{\Bx_0} z_\alpha
-\end{aligned}
 \end{equation}
 %
 Our linear approximation is thus
@@ -2106,66 +2014,50 @@ Although the Hamiltonian equations for a spherical pendulum have been considered
 Setting up coordinates \(x\) axis down, and \(y\) axis to the left with \(i = \xcap \ycap\) we have for the position of the first mass \(m_1\), at angle \({\theta_1}\) and length \(l_1\)
 %
 \begin{equation}\label{eqn:hamiltonian:voo1}
-\begin{aligned}
 z_1 = \xcap l_1 e^{i{\theta_1}}
-\end{aligned}
 \end{equation}
 %
 If the second mass, dangling from this is at an angle \({\theta_2}\) from the \(x\) axis, its position is
 %
 \begin{equation}\label{eqn:hamiltonian:voo2}
-\begin{aligned}
 z_2 = z_1 + \xcap l_2 e^{i{\theta_2}}
-\end{aligned}
 \end{equation}
 %
 We need the velocities, and their magnitudes.  For \(z_1\) this is
 %
 \begin{equation}\label{eqn:hamiltonian:voo3}
-\begin{aligned}
 \Abs{\dot{z}_1}^2 = {l_1}^2 {\dot{\theta}_1}^2
-\end{aligned}
 \end{equation}
 %
 For the second mass
 %
 \begin{equation}\label{eqn:hamiltonian:voo4}
-\begin{aligned}
 \dot{z}_2 = \xcap i \left( l_1 {\dot{\theta}_1} e^{i{\theta_1}} + l_2 {\dot{\theta}_2} e^{i{\theta_2}} \right)
-\end{aligned}
 \end{equation}
 %
 Taking conjugates and multiplying out we have
 %
 \begin{equation}\label{eqn:hamiltonian:voo5}
-\begin{aligned}
 \Abs{\dot{z}_2}^2 =
 {l_1}^2 {\dot{\theta}_1}^2
 + 2 l_1 l_2 {\dot{\theta}_1} {\dot{\theta}_2} \cos({\theta_1} - {\theta_2})
 +{l_2}^2 {\dot{\theta}_2}^2
-\end{aligned}
 \end{equation}
 %
 That is all that we need for the Kinetic terms in the Lagrangian.  Now we need the height for the \(m g h\) terms.  If we set the reference point at the lowest point for the double pendulum system, the height of the first particle is
 %
 \begin{equation}\label{eqn:hamiltonian:voo6}
-\begin{aligned}
 h_1 = l_2 + l_1 (1 -\cos{\theta_1})
-\end{aligned}
 \end{equation}
 %
 For the second particle, the distance from the horizontal is
 \begin{equation}\label{eqn:hamiltonian:voo7}
-\begin{aligned}
 d = l_1 \cos{\theta_1} + l_2 \cos{\theta_2}
-\end{aligned}
 \end{equation}
 %
 So the total distance from the reference point is
 \begin{equation}\label{eqn:hamiltonian:voo8}
-\begin{aligned}
 h_2 = l_1 (1 - \cos{\theta_1}) + l_2 (1 -\cos{\theta_2})
-\end{aligned}
 \end{equation}
 %
 We now have the Lagrangian
@@ -2294,13 +2186,11 @@ l_1 e^{i{\theta_1}} & l_2 e^{i{\theta_2}}
 Writing \(\Br\) for this \(1x2\) matrix, we can utilize the associative property for compatible sized matrices to rewrite the speed for the second particle in terms of a quadratic form
 %
 \begin{equation}\label{eqn:hamiltonian:voo5m}
-\begin{aligned}
 \Abs{\dot{z}_2}^2
 =
 (\Br \dot{\BTheta}) (\overbar{\Br} \dot{\BTheta})
 =
 \dot{\BTheta}^\T (\Br^\T \overbar{\Br}) \dot{\BTheta}
-\end{aligned}
 \end{equation}
 %
 The Lagrangian kinetic can all now be grouped into a single quadratic form
@@ -2328,14 +2218,12 @@ l_1 e^{-i{\theta_1}} & l_2 e^{-i{\theta_2}}
 \end{equation}
 %
 \begin{equation}\label{eqn:hamiltonian:voo18}
-\begin{aligned}
 \LL =
 \inv{2} \dot{\BTheta}^\T Q \dot{\BTheta}
 +
 M l_1 g \cos{\theta_1}
 +
 m_2 l_2 g \cos{\theta_2}
-\end{aligned}
 \end{equation}
 %
 It is also clear that this generalize easily to multiple connected pendulums, as follows
@@ -2355,13 +2243,11 @@ l_r l_s e^{i(\theta_r - \theta_s)}
 In the expression for \(Q_k\) above, it is implied that the matrix is zero for any indices \(r,s > k\), so it would perhaps be better to write explicitly
 %
 \begin{equation}\label{eqn:hamiltonian:voo18q}
-\begin{aligned}
 Q = \sum_k m_k Q_k
 =
 {\begin{bmatrix}
 \sum_{j=\max(r,s)}^N m_j l_r l_s e^{i(\theta_r - \theta_s)}
 \end{bmatrix}}_{r,s}
-\end{aligned}
 \end{equation}
 %
 Returning to the problem, it is convenient and sufficient in many cases to only discuss the representative double pendulum case.  For that we can calculate the conjugate momenta from \eqnref{eqn:hamiltonian:voo18} directly
@@ -2419,9 +2305,7 @@ Putting both together, it is straightforward to verify that this recovers \eqnre
 Observing that \(\calI = \calI^\T\), and thus \((\calI^\T)^{-1} = \calI^{-1}\), we now have everything required to express the Hamiltonian in terms of the conjugate momenta
 %
 \begin{equation}\label{eqn:hamiltonian:voo20}
-\begin{aligned}
 H = \Bp^\T \left( \inv{2} \calI^{-1} Q \calI^{-1} \right) \Bp - M g l_1 \cos{\theta_1} - m_2 l_2 g \cos{\theta_2}
-\end{aligned}
 \end{equation}
 %
 This is now in a convenient form to calculate the first set of Hamiltonian equations.
@@ -2473,9 +2357,7 @@ So, when the velocity dependence is a quadratic form as identified in \eqnref{eq
 This is exactly the relation we used in the first place to re-express the Lagrangian in terms of the conjugate momenta in preparation for this calculation.  The remaining Hamiltonian equations are trickier, and what we now want to calculate.  Without specific reference to the pendulum problem, lets do this calculation for the general Hamiltonian for a non-velocity dependent potential.  That is
 %
 \begin{equation}\label{eqn:hamiltonian:voo22}
-\begin{aligned}
 H = \Bp^\T \left( \inv{2} \calI^{-1} Q \calI^{-1} \right) \Bp + \phi(\BTheta)
-\end{aligned}
 \end{equation}
 %
 The remaining Hamiltonian equations are \(\PDi{\theta_a}{H} = -\dot{P}_{\theta_a}\), and the tricky part of evaluating this is going to all reside in the Kinetic term.  Diving right in this is
@@ -2558,13 +2440,11 @@ If we introduce a phase space position gradients
 Then for the second half of the Hamiltonian equations we have the vector form
 %
 \begin{equation}\label{eqn:hamiltonian:voo26}
-\begin{aligned}
 -\grad H = \dot{\Bp} =
 {\begin{bmatrix}
 \inv{2} \Bp^\T \calI^{-1} \left(\PD{\theta_r}{Q}\right)^\T \calI^{-1} \Bp
 \end{bmatrix}}_r
 - \grad \phi
-\end{aligned}
 \end{equation}
 %
 The complete set of Hamiltonian equations for \eqnref{eqn:hamiltonian:voo22}, in block matrix form, describing all the phase space change of the system is therefore
@@ -2665,9 +2545,7 @@ For brevity the constant term evaluated at \(t=0\) is expressed in terms of the 
 So that we can discuss just the first order terms lets write \(\Delta\) for the matrix of first order derivatives in our Taylor expansion, as in
 %
 \begin{equation}\label{eqn:hamiltonian:voo30p}
-\begin{aligned}
 f(\Bp, \BTheta) = \evalbar{f(\Bp, \BTheta)}{0} + \evalbar{\Delta f}{0} \Bz + \cdots
-\end{aligned}
 \end{equation}
 %
 First, lets do the potential gradient.
@@ -2725,11 +2603,9 @@ The \(\delta\) over all rows \(r\) and columns \(c\) is the identity matrix and 
 Next, consider just the \(P_\theta\) dependence in the elements of the row vector
 %
 \begin{equation}\label{eqn:hamiltonian:voo30c}
-\begin{aligned}
 {\begin{bmatrix}
 \inv{2} \Bp^\T \calI^{-1} \left(\PD{\theta_r}{Q}\right)^\T \calI^{-1} \Bp
 \end{bmatrix}}_r
-\end{aligned}
 \end{equation}
 %
 We can take derivatives of this, and exploiting the fact that these elements are scalars, so they equal their transpose.  Also noting that \({A^{-1}}^\T = {A^\T}^{-1}\), and \(\calI = \calI^\T\), we have
@@ -2982,20 +2858,16 @@ Q &= \calI = m l^2 \\
 So all the \(\theta\) partials except that of the potential are zero.  For the potential we have
 %
 \begin{equation}\label{eqn:hamiltonian:voo41}
-\begin{aligned}
 \evalbar{- \frac{\partial^2 \phi}{\partial^2 \theta}}{0} = - m g l \cos\theta_0
-\end{aligned}
 \end{equation}
 %
 and for the angular gradient
 %
 \begin{equation}\label{eqn:hamiltonian:voo42}
-\begin{aligned}
 \evalbar{-\grad \phi}{0} =
 \begin{bmatrix}
 - m g l \sin\theta_0
 \end{bmatrix}
-\end{aligned}
 \end{equation}
 %
 Putting these all together in this simplest application of \eqnref{eqn:hamiltonian:voo29b} we have for the linear approximation of a single point mass pendulum about some point in phase space at time zero:
@@ -3063,9 +2935,7 @@ e^{i\delta} \dot{\theta}_2 \\
 The \(\theta_2\) derivative is the same but inverted in sign, so we have most of the constant term calculated.  We need the potential gradient to complete.  Our potential was
 %
 \begin{equation}\label{eqn:hamiltonian:xoo2}
-\begin{aligned}
 \phi = - M l_1 g \cos{\theta_1} - m_2 l_2 g \cos{\theta_2}
-\end{aligned}
 \end{equation}
 %
 So, the gradient is
@@ -3448,9 +3318,7 @@ TODO.
 In \citep{jackson1975cew}, the Lagrangian for a charged particle is given as (12.9) as
 %
 \begin{equation}\label{eqn:hamiltonian:em1}
-\begin{aligned}
 \LL = -m c^2 \sqrt{1 - \Bu^2/c^2} + \frac{e}{c} \Bu \cdot \BA - e \Phi.
-\end{aligned}
 \end{equation}
 %
 Let us work in detail from this to the Lorentz force law and the Hamiltonian and from the Hamiltonian again to the Lorentz force law using the Hamiltonian equations.  We should get the same results in each case, and have enough details in doing so to render the text a bit more comprehensible.
@@ -3480,25 +3348,19 @@ In vector form the canonical momenta are then
 Completing the Euler-Lagrange equation evaluation is the calculation of
 %
 \begin{equation}\label{eqn:hamiltonian:em2b}
-\begin{aligned}
 \frac{d\BP}{dt} = \spacegrad \LL.
-\end{aligned}
 \end{equation}
 %
 On the left hand side we have
 %
 \begin{equation}\label{eqn:hamiltonian:em2l}
-\begin{aligned}
 \frac{d\BP}{dt} = \frac{d(\gamma m \Bu)}{dt} + \frac{e}{c} \frac{d\BA }{dt},
-\end{aligned}
 \end{equation}
 %
 and on the right, with implied summation over repeated indices, we have
 %
 \begin{equation}\label{eqn:hamiltonian:em2r}
-\begin{aligned}
 \spacegrad \LL = \frac{e}{c} \Be_k (\Bu \cdot \partial_k \BA) - e \spacegrad \Phi.
-\end{aligned}
 \end{equation}
 %
 Putting things together we have
@@ -3530,17 +3392,13 @@ Putting things together we have
 With
 %
 \begin{equation}\label{eqn:hamiltonian:em3}
-\begin{aligned}
 \BE = -\spacegrad \Phi - \inv{c} \PD{t}{\BA},
-\end{aligned}
 \end{equation}
 %
 the first two terms are recognizable as the electric field.  To put some structure in the remainder start by writing
 %
 \begin{equation}\label{eqn:hamiltonian:em4}
-\begin{aligned}
 \PD{x_a}{A_b} - \PD{x_b}{A_a} = \epsilon^{fab} {(\spacegrad \cross \BA)}_f.
-\end{aligned}
 \end{equation}
 %
 The remaining term, with \(\BB = \spacegrad \cross \BA\) is now
@@ -3559,25 +3417,19 @@ The remaining term, with \(\BB = \spacegrad \cross \BA\) is now
 We are left with the momentum portion of the Lorentz force law as expected
 %
 \begin{equation}\label{eqn:hamiltonian:em5}
-\begin{aligned}
 \frac{d(\gamma m \Bu)}{dt} = e \left( \BE + \frac{1}{c} \Bu \cross \BB \right).
-\end{aligned}
 \end{equation}
 %
 Observe that with a small velocity Taylor expansion of the Lagrangian we obtain the approximation
 %
 \begin{equation}\label{eqn:hamiltonian:em6}
-\begin{aligned}
 -m c^2 \sqrt{ 1 -\Bu^2/c^2} \approx - m c^2 \left( 1 - \inv{2} \Bu^2/c^2 \right) = \inv{2} m \Bu^2
-\end{aligned}
 \end{equation}
 %
 If that is our starting place, we can only obtain the non-relativistic approximation of the momentum change by evaluating the Euler-Lagrange equations
 %
 \begin{equation}\label{eqn:hamiltonian:em5a}
-\begin{aligned}
 \frac{d (m \Bu)}{dt} = e \left( \BE + \frac{1}{c} \Bu \cross \BB \right).
-\end{aligned}
 \end{equation}
 %
 That was an exercise previously attempting working the Tong Lagrangian problem set \citep{TongMf1}.
@@ -3587,84 +3439,64 @@ That was an exercise previously attempting working the Tong Lagrangian problem s
 Having confirmed the by old fashioned Euler-Lagrange equation evaluation that our Lagrangian provides the desired equations of motion, let us now try it using the Hamiltonian approach.  First we need the Hamiltonian, which is nothing more than
 %
 \begin{equation}\label{eqn:hamiltonian:em10}
-\begin{aligned}
 H = \BP \cdot \Bu - \LL
-\end{aligned}
 \end{equation}
 %
 However, in the Lagrangian and the dot product we have velocity terms that we must eliminate in favor of the canonical momenta.  The Hamiltonian remains valid in either form, but to apply the Hamiltonian equations we need \(H = H(\BP, \Bx)\), and not \(H = H(\Bu, \BP, \Bx)\).
 %
 \begin{equation}\label{eqn:hamiltonian:em11}
-\begin{aligned}
 H = \BP \cdot \Bu + m c^2 \sqrt{1 - \Bu^2/c^2} - \frac{e}{c} \Bu \cdot \BA + e \Phi.
-\end{aligned}
 \end{equation}
 %
 Or
 \begin{equation}\label{eqn:hamiltonian:em11b}
-\begin{aligned}
 H = \Bu \cdot \left(\BP - \frac{e}{c} \BA\right) + m c^2 \sqrt{1 - \Bu^2/c^2} + e \Phi.
-\end{aligned}
 \end{equation}
 %
 We can rearrange \eqnref{eqn:hamiltonian:em2} for \(\Bu\)
 %
 \begin{equation}\label{eqn:hamiltonian:em12}
-\begin{aligned}
 \Bu = \inv{m \gamma} \left( \BP - \frac{e}{c} \BA \right),
-\end{aligned}
 \end{equation}
 %
 but \(\gamma\) also has a \(\Bu\) dependence, so this is not complete.  Squaring gets us closer
 %
 \begin{equation}\label{eqn:hamiltonian:em13}
-\begin{aligned}
 \Bu^2 = \frac{1 - \Bu^2/c^2}{m^2} {\left( \BP - \frac{e}{c} \BA \right)}^2,
-\end{aligned}
 \end{equation}
 %
 and a bit of final rearrangement yields
 %
 \begin{equation}\label{eqn:hamiltonian:em14}
-\begin{aligned}
 \Bu^2 = \frac{(c \BP - e \BA)^2}{m^2 c^2 + {\left( \BP - \frac{e}{c} \BA \right)}^2}.
-\end{aligned}
 \end{equation}
 %
 Writing \(\Bp = \BP - e \BA/c\), we can rearrange and find
 %
 \begin{equation}\label{eqn:hamiltonian:em14a}
-\begin{aligned}
 \sqrt{1 - \Bu^2/c^2} = \frac{m c }{\sqrt{m^2 c^2 +\Bp^2}}
-\end{aligned}
 \end{equation}
 %
 Also, taking roots of \eqnref{eqn:hamiltonian:em14} we must have the directions of \(\Bu\) and \(\left( \BP - \frac{e}{c} \BA \right)\) differ only by a rotation.  From \eqnref{eqn:hamiltonian:em12} we also know that these are colinear, and therefore have
 %
 \begin{equation}\label{eqn:hamiltonian:em15}
-\begin{aligned}
 \Bu = \frac{c \BP - e \BA}{\sqrt{m^2 c^2 + {\left( \BP - \frac{e}{c} \BA \right)}^2}}.
-\end{aligned}
 \end{equation}
 %
 This and \eqnref{eqn:hamiltonian:em14a} can now be substituted into \eqnref{eqn:hamiltonian:em11b}, for
 %
 \begin{equation}\label{eqn:hamiltonian:em11c}
-\begin{aligned}
 H = \frac{c}{m^2 c^2 + \Bp^2}
 \left(
 {\left(\BP - \frac{e}{c} \BA\right)}^2 + m^2 c^2
 \right)
 + e \Phi.
-\end{aligned}
 \end{equation}
 %
 Dividing out the common factors we finally have the Hamiltonian in a tidy form
 %
 \begin{equation}\label{eqn:hamiltonian:em20}
-\begin{aligned}
 H = \sqrt{ (c \BP - e \BA)^2 + m^2 c^4 } + e\Phi.
-\end{aligned}
 \end{equation}
 %
 \subsubsection{Hamiltonian equation evaluation}
@@ -3693,41 +3525,31 @@ u_k &= \frac{c (c P_k -e A_k)}{\sqrt{ (c \BP - e \BA)^2 + m^2 c^4 }}
 This is \eqnref{eqn:hamiltonian:em15} in coordinate form, one of our stepping stones on the way to the Hamiltonian, and we recover it quickly with our first set of derivatives.  We have the gradient part \(\dot{\BP} = -\spacegrad H\) of the Hamiltonian left to evaluate
 %
 \begin{equation}\label{eqn:hamiltonian:em23}
-\begin{aligned}
 \frac{d\BP}{dt} =
 \frac{e (c P_k -e A_k) \spacegrad A_k }{\sqrt{ (c \BP - e \BA)^2 + m^2 c^4 }} - e \spacegrad \Phi.
-\end{aligned}
 \end{equation}
 %
 Or
 \begin{equation}\label{eqn:hamiltonian:em23b}
-\begin{aligned}
 \frac{d\BP}{dt} = e \left( \frac{u_k}{c} \spacegrad A_k - \spacegrad \Phi \right)
-\end{aligned}
 \end{equation}
 %
 This looks nothing like the Lorentz force law.  Knowing that \(\BP - e\BA/c\) is of significance (because we know where we started which is kind of a cheat), we can subtract derivatives of this from both sides, and use the convective derivative operator \(d/dt = \PDi{t}{} + \Bu \cdot \spacegrad\) (ie. chain rule) yielding
 %
 \begin{equation}\label{eqn:hamiltonian:em23c}
-\begin{aligned}
 \frac{d}{dt}(\BP - e\BA/c) = e \left( -\inv{c}\PD{t}{\BA} - \inv{c} (\Bu \cdot \spacegrad) \BA + \frac{u_k}{c} \spacegrad A_k - \spacegrad \Phi \right).
-\end{aligned}
 \end{equation}
 %
 The first and last terms sum to the electric field, and we seen evaluating the Euler-Lagrange equations that the remainder is \(u_k \spacegrad A_k - (\Bu \cdot \spacegrad) \BA = \Bu \cross (\spacegrad \cross \BA)\).  We have therefore gotten close to the familiar Lorentz force law, and have
 %
 \begin{equation}\label{eqn:hamiltonian:em24}
-\begin{aligned}
 \frac{d}{dt}(\BP - e\BA/c) = e \left( \BE + \frac{\Bu}{c} \cross \BB \right).
-\end{aligned}
 \end{equation}
 %
 The only untidy detail left is that \(\BP - e \BA/c\) does not look much like \(\gamma m \Bu\), what we recognize as the relativistically corrected momentum.  We ought to have that implied somewhere and \eqnref{eqn:hamiltonian:em22} looks like the place.  That turns out to be the case, and some rearrangement gives us this directly
 %
 \begin{equation}\label{eqn:hamiltonian:em25}
-\begin{aligned}
 \BP - \frac{e}{c}\BA = \frac{m \Bu}{\sqrt{1 - \Bu^2/c^2}}
-\end{aligned}
 \end{equation}
 %
 This completes the exercise, and we have now obtained the momentum part of the Lorentz force law.  This is still unsatisfactory from a relativistic context since we do not have momentum and energy on equal footing.  We likely need to utilize a covariant Lagrangian and Hamiltonian formulation to fix up that deficiency.

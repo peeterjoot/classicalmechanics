@@ -37,9 +37,7 @@ derived as a limiting classical case via calculation of the expectation
 value of the Hamiltonian
 %
 \begin{equation}\label{eqn:lorForcePqA:interactionConjMomHamiltonian}
-\begin{aligned}
 H = \inv{2m}\sum_{k=1}^3 \left(p_k - \frac{e}{c} A_k \right)^2 + V
-\end{aligned}
 \end{equation}
 %
 This has a much different looking structure than \(\LL\) above, so reconciliation of the two
@@ -91,18 +89,14 @@ m \xddot_\mu
 Comparing to the Lorentz force equation (again for a \(+---\) metric)
 %
 \begin{equation}\label{eqn:lorentzForcePQA:120}
-\begin{aligned}
 m v_\mu = \frac{q}{c} F_{\mu\nu} v^\nu
-\end{aligned}
 \end{equation}
 %
 We see that we need \(\kappa = -q/c\), but we have an extra factor that does not look familiar.  In vector form this Lagrangian would give us the
 equation of motion
 %
 \begin{equation}\label{eqn:lorentzForcePQA:140}
-\begin{aligned}
 m v = \frac{q}{c} F \cdot v + \frac{q^2}{m c^2} (\grad A_\mu) A^\mu
-\end{aligned}
 \end{equation}
 %
 Assuming that this extra term has no place in the Lorentz force equation we need to adjust the original Lagrangian as follows
@@ -138,16 +132,12 @@ which is exactly the original Lorentz force Lagrangian, so in the end this works
 \citep{goldstein1951cm} uses the term conjugate momentum in reference to a specific coordinate.  For example in
 %
 \begin{equation}\label{eqn:lorentzForcePQA:200}
-\begin{aligned}
 \LL(\rho, \rhodot) = f(\rho, \rhodot)
-\end{aligned}
 \end{equation}
 %
 the value
 \begin{equation}\label{eqn:lorentzForcePQA:220}
-\begin{aligned}
 \PD{\rhodot}{f}
-\end{aligned}
 \end{equation}
 %
 is the momentum canonically conjugate to \(\rho\).  Above I have called the vector quantity \(m v + q A/c = (m v^\mu + q A^\mu/c) \gamma_\mu\) the canonical momentum.  My justification for doing so comes from a vectorization of the Euler-Lagrange equations.
@@ -155,17 +145,13 @@ is the momentum canonically conjugate to \(\rho\).  Above I have called the vect
 Equating all the variational derivatives to zero separately
 %
 \begin{equation}\label{eqn:lorentzForcePQA:240}
-\begin{aligned}
 \frac{\delta \LL}{\delta x^\mu} = \PD{x^\mu}{\LL} - \frac{d}{d\tau} \PD{\xdot^\mu}{\LL} = 0
-\end{aligned}
 \end{equation}
 %
 can be replaced by an equivalent vector equation (note that summation is now implied)
 %
 \begin{equation}\label{eqn:lorentzForcePQA:260}
-\begin{aligned}
 \gamma^\mu \frac{\delta \LL}{\delta x^\mu} = \gamma^\mu \PD{x^\mu}{\LL} - \frac{d}{d\tau} \gamma^\mu \PD{\xdot^\mu}{\LL} = 0
-\end{aligned}
 \end{equation}
 %
 This has two distinct vector operations, a spacetime gradient, and a spacetime ``velocity gradient'', and it is not terribly abusive
@@ -181,9 +167,7 @@ of notation to write
 with which all the Euler Lagrange equations can be summarized as
 %
 \begin{equation}\label{eqn:lorentzForcePQA:300}
-\begin{aligned}
 \grad \LL = \frac{d}{d\tau} \grad_v \LL
-\end{aligned}
 \end{equation}
 %
 It is thus natural, in a vector context, to name the quantity \(\grad_v \LL\), the canonical momentum.  It is a vectorized representation of all the individual momenta that are canonically conjugate to the respective coordinates.

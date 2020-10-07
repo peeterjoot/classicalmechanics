@@ -35,9 +35,7 @@ Note finally that a number of simplifying assumptions will be made.  These inclu
 Let us compute derivatives of the unit vector
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:zoo2}
-\begin{aligned}
 \zcap = \Be_3 e^{j\theta} = e^{-j\theta} \Be_3
-\end{aligned}
 \end{equation}
 %
 This can be done with both the left and right factorization of \(\Be_3\), and are respectively
@@ -80,23 +78,19 @@ j
 These derivatives have been grouped into a matrix factors that allow a natural seeming conjugate operation to be defined.  That is for a matrix of multivector elements \(a_{ij}\)
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:zoo5}
-\begin{aligned}
 A =
 \begin{bmatrix}
 a_{ij}
 \end{bmatrix}
-\end{aligned}
 \end{equation}
 %
 define a conjugate matrix, as the transpose of the reversed elements
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:zoo6}
-\begin{aligned}
 A^\dagger \equiv
 \begin{bmatrix}
 \tilde{a}_{ji}
 \end{bmatrix}
-\end{aligned}
 \end{equation}
 %
 With this definition, plus two helpers
@@ -145,9 +139,7 @@ Our Lagrangian for the one particle pendulum, measuring potential energy from th
 % h = l(1+\cos\theta)
 % \phi = m g h = m g l (1+\cos\theta)      %% then drop m g l constant term.
 \begin{equation}\label{eqn:sPolarMultiPendulum:zoo10}
-\begin{aligned}
 \LL = {\dot{\BTheta}}^\dagger \inv{2} m l^2 Q \dot{\BTheta} - m g l \cos\theta
-\end{aligned}
 \end{equation}
 %
 We also have a mechanism that should generalize fairly easily to the two or many pendulum cases too.
@@ -155,9 +147,7 @@ We also have a mechanism that should generalize fairly easily to the two or many
 Before continuing, it should be noted that there were assumptions made in this energy expression derivation that are not reflected in the Lagrangian above.  One of these was the unit bivector assumption for \(j\), as well as a \(\Be_3\) containment assumption for the plane this represents (\(\Be_3 \wedge j = 0\)).  So for completeness we should probably add to the Lagrangian above some Lagrange multiplier enforced constraints
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo6}
-\begin{aligned}
 \lambda ( {j}^2 + 1 ) + \alpha \cdot ( \Be_3 \wedge j )
-\end{aligned}
 \end{equation}
 %
 Here \(\alpha\) has got to be a trivector multiplier for the Lagrangian to be a scalar.  Can we get away with omitting these constraints?
@@ -171,9 +161,7 @@ Having constructed a way that can express the velocity of a single spherical pen
 There are two bivectors depicted, \(j_1\) and \(j_2\) representing oriented planes passing through great circles from a local polar axis (in direction \(\Be_3\)).  Let the positions of the respective masses be \(z_1\) and \(z_2\), where each mass is connected by a rigid massless rod of length \(l_1\) and \(l_2\) respectively.  The masses are rotated by angles \(\theta_1\) and \(\theta_2\) in the planes \(j_1\) and \(j_2\) from an initial direction of \(\Be_3\).  We can express the position of the second mass as
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:zoo11a}
-\begin{aligned}
 \Bz_2 = \Bz_1 + \Be_3 e^{j_2 \theta_2}
-\end{aligned}
 \end{equation}
 %
 We can use the same factorization as previously used for the single mass case and write for our collection of angular velocities
@@ -302,21 +290,17 @@ Observe that the order of products in this expansion is specifically ordered, si
 The potential in the multiple particle case is also fairly straightforward to compute.  Consider the two particle case to illustrate the pattern.   Using the lowest point as the potential reference we have
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:zoo18}
-\begin{aligned}
 \phi' = g \sum m_i h_i
 % two:
 = m_1 r_1 (1 + \cos\theta_1)
 + m_2 \left( r_1(1 + \cos\theta_1) + r_2( 1 + \cos\theta_2) \right)
 %+ m_3 \left( r_1(1 + \cos\theta_1) + r_2( 1 + \cos\theta_2) + r_3( 1 + \cos\theta_3) \right)
-\end{aligned}
 \end{equation}
 %
 Alternately, dropping all the constant terms (using the horizon as the potential reference) we have for the general case
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:zoo19}
-\begin{aligned}
 \phi = g \sum_i \left( \sum_{k=i}^N m_k \right) r_i \cos\theta_i
-\end{aligned}
 \end{equation}
 %
 Lets collect all the bits and pieces now for the multiple pendulum Lagrangian now, repeating for coherency, and introducing a tiny bit more notation (mass sums and block angular velocity matrices) for convenience
@@ -365,9 +349,7 @@ The potential energy is fixed on this surface, so our Lagrangian is purely kinet
 %
 We would like to directly vary the action for the Lagrangian around a stationary solution
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo2}
-\begin{aligned}
 S = \int \LL dt
-\end{aligned}
 \end{equation}
 %
 Introducing a bivector variation \(j = \overbar{j} + \epsilon\), and writing \(I = m l^2 \sin^2\theta_0\) we have
@@ -399,41 +381,31 @@ The first term is just \(\overbar{S}\).  Setting the variation \(\delta S = 0\) 
 With \(\epsilon\) arbitrary it appears that the solutions of the variation problem are given by
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo3}
-\begin{aligned}
 \frac{d}{dt}\left( I j' \right) = 0
-\end{aligned}
 \end{equation}
 %
 Has anything been lost by requiring that this is zero identically when all we had originally was the dot product of this with the variation bivector was zero?  If this zero describes the solution set, then we should be able to integrate this, yielding a constant.  However, following this to its logical conclusion leads to inconsistency.  Integrating \eqnref{eqn:sPolarMultiPendulum:noo3}, producing a bivector constant \(\kappa\) we have
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo3a}
-\begin{aligned}
 I j' = \kappa
-\end{aligned}
 \end{equation}
 %
 The original constraint on \(j\) was the bivector spanning the plane from the polar axis to the azimuthal unit vector in the \(x,y\) plane at angle a \(\phi\).  The \(\phi\) dependence was not specified, and left encoded in the bivector representation.  Without words that was
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo3b}
-\begin{aligned}
 j = \Be_3 \Be_1 e^{\Be_{12} \phi}
-\end{aligned}
 \end{equation}
 %
 Inserting back into \eqnref{eqn:sPolarMultiPendulum:noo3a} this gives
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo3c}
-\begin{aligned}
 \frac{d}{dt} e^{\Be_{12} \phi} = \frac{\Be_1 \Be_3 \kappa}{I}
-\end{aligned}
 \end{equation}
 %
 One more integration is trivially possible yielding
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo3d}
-\begin{aligned}
 e^{\Be_{12} \phi(t)} = e^{\Be_{12} \phi_0} + \frac{\Be_1 \Be_3 \kappa t}{I}
-\end{aligned}
 \end{equation}
 %
 There are two possibilities for the grades of \(\kappa\), one is \(\kappa \propto \Be_3 \Be_1\), so that the time dependence is a scalar, and the other is \(\kappa \propto \Be_3 \Be_2\) so that we have an \(x,y\) plane bivector component.  Allowing for both, and separating into real and imaginary parts we have
@@ -448,25 +420,19 @@ There are two possibilities for the grades of \(\kappa\), one is \(\kappa \propt
 This is not anything close to the solution that is expected if we were to start with the scalar Lagrangian for the same problem.  That Lagrangian is
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo4}
-\begin{aligned}
 \LL = \inv{2} I \dot{\phi}^2
-\end{aligned}
 \end{equation}
 %
 and the Euler Lagrange equations give us, for a scalar constant \(\mu\)
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo5}
-\begin{aligned}
 I \dot{\phi} = \mu
-\end{aligned}
 \end{equation}
 %
 So the solution for \(\phi\) is just
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo5b}
-\begin{aligned}
 \phi - \phi_0 = \frac{\mu t}{I}
-\end{aligned}
 \end{equation}
 %
 In the absence of friction this makes sense.  Our angle increases monotonically, and we have circular motion with constant angular velocity.  Compare this to the messier \eqnref{eqn:sPolarMultiPendulum:noo3e} derived from the bivector ``solution'' to the variational problem.  There is definitely something wrong with the variational approach (or conclusion) when the variable is a bivector.
@@ -474,9 +440,7 @@ In the absence of friction this makes sense.  Our angle increases monotonically,
 Does it help to include the constraints explicitly?  The bivector parametrized Lagrangian with the unit bivector multiplier constraint for this system is
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo20}
-\begin{aligned}
 \LL = -\inv{2} I (j')^2 + \lambda (j^2 + 1)
-\end{aligned}
 \end{equation}
 %
 Doing the variation we get a set of two equations
@@ -491,17 +455,13 @@ j^2 &= -1
 Once again re-inserting \(j = \Be_{31} e^{\Be_{12} \phi}\) one gets
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo22}
-\begin{aligned}
 e^{i\phi} = A \sin(\sqrt{I/2\lambda} t) + B \cos(\sqrt{I/2\lambda} t)
-\end{aligned}
 \end{equation}
 %
 Setting \(\lambda = 1\), \(A = i\), \(B = 1\), we have
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo23}
-\begin{aligned}
 \phi \propto t
-\end{aligned}
 \end{equation}
 %
 This is now consistent with the scalar Lagrangian treatment.  In both cases we have the angle linearly proportional to time, and have a single parameter to adjust the angular velocity (used \(\mu\) in the scalar treatment above and have \(\lambda\) this time (although it was set to one here for convenience).  The conclusion has to be that the requirement to include the multipliers for the constraints is absolutely necessary to get the right physics out of this bivector parametrized Lagrangian.  The good news is that we can get the right physics out of a non-scalar treatment.  What is a bit disturbing is that it was fairly difficult in the end to get from the results of the variation to a solution, and that this will not likely get any easier with a more complex system.
@@ -533,9 +493,7 @@ The scalar expansion \eqnref{eqn:sPolarMultiPendulum:scalarExpansion} of the kin
 We have considered an specific example of a Lagrangian function \(\LL = f(j' \cdot j')\) without (yet) utilizing or deriving a multivector form of the Euler-Lagrange equations.  Let us consider a few more specific simple examples motivated by the expansion of the kinetic energy in \eqnref{eqn:sPolarMultiPendulum:scalarExpansion}.  Lets start with
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo7}
-\begin{aligned}
 \LL = \theta' a \cdot j'
-\end{aligned}
 \end{equation}
 %
 where \(a\) is a bivector constant, \(\theta\) a scalar, and \(j\) a bivector variable for the system.  Expanding this around stationary points \(j = \overbar{j} + \epsilon\), and \(\theta = \overbar{\theta} + \phi\) we have to first order
@@ -564,17 +522,13 @@ As to what, if anything, this particular Lagrangian (a fragment picked out of a 
 If we throw a small additional wrench into the problem above and allow \(a\) to be one of the variables our system is dependent on.
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo9a}
-\begin{aligned}
 \LL(\theta, \theta', a, a', j, j') = \theta' a \cdot j'
-\end{aligned}
 \end{equation}
 %
 It is less obvious how to do a first order Taylor expansion of this Lagrangian required for the variation around the stationary solution.  If all the coordinates in the Lagrangian were scalars as in
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:noo9}
-\begin{aligned}
 \LL(\theta, \theta', a, a', j, j') = \theta' a j'
-\end{aligned}
 \end{equation}
 %
 (dropping dot products now that these are all scalar variables), then the variation requires nothing abnormal.  Suppose our stationary point has coordinates \(\overbar{\theta}, \overbar{a}, \overbar{j}\), with variations \(\alpha, \beta, \gamma\) that vanish at the extremes of the integral as usual.
@@ -650,20 +604,16 @@ Having considered a few specific Lagrangians dependent on multivector generalize
 
 Write
 \begin{equation}\label{eqn:sPolarMultiPendulum:roo1}
-\begin{aligned}
 \LL = \LL(X_k, X_k')
-\end{aligned}
 \end{equation}
 %
 where \(X_k \in \bigwedge^{m_k}\) is a blade of grade \(m_k\).  We can do a regular old chain rule expansion of this Lagrangian if coordinates are (temporarily) introduced for each of the blades \(X_k\).  For example, if \(X\) is a bivector in \R{3}, we can write
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:183}
-\begin{aligned}
 X =
 \Be_{12} a^{12} +
 \Be_{13} a^{13} +
 \Be_{23} a^{23}
-\end{aligned}
 \end{equation}
 %
 and then we can do a first order Taylor series expansion of \(\LL(\overbar{X} + \Bepsilon)\) in terms of these coordinates.  With \(\Bepsilon = \Be_{12}\epsilon^{12} + \Be_{13}\epsilon^{13} + \Be_{23}\epsilon^{23}\), for this specific single variable Lagrangian we have
@@ -682,9 +632,7 @@ and then we can do a first order Taylor series expansion of \(\LL(\overbar{X} + 
 If we write the coordinate expansion of our blades \(X_k\) as
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:223}
-\begin{aligned}
 X_k = \sum_{b_k} {x_k}^{b_k} \sigma_{b_k}
-\end{aligned}
 \end{equation}
 %
 where \(b_k\) is some set of indices like \(\{12, 23, 13\}\) from the \R{3} bivector example, then our chain rule expansion of the Lagrangian to first order about a stationary point becomes
@@ -726,9 +674,7 @@ Utilizing this (assumed) orthonormal basis pair \(\sigma^{b_k} \cdot \sigma_{b_j
 Setting \(\delta S = 0\) we have a set of equations for each of the blade variables, and the Euler-Lagrange equations take the form
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:roo4}
-\begin{aligned}
 \grad_{X_k} \LL = \frac{d}{dt} \grad_{X_k'} \LL
-\end{aligned}
 \end{equation}
 %
 \subsection{Work some examples}
@@ -785,9 +731,7 @@ By inspection we can see that this works for the remaining two motivational exam
 We now have the tools to evaluate the Euler-Lagrange equations for the pendulum problem \eqnref{eqn:sPolarMultiPendulum:zoo20}.  Since all the \(d{\theta}_a/dt\) and \(dj_a/dt\) dependence is in the kinetic energy we can start with that.  For
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:eoo1}
-\begin{aligned}
 K = \inv{2} \dot{\BTheta}^\dagger Q \dot{\BTheta}
-\end{aligned}
 \end{equation}
 %
 We want each of \(\PD{\dot{\theta}_a}{K}\) and \(\grad_{j_a'} K\).  Of these the \(\dot{\theta}\) derivative is easier, so lets start with that
@@ -915,7 +859,7 @@ plus one equation for each of the bivectors \(j_a\)
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:eoo5}
 \begin{aligned}
- 3 \frac{d}{dt} \left(
+3 \frac{d}{dt} \left(
 \dot{\BTheta}^\dagger Q
 {\begin{bmatrix}
 \delta_{ar}
@@ -1008,22 +952,18 @@ j e^{j \theta} \sin\theta & \sin^2\theta
 Since we are working in 3D this symmetric sum is twice the dot product of the bivector \(j\) with its derivative, which means that it is a scalar.  We expect this to be zero though, and can observe that this is the case since \(j\) was by definition a unit bivector
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:moo2}
-\begin{aligned}
 j \frac{dj}{dt} + \frac{dj}{dt} j = \frac{d j^2}{dt} = \frac{d (-1)}{dt} = 0
-\end{aligned}
 \end{equation}
 %
 (thus \(j\) and its derivative represent orthogonal oriented planes rather like \(\rcap\) and its derivative are orthogonal on a circle or sphere).  The implication is that the diagonal subset of the kinetic energy expansion contains just
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:moo3}
-\begin{aligned}
 \inv{2}
 \sum_{k=1}^N
 \mu_k
 {l_k}^2
 \left(
 \left(\frac{d\theta_k}{dt}\right)^2 -\sin^2\theta_k \left(\frac{d j_k}{dt}\right)^2  \right)
-\end{aligned}
 \end{equation}
 %
 If we are going to have any complex interaction terms then they will have to come from the off diagonal products.  Expanding the first of these
@@ -1092,11 +1032,9 @@ j_b e^{-j_b \theta_b} j_a' + j_a' j_b e^{j_b \theta_b}
 The first term actually expands in a similarly straightforward way.  The vector terms all cancel, and one is left with just
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:523}
-\begin{aligned}
 j_a e^{-j_a \theta_a} j_b e^{j_b\theta_b} + j_b e^{-j_b \theta_b} j_a e^{j_a\theta_a}
 =
 2 \cos\theta_a\cos\theta_b j_a \cdot j_b - 2 \sin\theta_a \sin\theta_b
-\end{aligned}
 \end{equation}
 %
 Writing \(S_{\theta_k} = \sin\theta_k\) and \(C_{\theta_k} = \cos\theta_k\) (for compactness to fit things all in since the expanded result is messy), all of this KE terms can be assembled into the following explicit scalar expansion

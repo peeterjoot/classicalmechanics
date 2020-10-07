@@ -52,9 +52,7 @@ are to be determined by extreme values of the action variation.  Note the use of
 We want to consider general Lagrangians of this form.  Write
 %
 \begin{equation}\label{eqn:fieldLagrangian:40}
-\begin{aligned}
 \LL = \LL( A^\mu, \partial_\nu A^\sigma) = \LL(A^0, A^1, \cdots, \partial_0 A^0, \partial_1 A^0, \cdots )
-\end{aligned}
 \end{equation}
 %
 \subsection{First order Taylor expansion of a multi variable function}
@@ -64,9 +62,7 @@ Given an abstractly specified function like this, with indices and partials flyi
 Consideration of a simple case guides the way.  Assume that a two variable function can be expressed as a polynomial of some order
 %
 \begin{equation}\label{eqn:fieldLagrangian:60}
-\begin{aligned}
 f(x,y) = a_{i j} x^i y^j
-\end{aligned}
 \end{equation}
 %
 Evaluation of this function or its partials at \((x,y) = (0,0)\) supply the constants \(a_{i j}\).  Simplest is the lowest order constant
@@ -146,10 +142,8 @@ How to do the first order Taylor expansion of a multivariable function has been 
 Here we see the first use of the peculiar looking partials from the wikipedia article
 %
 \begin{equation}\label{eqn:fieldLagrangian:160}
-\begin{aligned}
 \PD{
 \lr{ \partial_\nu A^\sigma }}{\LL}.
-\end{aligned}
 \end{equation}
 %
 Initially looking at that I could not fathom what it meant, but it is just what it says,
@@ -166,9 +160,7 @@ differentiation with respect to a variable \(\partial_\nu A^\sigma\).  As an exa
 where \(u\),\(v\),\(a\), and \(b\) are constants.  Then an corresponding example of such a partial term is
 %
 \begin{equation}\label{eqn:fieldLagrangian:200}
-\begin{aligned}
 \PD{\lr{ \partial_1 A^0 }}{\LL} = a.
-\end{aligned}
 \end{equation}
 %
 \subsection{Calculation of the action for the general field Lagrangian}
@@ -260,11 +252,9 @@ Now, for \(\delta S = 0\) for all possible variations \(n^\sigma\) from the opti
 for all \(\sigma\).  Specifically
 %
 \begin{equation}\label{eqn:fieldLag:eulerLagrangeField}
-\begin{aligned}
 \PD{A^\sigma}{\LL} = \PD{x^\nu}{} \PD{
 \lr{ \partial_\nu A^\sigma }
 }{\LL}.
-\end{aligned}
 \end{equation}
 %
 Feynman's direct approach does not require too much to understand, and one can intuit through it fairly easily.  Contrast to
@@ -312,9 +302,7 @@ for convenience \(\kappa = -\epsilon_0 c /2\) this is
 %
 Some intermediate calculations to start
 \begin{equation}\label{eqn:fieldLagrangian:340}
-\begin{aligned}
 \PD{A_\sigma}{\LL} = J^\sigma
-\end{aligned}
 \end{equation}
 %
 For the differentiation with respect to partials it is helpful to introduce a complete switch of indices in \eqnref{eqn:fieldLag:maxlag}
@@ -425,9 +413,7 @@ It appears that there is a cancellation of \(\sigma\) terms possible in that las
 for vectors \(a\), \(b\), and bivector \(B\) where \(a \cdot b = 0\), a reduction of the algebraic product is required
 %
 \begin{equation}\label{eqn:fieldLagrangian:440}
-\begin{aligned}
 \inv{a} B b a
-\end{aligned}
 \end{equation}
 %
 Attempting this reduction to cleanly cancel the \(a\) terms goes nowhere fast.  The trouble is that there
@@ -438,9 +424,7 @@ Step back and observe that the original Lagrangian of \eqnref{eqn:fieldLag:maxla
 had only have scalar and pseudoscalar grades from the bivector square, plus a pure scalar grade part
 %
 \begin{equation}\label{eqn:fieldLagrangian:460}
-\begin{aligned}
 \LL = \gpgrade{\LL}{0+4}
-\end{aligned}
 \end{equation}
 %
 This implies that there is an dependency in the indices of the
@@ -488,9 +472,7 @@ can be commuted, which leaves
 This is Maxwell's equation in its full glory
 %
 \begin{equation}\label{eqn:fieldLagrangian:520}
-\begin{aligned}
 \grad F = \frac{J}{\epsilon_0 c}.
-\end{aligned}
 \end{equation}
 %
 \citep{doran2003gap} contains additional treatment, albeit a dense one, of
@@ -586,9 +568,7 @@ The
 \href{https://en.wikipedia.org/wiki/Noether%27s_theorem}{wiki article on Noether's theorem} lists the relativistic quantum Lagrangian in the form
 %
 \begin{equation}\label{eqn:fieldLagrangian:640}
-\begin{aligned}
 \LL = -\eta^{\mu\nu}\partial_\mu \psi \partial_\nu \psi^\conj + \frac{m^2 c^2}{\Hbar^2}\psi \psi^\conj
-\end{aligned}
 \end{equation}
 %
 That article uses \(\Hbar = c = 1\), and appears to use a \(-+++\) metric, both
@@ -597,9 +577,7 @@ of which are adjusted for here.
 Calculating the derivatives
 %
 \begin{equation}\label{eqn:fieldLagrangian:660}
-\begin{aligned}
 \PD{\psi^\conj}{\LL} = \frac{m^2 c^2}{\Hbar^2} \psi
-\end{aligned}
 \end{equation}
 %
 \begin{equation}\label{eqn:fieldLagrangian:680}
@@ -618,9 +596,7 @@ Calculating the derivatives
 %
 So we have
 \begin{equation}\label{eqn:fieldLagrangian:700}
-\begin{aligned}
 \partial_\mu \partial^\mu \psi = \frac{-m^2 c^2}{\Hbar^2} \psi
-\end{aligned}
 \end{equation}
 %
 %There is an ambiguity here
@@ -636,9 +612,7 @@ So we have
 %
 With the metric dependency made explicit this is
 \begin{equation}\label{eqn:fieldLagrangian:720}
-\begin{aligned}
 \left(\spacegrad^2 - \inv{c^2}\PDsq{t}{}\right) \psi = \frac{m^2 c^2}{\Hbar^2} \psi
-\end{aligned}
 \end{equation}
 %
 Much different looking than the classical time dependent Schr\"{o}dinger's equation in \eqnref{eqn:fieldLag:schrod}.
