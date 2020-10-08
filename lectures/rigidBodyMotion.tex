@@ -68,13 +68,15 @@ We consider the motion of point \(\BP\), an arbitrary point in the body as in \c
 \imageFigure{../figures/classicalmechanics/rigidBodyMotionFig4}{A point in the body relative to the center of mass.}{fig:rigidBodyMotion:rigidBodyMotionFig4}{0.2}
 %
 From the picture we have
+\begin{subequations}
+\label{eqn:rigidBodyMotion:101a}
 \begin{equation}\label{eqn:rigidBodyMotion:100}
-\Brho = \BR_{CM} + \Br.
+\Brho = \BR_{CM} + \Br
 \end{equation}
-%
 \begin{equation}\label{eqn:rigidBodyMotion:120}
-d\Brho = d\BR_{CM} + d\Bphi \cross \Br.
+d\Brho = d\BR_{CM} + d\Bphi \cross \Br,
 \end{equation}
+\end{subequations}
 %
 where
 %
@@ -136,7 +138,7 @@ we have
 \boxedEquation{eqn:rigidBodyMotion:240}{
 \Bv_p = \BV_{CM} -
 \BOmega_{CM} \cross \Ba
-+\BOmega_{CM} \cross \tilde{\mathbf{r}}
++\BOmega_{CM} \cross \tilde{\mathbf{r}}.
 }
 %
 Have another way that we can use to express the position of the point
@@ -144,7 +146,7 @@ Have another way that we can use to express the position of the point
 % notation switch midstream tilde{r} -> tilde{r_p}
 \begin{equation}\label{eqn:rigidBodyMotion:260}
 \ddt{\Brho}
-= \ddt{\tilde{\mathbf{R}}} + \ddt{\tilde{\boldsymbol{\rho}}} \cross \tilde{\mathbf{r}}_p.
+= \ddt{\tilde{\mathbf{R}}} + \ddt{\tilde{\boldsymbol{\rho}}} \cross \tilde{\mathbf{r}}_p,
 \end{equation}
 %
 or
@@ -156,7 +158,7 @@ or
 Equating with above, and noting that this holds for all \(\tilde{\mathbf{r}}_p\), and noting that if \(\tilde{\mathbf{r}}_p = 0\)
 %
 \begin{equation}\label{eqn:rigidBodyMotion:300}
-\BV_A = \BV_{CM} - \BOmega_{CM} \cross \Ba.
+\BV_A = \BV_{CM} - \BOmega_{CM} \cross \Ba,
 \end{equation}
 %
 hence
@@ -215,14 +217,14 @@ We see that if we take \(A\) to be the center of mass then our cross term
 \BV_A \cdot
 \lr{ \BOmega \cross \sum_a m_a \Br_a } \\
 &=
-\BV_A \cdot (\BOmega \cross \BR_{CM} ).
+\BV_A \cdot (\BOmega \cross \BR_{CM} ),
 \end{aligned}
 \end{equation}
 %
 which vanishes.  With
 %
 \begin{equation}\label{eqn:rigidBodyMotion:380}
-\mu = \sum_a m_a.
+\mu = \sum_a m_a,
 \end{equation}
 %
 we have
@@ -232,7 +234,7 @@ T = \inv{2} \mu \BV_{CM}^2+ \inv{2} \sum_a
 (\BOmega \cross \Br_a) \cdot (\BOmega \cross \Br_a).
 \end{equation}
 %
-with
+With
 %
 \begin{equation}\label{eqn:rigidBodyMotion:420}
 (\BA \cross \BB) \cdot (\BC \cross \BD) = (\BA \cdot \BC) (\BB \cdot \BD) -(\BA \cdot \BD) (\BB \cdot \BC),
@@ -253,17 +255,18 @@ T = \inv{2} \sum_a m_a \left( \BOmega^2 \Br_a^2 - (\BOmega \cdot \Br_a)^2
 Expanding this out with
 %
 \begin{equation}\label{eqn:rigidBodyMotion:460}
-\Br_a = ( r_{a_1} r_{a_2}, r_{a_3} ) = \{ r_{a_i} \}.
+\Br_a = ( r_{a_1} r_{a_2}, r_{a_3} ) = \{ r_{a_i} \},
 \end{equation}
 %
 and
 \begin{equation}\label{eqn:rigidBodyMotion:480}
-\BOmega = ( \Omega_{1} \Omega_{2}, \Omega_{3} ) = \{ \Omega_{i} \}.
+\BOmega = ( \Omega_{1} \Omega_{2}, \Omega_{3} ) = \{ \Omega_{i} \},
 \end{equation}
 %
 we have
 %
 \begin{equation}\label{eqn:rigidBodyMotion:500}
 T = \inv{2} \sum_a m_a \left( \Omega_k \Omega_k r_{a_j} r_{a_j} - (\Omega_k r_{a_k})^2
-\right).
+\right)
+.
 \end{equation}

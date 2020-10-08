@@ -2,7 +2,7 @@
 - Proofing checklist:
 
    - (Convert parts to chapters), first converting section -> subsection or paragraph.  review existing subsections/paragraphs.
-   - Equation grammar.
+   - Equation grammar: review after the bulk period additions.
    - Make sure all the indexing is done.  at least chapter,section,paragraph,problems
 
 
