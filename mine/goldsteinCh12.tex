@@ -32,7 +32,7 @@ taking derivatives:
 \begin{equation}\label{eqn:goldsteinCh12:40}
 \begin{aligned}
 \qdot_1 &= a i \dottheta e^{i\theta} + (l/2) i \dotalpha e^{i\alpha} \\
-\qdot_2 &= a i \dottheta e^{i\theta} - (l/2) i \dotalpha e^{i\alpha} \\
+\qdot_2 &= a i \dottheta e^{i\theta} - (l/2) i \dotalpha e^{i\alpha} .
 \end{aligned}
 \end{equation}
 %
@@ -112,7 +112,7 @@ This can be used to express each of the position vectors in terms of the \(\Brho
         &= 2 m (\Brho_1 + \Brho_2) + 3 m \Br_3 \\
   \Br_3 &= \BR - \inv{3}(\Brho_1 + \Brho_2) \\
 \Br_2 = \Brho_2 + \Br_3 &= \Brho_2 + \Br_3 = \frac{2}{3} \Brho_2 - \inv{2} \Brho_1 + \BR \\
-\Br_1 = \Brho_1 + \Br_3 &= \frac{2}{3} \Brho_1 - \inv{2} \Brho_2 + \BR \\
+\Br_1 = \Brho_1 + \Br_3 &= \frac{2}{3} \Brho_1 - \inv{2} \Brho_2 + \BR .
 \end{aligned}
 \end{equation}
 %
@@ -154,7 +154,7 @@ The kinetic part (omitting the m/2 factor), in terms of the CM and relative vect
 &=
  3 \dot{\BR}^2 + (5/9 + 1/4) ((\dot{\Brho}_1)^2 + (\dot{\Brho}_2)^2 ) \\
 &+ 2 (-2/3 + 1/9) \dot{\Brho}_1 \cdot \dot{\Brho}_1
-+ 2 (1/3-1/2) (\dot{\Brho}_1 + \dot{\Brho}_2) \cdot \dot{\BR}  \\
++ 2 (1/3-1/2) (\dot{\Brho}_1 + \dot{\Brho}_2) \cdot \dot{\BR}  .
 \end{aligned}
 \end{equation}
 %
@@ -164,7 +164,7 @@ So the Kinetic part of the Lagrangian is
 \begin{aligned}
 \LL_K &= \frac{3m}{2} \dot{\BR}^2 + \frac{29 m}{72} ((\dot{\Brho}_1)^2 + (\dot{\Brho}_2)^2 )
 - \frac{5 m}{9} \dot{\Brho}_1 \cdot \dot{\Brho}_2
-- \frac{m}{6} (\dot{\Brho}_1 + \dot{\Brho}_2) \cdot \dot{\BR}  \\
+- \frac{m}{6} (\dot{\Brho}_1 + \dot{\Brho}_2) \cdot \dot{\BR}  .
 \end{aligned}
 \end{equation}
 %
@@ -284,7 +284,7 @@ Now we are in shape to compute the conserved ``current'' for a rotational symmet
 \begin{equation}\label{eqn:goldsteinCh12:320}
 \begin{aligned}
 {\Bx}_k' &= e^{-i\ncap \alpha/2} {\Bx}_k e^{i\ncap\alpha/2} \\
-\dot{\Bx}_k' &= e^{-i\ncap \alpha/2} \dot{\Bx}_k e^{i\ncap\alpha/2} \\
+\dot{\Bx}_k' &= e^{-i\ncap \alpha/2} \dot{\Bx}_k e^{i\ncap\alpha/2} .
 \end{aligned}
 \end{equation}
 %
@@ -293,7 +293,7 @@ in the system are rotated
 %
 \begin{equation}\label{eqn:goldsteinCh12:340}
 \begin{aligned}
-\LL & \rightarrow \LL'(\Bx_k', \dot{\Bx}_j') = \LL(\Bx_k, \dot{\Bx}_j) \\
+\LL & \rightarrow \LL'(\Bx_k', \dot{\Bx}_j') = \LL(\Bx_k, \dot{\Bx}_j) .
 \end{aligned}
 \end{equation}
 %
@@ -313,7 +313,7 @@ Anyways, back to the derivative.  One way to evaluate this would be in terms of 
 \begin{equation}\label{eqn:goldsteinCh12:380}
 \begin{aligned}
 \frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
-&= \sum_{k,m} \frac{\partial \LL'}{\partial x_{km}'} \PD{\alpha}{x_{km}'} + \frac{\partial \LL'}{\partial \dot{x}_{km}'} \PD{\alpha}{\dot{x}_{km}'} \\
+&= \sum_{k,m} \frac{\partial \LL'}{\partial x_{km}'} \PD{\alpha}{x_{km}'} + \frac{\partial \LL'}{\partial \dot{x}_{km}'} \PD{\alpha}{\dot{x}_{km}'} .
 \end{aligned}
 \end{equation}
 %
@@ -331,7 +331,7 @@ Then the chain rule application above becomes
 \begin{equation}\label{eqn:goldsteinCh12:420}
 \begin{aligned}
 \frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
-&= \sum_{k} \left( \spacegrad_{\Bx_k'} \LL'\right) \cdot \PD{\alpha}{\Bx_k'} + \left( \spacegrad_{\dot{\Bx}_k'} \LL' \right) \cdot \PD{\alpha}{\dot{\Bx}_k'} \\
+&= \sum_{k} \left( \spacegrad_{\Bx_k'} \LL'\right) \cdot \PD{\alpha}{\Bx_k'} + \left( \spacegrad_{\dot{\Bx}_k'} \LL' \right) \cdot \PD{\alpha}{\dot{\Bx}_k'} .
 \end{aligned}
 \end{equation}
 %
@@ -352,7 +352,7 @@ So we have
 \begin{aligned}
 \frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
 &= \sum_{k} \left( \spacegrad_{\Bx_k'} \LL'\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
-+ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k'} \LL'\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) \\
++ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k'} \LL'\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) .
 \end{aligned}
 \end{equation}
 %
@@ -370,7 +370,7 @@ Inserting this we have
 \begin{aligned}
 \frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
 &= \sum_{k} \left( \frac{d}{dt} \spacegrad_{\dot{\Bx}_k'} \LL'\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
-+ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k'} \LL'\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) \\
++ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k'} \LL'\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) .
 \end{aligned}
 \end{equation}
 %
@@ -381,7 +381,7 @@ perfect differential
 \begin{aligned}
 \frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
 &= \sum_{k} \left( \frac{d}{dt} \spacegrad_{\dot{\Bx}_k} \LL\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
-+ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k} \LL\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) \\
++ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k} \LL\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) .
 \end{aligned}
 \end{equation}
 %
@@ -407,7 +407,7 @@ Here is where the evaluation at \(\alpha=0\) comes in, since \(\Bx_k'(\alpha=0) 
 &= \sum_{k} \frac{d}{dt} \gpgradezero{
 \ncap i^2 \left(\Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \LL \right) \right)
 } \\
-&= \sum_{k} \frac{d}{dt} -\ncap \cdot \left(\Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \LL \right) \right) \\
+&= \sum_{k} \frac{d}{dt} -\ncap \cdot \left(\Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \LL \right) \right) .
 \end{aligned}
 \end{equation}
 %
@@ -534,7 +534,7 @@ This can be substituted back into one our \(c_2^2\) equation:
 ({c_2}^2 -1)\xdot_2^2 &= {\xdot_1}^2 \\
 \frac{c_2^2}{ c_1^2 } \xdot_2^2 &= {\xdot_1}^2 \\
 \pm \frac{c_2}{ c_1 } \xdot_2 &= {\xdot_1} \\
-\pm \frac{c_2}{ c_1 } x_2 &= x_1 + \kappa \\
+\pm \frac{c_2}{ c_1 } x_2 &= x_1 + \kappa .
 \end{aligned}
 \end{equation}
 %
@@ -566,7 +566,7 @@ Let us pick \(\xdot_1^2\) to eliminate, and subst 2 into 3:
 \implies \\
 %\xdot_2^2 ( 1 - (1 - c_1^2)(1 - c_2^2) ) + \xdot_3^2 ( 1 - (1 - c_1^2) ) &= 0 \\
 - c_3^2 \xdot_3^2 + c_2^2 \xdot_2 &= 0 \\
-\pm c_3 \xdot_3 &= c_2 \xdot_2 \\
+\pm c_3 \xdot_3 &= c_2 \xdot_2 .
 \end{aligned}
 \end{equation}
 %
@@ -581,7 +581,7 @@ Since these equations are symmetric, we can do this for all, with the result:
 \begin{aligned}
 \pm c_3 \xdot_3 &= c_2 \xdot_2 \\
 \pm c_3 \xdot_3 &= c_1 \xdot_1 \\
-\pm c_2 \xdot_2 &= c_1 \xdot_1 \\
+\pm c_2 \xdot_2 &= c_1 \xdot_1 .
 \end{aligned}
 \end{equation}
 %
@@ -670,7 +670,7 @@ Thus we have:
 &= \frac{K^2 \dottheta^2 }{ \sin^2\theta
 \lr{  \sin^2\theta - K^2  } } \\
 \dotphi
-&= \frac{K \dottheta }{ \sin\theta \sqrt{ \sin^2\theta - K^2 } } \\
+&= \frac{K \dottheta }{ \sin\theta \sqrt{ \sin^2\theta - K^2 } } .
 \end{aligned}
 \end{equation}
 %
@@ -773,7 +773,7 @@ Assuming sufficient continuity look at the second term where we have:
 &= \PD{x}{} \PD{\alpha}{y} \\
 &= \PD{x}{} n(x) \\
 &= \frac{d}{ d x} n(x) \\
-&= \frac{d}{ d x} \PD{\alpha}{y} \\
+&= \frac{d}{ d x} \PD{\alpha}{y} .
 \end{aligned}
 \end{equation}
 %
@@ -850,7 +850,7 @@ d x \\
 \Bigr)_a^b
 -\int \PD{\alpha}{y} \frac{d}{dx} {\frac{d}{ d x} \PD{\yddot}{f}} d x \\
 &=
--\int \PD{\alpha}{y} \frac{d^2}{dx^2} \PD{\yddot}{f} d x \\
+-\int \PD{\alpha}{y} \frac{d^2}{dx^2} \PD{\yddot}{f} d x .
 \end{aligned}
 \end{equation}
 %
@@ -878,7 +878,7 @@ Question.  Goldstein writes this in total differential form instead of a derivat
 \begin{equation}\label{eqn:goldsteinCh12:980}
 \begin{aligned}
 dI &= \frac{dI}{d\alpha} d\alpha \\
-&= \int d x \left(\PD{\alpha}{y} d \alpha\right) \left( \PD{y}{f} - \frac{d}{ d x} \PD{\ydot}{f} + \frac{d^2}{dx^2} \PD{\yddot}{f} \right) \\
+&= \int d x \left(\PD{\alpha}{y} d \alpha\right) \left( \PD{y}{f} - \frac{d}{ d x} \PD{\ydot}{f} + \frac{d^2}{dx^2} \PD{\yddot}{f} \right) .
 \end{aligned}
 \end{equation}
 %

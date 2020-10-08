@@ -139,7 +139,7 @@ Additionally, with substitution of the Euler-Lagrange equations in the first ter
 \frac{d \LL'}{d \theta}
 &=
 \left( \PD{x^\mu}{} \PD{(\partial_\mu \phi')}{\LL} \right) \PD{\theta}{\phi'}
-+\PD{(\partial_\mu \phi')}{\LL} \PD{x^\mu}{} \PD{\theta}{\phi'} \\
++\PD{(\partial_\mu \phi')}{\LL} \PD{x^\mu}{} \PD{\theta}{\phi'} .
 \end{aligned}
 \end{equation}
 %
@@ -252,7 +252,7 @@ For the translation to be a symmetry the evaluation of the variational derivativ
 \frac{\delta }{\delta \phi} \Ba \cdot \spacegrad \LL
 &= -\frac{\Ba}{\epsilon_0} \cdot \frac{\delta }{\delta \phi} (\rho \spacegrad \phi + \phi \spacegrad \rho) \\
 &= -\sum_m \frac{a_m}{\epsilon_0} \frac{\delta }{\delta \phi} (\rho \partial_m \phi + \phi \partial_m \rho) \\
-&= -\sum_m \frac{a_m}{\epsilon_0} \left( \frac{\partial }{\partial \phi} - \sum_k \partial_k \frac{\partial }{\partial \phi_k}\right) (\rho \phi_m + \phi \rho_m) \\
+&= -\sum_m \frac{a_m}{\epsilon_0} \left( \frac{\partial }{\partial \phi} - \sum_k \partial_k \frac{\partial }{\partial \phi_k}\right) (\rho \phi_m + \phi \rho_m) .
 \end{aligned}
 \end{equation}
 %
@@ -379,7 +379,7 @@ a^\mu \partial_\mu \LL \\
 a^\mu \left(
 \PD{A^\sigma}{\LL} \PD{x^\mu}{A^\sigma}
 +\PD{(\partial_\alpha A^\beta)}{\LL} \PD{x^\mu}{(\partial_\alpha A^\beta)}
-\right) \\
+\right) .
 \end{aligned}
 \end{equation}
 %
@@ -400,7 +400,7 @@ a^\mu \partial_\alpha \left(
 %&=
 %\partial_\alpha \left(
 %\PD{(\partial_\alpha A^\beta)}{\LL} (a \cdot \grad) A^\beta
-%\right) \\
+%\right) .
 \end{aligned}
 \end{equation}
 %
@@ -460,7 +460,7 @@ With this our Noether current equation becomes
 \grad \cdot T(a)
 &= \gpgradezero{ \grad T(a) } \\
 &= \gpgradezero{ \grad (\Pi_\beta (a \cdot \grad) A^\beta - a \grad \LL ) } \\
-&= \gpgradezero{ \grad \left(\inv{2} \Pi_\beta (a (\grad A^\beta) + (\grad A^\beta) a) - a \LL \right) } \\
+&= \gpgradezero{ \grad \left(\inv{2} \Pi_\beta (a (\grad A^\beta) + (\grad A^\beta) a) - a \LL \right) } .
 \end{aligned}
 \end{equation}
 %
@@ -501,7 +501,7 @@ bidirectional gradient vector term we can utilize the property that the reverse 
 +\gpgradeone{ (v^\beta \lgrad) \Pi_\beta } \\
 &=
 \gpgradeone{ v^\beta (\rgrad \Pi_\beta) }
-+\gpgradeone{ \Pi_\beta (\rgrad v^\beta) } \\
++\gpgradeone{ \Pi_\beta (\rgrad v^\beta) } .
 \end{aligned}
 \end{equation}
 %
@@ -516,7 +516,7 @@ In the remaining term, using the Hestenes overdot notation clarify the scope of 
 +\gpgradeone{ \Pi_\beta (\grad v^\beta) }
 +\gpgradeone{ (\grad \Pi_\beta) v^\beta } + \gpgradeone{ \grad' \Pi_\beta {v^\beta}'}
 \right)
-- \grad \LL \\
+- \grad \LL .
 \end{aligned}
 \end{equation}
 %
@@ -543,7 +543,7 @@ v^\beta (\grad \cdot \Pi_\beta)
 \gpgradeone{ \Pi_\beta (\grad v^\beta) }
 + \gpgradeone{ \grad' \Pi_\beta {v^\beta}'}
 \right)
-- \grad \LL \\
+- \grad \LL .
 \end{aligned}
 \end{equation}
 %
@@ -601,7 +601,7 @@ Having seen the adjoint notation, it was natural to see what this was for a mult
 \partial_\alpha
 \left(
 \left( \PD{(\partial_\alpha A^\beta)}{\LL} \right) \partial_\mu A^\beta
-\right) \\
+\right) .
 \end{aligned}
 \end{equation}
 %
@@ -649,7 +649,7 @@ Suppose that we parametrize the rotation bivector \(i\) using two perpendicular 
 &=
 (u (v \cdot x) - v (u \cdot x)) \cdot \grad \\
 &=
-(v \cdot x) u \cdot \grad - (u \cdot x)) v \cdot \grad \\
+(v \cdot x) u \cdot \grad - (u \cdot x)) v \cdot \grad .
 \end{aligned}
 \end{equation}
 %
@@ -691,7 +691,7 @@ The incremental rotation operator is reduced to
 &=
 (\gamma_\nu \cdot x) \gamma_\mu \cdot \grad - (\gamma_\mu \cdot x)) \gamma_\nu \cdot \grad \\
 &=
-x_\nu \partial_\mu - x_\mu \partial_\nu \\
+x_\nu \partial_\mu - x_\mu \partial_\nu .
 \end{aligned}
 \end{equation}
 %
@@ -734,7 +734,7 @@ We previously wrote
 %
 \begin{equation}\label{eqn:rotationCurrents:495}
 \begin{aligned}
-{T^\alpha}_\nu &= \PD{(\partial_\alpha A^\beta)}{\LL} \partial_\nu A^\beta - {\delta^\alpha}_\nu \LL \\
+{T^\alpha}_\nu &= \PD{(\partial_\alpha A^\beta)}{\LL} \partial_\nu A^\beta - {\delta^\alpha}_\nu \LL .
 \end{aligned}
 \end{equation}
 %
@@ -785,7 +785,7 @@ Jackson \citep{jackson1975cew} ends up with a similar index upper expression
 %
 \begin{equation}\label{eqn:rotationCurrents:LorTx11}
 \begin{aligned}
-M^{\alpha\beta\gamma} &\equiv T^{\alpha\beta} x^\gamma - T^{\alpha\gamma} x^\beta \\
+M^{\alpha\beta\gamma} &\equiv T^{\alpha\beta} x^\gamma - T^{\alpha\gamma} x^\beta .
 \end{aligned}
 \end{equation}
 %
@@ -837,7 +837,7 @@ If the variational derivative of the incremental rotation contribution is zero, 
 - \sum_m \partial_m \left( (i \cdot \Bx) \cdot \inv{\epsilon_0} \rho \Be_m \right) \\
 &=
 (i \cdot \Bx) \cdot \inv{\epsilon_0} \spacegrad \rho
-- \spacegrad \cdot \left( (i \cdot \Bx) \inv{\epsilon_0} \rho \right) \\
+- \spacegrad \cdot \left( (i \cdot \Bx) \inv{\epsilon_0} \rho \right) .
 \end{aligned}
 \end{equation}
 %

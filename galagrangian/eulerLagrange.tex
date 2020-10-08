@@ -231,7 +231,7 @@ The difference of the \eqnref{eqn:euler_lagrange:ham1} terms is called the Hamil
 %
 \begin{equation}\label{eqn:eulerLagrange:222}
 \begin{aligned}
-\frac{dH}{d\lambda} &= \frac{d}{d\lambda} \left( \PD{\qdot^i}{\LL} \qdot^i - \frac{d\LL}{d\lambda} \right) = 0 \\
+\frac{dH}{d\lambda} &= \frac{d}{d\lambda} \left( \PD{\qdot^i}{\LL} \qdot^i - \frac{d\LL}{d\lambda} \right) = 0 .
 \end{aligned}
 \end{equation}
 %
@@ -286,14 +286,14 @@ This can be written as a total derivative if
 \PD{\alpha}{\fdot} &= \frac{d}{d\lambda} \PD{\alpha}{f} \\
 \PD{\alpha}{} \frac{df}{d\lambda} &= \PDD{q}{\alpha}{f} \qdot + \PDsq{\alpha}{f} \alphadot \\
 \PD{\alpha}{} \left( \PD{q}{f} \qdot + \PD{\alpha}{f} \alphadot \right) &= \\
-\PDD{\alpha}{q}{f} \qdot + \PDsq{\alpha}{f} \alphadot + \PD{\alpha}{f} \PD{\alpha}{\alphadot} &= \\
+\PDD{\alpha}{q}{f} \qdot + \PDsq{\alpha}{f} \alphadot + \PD{\alpha}{f} \PD{\alpha}{\alphadot} &= .
 \end{aligned}
 \end{equation}
 %
 Thus given a constraint of sufficient continuity
 \begin{equation}\label{eqn:eulerLagrange:322}
 \begin{aligned}
-\PDD{\alpha}{q}{f} &= \PDD{q}{\alpha}{f} \\
+\PDD{\alpha}{q}{f} &= \PDD{q}{\alpha}{f} .
 \end{aligned}
 \end{equation}
 %
@@ -309,7 +309,7 @@ we have from \eqnref{eqn:euler_lagrange:noethtmp2}
 \begin{equation}\label{eqn:eulerLagrange:362}
 \begin{aligned}
 \DD{\alpha}{\LL'}
-&= \frac{d}{d\lambda} \left( \PD{\fdot}{\LL} \PD{\alpha}{f} \right) \\
+&= \frac{d}{d\lambda} \left( \PD{\fdot}{\LL} \PD{\alpha}{f} \right) .
 \end{aligned}
 \end{equation}
 %
@@ -353,7 +353,7 @@ Note that it still does not quite match the multivector result from
 \left.\DD{\alpha}{\LL'}\right\vert_{\alpha=0}
 &= \frac{d}{dt} \sum_{i=1}^n \left(
 \PD{\alpha}{X_i'} \conj \partial_{\Xdot_i}{\LL}
-\right) \\
+\right) .
 \end{aligned}
 \end{equation}
 %
@@ -364,7 +364,7 @@ I believe there is a missing prime there, and it should read
 \left.\DD{\alpha}{\LL'}\right\vert_{\alpha=0}
 &= \frac{d}{dt} \sum_{i=1}^n \left(
 \PD{\alpha}{X_i'} \conj \partial_{\Xdot_i'}{\LL}
-\right) \\
+\right) .
 \end{aligned}
 \end{equation}
 %
@@ -391,7 +391,7 @@ Integration by parts operating directly on the vector function we have
 \begin{aligned}
 \left.\frac{d S}{d\epsilon}\right\vert_{\epsilon=0}
 &= \left.{m \dot{\overbar{\Bx}} \cdot {\Bn}}\right\vert_{\partial \lambda} - \int m d\lambda \ddot{\overbar{\Bx}} \cdot {\Bn} \\
-&= - \int m d\lambda \ddot{\overbar{\Bx}} \cdot {\Bn} \\
+&= - \int m d\lambda \ddot{\overbar{\Bx}} \cdot {\Bn} .
 \end{aligned}
 \end{equation}
 %
@@ -526,7 +526,7 @@ Provided that this is a fixed rotation with \(i\), and \(\theta\) constant (not 
 &= \gpgradezero{ \exp(i\theta/2) \dot{\Bx} \exp(-i\theta/2) \exp(i\theta/2) \dot{\Bx} \exp(-i\theta/2) } \\
 &= \gpgradezero{ \exp(i\theta/2) \dot{\Bx} \dot{\Bx} \exp(-i\theta/2) } \\
 &= \dot{\Bx}^2 \gpgradezero{ \exp(i\theta/2) \exp(-i\theta/2) } \\
-&= \dot{\Bx}^2 \\
+&= \dot{\Bx}^2 .
 \end{aligned}
 \end{equation}
 %
@@ -551,7 +551,7 @@ The velocity term can be expanded as
 \PD{\theta}{\Bx'}
 &= \PD{\theta}{} \left( \exp(i\theta/2) \Bx \exp(-i\theta/2) \right) \\
 &= \inv{2}(i \Bx' - \Bx'i) \\
-&= i \cdot \Bx' \\
+&= i \cdot \Bx' .
 \end{aligned}
 \end{equation}
 %
@@ -577,7 +577,7 @@ Temporarily expressing the bivector for the rotational plane in terms of a dual 
 &= \inv{2} \gpgradezero{I (\Bn \Bx' - \Bx'\Bn) \Bp'} \\
 &= \inv{2} \gpgradezero{I \Bn \Bx'\Bp} - \gpgradezero{ I \Bn \Bp' \Bx' } \\
 &= \inv{2} \left( \gpgradezero{i (\Bx' \wedge \Bp')} - \gpgradezero{ i (\Bp' \wedge \Bx') }\right) \\
-&= i \cdot (\Bx' \wedge \Bp') \\
+&= i \cdot (\Bx' \wedge \Bp') .
 \end{aligned}
 \end{equation}
 %
@@ -638,21 +638,21 @@ and form the Hamiltonian.  First calculate
 \sum_i \qdot^i \PD{\qdot^i}{\LL}
 &= m \sum_{ij} g_{ij} \qdot^i \qdot^j - \sum_i \qdot^i \PD{\qdot^i}{\phi} \\
 &= 2 K - \sum_i \qdot^i \PD{\qdot^i}{\phi} \\
-%&= 2 K - \Bv \cdot \spacegrad_{\Bv} {\phi} \\
+%&= 2 K - \Bv \cdot \spacegrad_{\Bv} {\phi} .
 \end{aligned}
 \end{equation}
 %
 So, the Hamiltonian is
 \begin{equation}\label{eqn:eulerLagrange:882}
 \begin{aligned}
-H &= K - \sum_i \qdot^i \PD{\qdot^i}{\phi} + \phi \\
+H &= K - \sum_i \qdot^i \PD{\qdot^i}{\phi} + \phi .
 \end{aligned}
 \end{equation}
 %
 For the less general case where \(\Bv^2 = g_{ij} \qdot^i \qdot^j\), this is
 \begin{equation}\label{eqn:eulerLagrange:902}
 \begin{aligned}
-H &= K - \Bv \cdot \spacegrad_{\Bv} {\phi} + \phi \\
+H &= K - \Bv \cdot \spacegrad_{\Bv} {\phi} + \phi .
 \end{aligned}
 \end{equation}
 %
@@ -662,7 +662,7 @@ Similarly, for squared proper velocity \(v^2 = g_{ij} \qdot^i \qdot^j\), and der
 %
 \begin{equation}\label{eqn:eulerLagrange:922}
 \begin{aligned}
-H &= K - v \cdot \grad_{v} {\phi} + \phi \\
+H &= K - v \cdot \grad_{v} {\phi} + \phi .
 \end{aligned}
 \end{equation}
 %
@@ -683,7 +683,7 @@ We therefore have
 &= \frac{d}{d\tau}
 \left(
 \inv{2} m v^2 + v \cdot \grad_{v} (q A \cdot v/c) - q A \cdot v/c
-\right) \\
+\right) .
 \end{aligned}
 \end{equation}
 %
@@ -699,7 +699,7 @@ Where \(\kappa\) is some constant.  Since \(\grad_v A^{\mu} = 0\), we have \(\gr
 \begin{aligned}
 \kappa
 &= \inv{2} m v^2 + v \cdot (q A/c) - q A \cdot v/c \\
-&= \inv{2} m v^2 \\
+&= \inv{2} m v^2 .
 \end{aligned}
 \end{equation}
 %
@@ -790,14 +790,14 @@ This can be written as a total derivative if
 \PD{\alpha}{\fdot^i} &= \frac{d}{d\lambda} \PD{\alpha}{f^i} \\
 \PD{\alpha}{} \frac{df}{d\lambda} &= \sum_j \PDD{q^j}{\alpha}{f^i} \qdot^j + \PDsq{\alpha}{f^i} \alphadot \\
 \PD{\alpha}{} \left( \sum_j \PD{q^j}{f^i} \qdot^j + \PD{\alpha}{f^i} \alphadot \right) &= \\
-\sum_j \PDD{\alpha}{q^j}{f^i} \qdot^j + \PDsq{\alpha}{f^i} \alphadot + \PD{\alpha}{f^i} \PD{\alpha}{\alphadot} &= \\
+\sum_j \PDD{\alpha}{q^j}{f^i} \qdot^j + \PDsq{\alpha}{f^i} \alphadot + \PD{\alpha}{f^i} \PD{\alpha}{\alphadot} &= .
 \end{aligned}
 \end{equation}
 %
 Thus given constraints of sufficient continuity
 \begin{equation}\label{eqn:eulerLagrange:1102}
 \begin{aligned}
-\PDD{\alpha}{q^j}{f^i} &= \PDD{q^j}{\alpha}{f^i} \\
+\PDD{\alpha}{q^j}{f^i} &= \PDD{q^j}{\alpha}{f^i} .
 \end{aligned}
 \end{equation}
 %
@@ -813,7 +813,7 @@ we have from \eqnref{eqn:euler_lagrange:gnoethtmp2}
 \begin{equation}\label{eqn:eulerLagrange:1142}
 \begin{aligned}
 \DD{\alpha}{\LL'}
-&= \frac{d}{d\lambda} \left( \sum_i \PD{\fdot^i}{\LL} \PD{\alpha}{f^i} \right) \\
+&= \frac{d}{d\lambda} \left( \sum_i \PD{\fdot^i}{\LL} \PD{\alpha}{f^i} \right) .
 \end{aligned}
 \end{equation}
 %

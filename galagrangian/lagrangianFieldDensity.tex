@@ -27,7 +27,7 @@ Explicit expansion of the field bivector in terms of coordinates one has
 F
 &= \BE + I c \BB \\
 &= E^k \gamma_{k0} + \gamma_{0123k0} c B^k \\
-&= E^k \gamma_{k0} + {(\gamma_{0})}^2 {(\gamma_{k})}^2 {\epsilon^{ij}}_k c \gamma_{ij} B^k \\
+&= E^k \gamma_{k0} + {(\gamma_{0})}^2 {(\gamma_{k})}^2 {\epsilon^{ij}}_k c \gamma_{ij} B^k .
 \end{aligned}
 \end{equation}
 %
@@ -153,7 +153,7 @@ Expanding in coordinates this squared curl we have
 \begin{equation}\label{eqn:lagrangianFieldDensity:100}
 \begin{aligned}
 (\grad \wedge A) (\grad \wedge A)
-&= (\gamma^{\mu\nu} \partial_{\mu} A_{\nu})(\gamma^{\alpha\beta} \partial_{\alpha} A_{\beta}) \\
+&= (\gamma^{\mu\nu} \partial_{\mu} A_{\nu})(\gamma^{\alpha\beta} \partial_{\alpha} A_{\beta}) .
 \end{aligned}
 \end{equation}
 %
@@ -165,7 +165,7 @@ Implied here is that \(\mu \ne \nu\) and \(\alpha \ne \beta\).  Given that expan
 &= (\gamma^{\mu\nu}) \cdot (\gamma_{\alpha\beta}) \partial_{\mu} A_{\nu} \partial^{\alpha} A^{\beta} \\
 &= \left(\delta^{\mu}_{\beta} \delta^{\nu}_{\alpha} - \delta^{\nu}_{\beta} \delta^{\mu}_{\alpha}\right) \partial_{\mu} A_{\nu} \partial^{\alpha} A^{\beta} \\
 &= \partial_{\mu} A_{\nu} \partial^{\nu} A^{\mu} -\partial_{\mu} A_{\nu} \partial^{\mu} A^{\nu} \\
-&= -\partial_{\mu} A_{\nu} \left( \partial^{\mu} A^{\nu} - \partial^{\nu} A^{\mu} \right) \\
+&= -\partial_{\mu} A_{\nu} \left( \partial^{\mu} A^{\nu} - \partial^{\nu} A^{\mu} \right) .
 \end{aligned}
 \end{equation}
 %
@@ -188,7 +188,7 @@ For the pseudoscalar parts of the product we have
 \begin{equation}\label{eqn:lagrangianFieldDensity:140}
 \begin{aligned}
 \gpgrade{ (\grad \wedge A)^2 }{4} &= (\grad \wedge A) \wedge (\grad \wedge A) \\
-&= (\gamma_{\mu\nu}) \wedge (\gamma_{\alpha\beta}) \partial^{\mu} A^{\nu} \partial^{\alpha} A^{\beta} \\
+&= (\gamma_{\mu\nu}) \wedge (\gamma_{\alpha\beta}) \partial^{\mu} A^{\nu} \partial^{\alpha} A^{\beta} .
 \end{aligned}
 \end{equation}
 %
@@ -328,7 +328,7 @@ but how do we do integration by parts on such a beast?  We have partial derivati
 \begin{equation}\label{eqn:lagrangianFieldDensity:180}
 \begin{aligned}
 \int_{\Omega} dx_1 dx_2 \PD{x_1}{\overbar{\phi}} \PD{x_1}{n}
-&= \int_{x_1=a}^{x_1=b} dx_1 \int_{x_2 = \theta_1(x_1)}^{x_2 = \theta_2(x_1)} dx_2 \PD{x_2}{\overbar{\phi}(x_1, x_2)} \PD{x_2}{n(x_1, x_2)} \\
+&= \int_{x_1=a}^{x_1=b} dx_1 \int_{x_2 = \theta_1(x_1)}^{x_2 = \theta_2(x_1)} dx_2 \PD{x_2}{\overbar{\phi}(x_1, x_2)} \PD{x_2}{n(x_1, x_2)} .
 \end{aligned}
 \end{equation}
 %
@@ -356,7 +356,7 @@ and we can apply integration by parts
 %\PD{x_2}{n(x_1, x_2)}
 % fg:
 \left. \PD{x_2}{\overbar{\phi}(x_1, x_2)} n(x_1, x_2) \right\vert_{x_2 = \theta_1(x_1)}^{x_2 = \theta_2(x_1)} \\
-&- \int_{x_1=a}^{x_1=b} dx_1 \int_{x_2 = \theta_1(x_1)}^{x_2 = \theta_2(x_1)} dx_2 \frac{d}{dx_2} \PD{x_2}{\overbar{\phi}(x_1, x_2)} n(x_1, x_2) \\
+&- \int_{x_1=a}^{x_1=b} dx_1 \int_{x_2 = \theta_1(x_1)}^{x_2 = \theta_2(x_1)} dx_2 \frac{d}{dx_2} \PD{x_2}{\overbar{\phi}(x_1, x_2)} n(x_1, x_2) .
 \end{aligned}
 \end{equation}
 %
@@ -409,7 +409,7 @@ A^{\mu} = \barA^{\mu} + n^{\mu}
 &=  \partial_{\mu} (\barA_{\nu} + n_{\nu}) ( \partial^{\mu} (\barA^{\nu} + n^{\nu}) - \partial^{\nu} (\barA^{\mu} + n^{\mu}) ) \\
 &=  \partial_{\mu} \barA_{\nu} ( \partial^{\mu} \barA^{\nu} - \partial^{\nu} \barA^{\mu} ) +  \partial_{\mu} n_{\nu} ( \partial^{\mu} n^{\nu} - \partial^{\nu} n^{\mu} )  \\
 &+  \partial_{\mu} \barA_{\nu} ( \partial^{\mu} n^{\nu} - \partial^{\nu} n^{\mu} ) +  \partial_{\mu} n_{\nu} ( \partial^{\mu} \barA^{\nu} - \partial^{\nu} \barA^{\mu} )  \\
-%&+ J_{\alpha} (\barA^{\alpha} + n^{\alpha}) \\
+%&+ J_{\alpha} (\barA^{\alpha} + n^{\alpha}) .
 \end{aligned}
 \end{equation}
 %
@@ -435,7 +435,7 @@ to remove any remaining \(n^{\mu}\) derivatives.  Those derivative terms multipl
 - 2  \partial_{\nu} \barA^{\mu} \partial_{\mu} n^{\nu} \\
 &= 2  \left( \partial^{\mu} \barA_{\nu} -\partial_{\nu} \barA^{\mu} \right) \partial_{\mu} n^{\nu} \\
 &= 2  \left( \partial^{\mu} \barA^{\nu} -\partial^{\nu} \barA^{\mu} \right) \partial_{\mu} n_{\nu} \\
-&= 2  {F_{\barA}}^{\mu\nu} \partial_{\mu} n_{\nu} \\
+&= 2  {F_{\barA}}^{\mu\nu} \partial_{\mu} n_{\nu} .
 \end{aligned}
 \end{equation}
 %
@@ -448,7 +448,7 @@ Collecting all the non-fixed and non-quadratic \(n^{\mu}\) terms of the action w
 &= \int \left. d^3 \widehat{x^{\mu}} \kappa {F_{\barA}}^{\mu\nu} n_{\nu} \right\vert_{\partial \mu}
  + \int d^4 x \left(
 - \kappa \partial_{\mu} {F_{\barA}}^{\mu\nu} + J^{\nu}
-\right) n_{\nu} \\
+\right) n_{\nu} .
 \end{aligned}
 \end{equation}
 %
@@ -563,7 +563,7 @@ It is this last term that yields the variation part of our action
 &= \epsilon_{\mu\nu\alpha\beta} \int d^4 x \left(\partial^{\mu} \barA^{\nu} \partial^{\alpha} n^{\beta} +\partial^{\mu} n^{\nu} \partial^{\alpha} \barA^{\beta} \right) \\
 &= \epsilon_{\mu\nu\alpha\beta} \int d^4 x \partial^{\mu} \barA^{\nu} \partial^{\alpha} n^{\beta}
  + \epsilon_{\alpha\beta\mu\nu} \int d^4 x \partial^{\alpha} n^{\beta} \partial^{\mu} \barA^{\nu} \\
-&= 2 \epsilon_{\mu\nu\alpha\beta} \int d^4 x \partial^{\mu} \barA^{\nu} \partial^{\alpha} n^{\beta} \\
+&= 2 \epsilon_{\mu\nu\alpha\beta} \int d^4 x \partial^{\mu} \barA^{\nu} \partial^{\alpha} n^{\beta} .
 \end{aligned}
 \end{equation}
 %
@@ -574,7 +574,7 @@ and we do the integration by parts on this
 \delta S
 &= -2 \epsilon_{\mu\nu\alpha\beta} \int d^4 x \partial^{\alpha} \left(\partial^{\mu} \barA^{\nu} \right) n^{\beta} \\
 %&= 2 \epsilon^{\mu\nu\alpha\beta} \int d^4 x \partial_{\alpha} \left(\partial_{\mu} \barA_{\nu} \right) n_{\beta} \\
-&= 2 \int d^4 x \left( \epsilon^{\mu\nu\alpha\beta} \partial_{\alpha} \left(\partial_{\mu} \barA_{\nu} \right) \right) n_{\beta} \\
+&= 2 \int d^4 x \left( \epsilon^{\mu\nu\alpha\beta} \partial_{\alpha} \left(\partial_{\mu} \barA_{\nu} \right) \right) n_{\beta} .
 \end{aligned}
 \end{equation}
 %
@@ -591,7 +591,7 @@ Since we can add zero to zero and not change the result, we can write
 &=
   \epsilon^{\mu\nu\alpha\beta} \partial_{\alpha} \left(\partial_{\mu} \barA_{\nu} \right)
 + \epsilon^{\nu\mu\alpha\beta} \partial_{\alpha} \left(\partial_{\nu} \barA_{\mu} \right) \\
-&= \epsilon^{\mu\nu\alpha\beta} \partial_{\alpha} \left(\partial_{\mu} \barA_{\nu} - \partial_{\nu} \barA_{\mu} \right) \\
+&= \epsilon^{\mu\nu\alpha\beta} \partial_{\alpha} \left(\partial_{\mu} \barA_{\nu} - \partial_{\nu} \barA_{\mu} \right) .
 \end{aligned}
 \end{equation}
 %
@@ -662,7 +662,7 @@ Forming the action \(S = \int d^4 x \LL\), and integrating the \(\delta \LL\) co
 \left(
 -\kappa \partial_{\alpha} \partial_{\mu} \barA_{\nu} \left( (\gamma^{\mu\nu})(\gamma^{\alpha\sigma}) + (\gamma^{\alpha\sigma})(\gamma^{\mu\nu}) \right)
 + J^{\sigma}
-\right) \\
+\right) .
 \end{aligned}
 \end{equation}
 %
@@ -672,7 +672,7 @@ Setting the kernel of this to zero
 \begin{aligned}
 J^{\sigma}/\kappa
 &=
-\partial_{\alpha} \partial_{\mu} \barA_{\nu} \left( (\gamma^{\mu\nu})(\gamma^{\alpha\sigma}) + (\gamma^{\alpha\sigma})(\gamma^{\mu\nu}) \right) \\
+\partial_{\alpha} \partial_{\mu} \barA_{\nu} \left( (\gamma^{\mu\nu})(\gamma^{\alpha\sigma}) + (\gamma^{\alpha\sigma})(\gamma^{\mu\nu}) \right) .
 \end{aligned}
 \end{equation}
 %
