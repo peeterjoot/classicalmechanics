@@ -11,7 +11,7 @@
 \label{chap:eulerLagrange}
 %\date{October 13, 2008.  eulerLagrange.tex}
 %
-\section{Scalar form of Euler-Lagrange equations}
+\section{Scalar form of Euler-Lagrange equations.}
 \index{Euler-Lagrange equations}
 %
 \citep{lasenby1993mda} presents a multivector Lagrangian treatment.  To
@@ -107,7 +107,7 @@ total variation to equal zero for all possible paths \(n^i\) one must have
 %
 Evaluation of these derivatives at the optimal desired paths has been suppressed since these equations now define that path.
 %
-\subsection{Some comparison to the Goldstein approach}
+\subsection{Some comparison to the Goldstein approach.}
 %
 \citep{goldstein1951cm} calls the quantity \eqnref{eqn:euler_lagrange:eulerlag} the functional derivative
 %
@@ -142,7 +142,7 @@ thing as Feynman... toss all the higher order terms, since factors of epsilon wi
 With my initial read of Goldstein this was not the least bit clear... it was really yet another example of the classic
 physics approach of solving something with a first order linear approximation.
 %
-\subsection{Noether's theorem}
+\subsection{Noether's theorem.}
 %
 Also covered in
 \citep{doran2003gap} is Noether's theorem in multivector form.  This is used
@@ -210,7 +210,7 @@ Lagrangian derivative and \(\PDi{\alpha}{q^i}\) at some specific constant value 
 \end{equation}
 %
 %
-\subsubsection{Hamiltonian}
+\subsubsection{Hamiltonian.}
 %
 Hmm, the above equations do not much like the Noether's equation in \citep{doran2003gap}.  However, in this form, we can get at the Hamiltonian statement
 without any trouble.  Let us do that first, then return to Noether's
@@ -245,7 +245,7 @@ H &= \PD{\qdot^i}{\LL} \qdot^i - \frac{d\LL}{d\lambda},
 which is a conserved quantity
 when the Lagrangian has no explicit \(\lambda\) dependence.
 %
-\subsubsection{Noether's take II}
+\subsubsection{Noether's take II.}
 %
 Noether's theorem is about conserved quantities under symmetry transformations.  Let us revisit the attempt at derivation once more cutting down the complexity
 even further, considering a transformation of a single generalized coordinate and the corresponding change to the Lagrangian under such a transformation.
@@ -368,9 +368,9 @@ I believe there is a missing prime there, and it should read
 \end{aligned}
 \end{equation}
 %
-\section{Vector formulation of Euler-Lagrange equations}
+\section{Vector formulation of Euler-Lagrange equations.}
 %
-\subsection{Simple case.  Unforced purely kinetic Lagrangian}
+\subsection{Simple case.  Unforced purely kinetic Lagrangian.}
 %
 Before considering multivector Lagrangians, a step back to the simplest vector Lagrangian is in order
 %
@@ -409,7 +409,7 @@ where the extremal condition is
 %
 Here the expected and desired Euler Lagrange equation for the Lagrangian (constant velocity in some direction dependent on initial conditions) is arrived at directly in vector form without dropping down to coordinates and reassembling them to get back the vector expression.
 %
-\subsection{Position and velocity gradients in the configuration space}
+\subsection{Position and velocity gradients in the configuration space.}
 %
 Having tackled the simplest case, to generalize this we need a construct to do first order Taylor series expansion in the neighborhood of a vector
 position.  The (multivector) gradient is the obvious candidate operator to do the job.
@@ -489,7 +489,7 @@ That said, the negative side of this vector notation is that
 it obscures somewhat the Euler-Lagrange equations, which are not terribly complicated to begin with.  However, since this appears to be the form
 of the multivector form of the Euler-Lagrange equations it is likely worthwhile to see how this also expresses the simpler familiar scalar case too.
 %
-\section{Example applications of Noether's theorem}
+\section{Example applications of Noether's theorem.}
 \index{Noether's theorem}
 %
 Linear translation and rotational translation appear to be the usual first example
@@ -503,7 +503,7 @@ Noether's theorem is not really required to see that in the case of unforced mot
 will not change the equation of motion.  This is the conservation of linear momentum result
 so familiar from high school physics.
 %
-\subsection{Angular momentum in a radial potential}
+\subsection{Angular momentum in a radial potential.}
 %
 The conservation of angular momentum case is more interesting.
 
@@ -619,7 +619,7 @@ blundering through it myself as done here was required to really see where it wa
 %with my initial read of both I hhad not built up enough
 %comfort with the ideas to be able to understand nor apply the ideas myself.
 %
-\subsection{Hamiltonian}
+\subsection{Hamiltonian.}
 %
 Consider a general kinetic form and a possibly velocity dependent potential
 %
@@ -729,30 +729,30 @@ So that, independent of the parametrization, the quantity \(\inv{2} m \frac{dx}{
 Proper time then becomes that particular worldline parametrization \(\lambda = \tau\) such that
 \(\inv{2} m \frac{dx}{d\tau} \cdot \frac{dx}{d\tau} = \inv{2} m c^2\).
 %
-\subsection{Covariant Lorentz force Lagrangian}
+\subsection{Covariant Lorentz force Lagrangian.}
 %
 The Hamiltonian was used above to extract \(v^2\) invariance from the Lorentz force Lagrangian under changes of proper time.  The next obvious
 Noether's application is for a Lorentz transformation of the interaction Lagrangian.  This was interesting enough seeming in its own right to
 treat separately and has been moved to \chapcite{PJLorentzTxInteraction}.
 %
-\subsection{Vector Lorentz force Lagrangian}
+\subsection{Vector Lorentz force Lagrangian.}
 %
 FIXME: Try this with \(\BA \cdot \Bv\) form of the Lagrangian and rotation... cross product terms should result.
 %
-\subsection{An example where the transformation has to be evaluated at fixed point}
+\subsection{An example where the transformation has to be evaluated at fixed point.}
 %
 FIXME: find an example of this and calculate with it.
 %
-\subsection{Comparison to cyclic coordinates}
+\subsection{Comparison to cyclic coordinates.}
 %
 FIXME: Also calculate with some examples where cyclic
 coordinates are discovered by actually computing the Euler-Lagrange equations
 ... see how to observed this directly from the Lagrangian itself under transformation without actually evaluating the equations (despite the fact that
 this is simple for the cyclic case).
 %
-\section{Appendix}
+\section{Appendix.}
 %
-\subsection{Noether's equation derivation, multivariable case}
+\subsection{Noether's equation derivation, multivariable case.}
 %
 Employing a couple judicious regular expressions starting from the text for the single variable treatment, plus some minor summation sign addition does the job.
 %

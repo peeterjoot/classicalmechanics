@@ -16,7 +16,7 @@
 %
 \beginArtWithToc
 %
-\section{Motivation}
+\section{Motivation.}
 The article \citep{montesinos2006sem} details the calculation for a conserved current associated with an incremental Poincare transformation.  Instead of starting with the canonical energy momentum tensor (arising from spacetime translation) which is not symmetric but can be symmetrized with other arguments, the paper of interest obtains the symmetric energy momentum tensor for Maxwell's equations directly.
 
 I believe that I am slowly accumulating the tools required to understand this paper.  One such tool is likely the exponential rotational generator examined in \citep{gabookI:rotationGenerator}, utilizing the angular momentum operator.
@@ -25,7 +25,7 @@ Here I review the Noether conservation relations and the associated Noether curr
 
 By reviewing these I hope that understanding the referenced article will be easier, or I independently understand (in my own way) how to apply similar techniques to the incremental Poincare transformed Lagrangian.
 %
-\section{Field Euler-Lagrange equations}
+\section{Field Euler-Lagrange equations.}
 %
 The extremization of the action integral
 %
@@ -100,7 +100,7 @@ So for \(\delta S = 0\) for all \(\overbar{A}_\nu\) we have a set of equations, 
 \PD{A_\nu}{\LL} - \partial_\mu \PD{(\partial_\mu A_\nu)}{\LL} = 0
 \end{equation}
 %
-\section{Field Noether currents}
+\section{Field Noether currents.}
 %
 The single parameter Noether conservation equation again is mainly application of the chain rule.  Illustrating with the one field variable case, with an altered field variable \(\phi \rightarrow \phi'(\theta)\), and
 %
@@ -184,7 +184,7 @@ J^\mu &= \gamma_\nu \PD{(\partial_\mu {A}_\nu)}{\LL} \cdot {\left. \PD{\theta}{A
 \end{aligned}
 \end{equation}
 %
-\section{Spacetime translation symmetries and Noether currents}
+\section{Spacetime translation symmetries and Noether currents.}
 \index{Noether currents!field translation}
 %
 Considering the effect of spacetime translation on the Lagrangian we examine the application of the first order linear Taylor series expansion shifting the vector parameters by an increment \(a\).  The Lagrangian alteration is
@@ -195,7 +195,7 @@ Considering the effect of spacetime translation on the Lagrangian we examine the
 %
 Similar to the addition of derivatives to the Lagrangians of dynamics, we can add in some types of total derivatives \(\partial_\mu F^\mu\) to the Lagrangian without changing the resulting field equations (i.e. there is an associated ``symmetry'' for this Lagrangian alteration).  The directional derivative \(a \cdot \grad \LL = a^\mu \partial_\mu \LL\) appears to be an example of a total derivative alteration that leaves the Lagrangian unchanged.
 %
-\subsection{On the symmetry}
+\subsection{On the symmetry.}
 %
 The fact that this translation necessarily results in the same field equations is not necessarily obvious.  Using one of the simplest field Lagrangians, that of the Coulomb electrostatic law, we can illustrate that this is true in at least one case, and also see what is required in the general case
 %
@@ -283,7 +283,7 @@ Since \({\delta \LL}/{\delta \phi} = 0\) by construction, the resulting field eq
 
 Are there conditions where this commutation is not possible?  Some additional exploration on symmetries associated with addition of derivatives to field Lagrangians was made previously in \chapcite{stressEnergyNoethers}.  After all was said and done, the conclusion motivated by this simple example was also reached.  Namely, we require the commutation condition \eqnref{eqn:rotationCurrents:transCurrent7} between the variational derivative and the gradient of the Lagrangian.
 %
-\subsection{Existence of a symmetry for translational variation}
+\subsection{Existence of a symmetry for translational variation.}
 %
 Considering an example Lagrangian we found that there was a symmetry provided we could commute the variational derivative with the gradient, as in \eqnref{eqn:rotationCurrents:transCurrent7}
 %
@@ -364,7 +364,7 @@ The remainder, to first order in the field variables, can then be expanded and i
 \end{equation}
 Since \(a^\mu\) are constants, this is zero, so there can be no contribution to the field equations by the addition of the translation increment to the Lagrangian.
 %
-\subsection{Noether current derivation}
+\subsection{Noether current derivation.}
 %
 With the assumption that the Lagrangian translation induces a symmetry, we can proceed with the calculation of the Noether current.  This procedure for deriving the Noether current for an incremental spacetime translation follows along similar lines as the scalar alteration considered previously.
 
@@ -424,7 +424,7 @@ Since this must hold for any vector \(a\), we have the freedom to choose the sim
 %
 This is not the symmetric energy momentum tensor that we want in the electrodynamics context although it can be obtained from it by adding just the right zero.
 %
-\subsection{Relating the canonical energy momentum tensor to the Lagrangian gradient}
+\subsection{Relating the canonical energy momentum tensor to the Lagrangian gradient.}
 %
 In \citep{doran2003gap} many tensor quantities are not written in index form, but instead using a vector notation.  In particular, the symmetric energy momentum tensor is expressed as
 %
@@ -809,7 +809,7 @@ The only difference is that our not-really-a-conservation equation becomes
 \partial_\alpha M^{\alpha\mu\nu} =  T^{\nu\mu} - T^{\mu\nu}
 \end{equation}
 %
-\subsection{An example of the symmetry}
+\subsection{An example of the symmetry.}
 %
 While not a proof that application of the incremental rotation operator is a symmetry, an example at least provides some comfort that this is a reasonable thing to attempt.  Again, let us consider the Coulomb Lagrangian
 %
@@ -865,7 +865,7 @@ Loosely speaking, the geometric reason for this is that \(\grad \cdot f(x)\) tak
 
 While this commutation of the \(i \cdot \Bx\) with the divergence operator did not help with finding the Noether current, it does at least show that we have a symmetry.  Demonstrating the invariance for the general Lagrangian (at least the single field variable case) likely follows the same procedure as in this specific example above.
 
-\subsection{General existence of the rotational symmetry}
+\subsection{General existence of the rotational symmetry.}
 \index{Noether currents!field rotation}
 The example above hints at a general method to demonstrate that the incremental Lorentz transform produces a symmetry.  It will be sufficient to consider the variation around the stationary field variables for the change due to the action from the incremental rotation operator.  That is
 \begin{equation}\label{eqn:rotationCurrents:LorSymExistence1}

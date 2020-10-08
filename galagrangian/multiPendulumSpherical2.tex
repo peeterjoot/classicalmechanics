@@ -19,14 +19,14 @@
 %\beginArtWithToc
 %\beginArtNoToc
 %
-\section{Motivation}
+\section{Motivation.}
 %
 Attempting the multiple spherical pendulum problem with a bivector parametrized Lagrangian has just been attempted \chapcite{sPolarMultiPendulum}, but did not turn out to be an effective approach.  Here a variation is used, employing regular plain old scalar spherical angle parametrized Kinetic energy, but still employing geometric algebra to express the Hermitian quadratic form associated with this energy term.
 
 %FIXME: url reference to this since it is implictly referenced.  That doc also implictly referenced my Hamiltionan notes, so pointing back to that would be good for connectedness.
 The same set of simplifying assumptions will be made.  These are point masses, zero friction at the pivots and rigid non springy massless connecting rods between the masses.
 %
-\section{The Lagrangian}
+\section{The Lagrangian.}
 \index{spherical pendulum}
 %
 A two particle spherical pendulum is depicted in \cref{fig:multiPendulumSpherical2:pendulumDouble}
@@ -145,7 +145,7 @@ g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
 %
 There is a few layers of equations involved and we still have an unholy mess of matrix and geometric algebra in the kernel of the kinetic energy quadratic form, but at least this time all the generalized coordinates of the system are scalars.
 %
-\section{Some tidy up}
+\section{Some tidy up.}
 %
 Before continuing with evaluation of the Euler-Lagrange equations it is helpful to make a couple of observations about the structure of the matrix products that make up our velocity quadratic forms
 %
@@ -271,7 +271,7 @@ Observe also that \(\gpgradezero{A_r A_c^\dagger}^T = \gpgradezero{A_c A_r^\dagg
 %
 is a real symmetric matrix.  We have the option of using this explicit scalar expansion if desired for further computations associated with this problem.  That completely eliminates the Geometric algebra from the problem, and is probably a logical way to formulate things for numerical work since one can then exploit any pre existing matrix algebra system without having to create one that understands non-commuting variables and vector products.
 %
-\section{Evaluating the Euler-Lagrange equations}
+\section{Evaluating the Euler-Lagrange equations.}
 %
 For the acceleration terms of the Euler-Lagrange equations our computation reduces nicely to a function of only \(\gpgradezero{Q}\)
 %
@@ -586,7 +586,7 @@ The right hand side of the Euler-Lagrange equations now becomes
 %
 Can the \(\dot{\BTheta}_a\) matrices be factored out, perhaps allowing for expression as a function of \(\dot{\BTheta}\)?  How to do that if it is possible is not obvious.  The driving reason to do so would be to put things into a tidy form where things are a function of the system angular velocity vector \(\BTheta\), but this is not possible anyways since the gradient is non-linear.
 %
-\section{Hamiltonian form and linearization}
+\section{Hamiltonian form and linearization.}
 %
 Having calculated the Hamiltonian equations for the multiple mass planar pendulum in
 \chapcite{hamiltonian}
@@ -654,7 +654,7 @@ M \By' = f(\Bx_0) + B \By
 %
 where \(\Bx = \By + \Bx_0\) and \(B\) is an appropriate matrix of partials (the specifics of which do not really have to be spelled out here).  Because of the possible singularities of \(M\) the exponentiation techniques applied to the linearized planar pendulum may not be possible with such a linearization.  Study of this less well formed system of LDEs probably has interesting aspects, but is also likely best tackled independently of the specifics of the spherical pendulum problem.
 %
-\subsection{Thoughts about the Hamiltonian singularity}
+\subsection{Thoughts about the Hamiltonian singularity.}
 %
 The fact that the Hamiltonian goes singular on the horizontal in this spherical polar representation is actually what I think is the most interesting bit in the problem (the rest being a lot mechanical details).  On the horizontal \(\phi=0\) or \(\dot{\phi} = 37000\) radians/sec makes no difference to the dynamics.  All you can say is that the horizontal plane angular momentum is a constant of the system.  It seems very much like the increasing uncertainty that you get in the corresponding radial QM equation.  Once you start pinning down the \(\theta\) angle, you loose the ability to say much about \(\phi\).
 
@@ -662,7 +662,7 @@ It is also kind of curious how the energy of the system is never ill defined but
 
 Perhaps there are some deeper connections relating these classical and QM similarity.  Would learning about symplectic flows and phase space volume invariance shed some light on this?
 %
-\section{A summary}
+\section{A summary.}
 %
 A fair amount of notation was introduced along the way in the process of formulating the spherical pendulum equations.  It is worthwhile to do a final concise summary of notation and results before moving on for future reference.
 

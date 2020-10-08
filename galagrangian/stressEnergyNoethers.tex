@@ -11,7 +11,7 @@
 \label{chap:stressEnergyNoethers}
 %\date{June 5, 2009.  stressEnergyNoethers.tex}
 %
-\section{Motivation and direction}
+\section{Motivation and direction.}
 %
 In \citep{gabookII:PJstressEnergyLorentz} we saw that it was possible to express the Lorentz force equation for the charge per unit volume in terms of the energy momentum tensor.
 
@@ -97,9 +97,9 @@ Given that symmetry how would one go about
 actually showing that this is the case?   These are the questions
 to tackle here.
 %
-\section{On translation and divergence symmetries}
+\section{On translation and divergence symmetries.}
 %
-\subsection{Symmetry due to total derivative addition to the Lagrangian}
+\subsection{Symmetry due to total derivative addition to the Lagrangian.}
 %
 In \citep{doran2003gap} the energy momentum tensor is treated
 by considering spacetime translation, but I have unfortunately
@@ -186,7 +186,7 @@ find the conditions for the variation of additional part to be zero
 \frac{\delta f}{\delta \phi} = 0
 \end{equation}
 %
-\subsection{Some examples adding a divergence}
+\subsection{Some examples adding a divergence.}
 %
 To validate the fact that we can add a divergence to the Lagrangian without
 changing the field equations lets work out a few concrete examples
@@ -196,7 +196,7 @@ of \eqnref{eqn:stressEnergyNoethers:requirement} of for Lagrangian alterations b
 Each of these examples will be for a single field variable Lagrangian
 with generalized coordinates \(x^1 = x\), and \(x^1 = y\).
 %
-\subsubsection{Simplest case.  No partials}
+\subsubsection{Simplest case.  No partials.}
 %
 Let
 %
@@ -235,7 +235,7 @@ Now the variation is
 %
 Okay, so far so good.
 %
-\subsubsection{One partial}
+\subsubsection{One partial.}
 %
 Now, let
 %
@@ -278,7 +278,7 @@ And the variation is
 %
 Again, assuming I am okay to switch the differentiation order, we have zero.
 %
-\subsubsection{Another partial}
+\subsubsection{Another partial.}
 %
 For the last concrete example before going on to the general case, try
 %
@@ -315,7 +315,7 @@ And the variation is
 \end{aligned}
 \end{equation}
 %
-\subsubsection{The general case}
+\subsubsection{The general case.}
 %
 Because of linearity we have now seen that we can construct functions with
 any linear combinations of first and second derivatives
@@ -486,7 +486,7 @@ I do not think we have any right asserting that this is zero for arbitrary \(F^\
 if the Taylor expansion of \(F^\mu\) with respect to variables \(\phi\), and \(\partial_\sigma \phi\) has
 no higher than first order terms in the field variables \(\partial_\sigma \phi\), we will
 certainly have a zero variational derivative and a corresponding symmetry.
-\subsubsection{More examples to confirm the symmetry requirements}
+\subsubsection{More examples to confirm the symmetry requirements.}
 As a confirmation that a zero in \eqnref{eqn:stressEnergyNoethers:requiredZeroForSymmetry} requires linear field derivatives, lets try two more example calculations.
 
 First with non-linear powers of \(\phi\) to show that we have more freedom to construct the function first powers.
@@ -557,7 +557,7 @@ F^2 &= 0
 So, sure enough, unless additional conditions can be imposed on \(\phi\), such a transformation
 will not be a symmetry.
 %
-\subsection{Symmetry for Wave equation under spacetime translation}
+\subsection{Symmetry for Wave equation under spacetime translation.}
 %
 The Lagrangian for a one dimensional wave equation is
 %
@@ -645,7 +645,7 @@ a \left(
 Since we have \(\phi_{xx} = \inv{v^2} \phi_{tt}\) by variation of \eqnref{eqn:stressEnergyNoethers:oneDimWave}.  So we do in fact have a symmetry from the
 linearized spacetime translation for any shift \((t,x) \rightarrow (t+\tau, x+a)\).
 %
-\subsection{Symmetry condition for arbitrary linearized spacetime translation}
+\subsection{Symmetry condition for arbitrary linearized spacetime translation.}
 %
 If we want to be able to alter the Lagrangian with a linearized vector translation of the generalized coordinates by some arbitrary
 shift, since we do not have the linear derivatives for many Lagrangians of interest (wave equations, Maxwell equation, ...)
@@ -749,7 +749,7 @@ we therefore have a symmetry for any Lagrangian
 altered by the addition of a directional derivative, as is required for the first order Taylor series
 approximation associated with a spacetime (or spatial or timelike) translation.
 %
-\subsubsection{An error above to revisit}
+\subsubsection{An error above to revisit.}
 %
 In an email discussing what I initially thought was a typo in
 \citep{TongQFT}, he says
@@ -785,9 +785,9 @@ then nothing else I have done here is wrong.  Also note that in the end our
 Noether current can be adjusted by an arbitrary multiplicative constant so
 the direction of the translation will also not change the final result.
 %
-\section{Noether current}
+\section{Noether current.}
 %
-\subsection{Vector parametrized Noether current}
+\subsection{Vector parametrized Noether current.}
 %
 In \chapcite{PJFieldLagrangian} the derivation of Noether's theorem given a single variable parametrized
 alteration of the Lagrangian was seen to essentially be an exercise in the
@@ -954,7 +954,7 @@ They treat a multivector displacement whereas I only looked at
 vector displacement.  They also do it in three lines, whereas building up to this
 (or even understanding it) based on what I know required 13 pages.
 %
-\subsection{Comment on the operator above}
+\subsection{Comment on the operator above.}
 %
 We have something above that is gradient like in
 \eqnref{eqn:stressEnergyNoethers:vCurrent}.  Our spacetime gradient operator is
@@ -972,7 +972,7 @@ Whereas this unknown field variable derivative operator
 is somewhat like a velocity gradient with respect to the field variable.
 It would be reasonable to expect that this will have a role in the field canonical momentum.
 %
-\subsection{In tensor form}
+\subsection{In tensor form.}
 %
 The conserved current
 of \eqnref{eqn:stressEnergyNoethers:vCurrent}
@@ -995,7 +995,7 @@ Thus writing \({T^\mu}_\nu = T(\gamma_\nu) \cdot \gamma^\mu\) we have
 {T^\mu}_\nu = \PD{\phi_\mu}{\LL} \partial_\nu \phi - {\delta_\nu}^\mu \LL
 \end{equation}
 %
-\subsection{Multiple field variables}
+\subsection{Multiple field variables.}
 %
 In order to deal with the Maxwell Lagrangian a generalization to multiple
 field variables is required.  Suppose now that we have a Lagrangian
@@ -1090,7 +1090,7 @@ in tensor form, as in \eqnref{eqn:stressEnergyNoethers:currentTensor}
 \end{aligned}
 \end{equation}
 %
-\subsection{Spatial Noether current}
+\subsection{Spatial Noether current.}
 %
 The conservation arguments above have been expressed with the assumption that the Lagrangian density is a function
 of both spatial and time coordinates, and this was made explicit with the use of the Dirac basis to express the
@@ -1117,7 +1117,7 @@ T(\Ba) &= \sigma_k \PD{\partial_k \phi}{\LL} \Ba \cdot \spacegrad \phi - \Ba \LL
 Without the time translation, calling the vector Noether current the energy momentum tensor is not likely appropriate.  Perhaps just
 the canonical energy momentum tensor?  Working with such a spatial Lagrangian density later should help clarify how to label things.
 %
-\section{Field Hamiltonian}
+\section{Field Hamiltonian.}
 %
 A special case of \eqnref{eqn:stressEnergyNoethers:currentTensor} is for time translation of the
 Lagrangian.
@@ -1145,13 +1145,13 @@ For the Maxwell Lagrangian we will need the multiple field current
 \end{equation}
 %
 %
-\section{Wave equation}
+\section{Wave equation.}
 %
 Having computed the general energy momentum tensor for field Lagrangians, this can now be applied
 to some specific field equations.  The Lagrangian for the relativistic wave equation is an
 obvious first candidate due to simplicity.
 %
-\subsection{Tensor components and energy term}
+\subsection{Tensor components and energy term.}
 %
 %  One of the simplest
 %Lagrangian with a single field variable, and the next ones are for multiple field Lagrangians where
@@ -1199,7 +1199,7 @@ We have what is expected for the wave energy in the \(0,0\) element
 \end{aligned}
 \end{equation}
 %
-\subsection{Conservation equations}
+\subsection{Conservation equations.}
 %
 How about the conservation equations when written in full.  The first is
 %
@@ -1273,7 +1273,7 @@ and we can summarize the spacetime translation conservation equations by
 \end{aligned}
 \end{equation}
 %
-\subsection{Invariant length}
+\subsection{Invariant length.}
 %
 It has been assumed that \(T(\gamma_\mu)\) are four vectors.  If that is the
 cast we ought to have an invariant length.
@@ -1377,7 +1377,7 @@ Now, is \(\LL^2\) a Lorentz invariant?  If so we can justify calling \(T(\gamma_
 \end{aligned}
 \end{equation}
 %
-\subsection{Diagonal terms of the tensor}
+\subsection{Diagonal terms of the tensor.}
 %
 There is a conjugate structure evident in the diagonal terms of the matrix for
 the tensor.  In particular, the \({T^0}_0\) can be expressed using the
@@ -1460,7 +1460,7 @@ Intuition says this may have a use when assembling a complete vector representat
 terms of the gradient, but what that is now is not clear.
 %Is the grade selection here required?  Does this reduce to \((\grad \phi \gamma_\mu \grad \phi)/2 \) ?
 %
-\subsection{Momentum}
+\subsection{Momentum.}
 %
 Now, let us look at the four vector \(T(\gamma_0) = \gamma_\mu{T^\mu}_0\) more carefully.
 We have seen the energy term of this, but have not looked at the spatial part (momentum).
@@ -1480,13 +1480,13 @@ Right away we have something interesting!  The wave momentum is related to the g
 we have in quantum physics, despite the fact that we are only looking at the classical wave equation (for
 light or some other massless field effect).
 %
-\section{Wave equation.  GA form for the energy momentum tensor}
+\section{Wave equation.  GA form for the energy momentum tensor.}
 %
 Some of the playing around above was attempting to find more structure for the terms of the energy momentum tensor.  For
 the diagonal terms this was done successfully.  However, doing so for the remainder is harder when working backwards
 from the tensor in coordinate form.
 %
-\subsection{Calculate GA form}
+\subsection{Calculate GA form.}
 %
 Let us step back to the defining relation \eqnref{eqn:stressEnergyNoethers:vCurrentmanyField}, from which we
 see that we wish to calculate
@@ -1524,7 +1524,7 @@ T(a) &= \inv{2} (\grad \phi) a (\grad \phi)
 This meets the intuitive expectation that the energy momentum tensor for the wave equation could be expressed
 completely in terms of the gradient.
 %
-\subsection{Verify against tensor expression}
+\subsection{Verify against tensor expression.}
 %
 There is in fact a surprising simplicity to the result of \eqnref{eqn:stressEnergyNoethers:GAwaveStressEnergy}.
 It is somewhat hard to believe that it summarizes the messy matrix we have calculated above.
@@ -1569,7 +1569,7 @@ To verify this let us derive the tensor relation of \eqnref{eqn:stressEnergyNoet
 \end{aligned}
 \end{equation}
 %
-\subsection{Invariant length}
+\subsection{Invariant length.}
 %
 Putting the energy momentum tensor in GA form makes the demonstration of the invariant length almost trivial.  We have for any \(a\)
 %
@@ -1585,7 +1585,7 @@ Putting the energy momentum tensor in GA form makes the demonstration of the inv
 %
 This recovers \eqnref{eqn:stressEnergyNoethers:invariantLength}, which came at considerably higher cost in terms of guesswork.
 %
-\subsection{Energy and Momentum split (again)}
+\subsection{Energy and Momentum split (again).}
 %
 By wedging with \(\gamma_0\) we can extract the momentum terms of \(T(\gamma_0)\).  That is
 %
@@ -1675,7 +1675,7 @@ It would be useful to
 revisit this after considering in detail wave momentum in a mechanical sense, perhaps with a limiting argument as given
 in \citep{goldstein1951cm} (ie: one dimensional Lagrangian density considering infinite sequence of springs in a line).
 %
-\section{Scalar Klein Gordon}
+\section{Scalar Klein Gordon.}
 %
 A number of details have been extracted considering the scalar wave equation.  Now lets move to a two field variable Lagrangian.
 %
@@ -1698,9 +1698,9 @@ This also means that the conservation equations will be altered slightly
 Again the divergence of the individual canonical energy momentum tensor four vectors reproduces the field equations
 that we also obtain from the variation.
 %
-\section{Complex Klein Gordon}
+\section{Complex Klein Gordon.}
 %
-\subsection{Tensor in GA form}
+\subsection{Tensor in GA form.}
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:1700}
 \LL = \partial_\mu \psi \partial^\mu \psi^\conj - \frac{m^2 c^2}{\Hbar^2} \psi \psi^\conj
@@ -1757,7 +1757,7 @@ T(a) &= (\grad \psi ) a (\grad \psi^\conj) + a \frac{m^2 c^2}{\Hbar^2} \psi \psi
 \end{aligned}
 \end{equation}
 %
-\subsection{Tensor in index form}
+\subsection{Tensor in index form.}
 %
 Expanding the energy momentum tensor in index notation we have
 %
@@ -1800,7 +1800,7 @@ Writing for short \(b = \grad \psi\), and working in natural units \(m^2 c^2 = \
 %
 Unlike the light wave equation this does not (obviously) appear to have a natural split into something times \(a^2\).  Is there a way to do it?
 %
-\subsection{Divergence relation}
+\subsection{Divergence relation.}
 %
 Borrowing notation from above to calculate the divergence we want
 %
@@ -1895,16 +1895,16 @@ as appropriate.
 Now, this adjoint tensor is a curious beastie.  Intuition says this one will have a Lorentz invariant length.  A moment of reflection
 shows that this is in fact the case since the adjoint was fully expanded in \eqnref{eqn:stressEnergyNoethers:adjointEqualsZero}.  That vector is zero, and the
 length is therefore also necessarily invariant.
-\subsection{TODO}
+\subsection{TODO.}
 How about the energy and momentum split in this adjoint form?  Could also write out adjoint in index
 notation for comparison to non-adjoint tensor in index form.
-\section{Electrostatics Poisson Equation}
-\subsection{Lagrangian and spatial Noether current}
+\section{Electrostatics Poisson Equation.}
+\subsection{Lagrangian and spatial Noether current.}
 \begin{equation}\label{eqn:stressEnergyNoethers:2020}
 \LL = -\frac{\epsilon_0}{2} (\spacegrad \phi)^2 + \rho \phi.
 \end{equation}
 Evaluating this yields the desired \(\spacegrad^2 \phi = -\rho/\epsilon_0\), or \(\spacegrad \cdot \BE = \rho/\epsilon_0\).
-\subsection{Energy momentum tensor}
+\subsection{Energy momentum tensor.}
 In this particular case we then have
 \begin{equation}\label{eqn:stressEnergyNoethers:2040}
 \begin{aligned}
@@ -1928,7 +1928,7 @@ T(\Ba) &= -\frac{\epsilon_0}{2} \BE \Ba \BE - \Ba \rho \phi
 %
 This is not immediately recognizable (at least to me), and also does not appear to be easily separable into something times \(\Ba\).
 %
-\subsection{Divergence and adjoint tensor}
+\subsection{Divergence and adjoint tensor.}
 %
 What will we get with the divergence calculation?
 %
@@ -2013,7 +2013,7 @@ Reconcile this with \eqnref{eqn:stressEnergyNoethers:electrostaticConst}.
 %
 %FIXME: What is the Lagrangian for this case?  work it through.
 %
-\section{Schr\"{o}dinger equation}
+\section{Schr\"{o.}dinger equation}
 %
 While not a Lorentz invariant Lagrangian, we do not have a dependence on that,
 and can still calculate a Noether current on spatial translation.
@@ -2146,12 +2146,12 @@ time gradient would be required, however, because of the non-Lorentz
 invariant nature I had expect that terms may have to be added or subtracted
 to make that possible.
 %
-\section{Maxwell equation}
+\section{Maxwell equation.}
 %
 Wanting to see some of the connections between the Maxwell equation and the Lorentz force was the
 original reason for examining this canonical energy momentum tensor concept in detail.
 %
-\subsection{Lagrangian}
+\subsection{Lagrangian.}
 %
 Recall that the Lagrangian for the vector grades of Maxwell's equation
 %
@@ -2198,7 +2198,7 @@ So we have \(2\kappa = -\epsilon_0 c\), and can write our Lagrangian density as
 \end{aligned}
 \end{equation}
 %
-\subsection{Energy momentum tensor}
+\subsection{Energy momentum tensor.}
 %
 For the Lagrangian density we have
 %
@@ -2242,7 +2242,7 @@ T(a)
 \end{aligned}
 \end{equation}
 %
-\subsection{Index form of tensor}
+\subsection{Index form of tensor.}
 %
 Before trying to factor out \(a\), let us expand the tensor in abstract index form.  This is
 \begin{equation}\label{eqn:stressEnergyNoethers:2460}
@@ -2257,11 +2257,11 @@ T(\gamma_\nu) \cdot \gamma^\mu \\
 %
 In particular, note that this is not the familiar symmetric tensor from the Poynting relations.
 %
-\subsection{Expansion in terms of \texorpdfstring{\(\BE\) and \(\BB\)}{E and B}}
+\subsection{Expansion in terms of \texorpdfstring{\(\BE\) and \(\BB\).}{E and B}}
 %
 TODO.
 %
-\subsection{Adjoint}
+\subsection{Adjoint.}
 %
 Now, we want to move on to a computation of the adjoint so that \(a\) can essentially be factored out.
 Doing so is resisting initial attempts.  As an aid, introduce a few vector valued helper variables
@@ -2394,7 +2394,7 @@ in particular, eliminating the \(\nu\) indices.
 
 Think I will take a break from this for a while, and come back to it later.
 %
-\section{Nomenclature.  Linearized spacetime translation}
+\section{Nomenclature.  Linearized spacetime translation.}
 %
 Applying the translation \(x^\mu \rightarrow x^\mu + e^\mu\), is what I thought
 would be called ``spacetime translation''.  But to do so we need higher

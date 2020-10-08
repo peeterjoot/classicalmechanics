@@ -18,7 +18,7 @@
 \beginArtWithToc
 %\beginArtNoToc
 %
-\section{Motivation}
+\section{Motivation.}
 %
 The planar multiple pendulum problem proved somewhat tractable in the Hamiltonian formulation.  Generalizing this to allow for three dimensional motion is a logical next step.  Here this is attempted, using a geometric algebra scalar plus bivector parametrization of the spherical position of each dangling mass relative to the position of what it is attached to, as in
 %
@@ -30,7 +30,7 @@ The exponential is essentially a unit quaternion, rotating the vector \(l \Be_3\
 
 Note finally that a number of simplifying assumptions will be made.  These include use of point masses, zero friction at the pivots and rigid non springy massless connecting rods between the masses.
 %
-\section{Kinetic energy for the single pendulum case}
+\section{Kinetic energy for the single pendulum case.}
 %
 Let us compute derivatives of the unit vector
 %
@@ -152,7 +152,7 @@ Before continuing, it should be noted that there were assumptions made in this e
 %
 Here \(\alpha\) has got to be a trivector multiplier for the Lagrangian to be a scalar.  Can we get away with omitting these constraints?
 %
-\section{Two and multi particle case}
+\section{Two and multi particle case.}
 %
 Having constructed a way that can express the velocity of a single spherical pendulum in a tidy way, we can move on to consider the multiple pendulum case as shown in \cref{fig:sPolarMultiPendulum:pendulumDouble}
 %
@@ -334,11 +334,11 @@ K &=
 g \sum_{i=1}^N \mu_i r_i \cos\theta_i
 \end{aligned}
 \end{equation}
-\section{Building up to the Multivector Euler-Lagrange equations}
+\section{Building up to the Multivector Euler-Lagrange equations.}
 Rather than diving right into any abstract math, lets consider a few specific examples of multivector Lagrangians to develop some comfort with non-scalar Lagrangian functions.  The generalized ``coordinates'' in the Lagrangian for the spherical pendulum problem being considered include bivectors, and we do not know how to evaluate the Euler Lagrange equations for anything but scalar generalized coordinates.
 %
 The goal is to develop Euler-Lagrange equations that can handle a Lagrangian for these more general functions, but until we figure out how to do that, we can at least tackle the problem using variation of the action around a stationary solution.
-\subsection{A first example to build intuition}
+\subsection{A first example to build intuition.}
 To help understand what we have to do, lets consider the very simplest bivector parametrized Lagrangian, that of a spherical pendulum constrained (perhaps by a track or a surface) of moving only in a ring.  This is shown pictorially in \cref{fig:sPolarMultiPendulum:pendulumPolarCircular}
 \imageFigure{../figures/classicalmechanics/pendulumPolarCircular}{Circularly constrained spherical pendulum}{fig:sPolarMultiPendulum:pendulumPolarCircular}{0.4}
 %
@@ -484,7 +484,7 @@ This is now consistent with the scalar Lagrangian treatment.  In both cases we h
 %
 %FIXME: This out of sequence approach is also because I did not initially spot the inconsistency when working up to the multivector Euler-Lagrange equations.  Some reorganization of the organic ordering of these notes is required to fix that.
 %
-\subsection{A second example}
+\subsection{A second example.}
 %
 %FIXME: same problems with constant and zeros as above.  Note these explicitly.
 %
@@ -517,7 +517,7 @@ In this simple system where both scalar variable \(\theta\) and bivector variabl
 %
 As to what, if anything, this particular Lagrangian (a fragment picked out of a real Kinetic energy function) represents physically that does not matter so much, since the point of this example was to build up to treating the more general case where we are representing something physical.
 %
-\subsection{A third example}
+\subsection{A third example.}
 %
 If we throw a small additional wrench into the problem above and allow \(a\) to be one of the variables our system is dependent on.
 %
@@ -596,9 +596,9 @@ Thus the variational problem produces solutions (the coupled equations we still 
 \end{aligned}
 \end{equation}
 %
-\section{Multivector Euler-Lagrange equations}
+\section{Multivector Euler-Lagrange equations.}
 %
-\subsection{Derivation}
+\subsection{Derivation.}
 %
 Having considered a few specific Lagrangians dependent on multivector generalized ``coordinates'', some basic comfort that it is at least possible has been gained.  Let us now move on to the general case.  It is sufficient to consider Lagrangian functions that only depend on blades, since we can write any more general multivector as a sum of such blades
 
@@ -677,7 +677,7 @@ Setting \(\delta S = 0\) we have a set of equations for each of the blade variab
 \grad_{X_k} \LL = \frac{d}{dt} \grad_{X_k'} \LL
 \end{equation}
 %
-\subsection{Work some examples}
+\subsection{Work some examples.}
 %
 For the pendulum problem we are really only interested in applying \eqnref{eqn:sPolarMultiPendulum:roo4} for scalar and bivector variables.  Let us revisit some of the example Lagrangians, functions of bivectors, already considered and see how we can evaluate the position and velocity gradients.  This generalized Euler-Lagrange formulation does not do much good if we can not work with it.
 
