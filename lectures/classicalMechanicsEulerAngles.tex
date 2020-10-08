@@ -49,7 +49,7 @@ z'
 x \\
 y \\
 z
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 %
 Step 2.  Rotation around \(x'\).
@@ -70,7 +70,7 @@ z''
 x' \\
 y' \\
 z'
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 %
 Step 3.  Rotation around \(z''\).
@@ -91,7 +91,7 @@ z'''
 x'' \\
 y'' \\
 z''
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 %
 So, our full rotation is the composition of the rotation matrices
@@ -122,7 +122,7 @@ z'''
 x \\
 y \\
 z
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 %
 Let us introduce some notation and write this as
@@ -134,7 +134,7 @@ B_z(\alpha)
 \cos\alpha & \sin\alpha & 0 \\
 -\sin\alpha & \cos\alpha & 0 \\
 0 & 0 & 1
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 %
 \begin{equation}\label{eqn:classicalMechanicsEulerAngles:120}
@@ -143,13 +143,13 @@ B_x(\theta) =
 1 & 0 & 0 \\
 0 & \cos\theta & \sin\theta & 0 \\
 0 & -\sin\theta & \cos\theta & 0
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 %
 so that we have the mapping
 %
 \begin{equation}\label{eqn:classicalMechanicsEulerAngles:140}
-\Br \rightarrow B_z(\psi) B_x(\theta) B_z(\phi) \Br
+\Br \rightarrow B_z(\psi) B_x(\theta) B_z(\phi) \Br.
 \end{equation}
 %
 Now let us write
@@ -160,13 +160,13 @@ Now let us write
 x_1 \\
 x_2 \\
 x_3
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 %
 We will call
 %
 \begin{equation}\label{eqn:classicalMechanicsEulerAngles:180}
-A(\psi, \theta, \phi) = B_z(\psi) B_x(\theta) B_z(\phi)
+A(\psi, \theta, \phi) = B_z(\psi) B_x(\theta) B_z(\phi).
 \end{equation}
 %
 so that
@@ -186,7 +186,7 @@ This matrix \(A(\psi, \theta, \phi)\) is in fact a general parameterization of t
 In symbols we must have
 %
 \begin{equation}\label{eqn:classicalMechanicsEulerAngles:240}
-A^\T A = 1
+A^\T A = 1.
 \end{equation}
 \begin{equation}\label{eqn:classicalMechanicsEulerAngles:260}
 \det A = +1.
@@ -251,7 +251,7 @@ B_z(-\psi)
 x_1' \\
 x_2' \\
 x_3'
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 %
 If we assume that \(\psi\), \(\theta\) and \(\phi\) are functions of time, and compute \(d \Br/dt\).  Starting with
@@ -278,7 +278,7 @@ For small changes, we can Taylor expand and retain only the first order terms.  
 \PD{\psi}{} A^{-1}_{ij} \dot{\psi}
 +\PD{\theta}{} A^{-1}_{ij} \dot{\theta}
 +\PD{\phi}{} A^{-1}_{ij} \dot{\phi}
-\right) x_j'
+\right) x_j'.
 \end{equation}
 %
 Now, we use
@@ -322,7 +322,7 @@ v_z
 x \\
 y \\
 z
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 %
 Actually doing this calculation is asked of us in HW6.  The final answer is

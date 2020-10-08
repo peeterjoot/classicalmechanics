@@ -23,7 +23,7 @@
 Jackson \citep{jackson1975cew} gives the Lorentz force non-covariant Lagrangian
 %
 \begin{equation}\label{eqn:jacksonLorLag:foo1}
-L = - m c^2 \sqrt{1 -\Bu^2/c^2} + \frac{e}{c} \Bu \cdot \BA - e \phi
+L = - m c^2 \sqrt{1 -\Bu^2/c^2} + \frac{e}{c} \Bu \cdot \BA - e \phi.
 \end{equation}
 %
 and leaves it as an exercise for the reader to verify that this produces the Lorentz force law.  Felt like trying this anew since I recall having trouble the first time I tried it (the covariant derivation was easier).
@@ -33,7 +33,7 @@ and leaves it as an exercise for the reader to verify that this produces the Lor
 Jackson gives a tip to use the convective derivative (yet another name for the chain rule), and using this in the Euler Lagrange equations we have
 %
 \begin{equation}\label{eqn:jacksonLorLag:foo2}
-\spacegrad \LL = \frac{d}{dt} \spacegrad_\Bu \LL = \left( \frac{\partial}{\partial t} + \Bu \cdot \spacegrad \right) \sigma_a \frac{\partial \LL}{\partial \xdot^a}
+\spacegrad \LL = \frac{d}{dt} \spacegrad_\Bu \LL = \left( \frac{\partial}{\partial t} + \Bu \cdot \spacegrad \right) \sigma_a \frac{\partial \LL}{\partial \xdot^a}.
 \end{equation}
 %
 where \(\{\sigma_a\}\) is the spatial basis.  The first order of business is calculating the gradient and conjugate momenta.  For the latter we have
@@ -65,7 +65,7 @@ Applying the convective derivative we have
 For the gradient we have
 %
 \begin{equation}\label{eqn:jackson12Dash9:63}
-\sigma_a \frac{\partial \LL}{\partial x^a} = e\left( \inv{c}\xdot^b \spacegrad A^b - \spacegrad \phi \right)
+\sigma_a \frac{\partial \LL}{\partial x^a} = e\left( \inv{c}\xdot^b \spacegrad A^b - \spacegrad \phi \right).
 \end{equation}
 %
 Rearranging \eqnref{eqn:jacksonLorLag:foo2} for this Lagrangian we have
@@ -78,7 +78,7 @@ e \left(
 - \frac{1}{c} \frac{\partial \BA}{\partial t}
 - \frac{1}{c} \Bu \cdot \spacegrad \BA
  +\inv{c} \xdot^b \spacegrad A^b
-\right)
+\right).
 \end{equation}
 %
 The first two terms are the electric field
@@ -86,7 +86,7 @@ The first two terms are the electric field
 \begin{equation}\label{eqn:jackson12Dash9:103}
 \BE \equiv
 - \spacegrad \phi
-- \frac{1}{c} \frac{\partial \BA}{\partial t}
+- \frac{1}{c} \frac{\partial \BA}{\partial t}.
 \end{equation}
 %
 So it remains to be shown that the remaining two equal \((\Bu/c) \cross \BB = (\Bu/c) \cross (\spacegrad \cross \BA)\).  Using the Hestenes notation using primes to denote what the gradient is operating on, we have
@@ -120,7 +120,7 @@ So it remains to be shown that the remaining two equal \((\Bu/c) \cross \BB = (\
 I have used the geometric algebra identities I am familiar with to regroup things, but this last bit can likely be done with index manipulation too.  The exercise is complete, and we have from the Lagrangian
 %
 \begin{equation}\label{eqn:jacksonLorLag:foo3}
-\frac{d\Bp}{dt} = e \left( \BE + \inv{c} \Bu \cross \BB \right)
+\frac{d\Bp}{dt} = e \left( \BE + \inv{c} \Bu \cross \BB \right).
 \end{equation}
 %
 %\EndArticle

@@ -20,7 +20,7 @@ We can plug away at the Lagrangian in cylindrical coordinates and find eventuall
 \begin{equation}\label{eqn:RungeLenz:10}
 \int_{\phi_0}^\phi d\phi = \int_{r_0}^r \frac{M}{m r^2} \frac{dr}{\sqrt{\frac{2}{M}
 \lr{ E - U + \frac{M^2}{2 m r^2} }
- }}
+ }}.
 \end{equation}
 %
 but this can be messy to solve, where we get elliptic integrals or worse, depending on the potential.
@@ -32,7 +32,7 @@ For the special case of the 3D problem where the potential has a \(1/r\) form, t
 Given a potential
 %
 \begin{equation}\label{eqn:RungeLenz:30}
-U = -\frac{\alpha}{r}
+U = -\frac{\alpha}{r}.
 \end{equation}
 %
 and a Lagrangian
@@ -46,7 +46,7 @@ M_z &= m r^2 \dot{\phi}^2.
 %
 and writing the angular momentum as
 \begin{equation}\label{eqn:RungeLenz:70}
-\BM = m \Br \cross \Bv %= m r^2 \dot{\phi} \zcap
+\BM = m \Br \cross \Bv %= m r^2 \dot{\phi} \zcap.
 \end{equation}
 %
 the Runge-Lenz vector
@@ -65,7 +65,7 @@ Let us show that the conservation assumption is correct
 \ddt{} \left( \Bv \cross \BM \right)
 =
 \ddt{ \Bv} \cross \BM
-+ \Bv \cross \cancel{\ddt{\BM }}
++ \Bv \cross \cancel{\ddt{\BM }}.
 \end{equation}
 %
 Here, we note that angular momentum conservation is really \(d\BM/dt = 0\), so we are left with only the acceleration term, which we can rewrite in terms of the Euler-Lagrange equation
@@ -102,7 +102,7 @@ a_m b_i c_m
 For
 %
 \begin{equation}\label{eqn:RungeLenz:130}
-\Ba \cross (\Bb \cross \Bc) = (\Ba \cdot \Bc) \Bb -(\Ba \cdot \Bb) \Bc
+\Ba \cross (\Bb \cross \Bc) = (\Ba \cdot \Bc) \Bb -(\Ba \cdot \Bb) \Bc.
 \end{equation}
 %
 Plugging this we have
@@ -223,7 +223,7 @@ This is a kind of curious implicit relationship, since \(\phi\) is also a functi
 %
 \begin{equation}\label{eqn:RungeLenz:250}
 \inv{2} m
-\lr{ \dot{r}^2 + r^2 \dot{\phi}^2 }
+\lr{ \dot{r}^2 + r^2 \dot{\phi}^2 }.
 \end{equation}
 %
 so that our angular momentum was
@@ -242,7 +242,7 @@ with no \(\phi\) dependence in the Lagrangian we have
 or
 %
 \begin{equation}\label{eqn:RungeLenz:310}
-\BM = m r^2 \phidot \zcap = \text{constant}
+\BM = m r^2 \phidot \zcap = \text{constant}.
 \end{equation}
 %
 Our dynamics are now fully specified, even if this not completely explicit
@@ -271,7 +271,7 @@ t - t_0
 =
 \frac{M^3}{m \alpha^3}
 \int_0^{\phi - \phi_0} du
-\inv{(1 + e \cos u)^2}
+\inv{(1 + e \cos u)^2}.
 \end{equation}
 %
 Now, at least \(\phi = \phi(t)\) is specified implicitly.

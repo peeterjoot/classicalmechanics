@@ -13,7 +13,7 @@
 This document will attempt to calculate Maxwell's equation, which in multivector form is
 %
 \begin{equation}\label{eqn:maxFieldLag:maxwell}
-\grad F = J/\epsilon_0 c
+\grad F = J/\epsilon_0 c.
 \end{equation}
 %
 using a Lagrangian energy density variational approach.
@@ -33,7 +33,7 @@ F
 %
 Or,
 \begin{equation}
-F = E^k \gamma_{k0} - c {\epsilon^{ij}}_k B^k \gamma_{ij}
+F = E^k \gamma_{k0} - c {\epsilon^{ij}}_k B^k \gamma_{ij}.
 \end{equation}
 %
 When this bivector is expressed in terms of basis bivectors \(\gamma_{\mu\nu}\) we have
@@ -41,7 +41,7 @@ When this bivector is expressed in terms of basis bivectors \(\gamma_{\mu\nu}\) 
 \begin{equation}\label{eqn:lagrangianFieldDensity:40}
 F
 = \sum_{\mu<\nu} (F \cdot \gamma^{\nu\mu}) \gamma_{\mu\nu}
-= \inv{2} (F \cdot \gamma^{\nu\mu}) \gamma_{\mu\nu}
+= \inv{2} (F \cdot \gamma^{\nu\mu}) \gamma_{\mu\nu}.
 \end{equation}
 %
 As shorthand for the coordinates the field can be expressed with respect to various bivector basis sets in tensor form
@@ -75,7 +75,7 @@ F^{\mu\nu} =
 E^1 &   0  & -c B^3 &  c B^2 \\
 E^2 &  c B^3 &   0  & -c B^1 \\
 E^3 & -c B^2 &  c B^1 &   0  \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{equation}
 %
 \begin{equation}
@@ -96,7 +96,7 @@ for the field tensor.
 Taking vector and trivector parts of Maxwell's equation \eqnref{eqn:maxFieldLag:maxwell}, and writing in terms of coordinates produces two equations respectively
 %
 \begin{equation}\label{eqn:maxFieldLag:vectorPartOfMaxwells}
-\partial_{\mu} F^{\mu\alpha} = J^{\alpha}/c \epsilon_0
+\partial_{\mu} F^{\mu\alpha} = J^{\alpha}/c \epsilon_0.
 \end{equation}
 %
 \begin{equation}\label{eqn:maxFieldLag:dualPartOfMaxwells}
@@ -143,7 +143,7 @@ F^2
 One can also show that the following are all identical representations.
 %
 \begin{equation}
-\inv{2} F_{\mu\nu}F^{\mu\nu} = -\gpgradezero{F^2} = c^2 \BB^2 -\BE^2
+\inv{2} F_{\mu\nu}F^{\mu\nu} = -\gpgradezero{F^2} = c^2 \BB^2 -\BE^2.
 \end{equation}
 %
 In particular, we will use the tensor form with the field defined in terms of the vector potential of \eqnref{eqn:maxFieldLag:potentialdef}.
@@ -195,7 +195,7 @@ For the pseudoscalar parts of the product we have
 That is
 %
 \begin{equation}\label{eqn:maxFieldLag:pseudoscalarFieldSquare}
-\gpgrade{ (\grad \wedge A)^2 }{4} = \epsilon_{\mu\nu\alpha\beta} I \partial^{\mu} A^{\nu} \partial^{\alpha} A^{\beta}
+\gpgrade{ (\grad \wedge A)^2 }{4} = \epsilon_{\mu\nu\alpha\beta} I \partial^{\mu} A^{\nu} \partial^{\alpha} A^{\beta}.
 \end{equation}
 %
 %\subsection{Commutator (grade two) part?}
@@ -207,7 +207,7 @@ That is
 Trying to blindly plug into the proper time variation of the Euler-Lagrange equations that can be used to derive the Lorentz force law from a \(A \cdot v\) based Lagrangian
 %
 \begin{equation}\label{eqn:maxFieldLag:eulerlag}
-\PD{x^\mu}{\LL} = \frac{d}{d\tau} \PD{\dot{x}^\mu}{\LL}
+\PD{x^\mu}{\LL} = \frac{d}{d\tau} \PD{\dot{x}^\mu}{\LL}.
 \end{equation}
 %
 did not really come close to producing Maxwell's equations from the Lagrangian in \eqnref{eqn:maxFieldLag:density}.  Whatever the equivalent of the Euler-Lagrange equations is for an energy density Lagrangian they are not what is in \eqnref{eqn:maxFieldLag:eulerlag}.
@@ -223,7 +223,7 @@ Here is pretty much the simplest case, and illustrates the technique well.
 Suppose we have an action associated with a kinetic Lagrangian density \((1/2) m v^2\)
 %
 \begin{equation}\label{eqn:maxFieldLag:oneDimKinetic}
-S = \int_a^b \frac{m}{2} { \left(\frac{dx}{dt}\right) }^2 dt
+S = \int_a^b \frac{m}{2} { \left(\frac{dx}{dt}\right) }^2 dt.
 \end{equation}
 %
 where \(x = x(t)\) is the undetermined function to solve for.  Feynman's technique is similar to \citep{goldstein1951cm} way of deriving the Euler Lagrange equations, but instead of writing
@@ -235,7 +235,7 @@ x(t, \epsilon) = x(t, 0) + \epsilon n(t)
 and taking derivatives under the integral sign with respect to \(\epsilon\), instead he just writes
 %
 \begin{equation}\label{eqn:maxFieldLag:xbarplusn}
-x = \overbar{x} + n
+x = \overbar{x} + n.
 \end{equation}
 %
 In either case, the function \(n = n(t)\) is zero at the boundaries of the integration region, and is allowed to take any value in between.
@@ -246,7 +246,7 @@ Substitution of \eqnref{eqn:maxFieldLag:xbarplusn} into \eqnref{eqn:maxFieldLag:
 S =
 \int_a^b \frac{m}{2} { \left(\frac{d\overbar{x}}{dt}\right) }^2 dt
 + 2 \int_a^b \frac{m}{2} \frac{d\overbar{x}}{dt} \frac{d n}{dt} dt
-+ \int_a^b \frac{m}{2} { \left(\frac{d n}{dt}\right) }^2 dt
++ \int_a^b \frac{m}{2} { \left(\frac{d n}{dt}\right) }^2 dt.
 \end{equation}
 %
 The last term being quadratic and presumed small is just dropped.  The first term is strictly positive and does not vary with \(n\) in any way.  The middle term, just as in
@@ -285,7 +285,7 @@ Next is to apply the same idea to the field Lagrangian for electrostatics.  The 
 Let us see if we can recover the electrostatics equation from this with an action of
 %
 \begin{equation}\label{eqn:maxFieldLag:densityaction}
-S = \int_{\Omega} \LL dx dy
+S = \int_{\Omega} \LL dx dy.
 \end{equation}
 %
 Doing this for the simpler case of one dimension would not be too much different from the previous kinetic calculation, and doing this in two dimensions is enough
@@ -295,7 +295,7 @@ As above we assume that the general varied potential be written in terms of unkn
 function
 %
 \begin{equation}\label{eqn:maxFieldLag:barphi}
-\phi = \overbar{\phi} + n
+\phi = \overbar{\phi} + n.
 \end{equation}
 %
 The function \(n\) is required to be zero on the boundary of the area \(\Omega\).  One can likely assume any sort of area, but for this calculation
@@ -394,7 +394,7 @@ It is also clear that the arguments above would also hold for the three dimensio
 We want to do the same for the general electrodynamic Lagrangian density (where \(\kappa\) is still undetermined)
 %
 \begin{equation}\label{eqn:maxFieldLag:densityA}
-\LL = \frac{\kappa}{2} \partial_{\mu} A_{\nu} ( \partial^{\mu} A^{\nu} - \partial^{\nu} A^{\mu} ) + J_{\alpha} A^{\alpha}
+\LL = \frac{\kappa}{2} \partial_{\mu} A_{\nu} ( \partial^{\mu} A^{\nu} - \partial^{\nu} A^{\mu} ) + J_{\alpha} A^{\alpha}.
 \end{equation}
 %
 Using the same trick we introduce the desired solution and an variational function for each \(A^{\mu}\)
@@ -463,7 +463,7 @@ Finally, setting the interior term equal to zero for an extreme value independen
 This fixes \(\kappa = c \epsilon_0\), and completes half of the recovery of Maxwell's equation from a Lagrangian
 %
 \begin{equation}
-\LL = -\frac{c \epsilon_0}{2} \gpgradezero{(\grad \wedge A)^2} + J \cdot A
+\LL = -\frac{c \epsilon_0}{2} \gpgradezero{(\grad \wedge A)^2} + J \cdot A.
 \end{equation}
 %
 %
@@ -514,7 +514,7 @@ This fixes \(\kappa = c \epsilon_0\), and completes half of the recovery of Maxw
 %%\(\epsilon_0 \mu_0 = 1/c^2\), we have our scale factor before actually solving the extremal problem and equation \eqnref{eqn:maxFieldLag:density} takes the form
 %%
 %%\begin{equation}
-%%\LL = \inv{2 \mu_0} \partial_{\mu} A_{\nu} ( \partial^{\mu} A^{\nu} - \partial^{\nu} A^{\mu} ) + J_{\alpha} A^{\alpha}
+%%\LL = \inv{2 \mu_0} \partial_{\mu} A_{\nu} ( \partial^{\mu} A^{\nu} - \partial^{\nu} A^{\mu} ) + J_{\alpha} A^{\alpha}.
 %%\end{equation}
 %%
 %%
@@ -598,7 +598,7 @@ Since we can add zero to zero and not change the result, we can write
 That completes the result and this extremal solution recovers the trivector part of Maxwell's equation in its standard tensor form
 %
 \begin{equation}
-\epsilon^{\mu\nu\alpha\beta} \partial_{\alpha} F_{\mu\nu} = 0
+\epsilon^{\mu\nu\alpha\beta} \partial_{\alpha} F_{\mu\nu} = 0.
 \end{equation}
 %
 \section{Maxwell equation with complex Lagrangian.}
@@ -711,7 +711,7 @@ for the trivector part.
 It also shows that the choice to work directly with a complex valued Lagrangian,
 %
 \begin{equation}
-\LL = - \frac{c \epsilon_0}{2} (\grad \wedge A)^2 + J \cdot A
+\LL = - \frac{c \epsilon_0}{2} (\grad \wedge A)^2 + J \cdot A.
 \end{equation}
 %
 leads directly to Maxwell's equation in its geometric algebra formulation, as
@@ -722,10 +722,10 @@ detailed in \citep{doran2003gap}.
 With just two Lagrangian's and their associated action integrals
 %
 \begin{equation}
-\LL = - \frac{c \epsilon_0}{2} (\grad \wedge A)^2 + J \cdot A
+\LL = - \frac{c \epsilon_0}{2} (\grad \wedge A)^2 + J \cdot A.
 \end{equation}
 \begin{equation}\label{eqn:maxFieldLag:lorentzforce}
-\LL = \inv{2}m v^2 + q A \cdot v/c %+ \phi
+\LL = \inv{2}m v^2 + q A \cdot v/c %+ \phi.
 \end{equation}
 %
 we have a good chunk of non-quantum electrodynamics described in a couple energy minimization relationships.  A derivation, albeit a primitive one based somewhat on intuition, of \eqnref{eqn:maxFieldLag:lorentzforce} can be found in \chapcite{PJSrLagrangian}.

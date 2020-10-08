@@ -31,7 +31,7 @@ Our potential, for a uniform distribution, will be proportional to
 With
 %
 \begin{equation}\label{eqn:cylinderPotential:30}
-\int_{-L}^L \frac{1}{\sqrt{z^2+u^2}} \, dz=\log \left(\frac{L+\sqrt{L^2+u^2}}{-L+\sqrt{L^2+u^2}}\right)
+\int_{-L}^L \frac{1}{\sqrt{z^2+u^2}} \, dz=\log \left(\frac{L+\sqrt{L^2+u^2}}{-L+\sqrt{L^2+u^2}}\right).
 \end{equation}
 %
 This is found to be
@@ -41,7 +41,7 @@ This is found to be
 \log\left(\frac
 {L+\sqrt{L^2+ \Abs{r - r' e^{ i \theta }}^2}}
 {-L+\sqrt{L^2+ \Abs{r - r' e^{ i \theta }}^2}}
-\right)
+\right).
 \end{equation}
 %
 It is clear that we can not evaluate this limit directly for \(L \rightarrow \infty\) since that gives us \(\infty/0\) in the logarithm term.  Presuming this can be evaluated, we must have to evaluate the complete set of integrals first, then take the limit.  Based on the paper \href{http://www.ifi.unicamp.br/~assis/J-Electrostatics-V63-p1115-1131(2005).pdf}{http://www.ifi.unicamp.br/~assis/J-Electrostatics-V63-p1115-1131(2005).pdf}, it appears that this can be evaluated, however, the approach used therein uses mathematics a great deal more sophisticated than I can grasp without a lot of study.
@@ -50,7 +50,7 @@ Can we proceed blindly using computational tools to do the work?  Attempting to 
  %\href{https://raw.github.com/peeterjoot/physicsplay/master/notes/phy354/problemSetIIproblem4IntegralsEvaluatingInfiniteCylindricalPotential.cdf}{Mathematica}
 %
 \begin{equation}\label{eqn:cylinderPotential:70}
-\int_0^R r dr \log \left(a+\sqrt{a^2+r^2+b^2-2 r b \cos (\theta )}\right)
+\int_0^R r dr \log \left(a+\sqrt{a^2+r^2+b^2-2 r b \cos (\theta )}\right).
 \end{equation}
 %
 and
@@ -94,13 +94,13 @@ If we try the angular integral first, we get
 d\theta
 \frac{1}{\sqrt{a^2+r^2-2 r b \cos (\theta )+b^2}}
 =
-\frac{2 K\left(-\frac{4 b r}{a^2+(b-r)^2}\right)}{\sqrt{a^2+(b-r)^2}}+\frac{2 K\left(\frac{4 b r}{a^2+(b+r)^2}\right)}{\sqrt{a^2+(b+r)^2}}
+\frac{2 K\left(-\frac{4 b r}{a^2+(b-r)^2}\right)}{\sqrt{a^2+(b-r)^2}}+\frac{2 K\left(\frac{4 b r}{a^2+(b+r)^2}\right)}{\sqrt{a^2+(b+r)^2}}.
 \end{equation}
 %
 where
 %
 \begin{equation}\label{eqn:cylinderPotential:150}
-K(m) = F\left( \left.\frac{\pi }{2}\right| m \right)
+K(m) = F\left( \left.\frac{\pi }{2}\right| m \right).
 \end{equation}
 %
 is the complete elliptic integral of the first kind.  Actually evaluating this integral, especially in the limiting case, probably requires stepping back and thinking a bit (or a lot) instead of blindly trying to evaluate.
