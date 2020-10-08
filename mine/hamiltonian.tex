@@ -26,7 +26,7 @@ Starting with the Lagrangian formalism the Hamiltonian can be found as a conserv
 \frac{d\LL}{dt}
 &= \PD{q^i}{\LL} \frac{dq^i}{dt} +\PD{\qdot^i}{\LL} \frac{d\qdot^i}{dt} \\
 &= \qdot^i \frac{d}{dt}\PD{\qdot^i}{\LL} +\PD{\qdot^i}{\LL} \frac{d\qdot^i}{dt} \\
-&= \frac{d}{dt} \left( \qdot^i \PD{\qdot^i}{\LL} \right)
+&= \frac{d}{dt} \left( \qdot^i \PD{\qdot^i}{\LL} \right).
 \end{aligned}
 \end{equation}
 %
@@ -73,7 +73,7 @@ This makes most sense when working in orthonormal coordinates, but can be genera
 \begin{equation}\label{eqn:hamiltonian:foo4}
 \begin{aligned}
 q &= e_i q^i \\
-v &= f_i \qdot^i
+v &= f_i \qdot^i.
 \end{aligned}
 \end{equation}
 %
@@ -83,7 +83,7 @@ Following \citep{doran2003gap} (who use this for their bivector complexification
 \begin{aligned}
 e^i \cdot e_j &= {\delta^i}_j \\
 f^i \cdot f_j &= {\delta^i}_j \\
-e^i \cdot f_j &= {\delta^i}_j
+e^i \cdot f_j &= {\delta^i}_j.
 \end{aligned}
 \end{equation}
 %
@@ -92,7 +92,7 @@ We can now define configuration space position and velocity gradients
 \begin{equation}\label{eqn:hamiltonian:foo6}
 \begin{aligned}
 \grad &\equiv e^i \PD{q^i}{} \\
-\grad_v &\equiv f^i \PD{\qdot^i}{}
+\grad_v &\equiv f^i \PD{\qdot^i}{}.
 \end{aligned}
 \end{equation}
 %
@@ -128,7 +128,7 @@ and for the \(q^i\) partial
 \begin{aligned}
 \PD{q^i}{H}
 &= -\PD{q^i}{\LL} \\
-&= - \frac{d}{dt} \PD{\qdot^i}{\LL}
+&= - \frac{d}{dt} \PD{\qdot^i}{\LL}.
 \end{aligned}
 \end{equation}
 %
@@ -138,7 +138,7 @@ These two results taken together form what I believe is called the Hamiltonian p
 \begin{aligned}
 \PD{P_i}{H} &= \qdot^i \\
 \PD{q^i}{H} &= - \dot{P}_i \\
-P_i &= \PD{\qdot^i}{\LL}
+P_i &= \PD{\qdot^i}{\LL}.
 \end{aligned}
 \end{equation}
 %
@@ -176,7 +176,7 @@ A term by term comparison to the total differential written out explicitly
 dH &=
 \PD{q^i}{H} d q^i
 +\PD{P_i}{H} d P_i
-+\PD{t}{H} dt
++\PD{t}{H} dt.
 \end{aligned}
 \end{equation}
 %
@@ -186,7 +186,7 @@ allows the Hamiltonian equations to be picked off.
 \begin{aligned}
 \PD{P_i}{H} &= \qdot^i  \\
 \PD{q^i}{H} &= - \dot{P}_i  \\
-\PD{t}{H}   &= - \PD{t}{\LL}
+\PD{t}{H}   &= - \PD{t}{\LL}.
 \end{aligned}
 \end{equation}
 %
@@ -221,7 +221,7 @@ We have then
 \begin{equation}\label{eqn:hamiltonian:143}
 \begin{aligned}
 \PD{p}{H} &= \frac{p}{m} = \dot{x} \\
-\PD{x}{H} &= 0 = -\dot{p}
+\PD{x}{H} &= 0 = -\dot{p}.
 \end{aligned}
 \end{equation}
 %
@@ -243,7 +243,7 @@ x
 \begin{bmatrix}
 p \\
 x
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -275,7 +275,7 @@ x
 \begin{bmatrix}
 p_0 \\
 x_0
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -284,7 +284,7 @@ Written out in full this is just
 \begin{equation}\label{eqn:hamiltonian:boo8}
 \begin{aligned}
 p &= p_0 \\
-x &= \frac{p_0}{m} t + x_0
+x &= \frac{p_0}{m} t + x_0.
 \end{aligned}
 \end{equation}
 %
@@ -294,7 +294,7 @@ The generalization of this Hamiltonian to three dimensions is straightforward, a
 %
 \begin{equation}\label{eqn:hamiltonian:boo9}
 \begin{aligned}
-H &= \inv{m} \Bp^2
+H &= \inv{m} \Bp^2.
 \end{aligned}
 \end{equation}
 %
@@ -326,7 +326,7 @@ p_y \\
 y \\
 p_z \\
 z \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -335,7 +335,7 @@ Since there is no coupling (nilpotent matrices down the diagonal) between the co
 \begin{equation}\label{eqn:hamiltonian:boo11}
 \begin{aligned}
 p_i(t) &= p_i(0) \\
-x_i(t) &= \frac{p_i(0)}{m} t + x_i(0)
+x_i(t) &= \frac{p_i(0)}{m} t + x_i(0).
 \end{aligned}
 \end{equation}
 %
@@ -344,7 +344,7 @@ Or just
 \begin{equation}\label{eqn:hamiltonian:boo12}
 \begin{aligned}
 \Bp(t) &= \Bp(0) \\
-\Bx(t) &= \frac{\Bp(0)}{m} t + \Bx(0)
+\Bx(t) &= \frac{\Bp(0)}{m} t + \Bx(0).
 \end{aligned}
 \end{equation}
 %
@@ -367,7 +367,7 @@ The Hamiltonian equations are
 \begin{equation}\label{eqn:hamiltonian:roo3}
 \begin{aligned}
 \PD{p_i}{H} &= \xdot_i = \inv{m} p_i \\
-\sigma_i \PD{x_i}{H} &= -\sigma_i \pdot_i = \begin{bmatrix}0 \\ 0 \\ m g \end{bmatrix}
+\sigma_i \PD{x_i}{H} &= -\sigma_i \pdot_i = \begin{bmatrix}0 \\ 0 \\ m g \end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -410,7 +410,7 @@ z \\
 0 \\
 -m g \\
 0 \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -443,7 +443,7 @@ z \\
 \begin{bmatrix}
 -m g \\
 0 \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -465,7 +465,7 @@ Direct integration is now possible for the final solution
 \begin{aligned}
 z
 &= \inv{m} (p_z(0) t - m g t^2/2) + z_0 \\
-&= \frac{p_z(0)}{m} t - \frac{g}{2} t^2 + z_0
+&= \frac{p_z(0)}{m} t - \frac{g}{2} t^2 + z_0.
 \end{aligned}
 \end{equation}
 %
@@ -486,7 +486,7 @@ z(0) \\
 \begin{bmatrix}
 t \\
 \inv{2m} t^2
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -511,7 +511,7 @@ Evaluating the Hamiltonian equations we have
 \begin{equation}\label{eqn:hamiltonian:woo3}
 \begin{aligned}
 \PD{p_i}{H} &= \dot{x_i} = p_i/m \\
-\PD{x_i}{H} &= -\dot{p_i} = k x_i
+\PD{x_i}{H} &= -\dot{p_i} = k x_i.
 \end{aligned}
 \end{equation}
 %
@@ -532,7 +532,7 @@ x \\
 \begin{bmatrix}
 p \\
 x \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -544,7 +544,7 @@ A =
 \begin{bmatrix}
 0 & - k \\
 1/m & 0 \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -561,7 +561,7 @@ e^{At}
 \begin{bmatrix}
 p_0 \\
 x_0 \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -578,7 +578,7 @@ e^{A \Delta t_{i+1}}
 {\begin{bmatrix}
 p \\
 x \\
-\end{bmatrix}}_i
+\end{bmatrix}}_i.
 \end{aligned}
 \end{equation}
 %
@@ -595,7 +595,7 @@ e^{A \Delta t_{i+1}} e^{A \Delta t_{i}} \cdots e^{A \Delta t_1}
 {\begin{bmatrix}
 p \\
 x \\
-\end{bmatrix}}_0
+\end{bmatrix}}_0.
 \end{aligned}
 \end{equation}
 %
@@ -613,7 +613,7 @@ A^2 =
 1/m & 0 \\
 \end{bmatrix}
 =
--\frac{k}{m} I
+-\frac{k}{m} I.
 \end{aligned}
 \end{equation}
 %
@@ -623,7 +623,7 @@ The first few powers are
 A^2 &= -\frac{k}{m} I \\
 A^3 &= -\frac{k}{m} A \\
 A^4 &= \left(\frac{k}{m}\right)^2 I \\
-A^5 &= \left(\frac{k}{m}\right)^2 A
+A^5 &= \left(\frac{k}{m}\right)^2 A.
 \end{aligned}
 \end{equation}
 %
@@ -638,7 +638,7 @@ e^{At}
    \sqrt{\frac{k}{m}} - \left(\sqrt{\frac{k}{m}}\right)^3 \frac{t^3}{3!} + \left(\sqrt{\frac{k}{m}}\right)^5 \frac{t^5}{5!}
 \right) \\
 &=
-I \cos\left(\sqrt{\frac{k}{m}} t\right) + \sqrt{\frac{m}{k}} A \sin\left(\sqrt{\frac{k}{m}} t\right)
+I \cos\left(\sqrt{\frac{k}{m}} t\right) + \sqrt{\frac{m}{k}} A \sin\left(\sqrt{\frac{k}{m}} t\right).
 \end{aligned}
 \end{equation}
 %
@@ -663,7 +663,7 @@ x_0 \\
 -k x_0 \\
 p_0/m \\
 \end{bmatrix}
-\sin\left(\sqrt{\frac{k}{m}} t\right)
+\sin\left(\sqrt{\frac{k}{m}} t\right).
 \end{aligned}
 \end{equation}
 %
@@ -672,7 +672,7 @@ Written out separately this is clearer
 \begin{equation}\label{eqn:hamiltonian:woo10}
 \begin{aligned}
 p &= p_0 \cos\left(\sqrt{\frac{k}{m}} t\right) - \sqrt{\frac{m}{k}} k x_0 \sin\left(\sqrt{\frac{k}{m}} t\right) \\
-x &= x_0 \cos\left(\sqrt{\frac{k}{m}} t\right) + \sqrt{\frac{m}{k}} \frac{p_0}{m} \sin\left(\sqrt{\frac{k}{m}} t\right)
+x &= x_0 \cos\left(\sqrt{\frac{k}{m}} t\right) + \sqrt{\frac{m}{k}} \frac{p_0}{m} \sin\left(\sqrt{\frac{k}{m}} t\right).
 \end{aligned}
 \end{equation}
 %
@@ -689,7 +689,7 @@ It was pointed out to me by Lut that the following rather strange looking change
 \begin{equation}\label{eqn:hamiltonian:zoo1}
 \begin{aligned}
 P &= x \sqrt{\frac{k}{2}} + \frac{ p }{\sqrt{2 m}} \\
-Q &= x \sqrt{\frac{k}{2}} - \frac{ p }{\sqrt{2 m}}
+Q &= x \sqrt{\frac{k}{2}} - \frac{ p }{\sqrt{2 m}}.
 \end{aligned}
 \end{equation}
 %
@@ -704,7 +704,7 @@ Part of this change of variables, which rotates in phase space, as well as scale
 \begin{equation}\label{eqn:hamiltonian:zoo3}
 \begin{aligned}
 p &= \sqrt{2m} P_s \\
-x &= \sqrt{\frac{2}{k}} Q_s
+x &= \sqrt{\frac{2}{k}} Q_s.
 \end{aligned}
 \end{equation}
 %
@@ -724,7 +724,7 @@ x \\
 \begin{bmatrix}
 P_s \\
 Q_s \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -762,7 +762,7 @@ Q_s \\
 \begin{bmatrix}
 P_s \\
 Q_s \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -790,7 +790,7 @@ Q_s \\
 \begin{bmatrix}
 P_s \\
 Q_s \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -803,7 +803,7 @@ i
 \begin{bmatrix}
 0 & -1 \\
 1 & 0
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -817,7 +817,7 @@ Inverting this, and labeling this matrix \(\calI\) we can write
 1 & 0
 \end{bmatrix}
 =
--i \sigma_2
+-i \sigma_2.
 \end{aligned}
 \end{equation}
 %
@@ -835,7 +835,7 @@ Q_s \\
 \begin{bmatrix}
 P_s \\
 Q_s \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -847,7 +847,7 @@ We can now solve the system directly.  Writing \(\Bz_s = \bigl(\begin{smallmatri
 =
 e^{\calI \omega t} \Bz_s(0)
 &=
-\left( I \cos(\omega t) + \calI \sin(\omega t) \right) \Bz_s(0)
+\left( I \cos(\omega t) + \calI \sin(\omega t) \right) \Bz_s(0).
 \end{aligned}
 \end{equation}
 %
@@ -856,7 +856,7 @@ With just the scaling giving both the simple Hamiltonian, and a simple solution,
 \begin{equation}\label{eqn:hamiltonian:zoo1a}
 \begin{aligned}
 P &= Q_s + P_s \\
-Q &= Q_s - P_s
+Q &= Q_s - P_s.
 \end{aligned}
 \end{equation}
 %
@@ -877,7 +877,7 @@ Q_s \\
 \begin{bmatrix}
 P \\
 Q \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -907,7 +907,7 @@ Q \\
 \begin{bmatrix}
 P \\
 Q \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -936,7 +936,7 @@ With a change of variables
 \begin{equation}\label{eqn:hamiltonian:noo2}
 \begin{aligned}
 x &= r_2 - r_1 \\
-y &= r_2
+y &= r_2.
 \end{aligned}
 \end{equation}
 %
@@ -951,7 +951,7 @@ We now need the conjugate momenta in terms of \(\xdot\) and \(\ydot\).  These ar
 \begin{equation}\label{eqn:hamiltonian:noo4}
 \begin{aligned}
 P_x &= \PD{\xdot}{\LL} = -m_1 (\ydot - \xdot) \\
-P_y &= \PD{\ydot}{\LL} = m_1 (\ydot - \xdot) + m_2 \ydot
+P_y &= \PD{\ydot}{\LL} = m_1 (\ydot - \xdot) + m_2 \ydot.
 \end{aligned}
 \end{equation}
 %
@@ -971,7 +971,7 @@ m_1 & -m_1 \\
 \begin{bmatrix}
 P_x \\
 P_y
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -992,7 +992,7 @@ m_1 & m_1 \\
 \begin{bmatrix}
 P_x \\
 P_y
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1001,7 +1001,7 @@ Of these only \(\ydot\) and \(\ydot - \xdot\) are of interest and after a bit of
 \begin{equation}\label{eqn:hamiltonian:noo7}
 \begin{aligned}
 \ydot &= \inv{m_2}(P_x + P_y) \\
-\xdot &= \inv{m_1}\inv{m_2}((m_1 + m_2)P_x + m_1 P_y)
+\xdot &= \inv{m_1}\inv{m_2}((m_1 + m_2)P_x + m_1 P_y).
 \end{aligned}
 \end{equation}
 %
@@ -1015,7 +1015,7 @@ A quick check shows that \(P_x + P_y = m_2 \rdot_2\), and \(P_x = -m_1 \rdot_1\)
 %
 \begin{equation}\label{eqn:hamiltonian:noo9}
 \begin{aligned}
-\LL &= \inv{2} m_1 {\mathbf{\rdot}_1}^2 + \inv{2} m_2 {\mathbf{\rdot}_2}^2 - \phi(\Bx_1 - \Bx_2)
+\LL &= \inv{2} m_1 {\mathbf{\rdot}_1}^2 + \inv{2} m_2 {\mathbf{\rdot}_2}^2 - \phi(\Bx_1 - \Bx_2).
 \end{aligned}
 \end{equation}
 %
@@ -1023,7 +1023,7 @@ With
 \begin{equation}\label{eqn:hamiltonian:noo10}
 \begin{aligned}
 \Bx &= \Bx_1 - \Bx_2 \\
-\By &= \Bx_2
+\By &= \Bx_2.
 \end{aligned}
 \end{equation}
 %
@@ -1032,14 +1032,14 @@ The 3D generalization of the above (following by adding indices then summing) be
 \begin{equation}\label{eqn:hamiltonian:noo11}
 \begin{aligned}
 \BP_x &= \sigma_j \PD{\xdot^j}{\LL} = -m_1 (\mathbf{\ydot} - \mathbf{\xdot}) \\
-\BP_y &= \sigma_j \PD{\ydot^j}{\LL} = m_1 (\mathbf{\ydot} - \mathbf{\xdot}) + m_2 \mathbf{\ydot}
+\BP_y &= \sigma_j \PD{\ydot^j}{\LL} = m_1 (\mathbf{\ydot} - \mathbf{\xdot}) + m_2 \mathbf{\ydot}.
 \end{aligned}
 \end{equation}
 %
 \begin{equation}\label{eqn:hamiltonian:noo12}
 \begin{aligned}
 \LL &= \inv{2 m_1} {\BP_x}^2 + \inv{2 m_2} (\BP_x + \BP_y)^2 - \phi(\Bx) \\
-H &= \inv{2 m_1} {\BP_x}^2 + \inv{2 m_2} (\BP_x + \BP_y)^2 + \phi(\Bx)
+H &= \inv{2 m_1} {\BP_x}^2 + \inv{2 m_2} (\BP_x + \BP_y)^2 + \phi(\Bx).
 \end{aligned}
 \end{equation}
 %
@@ -1049,7 +1049,7 @@ Finally, evaluation of the Hamiltonian equations we have
 \begin{aligned}
 \sigma_j \PD{P_x^j}{H} &= \mathbf{\xdot} \\
 &= \sigma_j \left( \inv{m_1} P_x^j + \inv{m_2} (P_x^j + P_y^j) \right) \\
-&= \inv{m_1} \BP_x + \inv{m_2} (\BP_x + \BP_y)
+&= \inv{m_1} \BP_x + \inv{m_2} (\BP_x + \BP_y).
 \end{aligned}
 \end{equation}
 %
@@ -1057,7 +1057,7 @@ Finally, evaluation of the Hamiltonian equations we have
 \begin{aligned}
 \sigma_j \PD{P_y^j}{H} &= \mathbf{\ydot} \\
 &= \sigma_j \inv{m_2} (P_x^j + P_y^j) \\
-&= \inv{m_2} (\BP_x + \BP_y)
+&= \inv{m_2} (\BP_x + \BP_y).
 \end{aligned}
 \end{equation}
 %
@@ -1065,7 +1065,7 @@ Finally, evaluation of the Hamiltonian equations we have
 \begin{aligned}
 \sigma_j \PD{x^j}{H} &= -\mathbf{\dot{P}}_x \\
 &= -\sigma_j \PD{x^j}{\phi} \\
-&= -\spacegrad_{\Bx} \phi(\Bx)
+&= -\spacegrad_{\Bx} \phi(\Bx).
 \end{aligned}
 \end{equation}
 %
@@ -1073,7 +1073,7 @@ Finally, evaluation of the Hamiltonian equations we have
 \begin{aligned}
 \sigma_j \PD{y^j}{H} &= -\mathbf{\dot{P}}_y \\
 &= -\sigma_j \PD{y^j}{\phi} \\
-&= 0
+&= 0.
 \end{aligned}
 \end{equation}
 %
@@ -1084,7 +1084,7 @@ Summarizing we have four first order equations
 \mathbf{\xdot} &= \left( \inv{m_1} + \inv{m_2} \right) \BP_x + \inv{m_2} \BP_y \\
 \mathbf{\ydot} &= \inv{m_2} (\BP_x + \BP_y)  \\
 \mathbf{\dot{P}}_x &= \spacegrad_{\Bx} \phi(\Bx) \\
-\mathbf{\dot{P}}_y &= 0
+\mathbf{\dot{P}}_y &= 0.
 \end{aligned}
 \end{equation}
 %
@@ -1097,7 +1097,7 @@ Next I had like to consider a two particle gravitational interaction.  However, 
 \begin{equation}\label{eqn:hamiltonian:moo1}
 \begin{aligned}
 \text{Force on 2} &= - G m_1 m_2 \frac{(\Br_2 - \Br_1)}{\Abs{\Br_2 - \Br_1}} \\
-\text{Force on 1} &= G m_1 m_2 \frac{(\Br_2 - \Br_1)}{\Abs{\Br_2 - \Br_1}}
+\text{Force on 1} &= G m_1 m_2 \frac{(\Br_2 - \Br_1)}{\Abs{\Br_2 - \Br_1}}.
 \end{aligned}
 \end{equation}
 %
@@ -1105,14 +1105,14 @@ Guessing that the Lagrangian has a single term for the interaction potential
 %
 \begin{equation}\label{eqn:hamiltonian:moo2}
 \begin{aligned}
-\phi_{21} &= \kappa \inv{\Abs{\Br_2 - \Br_1}}
+\phi_{21} &= \kappa \inv{\Abs{\Br_2 - \Br_1}}.
 \end{aligned}
 \end{equation}
 %
 so that we have
 \begin{equation}\label{eqn:hamiltonian:moo3}
 \begin{aligned}
-\LL &= \inv{2} m {\Bv_1}^2 +\inv{2} m {\Bv_2}^2 - \phi_{21}
+\LL &= \inv{2} m {\Bv_1}^2 +\inv{2} m {\Bv_2}^2 - \phi_{21}.
 \end{aligned}
 \end{equation}
 %
@@ -1121,7 +1121,7 @@ We can evaluate the Euler-Lagrange equations and see if the result is consistent
 \begin{equation}\label{eqn:hamiltonian:303}
 \begin{aligned}
 \PD{{x^j}_i}{\LL} &= \frac{d}{dt} \PD{{\dot{x}^j}_i}{\LL} \\
--\PD{{x^j}_i}{\phi_{21}} &= m_i {\ddot{x}^j}_i
+-\PD{{x^j}_i}{\phi_{21}} &= m_i {\ddot{x}^j}_i.
 \end{aligned}
 \end{equation}
 %
@@ -1135,7 +1135,7 @@ Evaluating the potential derivatives separately.  Consider the \(i=2\) derivativ
 &=
 -\kappa \inv{\Abs{\Br_2 - \Br_1}^3} \sum_k ({x^k}_2 - {x^k}_1) \PD{{x^j}_2}{} ({x^k}_2 - {x^k}_1) \\
 &=
--\kappa \inv{\Abs{\Br_2 - \Br_1}^3} ({x^j}_2 - {x^j}_1)
+-\kappa \inv{\Abs{\Br_2 - \Br_1}^3} ({x^j}_2 - {x^j}_1).
 \end{aligned}
 \end{equation}
 %
@@ -1146,7 +1146,7 @@ Therefore the final result of the Euler-Lagrange equations is
 \begin{equation}\label{eqn:hamiltonian:moo4}
 \begin{aligned}
 \kappa \inv{\Abs{\Br_2 - \Br_1}^3} ({x^j}_2 - {x^j}_1) &= m_2 {\ddot{x}^j}_2 \\
--\kappa \inv{\Abs{\Br_2 - \Br_1}^3} ({x^j}_2 - {x^j}_1) &= m_1 {\ddot{x}^j}_1
+-\kappa \inv{\Abs{\Br_2 - \Br_1}^3} ({x^j}_2 - {x^j}_1) &= m_1 {\ddot{x}^j}_1.
 \end{aligned}
 \end{equation}
 %
@@ -1156,7 +1156,7 @@ which confirms the Lagrangian and potential guess and fixes the constant \(\kapp
 \begin{aligned}
 \phi_{21} &= -\frac{G m_2 m_1 }{\Abs{\Br_2 - \Br_1}}  \\
 \LL &= \inv{2} m_1 {\Bv_1}^2 +\inv{2} m_2 {\Bv_2}^2 - \phi_{21} \\
-H &= \inv{2 m_1} {\Bp_1}^2 +\inv{2 m_2} {\Bp_2}^2 + \phi_{21}
+H &= \inv{2 m_1} {\Bp_1}^2 +\inv{2 m_2} {\Bp_2}^2 + \phi_{21}.
 \end{aligned}
 \end{equation}
 %
@@ -1170,7 +1170,7 @@ and form a scaled by two double summation over all pairs of potentials
 %
 \begin{equation}\label{eqn:hamiltonian:moo7}
 \begin{aligned}
-\LL &= \sum_i \inv{2} m_i {\Bv_i}^2 - \inv{2} \sum_{i \ne j} \phi_{ij}
+\LL &= \sum_i \inv{2} m_i {\Bv_i}^2 - \inv{2} \sum_{i \ne j} \phi_{ij}.
 \end{aligned}
 \end{equation}
 %
@@ -1213,7 +1213,7 @@ The state space vector for this system of equations is brutally ugly, and could 
 {p^3}_2 \\
 {x^1}_2 \\
 \vdots \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1270,7 +1270,7 @@ We can now compute the Hamiltonian equations
 \begin{equation}\label{eqn:hamiltonian:yoo4}
 \begin{aligned}
 \PD{p_\theta}{H}  &= \thetadot         = \inv{ m l^2 } p_\theta \\
-\PD{q}{H}         &= -\dot{p}_\theta   = m g l \sin\theta
+\PD{q}{H}         &= -\dot{p}_\theta   = m g l \sin\theta.
 \end{aligned}
 \end{equation}
 %
@@ -1303,7 +1303,7 @@ p_\theta \\
 -
 m g l \sin\theta_0 \\
 \dot{\theta}_0
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1320,7 +1320,7 @@ p_\theta \\
 a & 0 \\
 0 & 1
 \end{bmatrix}
-\Bz
+\Bz.
 \end{aligned}
 \end{equation}
 %
@@ -1376,7 +1376,7 @@ a/ m l^2 & 0
 \begin{bmatrix}
 - m g l \sin\theta_0 \\
 \dot{\theta}_0
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1408,7 +1408,7 @@ The result of applying this scaling is quite different above and below the horiz
 \begin{bmatrix}
 - m g l \sin\theta_0 \\
 \dot{\theta}_0
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1428,7 +1428,7 @@ and above the horizontal where \(\theta_0 \in (\pi/2, 3\pi/2)\) we get
 \begin{bmatrix}
 - m g l \sin\theta_0 \\
 \dot{\theta}_0
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1488,7 +1488,7 @@ e^{\Omega t}
 \begin{bmatrix}
 0 & -1 \\
 1 & 0
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1518,7 +1518,7 @@ e^{\Omega t}
 \begin{bmatrix}
 0 & 1 \\
 1 & 0
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1540,7 +1540,7 @@ m l^2 \omega & 0 \\
 \begin{bmatrix}
 - \frac{g}{l} \sin\theta_0 \\
 \frac{\dot{\theta}_0}{m l^2}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1572,7 +1572,7 @@ m l^2 \omega & 0 \\
 0 & -1 \\
 1 & 0
 \end{bmatrix}
-\Bb
+\Bb.
 \end{aligned}
 \end{equation}
 %
@@ -1651,7 +1651,7 @@ The only thing that is really left is re-insertion of the original momentum and 
 \begin{bmatrix}
 p_\theta \\
 \theta - \theta_0
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1748,7 +1748,7 @@ If this is somehow mystically free of all math mistakes then we have the final s
 \begin{bmatrix}
 \frac{\dot{\theta}_0}{m l^2} \\
 \frac{g}{l} \sin\theta_0 \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1781,7 +1781,7 @@ To express the Hamiltonian we need first the conjugate momenta, which are
 \begin{equation}\label{eqn:hamiltonian:uoo4}
 \begin{aligned}
 P_\theta &= \PD{\thetadot}{\LL} = m l^2 \thetadot \\
-P_\phi &= \PD{\phidot}{\LL} = m l^2 \sin^2\theta \phidot
+P_\phi &= \PD{\phidot}{\LL} = m l^2 \sin^2\theta \phidot.
 \end{aligned}
 \end{equation}
 %
@@ -1800,7 +1800,7 @@ Examining the polar solutions is something to return to.  For now, let us avoid 
 \PD{P_\phi}{H} &= \dot{\phi} = \inv{ m l^2 \sin^2 \theta} P_\phi \\
 \PD{P_\theta}{H} &= \dot{\theta} = \inv{ m l^2 } P_\theta \\
 \PD{\phi}{H} &= -\dot{P}_\phi = 0 \\
-\PD{\theta}{H} &= -\dot{P}_\theta = -\frac{\cos\theta}{ m l^2 \sin^3 \theta} {P_\phi}^2 - m g l \sin\theta
+\PD{\theta}{H} &= -\dot{P}_\theta = -\frac{\cos\theta}{ m l^2 \sin^3 \theta} {P_\phi}^2 - m g l \sin\theta.
 \end{aligned}
 \end{equation}
 %
@@ -1816,7 +1816,7 @@ P_\theta \\
 \theta \\
 P_\phi \\
 \phi \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1841,7 +1841,7 @@ P_\phi \\
 \end{bmatrix}
 }_0
 +
-\Bz
+\Bz.
 \end{aligned}
 \end{equation}
 %
@@ -1855,7 +1855,7 @@ The Hamiltonian equations can then be written
 \inv{ m l^2 } P_\theta \\
 0 \\
 \inv{ m l^2 \sin^2 \theta} P_\phi \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1897,7 +1897,7 @@ Our linear approximation is thus
 0 & \frac{-2 P_\phi \cos\theta}{m l^2 \sin^3\theta} & \inv{ m l^2 \sin^2 \theta} & 0 \\
 \end{bmatrix}
 }_0
-\Bz
+\Bz.
 \end{aligned}
 \end{equation}
 %- 1/S^2 + C (-3) S^2 C/ S^6
@@ -1919,7 +1919,7 @@ Now, this is what we get blindly trying to set up the linear approximation of th
 \begin{aligned}
 \dot{\theta} &= \inv{ m l^2 } P_\theta \\
 \dot{P}_\theta &= \frac{\cos\theta}{ m l^2 \sin^3 \theta} {P_\phi}^2 + m g l \sin\theta \\
-\dot{\phi} &= \inv{ m l^2 \sin^2 \theta} P_\phi
+\dot{\phi} &= \inv{ m l^2 \sin^2 \theta} P_\phi.
 \end{aligned}
 \end{equation}
 %
@@ -1927,7 +1927,7 @@ We can treat the \(\phi\) dependence later once we have solved for \(\theta\).  
 %
 \begin{equation}\label{eqn:hamiltonian:uoo13}
 \begin{aligned}
-\dot{\phi} &= \inv{ m l^2 \sin^2 \theta} P_\phi
+\dot{\phi} &= \inv{ m l^2 \sin^2 \theta} P_\phi.
 \end{aligned}
 \end{equation}
 %
@@ -1935,7 +1935,7 @@ This integrates directly, presuming \(\theta = \theta(t)\) is known, and we have
 %
 \begin{equation}\label{eqn:hamiltonian:uoo13b}
 \begin{aligned}
-\phi - \phi(0) &= \frac{P_\phi}{ m l^2} \int_0^t \frac{d\tau}{\sin^2 \theta(\tau)}
+\phi - \phi(0) &= \frac{P_\phi}{ m l^2} \int_0^t \frac{d\tau}{\sin^2 \theta(\tau)}.
 \end{aligned}
 \end{equation}
 %
@@ -1947,7 +1947,7 @@ Now the state vector and its perturbation can be redefined omitting all but the 
 \begin{bmatrix}
 P_\theta \\
 \theta \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1966,7 +1966,7 @@ P_\theta \\
 \end{bmatrix}
 }_0
 +
-\Bz
+\Bz.
 \end{aligned}
 \end{equation}
 %
@@ -1977,7 +1977,7 @@ We can now write the remainder of this non-linear system as
 \begin{bmatrix}
 \frac{\cos\theta}{ m l^2 \sin^3 \theta} {P_\phi}^2 + m g l \sin\theta \\
 \inv{ m l^2 } P_\theta \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -1999,7 +1999,7 @@ and make the linear approximation around \(\Bx_0\) as
 \inv{m l^2} & 0 \\
 \end{bmatrix}
 }_0
-\Bz
+\Bz.
 \end{aligned}
 \end{equation}
 %
@@ -2073,7 +2073,7 @@ We now have the Lagrangian
 &-
 m_1 g (l_2 + l_1 (1 -\cos{\theta_1}))
 -
-m_2 g ( l_1 (1 - \cos{\theta_1}) + l_2 (1 -\cos{\theta_2}) )
+m_2 g ( l_1 (1 - \cos{\theta_1}) + l_2 (1 -\cos{\theta_2}) ).
 \end{aligned}
 \end{equation}
 %
@@ -2098,7 +2098,7 @@ M {l_1}^2 {\dot{\theta}_1}
 + m_2 l_1 l_2 {\dot{\theta}_2} \cos({\theta_1} - {\theta_2}) \\
 P_{\theta_2} &=
 m_2 {l_2}^2 {\dot{\theta}_2}
-+ m_2 l_1 l_2 {\dot{\theta}_1} \cos({\theta_1} - {\theta_2})
++ m_2 l_1 l_2 {\dot{\theta}_1} \cos({\theta_1} - {\theta_2}).
 \end{aligned}
 \end{equation}
 %
@@ -2119,7 +2119,7 @@ m_2 l_1 l_2 \cos({\theta_1} - {\theta_2}) & m_2 {l_2}^2
 \begin{bmatrix}
 {\dot{\theta}_1} \\
 {\dot{\theta}_2}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -2132,7 +2132,7 @@ While this is easily invertible, doing so and attempting to substitute it back, 
 \begin{bmatrix}
 {\theta_1} \\
 {\theta_2}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -2144,7 +2144,7 @@ Then the relation between the conjugate momenta in vector form
 \begin{bmatrix}
 P_{\theta_1} \\
 P_{\theta_2}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -2153,7 +2153,7 @@ and the angular velocity vector can be written
 \begin{equation}\label{eqn:hamiltonian:voo15}
 \begin{aligned}
 \Bp &= \calI(\delta)
-\dot{\BTheta}
+\dot{\BTheta}.
 \end{aligned}
 \end{equation}
 %
@@ -2167,7 +2167,7 @@ Can we write the Lagrangian in terms of \(\dot{\BTheta}\)?  The first Kinetic te
 l_1^2 & 0 \\
 0 & 0
 \end{bmatrix}
-\dot{\BTheta}
+\dot{\BTheta}.
 \end{aligned}
 \end{equation}
 %
@@ -2179,7 +2179,7 @@ For the second mass, going back to \eqnref{eqn:hamiltonian:voo4}, we can write
 \begin{bmatrix}
 l_1 e^{i{\theta_1}} & l_2 e^{i{\theta_2}}
 \end{bmatrix}
-\dot{\BTheta}
+\dot{\BTheta}.
 \end{aligned}
 \end{equation}
 %
@@ -2213,7 +2213,7 @@ l_2 e^{i{\theta_2}}
 \end{bmatrix}
 \begin{bmatrix}
 l_1 e^{-i{\theta_1}} & l_2 e^{-i{\theta_2}}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -2236,7 +2236,7 @@ Q_k &=
 l_r l_s e^{i(\theta_r - \theta_s)}
 \end{bmatrix}}_{r,s \le k} \\
 \phi &= - g \sum_k l_k \cos\theta_k \sum_{j=k}^N m_j \\
-\LL &= K - \phi
+\LL &= K - \phi.
 \end{aligned}
 \end{equation}
 %
@@ -2298,7 +2298,7 @@ Putting both together, it is straightforward to verify that this recovers \eqnre
 \begin{aligned}
 \Bp
 &=
-\inv{2}(Q + Q^\T) \dot{\BTheta} = \calI \dot{\BTheta}
+\inv{2}(Q + Q^\T) \dot{\BTheta} = \calI \dot{\BTheta}.
 \end{aligned}
 \end{equation}
 %
@@ -2350,7 +2350,7 @@ So, when the velocity dependence is a quadratic form as identified in \eqnref{eq
 \PD{P_{\theta_1}}{} & \cdots & \PD{P_{\theta_N}}{}
 \end{bmatrix}}^\T H
 =
-\calI^{-1} \Bp
+\calI^{-1} \Bp.
 \end{aligned}
 \end{equation}
 %
@@ -2401,7 +2401,7 @@ Thus the derivative of the inverse (moment of inertia?) matrix is
 \begin{aligned}
 \PD{\theta_a}{(\calI^{-1})}
 &= -\calI^{-1}\PD{\theta_a}{\calI} \calI^{-1} \\
-&= -\calI^{-1}\inv{2}\left( \PD{\theta_a}{Q} + \PD{\theta_a}{Q^\T} \right) \calI^{-1}
+&= -\calI^{-1}\inv{2}\left( \PD{\theta_a}{Q} + \PD{\theta_a}{Q^\T} \right) \calI^{-1}.
 \end{aligned}
 \end{equation}
 %
@@ -2416,7 +2416,7 @@ This gives us for the Hamiltonian equation
 %+ \PD{\theta_a}{\phi} \\
 &=
 -\inv{2} \Bp^\T \calI^{-1} \left(\PD{\theta_a}{Q}\right)^\T \calI^{-1} \Bp
-+ \PD{\theta_a}{\phi}
++ \PD{\theta_a}{\phi}.
 \end{aligned}
 \end{equation}
 %
@@ -2433,7 +2433,7 @@ If we introduce a phase space position gradients
 %\grad_{\Bp} &\equiv
 %{\begin{bmatrix}
 %\PD{P_{\theta_1}}{} & \cdots & \PD{P_{\theta_N}}{}
-%\end{bmatrix}}^\T
+%\end{bmatrix}}^\T.
 \end{aligned}
 \end{equation}
 %
@@ -2478,7 +2478,7 @@ The complete set of Hamiltonian equations for \eqnref{eqn:hamiltonian:voo22}, in
 \end{bmatrix}}_r
 - \grad \phi \\
 \dot{\BTheta}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -2499,7 +2499,7 @@ If we write
 \Bp \\
 \BTheta
 \end{bmatrix}
-}{t=0}
+}{t=0}.
 \end{aligned}
 \end{equation}
 %
@@ -2512,7 +2512,7 @@ and the Hamiltonian equations \eqnref{eqn:hamiltonian:veryGeneral} as
 \Bp \\
 \BTheta
 \end{bmatrix}
-= A(\Bp, \BTheta)
+= A(\Bp, \BTheta).
 \end{aligned}
 \end{equation}
 %
@@ -2536,7 +2536,7 @@ Then the linearization, without simplifying or making explicit yet is
 \begin{bmatrix}
 \PD{P_{\theta_1}}{A} & \cdots & \PD{P_{\theta_N}}{A} & \PD{\theta_1}{A} & \cdots & \PD{\theta_N}{A}
 \end{bmatrix}
-}{t=0} \Bz
+}{t=0} \Bz.
 \end{aligned}
 \end{equation}
 %
@@ -2558,7 +2558,7 @@ First, lets do the potential gradient.
 { \begin{bmatrix}
 \frac{\partial^2 \phi}{ \partial \theta_r \partial \theta_c }
 \end{bmatrix} }_{r,c}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -2596,7 +2596,7 @@ The \(\delta\) over all rows \(r\) and columns \(c\) is the identity matrix and 
 {\begin{bmatrix}
 \PD{\theta_c}{(\calI^{-1})} \Bp \\
 \end{bmatrix}}_{c}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -2671,7 +2671,7 @@ Forming the matrix over all rows \(r\), and columns \(c\), we get a trailing ide
 =
 {\begin{bmatrix}
 -\PD{\theta_c}{(\calI^{-1})} \Bp
-\end{bmatrix}}_{c}
+\end{bmatrix}}_{c}.
 \end{aligned}
 \end{equation}
 %
@@ -2728,7 +2728,7 @@ There is a slight asymmetry between the first and last terms here that can possi
 \calI^{-1}
 \PD{\theta_r}{\calI}
 \right)
-\dot{\BTheta}
+\dot{\BTheta}.
 \end{aligned}
 \end{equation}
 %
@@ -2751,7 +2751,7 @@ Is this any better?  Maybe a bit.  Since we are forming the matrix over all \(r,
 \PD{\theta_r}{\calI}
 \right)
 \dot{\BTheta}
-\end{bmatrix}}_{r,c}
+\end{bmatrix}}_{r,c}.
 \end{aligned}
 \end{equation}
 %
@@ -2840,7 +2840,7 @@ We have both \(\PDi{\theta_k}{(\calI^{-1})}\) and \(\PDi{\theta_k}{\calI}\) deri
 \calI^{-1} \PD{\theta_c}{\calI} \dot{\BTheta}
 \end{bmatrix}}_{c}
 \end{bmatrix}
-}{t=0} \Bz
+}{t=0} \Bz.
 \end{aligned}
 \end{equation}
 %
@@ -2851,7 +2851,7 @@ Having accumulated this unholy mess of abstraction, lets verify this first again
 \begin{equation}\label{eqn:hamiltonian:voo40}
 \begin{aligned}
 Q &= \calI = m l^2 \\
-\phi &= - m g l \cos\theta
+\phi &= - m g l \cos\theta.
 \end{aligned}
 \end{equation}
 %
@@ -2882,7 +2882,7 @@ Putting these all together in this simplest application of \eqnref{eqn:hamiltoni
 +\begin{bmatrix}
 0 & - m g l \cos\theta_0 \\
 \inv{m l^2} & 0
-\end{bmatrix} \Bz
+\end{bmatrix} \Bz.
 \end{aligned}
 \end{equation}
 %
@@ -2903,7 +2903,7 @@ m_2 l_1 l_2 e^{i(\theta_1 - \theta_2)} & m_2 {l_2}^2 \\
 \begin{bmatrix}
 M {l_1}^2 & m_2 l_2 l_1 e^{-i\delta} \\
 m_2 l_1 l_2 e^{i\delta} & m_2 {l_2}^2 \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -2928,7 +2928,7 @@ e^{i\delta} \dot{\theta}_2 \\
 &=
 \inv{2} m_2 l_1 l_2 i \dot{\theta}_1 \dot{\theta}_2 (e^{i\delta} -e^{-i\delta}) \\
 &=
--m_2 l_1 l_2 \dot{\theta}_1 \dot{\theta}_2 \sin\delta
+-m_2 l_1 l_2 \dot{\theta}_1 \dot{\theta}_2 \sin\delta.
 \end{aligned}
 \end{equation}
 %
@@ -2946,7 +2946,7 @@ So, the gradient is
 \begin{bmatrix}
 M l_1 g \sin{\theta_1} \\
 m_2 l_2 g \sin{\theta_2}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -2971,7 +2971,7 @@ m_2 l_2 \sin{\theta_2} \\
 \dot{\theta}_1 \\
 \dot{\theta}_2 \\
 \end{bmatrix}}{t=0}
-+ A \Bz
++ A \Bz.
 \end{aligned}
 \end{equation}
 %
@@ -2988,7 +2988,7 @@ One of the elements of \(A\) are the matrix of potential derivatives.  These are
 \begin{bmatrix}
 M l_1 g \cos\theta_1 & 0 \\
 0 & m_2 l_2 g \cos\theta_2
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -3001,7 +3001,7 @@ We also need the inertial matrix and its inverse.  These are
 \begin{bmatrix}
 M {l_1}^2 & m_2 l_2 l_1 \cos\delta \\
 m_2 l_1 l_2 \cos\delta & m_2 {l_2}^2 \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -3013,7 +3013,7 @@ m_2 l_1 l_2 \cos\delta & m_2 {l_2}^2 \\
 \begin{bmatrix}
 m_2 {l_2}^2 & -m_2 l_2 l_1 \cos\delta \\
 -m_2 l_1 l_2 \cos\delta & M {l_1}^2 \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -3027,7 +3027,7 @@ m_2 l_1 l_2 i
 \begin{bmatrix}
 0 & - e^{-i\delta} \\
 e^{i\delta} & 0
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -3057,7 +3057,7 @@ e^{i\delta} & 0
 \begin{bmatrix}
 0 & e^{-i\delta} \\
 e^{i\delta} & 0
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -3073,7 +3073,7 @@ m_2 l_1 l_2
 \begin{bmatrix}
 -1 & 1 \\
 1 & -1
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -3087,7 +3087,7 @@ For the remaining two types of terms in the matrix \(A\) we need \(\calI^{-1} \P
 \begin{bmatrix}
 0 & \sin\delta \\
 \sin\delta & 0
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -3111,7 +3111,7 @@ m_2 {l_2}^2 & -m_2 l_2 l_1 \cos\delta \\
 \begin{bmatrix}
 -m_2 l_2 l_1 \cos\delta & m_2 {l_2}^2 \\
 M {l_1}^2 & -m_2 l_1 l_2 \cos\delta \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -3127,7 +3127,7 @@ We want the matrix of \(\calI^{-1} \PDi{\theta_c}{\calI} \dot{\BTheta}\) over co
 &\quad \begin{bmatrix}
 m_2 l_2 l_1 \cos\delta \dot{\theta}_1 - m_2 {l_2}^2 \dot{\theta}_2 & -m_2 l_2 l_1 \cos\delta \dot{\theta}_1 + m_2 {l_2}^2 \dot{\theta}_2 \\
 -M {l_1}^2 \dot{\theta}_1 +m_2 l_1 l_2 \cos\delta \dot{\theta}_2 & M {l_1}^2 \dot{\theta}_1 -m_2 l_1 l_2 \cos\delta \dot{\theta}_2
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -3204,7 +3204,7 @@ We have a matrix of these scalars over \(r,c\), and that is
 -1 &  1 \\
  1 & -1
 \end{bmatrix}
-%(\delta_{c1} - \delta_{c2}) (\delta_{r1} - \delta_{r2})
+%(\delta_{c1} - \delta_{c2}) (\delta_{r1} - \delta_{r2}).
 \end{aligned}
 \end{equation}
 %
@@ -3227,7 +3227,7 @@ B &=
 \begin{bmatrix}
 m_2 l_2 l_1 \cos\delta \dot{\theta}_1 - m_2 {l_2}^2 \dot{\theta}_2 & -m_2 l_2 l_1 \cos\delta \dot{\theta}_1 + m_2 {l_2}^2 \dot{\theta}_2 \\
 -M {l_1}^2 \dot{\theta}_1 +m_2 l_1 l_2 \cos\delta \dot{\theta}_2 & M {l_1}^2 \dot{\theta}_1 -m_2 l_1 l_2 \cos\delta \dot{\theta}_2
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:hamiltonian:663c}
@@ -3294,7 +3294,7 @@ where these are all related by the first order matrix equation
 %
 \begin{equation}\label{eqn:hamiltonian:xoo20}
 \begin{aligned}
-\frac{d\Bz}{dt} &= \evalbar{\Bb}{t=0} + \evalbar{A}{t=0} \Bz
+\frac{d\Bz}{dt} &= \evalbar{\Bb}{t=0} + \evalbar{A}{t=0} \Bz.
 \end{aligned}
 \end{equation}
 %
@@ -3518,7 +3518,7 @@ For the particle velocity we have no \(\Phi\) dependence and get
 %
 \begin{equation}\label{eqn:hamiltonian:em22}
 \begin{aligned}
-u_k &= \frac{c (c P_k -e A_k)}{\sqrt{ (c \BP - e \BA)^2 + m^2 c^4 }}
+u_k &= \frac{c (c P_k -e A_k)}{\sqrt{ (c \BP - e \BA)^2 + m^2 c^4 }}.
 \end{aligned}
 \end{equation}
 %

@@ -39,7 +39,7 @@ The position vector for each particle can be expressed relative to the mass it i
 \begin{aligned}
 z_k &= z_{k-1} + \Be_3 l_k e^{j_k \theta_k} \\
 j_k &= \Be_3 \wedge \left( \Be_1 e^{i \phi_k} \right) \\
-i &= \Be_1 \wedge \Be_2
+i &= \Be_1 \wedge \Be_2.
 \end{aligned}
 \end{equation}
 %
@@ -60,7 +60,7 @@ To express the Kinetic energy for any of the masses \(m_k\), we need the derivat
 \begin{bmatrix}
 \Be_1 e^{i \phi_k} e^{j_k \theta_k} \\
 \Be_2 e^{i \phi_k} \sin\theta_k
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -77,7 +77,7 @@ A_k &=
 \begin{bmatrix}
 \theta_k \\
 \phi_k
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -109,7 +109,7 @@ l_k A_k \\
 0 \\
 \end{bmatrix} \\
 (\dot{z}_k)^2 &=
-\dot{\BTheta}^\dagger B_k B_k^\dagger \dot{\BTheta}
+\dot{\BTheta}^\dagger B_k B_k^\dagger \dot{\BTheta}.
 \end{aligned}
 \end{equation}
 %
@@ -139,7 +139,7 @@ B_k B_k^\dagger
 \mu_k &= \sum_{j=k}^N m_j \\
 \Phi &=
 g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
-\LL &= K - \Phi
+\LL &= K - \Phi.
 \end{aligned}
 \end{equation}
 %
@@ -165,7 +165,7 @@ l_k l_1 A_k A_1^\dagger & l_k l_2 A_k A_2^\dagger & \hdots & l_k^2 A_k A_k^\dagg
 \end{bmatrix} & 0 \\
 0 & 0
 \end{bmatrix}
-\dot{\BTheta}
+\dot{\BTheta}.
 \end{aligned}
 \end{equation}
 %
@@ -187,7 +187,7 @@ l_k l_1 \gpgradezero{A_k A_1^\dagger} & l_k l_2 \gpgradezero{A_k A_2^\dagger} & 
 \end{bmatrix} & 0 \\
 0 & 0
 \end{bmatrix}
-\dot{\BTheta}
+\dot{\BTheta}.
 \end{aligned}
 \end{equation}
 %
@@ -204,7 +204,7 @@ B_k B_k^\dagger
 {\begin{bmatrix}
 \mu_{\max(r,c)} l_r l_c \gpgradezero{A_r A_c^\dagger}
 \end{bmatrix}}_{rc}
-\dot{\BTheta}
+\dot{\BTheta}.
 \end{aligned}
 \end{equation}
 %
@@ -224,7 +224,7 @@ K &=
 \dot{\BTheta} \\
 \Phi &=
 g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
-\LL &= K - \Phi
+\LL &= K - \Phi.
 \end{aligned}
 \end{equation}
 %
@@ -243,7 +243,7 @@ S_{\theta_c} &
 -S_{\phi_c - \phi_r} C_{\theta_r} S_{\theta_c} \\
 S_{\phi_c - \phi_r} C_{\theta_c} S_{\theta_r} &
 C_{\phi_c - \phi_r} S_{\theta_r} S_{\theta_c}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -256,7 +256,7 @@ The diagonal blocks are particularly simple and have no \(\phi\) dependence
 \begin{bmatrix}
 1 & 0 \\
 0 & \sin^2 \theta_r
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -299,7 +299,7 @@ For the acceleration terms of the Euler-Lagrange equations our computation reduc
 \end{bmatrix}}_c
 \gpgradezero{Q}
 \dot{\BTheta}
-\right)
+\right).
 \end{aligned}
 \end{equation}
 %
@@ -329,7 +329,7 @@ and
 \end{bmatrix}}_c
 \gpgradezero{Q}
 \dot{\BTheta}
-\right)
+\right).
 \end{aligned}
 \end{equation}
 %
@@ -343,7 +343,7 @@ The last groupings above made use of \(\gpgradezero{Q} = \gpgradezero{Q}^\T\), a
 \PD{\dot{\theta}_r}{\LL} \\
 \PD{\dot{\phi}_r}{\LL} \\
 \end{bmatrix}
-\end{bmatrix}}_r = \gpgradezero{Q} \dot{\BTheta}
+\end{bmatrix}}_r = \gpgradezero{Q} \dot{\BTheta}.
 \end{aligned}
 \end{equation}
 %
@@ -368,7 +368,7 @@ m l^2
 \begin{bmatrix}
 1 & 0 \\
 0 & \sin^2 \theta
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -384,7 +384,7 @@ Returning to the evaluation of the Euler-Lagrange equations, the problem is now 
 \PD{\theta_r}{\LL} \\
 \PD{\phi_r}{\LL} \\
 \end{bmatrix}
-\end{bmatrix}}_r
+\end{bmatrix}}_r.
 \end{aligned}
 \end{equation}
 %
@@ -432,7 +432,7 @@ So to proceed we must consider the \(\gpgradezero{A_r A_c^\dagger}\) partials.  
 0 & \inv{2} \mu_3 l_3 l_2 \gpgradezero{A_3 \PD{\theta_2}{A_2}^\dagger} & 0 & \hdots & 0 \\
 0 & \vdots & 0 & \hdots & 0 \\
 0 & \inv{2} \mu_N l_N l_2 \gpgradezero{A_N \PD{\theta_2}{A_2}^\dagger} & 0 & \hdots & 0 \\
-\end{bsmallmatrix}
+\end{bsmallmatrix}.
 %\end{aligned}
 \end{equation}
 %
@@ -488,7 +488,7 @@ This has exactly the same form as the diagonal term, so summing over all terms w
 A_k \PD{\theta_a}{A_a}^\dagger
 }
 \dot{\BTheta}_a
--g \mu_a l_a \sin\theta_a
+-g \mu_a l_a \sin\theta_a.
 \end{aligned}
 \end{equation}
 %
@@ -505,7 +505,7 @@ A_k \PD{\theta_a}{A_a}^\dagger
 \gpgradezero{
 A_k \PD{\phi_a}{A_a}^\dagger
 }
-\dot{\BTheta}_a
+\dot{\BTheta}_a.
 \end{aligned}
 \end{equation}
 %
@@ -519,7 +519,7 @@ It should be possible but it is tedious to calculate the block matrix derivative
 \begin{bmatrix}
 -\Be_3 e^{j_a \theta_a} \\
 \Be_2 e^{i \phi_a} C_{\theta_a}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:multiPendulumSpherical2:boo11}
@@ -529,7 +529,7 @@ It should be possible but it is tedious to calculate the block matrix derivative
 \begin{bmatrix}
 \Be_2 e^{i \phi_a} C_{\theta_a} \\
 -\Be_1 e^{i \phi_a} S_{\theta_a}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -544,7 +544,7 @@ However multiplying this out and reducing is a bit tedious and would be a better
 -S_{\phi_a - \phi_k} C_{\theta_k} C_{\theta_a} \\
 -S_{\phi_a - \phi_k} S_{\theta_a} S_{\theta_k} &
 C_{\phi_a - \phi_k} S_{\theta_k} C_{\theta_a}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -557,7 +557,7 @@ C_{\phi_a - \phi_k} S_{\theta_k} C_{\theta_a}
 -C_{\phi_a - \phi_k} C_{\theta_k} S_{\theta_a} \\
 C_{\phi_a - \phi_k} C_{\theta_a} S_{\theta_k} &
 -S_{\phi_a - \phi_k} S_{\theta_k} S_{\theta_a}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -580,7 +580,7 @@ The right hand side of the Euler-Lagrange equations now becomes
 1 \\
 0
 \end{bmatrix}
-\end{bmatrix}}_r
+\end{bmatrix}}_r.
 \end{aligned}
 \end{equation}
 %
@@ -598,7 +598,7 @@ Having calculated the Hamiltonian equations for the multiple mass planar pendulu
 \begin{bmatrix}
 P_{\BTheta} \\
 \BTheta
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -610,7 +610,7 @@ we can write the Hamiltonian equations
 \begin{bmatrix}
 \grad_{\BTheta} \LL \\
 \gpgradezero{Q}^{-1} P_{\BTheta}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -636,7 +636,7 @@ It is apparent that for any sort of numerical treatment use of a angular momentu
 \begin{bmatrix}
 \grad_{\BTheta} \LL \\
 \dot{\BTheta}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -672,7 +672,7 @@ The positions of the masses are given by
 \begin{aligned}
 z_k &= z_{k-1} + \Be_3 l_k e^{j_k \theta_k} \\
 j_k &= \Be_3 \wedge \left( \Be_1 e^{i \phi_k} \right) \\
-i &= \Be_1 \wedge \Be_2
+i &= \Be_1 \wedge \Be_2.
 \end{aligned}
 \end{equation}
 %
@@ -684,7 +684,7 @@ With the introduction of a column vector of vectors (where we multiply matrices 
 \begin{bmatrix}
 \theta_k \\
 \phi_k
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:multiPendulumSpherical2:zoo2}
@@ -695,7 +695,7 @@ With the introduction of a column vector of vectors (where we multiply matrices 
 \BTheta_2 &
 \hdots &
 \BTheta_N
-\end{bmatrix}}^\T
+\end{bmatrix}}^\T.
 \end{aligned}
 \end{equation}
 %
@@ -707,7 +707,7 @@ A_k &=
 \begin{bmatrix}
 \Be_1 e^{i \phi_k} e^{j_k \theta_k} \\
 \Be_2 e^{i \phi_k} S_{\theta_k}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:multiPendulumSpherical2:zoo5}
@@ -721,7 +721,7 @@ K &= \inv{2} \dot{\BTheta}^\T \gpgradezero{Q}
 \dot{\BTheta} \\
 \Phi &=
 g \sum_{k=1}^N \mu_k l_k C_{\theta_k} \\
-\LL &= K - \Phi
+\LL &= K - \Phi.
 \end{aligned}
 \end{equation}
 %
@@ -740,7 +740,7 @@ S_{\theta_c} &
 -S_{\phi_c - \phi_r} C_{\theta_r} S_{\theta_c} \\
 S_{\phi_c - \phi_r} C_{\theta_c} S_{\theta_r} &
 C_{\phi_c - \phi_r} S_{\theta_r} S_{\theta_c}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -783,7 +783,7 @@ We utilize angular position and velocity gradients
 {\grad_{\dot{\BTheta}_2}}^\T &
 \hdots  &
 {\grad_{\dot{\BTheta}_N}}^\T
-\end{bmatrix}}^\T
+\end{bmatrix}}^\T.
 \end{aligned}
 \end{equation}
 %
@@ -818,7 +818,7 @@ For the position gradient portion of the Euler-Lagrange equations \eqnref{eqn:mu
 1 \\
 0
 \end{bmatrix}
-\end{bmatrix}}_r
+\end{bmatrix}}_r.
 \end{aligned}
 \end{equation}
 %
@@ -831,7 +831,7 @@ For the position gradient portion of the Euler-Lagrange equations \eqnref{eqn:mu
 -S_{\phi_a - \phi_k} C_{\theta_k} C_{\theta_a} \\
 -S_{\phi_a - \phi_k} S_{\theta_a} S_{\theta_k} &
 C_{\phi_a - \phi_k}  S_{\theta_k} C_{\theta_a}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
@@ -844,7 +844,7 @@ C_{\phi_a - \phi_k}  S_{\theta_k} C_{\theta_a}
 -C_{\phi_a - \phi_k} C_{\theta_k} S_{\theta_a} \\
 C_{\phi_a - \phi_k} C_{\theta_a} S_{\theta_k} &
 -S_{\phi_a - \phi_k} S_{\theta_k} S_{\theta_a}
-\end{bmatrix}
+\end{bmatrix}.
 \end{aligned}
 \end{equation}
 %
