@@ -2,10 +2,11 @@
 - Proofing checklist:
 
    - (Convert parts to chapters), first converting section -> subsection or paragraph.  review existing subsections/paragraphs.
-   - Equation grammar: review after the bulk period additions: on pg 73 (ch 9)
+   - Equation grammar: review after the bulk period additions: on pg 99 (ch 10)
    - Make sure all the indexing is done.  at least chapter,section,paragraph,problems
    - have too many equation* and dmath* -- turn those into unstarred unless they are part of problem statements.
    - modify the aligned remover script to search for equations with one & and no \\'s.  then strip those!
+   - sentances that start with 'Or,'
 
    - make dist, tag
    - push

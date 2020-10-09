@@ -51,8 +51,8 @@ As shorthand for the coordinates the field can be expressed with respect to vari
 F^{\mu\nu} &= F \cdot \gamma^{\nu\mu} & \quad F = (1/2) F^{\mu\nu} \gamma_{\mu\nu} \\
 F_{\mu\nu} &= F \cdot \gamma_{\nu\mu} & \quad F = (1/2) F_{\mu\nu} \gamma^{\mu\nu} \\
 {F_{\mu}}^\nu &= F \cdot {\gamma_{\nu}}^{\mu} & \quad F = (1/2) {F_{\mu}}^{\nu} {\gamma^{\mu}}_{\nu} \\
-{F^{\mu}}_\nu &= F \cdot {\gamma^{\nu}}_{\mu} & \quad F = (1/2) {F^{\mu}}_{\nu} {\gamma_{\mu}}^{\nu}
-\end{array}.
+{F^{\mu}}_\nu &= F \cdot {\gamma^{\nu}}_{\mu} & \quad F = (1/2) {F^{\mu}}_{\nu} {\gamma_{\mu}}^{\nu}.
+\end{array}
 \end{equation*}
 %
 In particular, we can extract the electric field components by dotting with a spacetime mix of indices
@@ -68,6 +68,8 @@ F^{ij} = - c {\epsilon^{a b}}_k B^k \gamma_{a b} \cdot \gamma^{ji} = - c {\epsil
 \end{equation*}
 %
 It is customary to summarize these tensors in matrix form
+\begin{subequations}
+\label{eqn:lagrangianFieldDensity:1010}
 \begin{equation}\label{eqn:maxFieldLag:matrixtensor}
 F^{\mu\nu} =
 \begin{bmatrix}
@@ -75,7 +77,7 @@ F^{\mu\nu} =
 E^1 &   0  & -c B^3 &  c B^2 \\
 E^2 &  c B^3 &   0  & -c B^1 \\
 E^3 & -c B^2 &  c B^1 &   0  \\
-\end{bmatrix}.
+\end{bmatrix},
 \end{equation}
 %
 \begin{equation}
@@ -87,6 +89,7 @@ F_{\mu\nu} =
 -E^3 & -c B^2 &  c B^1 &   0  \\
 \end{bmatrix}.
 \end{equation}
+\end{subequations}
 %
 Neither of these matrices will be needed explicitly, but are included for comparison since there is some variation in the sign conventions and units used
 for the field tensor.
@@ -95,13 +98,15 @@ for the field tensor.
 %
 Taking vector and trivector parts of Maxwell's equation \eqnref{eqn:maxFieldLag:maxwell}, and writing in terms of coordinates produces two equations respectively
 %
+\begin{subequations}
+\label{eqn:lagrangianFieldDensity:111}
 \begin{equation}\label{eqn:maxFieldLag:vectorPartOfMaxwells}
-\partial_{\mu} F^{\mu\alpha} = J^{\alpha}/c \epsilon_0.
+\partial_{\mu} F^{\mu\alpha} = J^{\alpha}/c \epsilon_0,
 \end{equation}
-%
 \begin{equation}\label{eqn:maxFieldLag:dualPartOfMaxwells}
 \epsilon^{ \alpha \beta \sigma \mu } \partial_{\alpha} F_{\beta\sigma} = 0.
 \end{equation}
+\end{subequations}
 %
 The aim here to show that these can be derived from an appropriate Lagrangian density.
 %
@@ -147,7 +152,6 @@ One can also show that the following are all identical representations.
 \end{equation}
 %
 In particular, we will use the tensor form with the field defined in terms of the vector potential of \eqnref{eqn:maxFieldLag:potentialdef}.
-
 Expanding in coordinates this squared curl we have
 %
 \begin{equation}\label{eqn:lagrangianFieldDensity:100}
@@ -223,13 +227,13 @@ Here is pretty much the simplest case, and illustrates the technique well.
 Suppose we have an action associated with a kinetic Lagrangian density \((1/2) m v^2\)
 %
 \begin{equation}\label{eqn:maxFieldLag:oneDimKinetic}
-S = \int_a^b \frac{m}{2} { \left(\frac{dx}{dt}\right) }^2 dt.
+S = \int_a^b \frac{m}{2} { \left(\frac{dx}{dt}\right) }^2 dt,
 \end{equation}
 %
 where \(x = x(t)\) is the undetermined function to solve for.  Feynman's technique is similar to \citep{goldstein1951cm} way of deriving the Euler Lagrange equations, but instead of writing
 %
 \begin{equation*}
-x(t, \epsilon) = x(t, 0) + \epsilon n(t).
+x(t, \epsilon) = x(t, 0) + \epsilon n(t),
 \end{equation*}
 %
 and taking derivatives under the integral sign with respect to \(\epsilon\), instead he just writes
@@ -378,7 +382,7 @@ S &= \int_{\Omega} dA \left( \kappa {(\spacegrad \overbar{\phi})}^2 + \rho \over
 As before we set this inner term to zero so that it holds for any \(n\), and recover the field equation as
 %
 \begin{equation*}
-\spacegrad^2 \overbar{\phi} = \rho/2 \kappa.
+\spacegrad^2 \overbar{\phi} = \rho/2 \kappa,
 \end{equation*}
 %
 provided we set the constant \(\kappa = -\epsilon_0/2\).  This also fixes the unknown constant in the associated Lagrangian density and action
@@ -402,14 +406,15 @@ Using the same trick we introduce the desired solution and an variational functi
 \begin{equation*}
 A^{\mu} = \barA^{\mu} + n^{\mu}.
 \end{equation*}
-%
+Expanding things, we have
 \begin{equation}\label{eqn:lagrangianFieldDensity:240}
 \begin{aligned}
 2 /\kappa( \LL - J_{\alpha} (\barA^{\alpha} + n^{\alpha}))
 &=  \partial_{\mu} (\barA_{\nu} + n_{\nu}) ( \partial^{\mu} (\barA^{\nu} + n^{\nu}) - \partial^{\nu} (\barA^{\mu} + n^{\mu}) ) \\
 &=  \partial_{\mu} \barA_{\nu} ( \partial^{\mu} \barA^{\nu} - \partial^{\nu} \barA^{\mu} ) +  \partial_{\mu} n_{\nu} ( \partial^{\mu} n^{\nu} - \partial^{\nu} n^{\mu} )  \\
 &+  \partial_{\mu} \barA_{\nu} ( \partial^{\mu} n^{\nu} - \partial^{\nu} n^{\mu} ) +  \partial_{\mu} n_{\nu} ( \partial^{\mu} \barA^{\nu} - \partial^{\nu} \barA^{\mu} )  \\
-%&+ J_{\alpha} (\barA^{\alpha} + n^{\alpha}) .
+%&+ J_{\alpha} (\barA^{\alpha} + n^{\alpha}) 
+.
 \end{aligned}
 \end{equation}
 %
@@ -721,23 +726,30 @@ detailed in \citep{doran2003gap}.
 %
 With just two Lagrangian's and their associated action integrals
 %
+\begin{subequations}
+\label{eqn:lagrangianFieldDensity:1234}
 \begin{equation}
-\LL = - \frac{c \epsilon_0}{2} (\grad \wedge A)^2 + J \cdot A.
+\LL = - \frac{c \epsilon_0}{2} (\grad \wedge A)^2 + J \cdot A,
 \end{equation}
 \begin{equation}\label{eqn:maxFieldLag:lorentzforce}
 \LL = \inv{2}m v^2 + q A \cdot v/c %+ \phi.
 \end{equation}
+\end{subequations}
 %
 we have a good chunk of non-quantum electrodynamics described in a couple energy minimization relationships.  A derivation, albeit a primitive one based somewhat on intuition, of \eqnref{eqn:maxFieldLag:lorentzforce} can be found in \chapcite{PJSrLagrangian}.
 
 The solution of the action problem for these give us our field equation and Lorentz force law respectively. % (an additional non-electrodynamic potential has been added for generality).
 %
-\begin{equation*}
-\grad F = J / \epsilon_0 c.
-\end{equation*}
-\begin{equation*}
-\frac{dp}{d\tau} = q F \cdot v/c %+ \grad \phi - \frac{d}{d\tau}\grad_v \phi.
-\end{equation*}
+\begin{subequations}
+\label{eqn:lagrangianFieldDensity:789}
+\begin{equation}\label{eqn:lagrangianFieldDensity:789a}
+\grad F = J / \epsilon_0 c,
+\end{equation}
+\begin{equation}\label{eqn:lagrangianFieldDensity:789b}
+\frac{dp}{d\tau} = q F \cdot v/c %+ \grad \phi - \frac{d}{d\tau}\grad_v \phi
+.
+\end{equation}
+\end{subequations}
 %
 Now, to figure out everything else based on these still takes a lot of work, but it is nice to logically reduce things to the minimal set of fundamental relationships!
 
