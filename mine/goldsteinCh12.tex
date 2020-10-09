@@ -17,7 +17,7 @@ Barbell shape, equal masses.  center of rod between masses constrained to circul
 Assuming motion in a plane, the equation for the center of the rod is:
 %
 \begin{equation*}
-c = a e^{i\theta}
+c = a e^{i\theta},
 \end{equation*}
 %
 and the two mass points positions are:
@@ -49,17 +49,17 @@ and squared magnitudes:
 Summing the kinetic terms yields
 %
 \begin{equation*}
-K = m \left(a \dottheta \right)^2 + m \left(\inv{2} l \dotalpha\right)^2
+K = m \left(a \dottheta \right)^2 + m \left(\inv{2} l \dotalpha\right)^2.
 \end{equation*}
 %
 Summing the potential energies, presuming that the motion is vertical, we have:
 %
 \begin{equation*}
-V = m g (l/2) \cos\theta - m g (l/2) \cos \theta
+V = m g (l/2) \cos\theta - m g (l/2) \cos \theta,
 \end{equation*}
 %
-So, the Lagrangian is just the Kinetic energy.
-%
+so the Lagrangian is just the Kinetic energy.
+
 Taking derivatives to get the EOMs we have:
 %
 \begin{equation}\label{eqn:goldsteinCh12:80}
@@ -76,13 +76,13 @@ This is surprising seeming.  Is this correct?
 A system is composed of three particles of equal mass m.  Between any two of them there are forces derivable from a potential
 %
 \begin{equation*}
-V = -g e^{-\mu r}
+V = -g e^{-\mu r},
 \end{equation*}
 %
-where r is the distance between the two particles.  In addition, two of the particles each exert a force on the third which can be obtained from a generalized potential of the form
+where \(r\) is the distance between the two particles.  In addition, two of the particles each exert a force on the third which can be obtained from a generalized potential of the form
 %
 \begin{equation*}
-U = -f \Bv \cdot \Br
+U = -f \Bv \cdot \Br,
 \end{equation*}
 %
 \(\Bv\) being the relative velocity of the interacting particles and f a constant.  Set up the Lagrangian for the system, using as coordinates the radius vector \(\BR\) of the center of mass and the two vectors
@@ -101,7 +101,7 @@ Is the total angular momentum of the system conserved?
 The center of mass vector is:
 %
 \begin{equation*}
-\BR = \inv{3}(\Br_1 + \Br_2 + \Br_3)
+\BR = \inv{3}(\Br_1 + \Br_2 + \Br_3).
 \end{equation*}
 %
 This can be used to express each of the position vectors in terms of the \(\Brho_i\) vectors:
@@ -119,14 +119,14 @@ This can be used to express each of the position vectors in terms of the \(\Brho
 Now, that is enough to specify the part of the Lagrangian from the potentials that act between all the particles
 %
 \begin{equation*}
-\LL_V = \sum -V_{ij} = g \left( e^{-\mu \Abs{\Brho_1}} + e^{-\mu \Abs{\Brho_2}} + e^{-\mu \Abs{ \Brho_1 - \Brho_2 }} \right)
+\LL_V = \sum -V_{ij} = g \left( e^{-\mu \Abs{\Brho_1}} + e^{-\mu \Abs{\Brho_2}} + e^{-\mu \Abs{ \Brho_1 - \Brho_2 }} \right).
 \end{equation*}
 %
 Now, we need to calculate the two \(U\) potential terms.  If we consider with positions \(\Br_1\), and \(\Br_2\) to be the ones
 that can exert a force on the third, the velocities of those masses relative to \(\Br_3\) are:
 %
 \begin{equation*}
-(\Br_3 - \Br_k)' = \dot{\Brho_k}
+(\Br_3 - \Br_k)' = \dot{\Brho_k}.
 \end{equation*}
 %
 So, the potential parts of the Lagrangian are
@@ -136,7 +136,7 @@ So, the potential parts of the Lagrangian are
 \begin{equation*}
 \LL_{U+V} =
 g \left( e^{-\mu \Abs{\Brho_1}} + e^{-\mu \Abs{\Brho_2}} + e^{-\mu \Abs{ \Brho_1 - \Brho_2 }} \right)
-+ f \left(\BR - \inv{3}(\Brho_1 + \Brho_2) \right) \cdot \left( \dot{\Brho_1} + \dot{\Brho_2} \right)
++ f \left(\BR - \inv{3}(\Brho_1 + \Brho_2) \right) \cdot \left( \dot{\Brho_1} + \dot{\Brho_2} \right).
 \end{equation*}
 %
 The kinetic part (omitting the m/2 factor), in terms of the CM and relative vectors is
@@ -284,12 +284,11 @@ Now we are in shape to compute the conserved ``current'' for a rotational symmet
 \begin{equation}\label{eqn:goldsteinCh12:320}
 \begin{aligned}
 {\Bx}_k' &= e^{-i\ncap \alpha/2} {\Bx}_k e^{i\ncap\alpha/2} \\
-\dot{\Bx}_k' &= e^{-i\ncap \alpha/2} \dot{\Bx}_k e^{i\ncap\alpha/2} .
+\dot{\Bx}_k' &= e^{-i\ncap \alpha/2} \dot{\Bx}_k e^{i\ncap\alpha/2},
 \end{aligned}
 \end{equation}
 %
-and our Lagrangian is assumed, as above with all vectors coming in dot product pairs, to have rotational invariance when all the vectors
-in the system are rotated
+and our Lagrangian is assumed, as above with all vectors coming in dot product pairs, to have rotational invariance when all the vectors in the system are rotated
 %
 \begin{equation}\label{eqn:goldsteinCh12:340}
 \begin{aligned}
@@ -458,10 +457,10 @@ Prove that the shortest length curve between two points in space is a straight l
 }
 %
 \makeanswer{gold:ch2:pr1}{
-A first attempt of this I used:
+In a first attempt of this I used:
 %
 \begin{equation*}
-ds = \sqrt{ 1 + (dy/dx)^2 + (dz/dx)^2 } dx
+ds = \sqrt{ 1 + (dy/dx)^2 + (dz/dx)^2 } dx.
 \end{equation*}
 %
 Application of the Euler-Lagrange equations does show that one ends up with a linear relation between the y and z coordinates, but no mention of x.  Rather than write that up, consider instead a parametrization of the coordinates:
@@ -470,14 +469,14 @@ Application of the Euler-Lagrange equations does show that one ends up with a li
 \begin{aligned}
 x &= x_1(\lambda) \\
 y &= x_2(\lambda) \\
-z &= x_3(\lambda).
+z &= x_3(\lambda),
 \end{aligned}
 \end{equation}
 %
 in terms of this arbitrary parametrization we have a segment length of:
 %
 \begin{equation*}
-ds = \sqrt{ \sum \left(\frac{d x_i}{d\lambda}\right)^2 } d \lambda = f\left(x_i\right) d\lambda
+ds = \sqrt{ \sum \left(\frac{d x_i}{d\lambda}\right)^2 } d \lambda = f\left(x_i\right) d\lambda.
 \end{equation*}
 %
 Application of the Euler-Lagrange equation to \(f\) we have:
@@ -513,7 +512,7 @@ zero determinant:
 1           & 1            & 1 - c_3^2 & 1 & \\
             &              &           & \ddots & \\
             &              &           &        & 1 - {c_n}^2
-\end{vmatrix}
+\end{vmatrix}.
 \end{equation*}
 %
 Now, expanding this for a couple specific cases is not too hard.  For \(n=2\) we have:
@@ -544,7 +543,7 @@ in \R{N} space has the shortest distance when that path is a straight line.
 Despite the general setup, I am going to chicken out and show this only for the \R{3} case.  In that case our determinant expands to:
 %
 \begin{equation*}
-c_1^2 + c_2^2 + c_3^2 = c_1^2 c_2^2 c_3^2
+c_1^2 + c_2^2 + c_3^2 = c_1^2 c_2^2 c_3^2.
 \end{equation*}
 %
 Since not all of the \(\xdot_i^2\) can be linearly independent, one can be eliminated:
@@ -588,18 +587,17 @@ Since these equations are symmetric, we can do this for all, with the result:
 Since the \(c_i\) constants are arbitrary, then we can for example pick the negative sign for \(\pm c_2\), and the positive for the rest, then add all of these, and scale by two:
 %
 \begin{equation*}
-c_3 \xdot_3 - c_2 \xdot_2 = c_1 \xdot_1
+c_3 \xdot_3 - c_2 \xdot_2 = c_1 \xdot_1,
 \end{equation*}
 %
 and integrating:
 %
 \begin{equation*}
-c_3 x_3 - c_2 x_2 = c_1 x_1 + \kappa
+c_3 x_3 - c_2 x_2 = c_1 x_1 + \kappa.
 \end{equation*}
 %
 Again, we have the general equation of a line, subject to the desired constraints on the end points.  In the end we did not need to
-evaluate the determinant after all, as done in the
-\R{2} case.
+evaluate the determinant after all, as done in the \R{2} case.
 }
 %
 \makeproblem{Geodesics on sphere (2.2).}{gold:ch2:pr2}{
@@ -612,7 +610,7 @@ As a variational problem, the first step is to formulate an element of length on
 FIXME: Scan picture.
 %
 \begin{equation*}
-\Br = (x, y, z) = R( \sin\theta cos\phi, \sin\theta \sin\phi, \cos\theta)
+\Br = (x, y, z) = R( \sin\theta cos\phi, \sin\theta \sin\phi, \cos\theta).
 \end{equation*}
 %
 A differential vector element on the surface is (set \(R=1\) without loss of generality) :
@@ -634,27 +632,27 @@ d \Br
 Calculation of the length \(ds\) of this vector yields:
 %
 \begin{equation*}
-ds = \Abs{ d\Br} = \sqrt{\dottheta^2 + (\sin\theta)^2 \dotphi^2} d\lambda
+ds = \Abs{ d\Br} = \sqrt{\dottheta^2 + (\sin\theta)^2 \dotphi^2} d\lambda.
 \end{equation*}
 %
 This completes the setup for the minimization problem, and we want to
 minimize:
 %
 \begin{equation*}
-s = \int \sqrt{\dottheta^2 + ( \dotphi \sin\theta )^2 } d\lambda
+s = \int \sqrt{\dottheta^2 + ( \dotphi \sin\theta )^2 } d\lambda,
 \end{equation*}
 %
 and can therefore apply the Euler-Lagrange equations to the function
 %
 \begin{equation*}
 f(\theta, \phi, \dottheta, \dotphi, \lambda) =
-\sqrt{\dottheta^2 + ( \dotphi \sin\theta )^2 }
+\sqrt{\dottheta^2 + ( \dotphi \sin\theta )^2 }.
 \end{equation*}
 %
 The \(\phi\) is cyclic, and we have:
 %
 \begin{equation*}
-\PD{\phi}{f} = 0 = \frac{d}{d\lambda} \frac{\dotphi \sin^2\theta}{f}
+\PD{\phi}{f} = 0 = \frac{d}{d\lambda} \frac{\dotphi \sin^2\theta}{f}.
 \end{equation*}
 %
 Thus we have:
@@ -729,7 +727,7 @@ later, will be the charm.
 For \(f = f( y, \ydot, \yddot, x )\), find the equations for extreme values of
 %
 \begin{equation*}
-I = \int_a^b f dx
+I = \int_a^b f dx.
 \end{equation*}
 }
 %
@@ -748,7 +746,7 @@ y( x, \alpha ) &= y( x, 0 ) + \alpha n(x) \\
 Here we specify that these arbitrary variational functions vanish at the endpoints:
 %
 \begin{equation*}
-n(a) = n(b) = m(a) = m(b) = 0
+n(a) = n(b) = m(a) = m(b) = 0.
 \end{equation*}
 %
 The functions \(y(x, 0)\), and \(\ydot(x, 0)\) are the functions we are looking for as solutions to the min/max problem.
@@ -761,7 +759,7 @@ Calculating derivatives we have:
 \PD{y}{f} \PD{\alpha}{y}
 +\PD{\ydot}{f} \PD{\alpha}{\ydot}
 +\PD{\yddot}{f} \PD{\alpha}{\yddot}
-\right) d x
+\right) d x.
 \end{equation*}
 %
 Assuming sufficient continuity look at the second term where we have:
@@ -780,7 +778,7 @@ Assuming sufficient continuity look at the second term where we have:
 Similarly for the third term we have:
 %
 \begin{equation*}
-\PD{\alpha}{\ydot} = \frac{d}{ d x} \PD{\alpha}{\ydot}
+\PD{\alpha}{\ydot} = \frac{d}{ d x} \PD{\alpha}{\ydot},
 \end{equation*}
 %
 \begin{equation*}
@@ -788,7 +786,7 @@ Similarly for the third term we have:
 \int \PD{y}{f} \PD{\alpha}{y} d x +
 \mathLabelBox{\PD{\ydot}{f} \frac{d}{ d x} \PD{\alpha}{y}}{\(u v' = (u v)' - u' v \)}
 d x
-+\PD{\yddot}{f} \frac{d}{ d x} \PD{\alpha}{\ydot} d x
++\PD{\yddot}{f} \frac{d}{ d x} \PD{\alpha}{\ydot} d x.
 \end{equation*}
 %
 Now integrating by parts:

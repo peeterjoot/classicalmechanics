@@ -529,13 +529,15 @@ but the \(\Bv\) substitution requires more work.  We have
 %
 So we have
 %
+\begin{subequations}
+\label{eqn:classicalMechanicsPs2:30a}
 \begin{dmath}\label{eqn:classicalMechanicsPs2:30}
 \Bv =
 \begin{bmatrix}
 \rdot \sin\theta \cos\phi + r \cos\theta \cos\phi \thetadot - r \sin\theta \sin\phi \phidot \\
 \rdot \sin\theta \sin\phi + r \cos\theta \sin\phi \thetadot + r \sin\theta \cos\phi \phidot \\
 \rdot \cos\theta -r \sin\theta \thetadot
-\end{bmatrix}.
+\end{bmatrix},
 \end{dmath}
 %
 \begin{equation}\label{eqn:classicalMechanicsPs2:1010}
@@ -547,6 +549,7 @@ So we have
 \sin\theta \cos\phi v_y - \sin\theta \sin\phi v_x
 \end{bmatrix}.
 \end{equation}
+\end{subequations}
 Expanding this is a bit of a mess, but it eventually simplifies.  We start with
 \begin{equation}\label{eqn:classicalMechanicsPs2:1010a}
 \begin{bmatrix}
@@ -756,15 +759,15 @@ This is consistent with \eqnref{eqn:classicalMechanicsPs2:270} calculated hard w
 &=
 r \rcap \cross \lr{ \thetadot \thetacap + \phidot \sin\theta \phicap } \\
 &=
-r \left( \thetadot \phicap - \phidot \sin\theta \thetacap \right) ,
+r \left( \thetadot \phicap - \phidot \sin\theta \thetacap \right).
 \end{aligned}
 \end{equation}
 %
-So that our total angular momentum in vector form is
+Our total angular momentum in vector form is
 %
 \begin{dmath}\label{eqn:classicalMechanicsPs2:310}
 \BM = m r^2
-\left( \thetadot \phicap - \phidot \sin\theta \thetacap \right),
+\left( \thetadot \phicap - \phidot \sin\theta \thetacap \right).
 \end{dmath}
 %
 Now, should we wish to extract coordinates with respect to \(x,y,z\) we just have to write our vectors \(\phicap\) and \(\thetacap\) in the \(\{\Be_1, \Be_2, \Be_3\}\) basis and have
@@ -801,7 +804,7 @@ This matches \eqnref{eqn:classicalMechanicsPs2:50}, but all the messy trig is is
 %
 This one should be easier.  To start our position vector is
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:90}
+\begin{equation}\label{eqn:classicalMechanicsPs2:90}
 \Br =
 \begin{bmatrix}
 \rho \cos\phi \\
@@ -809,7 +812,7 @@ This one should be easier.  To start our position vector is
 z
 \end{bmatrix}
 = \rho \rhocap + z \zcap.
-\end{dmath}
+\end{equation}
 %
 Our velocity is
 %
