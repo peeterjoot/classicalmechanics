@@ -32,7 +32,7 @@ Multiplication of this result with the unit vector \(\Be_i\), and summing over
 all unit vectors we have:
 %
 \begin{equation*}
-\sum \Be_i \frac{d}{dt}\left(m \dot{x}^i\right) = - \sum \Be_i \PDb{\varphi}{x^i}
+\sum \Be_i \frac{d}{dt}\left(m \dot{x}^i\right) = - \sum \Be_i \PDb{\varphi}{x^i}.
 \end{equation*}
 %
 Or, using the gradient operator, and writing \(\Bv = \sum \Be_i \dot{x}^i\), we have:
@@ -49,25 +49,25 @@ sum \(\Bv = \sum \Be_i v^i\) is valid for any set of basis vectors independent o
 set of basis vectors.  This is assuming that these coordinate pairs follow the usual reciprocal relationships:
 %
 \begin{equation*}
-\Bx = \sum \Be_i x^i
+\Bx = \sum \Be_i x^i.
 \end{equation*}
 \begin{equation*}
-x^i = \Bx \cdot \Be^i
+x^i = \Bx \cdot \Be^i.
 \end{equation*}
 \begin{equation*}
-\Be^i \cdot \Be_j = {\delta^i}_j
+\Be^i \cdot \Be_j = {\delta^i}_j.
 \end{equation*}
 %
 However, the LHS that implicitly defines the gradient as:
 \begin{equation*}
-\grad = \sum \Be_i \PDb{}{x^i}
+\grad = \sum \Be_i \PDb{}{x^i}.
 \end{equation*}
 %
 is a result that is only valid when the set of basis vectors \(\Be_i\) is orthonormal.  The general result is
 expected instead to be:
 %
 \begin{equation*}
-\grad = \sum \Be^i \PDb{}{x^i}
+\grad = \sum \Be^i \PDb{}{x^i}.
 \end{equation*}
 %
 This is how the gradient is defined (without motivation) in Doran/Lasenby.  One can however demonstrate that this definition, and not \(\grad = \sum \Be_i \PDb{}{x^i}\), is required by doing a computation of something like \(\grad \norm{\Bx}^\alpha\) with \(\Bx = \sum x^i \Be_i\) for a general basis \(\Be_i\) to demonstrate this.  An example of this can be found in the appendix below.
@@ -106,7 +106,7 @@ Now we are in shape to properly calculate the equations of motion from the Lagra
 \Bigl( m \sum_j \dot{x}^j
 \mathLabelBox{\sum_k \Be^k \Be_k \cdot \Be_j}{\(=\Be_j\)}
 \Bigr) &= \\
-\frac{d}{dt} \left( m \sum_j \dot{x}^j \Be_j \right) &= .
+\frac{d}{dt} \left( m \sum_j \dot{x}^j \Be_j \right) &= 
 \end{aligned}
 \end{equation}
 %
@@ -151,7 +151,7 @@ As a verification that the gradient as defined in \eqnref{eqn:newtonLaG:gradient
 orthonormal basis.
 %
 \begin{equation*}
-f(\Br) = \norm{\Br}^\alpha
+f(\Br) = \norm{\Br}^\alpha.
 \end{equation*}
 %
 \begin{equation}\label{eqn:newtonianLagrangianAndGradient:80}

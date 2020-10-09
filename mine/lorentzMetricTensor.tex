@@ -22,37 +22,37 @@ orthonormal frame, but if we choose not to, say picking \(e_1 + e_2\), \(e_1-e_2
 The trick is to calculate, or assume calculated, an alternate set of basis vectors, called the reciprocal frame.  Provided the initial set of vectors spans the space, one can always calculate (and that part is a linear algebra exercise) this second pair such that they meet the following relationships:
 %
 \begin{equation*}
-e^i \cdot e_j = {\delta^i}_j
+e^i \cdot e_j = {\delta^i}_j.
 \end{equation*}
 %
 So, if a vector is specified in terms of the \(e_i\)
 \begin{equation*}
-x = \sum e_j a_j
+x = \sum e_j a_j.
 \end{equation*}
 %
 Dotting with \(e^i\) one has:
 %
 \begin{equation*}
-x \cdot e^i = \sum (e_j a_j) \cdot e^i = \sum {\delta^j}_i a_j = a_i
+x \cdot e^i = \sum (e_j a_j) \cdot e^i = \sum {\delta^j}_i a_j = a_i.
 \end{equation*}
 %
 It is customary to write \(a_i = x^i\), which allows for the entire vector to
 be written in the mixed upper and lower index method where sums are assumed:
 %
 \begin{equation*}
-x = \sum e_j x^j = e_j x^j
+x = \sum e_j x^j = e_j x^j.
 \end{equation*}
 %
 Now, if one calculates dot product here, say with \(x\), and a second vector
 %
 \begin{equation*}
-y = \sum e_j y^j
+y = \sum e_j y^j.
 \end{equation*}
 %
 you have:
 %
 \begin{equation*}
-x \cdot y = \sum (e_j \cdot e_k) x^j y^k
+x \cdot y = \sum (e_j \cdot e_k) x^j y^k.
 \end{equation*}
 %
 The coefficient of this \(x^j y^k\) term is symmetric, and if you choose, you
@@ -60,7 +60,7 @@ can write \(g_{jk} = e_j \cdot e_k\), and you have the dot product in
 tensor form:
 %
 \begin{equation*}
-x \cdot y = \sum g_{jk} x^j y^k = g_{jk} x^j y^k
+x \cdot y = \sum g_{jk} x^j y^k = g_{jk} x^j y^k.
 \end{equation*}
 %
 Now, for relativity, you have four instead of three basis vectors, so if you choose your spatial basis vectors orthonormally, and a timelike basis vector normal to all of those (ie: no mixing of space and time vectors in anything but a Lorentz fashion), then you get a diagonal metric tensor.  You can choose not to work in an "orthonormal" spacetime basis, and a non-diagonal metric tensor will show up in all your dot products.  That decision is perfectly valid, just makes everything harder.  When it comes down to why, it all boils down to your choice of basis.

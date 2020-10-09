@@ -52,19 +52,19 @@ F^{\mu\nu} &= F \cdot \gamma^{\nu\mu} & \quad F = (1/2) F^{\mu\nu} \gamma_{\mu\n
 F_{\mu\nu} &= F \cdot \gamma_{\nu\mu} & \quad F = (1/2) F_{\mu\nu} \gamma^{\mu\nu} \\
 {F_{\mu}}^\nu &= F \cdot {\gamma_{\nu}}^{\mu} & \quad F = (1/2) {F_{\mu}}^{\nu} {\gamma^{\mu}}_{\nu} \\
 {F^{\mu}}_\nu &= F \cdot {\gamma^{\nu}}_{\mu} & \quad F = (1/2) {F^{\mu}}_{\nu} {\gamma_{\mu}}^{\nu}
-\end{array}
+\end{array}.
 \end{equation*}
 %
 In particular, we can extract the electric field components by dotting with a spacetime mix of indices
 %
 \begin{equation*}
-F^{i0} = E^k \gamma_{k0} \cdot \gamma^{0i} = E^i = -F_{i0}
+F^{i0} = E^k \gamma_{k0} \cdot \gamma^{0i} = E^i = -F_{i0}.
 \end{equation*}
 %
 and the magnetic field components by dotting with the bivectors having a pure spatial mix of indices
 %
 \begin{equation*}
-F^{ij} = - c {\epsilon^{a b}}_k B^k \gamma_{a b} \cdot \gamma^{ji} = - c {\epsilon^{i j}}_k B^k = F_{ij}
+F^{ij} = - c {\epsilon^{a b}}_k B^k \gamma_{a b} \cdot \gamma^{ji} = - c {\epsilon^{i j}}_k B^k = F_{ij}.
 \end{equation*}
 %
 It is customary to summarize these tensors in matrix form
@@ -229,7 +229,7 @@ S = \int_a^b \frac{m}{2} { \left(\frac{dx}{dt}\right) }^2 dt.
 where \(x = x(t)\) is the undetermined function to solve for.  Feynman's technique is similar to \citep{goldstein1951cm} way of deriving the Euler Lagrange equations, but instead of writing
 %
 \begin{equation*}
-x(t, \epsilon) = x(t, 0) + \epsilon n(t)
+x(t, \epsilon) = x(t, 0) + \epsilon n(t).
 \end{equation*}
 %
 and taking derivatives under the integral sign with respect to \(\epsilon\), instead he just writes
@@ -279,7 +279,7 @@ As the solution to the extreme value problem.  This is nothing but the equation 
 Next is to apply the same idea to the field Lagrangian for electrostatics.  The Lagrangian is assumed to be of the following form
 %
 \begin{equation*}
-\LL = \kappa (\spacegrad \phi)^2 + \rho \phi
+\LL = \kappa (\spacegrad \phi)^2 + \rho \phi.
 \end{equation*}
 %
 Let us see if we can recover the electrostatics equation from this with an action of
@@ -313,7 +313,7 @@ Substituting the assumed form of the solution from \eqnref{eqn:maxFieldLag:barph
 S =
     \int_{\Omega} dA \left( \kappa {(\spacegrad \overbar{\phi})}^2 + \rho \overbar{\phi} \right)
 +   \int_{\Omega} dA \left( 2 \kappa (\spacegrad \overbar{\phi}) \cdot \spacegrad n + \rho n \right)
-+   \kappa \int_{\Omega} dA {(\spacegrad n)}^2
++   \kappa \int_{\Omega} dA {(\spacegrad n)}^2.
 \end{equation*}
 %
 Again the idea here is to neglect the last integral, ignore the first integral which is fixed, and use integration by parts to eliminate derivatives of \(n\)
@@ -335,13 +335,13 @@ but how do we do integration by parts on such a beast?  We have partial derivati
 In the inner integral \(x_1\) can be considered constant, and one can consider \(n(x_1, x_2)\) to be a set function of just \(x_2\), say
 %
 \begin{equation*}
-m_{x_1}(x_2) = n(x_1, x_2)
+m_{x_1}(x_2) = n(x_1, x_2).
 \end{equation*}
 %
 Then \(dm/dx_2\) is our partial of \(n\)
 %
 \begin{equation*}
-\frac{d m_{x_1}(x_2)}{d x_2} = \PD{x_2}{n(x_1, x_2)}
+\frac{d m_{x_1}(x_2)}{d x_2} = \PD{x_2}{n(x_1, x_2)}.
 \end{equation*}
 %
 and we can apply integration by parts
@@ -400,7 +400,7 @@ We want to do the same for the general electrodynamic Lagrangian density (where 
 Using the same trick we introduce the desired solution and an variational function for each \(A^{\mu}\)
 %
 \begin{equation*}
-A^{\mu} = \barA^{\mu} + n^{\mu}
+A^{\mu} = \barA^{\mu} + n^{\mu}.
 \end{equation*}
 %
 \begin{equation}\label{eqn:lagrangianFieldDensity:240}
@@ -457,7 +457,7 @@ Where \(d^3 \widehat{x^{\mu}} = dx^\alpha dx^\beta dx^\gamma, \text{for} \{\alph
 Finally, setting the interior term equal to zero for an extreme value independent of \(n^{\nu}\) we have
 %
 \begin{equation*}
-\partial_{\mu} {F_{\barA}}^{\mu\nu} = \inv{\kappa} J^{\nu}
+\partial_{\mu} {F_{\barA}}^{\mu\nu} = \inv{\kappa} J^{\nu}.
 \end{equation*}
 %
 This fixes \(\kappa = c \epsilon_0\), and completes half of the recovery of Maxwell's equation from a Lagrangian
@@ -545,14 +545,14 @@ the \(-\kappa I/2\) coefficient can be dropped since it will not change the over
 As before we write our varied field in terms of the optimal solution, and the variational part
 %
 \begin{equation*}
-A^{\mu} = \barA^{\mu} + n^{\mu}
+A^{\mu} = \barA^{\mu} + n^{\mu}.
 \end{equation*}
 %
 and substitute into the Lagrangian
 %
 \begin{equation*}
 \LL = \LL_{\barA} + \LL_{n}
-+ \epsilon_{\mu\nu\alpha\beta} \left( \partial^{\mu} \barA^{\nu} \partial^{\alpha} n^{\beta} +\partial^{\mu} n^{\nu} \partial^{\alpha} \barA^{\beta} \right)
++ \epsilon_{\mu\nu\alpha\beta} \left( \partial^{\mu} \barA^{\nu} \partial^{\alpha} n^{\beta} +\partial^{\mu} n^{\nu} \partial^{\alpha} \barA^{\beta} \right).
 \end{equation*}
 %
 It is this last term that yields the variation part of our action
@@ -581,7 +581,7 @@ and we do the integration by parts on this
 We are close to recovering the trivector part of Maxwell's equation from this.  Equating the kernel to zero, so that it applies for all variations in \(n\) we have
 %
 \begin{equation*}
-\epsilon^{\mu\nu\alpha\beta} \partial_{\alpha} \left(\partial_{\mu} \barA_{\nu} \right) = 0
+\epsilon^{\mu\nu\alpha\beta} \partial_{\alpha} \left(\partial_{\mu} \barA_{\nu} \right) = 0.
 \end{equation*}
 %
 Since we can add zero to zero and not change the result, we can write
@@ -622,7 +622,7 @@ A_{\mu} = \barA_{\mu} + n_{\mu},
 and writing \(\LL_u = \kappa (\grad \wedge u)^2\), we can split this into three parts
 %
 \begin{equation*}
-\LL = \LL_{\barA} + J^{\sigma} \barA_{\sigma} + \LL_{n} + \delta \LL
+\LL = \LL_{\barA} + J^{\sigma} \barA_{\sigma} + \LL_{n} + \delta \LL.
 \end{equation*}
 %
 where
@@ -631,7 +631,7 @@ where
 \delta \LL =
 \kappa (\gamma^{\mu\nu})(\gamma^{\alpha\beta}) \partial_{\mu} \barA_{\nu} \partial_{\alpha} n_{\beta}
 +\kappa (\gamma^{\mu\nu})(\gamma^{\alpha\beta}) \partial_{\mu} n_{\nu} \partial_{\alpha} \barA_{\beta}
-+ J^{\sigma} n_{\sigma}
++ J^{\sigma} n_{\sigma}.
 \end{equation*}
 %
 It is important to note that all of the squared field Lagrangian terms
@@ -733,10 +733,10 @@ we have a good chunk of non-quantum electrodynamics described in a couple energy
 The solution of the action problem for these give us our field equation and Lorentz force law respectively. % (an additional non-electrodynamic potential has been added for generality).
 %
 \begin{equation*}
-\grad F = J / \epsilon_0 c
+\grad F = J / \epsilon_0 c.
 \end{equation*}
 \begin{equation*}
-\frac{dp}{d\tau} = q F \cdot v/c %+ \grad \phi - \frac{d}{d\tau}\grad_v \phi
+\frac{dp}{d\tau} = q F \cdot v/c %+ \grad \phi - \frac{d}{d\tau}\grad_v \phi.
 \end{equation*}
 %
 Now, to figure out everything else based on these still takes a lot of work, but it is nice to logically reduce things to the minimal set of fundamental relationships!
