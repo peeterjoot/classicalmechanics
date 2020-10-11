@@ -31,7 +31,7 @@ While these may not appear too much like the Lorentz force equation as we are us
 \begin{equation}\label{eqn:stressEnergyNoethers:40}
 \begin{aligned}
 \inv{c} \gpgradezero{ F \gamma_0 J } &= -\Bj \cdot \BE \\
-\inv{c} \gpgradezero{ F \gamma_k J } &= (\rho \BE + \Bj \cross \BB) \cdot \sigma_k.
+\inv{c} \gpgradezero{ F \gamma_k J } &= (\rho \BE + \Bj \cross \BB) \cdot \sigma_k,
 \end{aligned}
 \end{equation}
 %
@@ -124,7 +124,7 @@ how this spacetime translation results in the energy momentum tensor was found i
 % in byram & ...
 
 In Tong's treatment it is pointed out there is a symmetry for the Lagrangian
-if it is altered by a divergence.
+if it is altered by a divergence
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:120}
 \LL \rightarrow \LL + \partial_\mu F^\mu.
@@ -650,7 +650,7 @@ the simple wave equation.
 For a general Lagrangian \(\LL = \LL(\phi(x), \partial_\mu \phi(x))\) under shift by some vector \(a\)
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:shiftXbyA}
-x \rightarrow x' = x + a.
+x \rightarrow x' = x + a,
 \end{equation}
 %
 we have
@@ -1152,9 +1152,14 @@ obvious first candidate due to simplicity.
 %Lagrangian with a single field variable, and the next ones are for multiple field Lagrangians where
 %we will need to think through a generalization of the Noether conservation current equation first.
 %
-\begin{equation}\label{eqn:stressEnergyNoethers:1120}
-\LL = \inv{2} \partial_\mu \phi \partial^\mu \phi = \inv{2} \phi_\mu \phi^\mu = \inv{2} (\grad \phi)^2 = \inv{2}(\dotphi^2 - (\spacegrad \phi)^2).
-\end{equation}
+\begin{dmath}\label{eqn:stressEnergyNoethers:1120}
+\LL
+= \inv{2} \partial_\mu \phi \partial^\mu \phi
+= \inv{2} \phi_\mu \phi^\mu
+= \inv{2} \lr{\grad \phi}^2
+= \inv{2}
+\lr{\dotphi^2 - (\spacegrad \phi)^2}.
+\end{dmath}
 %
 In the explicit spacetime split above we have a split into terms that appear
 to correspond to kinetic and potential terms

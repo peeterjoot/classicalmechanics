@@ -270,7 +270,7 @@ Now as before consider the derivative
 In terms of the transformed coordinates the Euler-Lagrange equations require
 %
 \begin{equation}\label{eqn:eulerLagrange:282}
-\PD{f}{\LL} = \frac{d}{d\lambda} \PD{\fdot}{\LL}.
+\PD{f}{\LL} = \frac{d}{d\lambda} \PD{\fdot}{\LL},
 \end{equation}
 %
 and back-substitution into \eqnref{eqn:euler_lagrange:noethtmp1} gives
@@ -292,33 +292,25 @@ This can be written as a total derivative if
 %
 Thus given a constraint of sufficient continuity
 \begin{equation}\label{eqn:eulerLagrange:322}
-\begin{aligned}
-\PDD{\alpha}{q}{f} &= \PDD{q}{\alpha}{f} .
-\end{aligned}
+\PDD{\alpha}{q}{f} = \PDD{q}{\alpha}{f},
 \end{equation}
 %
 and also that \(\alphadot\) is not a function of \(\alpha\)
 %
 \begin{equation}\label{eqn:eulerLagrange:342}
-\begin{aligned}
-\PD{\alpha}{\alphadot} &= 0.
-\end{aligned}
+\PD{\alpha}{\alphadot} = 0,
 \end{equation}
 %
 we have from \eqnref{eqn:euler_lagrange:noethtmp2}
 \begin{equation}\label{eqn:eulerLagrange:362}
-\begin{aligned}
 \DD{\alpha}{\LL'}
-&= \frac{d}{d\lambda} \left( \PD{\fdot}{\LL} \PD{\alpha}{f} \right) .
-\end{aligned}
+= \frac{d}{d\lambda} \left( \PD{\fdot}{\LL} \PD{\alpha}{f} \right) .
 \end{equation}
 %
-Or
+This is
 \begin{equation}\label{eqn:eulerLagrange:382}
-\begin{aligned}
 \DD{\alpha}{\LL'}
-&= \frac{d}{d\lambda} \left( \PD{\qdot'}{\LL} \PD{\alpha}{q'} \right).
-\end{aligned}
+= \frac{d}{d\lambda} \left( \PD{\qdot'}{\LL} \PD{\alpha}{q'} \right).
 \end{equation}
 %
 The details of generalizing this to multiple variables are almost the same, but does not really add anything to the understanding.  This generalization is included as an appendix below for completeness, but the end result is
@@ -624,9 +616,7 @@ blundering through it myself as done here was required to really see where it wa
 Consider a general kinetic form and a possibly velocity dependent potential
 %
 \begin{equation}\label{eqn:eulerLagrange:842}
-\begin{aligned}
-\LL &= K - \phi = \inv{2} \sum_{ij} g_{ij} \qdot^i \qdot^j - \phi.
-\end{aligned}
+\LL = K - \phi = \inv{2} \sum_{ij} g_{ij} \qdot^i \qdot^j - \phi,
 \end{equation}
 %
 and form the Hamiltonian.  First calculate
@@ -638,22 +628,18 @@ and form the Hamiltonian.  First calculate
 \sum_i \qdot^i \PD{\qdot^i}{\LL}
 &= m \sum_{ij} g_{ij} \qdot^i \qdot^j - \sum_i \qdot^i \PD{\qdot^i}{\phi} \\
 &= 2 K - \sum_i \qdot^i \PD{\qdot^i}{\phi} \\
-%&= 2 K - \Bv \cdot \spacegrad_{\Bv} {\phi} .
+.
 \end{aligned}
 \end{equation}
 %
 So, the Hamiltonian is
 \begin{equation}\label{eqn:eulerLagrange:882}
-\begin{aligned}
-H &= K - \sum_i \qdot^i \PD{\qdot^i}{\phi} + \phi .
-\end{aligned}
+H = K - \sum_i \qdot^i \PD{\qdot^i}{\phi} + \phi .
 \end{equation}
 %
 For the less general case where \(\Bv^2 = g_{ij} \qdot^i \qdot^j\), this is
 \begin{equation}\label{eqn:eulerLagrange:902}
-\begin{aligned}
-H &= K - \Bv \cdot \spacegrad_{\Bv} {\phi} + \phi .
-\end{aligned}
+H = K - \Bv \cdot \spacegrad_{\Bv} {\phi} + \phi,
 \end{equation}
 %
 a conserved quantity with respect to the time derivative.
@@ -661,9 +647,7 @@ a conserved quantity with respect to the time derivative.
 Similarly, for squared proper velocity \(v^2 = g_{ij} \qdot^i \qdot^j\), and derivatives with respect to proper time
 %
 \begin{equation}\label{eqn:eulerLagrange:922}
-\begin{aligned}
-H &= K - v \cdot \grad_{v} {\phi} + \phi .
-\end{aligned}
+H = K - v \cdot \grad_{v} {\phi} + \phi,
 \end{equation}
 %
 is conserved with respect to proper time.
