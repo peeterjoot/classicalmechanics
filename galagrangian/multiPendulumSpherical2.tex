@@ -474,6 +474,8 @@ A_1 \PD{\theta_2}{A_2}^\dagger
 %
 This has exactly the same form as the diagonal term, so summing over all terms we get for the position gradient components of the Euler-Lagrange equation just
 %
+\begin{subequations}
+\label{eqn:multiPendulumSpherical2:boo41aa}
 \begin{equation}\label{eqn:multiPendulumSpherical2:boo41}
 \begin{aligned}
 \PD{\theta_a}{\LL}
@@ -488,7 +490,7 @@ This has exactly the same form as the diagonal term, so summing over all terms w
 A_k \PD{\theta_a}{A_a}^\dagger
 }
 \dot{\BTheta}_a
--g \mu_a l_a \sin\theta_a.
+-g \mu_a l_a \sin\theta_a,
 \end{aligned}
 \end{equation}
 %
@@ -508,18 +510,21 @@ A_k \PD{\phi_a}{A_a}^\dagger
 \dot{\BTheta}_a.
 \end{aligned}
 \end{equation}
+\end{subequations}
 %
 The only thing that remains to do is evaluate the \(\gpgradezero{A_k \PDi{\phi_a}{A_a}^\dagger}\) matrices.
 
 It should be possible but it is tedious to calculate the block matrix derivative terms from the \(A_a\) partials using
 %
+\begin{subequations}
+\label{eqn:multiPendulumSpherical2:boo10a}
 \begin{equation}\label{eqn:multiPendulumSpherical2:boo10}
 \begin{aligned}
 \PD{\theta_a}{A_a} &=
 \begin{bmatrix}
 -\Be_3 e^{j_a \theta_a} \\
 \Be_2 e^{i \phi_a} C_{\theta_a}
-\end{bmatrix}.
+\end{bmatrix},
 \end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:multiPendulumSpherical2:boo11}
@@ -532,9 +537,12 @@ It should be possible but it is tedious to calculate the block matrix derivative
 \end{bmatrix}.
 \end{aligned}
 \end{equation}
+\end{subequations}
 %
 However multiplying this out and reducing is a bit tedious and would be a better job for a symbolic algebra package.  With \eqnref{eqn:multiPendulumSpherical2:boo20} available to use, one gets easily
 %
+\begin{subequations}
+\label{eqn:multiPendulumSpherical2:boo51a}
 \begin{equation}\label{eqn:multiPendulumSpherical2:boo51}
 \begin{aligned}
 \gpgradezero{ A_k \PD{\theta_a}{A_a}^\dagger }
@@ -544,7 +552,7 @@ However multiplying this out and reducing is a bit tedious and would be a better
 -S_{\phi_a - \phi_k} C_{\theta_k} C_{\theta_a} \\
 -S_{\phi_a - \phi_k} S_{\theta_a} S_{\theta_k} &
 C_{\phi_a - \phi_k} S_{\theta_k} C_{\theta_a}
-\end{bmatrix}.
+\end{bmatrix},
 \end{aligned}
 \end{equation}
 %
@@ -560,6 +568,7 @@ C_{\phi_a - \phi_k} C_{\theta_a} S_{\theta_k} &
 \end{bmatrix}.
 \end{aligned}
 \end{equation}
+\end{subequations}
 %
 The right hand side of the Euler-Lagrange equations now becomes
 %
@@ -598,7 +607,7 @@ Having calculated the Hamiltonian equations for the multiple mass planar pendulu
 \begin{bmatrix}
 P_{\BTheta} \\
 \BTheta
-\end{bmatrix}.
+\end{bmatrix},
 \end{aligned}
 \end{equation}
 %
@@ -684,7 +693,7 @@ With the introduction of a column vector of vectors (where we multiply matrices 
 \begin{bmatrix}
 \theta_k \\
 \phi_k
-\end{bmatrix}.
+\end{bmatrix},
 \end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:multiPendulumSpherical2:zoo2}
@@ -818,7 +827,7 @@ For the position gradient portion of the Euler-Lagrange equations \eqnref{eqn:mu
 1 \\
 0
 \end{bmatrix}
-\end{bmatrix}}_r.
+\end{bmatrix}}_r,
 \end{aligned}
 \end{equation}
 %

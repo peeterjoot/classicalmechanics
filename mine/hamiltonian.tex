@@ -33,7 +33,7 @@ Starting with the Lagrangian formalism the Hamiltonian can be found as a conserv
 We can therefore form the difference
 %
 \begin{equation}\label{eqn:hamiltonian:foo1}
-\frac{d}{dt} \left( \qdot^i \PD{\qdot^i}{\LL} -\LL \right) = 0.
+\frac{d}{dt} \left( \qdot^i \PD{\qdot^i}{\LL} -\LL \right) = 0,
 \end{equation}
 %
 and find that this quantity, labeled H, is a constant of motion for the system
@@ -92,7 +92,7 @@ We can now define configuration space position and velocity gradients
 \begin{equation}\label{eqn:hamiltonian:foo6}
 \begin{aligned}
 \grad &\equiv e^i \PD{q^i}{} \\
-\grad_v &\equiv f^i \PD{\qdot^i}{}.
+\grad_v &\equiv f^i \PD{\qdot^i}{},
 \end{aligned}
 \end{equation}
 %
@@ -113,13 +113,13 @@ H = v \cdot P - \LL.
 We want to take partials of \eqnref{eqn:hamiltonian:foo2} with respect to \(P_i\) and \(q^i\).  In terms of the canonical momenta we want to differentiate
 %
 \begin{equation}\label{eqn:hamiltonian:hoo1}
-H \equiv \qdot^i P_i -\LL(q^i, \qdot^i, t).
+H \equiv \qdot^i P_i -\LL(q^i, \qdot^i, t),
 \end{equation}
 %
 for the \(P_i\) partial we have
 %
 \begin{equation}\label{eqn:hamiltonian:83}
-\PD{P_i}{H} = \qdot^i.
+\PD{P_i}{H} = \qdot^i,
 \end{equation}
 %
 and for the \(q^i\) partial
@@ -172,12 +172,10 @@ dH &=
 A term by term comparison to the total differential written out explicitly
 %
 \begin{equation}\label{eqn:hamiltonian:hoo4}
-\begin{aligned}
-dH &=
+dH =
 \PD{q^i}{H} d q^i
 +\PD{P_i}{H} d P_i
-+\PD{t}{H} dt.
-\end{aligned}
++\PD{t}{H} dt,
 \end{equation}
 %
 allows the Hamiltonian equations to be picked off.
@@ -259,7 +257,7 @@ In this case our matrix is nilpotent degree 2 so we can exponentiate only requir
 e^{A t} = I + A t.
 \end{equation}
 %
-specifically
+Specifically
 %
 \begin{equation}\label{eqn:hamiltonian:boo7}
 \begin{aligned}
@@ -469,7 +467,7 @@ z
 \end{aligned}
 \end{equation}
 %
-Again something that we could have gotten in many easier ways.  Using the result we see that the solution to \eqnref{eqn:hamiltonian:roo6} in matrix form, again with \(A = \inv{m}\begin{bmatrix}0 & 0 \\ 1 & 0\end{bmatrix}\) is
+Again something that we could have gotten in many easier ways.  Using the result we see that the solution to \eqnref{eqn:hamiltonian:roo6} in matrix form, again with \(A = \inv{m}\begin{bsmallmatrix}0 & 0 \\ 1 & 0\end{bsmallmatrix},\) is
 %
 \begin{equation}\label{eqn:hamiltonian:roo9}
 \begin{aligned}
@@ -769,7 +767,7 @@ Q_s \\
 This first change of variables is nice since it groups the two factors \(k\) and \(m\) into a reciprocal pair.  Since only the ratio is significant to the kinetics it is nice to have that explicit.  Since \(\sqrt{k/m}\) is in fact the angular frequency, we can define
 %
 \begin{equation}\label{eqn:hamiltonian:zoo6}
-\omega \equiv \sqrt{\frac{k}{m}}.
+\omega \equiv \sqrt{\frac{k}{m}},
 \end{equation}
 %
 and our system is reduced to
@@ -839,16 +837,14 @@ Q_s \\
 \end{aligned}
 \end{equation}
 %
-We can now solve the system directly.  Writing \(\Bz_s = \bigl(\begin{smallmatrix} P_s \\ Q_s \\ \end{smallmatrix}\bigr)\), this is just
+We can now solve the system directly.  Writing \(\Bz_s = \begin{bsmallmatrix} P_s \\ Q_s \\ \end{bsmallmatrix}\), this is just
 %
 \begin{equation}\label{eqn:hamiltonian:zoo11}
-\begin{aligned}
 \Bz_s(t)
 =
 e^{\calI \omega t} \Bz_s(0)
-&=
+=
 \left( I \cos(\omega t) + \calI \sin(\omega t) \right) \Bz_s(0).
-\end{aligned}
 \end{equation}
 %
 With just the scaling giving both the simple Hamiltonian, and a simple solution, what is the advantage of the further change of variables that mixes (rotates in phase space by 45 degrees with a factor of two scaling) the momentum and position coordinates?  That second transformation is
@@ -936,7 +932,7 @@ With a change of variables
 \begin{equation}\label{eqn:hamiltonian:noo2}
 \begin{aligned}
 x &= r_2 - r_1 \\
-y &= r_2.
+y &= r_2,
 \end{aligned}
 \end{equation}
 %
@@ -1049,7 +1045,7 @@ Finally, evaluation of the Hamiltonian equations we have
 \begin{aligned}
 \sigma_j \PD{P_x^j}{H} &= \mathbf{\xdot} \\
 &= \sigma_j \left( \inv{m_1} P_x^j + \inv{m_2} (P_x^j + P_y^j) \right) \\
-&= \inv{m_1} \BP_x + \inv{m_2} (\BP_x + \BP_y).
+&= \inv{m_1} \BP_x + \inv{m_2} (\BP_x + \BP_y)
 \end{aligned}
 \end{equation}
 %
@@ -1057,7 +1053,7 @@ Finally, evaluation of the Hamiltonian equations we have
 \begin{aligned}
 \sigma_j \PD{P_y^j}{H} &= \mathbf{\ydot} \\
 &= \sigma_j \inv{m_2} (P_x^j + P_y^j) \\
-&= \inv{m_2} (\BP_x + \BP_y).
+&= \inv{m_2} (\BP_x + \BP_y)
 \end{aligned}
 \end{equation}
 %
@@ -1065,7 +1061,7 @@ Finally, evaluation of the Hamiltonian equations we have
 \begin{aligned}
 \sigma_j \PD{x^j}{H} &= -\mathbf{\dot{P}}_x \\
 &= -\sigma_j \PD{x^j}{\phi} \\
-&= -\spacegrad_{\Bx} \phi(\Bx).
+&= -\spacegrad_{\Bx} \phi(\Bx)
 \end{aligned}
 \end{equation}
 %
@@ -1163,15 +1159,13 @@ H &= \inv{2 m_1} {\Bp_1}^2 +\inv{2 m_2} {\Bp_2}^2 + \phi_{21}.
 There is however an undesirable asymmetry to this expression, in particular a formulation that extends to multiple particles seems desirable.  Let us write instead a slight variation
 %
 \begin{equation}\label{eqn:hamiltonian:moo6}
-\phi_{ij} = - \frac{G m_i m_j}{\Abs{\Br_i - \Br_j}}.
+\phi_{ij} = - \frac{G m_i m_j}{\Abs{\Br_i - \Br_j}},
 \end{equation}
 %
 and form a scaled by two double summation over all pairs of potentials
 %
 \begin{equation}\label{eqn:hamiltonian:moo7}
-\begin{aligned}
-\LL &= \sum_i \inv{2} m_i {\Bv_i}^2 - \inv{2} \sum_{i \ne j} \phi_{ij}.
-\end{aligned}
+\LL = \sum_i \inv{2} m_i {\Bv_i}^2 - \inv{2} \sum_{i \ne j} \phi_{ij}.
 \end{equation}
 %
 %Again since \(\), for this to have meaning an agreement to evaluate the Euler-Lagrange partials according to the following ``positive'' sense is required
@@ -1188,13 +1182,15 @@ H = \sum_i \inv{2 m_i} {\Bp_i}^2 + \inv{2} \sum_{i \ne j} \phi_{ij}.
 %
 This leaves us finally in position to evaluate the Hamiltonian equations, but the result of doing so is rudely nothing more than the Newtonian equations in coordinate form.  We get, for the \(k\)th component of the \(i\)th particle
 %
+\begin{subequations}
+\label{eqn:hamiltonian:moo10a}
 \begin{equation}\label{eqn:hamiltonian:moo10}
-\PD{{p^k}_i}{H} = {\dot{x}^k}_i = \inv{m_i} {p^k}_i.
+\PD{{p^k}_i}{H} = {\dot{x}^k}_i = \inv{m_i} {p^k}_i,
 \end{equation}
-%
 \begin{equation}\label{eqn:hamiltonian:moo11}
 \PD{{x^k}_i}{H} = -{\dot{p}^k}_i = G \sum_{j \ne i} m_i m_j \frac{{x^k}_i -{x^k}_j}{\Abs{\Br_i - \Br_j}^3}.
 \end{equation}
+\end{subequations}
 %
 The state space vector for this system of equations is brutally ugly, and could be put into the following form for example
 %
