@@ -40,11 +40,12 @@ Let us compute derivatives of the unit vector
 %
 This can be done with both the left and right factorization of \(\Be_3\), and are respectively
 %
+\begin{subequations}
+\label{eqn:sPolarMultiPendulum:zoo3a}
 \begin{equation}\label{eqn:sPolarMultiPendulum:zoo3}
-\begin{aligned}
 \dot{\zcap}
-&= \Be_3 \left( j \thetadot e^{j\theta} + \frac{dj}{dt} \sin\theta \right) \\
-&=
+= \Be_3 \left( j \thetadot e^{j\theta} + \frac{dj}{dt} \sin\theta \right) 
+=
 \Be_3
 \begin{bmatrix}
 j e^{j\theta} & \sin\theta
@@ -53,14 +54,12 @@ j e^{j\theta} & \sin\theta
 \begin{bmatrix}
 \theta \\
 j
-\end{bmatrix}.
-\end{aligned}
+\end{bmatrix},
 \end{equation}
-%
 \begin{equation}\label{eqn:sPolarMultiPendulum:zoo4}
-\begin{aligned}
-\dot{\zcap} &= \left( -j \thetadot e^{-j\theta} - \frac{dj}{dt} \sin\theta \right) \Be_3 \\
-&=
+\dot{\zcap} 
+= \left( -j \thetadot e^{-j\theta} - \frac{dj}{dt} \sin\theta \right) \Be_3 
+=
 \left(
 \frac{d}{dt}
 \begin{bmatrix}
@@ -72,8 +71,8 @@ j
 \sin\theta
 \end{bmatrix}
 \Be_3.
-\end{aligned}
 \end{equation}
+\end{subequations}
 %
 These derivatives have been grouped into a matrix factors that allow a natural seeming conjugate operation to be defined.  That is for a matrix of multivector elements \(a_{ij}\)
 %
@@ -81,7 +80,7 @@ These derivatives have been grouped into a matrix factors that allow a natural s
 A =
 \begin{bmatrix}
 a_{ij}
-\end{bmatrix}.
+\end{bmatrix},
 \end{equation}
 %
 define a conjugate matrix, as the transpose of the reversed elements
@@ -289,13 +288,15 @@ Observe that the order of products in this expansion is specifically ordered, si
 
 The potential in the multiple particle case is also fairly straightforward to compute.  Consider the two particle case to illustrate the pattern.   Using the lowest point as the potential reference we have
 %
-\begin{equation}\label{eqn:sPolarMultiPendulum:zoo18}
-\phi' = g \sum m_i h_i
+\begin{dmath}\label{eqn:sPolarMultiPendulum:zoo18}
+\phi' 
+= g \sum m_i h_i
 % two:
 = m_1 r_1 (1 + \cos\theta_1)
 + m_2 \left( r_1(1 + \cos\theta_1) + r_2( 1 + \cos\theta_2) \right)
-%+ m_3 \left( r_1(1 + \cos\theta_1) + r_2( 1 + \cos\theta_2) + r_3( 1 + \cos\theta_3) \right).
-\end{equation}
+%+ m_3 \left( r_1(1 + \cos\theta_1) + r_2( 1 + \cos\theta_2) + r_3( 1 + \cos\theta_3) \right)
+.
+\end{dmath}
 %
 Alternately, dropping all the constant terms (using the horizon as the potential reference) we have for the general case
 %

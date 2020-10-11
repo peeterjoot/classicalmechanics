@@ -1208,7 +1208,8 @@ How about the conservation equations when written in full.  The first is
 0
 &= \partial_\mu {T^\mu}_0 \\
 &=
-\inv{2} \partial_t (\dotphi^2 + \phi_x^2 + \phi_y^2 + \phi_z^2)
+\inv{2} \partial_t 
+\lr{ \dotphi^2 + \phi_x^2 + \phi_y^2 + \phi_z^2 }
 -\partial_x(\phi_x \dotphi )
 -\partial_y(\phi_y \dotphi )
 -\partial_z(\phi_z \dotphi ) \\
@@ -1565,7 +1566,8 @@ To verify this let us derive the tensor relation of \eqnref{eqn:stressEnergyNoet
 \right) \\
 &= \inv{2} \left( \partial_\nu \phi \partial^\mu \phi + \partial^\mu \phi \partial_\nu \phi - {\delta_\nu}^\mu (\partial^\alpha \phi \partial_\alpha \phi) \right) \\
 &= \partial_\nu \phi \partial^\mu \phi - {\delta_\nu}^\mu \LL
-\qedmarker.
+.
+\qedmarker
 \end{aligned}
 \end{equation}
 %
@@ -1617,7 +1619,8 @@ T(\gamma_0) \cdot \gamma_0
 &=
 \dotphi^2 - \inv{2}( \dotphi^2 - (\spacegrad \phi)^2 ) \\
 &=
-\inv{2} ( \dotphi^2 + (\spacegrad \phi)^2 ) .
+\inv{2} \lr{ \dotphi^2 + (\spacegrad \phi)^2 }
+.
 \end{aligned}
 \end{equation}
 %
@@ -1634,16 +1637,12 @@ v
 %
 We have
 \begin{equation}\label{eqn:stressEnergyNoethers:1580}
-\begin{aligned}
-v \cdot \gamma_0 &= \frac{dt}{d\tau} = \gamma.
-\end{aligned}
+v \cdot \gamma_0 = \frac{dt}{d\tau} = \gamma,
 \end{equation}
 %
 and
 \begin{equation}\label{eqn:stressEnergyNoethers:1600}
-\begin{aligned}
-v \wedge \gamma_0 &= \frac{dt}{d\tau} \sigma_k \frac{dx^k}{dt}.
-\end{aligned}
+v \wedge \gamma_0 = \frac{dt}{d\tau} \sigma_k \frac{dx^k}{dt}.
 \end{equation}
 %
 Or
@@ -2156,7 +2155,7 @@ original reason for examining this canonical energy momentum tensor concept in d
 Recall that the Lagrangian for the vector grades of Maxwell's equation
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:maxwell}
-\grad F = J/\epsilon_0 c.
+\grad F = J/\epsilon_0 c,
 \end{equation}
 %
 is of the form
@@ -2257,9 +2256,9 @@ T(\gamma_\nu) \cdot \gamma^\mu \\
 %
 In particular, note that this is not the familiar symmetric tensor from the Poynting relations.
 %
-\subsection{Expansion in terms of \texorpdfstring{\(\BE\) and \(\BB\).}{E and B}}
-%
-TODO.
+%\subsection{Expansion in terms of \texorpdfstring{\(\BE\) and \(\BB\).}{E and B}}
+%%
+%TODO.
 %
 \subsection{Adjoint.}
 %
