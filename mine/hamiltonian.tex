@@ -1549,25 +1549,25 @@ m l^2 \omega & 0 \\
 &=
 \left(
 \cos(\omega t)
-\begin{bmatrix}
+\begin{bsmallmatrix}
 1 & 0 \\
 0 & 1
-\end{bmatrix}
+\end{bsmallmatrix}
 +\sin(\omega t)
-\begin{bmatrix}
+\begin{bsmallmatrix}
 0 & -1 \\
 1 & 0
-\end{bmatrix}
+\end{bsmallmatrix}
 \right)
-\left(\Bz_0 +\inv{\omega} \begin{bmatrix}
+\left(\Bz_0 +\inv{\omega} \begin{bsmallmatrix}
 0 & -1 \\
 1 & 0
-\end{bmatrix}
+\end{bsmallmatrix}
 \Bb \right)
-+\inv{\omega} \begin{bmatrix}
++\inv{\omega} \begin{bsmallmatrix}
 0 & -1 \\
 1 & 0
-\end{bmatrix}
+\end{bsmallmatrix}
 \Bb.
 \end{aligned}
 \end{equation}
@@ -1577,18 +1577,19 @@ Expanding out the \(\Bb\) terms and doing the same for above the horizontal we h
 \begin{equation}\label{eqn:hamiltonian:yoo21}
 \begin{aligned}
 \Bz_{\text{low}}(t)
-&=
+&
+=
 \left(
 \cos(\omega t)
-\begin{bmatrix}
+\begin{bsmallmatrix}
 1 & 0 \\
 0 & 1
-\end{bmatrix}
+\end{bsmallmatrix}
 +\sin(\omega t)
-\begin{bmatrix}
+\begin{bsmallmatrix}
 0 & -1 \\
 1 & 0
-\end{bmatrix}
+\end{bsmallmatrix}
 \right)
 \left(
    \Bz_0
@@ -1598,8 +1599,11 @@ Expanding out the \(\Bb\) terms and doing the same for above the horizontal we h
    \frac{\dot{\theta}_0}{m l^2} \\
    \frac{g}{l} \sin\theta_0 \\
    \end{bmatrix}
-\right) \\
--&\quad \inv{\omega^2}
+\right) 
+%\\
+-
+%&\quad 
+\inv{\omega^2}
 \begin{bmatrix}
 \frac{\dot{\theta}_0}{m l^2} \\
 \frac{g}{l} \sin\theta_0 \\
@@ -1608,15 +1612,15 @@ Expanding out the \(\Bb\) terms and doing the same for above the horizontal we h
 &=
 \left(
    \cosh(\omega t)
-   \begin{bmatrix}
+   \begin{bsmallmatrix}
    1 & 0 \\
    0 & 1
-   \end{bmatrix}
+   \end{bsmallmatrix}
    +\sinh(\omega t)
-   \begin{bmatrix}
+   \begin{bsmallmatrix}
    0 & 1 \\
    1 & 0
-   \end{bmatrix}
+   \end{bsmallmatrix}
 \right)
 \left(
    \Bz_0
@@ -1625,8 +1629,12 @@ Expanding out the \(\Bb\) terms and doing the same for above the horizontal we h
    \frac{\dot{\theta}_0}{m l^2} \\
    \frac{g}{l} \sin\theta_0 \\
    \end{bmatrix}
-\right) \\
-+&\quad \inv{\omega^2}
+\right) 
+%\\
++
+%&
+%\quad 
+\inv{\omega^2}
 \begin{bmatrix}
 \frac{\dot{\theta}_0}{m l^2} \\
 \frac{g}{l} \sin\theta_0 \\
@@ -2140,7 +2148,7 @@ Then the relation between the conjugate momenta in vector form
 \begin{bmatrix}
 P_{\theta_1} \\
 P_{\theta_2}
-\end{bmatrix}.
+\end{bmatrix},
 \end{aligned}
 \end{equation}
 %
@@ -2184,9 +2192,11 @@ Writing \(\Br\) for this \(1x2\) matrix, we can utilize the associative property
 \begin{equation}\label{eqn:hamiltonian:voo5m}
 \Abs{\dot{z}_2}^2
 =
-(\Br \dot{\BTheta}) (\overbar{\Br} \dot{\BTheta})
+\lr{ \Br \dot{\BTheta} }
+\lr{ \overbar{\Br} \dot{\BTheta} }
 =
-\dot{\BTheta}^\T (\Br^\T \overbar{\Br}) \dot{\BTheta}.
+\dot{\BTheta}^\T 
+\lr{ \Br^\T \overbar{\Br} } \dot{\BTheta}.
 \end{equation}
 %
 The Lagrangian kinetic can all now be grouped into a single quadratic form
@@ -2425,11 +2435,12 @@ If we introduce a phase space position gradients
 \grad &\equiv
 {\begin{bmatrix}
 \PD{\theta_1}{} & \cdots & \PD{\theta_N}{}
-\end{bmatrix}}^\T \\
+\end{bmatrix}}^\T
 %\grad_{\Bp} &\equiv
 %{\begin{bmatrix}
 %\PD{P_{\theta_1}}{} & \cdots & \PD{P_{\theta_N}}{}
-%\end{bmatrix}}^\T.
+%\end{bmatrix}}^\T
+.
 \end{aligned}
 \end{equation}
 %
@@ -3256,7 +3267,7 @@ C &=
 \begin{bmatrix}
 M l_1 g \cos\theta_1 & 0 \\
 0 & m_2 l_2 g \cos\theta_2
-\end{bmatrix} .
+\end{bmatrix}
 \end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:hamiltonian:663d}
@@ -3297,9 +3308,9 @@ where these are all related by the first order matrix equation
 %
 Wow, even to just write down the equations required to get a linear approximation of the two pendulum system is horrendously messy, and this is not even trying to solve it.  Numerical and or symbolic computation is really called for here.  If one elected to do this numerically, which looks pretty much mandatory since the analytic way did not turn out to be simple even for just the two pendulum system, then one is probably better off going all the way back to \eqnref{eqn:hamiltonian:veryGeneral} and just calculating the increment for the trajectory using a very small time increment, and do this repeatedly (i.e. do a zeroth order numerical procedure instead of the first order which turns out much more complicated).
 %
-\subsection{Dangling mass connected by string to another.}
-%
-TODO.
+%\subsection{Dangling mass connected by string to another.}
+%%
+%TODO.
 %
 % not sure what I wanted to do for these two.  Do not quite fit with the rest being so specific.
 %\subsection{Particle in non-velocity dependent potential}
