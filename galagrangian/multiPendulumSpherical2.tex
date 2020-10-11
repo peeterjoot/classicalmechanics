@@ -194,18 +194,16 @@ l_k l_1 \gpgradezero{A_k A_1^\dagger} & l_k l_2 \gpgradezero{A_k A_2^\dagger} & 
 Pulling in the summation over \(m_k\) we have
 %
 \begin{equation}\label{eqn:multiPendulumSpherical2:boo15}
-\begin{aligned}
 \sum_k m_k
 \dot{\BTheta}^\dagger
 B_k B_k^\dagger
 \dot{\BTheta}
-&=
+=
 \dot{\BTheta}^\dagger
 {\begin{bmatrix}
 \mu_{\max(r,c)} l_r l_c \gpgradezero{A_r A_c^\dagger}
 \end{bmatrix}}_{rc}
 \dot{\BTheta}.
-\end{aligned}
 \end{equation}
 %
 It appears justifiable to label the \(\mu_{\max(r,c)} l_r l_c\) factors of the angular velocity matrices as moments of inertia in a generalized sense.  Using this block matrix form, and scalar selection, we can now write the Lagrangian in a slightly tidier form
@@ -477,9 +475,8 @@ This has exactly the same form as the diagonal term, so summing over all terms w
 \begin{subequations}
 \label{eqn:multiPendulumSpherical2:boo41aa}
 \begin{equation}\label{eqn:multiPendulumSpherical2:boo41}
-\begin{aligned}
 \PD{\theta_a}{\LL}
-&=
+=
 %\mu_a {l_a}^2 {\dot{\BTheta}_a}^\T \gpgradezero{ A_a \PD{\theta_a}{A_a}^\dagger} \dot{\BTheta}_a
 %+
 %\sum_{k \ne a}
@@ -491,13 +488,11 @@ A_k \PD{\theta_a}{A_a}^\dagger
 }
 \dot{\BTheta}_a
 -g \mu_a l_a \sin\theta_a,
-\end{aligned}
 \end{equation}
 %
 \begin{equation}\label{eqn:multiPendulumSpherical2:boo40}
-\begin{aligned}
 \PD{\phi_a}{\LL}
-&=
+=
 %\mu_a {l_a}^2 {\dot{\BTheta}_a}^\T \gpgradezero{ A_a \PD{\phi_a}{A_a}^\dagger} \dot{\BTheta}_a
 %+
 %\sum_{k \ne a}
@@ -508,7 +503,6 @@ A_k \PD{\theta_a}{A_a}^\dagger
 A_k \PD{\phi_a}{A_a}^\dagger
 }
 \dot{\BTheta}_a.
-\end{aligned}
 \end{equation}
 \end{subequations}
 %
@@ -602,25 +596,21 @@ Having calculated the Hamiltonian equations for the multiple mass planar pendulu
 , doing so for the spherical pendulum can now be done by inspection.  With the introduction of a phase space vector for the system using the conjugate momenta (for angles where these conjugate momenta are non-singular)
 %
 \begin{equation}\label{eqn:multiPendulumSpherical2:boo60}
-\begin{aligned}
 \Bz =
 \begin{bmatrix}
-P_{\BTheta} \\
+P_{\BTheta} 
 \BTheta
 \end{bmatrix},
-\end{aligned}
 \end{equation}
 %
 we can write the Hamiltonian equations
 %
 \begin{equation}\label{eqn:multiPendulumSpherical2:boo61}
-\begin{aligned}
 \frac{d\Bz}{dt} =
 \begin{bmatrix}
-\grad_{\BTheta} \LL \\
+\grad_{\BTheta} \LL 
 \gpgradezero{Q}^{-1} P_{\BTheta}
 \end{bmatrix}.
-\end{aligned}
 \end{equation}
 %
 The position gradient is given explicitly in \eqnref{eqn:multiPendulumSpherical2:boo55}, and that can be substituted here.  That gradient is expressed in terms of \(\dot{\BTheta}_k\) and not the conjugate momenta, but the mapping required to express the whole system in terms of the conjugate momenta is simple enough

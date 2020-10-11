@@ -57,23 +57,19 @@ S + \delta S
 Neglecting any second or higher order terms the change in the action from the assumed solution is
 %
 \begin{equation}\label{eqn:rotationCurrents:EOF3}
-\begin{aligned}
 \delta S
-&=
+=
 \int d^4 x \left( \overbar{\phi} \PD{\phi}{\LL} +\partial_\mu \overbar{\phi} \PD{(\partial_\mu \phi)}{\LL} \right).
-\end{aligned}
 \end{equation}
 %
 This is now integrable by parts yielding
 %
 \begin{equation}\label{eqn:rotationCurrents:EOF4}
-\begin{aligned}
 \delta S
-&=
+=
 \int d^3 x \left( {\left. \overbar{\phi} \partial_\mu \LL \right\vert}_{\partial x^\mu} \right)
 +
 \int d^4 x \overbar{\phi} \left( \PD{\phi}{\LL} - \partial_\mu \PD{(\partial_\mu \phi)}{\LL} \right).
-\end{aligned}
 \end{equation}
 %
 Here \(d^3 x\) is taken to mean that part of the integration not including \(dx_\mu\).  The field \(\overbar{\phi}\) is always required to vanish on the boundary as in the dynamic Lagrangian arguments, so the first integral is zero.  If the remainder is zero for all fields \(\overbar{\phi}\), then the inner term must be zero, and we the field Euler-Lagrange equations as a result
@@ -85,11 +81,9 @@ Here \(d^3 x\) is taken to mean that part of the integration not including \(dx_
 When we have multiple field variables, say \(A_\nu\), the chain rule expansion leading to \eqnref{eqn:rotationCurrents:EOF3} will have to be modified to sum over all the field variables, and we end up instead with
 %
 \begin{equation}\label{eqn:rotationCurrents:EOF6}
-\begin{aligned}
 \delta S
-&=
+=
 \int d^4 x \sum_{\nu} \overbar{A_\nu} \left( \PD{A_\nu}{\LL} - \partial_\mu \PD{(\partial_\mu A_\nu)}{\LL} \right).
-\end{aligned}
 \end{equation}
 %
 So for \(\delta S = 0\) for all \(\overbar{A}_\nu\) we have a set of equations, one for each \(\nu\)
@@ -109,13 +103,11 @@ The single parameter Noether conservation equation again is mainly application o
 Examining the change of \(\LL'\) with \(\theta\) we have
 %
 \begin{equation}\label{eqn:rotationCurrents:55}
-\begin{aligned}
 \frac{d \LL'}{d \theta}
-&=
+=
 \PD{\phi'}{\LL} \PD{\theta}{\phi'}
 +\PD{(\partial_\mu \phi')}{\LL}
 \PD{\theta}{(\partial_\mu \phi')}.
-\end{aligned}
 \end{equation}
 %
 For the last term we can switch up the order of differentiation
@@ -133,12 +125,10 @@ For the last term we can switch up the order of differentiation
 Additionally, with substitution of the Euler-Lagrange equations in the first term we have
 %
 \begin{equation}\label{eqn:rotationCurrents:95}
-\begin{aligned}
 \frac{d \LL'}{d \theta}
-&=
+=
 \left( \PD{x^\mu}{} \PD{(\partial_\mu \phi')}{\LL} \right) \PD{\theta}{\phi'}
 +\PD{(\partial_\mu \phi')}{\LL} \PD{x^\mu}{} \PD{\theta}{\phi'} .
-\end{aligned}
 \end{equation}
 %
 But this can be directly anti-differentiated yielding the Noether conservation equation
@@ -204,10 +194,8 @@ The fact that this translation necessarily results in the same field equations i
 With partials written \(\partial_m f = f_m\) we summarize the field Euler-Lagrange equations using the variational derivative
 %
 \begin{equation}\label{eqn:rotationCurrents:transCurrent3}
-\begin{aligned}
-\frac{\delta }{\delta \phi} &=
+\frac{\delta }{\delta \phi} =
 \frac{\partial }{\partial \phi} - \sum_m \partial_m \frac{\partial }{\partial \phi_m}.
-\end{aligned}
 \end{equation}
 %
 Where the extremum condition \({\delta \LL}/{\delta \phi} = 0\) produces the field equations.
@@ -215,10 +203,8 @@ Where the extremum condition \({\delta \LL}/{\delta \phi} = 0\) produces the fie
 For the Coulomb Lagrangian without (spatial) translation, we have
 %
 \begin{equation}\label{eqn:rotationCurrents:transCurrent4}
-\begin{aligned}
-\frac{\delta \LL}{\delta \phi} &=
+\frac{\delta \LL}{\delta \phi} =
 - \inv{\epsilon_0}\rho - \partial_{mm} \phi.
-\end{aligned}
 \end{equation}
 %
 So the extremum condition \({\delta \LL}/{\delta \phi} = 0\) gives
@@ -270,11 +256,9 @@ We see that the \(\phi\) partials select only \(\rho\) derivatives whereas the \
 This example illustrates that we have a symmetry provided we can ``commute'' the variational derivative with the gradient
 %
 \begin{equation}\label{eqn:rotationCurrents:transCurrent7}
-\begin{aligned}
 \frac{\delta }{\delta \phi} \Ba \cdot \spacegrad \LL
-&=
+=
 \Ba \cdot \spacegrad \frac{\delta \LL}{\delta \phi}.
-\end{aligned}
 \end{equation}
 %
 Since \({\delta \LL}/{\delta \phi} = 0\) by construction, the resulting field equations are unaltered by such a modification.
@@ -482,10 +466,8 @@ a \cdot \left(
 This dotted with quantity is the adjoint of the canonical energy momentum tensor
 %
 \begin{equation}\label{eqn:rotationCurrents:hoo5}
-\begin{aligned}
-\overbar{T}(\grad) &=
+\overbar{T}(\grad) =
 \inv{2} \gpgradeone{ v^\beta \lrgrad \Pi_\beta + \grad (\Pi_\beta v^\beta) } - \grad \LL.
-\end{aligned}
 \end{equation}
 %
 This can however, be expanded further.  First tackling the
@@ -506,16 +488,14 @@ bidirectional gradient vector term we can utilize the property that the reverse 
 In the remaining term, using the Hestenes overdot notation clarify the scope of the operator, we have
 %
 \begin{equation}\label{eqn:rotationCurrents:315}
-\begin{aligned}
 \overbar{T}(\grad)
-&=
+=
 \inv{2} \left(
 \gpgradeone{ v^\beta (\grad \Pi_\beta) }
 +\gpgradeone{ \Pi_\beta (\grad v^\beta) }
 +\gpgradeone{ (\grad \Pi_\beta) v^\beta } + \gpgradeone{ \grad' \Pi_\beta {v^\beta}'}
 \right)
 - \grad \LL .
-\end{aligned}
 \end{equation}
 %
 The grouping of the first and third terms above simplifies nicely
@@ -533,16 +513,14 @@ v^\beta (\grad \cdot \Pi_\beta)
 Since \(a (b \wedge c) + (b \wedge c) a = 2 a \wedge b \wedge c\), which is purely a trivector, the vector grade selection above is zero.   This leaves the adjoint reduced to
 %
 \begin{equation}\label{eqn:rotationCurrents:355}
-\begin{aligned}
 \overbar{T}(\grad)
-&=
+=
 v^\beta (\grad \cdot \Pi_\beta)
 +\inv{2} \left(
 \gpgradeone{ \Pi_\beta (\grad v^\beta) }
 + \gpgradeone{ \grad' \Pi_\beta {v^\beta}'}
 \right)
 - \grad \LL .
-\end{aligned}
 \end{equation}
 %
 For the remainder vector grade selection operators we have something that is of the following form
@@ -578,10 +556,8 @@ T(a) &= \Pi_\beta (a \cdot \grad) A^\beta - a \grad \LL  \\
 For the adjoint, since \(a \cdot \overbar{T}(\grad) = 0\) for all \(a\), we must also have \(\overbar{T}(\grad) = 0\), which means the adjoint of the canonical energy momentum tensor really provides not much more than a recipe for computing the Lagrangian gradient
 %
 \begin{equation}\label{eqn:rotationCurrents:hoo10}
-\begin{aligned}
-\grad \LL &=
+\grad \LL =
 (\grad A^\beta) (\lrgrad \cdot \Pi_\beta).
-\end{aligned}
 \end{equation}
 %
 Having seen the adjoint notation, it was natural to see what this was for a multiple scalar field variable Lagrangian, even if it is not intrinsically useful.  Observe that the identity \eqnref{eqn:rotationCurrents:hoo10}, obtained so laboriously, is not more than syntactic sugar for the chain rule expansion of the Lagrangian partials (plus application of the Euler-Lagrange field equations).  We could obtain this directly if desired much more easily than by factoring out \(a\) from \(\grad \cdot T(a) = 0\).
@@ -654,21 +630,18 @@ Suppose that we parametrize the rotation bivector \(i\) using two perpendicular 
 The operator is reduced to a pair of torque-like scaled directional derivatives, and we have already examined the Noether currents for the translations induced by the directional derivatives.  It is not unreasonable to take exactly the same approach to consider rotation symmetries as we did for translation.  We found for incremental translations
 %
 \begin{equation}\label{eqn:rotationCurrents:LorTx3}
-\begin{aligned}
 a \cdot \grad \LL
-&=
+=
 \partial_\alpha \left(
 \PD{(\partial_\alpha A^\beta)}{\LL} (a \cdot \grad) {A^\beta}
 \right).
-\end{aligned}
 \end{equation}
 %
 So for incremental rotations the change to the Lagrangian is
 %
 \begin{equation}\label{eqn:rotationCurrents:LorTx4}
-\begin{aligned}
 (i \cdot x) \cdot \grad \LL
-&=
+=
 (v \cdot x)
 \partial_\alpha \left(
 \PD{(\partial_\alpha A^\beta)}{\LL} (u \cdot \grad) {A^\beta}
@@ -677,7 +650,6 @@ So for incremental rotations the change to the Lagrangian is
 \partial_\alpha \left(
 \PD{(\partial_\alpha A^\beta)}{\LL} (v \cdot \grad) {A^\beta}
 \right).
-\end{aligned}
 \end{equation}
 %
 Since the choice to make \(u\) and \(v\) both unit vectors and perpendicular has been made, there is really no loss in generality to align these with a pair of the basis vectors, say \(u = \gamma_\mu\) and \(v = \gamma_\nu\).
@@ -696,9 +668,8 @@ x_\nu \partial_\mu - x_\mu \partial_\nu .
 Similarly the change to the Lagrangian is
 %
 \begin{equation}\label{eqn:rotationCurrents:LorTx5}
-\begin{aligned}
 (i \cdot x) \cdot \grad \LL
-&=
+=
 x_\nu
 \partial_\alpha \left(
 \PD{(\partial_\alpha A^\beta)}{\LL} \partial_\mu {A^\beta}
@@ -708,7 +679,6 @@ x_\mu
 \partial_\alpha \left(
 \PD{(\partial_\alpha A^\beta)}{\LL} \partial_\nu {A^\beta}
 \right).
-\end{aligned}
 \end{equation}
 %
 Subtracting the two, essentially forming \((i \cdot x) \cdot \grad \LL - (i \cdot x) \cdot \grad \LL = 0\), we have
@@ -731,9 +701,7 @@ x_\mu
 We previously wrote
 %
 \begin{equation}\label{eqn:rotationCurrents:495}
-\begin{aligned}
-{T^\alpha}_\nu &= \PD{(\partial_\alpha A^\beta)}{\LL} \partial_\nu A^\beta - {\delta^\alpha}_\nu \LL .
-\end{aligned}
+{T^\alpha}_\nu = \PD{(\partial_\alpha A^\beta)}{\LL} \partial_\nu A^\beta - {\delta^\alpha}_\nu \LL .
 \end{equation}
 %
 for the Noether current of spacetime translation, and with that our conservation equation becomes
@@ -782,17 +750,13 @@ So instead of a Noether current, following the procedure used to calculate the s
 Jackson \citep{jackson1975cew} ends up with a similar index upper expression
 %
 \begin{equation}\label{eqn:rotationCurrents:LorTx11}
-\begin{aligned}
-M^{\alpha\beta\gamma} &\equiv T^{\alpha\beta} x^\gamma - T^{\alpha\gamma} x^\beta .
-\end{aligned}
+M^{\alpha\beta\gamma} \equiv T^{\alpha\beta} x^\gamma - T^{\alpha\gamma} x^\beta .
 \end{equation}
 %
 and then uses a requirement for vanishing 4-divergence of this quantity
 %
 \begin{equation}\label{eqn:rotationCurrents:LorTx12}
-\begin{aligned}
-0 &= \partial_\alpha M^{\alpha\beta\gamma}.
-\end{aligned}
+0 = \partial_\alpha M^{\alpha\beta\gamma}.
 \end{equation}
 %
 to symmetries this tensor by subtracting off all the antisymmetric portions.  The differences compared to Jackson with upper verses lower indices are minor for we can follow the same arguments and arrive at the same sort of \(0 - 0 = 0\) result as we had in \eqnref{eqn:rotationCurrents:LorTx7}

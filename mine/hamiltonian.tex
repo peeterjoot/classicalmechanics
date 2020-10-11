@@ -291,9 +291,7 @@ Since the canonical momentum is the regular momentum \(p = m v\) in this case, w
 The generalization of this Hamiltonian to three dimensions is straightforward, and we get
 %
 \begin{equation}\label{eqn:hamiltonian:boo9}
-\begin{aligned}
-H &= \inv{m} \Bp^2.
-\end{aligned}
+H = \inv{m} \Bp^2.
 \end{equation}
 %
 \begin{equation}\label{eqn:hamiltonian:boo10}
@@ -1010,9 +1008,7 @@ From this we find the Lagrangian in terms of the conjugate momenta
 A quick check shows that \(P_x + P_y = m_2 \rdot_2\), and \(P_x = -m_1 \rdot_1\), so we have agreement with the original Lagrangian.  Generalizing to the three dimensional case is straightforward, and we have
 %
 \begin{equation}\label{eqn:hamiltonian:noo9}
-\begin{aligned}
-\LL &= \inv{2} m_1 {\mathbf{\rdot}_1}^2 + \inv{2} m_2 {\mathbf{\rdot}_2}^2 - \phi(\Bx_1 - \Bx_2).
-\end{aligned}
+\LL = \inv{2} m_1 {\mathbf{\rdot}_1}^2 + \inv{2} m_2 {\mathbf{\rdot}_2}^2 - \phi(\Bx_1 - \Bx_2).
 \end{equation}
 %
 With
@@ -1100,16 +1096,12 @@ Next I had like to consider a two particle gravitational interaction.  However, 
 Guessing that the Lagrangian has a single term for the interaction potential
 %
 \begin{equation}\label{eqn:hamiltonian:moo2}
-\begin{aligned}
-\phi_{21} &= \kappa \inv{\Abs{\Br_2 - \Br_1}}.
-\end{aligned}
+\phi_{21} = \kappa \inv{\Abs{\Br_2 - \Br_1}}.
 \end{equation}
 %
 so that we have
 \begin{equation}\label{eqn:hamiltonian:moo3}
-\begin{aligned}
-\LL &= \inv{2} m {\Bv_1}^2 +\inv{2} m {\Bv_2}^2 - \phi_{21}.
-\end{aligned}
+\LL = \inv{2} m {\Bv_1}^2 +\inv{2} m {\Bv_2}^2 - \phi_{21}.
 \end{equation}
 %
 We can evaluate the Euler-Lagrange equations and see if the result is consistent with the Newtonian force laws of \eqnref{eqn:hamiltonian:moo1}.  Suppose we write the coordinates of \(\Br_i\) as \({x^k}_i\).  There are then six Euler-Lagrange equations
@@ -1248,17 +1240,13 @@ FIXME: picture.  x-axis down, y-axis right.
 The bob speed for a stiff rod of length \(l\) is \((l \thetadot)^2\), and our potential is \(m g h = m g l (1 -\cos\theta)\).  The Lagrangian is therefore
 %
 \begin{equation}\label{eqn:hamiltonian:yoo2}
-\begin{aligned}
 \LL = \inv{2} m l^2 \thetadot^2 - mg l (1 -\cos\theta) .
-\end{aligned}
 \end{equation}
 %
 The constant \(m g l\) term can be dropped, and our canonical momentum conjugate to \(\thetadot\) is \(p_\theta = m l^2 \thetadot\), so our Hamiltonian is
 %
 \begin{equation}\label{eqn:hamiltonian:yoo3}
-\begin{aligned}
 H = \inv{2 m l^2} {p_\theta}^2 - mg l \cos\theta .
-\end{aligned}
 \end{equation}
 %
 We can now compute the Hamiltonian equations
@@ -1930,17 +1918,13 @@ Now, this is what we get blindly trying to set up the linear approximation of th
 We can treat the \(\phi\) dependence later once we have solved for \(\theta\).  That equation to later solve is just this last
 %
 \begin{equation}\label{eqn:hamiltonian:uoo13}
-\begin{aligned}
-\dot{\phi} &= \inv{ m l^2 \sin^2 \theta} P_\phi.
-\end{aligned}
+\dot{\phi} = \inv{ m l^2 \sin^2 \theta} P_\phi.
 \end{equation}
 %
 This integrates directly, presuming \(\theta = \theta(t)\) is known, and we have
 %
 \begin{equation}\label{eqn:hamiltonian:uoo13b}
-\begin{aligned}
-\phi - \phi(0) &= \frac{P_\phi}{ m l^2} \int_0^t \frac{d\tau}{\sin^2 \theta(\tau)}.
-\end{aligned}
+\phi - \phi(0) = \frac{P_\phi}{ m l^2} \int_0^t \frac{d\tau}{\sin^2 \theta(\tau)}.
 \end{equation}
 %
 Now the state vector and its perturbation can be redefined omitting all but the \(\theta\) dependence.  Namely
@@ -2155,10 +2139,8 @@ P_{\theta_2}
 and the angular velocity vector can be written
 %
 \begin{equation}\label{eqn:hamiltonian:voo15}
-\begin{aligned}
-\Bp &= \calI(\delta)
+\Bp = \calI(\delta)
 \dot{\BTheta}.
-\end{aligned}
 \end{equation}
 %
 Can we write the Lagrangian in terms of \(\dot{\BTheta}\)?  The first Kinetic term is easy, just
@@ -2178,13 +2160,11 @@ l_1^2 & 0 \\
 For the second mass, going back to \eqnref{eqn:hamiltonian:voo4}, we can write
 %
 \begin{equation}\label{eqn:hamiltonian:voo4m}
-\begin{aligned}
 \dot{z}_2 = \xcap i
 \begin{bmatrix}
-l_1 e^{i{\theta_1}} & l_2 e^{i{\theta_2}}
+l_1 e^{i{\theta_1}}  l_2 e^{i{\theta_2}}
 \end{bmatrix}
 \dot{\BTheta}.
-\end{aligned}
 \end{equation}
 %
 Writing \(\Br\) for this \(1x2\) matrix, we can utilize the associative property for compatible sized matrices to rewrite the speed for the second particle in terms of a quadratic form
@@ -2288,24 +2268,20 @@ Q \dot{\BTheta} \\
 Similarly the \({\theta_2}\) conjugate momentum is
 %
 \begin{equation}\label{eqn:hamiltonian:383}
-\begin{aligned}
 P_{\theta_2}
 =
 \begin{bmatrix}
-0 & 1
+0  1
 \end{bmatrix}
 \left(\inv{2}(Q + Q^\T)\right) \dot{\BTheta} .
-\end{aligned}
 \end{equation}
 %
 Putting both together, it is straightforward to verify that this recovers \eqnref{eqn:hamiltonian:voo12}, which can now be written
 %
 \begin{equation}\label{eqn:hamiltonian:voo19}
-\begin{aligned}
 \Bp
-&=
+=
 \inv{2}(Q + Q^\T) \dot{\BTheta} = \calI \dot{\BTheta}.
-\end{aligned}
 \end{equation}
 %
 Observing that \(\calI = \calI^\T\), and thus \((\calI^\T)^{-1} = \calI^{-1}\), we now have everything required to express the Hamiltonian in terms of the conjugate momenta
@@ -2513,14 +2489,12 @@ If we write
 and the Hamiltonian equations \eqnref{eqn:hamiltonian:veryGeneral} as
 %
 \begin{equation}\label{eqn:hamiltonian:voo27v}
-\begin{aligned}
 \frac{d}{dt}
 \begin{bmatrix}
-\Bp \\
+\Bp 
 \BTheta
 \end{bmatrix}
 = A(\Bp, \BTheta).
-\end{aligned}
 \end{equation}
 %
 Then the linearization, without simplifying or making explicit yet is
@@ -2558,15 +2532,13 @@ f(\Bp, \BTheta) = \evalbar{f(\Bp, \BTheta)}{0} + \evalbar{\Delta f}{0} \Bz + \cd
 First, lets do the potential gradient.
 %
 \begin{equation}\label{eqn:hamiltonian:voo30}
-\begin{aligned}
 \Delta (\grad \phi) =
 \begin{bmatrix}
-0 &
+0 
 { \begin{bmatrix}
 \frac{\partial^2 \phi}{ \partial \theta_r \partial \theta_c }
 \end{bmatrix} }_{r,c}
 \end{bmatrix}.
-\end{aligned}
 \end{equation}
 %
 Next in terms of complexity is the first order term of \(\dot{\BTheta}\), for which we have
@@ -2652,26 +2624,23 @@ We can take derivatives of this, and exploiting the fact that these elements are
 Since we also have \(B' B^{-1} + B (B^{-1})' = 0\), for invertible matrixes \(B\), this reduces to
 %
 \begin{equation}\label{eqn:hamiltonian:523}
-\begin{aligned}
 \PD{P_{\theta_c}}{}
 \left( \inv{2} \Bp^\T \calI^{-1} \left(\PD{\theta_r}{Q}\right)^\T \calI^{-1} \Bp  \right)
-&=
+=
 -\Bp^\T \PD{\theta_r}{(\calI^{-1})}
 {\begin{bmatrix}
 \delta_{rc}
 \end{bmatrix}}_r .
-\end{aligned}
 \end{equation}
 %
 Forming the matrix over all rows \(r\), and columns \(c\), we get a trailing identity multiplying from the right, and are left with
 %
 \begin{equation}\label{eqn:hamiltonian:voo31}
-\begin{aligned}
 {\begin{bmatrix}
 \PD{P_{\theta_c}}{}
 \left( \inv{2} \Bp^\T \calI^{-1} \left(\PD{\theta_r}{Q}\right)^\T \calI^{-1} \Bp  \right)
 \end{bmatrix}}_{r,c}
-&=
+=
 {\begin{bmatrix}
 -\Bp^\T \PD{\theta_r}{(\calI^{-1})}
 \end{bmatrix}}_{r}
@@ -2679,7 +2648,6 @@ Forming the matrix over all rows \(r\), and columns \(c\), we get a trailing ide
 {\begin{bmatrix}
 -\PD{\theta_c}{(\calI^{-1})} \Bp
 \end{bmatrix}}_{c}.
-\end{aligned}
 \end{equation}
 %
 Okay, getting closer.  The only thing left is to consider the remaining \(\theta\) dependence of \eqnref{eqn:hamiltonian:voo30c}, and now want the theta partials of the scalar matrix elements
@@ -2723,10 +2691,9 @@ There is a slight asymmetry between the first and last terms here that can possi
 % I' = - I {I^{-1}}' I
 %
 \begin{equation}\label{eqn:hamiltonian:563}
-\begin{aligned}
 \PD{\theta_c}{}
 \left( \inv{2} \Bp^\T \calI^{-1} \left(\PD{\theta_r}{Q}\right)^\T \calI^{-1} \Bp  \right)
-&=
+=
 \dot{\BTheta}^\T
 \left(
 \inv{2} \frac{\partial^2 Q^\T}{\partial \theta_c \partial \theta_r}
@@ -2736,18 +2703,16 @@ There is a slight asymmetry between the first and last terms here that can possi
 \PD{\theta_r}{\calI}
 \right)
 \dot{\BTheta}.
-\end{aligned}
 \end{equation}
 %
 Is this any better?  Maybe a bit.  Since we are forming the matrix over all \(r,c\) indices and can assume mixed partial commutation the transpose can be dropped leaving us with
 %
 \begin{equation}\label{eqn:hamiltonian:voo32}
-\begin{aligned}
 {\begin{bmatrix}
 \PD{\theta_c}{}
 \left( \inv{2} \Bp^\T \calI^{-1} \left(\PD{\theta_r}{Q}\right)^\T \calI^{-1} \Bp  \right)
 \end{bmatrix}}_{r,c}
-&=
+=
 {\begin{bmatrix}
 \dot{\BTheta}^\T
 \left(
@@ -2759,7 +2724,6 @@ Is this any better?  Maybe a bit.  Since we are forming the matrix over all \(r,
 \right)
 \dot{\BTheta}
 \end{bmatrix}}_{r,c}.
-\end{aligned}
 \end{equation}
 %
 We can now assemble all these individual derivatives
@@ -2948,13 +2912,11 @@ The \(\theta_2\) derivative is the same but inverted in sign, so we have most of
 So, the gradient is
 %
 \begin{equation}\label{eqn:hamiltonian:xoo3}
-\begin{aligned}
 \grad \phi =
 \begin{bmatrix}
-M l_1 g \sin{\theta_1} \\
+M l_1 g \sin{\theta_1} 
 m_2 l_2 g \sin{\theta_2}
 \end{bmatrix}.
-\end{aligned}
 \end{equation}
 %
 Putting things back together we have for the linear approximation of the two pendulum system
@@ -3301,9 +3263,7 @@ m_2 l_2 \sin{\theta_2} \\
 where these are all related by the first order matrix equation
 %
 \begin{equation}\label{eqn:hamiltonian:xoo20}
-\begin{aligned}
-\frac{d\Bz}{dt} &= \evalbar{\Bb}{t=0} + \evalbar{A}{t=0} \Bz.
-\end{aligned}
+\frac{d\Bz}{dt} = \evalbar{\Bb}{t=0} + \evalbar{A}{t=0} \Bz.
 \end{equation}
 %
 Wow, even to just write down the equations required to get a linear approximation of the two pendulum system is horrendously messy, and this is not even trying to solve it.  Numerical and or symbolic computation is really called for here.  If one elected to do this numerically, which looks pretty much mandatory since the analytic way did not turn out to be simple even for just the two pendulum system, then one is probably better off going all the way back to \eqnref{eqn:hamiltonian:veryGeneral} and just calculating the increment for the trajectory using a very small time increment, and do this repeatedly (i.e. do a zeroth order numerical procedure instead of the first order which turns out much more complicated).
@@ -3346,9 +3306,7 @@ We need the conjugate momenta for both the Euler-Lagrange evaluation and the Ham
 In vector form the canonical momenta are then
 %
 \begin{equation}\label{eqn:hamiltonian:em2}
-\begin{aligned}
-\BP &= \gamma m \Bu + \frac{e}{c} \BA.
-\end{aligned}
+\BP = \gamma m \Bu + \frac{e}{c} \BA.
 \end{equation}
 %
 \subsubsection{Euler-Lagrange evaluation.}
@@ -3525,9 +3483,7 @@ How far can we go?
 For the particle velocity we have no \(\Phi\) dependence and get
 %
 \begin{equation}\label{eqn:hamiltonian:em22}
-\begin{aligned}
-u_k &= \frac{c (c P_k -e A_k)}{\sqrt{ (c \BP - e \BA)^2 + m^2 c^4 }}.
-\end{aligned}
+u_k = \frac{c (c P_k -e A_k)}{\sqrt{ (c \BP - e \BA)^2 + m^2 c^4 }}.
 \end{equation}
 %
 This is \eqnref{eqn:hamiltonian:em15} in coordinate form, one of our stepping stones on the way to the Hamiltonian, and we recover it quickly with our first set of derivatives.  We have the gradient part \(\dot{\BP} = -\spacegrad H\) of the Hamiltonian left to evaluate

@@ -44,18 +44,14 @@ We have also seen
 %\eqnref{eqn:seLorentz:lorentzForceGA}
 that we can express the Lorentz force equation in GA form
 \begin{equation}\label{eqn:stressEnergyNoethers:60}
-\begin{aligned}
-m \ddot{x} &= q F \cdot \dot{x}/c.
-\end{aligned}
+m \ddot{x} = q F \cdot \dot{x}/c.
 \end{equation}
 %
 %In
 %\eqnref{eqn:seLorentz:lorentzForceTensor}
 This was expressed in tensor form, toggling indices that was
 \begin{equation}\label{eqn:stressEnergyNoethers:80}
-\begin{aligned}
-m \ddot{x}_\mu &= {q} F_{\mu\alpha} \dot{x}^\alpha.
-\end{aligned}
+m \ddot{x}_\mu = {q} F_{\mu\alpha} \dot{x}^\alpha.
 \end{equation}
 %
 We then saw in \citep{gabookII:PJenMtensor}
@@ -435,9 +431,8 @@ F^\mu
 Now there is a lot of indices and derivatives floating around.  Writing \(g^\mu = \PDi{(\partial_\sigma \phi)}{F^\mu}\), we have something a bit easier to look at
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:460}
-\begin{aligned}
 \frac{\delta (\partial_\mu F^\mu)}{\delta \phi}
-&=
+=
 -\partial_\sigma
 \left(
 (\partial_\mu {\phi})
@@ -448,18 +443,15 @@ Now there is a lot of indices and derivatives floating around.  Writing \(g^\mu 
 \PD{(\partial_\alpha \phi)}{ g^\mu }
 \right)
 .
-\end{aligned}
 \end{equation}
 %
 But this is a chain rule expansion of the
 derivative \(\partial_\mu g^\mu\)
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:480}
-\begin{aligned}
-\PD{x^\mu}{g^\mu} &=
+\PD{x^\mu}{g^\mu} =
 \PD{x^\mu}{\phi}\PD{\phi}{g^\mu}
 + \PD{x^\mu}{\partial_\beta \phi}\PD{\partial_\beta \phi}{g^\mu}.
-\end{aligned}
 \end{equation}
 %
 So, we finally have
@@ -577,11 +569,9 @@ Employing a multivariable Taylor expansion
 for our Lagrangian having no explicit dependence on \(t\) and \(x\), we have
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:660}
-\begin{aligned}
-\LL' &= \LL +
+\LL' = \LL +
 \mathLabelBox{(a \partial_x + \tau \partial_t)\LL}{\(\conj\)}
 + \cdots
-\end{aligned}
 \end{equation}
 %
 That first order term of the Taylor expansion \(\conj\),
@@ -662,14 +652,11 @@ we have
 Now, if we have
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:740}
-\begin{aligned}
 \frac{\delta ((a \cdot \grad) \LL)}{\delta \phi}
-&
 \questionEquals
 (a \cdot \grad)
 \mathLabelBox{\frac{\delta \LL}{\delta \phi}}{\(=0\)}
- .
-\end{aligned}
+.
 \end{equation}
 %
 then this would explain the fact that we have a symmetry under linearized translation for the wave equation Lagrangian.  Can this interchange
@@ -695,11 +682,9 @@ field variables and Lagrangian sufficient to allow the commutation
 of the coordinate partials.  Namely
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:780}
-\begin{aligned}
 \PD{x^\mu}{}\PD{x^\nu}{} f(\phi, \partial_\sigma \phi)
-&=
+=
 \PD{x^\nu}{}\PD{x^\mu}{} f(\phi, \partial_\sigma \phi).
-\end{aligned}
 \end{equation}
 %
 However, we have a dependence between the field variables and the coordinates
@@ -808,11 +793,9 @@ where \(u\) is a unit vector we can write
 So we have
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:880}
-\begin{aligned}
 \frac{d\LL'}{d\alpha}
-&=
+=
 (u \cdot \grad) \LL.
-\end{aligned}
 \end{equation}
 %
 Now our previous Noether's current was derived by considering just
@@ -975,13 +958,11 @@ can be put into tensor form by considering the action on
 each of the basis vectors.
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:1000}
-\begin{aligned}
 T(\gamma_\nu) \cdot \gamma^\mu
-&=
+=
 \left( \left(\PD{\phi_\mu}{} \right) \LL \right)
 (\gamma_\nu \cdot (\gamma^\sigma \partial_\sigma)) \phi
 - \gamma_\nu \cdot \gamma^\mu \LL  .
-\end{aligned}
 \end{equation}
 %
 Thus writing \({T^\mu}_\nu = T(\gamma_\nu) \cdot \gamma^\mu\) we have
@@ -1094,9 +1075,7 @@ Noether current.
 It should be pointed out that for a purely spatial Lagrangian density, such as that of electrostatics
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:1040}
-\begin{aligned}
-\LL &= -\frac{\epsilon_0}{2} (\spacegrad \phi)^2 + \rho \phi.
-\end{aligned}
+\LL = -\frac{\epsilon_0}{2} (\spacegrad \phi)^2 + \rho \phi.
 \end{equation}
 %
 the same results apply.  In this case it would be reasonable to summarize the conservation under translation
@@ -1172,10 +1151,8 @@ To compute the tensor, we first need
 \(\PDi{\phi_\mu}{\LL} = \phi^\mu\), which gives us
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:tensorInIndexForm}
-\begin{aligned}
 {T^\mu}_\nu
-&= \phi^\mu \phi_\nu - {\delta_\nu}^\mu \LL.
-\end{aligned}
+= \phi^\mu \phi_\nu - {\delta_\nu}^\mu \LL.
 \end{equation}
 %
 Writing this out in matrix form (with rows \(\mu\), and columns \(\nu\)), we have
@@ -1317,9 +1294,7 @@ Picking off first column of our tensor in \eqnref{eqn:stressEnergyNoethers:bigTe
 But this is just our (squared) Lagrangian density, and we therefore have
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:1280}
-\begin{aligned}
-(T(\gamma_0))^2 &= \LL^2.
-\end{aligned}
+(T(\gamma_0))^2 = \LL^2.
 \end{equation}
 %
 %\begin{align*}
@@ -1342,16 +1317,12 @@ But this is just our (squared) Lagrangian density, and we therefore have
 %
 Doing the same calculation for the second column, which is representative of the other two by symmetry, we have
 \begin{equation}\label{eqn:stressEnergyNoethers:1300}
-\begin{aligned}
-(T(\gamma_k))^2 &= -\LL^2.
-\end{aligned}
+(T(\gamma_k))^2 = -\LL^2.
 \end{equation}
 %
 Summarizing all four squares we have
 \begin{equation}\label{eqn:stressEnergyNoethers:invariantLength}
-\begin{aligned}
-(T(\gamma_\mu))^2 &= (\gamma_\mu)^2 \LL^2.
-\end{aligned}
+(T(\gamma_\mu))^2 = (\gamma_\mu)^2 \LL^2.
 \end{equation}
 %
 All of these conservation current four vectors have the same length up to a sign, where \(T(\gamma_0)\) is timelike (positive square),
@@ -1517,9 +1488,7 @@ T(a)
 Thus we have
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:GAwaveStressEnergy}
-\begin{aligned}
-T(a) &= \inv{2} (\grad \phi) a (\grad \phi).
-\end{aligned}
+T(a) = \inv{2} (\grad \phi) a (\grad \phi).
 \end{equation}
 %
 This meets the intuitive expectation that the energy momentum tensor for the wave equation could be expressed
@@ -1751,9 +1720,7 @@ T(a)
 Since vectors equal their own reverse this is just
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:1780}
-\begin{aligned}
-T(a) &= (\grad \psi ) a (\grad \psi^\conj) + a \frac{m^2 c^2}{\Hbar^2} \psi \psi^\conj.
-\end{aligned}
+T(a) = (\grad \psi ) a (\grad \psi^\conj) + a \frac{m^2 c^2}{\Hbar^2} \psi \psi^\conj.
 \end{equation}
 %
 \subsection{Tensor in index form.}
@@ -1776,9 +1743,7 @@ Expanding the energy momentum tensor in index notation we have
 %
 So we have
 \begin{equation}\label{eqn:stressEnergyNoethers:1820}
-\begin{aligned}
-{T^\mu}_\nu &= \partial^\mu \psi \partial_\nu \psi^\conj + \partial^\mu \psi^\conj \partial_\nu \psi - {\delta_\nu}^\mu \LL.
-\end{aligned}
+{T^\mu}_\nu = \partial^\mu \psi \partial_\nu \psi^\conj + \partial^\mu \psi^\conj \partial_\nu \psi - {\delta_\nu}^\mu \LL.
 \end{equation}
 %
 This index representation also has a nice compact elegance.
@@ -1829,11 +1794,9 @@ where the more conventional overdot notation is used to indicate the scope of th
 In particular, for \(b = \grad \psi\), we have
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:1900}
-\begin{aligned}
 \gpgradeone{ b^\conj \lrgrad b }
-&=
+=
 (\grad^2 \psi^\conj) (\grad \psi) + (\grad \psi^\conj) (\grad^2 \psi).
-\end{aligned}
 \end{equation}
 %
 Our tensor also has a vector scalar product that we need the divergence of.  That is
@@ -1850,12 +1813,10 @@ a \cdot \grad (\psi \psi^\conj) .
 %
 Putting things back together we have
 \begin{equation}\label{eqn:stressEnergyNoethers:1940}
-\begin{aligned}
 \grad \cdot T(a)
-&= a \cdot \left(
+= a \cdot \left(
 \gpgradeone{ (\grad \psi^\conj) \lrgrad (\grad \psi) } + \frac{m^2 c^2}{\Hbar^2} \grad (\psi \psi^\conj)
 \right).
-\end{aligned}
 \end{equation}
 %
 This is
@@ -1883,9 +1844,7 @@ a \cdot F(b) \equiv b \cdot \overbar{F}(a).
 So we have a concrete example of the adjoint applied to the gradient, and for this energy momentum tensor we have
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:2000}
-\begin{aligned}
-\overbar{T}(\grad) &= \gpgradeone{ (\grad \psi^\conj) \grad (\grad \psi) } + \frac{m^2 c^2}{\Hbar^2} \grad (\psi \psi^\conj).
-\end{aligned}
+\overbar{T}(\grad) = \gpgradeone{ (\grad \psi^\conj) \grad (\grad \psi) } + \frac{m^2 c^2}{\Hbar^2} \grad (\psi \psi^\conj).
 \end{equation}
 %
 Here the arrows notation has been dropped, where it is implied that this derivative acts on all neighboring vectors either unidirectionally or bidirectionally
@@ -1920,9 +1879,7 @@ T(\Ba)
 It in terms of \(\BE = -\spacegrad \phi\) this is
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:electrostaticTensor}
-\begin{aligned}
-T(\Ba) &= -\frac{\epsilon_0}{2} \BE \Ba \BE - \Ba \rho \phi.
-\end{aligned}
+T(\Ba) = -\frac{\epsilon_0}{2} \BE \Ba \BE - \Ba \rho \phi.
 \end{equation}
 %
 This is not immediately recognizable (at least to me), and also does not appear to be easily separable into something times \(\Ba\).
@@ -1954,11 +1911,9 @@ Also want
 %
 Assembling these we have
 \begin{equation}\label{eqn:stressEnergyNoethers:2100}
-\begin{aligned}
-\spacegrad \cdot T(\Ba) &=
+\spacegrad \cdot T(\Ba) =
 -\Ba \cdot \left( \gpgradeone{ \frac{\epsilon_0}{2} \BE \lrspacegrad \BE } + \spacegrad (\rho\phi) \right)
 .
-\end{aligned}
 \end{equation}
 %
 From this we can pick off the adjoint
@@ -2033,13 +1988,11 @@ S = \int d^3 x \LL.
 Calculating the Noether current for a vector translation \(\Ba\) we have
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:2220}
-\begin{aligned}
 T(\Ba)
-&=
+=
 \frac{\Hbar^2}{2m} \spacegrad \psi \Ba \cdot \spacegrad \psi^\conj
 +\frac{\Hbar^2}{2m} \spacegrad \psi^\conj \Ba \cdot \spacegrad \psi
 - \Ba \LL.
-\end{aligned}
 \end{equation}
 %
 Expanding the divergence is messy but straightforward
@@ -2289,9 +2242,7 @@ G_\nu \lrgrad F^\nu
 This provides the adjoint energy momentum tensor, albeit in a form that looks like it can be reduced further
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:2520}
-\begin{aligned}
-0 &= \overbar{T}(\grad) = \frac{\epsilon_0}{2} \gpgradeone{ G_\nu \lrgrad F^\nu  +\grad(F^\nu G_\nu) + \grad(F^2)} - \grad \left( A \cdot J/c \right).
-\end{aligned}
+0 = \overbar{T}(\grad) = \frac{\epsilon_0}{2} \gpgradeone{ G_\nu \lrgrad F^\nu  +\grad(F^\nu G_\nu) + \grad(F^2)} - \grad \left( A \cdot J/c \right).
 \end{equation}
 %
 We want to write this as a gradient of something, to determine the conserved quantity.  Getting part way is not too hard.
@@ -2378,14 +2329,12 @@ F_{\beta\alpha} ( \partial^\alpha A^\beta -\partial^\beta A^\alpha ) \\
 Bad first guess.  It is the second two terms that cancel, not the first, leaving us with
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:2620}
-\begin{aligned}
 \overbar{T}(\grad)
-&= \frac{\epsilon_0}{2} \left(
+= \frac{\epsilon_0}{2} \left(
 \gpgradeone{ G_\nu \lrgrad F^\nu }
 + \grad \cdot (F^\nu \wedge G_\nu)
 \right)
 - \grad \left( A \cdot J/c \right).
-\end{aligned}
 \end{equation}
 %
 Now, intuition tells me that it ought to be possible to simplify this further,

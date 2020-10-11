@@ -161,24 +161,20 @@ The kinetic part (omitting the m/2 factor), in terms of the CM and relative vect
 So the Kinetic part of the Lagrangian is
 %
 \begin{equation}\label{eqn:goldsteinCh12:160}
-\begin{aligned}
-\LL_K &= \frac{3m}{2} \dot{\BR}^2 + \frac{29 m}{72} ((\dot{\Brho}_1)^2 + (\dot{\Brho}_2)^2 )
+\LL_K = \frac{3m}{2} \dot{\BR}^2 + \frac{29 m}{72} ((\dot{\Brho}_1)^2 + (\dot{\Brho}_2)^2 )
 - \frac{5 m}{9} \dot{\Brho}_1 \cdot \dot{\Brho}_2
 - \frac{m}{6} (\dot{\Brho}_1 + \dot{\Brho}_2) \cdot \dot{\BR}  .
-\end{aligned}
 \end{equation}
 %
 and finally, the total Lagrangian is
 %
 \begin{equation}\label{eqn:goldsteinCh12:180}
-\begin{aligned}
 \LL =
 \frac{3m}{2} \dot{\BR}^2 + \frac{29 m}{72} ((\dot{\Brho}_1)^2 + (\dot{\Brho}_2)^2 )
 - \frac{5 m}{9} \dot{\Brho}_1 \cdot \dot{\Brho}_2
-- \frac{m}{6} (\dot{\Brho}_1 + \dot{\Brho}_2) \cdot \dot{\BR}  \\
+- \frac{m}{6} (\dot{\Brho}_1 + \dot{\Brho}_2) \cdot \dot{\BR}  
 +g \left( e^{-\mu \Abs{\Brho_1}} + e^{-\mu \Abs{\Brho_2}} + e^{-\mu \Abs{ \Brho_1 - \Brho_2 }} \right)
 + f \left(\BR - \inv{3}(\Brho_1 + \Brho_2) \right) \cdot \left( \dot{\Brho_1} + \dot{\Brho_2} \right).
-\end{aligned}
 \end{equation}
 %
 \paragraph{Angular momentum conservation?}
@@ -291,9 +287,7 @@ Now we are in shape to compute the conserved ``current'' for a rotational symmet
 and our Lagrangian is assumed, as above with all vectors coming in dot product pairs, to have rotational invariance when all the vectors in the system are rotated
 %
 \begin{equation}\label{eqn:goldsteinCh12:340}
-\begin{aligned}
-\LL & \rightarrow \LL'(\Bx_k', \dot{\Bx}_j') = \LL(\Bx_k, \dot{\Bx}_j) .
-\end{aligned}
+\LL  \rightarrow \LL'(\Bx_k', \dot{\Bx}_j') = \LL(\Bx_k, \dot{\Bx}_j) .
 \end{equation}
 %
 The essence of Noether's theorem was applied chain rule, looking at how the transformed Lagrangian changes with respect to the transformation.  In this case
@@ -310,10 +304,8 @@ the reason for it actually became clear with this application, as writing it up 
 Anyways, back to the derivative.  One way to evaluate this would be in terms of coordinates, writing \(\Bx_k' = \Be^m x_{km}'\),
 %
 \begin{equation}\label{eqn:goldsteinCh12:380}
-\begin{aligned}
 \frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
-&= \sum_{k,m} \frac{\partial \LL'}{\partial x_{km}'} \PD{\alpha}{x_{km}'} + \frac{\partial \LL'}{\partial \dot{x}_{km}'} \PD{\alpha}{\dot{x}_{km}'} .
-\end{aligned}
+= \sum_{k,m} \frac{\partial \LL'}{\partial x_{km}'} \PD{\alpha}{x_{km}'} + \frac{\partial \LL'}{\partial \dot{x}_{km}'} \PD{\alpha}{\dot{x}_{km}'} .
 \end{equation}
 %
 This is a bit of a mess however, and begs for some shorthand.  Let us write
@@ -328,10 +320,8 @@ This is a bit of a mess however, and begs for some shorthand.  Let us write
 Then the chain rule application above becomes
 %
 \begin{equation}\label{eqn:goldsteinCh12:420}
-\begin{aligned}
 \frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
-&= \sum_{k} \left( \spacegrad_{\Bx_k'} \LL'\right) \cdot \PD{\alpha}{\Bx_k'} + \left( \spacegrad_{\dot{\Bx}_k'} \LL' \right) \cdot \PD{\alpha}{\dot{\Bx}_k'} .
-\end{aligned}
+= \sum_{k} \left( \spacegrad_{\Bx_k'} \LL'\right) \cdot \PD{\alpha}{\Bx_k'} + \left( \spacegrad_{\dot{\Bx}_k'} \LL' \right) \cdot \PD{\alpha}{\dot{\Bx}_k'} .
 \end{equation}
 %
 Now, while this notational sugar unfortunately has an obscuring effect, it is also practical since we can now work with the transformed position
@@ -348,11 +338,9 @@ and velocity vectors directly
 %
 So we have
 \begin{equation}\label{eqn:goldsteinCh12:460}
-\begin{aligned}
 \frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
-&= \sum_{k} \left( \spacegrad_{\Bx_k'} \LL'\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
+= \sum_{k} \left( \spacegrad_{\Bx_k'} \LL'\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
 + \sum_{k} \left( \spacegrad_{\dot{\Bx}_k'} \LL'\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) .
-\end{aligned}
 \end{equation}
 %
 Next step is to reintroduce the notational sugar noting that we can vectorize the Euler-Lagrange equations by writing
@@ -366,22 +354,18 @@ Lagrangian gradient with respect to that vector parameter (a generalized force) 
 %
 Inserting this we have
 \begin{equation}\label{eqn:goldsteinCh12:500}
-\begin{aligned}
 \frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
-&= \sum_{k} \left( \frac{d}{dt} \spacegrad_{\dot{\Bx}_k'} \LL'\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
+= \sum_{k} \left( \frac{d}{dt} \spacegrad_{\dot{\Bx}_k'} \LL'\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
 + \sum_{k} \left( \spacegrad_{\dot{\Bx}_k'} \LL'\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) .
-\end{aligned}
 \end{equation}
 %
 Now we can drop the primes in gradient terms because of the Lagrangian invariance for this symmetry, and are left almost with a
 perfect differential
 %
 \begin{equation}\label{eqn:goldsteinCh12:520}
-\begin{aligned}
 \frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
-&= \sum_{k} \left( \frac{d}{dt} \spacegrad_{\dot{\Bx}_k} \LL\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
+= \sum_{k} \left( \frac{d}{dt} \spacegrad_{\dot{\Bx}_k} \LL\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
 + \sum_{k} \left( \spacegrad_{\dot{\Bx}_k} \LL\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) .
-\end{aligned}
 \end{equation}
 %
 Here is where the evaluation at \(\alpha=0\) comes in, since \(\Bx_k'(\alpha=0) = \Bx_k\), and we can now antidifferentiate
@@ -413,27 +397,21 @@ Here is where the evaluation at \(\alpha=0\) comes in, since \(\Bx_k'(\alpha=0) 
 Because of the symmetry this entire derivative is zero, so we have
 %
 \begin{equation}\label{eqn:goldsteinCh12:560}
-\begin{aligned}
-\ncap \cdot \sum_{k} \left(\Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \LL \right) \right) &= \text{constant}.
-\end{aligned}
+\ncap \cdot \sum_{k} \left(\Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \LL \right) \right) = \text{constant}.
 \end{equation}
 %
 The Lagrangian velocity gradient can be identified as the momentum
 (ie: the canonical momentum conjugate to \(\Bx_k\))
 %
 \begin{equation}\label{eqn:goldsteinCh12:580}
-\begin{aligned}
-\Bp_k &\equiv \spacegrad_{\dot{\Bx}_k} \LL.
-\end{aligned}
+\Bp_k \equiv \spacegrad_{\dot{\Bx}_k} \LL.
 \end{equation}
 %
 Also noting that this is constant for any \(\ncap\), we finally have the
 conserved ``current'' for a rotational symmetry of a system of particles
 %
 \begin{equation}\label{eqn:goldsteinCh12:600}
-\begin{aligned}
-\sum_{k} \Bx_k \cross \Bp_k &= \text{constant}.
-\end{aligned}
+\sum_{k} \Bx_k \cross \Bp_k = \text{constant}.
 \end{equation}
 %
 This digression to Noether's appears to be well worth it for answering the angular momentum question of the problem.  Glibly saying ``yes
@@ -444,9 +422,7 @@ momentum vectors.  Only when the angular momentum is generalized, and written in
 system angular momentum conserved.  Namely, the generalized angular momentum for this problem is conserved
 %
 \begin{equation}\label{eqn:goldsteinCh12:620}
-\begin{aligned}
-\sum_{k} \Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \LL \right) &= \text{constant}.
-\end{aligned}
+\sum_{k} \Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \LL \right) = \text{constant}.
 \end{equation}
 %
 but the ``traditional'' angular momentum \(\sum_k \Bx_k \cross m \dot{\Bx}_k\), is not.
@@ -825,12 +801,10 @@ Now integrating by parts:
 Because \(m(a) = m(b) = n(a) = n(b)\) the non-integral terms are all zero, leaving:
 %
 \begin{equation}\label{eqn:goldsteinCh12:920}
-\begin{aligned}
-\frac{dI}{d\alpha} &=
+\frac{dI}{d\alpha} =
   \int \PD{y}{f} \PD{\alpha}{y} d x
 - \int \PD{\alpha}{y} \frac{d}{ d x} \PD{\ydot}{f} d x
 - \int \PD{\alpha}{\ydot} \frac{d}{ d x} \PD{\yddot}{f} d x.
-\end{aligned}
 \end{equation}
 %
 Now consider just this last integral, which we can again integrate by parts:

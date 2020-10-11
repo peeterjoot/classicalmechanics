@@ -110,10 +110,8 @@ j e^{j\theta} & \sin\theta
 Our velocity becomes
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:zoo8}
-\begin{aligned}
 {\dot{\zcap}}^2
-&= {\dot{\BTheta}}^\dagger R^\dagger R \dot{\BTheta} .
-\end{aligned}
+= {\dot{\BTheta}}^\dagger R^\dagger R \dot{\BTheta} .
 \end{equation}
 %
 Explicitly, expanding the inner matrix product we can write
@@ -554,15 +552,13 @@ With scalar variables our path is clear, and we just form
 Here is it implied that all the partials are evaluated at the stationary points \(\overbar{\theta}, \overbar{a}, \overbar{j}\).  Doing the integration by parts we have
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:123}
-\begin{aligned}
 \delta S
-&=
+=
 \int \left(
 \alpha \left( \PD{\theta}{\LL} - \frac{d}{dt} \PD{\theta'}{\LL} \right)
 +\beta \left( \PD{a}{\LL} - \frac{d}{dt} \PD{a'}{\LL} \right)
 +\gamma \left( \PD{j}{\LL} - \frac{d}{dt} \PD{j'}{\LL} \right)
 \right).
-\end{aligned}
 \end{equation}
 %
 Setting \(\delta S = 0\) this produces the Euler-Lagrange equations for the system.  For our specific Lagrangian this procedure gives
@@ -580,11 +576,9 @@ Setting \(\delta S = 0\) this produces the Euler-Lagrange equations for the syst
 Each time we do the first order expansion we are varying just one of the coordinates.  It seems likely that the correct answer for the multivariable case will be
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:163}
-\begin{aligned}
 \int \delta \LL
-&=
+=
 \int \alpha \frac{d}{dt}\left( - \overbar{a} \cdot \overbar{j}' \right) + \beta \cdot (\overbar{\theta}' \overbar{j}') + \frac{d}{dt}\left( -\overbar{\theta}' \overbar{a}\right) \cdot \gamma .
-\end{aligned}
 \end{equation}
 %
 Thus the variational problem produces solutions (the coupled equations we still have to solve) of
@@ -639,12 +633,10 @@ X_k = \sum_{b_k} {x_k}^{b_k} \sigma_{b_k}.
 where \(b_k\) is some set of indices like \(\{12, 23, 13\}\) from the \R{3} bivector example, then our chain rule expansion of the Lagrangian to first order about a stationary point becomes
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:roo2}
-\begin{aligned}
 \delta \LL %(\overbar{X}_k + \epsilon_k, \overbar{X}_k' + \epsilon_k')
-&=
+=
 \sum_{b_k} {\epsilon_k}^{b_k} \evalbar{ \PD{{x_k}^{b_k}}{\LL} }{\overbar{X}_k, \overbar{X}_k'}
 +\sum_{b_k} ({\epsilon_k}^{b_k})' \evalbar{ \PD{({x_k}^{b_k})'}{\LL} }{\overbar{X}_k, \overbar{X}_k'}.
-\end{aligned}
 \end{equation}
 %
 Trying to write this beastie down with abstract indexing variables is a bit ugly.  There is something to be said for not trying to be general since writing this for the single variable bivector example was much clearer.  However, having written down the ugly beastie, it can now be cleaned up nicely by introducing position and velocity gradient operators for each of the grades
@@ -738,50 +730,42 @@ K = \inv{2} \dot{\BTheta}^\dagger Q \dot{\BTheta}.
 We want each of \(\PD{\dot{\theta}_a}{K}\) and \(\grad_{j_a'} K\).  Of these the \(\dot{\theta}\) derivative is easier, so lets start with that
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:343}
-\begin{aligned}
 \PD{\theta_a}{K}
-&=
+=
 \inv{2} \left( \PD{\dot{\theta}_a}{\dot{\BTheta}}^\dagger \right) Q \dot{\BTheta}
 +\inv{2} \dot{\BTheta}^\dagger Q \left( \PD{\dot{\theta}_a}{\dot{\BTheta}} \right)  .
-\end{aligned}
 \end{equation}
 %
 Each of these are scalars and thus equal their Hermitian conjugate.  This leaves us with just one term doubled
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:363}
-\begin{aligned}
 \PD{\theta_a}{K}
-&=
+=
 \dot{\BTheta}^\dagger Q \left( \PD{\dot{\theta}_a}{\dot{\BTheta}} \right) .
-\end{aligned}
 \end{equation}
 %
 A final evaluation of the derivatives, in block matrix form over rows \(r\), gives us
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:eoo2}
-\begin{aligned}
 \PD{\theta_a}{K}
 =
 \dot{\BTheta}^\dagger Q
 {\begin{bmatrix}
 \delta_{ar}
 \begin{bmatrix}
-1 \\
+1 
 0
 \end{bmatrix}
 \end{bmatrix}}_{r}.
-\end{aligned}
 \end{equation}
 %
 For the bivector velocity gradients, we can do the same,
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:383}
-\begin{aligned}
 \grad_{j_a'} K
-&=
+=
 \inv{2} \left( \rgrad_{j_a'} \dot{\BTheta}^\dagger \right) Q \dot{\BTheta}
 +\inv{2} \dot{\BTheta}^\dagger Q \left( \dot{\BTheta} \lgrad_{j_a'} \right)  .
-\end{aligned}
 \end{equation}
 %
 Only the \(j_a'\) parts of \(\dot{\BTheta}\) contribute to the velocity gradients, so we need to know how to evaluate a bivector gradient (as opposed to the square which was done earlier).  Expanding in coordinates
@@ -840,39 +824,35 @@ These terms are both one-by-one bivector matrices, and negate with Hermitian con
 Completing the Euler-Lagrange equation evaluation we have for the \(\theta_a\) coordinates
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:eoo4}
-\begin{aligned}
 \frac{d}{dt} \left(
 \dot{\BTheta}^\dagger Q
 {\begin{bmatrix}
 \delta_{ar}
 \begin{bmatrix}
-1 \\
+1 
 0
 \end{bmatrix}
 \end{bmatrix}}_{r}
 \right)
 =
 \inv{2} \dot{\BTheta}^\dagger \PD{\theta_a}{Q} \dot{\BTheta} - \PD{\theta_a}{\phi}.
-\end{aligned}
 \end{equation}
 %
 plus one equation for each of the bivectors \(j_a\)
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:eoo5}
-\begin{aligned}
 3 \frac{d}{dt} \left(
 \dot{\BTheta}^\dagger Q
 {\begin{bmatrix}
 \delta_{ar}
 \begin{bmatrix}
-0 \\
+0 
 1
 \end{bmatrix}
 \end{bmatrix}}_{r}
 \right)
 =
 \inv{2} \sum_{e < f} \Be_f \Be_e \dot{\BTheta}^\dagger \PD{{j_a}^{e f}}{Q} \dot{\BTheta} + 2 \lambda_a j_a.
-\end{aligned}
 \end{equation}
 %
 Because the bivector \(\Be_f \Be_e\) does not (necessarily) commute with bivectors \(j_a'\) that are part of \(\dot{\BTheta}\) there does not look like there is much hope of assembling the left hand \(j_a\) gradients into a nice non-coordinate form.  Additionally, looking back at this approach, and the troubles with producing meaningful equations of motion even in the constrained single pendulum case, it appears that a bivector parametrization of the kinetic energy is generally not a good approach.  This is an unfortunate conclusion after going through all the effort to develop intuition that led to the multivector Euler-Lagrange formulation for this problem.
@@ -1009,11 +989,9 @@ j_b e^{j_b \theta_b} \sin\theta_a \theta_b' + \sin\theta_a \sin\theta_b j_b'
 Adding to this the \(a \leftrightarrow b\) exchanged product and rearranging yields
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:483}
-\begin{aligned}
-- \theta_a' \theta_b' (j_a e^{-j_a \theta_a} j_b e^{j_b\theta_b} + j_b e^{-j_b \theta_b} j_a e^{j_a\theta_a} ) - \sin\theta_a \sin\theta_b (j_a' j_b' + j_b' j_a') \\
+- \theta_a' \theta_b' (j_a e^{-j_a \theta_a} j_b e^{j_b\theta_b} + j_b e^{-j_b \theta_b} j_a e^{j_a\theta_a} ) - \sin\theta_a \sin\theta_b (j_a' j_b' + j_b' j_a') 
 - \sin\theta_b \theta_a' ( j_a e^{-j_a \theta_a} j_b' + j_b' j_a e^{j_a \theta_a} )
 - \sin\theta_a \theta_b' ( j_b e^{-j_b \theta_b} j_a' + j_a' j_b e^{j_b \theta_b} ).
-\end{aligned}
 \end{equation}
 %
 Each of these multivector sums within the brackets is of the form \(A + \tilde{A}\), a multivector plus its reverse.  There can therefore be no bivector or trivector terms since they negate on reversal, and the resulting sum can have only scalar and vector grades.  Of these the second term, \(j_a' j_b' + j_b' j_a' = 2 j_a' \cdot j_b'\) so it is unarguably a scalar as expected, but additional arguments are required to show this of the other three terms.  Of these remaining three, the last two have the same form.  Examining the first of these two

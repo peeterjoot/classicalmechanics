@@ -145,10 +145,8 @@ Introduce the basis
 Euclidean space vector basis vectors.  Writing \(\BE = E^i \sigma_i\), \(\BB = B^i \sigma_i\), and \(\Bv = \sigma_i dx^i/dt\) we have
 %
 \begin{equation}\label{eqn:lorentzForce:140}
-\begin{aligned}
 (F \cdot v) \wedge e_0
-&= (e_0)^2 c \frac{dt}{d\tau} \left( \BE + \epsilon_{ijk} B^k \left( \frac{df^j}{dt} \sigma_{i} - \frac{df^i}{dt} \sigma_{j} \right) \right) .
-\end{aligned}
+= (e_0)^2 c \frac{dt}{d\tau} \left( \BE + \epsilon_{ijk} B^k \left( \frac{df^j}{dt} \sigma_{i} - \frac{df^i}{dt} \sigma_{j} \right) \right) .
 \end{equation}
 %
 This inner antisymmetric sum is just the cross product.  This can be observed by expanding the determinant
@@ -172,10 +170,8 @@ b_1 & b_2 & b_3 \\
 %
 This leaves
 \begin{equation}\label{eqn:lorForce:FdotVwedge}
-\begin{aligned}
 \kappa (F \cdot v) \wedge e_0
-&= \kappa (e_0)^2 c \frac{dt}{d\tau} \left( \BE + \Bv \cross \BB \right).
-\end{aligned}
+= \kappa (e_0)^2 c \frac{dt}{d\tau} \left( \BE + \Bv \cross \BB \right).
 \end{equation}
 %
 Next expand the left hand side acceleration term in coordinates, and wedge with \(e_0\)
@@ -191,9 +187,7 @@ Next expand the left hand side acceleration term in coordinates, and wedge with 
 Equating with \eqnref{eqn:lorForce:FdotVwedge}, with cancellation of the \(\gamma = dt/d\tau\) factors, leaves the traditional Lorentz force law in observer dependent form
 %
 \begin{equation}\label{eqn:lorentzForce:200}
-\begin{aligned}
-\frac{d}{dt}\left( m \gamma \Bv \right) &= \kappa (e_0)^2 c \left( \BE + \Bv \cross \BB \right).
-\end{aligned}
+\frac{d}{dt}\left( m \gamma \Bv \right) = \kappa (e_0)^2 c \left( \BE + \Bv \cross \BB \right).
 \end{equation}
 %
 This supplies the undetermined constant factor from the Lagrangian \(\kappa (e_0)^2 c = q\).  A summary statement of the results is as follows
@@ -215,9 +209,7 @@ Having written this, it would be more natural to couple the signature dependency
 signature dependent term to start with
 %
 \begin{equation}\label{eqn:lorentzForce:220}
-\begin{aligned}
-\LL &= \inv{2} m v^2 (e_0)^2 + q A \cdot (v/c) .
-\end{aligned}
+\LL = \inv{2} m v^2 (e_0)^2 + q A \cdot (v/c) .
 \end{equation}
 %
 Although this does not change the equations of motion we can keep that signature factor with the velocity term.  Consider a general potential as an example

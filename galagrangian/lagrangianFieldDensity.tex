@@ -155,10 +155,8 @@ In particular, we will use the tensor form with the field defined in terms of th
 Expanding in coordinates this squared curl we have
 %
 \begin{equation}\label{eqn:lagrangianFieldDensity:100}
-\begin{aligned}
 (\grad \wedge A) (\grad \wedge A)
-&= (\gamma^{\mu\nu} \partial_{\mu} A_{\nu})(\gamma^{\alpha\beta} \partial_{\alpha} A_{\beta}) .
-\end{aligned}
+= (\gamma^{\mu\nu} \partial_{\mu} A_{\nu})(\gamma^{\alpha\beta} \partial_{\alpha} A_{\beta}) .
 \end{equation}
 %
 Implied here is that \(\mu \ne \nu\) and \(\alpha \ne \beta\).  Given that expansion of the scalar and pseudoscalar parts of this quantity we have
@@ -257,13 +255,11 @@ The last term being quadratic and presumed small is just dropped.  The first ter
 Goldstein is integrated by parts
 %
 \begin{equation}\label{eqn:lagrangianFieldDensity:160}
-\begin{aligned}
 \int_a^b
 \mathLabelBox{ \frac{d\overbar{x}}{dt} \frac{d n}{dt} }{\(fg'\)} dt
-&=
+=
 \mathLabelBox{ \left. \frac{d\overbar{x}}{dt} n \right\vert_a^b }{\(fg\)} - \int_a^b
 \mathLabelBox{\frac{d^2\overbar{x}}{dt^2} n}{\(f'g\)} dt.
-\end{aligned}
 \end{equation}
 %
 Since \(n(a) = n(b) = 0\) the first term is zero.  For the remainder to be independent of path (ie: independent of \(n\)) the \(\overbar{x}''\) term is set to zero.  That is
@@ -330,10 +326,8 @@ in the middle integral.  The portion of that integral to focus on is
 but how do we do integration by parts on such a beast?  We have partial derivatives and multiple integration to deal with.  Consider just one part of this sum, also ignoring the scale factor, and write it as a definite integral
 %
 \begin{equation}\label{eqn:lagrangianFieldDensity:180}
-\begin{aligned}
 \int_{\Omega} dx_1 dx_2 \PD{x_1}{\overbar{\phi}} \PD{x_1}{n}
-&= \int_{x_1=a}^{x_1=b} dx_1 \int_{x_2 = \theta_1(x_1)}^{x_2 = \theta_2(x_1)} dx_2 \PD{x_2}{\overbar{\phi}(x_1, x_2)} \PD{x_2}{n(x_1, x_2)} .
-\end{aligned}
+= \int_{x_1=a}^{x_1=b} dx_1 \int_{x_2 = \theta_1(x_1)}^{x_2 = \theta_2(x_1)} dx_2 \PD{x_2}{\overbar{\phi}(x_1, x_2)} \PD{x_2}{n(x_1, x_2)} .
 \end{equation}
 %
 In the inner integral \(x_1\) can be considered constant, and one can consider \(n(x_1, x_2)\) to be a set function of just \(x_2\), say
@@ -674,11 +668,9 @@ Forming the action \(S = \int d^4 x \LL\), and integrating the \(\delta \LL\) co
 Setting the kernel of this to zero
 %
 \begin{equation}\label{eqn:lagrangianFieldDensity:420}
-\begin{aligned}
 J^{\sigma}/\kappa
-&=
+=
 \partial_{\alpha} \partial_{\mu} \barA_{\nu} \left( (\gamma^{\mu\nu})(\gamma^{\alpha\sigma}) + (\gamma^{\alpha\sigma})(\gamma^{\mu\nu}) \right) .
-\end{aligned}
 \end{equation}
 %
 Since the integration by parts cannot have changed the grade, the observation made with \eqnref{eqn:maxFieldLag:gradetwonote} can be used to

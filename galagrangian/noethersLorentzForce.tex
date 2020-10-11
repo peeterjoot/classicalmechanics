@@ -74,9 +74,7 @@ As for the derivatives in \eqnref{eqn:noethers_lorentz_force:lorentzboosted} we 
 \end{equation}
 %
 \begin{equation}\label{eqn:noethersLorentzForce:80}
-\begin{aligned}
-\grad_{v'} \LL &= p' + qA'/c.
-\end{aligned}
+\grad_{v'} \LL = p' + qA'/c.
 \end{equation}
 %
 So the conserved quantity is
@@ -136,22 +134,18 @@ So we have a relativistic torque expressed in terms of the potential, proper vel
 This still is not familiar looking, but lets expand this in terms of a particular observable, and see what falls out.  First the LHS, with \(dt/d\tau = \gamma\)
 %
 \begin{equation}\label{eqn:noethersLorentzForce:200}
-\begin{aligned}
-x \wedge \pdot &= (ct \gamma_0 + x^i \gamma_i) \wedge
+x \wedge \pdot = (ct \gamma_0 + x^i \gamma_i) \wedge
 \left( \gamma \frac{d}{dt}\left( m \gamma (c \gamma_0 + \frac{dx^j}{dt} \gamma_j ) \right) \right) .
-\end{aligned}
 \end{equation}
 %
 So
 \begin{equation}\label{eqn:noethersLorentzForce:220}
-\begin{aligned}
 \inv{\gamma} (x \wedge \pdot)
-&=
+=
 - ct \frac{d (\gamma \Bp)}{dt}
 + \Bx \frac{d (m c \gamma)}{dt}
 + x^i \gamma_i \wedge
 \frac{d}{dt}\left( m \gamma \frac{dx^j}{dt} \gamma_j \right) .
-\end{aligned}
 \end{equation}
 %
 But
@@ -166,13 +160,11 @@ But
 %
 for
 \begin{equation}\label{eqn:noethersLorentzForce:260}
-\begin{aligned}
 \inv{\gamma} (x \wedge \pdot)
-&=
+=
 - ct \frac{d (\gamma \Bp)}{dt}
 + \Bx \frac{d (m c \gamma)}{dt}
 - \Bx \wedge \frac{d( \gamma \Bp )}{dt} .
-\end{aligned}
 \end{equation}
 %
 Now, for the RHS of \eqnref{eqn:noethers_lorentz_force:noethersLxTx}, with \(A^0 = \phi\)
@@ -187,14 +179,10 @@ Now, for the RHS of \eqnref{eqn:noethers_lorentz_force:noethersLxTx}, with \(A^0
 %
 Equating the vector and bivector parts, and employing a duality transformation for the bivector parts leaves two vector relationships
 \begin{equation}\label{eqn:noethers_lorentz_force:boostresultspacetime}
-\begin{aligned}
-ct \frac{d (\gamma \Bp)}{dt} - \Bx \frac{d (m c \gamma)}{dt} &= \frac{q}{c} \frac{d \left( ct \BA - \phi \Bx \right) }{dt},
-\end{aligned}
+ct \frac{d (\gamma \Bp)}{dt} - \Bx \frac{d (m c \gamma)}{dt} = \frac{q}{c} \frac{d \left( ct \BA - \phi \Bx \right) }{dt},
 \end{equation}
 \begin{equation}\label{eqn:noethers_lorentz_force:rotation}
-\begin{aligned}
-\Bx \cross \frac{d( \gamma \Bp )}{dt} &= \frac{q}{c} \frac{d}{dt} \left( \Bx \cross \BA \right).
-\end{aligned}
+\Bx \cross \frac{d( \gamma \Bp )}{dt} = \frac{q}{c} \frac{d}{dt} \left( \Bx \cross \BA \right).
 \end{equation}
 %
 FIXME: the first equation looks like it could also be expressed in some sort more symmetric form.  Perhaps a grade two (commutator) product between the multivectors \((mc\gamma, \Bp) = p \gamma_0\), and \((\phi, \BA) = A \gamma_0\)?
@@ -205,15 +193,11 @@ As can be seen above, the four vector form of \eqnref{eqn:noethers_lorentz_force
 tensor form?  After first re-consolidating the proper time derivatives we can read the coordinate form off by inspection
 %
 \begin{equation}\label{eqn:noethersLorentzForce:300}
-\begin{aligned}
-x \wedge \pdot &= \frac{d}{d\tau} \left( q/c A \wedge x \right) .
-\end{aligned}
+x \wedge \pdot = \frac{d}{d\tau} \left( q/c A \wedge x \right) .
 \end{equation}
 %
 \begin{equation}\label{eqn:noethersLorentzForce:320}
-\begin{aligned}
-\gamma_\mu \wedge \gamma_\nu x^\mu m v^\nu &= \frac{d}{d\tau} \left( q/c A^\alpha x^\beta \right) \gamma_\alpha \wedge \gamma_\beta .
-\end{aligned}
+\gamma_\mu \wedge \gamma_\nu x^\mu m v^\nu = \frac{d}{d\tau} \left( q/c A^\alpha x^\beta \right) \gamma_\alpha \wedge \gamma_\beta .
 \end{equation}
 %
 Which gives the tensor expression

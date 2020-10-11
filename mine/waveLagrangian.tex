@@ -41,9 +41,7 @@ equations for this equation are:
 Which has the expected form
 %
 \begin{equation}\label{eqn:waveLagrangian:40}
-\begin{aligned}
-\mu \PDsq{t}{\eta} - Y \PDsq{x}{\eta} &= 0 .
-\end{aligned}
+\mu \PDsq{t}{\eta} - Y \PDsq{x}{\eta} = 0 .
 \end{equation}
 %
 \subsection{Higher dimension wave equation.}
@@ -65,9 +63,7 @@ Calculating the Euler-Lagrange equations gives
 Which also has the expected form
 %
 \begin{equation}\label{eqn:waveLagrangian:80}
-\begin{aligned}
-\mu \PDsq{t}{\eta} - Y \sum_i \PDsq{x^i}{\eta} &= 0 .
-\end{aligned}
+\mu \PDsq{t}{\eta} - Y \sum_i \PDsq{x^i}{\eta} = 0 .
 \end{equation}
 %
 \section{Electrodynamics wave equation.}
@@ -75,9 +71,7 @@ Which also has the expected form
 From \eqnref{eqn:wave_lagrangian:moreDimensionalWaveLagrangian} one can guess the Lagrangian for the electrodynamic potential wave equations.  Maxwell's equation in potential form are:
 %
 \begin{equation}\label{eqn:wave_lagrangian:maxwellPotential}
-\begin{aligned}
-\grad^2 A &= J/\epsilon_0 c.
-\end{aligned}
+\grad^2 A = J/\epsilon_0 c.
 \end{equation}
 %
 Which has the following split into four scalar equations
@@ -114,26 +108,20 @@ J^\mu/\epsilon_0 c
 Which recovers Maxwell's equation.  Having done that the Lagrangian can be tidied slightly introducing the spacetime gradient:
 %
 \begin{equation}\label{eqn:wave_lagrangian:potentialLagrangianWithGrad}
-\begin{aligned}
-\LL &= \inv{2} \left( \grad {A^\alpha} \right)^2 + J^\alpha A^\alpha / \epsilon_0 c.
-\end{aligned}
+\LL = \inv{2} \left( \grad {A^\alpha} \right)^2 + J^\alpha A^\alpha / \epsilon_0 c.
 \end{equation}
 %
 \subsection{Comparing with complex (bivector) version of Maxwell Lagrangian.}
 Previously, in \bookchapcite{PJMaxwellLagrangian}{phy354} and \bookchapcite{PJMaxwellLagrangian}{phy354}, Maxwell's equation
 %
 \begin{equation}\label{eqn:wave_lagrangian:maxwell}
-\begin{aligned}
-\grad (\grad \wedge A) &= J/ \epsilon_0 c.
-\end{aligned}
+\grad (\grad \wedge A) = J/ \epsilon_0 c.
 \end{equation}
 %
 was seen as the result of evaluating the Lagrangian
 %
 \begin{equation}\label{eqn:wave_lagrangian:maxlag}
-\begin{aligned}
-\LL &= -\frac{\epsilon_0 c}{2} (\grad \wedge A)^2 + J \cdot A.
-\end{aligned}
+\LL = -\frac{\epsilon_0 c}{2} (\grad \wedge A)^2 + J \cdot A.
 \end{equation}
 %
 \Eqnref{eqn:wave_lagrangian:maxwell} with the gauge condition \(\grad \cdot A = 0\)
@@ -143,17 +131,13 @@ For comparison it should be possible to reconcile this with
 \eqnref{eqn:wave_lagrangian:potentialLagrangianWithGrad}.  We can multiply by \((\gamma_\alpha)^2\), which is \((\pm 1)\) dependent on \(\alpha\), as well as multiply by \(\epsilon_0 c\)
 %
 \begin{equation}\label{eqn:waveLagrangian:160}
-\begin{aligned}
-\LL &= \frac{\epsilon_0 c}{2} \grad {A^\alpha} \grad {A_\alpha} + J^\alpha A_\alpha .
-\end{aligned}
+\LL = \frac{\epsilon_0 c}{2} \grad {A^\alpha} \grad {A_\alpha} + J^\alpha A_\alpha .
 \end{equation}
 %
 No sum need be implied here, but since the field variables are independent we can sum them without changing the field equations.  So, instead of having four independent Lagrangians, we are now left with a (sums now implied) single density that can be evaluated for each of the potential coordinate variables:
 %
 \begin{equation}\label{eqn:waveLagrangian:180}
-\begin{aligned}
-\LL &= \frac{\epsilon_0 c}{2} \grad {A^\alpha} \grad {A_\alpha} + J \cdot A .
-\end{aligned}
+\LL = \frac{\epsilon_0 c}{2} \grad {A^\alpha} \grad {A_\alpha} + J \cdot A .
 \end{equation}
 %
 This is looking more like \eqnref{eqn:wave_lagrangian:maxlag} now.  It is expected that the gauge condition can be used to complete the reconciliation.  However, I have had trouble actually doing this, despite the fact that both Lagrangians appear to correctly
@@ -201,19 +185,15 @@ in the field equation, which one has:
 %
 The Klein-Gordon Lagrangian is
 \begin{equation}\label{eqn:waveLagrangian:260}
-\begin{aligned}
 \LL
-&= -(\grad \psi) \cdot (\grad \psi^\conj) + \frac{m^2 c^2}{\Hbar^2} \psi \psi^\conj .
-\end{aligned}
+= -(\grad \psi) \cdot (\grad \psi^\conj) + \frac{m^2 c^2}{\Hbar^2} \psi \psi^\conj .
 \end{equation}
 %
 from which we can recover the Klein-Gordon scalar wave equation which applies to a
 specific subset of quantum phenomena (what exactly?)
 %
 \begin{equation}\label{eqn:waveLagrangian:280}
-\begin{aligned}
 \left(\frac{\Hbar^2}{2m} \grad^2 + \inv{2} m c^2\right) \psi = 0 .
-\end{aligned}
 \end{equation}
 %
 \subsection{Dirac wave equation.}

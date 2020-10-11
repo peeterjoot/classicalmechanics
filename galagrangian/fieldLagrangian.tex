@@ -68,9 +68,7 @@ f(x,y) = a_{i j} x^i y^j.
 Evaluation of this function or its partials at \((x,y) = (0,0)\) supply the constants \(a_{i j}\).  Simplest is the lowest order constant
 %
 \begin{equation}\label{eqn:fieldLagrangian:80}
-\begin{aligned}
-f(0,0) &= a_{0 0} .
-\end{aligned}
+f(0,0) = a_{0 0} .
 \end{equation}
 %
 \begin{equation}\label{eqn:fieldLagrangian:100}
@@ -207,11 +205,9 @@ None of the terms in the first integral are of interest since they are fixed.  T
 parts.  For short, let
 %
 \begin{equation}\label{eqn:fieldLagrangian:260}
-\begin{aligned}
-u &= \left. \left( \PD{
+u = \left. \left( \PD{
 \lr{ \partial_\nu A^\sigma }
 }{\LL} \right) \right\vert_{\partial_\nu A^\mu = \partial_\nu \barA^\mu}.
-\end{aligned}
 \end{equation}
 %
 then this integral is
@@ -219,10 +215,8 @@ then this integral is
 %\int u' v = \int (u v)' - \int u v'
 %\int u' v = u v - \int u v'
 \begin{equation}\label{eqn:fieldLagrangian:280}
-\begin{aligned}
 \int d^3 x d x^\nu \PD{x^\nu}{n^\sigma} u
-&= \int d^3 x \left. \left( {n^\sigma} u \right) \right\vert_{\partial x^\nu} - \int d^4 x n^\sigma \PD{x^\nu}{} u.
-\end{aligned}
+= \int d^3 x \left. \left( {n^\sigma} u \right) \right\vert_{\partial x^\nu} - \int d^4 x n^\sigma \PD{x^\nu}{} u.
 \end{equation}
 %
 Here \(\partial x^\nu\) denotes the boundary of the integration.  Because \(n^\sigma\) was by definition zero on all boundaries of the
@@ -262,11 +256,9 @@ Feynman's direct approach does not require too much to understand, and one can i
 where the same result appears to be derived in Chapter 13.  That approach requires the use and familiarity with a functional derivative
 %
 \begin{equation}\label{eqn:fieldLagrangian:320}
-\begin{aligned}
-\frac{\delta \LL}{\delta A^\sigma} &= \PD{A^\sigma}{\LL} - \frac{d}{dx^\nu} \PD{
+\frac{\delta \LL}{\delta A^\sigma} = \PD{A^\sigma}{\LL} - \frac{d}{dx^\nu} \PD{
 \lr{ \partial_\nu A^\sigma }
 }{\LL}.
-\end{aligned}
 \end{equation}
 %
 which must be defined and explained somewhere earlier in the book in one of the chapters that I skimmed over to get to the interesting ``Continuous Systems and Fields'' content
@@ -281,23 +273,19 @@ of the integration by parts in two variables can be found in the plane solution 
 For Maxwell's equation, our Lagrangian density takes the following complex valued form
 %
 \begin{equation}\label{eqn:fieldLag:maxlag}
-\begin{aligned}
-\LL &= -\frac{\epsilon_0 c}{2}
+\LL = -\frac{\epsilon_0 c}{2}
 \lr{ \grad \wedge A }^2
 + J \cdot A.
-\end{aligned}
 \end{equation}
 %
 In coordinates, writing \(\gamma^{\alpha\beta} = \gamma^\alpha \wedge \gamma^\beta\), and
 for convenience \(\kappa = -\epsilon_0 c /2\) this is
 %
 \begin{equation}\label{eqn:fieldLag:maxlagcomp}
-\begin{aligned}
-\LL &= \kappa
+\LL = \kappa
 \lr{ \gamma^{\mu\nu} }
  \lr{ \gamma^{\alpha\beta} }
  \partial_\mu A_\nu \partial_\alpha A_\beta + J^\sigma A_\sigma.
-\end{aligned}
 \end{equation}
 %
 Some intermediate calculations to start
@@ -309,17 +297,15 @@ For the differentiation with respect to partials it is helpful to introduce a co
 to avoid confusing things with the \(\nu\), and \(\sigma\) indices in our partial.
 %
 \begin{equation}\label{eqn:fieldLagrangian:360}
-\begin{aligned}
 \PD{
 \lr{ \partial_\nu A_\sigma }
 }{\LL}
-&= \kappa \PD{
+= \kappa \PD{
 \lr{ \partial_\nu A_\sigma }
 }{\LL} \left(
 \lr{ \gamma^{M N} }
  \lr{ \gamma^{B C} }
  \partial_M A_N \partial_B A_C \right) .
-\end{aligned}
 \end{equation}
 %
 This makes it clearer that the differentiation really just requires evaluation of the product chain rule \((fg)' = f'g + f g'\)
@@ -354,9 +340,8 @@ This makes it clearer that the differentiation really just requires evaluation o
 Reassembling results the complete field equations are described by the set of relations
 %
 \begin{equation}\label{eqn:fieldLagrangian:400}
-\begin{aligned}
 J^\sigma
-&= -\inv{2} \epsilon_0 c \partial_\nu \partial_\alpha A_\beta
+= -\inv{2} \epsilon_0 c \partial_\nu \partial_\alpha A_\beta
 %\gpgrade{ (\gamma^{\nu\sigma}) (\gamma^{\alpha\beta}) }{0+4}
 \left(
 \lr{ \gamma^{\nu\sigma} }
@@ -364,7 +349,6 @@ J^\sigma
 \lr{ \gamma^{\alpha\beta} }
  \lr{ \gamma^{\nu\sigma} }
  \right).
-\end{aligned}
 \end{equation}
 %
 Multiplying this by \(\gamma_\sigma\) on both sides and summing produces the current density \(J = \gamma_\sigma J^\sigma\) on the LHS
@@ -394,9 +378,8 @@ Multiplying this by \(\gamma_\sigma\) on both sides and summing produces the cur
 \end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:fieldLag:gettingthere}
-\begin{aligned}
 \frac{J}{\epsilon_0 c}
-&= \inv{2}
+= \inv{2}
 \partial_\nu \partial_\alpha A_\beta
 \left(
 \gamma^{\nu}
@@ -406,7 +389,6 @@ Multiplying this by \(\gamma_\sigma\) on both sides and summing produces the cur
 \lr{ \gamma^{\alpha\beta} }
 \lr{ \gamma^{\sigma\nu} }
 \right).
-\end{aligned}
 \end{equation}
 %
 It appears that there is a cancellation of \(\sigma\) terms possible in that last term above too.  Algebraically
@@ -437,13 +419,11 @@ of these indices equal would mean there is a bivector grade in the sum.
 The end of a long story is that the bivector product
 %
 \begin{equation}\label{eqn:fieldLagrangian:480}
-\begin{aligned}
 \lr{ \gamma^{\alpha\beta} }
 \lr{ \gamma^{\sigma\nu} }
-&=
+=
 \lr{ \gamma^{\sigma\nu} }
 \lr{ \gamma^{\alpha\beta} }.
-\end{aligned}
 \end{equation}
 %
 can be commuted, which leaves
@@ -502,9 +482,7 @@ commutator term that was not in the Goldstein problem.  Believe that to have bee
 %
 We have
 \begin{equation}\label{eqn:fieldLagrangian:560}
-\begin{aligned}
-\PD{\psi^\conj}{\LL} &= V\psi + \frac{\Hbar}{2i} \partial_t \psi .
-\end{aligned}
+\PD{\psi^\conj}{\LL} = V\psi + \frac{\Hbar}{2i} \partial_t \psi .
 \end{equation}
 %
 and canonical momenta
@@ -532,9 +510,7 @@ V\psi + \frac{\Hbar}{2i} \partial_t \psi &= \frac{\Hbar^2}{2 m} \sum_m \partial_
 %
 which is the desired result
 \begin{equation}\label{eqn:fieldLagrangian:620}
-\begin{aligned}
--\frac{\Hbar^2}{2 m} \spacegrad^2 \psi + V\psi &= {\Hbar i}{} \PD{t}{\psi} .
-\end{aligned}
+-\frac{\Hbar^2}{2 m} \spacegrad^2 \psi + V\psi = {\Hbar i}{} \PD{t}{\psi} .
 \end{equation}
 %
 The conjugate result
@@ -553,9 +529,7 @@ The conjugate result
 %
 %which is
 \begin{equation}\label{eqn:fieldLag:schrod}
-\begin{aligned}
--\frac{\Hbar^2}{2 m} \spacegrad^2 \psi^\conj + V\psi^\conj &= -{\Hbar i}{} \PD{t}{\psi^\conj} .
-\end{aligned}
+-\frac{\Hbar^2}{2 m} \spacegrad^2 \psi^\conj + V\psi^\conj = -{\Hbar i}{} \PD{t}{\psi^\conj} .
 \end{equation}
 %
 follows by inspection since all terms except the time partial are symmetric in \(\psi\) and \(\psi^\conj\).  The time partial has a negation in sign from the commutator of the Lagrangian.

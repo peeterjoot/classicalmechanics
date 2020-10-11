@@ -243,13 +243,11 @@ This however, is an ugly beastie to take the norm of as is.  It is straightforwa
 however, the brute force multiplication that leads to this result is not easily generalized to the multiple pendulum problem.  Instead of actually expanding this now, lets defer that until later and instead write for a coordinate vector of angular velocity components
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:262}
-\begin{aligned}
 \Omega =
 \begin{bmatrix}
-\dot{\theta} \\
+\dot{\theta} 
 \dot{\phi}
 \end{bmatrix}.
-\end{aligned}
 \end{equation}
 %
 Now the unit polar derivative \eqnref{eqn:multiPendulumSphericalMatrix:260} can be factored as
@@ -596,10 +594,8 @@ T
 %%%Now, the relative velocity differential can be written utilizing these factors
 %%%
 %%%\begin{equation}\label{eqn:multiPendulumSphericalMatrix:360}
-%%%\begin{aligned}
-%%%(\dot{\Bu}_k - \dot{\Bu}_{k-1})^2 = l_k^2 {\dot{\BTheta}_k}^\T A_k A_k^\T \dot{\BTheta}_k.
-%%%\end{aligned}
-%%%\end{equation}
+%%%%%%(\dot{\Bu}_k - \dot{\Bu}_{k-1})^2 = l_k^2 {\dot{\BTheta}_k}^\T A_k A_k^\T \dot{\BTheta}_k.
+%%%%%%\end{equation}
 %%%
 %%%Observe that the inner product is symmetric since \((A_k A_k^\T)^\T = A_k A_k^\T\).
 %%%
@@ -640,14 +636,12 @@ g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
 %%%
 %%%\begin{subequations}
 %%%\begin{equation}\label{eqn:multiPendulumSphericalMatrix:380}
-%%%\begin{aligned}
-%%%K &=
+%%%%%%K =
 %%%\inv{2} \sum_{k=1}^N m_k
 %%%\dot{\BTheta}^\T
 %%%B_k B_k^\T
 %%%\dot{\BTheta} .
-%%%\end{aligned}
-%%%\end{equation}
+%%%%%%\end{equation}
 %%%\end{subequations}
 %%%
 %%%The kinetic energy expressed completely and explicitly as a symmetric quadratic form.
@@ -679,19 +673,17 @@ g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
 %%%Pulling in the summation over \(m_k\) we have
 %%%
 %%%\begin{equation}\label{eqn:multiPendulumSphericalMatrix:410}
-%%%\begin{aligned}
-%%%\sum_k m_k
+%%%%%%\sum_k m_k
 %%%\dot{\BTheta}^\T
 %%%B_k B_k^\T
 %%%\dot{\BTheta}
-%%%&=
+%%%=
 %%%\dot{\BTheta}^\T
 %%%{\begin{bmatrix}
 %%%\mu_{\max(r,c)} l_r l_c \gpgradezeroNoOp{A_r A_c^\T}
 %%%\end{bmatrix}}_{rc}
 %%%\dot{\BTheta}.
-%%%\end{aligned}
-%%%\end{equation}
+%%%%%%\end{equation}
 %%%
 %%%It appears justifiable to label the \(\mu_{\max(r,c)} l_r l_c\) factors of the angular velocity matrices as moments of inertia in a generalized sense.  Using this block matrix form, and scalar selection, we can now write the Lagrangian in a slightly tidier form
 %%%
@@ -969,9 +961,8 @@ A_1 \PD{\theta_2}{A_2}^\T
 This has exactly the same form as the diagonal term, so summing over all terms we get for the position gradient components of the Euler-Lagrange equation just
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:540}
-\begin{aligned}
 \PD{\theta_a}{\LL}
-&=
+=
 \sum_{k}
 \mu_{\max(k,a)} l_k l_a
 {\dot{\BTheta}_k}^\T
@@ -980,15 +971,13 @@ A_k \PD{\theta_a}{A_a}^\T
 }
 \dot{\BTheta}_a
 -g \mu_a l_a \sin\theta_a,
-\end{aligned}
 \end{equation}
 %
 and
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:550}
-\begin{aligned}
 \PD{\phi_a}{\LL}
-&=
+=
 \sum_{k}
 \mu_{\max(k,a)} l_k l_a
 {\dot{\BTheta}_k}^\T
@@ -996,7 +985,6 @@ and
 A_k \PD{\phi_a}{A_a}^\T
 }
 \dot{\BTheta}_a.
-\end{aligned}
 \end{equation}
 %
 The only thing that remains to do is evaluate the \(\gpgradezeroNoOp{A_k \PDi{\phi_a}{A_a}^\T}\) matrices.
