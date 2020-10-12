@@ -31,9 +31,9 @@ to derive the Newtonian force law.
 Multiplication of this result with the unit vector \(\Be_i\), and summing over
 all unit vectors we have:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:newtonianLagrangianAndGradient:100}
 \sum \Be_i \frac{d}{dt}\left(m \dot{x}^i\right) = - \sum \Be_i \PDb{\varphi}{x^i}.
-\end{equation*}
+\end{equation}
 %
 In terms of the gradient operator, and with \(\Bv = \sum \Be_i \dot{x}^i\), that is
 %
@@ -48,27 +48,27 @@ result is not valid for a general set of basis vectors.  This initially confused
 sum \(\Bv = \sum \Be_i v^i\) is valid for any set of basis vectors independent of the orthonormality of that
 set of basis vectors.  This is assuming that these coordinate pairs follow the usual reciprocal relationships:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:newtonianLagrangianAndGradient:120}
 \Bx = \sum \Be_i x^i,
-\end{equation*}
-\begin{equation*}
+\end{equation}
+\begin{equation}\label{eqn:newtonianLagrangianAndGradient:140}
 x^i = \Bx \cdot \Be^i,
-\end{equation*}
-\begin{equation*}
+\end{equation}
+\begin{equation}\label{eqn:newtonianLagrangianAndGradient:160}
 \Be^i \cdot \Be_j = {\delta^i}_j.
-\end{equation*}
+\end{equation}
 %
 However, the LHS that implicitly defines the gradient as:
-\begin{equation*}
+\begin{equation}\label{eqn:newtonianLagrangianAndGradient:180}
 \grad = \sum \Be_i \PDb{}{x^i}.
-\end{equation*}
+\end{equation}
 %
 is a result that is only valid when the set of basis vectors \(\Be_i\) is orthonormal.  The general result is
 expected instead to be:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:newtonianLagrangianAndGradient:200}
 \grad = \sum \Be^i \PDb{}{x^i}.
-\end{equation*}
+\end{equation}
 %
 This is how the gradient is defined (without motivation) in Doran/Lasenby.  One can however demonstrate that this definition, and not \(\grad = \sum \Be_i \PDb{}{x^i}\), is required by doing a computation of something like \(\grad \norm{\Bx}^\alpha\) with \(\Bx = \sum x^i \Be_i\) for a general basis \(\Be_i\) to demonstrate this.  An example of this can be found in the appendix below.
 
@@ -150,9 +150,9 @@ e_j &= \sum g_{jk} e^k.
 As a verification that the gradient as defined in \eqnref{eqn:newtonLaG:gradient} works as expected, lets do a calculation that we know the answer as computed with an
 orthonormal basis.
 %
-\begin{equation*}
+\begin{equation}\label{eqn:newtonianLagrangianAndGradient:220}
 f(\Br) = \norm{\Br}^\alpha.
-\end{equation*}
+\end{equation}
 %
 \begin{equation}\label{eqn:newtonianLagrangianAndGradient:80}
 \begin{aligned}

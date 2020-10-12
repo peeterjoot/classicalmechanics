@@ -13,9 +13,9 @@
 %
 \citep{goldstein1951cm} defines the canonical momentum as:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:canonicalMomentum:80}
 \PD{\xdot^{\mu}}{\LL}.
-\end{equation*}
+\end{equation}
 %
 and gives an example (Lorentz force) about how this can generalize the
 concept of momentum to include contributions from velocity dependent
@@ -24,11 +24,11 @@ potentials.
 Lets look at his example, but put into the more natural covariant form
 with the Lorentz Lagrangian (using summation convention here)
 %
-\begin{equation*}
+\begin{equation}\label{eqn:canonicalMomentum:100}
 \LL = \inv{2} m v^2 + q A \cdot v /c =
 \inv{2} m \gamma_{\alpha} \cdot \gamma_{\beta} \xdot^{\alpha} \xdot^{\beta}
 + \frac{q}{c} \gamma_{\alpha} \cdot \gamma_{\beta} A^{\alpha} \xdot^{\beta}.
-\end{equation*}
+\end{equation}
 %
 Calculation of the canonical momentum gives:
 %
@@ -52,18 +52,18 @@ m \gamma_{\alpha} \xdot^{\alpha}
 %
 So, if we are to call this modified quantity \(p = m v + q A / c\) the total general momentum for the system, then the canonical momentum conjugate to \(x^{\mu}\) is:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:canonicalMomentum:120}
 \PD{\xdot^{\mu}}{\LL} = \gamma_{\mu} \cdot p.
-\end{equation*}
+\end{equation}
 %
 In terms of our reciprocal frame vectors, the components of \(p\) are:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:canonicalMomentum:140}
 p = \gamma_{\mu} \gamma^{\mu} \cdot p = \gamma_{\mu} p^{\mu},
-\end{equation*}
-\begin{equation*}
+\end{equation}
+\begin{equation}\label{eqn:canonicalMomentum:160}
 p = \gamma^{\mu} \gamma_{\mu} \cdot p = \gamma^{\mu} p_{\mu}.
-\end{equation*}
+\end{equation}
 %
 From this we see that the conjugate momentum gives us our vector momentum
 component with respect to the reciprocal frame.  We can therefore recover
@@ -93,8 +93,8 @@ p &= \grad_v \LL \\
 %
 Now, perhaps this is a step backwards, since the Lagrangian formulation allows for not having to use vector representations explicitly, nor to be constrained to specific parameterizations such as this constant frame vector representation.  However, it is nice to see things in a form that is closer to what one is used to, and this is not too different seeming than the familiar spatial Newtonian formulation:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:canonicalMomentum:180}
 \frac{d\Bp}{dt} = -\spacegrad \phi.
-\end{equation*}
+\end{equation}
 %
 %(as seen previously, the negation is due to the Minkowski metric, and selection of the spatial components of the gradient).

@@ -16,9 +16,9 @@ Barbell shape, equal masses.  center of rod between masses constrained to circul
 %
 Assuming motion in a plane, the equation for the center of the rod is:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1000}
 c = a e^{i\theta},
-\end{equation*}
+\end{equation}
 %
 and the two mass points positions are:
 \begin{equation}\label{eqn:goldsteinCh12:20}
@@ -48,15 +48,15 @@ and squared magnitudes:
 %
 Summing the kinetic terms yields
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1020}
 K = m \left(a \dottheta \right)^2 + m \left(\inv{2} l \dotalpha\right)^2.
-\end{equation*}
+\end{equation}
 %
 Summing the potential energies, presuming that the motion is vertical, we have:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1040}
 V = m g (l/2) \cos\theta - m g (l/2) \cos \theta,
-\end{equation*}
+\end{equation}
 %
 so the Lagrangian is just the Kinetic energy.
 
@@ -75,15 +75,15 @@ This is surprising seeming.  Is this correct?
 \makeproblem{Angular momentum conservation of three particle system (1.8).}{gold:ch1:pr8}{
 A system is composed of three particles of equal mass m.  Between any two of them there are forces derivable from a potential
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1060}
 V = -g e^{-\mu r},
-\end{equation*}
+\end{equation}
 %
 where \(r\) is the distance between the two particles.  In addition, two of the particles each exert a force on the third which can be obtained from a generalized potential of the form
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1080}
 U = -f \Bv \cdot \Br,
-\end{equation*}
+\end{equation}
 %
 \(\Bv\) being the relative velocity of the interacting particles and f a constant.  Set up the Lagrangian for the system, using as coordinates the radius vector \(\BR\) of the center of mass and the two vectors
 %
@@ -100,9 +100,9 @@ Is the total angular momentum of the system conserved?
 \makeanswer{gold:ch1:pr8}{
 The center of mass vector is:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1100}
 \BR = \inv{3}(\Br_1 + \Br_2 + \Br_3).
-\end{equation*}
+\end{equation}
 %
 This can be used to express each of the position vectors in terms of the \(\Brho_i\) vectors:
 %
@@ -118,26 +118,26 @@ This can be used to express each of the position vectors in terms of the \(\Brho
 %
 Now, that is enough to specify the part of the Lagrangian from the potentials that act between all the particles
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1120}
 \LL_V = \sum -V_{ij} = g \left( e^{-\mu \Abs{\Brho_1}} + e^{-\mu \Abs{\Brho_2}} + e^{-\mu \Abs{ \Brho_1 - \Brho_2 }} \right).
-\end{equation*}
+\end{equation}
 %
 Now, we need to calculate the two \(U\) potential terms.  If we consider with positions \(\Br_1\), and \(\Br_2\) to be the ones
 that can exert a force on the third, the velocities of those masses relative to \(\Br_3\) are:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1140}
 (\Br_3 - \Br_k)' = \dot{\Brho_k}.
-\end{equation*}
+\end{equation}
 %
 So, the potential parts of the Lagrangian are
 %Adding this to the first half of the Lagrangian we have:
 %So, for the second half of the Lagrangian we have:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1160}
 \LL_{U+V} =
 g \left( e^{-\mu \Abs{\Brho_1}} + e^{-\mu \Abs{\Brho_2}} + e^{-\mu \Abs{ \Brho_1 - \Brho_2 }} \right)
 + f \left(\BR - \inv{3}(\Brho_1 + \Brho_2) \right) \cdot \left( \dot{\Brho_1} + \dot{\Brho_2} \right).
-\end{equation*}
+\end{equation}
 %
 The kinetic part (omitting the m/2 factor), in terms of the CM and relative vectors is
 %
@@ -435,9 +435,9 @@ Prove that the shortest length curve between two points in space is a straight l
 \makeanswer{gold:ch2:pr1}{
 In a first attempt of this I used:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1180}
 ds = \sqrt{ 1 + (dy/dx)^2 + (dz/dx)^2 } dx.
-\end{equation*}
+\end{equation}
 %
 Application of the Euler-Lagrange equations does show that one ends up with a linear relation between the y and z coordinates, but no mention of x.  Rather than write that up, consider instead a parametrization of the coordinates:
 %
@@ -451,9 +451,9 @@ z &= x_3(\lambda),
 %
 in terms of this arbitrary parametrization we have a segment length of:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1200}
 ds = \sqrt{ \sum \left(\frac{d x_i}{d\lambda}\right)^2 } d \lambda = f\left(x_i\right) d\lambda.
-\end{equation*}
+\end{equation}
 %
 Application of the Euler-Lagrange equation to \(f\) we have:
 %
@@ -480,7 +480,7 @@ Therefore each of these quotients can be equated to a constant:
 This last form shows explicitly that not all of these squared derivative terms can be linearly independent.  In particular, we have a
 zero determinant:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1220}
 0 =
 \begin{vmatrix}
 1 - c_1^2   & 1            & 1         & 1 & \hdots \\
@@ -489,7 +489,7 @@ zero determinant:
             &              &           & \ddots & \\
             &              &           &        & 1 - {c_n}^2
 \end{vmatrix}.
-\end{equation*}
+\end{equation}
 %
 Now, expanding this for a couple specific cases is not too hard.  For \(n=2\) we have:
 %
@@ -518,9 +518,9 @@ in \R{N} space has the shortest distance when that path is a straight line.
 %
 Despite the general setup, I am going to chicken out and show this only for the \R{3} case.  In that case our determinant expands to:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1240}
 c_1^2 + c_2^2 + c_3^2 = c_1^2 c_2^2 c_3^2.
-\end{equation*}
+\end{equation}
 %
 Since not all of the \(\xdot_i^2\) can be linearly independent, one can be eliminated:
 %
@@ -562,15 +562,15 @@ Since these equations are symmetric, we can do this for all, with the result:
 %
 Since the \(c_i\) constants are arbitrary, then we can for example pick the negative sign for \(\pm c_2\), and the positive for the rest, then add all of these, and scale by two:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1260}
 c_3 \xdot_3 - c_2 \xdot_2 = c_1 \xdot_1,
-\end{equation*}
+\end{equation}
 %
 and integrating:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1280}
 c_3 x_3 - c_2 x_2 = c_1 x_1 + \kappa.
-\end{equation*}
+\end{equation}
 %
 Again, we have the general equation of a line, subject to the desired constraints on the end points.  In the end we did not need to
 evaluate the determinant after all, as done in the \R{2} case.
@@ -583,11 +583,11 @@ Prove that the geodesics (shortest length paths) on a spherical surface are grea
 %
 As a variational problem, the first step is to formulate an element of length on the surface.  If we write our vector in spherical coordinates (\(\phi\) on the equator, and \(\theta\) measuring from the north pole) we have:
 %
-FIXME: Scan picture.
+%FIXME: Scan picture.
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1300}
 \Br = (x, y, z) = R( \sin\theta cos\phi, \sin\theta \sin\phi, \cos\theta).
-\end{equation*}
+\end{equation}
 %
 A differential vector element on the surface is (set \(R=1\) without loss of generality) :
 %
@@ -607,29 +607,29 @@ d \Br
 %
 Calculation of the length \(ds\) of this vector yields:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1320}
 ds = \Abs{ d\Br} = \sqrt{\dottheta^2 + (\sin\theta)^2 \dotphi^2} d\lambda.
-\end{equation*}
+\end{equation}
 %
 This completes the setup for the minimization problem, and we want to
 minimize:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1340}
 s = \int \sqrt{\dottheta^2 + ( \dotphi \sin\theta )^2 } d\lambda,
-\end{equation*}
+\end{equation}
 %
 and can therefore apply the Euler-Lagrange equations to the function
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1360}
 f(\theta, \phi, \dottheta, \dotphi, \lambda) =
 \sqrt{\dottheta^2 + ( \dotphi \sin\theta )^2 }.
-\end{equation*}
+\end{equation}
 %
 The \(\phi\) is cyclic, and we have:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1380}
 \PD{\phi}{f} = 0 = \frac{d}{d\lambda} \frac{\dotphi \sin^2\theta}{f}.
-\end{equation*}
+\end{equation}
 %
 Thus we have:
 \begin{equation}\label{eqn:goldsteinCh12:820}
@@ -665,7 +665,7 @@ Let us have a look at the second equation.
 \end{aligned}
 \end{equation}
 This implies
-\begin{equation}\label{eqn:goldsteinCh12:n}
+\begin{equation}\label{eqn:goldsteinCh12:1400}
 \begin{aligned}
 &-\sin\theta\cos\theta \dotphi^2
 \lr{  \dottheta^2 + \lr{  \dotphi \sin\theta  }^2  } \\
@@ -678,7 +678,7 @@ This implies
 \end{equation}
 %
 or,
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1420}
 \begin{aligned}
 0 &=
 - \ddottheta \dottheta^2
@@ -690,7 +690,7 @@ or,
 + \dotphi^2 \dottheta^2 \sin\theta \cos\theta
 + \dotphi^4 \sin^3\theta \cos\theta.
 \end{aligned}
-\end{equation*}
+\end{equation}
 %
 What a mess!  I do not feel inclined to try to reduce this at the moment.  I will come back to this problem later.  Perhaps there is a better parametrization?
 %
@@ -721,22 +721,22 @@ y( x, \alpha ) &= y( x, 0 ) + \alpha n(x) \\
 %
 Here we specify that these arbitrary variational functions vanish at the endpoints:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1440}
 n(a) = n(b) = m(a) = m(b) = 0.
-\end{equation*}
+\end{equation}
 %
 The functions \(y(x, 0)\), and \(\ydot(x, 0)\) are the functions we are looking for as solutions to the min/max problem.
 %
 Calculating derivatives we have:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1460}
 \frac{dI}{d\alpha} =
 \int \left(
 \PD{y}{f} \PD{\alpha}{y}
 +\PD{\ydot}{f} \PD{\alpha}{\ydot}
 +\PD{\yddot}{f} \PD{\alpha}{\yddot}
 \right) d x.
-\end{equation*}
+\end{equation}
 %
 Assuming sufficient continuity look at the second term where we have:
 %
@@ -753,17 +753,17 @@ Assuming sufficient continuity look at the second term where we have:
 %
 Similarly for the third term we have:
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1480}
 \PD{\alpha}{\ydot} = \frac{d}{ d x} \PD{\alpha}{\ydot},
-\end{equation*}
+\end{equation}
 %
-\begin{equation*}
+\begin{equation}\label{eqn:goldsteinCh12:1500}
 \frac{dI}{d\alpha} =
 \int \PD{y}{f} \PD{\alpha}{y} d x +
 \mathLabelBox{\PD{\ydot}{f} \frac{d}{ d x} \PD{\alpha}{y}}{\(u v' = (u v)' - u' v \)}
 d x
 +\PD{\yddot}{f} \frac{d}{ d x} \PD{\alpha}{\ydot} d x.
-\end{equation*}
+\end{equation}
 %
 Now integrating by parts:
 \begin{equation}\label{eqn:goldsteinCh12:900}
