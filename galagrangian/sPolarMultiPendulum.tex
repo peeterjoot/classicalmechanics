@@ -989,9 +989,13 @@ j_b e^{j_b \theta_b} \sin\theta_a \theta_b' + \sin\theta_a \sin\theta_b j_b'
 Adding to this the \(a \leftrightarrow b\) exchanged product and rearranging yields
 %
 \begin{equation}\label{eqn:sPolarMultiPendulum:483}
-- \theta_a' \theta_b' (j_a e^{-j_a \theta_a} j_b e^{j_b\theta_b} + j_b e^{-j_b \theta_b} j_a e^{j_a\theta_a} ) - \sin\theta_a \sin\theta_b (j_a' j_b' + j_b' j_a') 
-- \sin\theta_b \theta_a' ( j_a e^{-j_a \theta_a} j_b' + j_b' j_a e^{j_a \theta_a} )
+\begin{aligned}
+&- \theta_a' \theta_b' 
+\lr{ j_a e^{-j_a \theta_a} j_b e^{j_b\theta_b} + j_b e^{-j_b \theta_b} j_a e^{j_a\theta_a} }
+- \sin\theta_a \sin\theta_b (j_a' j_b' + j_b' j_a') \\
+&\quad - \sin\theta_b \theta_a' ( j_a e^{-j_a \theta_a} j_b' + j_b' j_a e^{j_a \theta_a} )
 - \sin\theta_a \theta_b' ( j_b e^{-j_b \theta_b} j_a' + j_a' j_b e^{j_b \theta_b} ).
+\end{aligned}
 \end{equation}
 %
 Each of these multivector sums within the brackets is of the form \(A + \tilde{A}\), a multivector plus its reverse.  There can therefore be no bivector or trivector terms since they negate on reversal, and the resulting sum can have only scalar and vector grades.  Of these the second term, \(j_a' j_b' + j_b' j_a' = 2 j_a' \cdot j_b'\) so it is unarguably a scalar as expected, but additional arguments are required to show this of the other three terms.  Of these remaining three, the last two have the same form.  Examining the first of these two
