@@ -1,8 +1,17 @@
-classicalmechanics.V0.1.12.pdf (in progress.)
+classicalmechanics.V0.1.13.pdf (current version)
 
-- update email address
-- listing hyphenation fix.
+classicalmechanics.V0.1.12-22.pdf, Oct 12 2020, (commit 75aaee7e385)
+
+- Converted dmath* and equation* s to labelled equations.
+- Removed sentances that started with "Or,".
+- Internal cleanups: remove unless {aligned} enviornments, subequations of one equation, switch from {align} envionrment to equation + aligned.
+- Fixup equation grammar in many places (periods and commas)
+- Removed lots of the blank lines that forced undesirable latex paragraph breaks.
+- Lots of gutter and equation overflow fixes (many caused by the 6x9 transition.)
+- Remove parts.
+- Updated email address.
+- Listing hyphenation fix.
 - url fixes.
 - thethe.py fixes.
-- switch to 6x9 format
-- move chapter headings into chapters.tex
+- Switch to 6x9 format
+- Move chapter headings into chapters.tex
