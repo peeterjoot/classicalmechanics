@@ -1,0 +1,301 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeoproblem{Double pendulum.}{tongmf1:pr4}{\citep{TongMf1} p4.}{
+Derive the Lagrangian for a double pendulum.
+}
+%
+\makeanswer{tongmf1:pr4}{
+%
+First consider a single pendulum (fixed length \(l\)).
+%
+\begin{equation}\label{eqn:tongMf1:200}
+\begin{aligned}
+x &= l \exp(i\theta) \\
+\xdot &= l i \dottheta \exp(i\theta) \\
+\abs{\xdot}^2 &= l^2 \dottheta^2 .
+\end{aligned}
+\end{equation}
+%
+Now, if \(\theta = 0\) represents the downwards position at rest, the height above that rest point is \(h = l - l \cos\theta\).  Therefore the Lagrangian is:
+%
+\begin{equation}\label{eqn:tongMf1:220}
+\begin{aligned}
+\LL
+&= \inv{2} m v^2 - mgh \\
+&= \inv{2} m l^2 \dottheta^2 - mg l (1 - \cos\theta) .
+\end{aligned}
+\end{equation}
+%
+The constant term can be dropped resulting in the equivalent Lagrangian:
+%
+\begin{equation}\label{eqn:tongMf1:1100}
+\LL' = \inv{2} m l^2 \dottheta^2 + mg l \cos\theta.
+\end{equation}
+%
+This amounts to a difference in the reference point for the potential energy, so
+instead of measuring the potential energy \(V = m g h\) from a reference position below the mass, one could consider that the potential has a maximum of zero at the highest position, and decreases from there as:
+%
+\begin{equation}\label{eqn:tongMf1:1120}
+V' = 0 - m g l \cos\theta.
+\end{equation}
+%
+Moving back to the EOMs that result from either form of Lagrangian, we have after taking our derivatives:
+%
+\begin{equation}\label{eqn:tongMf1:1140}
+-m g l \sin\theta = \frac{d}{dt} m l^2 \dottheta = m l^2 \ddottheta.
+\end{equation}
+%
+Dividing out the \( m l^2 \) we are left with
+%
+\begin{equation}\label{eqn:tongMf1:1160}
+\ddottheta = - g/l \sin\theta.
+\end{equation}
+%
+This is consistent with our expectations, and recovers the familiar small angle SHM equation:
+%
+\begin{equation}\label{eqn:tongMf1:1180}
+\ddottheta \approx - g/l \theta.
+\end{equation}
+%
+Now, move on to the double pendulum, and compute the Kinetic energies of the two particles:
+%
+\begin{equation}\label{eqn:tongMf1:240}
+\begin{aligned}
+x_1 &= l_1 \exp(i\theta_1) \\
+\xdot_1 &= l_1 i \dottheta_1 \exp(i\theta_1) \\
+\abs{\xdot_1}^2 &= {l_1}^2 {\dottheta_1}^2,
+\end{aligned}
+\end{equation}
+%
+\begin{equation}\label{eqn:tongMf1:260}
+\begin{aligned}
+x_2 &= x_1 + l_2 \exp(i\theta_2) \\
+\xdot_2 &= \xdot_1 + l_2 i \dottheta_2 \exp(i\theta_2) \\
+        &= l_1 i \dottheta_1 \exp(i\theta_1) + l_2 i \dottheta_2 \exp(i\theta_2) \\
+\abs{\xdot_2}^2
+&=
+(l_1 \dottheta_1)^2 + (l_2 \dottheta_2)^2
++ l_1 i \dottheta_1 \exp(i\theta_1) l_2 (-i) \dottheta_2 \exp(-i\theta_2) \\
+&\quad + l_1 (-i) \dottheta_1 \exp(-i\theta_1) l_2 i \dottheta_2 \exp(i\theta_2) \\
+&=
+(l_1 \dottheta_1)^2 + (l_2 \dottheta_2)^2
++ l_1 l_2 \dottheta_1 \dottheta_2 \left( \exp(i(\theta_1 -\theta_2)) + \exp(-i(\theta_1 - \theta_2)) \right) \\
+&=
+(l_1 \dottheta_1)^2 + (l_2 \dottheta_2)^2
++ 2 l_1 l_2 \dottheta_1 \dottheta_2 \cos(\theta_1 -\theta_2).
+\end{aligned}
+\end{equation}
+%
+Now calculate the potential energies for the two masses.  The first has potential of
+%
+\begin{equation}\label{eqn:tongMf1:1200}
+V_1 = m_1 g l_1 (1 - \cos\theta_1).
+\end{equation}
+%
+and the potential energy of the second mass, relative to the position of the first mass is:
+\begin{equation}\label{eqn:tongMf1:1220}
+V_2' = m_2 g l_2 (1 - \cos\theta_2).
+\end{equation}
+%
+But that is the potential only if the first mass is at rest.  The total difference in height from the dual rest position is:
+\begin{equation}\label{eqn:tongMf1:1240}
+l_1 (1 - \cos\theta_1) + l_2 (1 - \cos\theta_2).
+\end{equation}
+%
+So, the potential energy for the second mass is:
+\begin{equation}\label{eqn:tongMf1:1260}
+V_2 = m_2 g \left( l_1 (1 - \cos\theta_1) + l_2 (1 - \cos\theta_2) \right).
+\end{equation}
+%
+Dropping constant terms the total Lagrangian for the system is:
+%
+\begin{equation}\label{eqn:tongMf1:280}
+\begin{aligned}
+\LL
+&= \inv{2}m_1 {v_1}^2 +\inv{2}m_2 {v_2}^2 + m_1 g l_1 \cos\theta_1 + m_2 g \left( l_1 \cos\theta_1 + l_2 \cos\theta_2 \right) \\
+&=
+\inv{2} m_1 {l_1}^2 {\dottheta_1}^2
++ \inv{2} m_2 \left( (l_1 \dottheta_1)^2 + (l_2 \dottheta_2)^2 + 2 l_1 l_2 \dottheta_1 \dottheta_2 \cos(\theta_1 -\theta_2) \right) \\
+&+ m_1 g l_1 \cos\theta_1 + m_2 g \left( l_1 \cos\theta_1 + l_2 \cos\theta_2 \right) .
+\end{aligned}
+\end{equation}
+%
+Again looking at the resulting Lagrangian, we see that it would have been more natural to measure the potential energy from a reference point of zero potential at the horizontal position, and measure downwards from there:
+%
+\begin{equation}\label{eqn:tongMf1:300}
+\begin{aligned}
+V_1' &= 0 - m_1 g l_1 \cos\theta_1 \\
+V_2' &= 0 - m_2 g \left( l_1 \cos\theta_1 + l_2 \cos\theta_2 \right).
+\end{aligned}
+\end{equation}
+%
+\paragraph{N coupled pendulums.}
+%
+Now, with just two masses it is not too messy to expand out those kinetic energy terms, but for more the trig gets too messy.  With the \(K_2\) term of the Lagrangian in complex form we have:
+%
+\begin{equation}\label{eqn:tongMf1:320}
+\begin{aligned}
+\LL
+&=
+\inv{2} m_1 {l_1}^2 {\dottheta_1}^2
++ \inv{2} m_2 \Abs{ l_1 \dottheta_1 + l_2 \dottheta_2 \exp(i(\theta_2 -\theta_1)) }^2 \\
+&+ m_1 g l_1 \cos\theta_1 + m_2 g \left( l_1 \cos\theta_1 + l_2 \cos\theta_2 \right) \\
+&=
+\inv{2} m_1 \Abs{l_1 \dottheta_1 \exp(i\theta_1)}^2
++ \inv{2} m_2 \Abs{ l_1 \dottheta_1 \exp(i\theta_1) + l_2 \dottheta_2 \exp(i\theta_2) }^2 \\
+&+ m_1 g l_1 \cos\theta_1 + m_2 g \left( l_1 \cos\theta_1 + l_2 \cos\theta_2 \right) .
+\end{aligned}
+\end{equation}
+%
+By inspection we can also write the Lagrangian for the N particle variant:
+%
+\begin{equation}\label{eqn:tongMf1:1280}
+\LL
+=
+\inv{2} \sum_{j=1}^N m_j \Abs{ \sum_{k=1}^j l_k \dottheta_k \exp(i\theta_k) }^2
++ g \sum_{j=1}^N l_j \cos\theta_j \sum_{k=j}^N m_k.
+\end{equation}
+%
+Can this be used to derive the wave equation?
+%
+If each of the \(N\) masses is a fraction \(m_j = \Delta m = M/N\) of the total mass, and the lengths are all uniformly divided into segments of length
+\(l_j = \Delta l = L/N\), then the Lagrangian becomes:
+%
+\begin{equation}\label{eqn:tongMf1:340}
+\begin{aligned}
+\LL
+&= \frac{\Delta l}{2g} \sum_{j=1}^N \Abs{ \sum_{k=1}^j \dottheta_k \exp(i\theta_k) }^2 + \sum_{j=1}^N \cos\theta_j \sum_{k=j}^N 1 \\
+&= \frac{\Delta l}{2g} \sum_{j=1}^N \Abs{ \sum_{k=1}^j \dottheta_k \exp(i\theta_k) }^2 + ( N - j + 1 ) \sum_{j=1}^N \cos\theta_j .
+\end{aligned}
+\end{equation}
+%
+FIXME: return to this later?
+\paragraph{Double pendulum.}
+%
+First consider a single pendulum (fixed length \(l\)).
+%
+\begin{equation}\label{eqn:tongMf1:360}
+\begin{aligned}
+x &= l \exp(i\theta) \\
+\xdot &= l i \dottheta \exp(i\theta) \\
+\abs{\xdot}^2 &= l^2 \dottheta^2 .
+\end{aligned}
+\end{equation}
+%
+Now, if \(\theta = 0\) represents the downwards position at rest, the height above that rest point is \(h = l - l \cos\theta\).  Therefore the Lagrangian is:
+%
+\begin{equation}\label{eqn:tongMf1:380}
+\begin{aligned}
+\LL
+&= \inv{2} m v^2 - mgh \\
+&= \inv{2} m l^2 \dottheta^2 - mg l (1 - \cos\theta) .
+\end{aligned}
+\end{equation}
+%
+The constant term can be dropped resulting in the equivalent Lagrangian:
+%
+\begin{equation}\label{eqn:tongMf1:1300}
+\LL' = \inv{2} m l^2 \dottheta^2 + mg l \cos\theta.
+\end{equation}
+%
+This amounts to a difference in the reference point for the potential energy, so
+instead of measuring the potential energy \(V = m g h\) from a reference position below the mass, one could consider that the potential has a maximum of zero at the highest position, and decreases from there as:
+%
+\begin{equation}\label{eqn:tongMf1:1320}
+V' = 0 - m g l \cos\theta.
+\end{equation}
+%
+Moving back to the EOMs that result from either form of Lagrangian, we have after taking our derivatives:
+%
+\begin{equation}\label{eqn:tongMf1:1340}
+-m g l \sin\theta = \frac{d}{dt} m l^2 \dottheta = m l^2 \ddottheta.
+\end{equation}
+%
+Dividing out the \( m l^2 \) we are left with
+%
+\begin{equation}\label{eqn:tongMf1:1360}
+\ddottheta = - g/l \sin\theta.
+\end{equation}
+%
+This is consistent with our expectations, and recovers the familiar small angle SHM equation:
+%
+\begin{equation}\label{eqn:tongMf1:1380}
+\ddottheta \approx - g/l \theta.
+\end{equation}
+%
+Now, move on to the double pendulum, and compute the Kinetic energies of the two particles:
+%
+\begin{equation}\label{eqn:tongMf1:400}
+\begin{aligned}
+x_1 &= l_1 \exp(i\theta_1) \\
+\xdot_1 &= l_1 i \dottheta_1 \exp(i\theta_1) \\
+\abs{\xdot_1}^2 &= {l_1}^2 {\dottheta_1}^2 .
+\end{aligned}
+\end{equation}
+%
+\begin{equation}\label{eqn:tongMf1:420}
+\begin{aligned}
+x_2 &= x_1 + l_2 \exp(i\theta_2) \\
+\xdot_2 &= \xdot_1 + l_2 i \dottheta_2 \exp(i\theta_2) \\
+        &= l_1 i \dottheta_1 \exp(i\theta_1) + l_2 i \dottheta_2 \exp(i\theta_2) \\
+\abs{\xdot_2}^2
+&=
+(l_1 \dottheta_1)^2 + (l_2 \dottheta_2)^2
++ l_1 i \dottheta_1 \exp(i\theta_1) l_2 (-i) \dottheta_2 \exp(-i\theta_2) \\
+&\quad
++ l_1 (-i) \dottheta_1 \exp(-i\theta_1) l_2 i \dottheta_2 \exp(i\theta_2) \\
+&=
+(l_1 \dottheta_1)^2 + (l_2 \dottheta_2)^2
++ l_1 l_2 \dottheta_1 \dottheta_2 \left( \exp(i(\theta_1 -\theta_2)) + \exp(-i(\theta_1 - \theta_2)) \right) \\
+&=
+(l_1 \dottheta_1)^2 + (l_2 \dottheta_2)^2
++ 2 l_1 l_2 \dottheta_1 \dottheta_2 \cos(\theta_1 -\theta_2) .
+\end{aligned}
+\end{equation}
+%
+Now calculate the potential energies for the two masses.  The first has potential of
+%
+\begin{equation}\label{eqn:tongMf1:1400}
+V_1 = m_1 g l_1 (1 - \cos\theta_1).
+\end{equation}
+%
+and the potential energy of the second mass, relative to the position of the first mass is:
+\begin{equation}\label{eqn:tongMf1:1420}
+V_2' = m_2 g l_2 (1 - \cos\theta_2).
+\end{equation}
+%
+But that is the potential only if the first mass is at rest.  The total difference in height from the dual rest position is:
+\begin{equation}\label{eqn:tongMf1:1440}
+l_1 (1 - \cos\theta_1) + l_2 (1 - \cos\theta_2).
+\end{equation}
+%
+So, the potential energy for the second mass is:
+\begin{equation}\label{eqn:tongMf1:1460}
+V_2 = m_2 g \left( l_1 (1 - \cos\theta_1) + l_2 (1 - \cos\theta_2) \right).
+\end{equation}
+%
+Dropping constant terms the total Lagrangian for the system is:
+%
+\begin{equation}\label{eqn:tongMf1:440}
+\begin{aligned}
+\LL
+&= \inv{2}m_1 {v_1}^2 +\inv{2}m_2 {v_2}^2 + m_1 g l_1 \cos\theta_1 + m_2 g \left( l_1 \cos\theta_1 + l_2 \cos\theta_2 \right) \\
+&=
+\inv{2} m_1 {l_1}^2 {\dottheta_1}^2
++ \inv{2} m_2 \left( (l_1 \dottheta_1)^2 + (l_2 \dottheta_2)^2 + 2 l_1 l_2 \dottheta_1 \dottheta_2 \cos(\theta_1 -\theta_2) \right) \\
+&+ m_1 g l_1 \cos\theta_1 + m_2 g \left( l_1 \cos\theta_1 + l_2 \cos\theta_2 \right) .
+\end{aligned}
+\end{equation}
+%
+Again looking at the resulting Lagrangian, we see that it would have been more natural to measure the potential energy from a reference point of zero potential at the horizontal position, and measure downwards from there:
+%
+\begin{equation}\label{eqn:tongMf1:460}
+\begin{aligned}
+V_1' &= 0 - m_1 g l_1 \cos\theta_1 \\
+V_2' &= 0 - m_2 g \left( l_1 \cos\theta_1 + l_2 \cos\theta_2 \right).
+\end{aligned}
+\end{equation}
+}
+%

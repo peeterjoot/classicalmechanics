@@ -1,0 +1,341 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeoproblem{Lorentz force Lagrangian.}{tongmf1:pr6}{\citep{TongMf1} p6.}{
+%
+Using
+%
+\begin{equation*}
+\LL = \inv{2} m \Bv^2 -q \phi + q \Bv/c \cdot \BA,
+\end{equation*}
+%
+derive the Lorentz force equation, and some other stuff.
+}
+%
+\makeanswer{tongmf1:pr6}{
+First part of the problem is to show that the Lagrangian:
+%
+is equivalent to the Lorentz force law.
+%
+When I first tried this problem I had trouble with it, and also had trouble following the text for the same in Tong's paper.  Later I did the somewhat harder problem of exactly
+this, but for the covariant form of the Lorentz force law, so I thought I had come back to this and try again.
+%
+First step that seemed natural was to put the equation into four vector form, despite the fact that the proper time Lagrangian equations were not going to be used to
+produce the equation of motion.  For just the Lorentz part of the Lagrangian we have:
+%
+%
+\begin{equation}\label{eqn:tongMf1:600}
+\begin{aligned}
+\LL'
+&= -\phi + \Bv/c \cdot \BA \\
+&= -\phi \sum v^i/c A^j
+\mathLabelBox{\sigma_i \cdot \sigma_j}{\(\inv{2}(\gamma_{i0j0} + \gamma_{j0i0}) = - \gamma_i \cdot \gamma_j\)}
+\\
+&= -\inv{c} \phi c + \sum v^i A^i {\gamma_i}^2 \\
+&= -\inv{c} \phi c {\gamma_0}^2 + \sum v^i A^i {\gamma_i}^2 .
+\end{aligned}
+\end{equation}
+%
+Thus with \(v = c \gamma_0 + \sum v^i \gamma_i = \sum v^{\mu} \gamma_{\mu}\), and \(A = \phi \gamma_0 + \sum A^{i} \gamma_i = \sum A^{\mu} \gamma_{\mu}\), we can thus write the complete
+Lagrangian as:
+%
+\begin{equation}\label{eqn:tongMf1:1720}
+\LL = \inv{2} m \Bv^2 - q A \cdot v/c.
+\end{equation}
+%
+As usual we recover our vector forms by wedging with the time basis vector:
+%
+\begin{equation}\label{eqn:tongMf1:1740}
+A \wedge \gamma_0 = \sum A^i \gamma_{i0} = \sum A^i \sigma_i = \BA.
+\end{equation}
+%
+and \(v \wedge \gamma_0 = \cdots = \Bv\).
+%
+Notice the sign in the potential term, which is negative, unlike the same Lagrangian in relativistic (proper) form: \(\LL = \inv{2}m v^2 + q A \cdot v/c\).  That difference is required
+since the lack of the use of time as one of the generalized coordinates will change the signs of some of the results.
+%
+Now, this does not matter for this particular problem, but also observe that this Lagrangian is almost in its proper form.  All we have to do is add a \(-\inv{2} m c^2\) constant to it, which should not effect the equations of motion.  Doing so yields:
+%
+\begin{equation}\label{eqn:tongMf1:1760}
+\LL = \inv{2} m (-c^2 + \Bv^2) - q A \cdot v/c = - \left( \inv{2} mv^2 + q A \cdot v/c \right).
+\end{equation}
+%
+I did not notice that until writing this up.  So we have the same Lagrangian in both cases, which makes sense.  Whether or not one gets the traditional Lorentz force law from this
+or the equivalent covariant form depends only on whether one treats time as one of the generalized coordinates or not (and if doing so, use proper time in the place of the time
+derivatives when applying the Lagrange equations).  Cool.
+%
+Anyways, now that we have a more symmetric form of the Lagrangian, lets compute the equations of motion.
+%
+\begin{equation}\label{eqn:tongMf1:620}
+\begin{aligned}
+\PD{x^i}{\LL}
+&= \frac{d}{dt} \PD{\xdot^i}{\LL} \\
+&= \frac{d}{dt} \left(m v^i - q/c A \cdot \PD{\xdot^i}{v} \right) \\
+&= \frac{d}{dt} \left(m v^i - q/c A \cdot \gamma_i \right) \\
+&= \frac{d}{dt} \left(m v^i + q/c A^i \right) \\
+&= p^i + q/c \sum \xdot^j \PD{x^j}{A^i} \\
+q \PD{x^i}{A} \cdot v/c &= \\
+\implies \\
+\dot{p}^i
+&= -q/c \left( \PD{x^i}{A} \cdot v - \sum \xdot^j \PD{x^j}{A^i} \right) \\
+&= -q/c \left( \sum \PD{x^i}{A^{\mu}} v^{\nu} \gamma_{\mu} \cdot \gamma_{\nu} - \sum v^j \PD{x^j}{A^i} \right) \\
+&= -q/c \left( \sum \PD{x^i}{A^0} v^0 {\gamma_0}^2 +\sum \PD{x^i}{A^j} v^j {\gamma_j}^2 - \sum v^j \PD{x^j}{A^i} \right) \\
+\implies \\
+\sum \sigma_i \dot{p}^i = \Bp
+&= q/c \sum \sigma_i \left( -\PD{x^i}{A^0} v^0 {\gamma_0}^2 - \PD{x^i}{A^j} v^j {\gamma_j}^2 - v^j \PD{x^j}{A^i} \right) \\
+&= -q \grad \phi + \sum \sigma_i v^j \left( \PD{x^i}{A^j} - \PD{x^j}{A^i} \right) .
+\end{aligned}
+\end{equation}
+%
+Now, it is not obvious by looking, but this last expression is \(\Bv \cross (\grad \cross \BA)\).  Let us verify this by going backwards:
+%
+\begin{equation}\label{eqn:tongMf1:640}
+\begin{aligned}
+\Bv \cross
+\lr{ \grad \cross \BA }
+&= \inv{i} \left( \Bv \wedge
+\lr{  \grad \cross \BA  }
+\right) \\
+&= \inv{2i} \left( \Bv
+\lr{  \grad \cross \BA  }
+- \lr{  \grad \cross \BA  }
+ \Bv \right) \\
+&= \inv{2i} \left( \Bv \inv{i}
+\lr{  \grad \wedge \BA  }
+ - \inv{i}
+\lr{  \grad \wedge \BA  }
+ \Bv \right) \\
+&= -\inv{2} \left( \Bv
+\lr{  \grad \wedge \BA  }
+ -
+\lr{  \grad \wedge \BA  }
+ \Bv \right) \\
+&=
+\lr{  \grad \wedge \BA  }
+\cdot \Bv \\
+&= \sum v^k \PD{x^i}{A^j} \sigma_i
+\lr{ \sigma_j \cdot \sigma_k } - \sigma_j
+\lr{ \sigma_i \cdot \sigma_k } \\
+&= \sum v^k \PD{x^i}{A^j} \sigma_i \delta_{jk} - \sigma_j \delta_{ik} \\
+&= \sum v^j \PD{x^i}{A^j} \sigma_i -v^i \PD{x^i}{A^j} \sigma_j \\
+&= \sum v^j \PD{x^i}{A^j} \sigma_i -v^j \PD{x^j}{A^i} \sigma_i \\
+&= \sum v^j \sigma_i \left(\PD{x^i}{A^j} - \PD{x^j}{A^i} \right) .
+\end{aligned}
+\end{equation}
+%
+Therefore the final result is our Lorentz force law, as expected:
+%
+\begin{equation}\label{eqn:tongMf1:1780}
+\Bp = -q \grad \phi + q \Bv/c \cross (\grad \cross \BA).
+\end{equation}
+%
+\paragraph{Cylindrical Polar Coordinates.}
+%
+The next two parts of question 6 require cylindrical polar coordinates.  I found a digression was useful (or at least interesting), to see
+if the gradient followed from the Lagrangian as was the case with non-orthonormal constant frame basis vectors.
+%
+The first step required for this calculation (and the later parts of the problem) is to express the KE in terms of the polar coordinates.
+We need the velocity to do so:
+%
+\begin{equation}\label{eqn:tongMf1:660}
+\begin{aligned}
+\Br &= \Be_3 z + \Be_1 r e^{i\theta} \\
+\dot{\Br} &= \Be_3 \zdot + \Be_1 (\rdot + r \dottheta i) e^{i\theta} \\
+\Abs{\dot{\Br}}
+&= \zdot^2 + \Abs{\rdot + r \dottheta i}^2 \\
+&= \zdot^2 + \rdot^2 +
+\lr{ r \dottheta }^2 .
+\end{aligned}
+\end{equation}
+%
+Now, form the Lagrangian of a point particle with a non-velocity dependent potential:
+%
+\begin{equation}\label{eqn:tongMf1:1800}
+\LL = \inv{2} m \left(\zdot^2 + \rdot^2 + \left(r \dottheta\right)^2\right) - \phi.
+\end{equation}
+%
+and calculate the equations of motion:
+\begin{equation}\label{eqn:tongMf1:680}
+\begin{aligned}
+\PD{z}\LL &= \left(\PD{\zdot}\LL\right)' \\
+-\PD{z}{\phi} &= \left(m\zdot\right)' .
+\end{aligned}
+\end{equation}
+\begin{equation}\label{eqn:tongMf1:700}
+\begin{aligned}
+\PD{r}\LL &= \left(\PD{\rdot}\LL\right)' \\
+-\PD{r}{\phi} + m r \dottheta^2 &= \left(m\rdot\right)' .
+\end{aligned}
+\end{equation}
+\begin{equation}\label{eqn:tongMf1:720}
+\begin{aligned}
+\PD{\theta}\LL &= \left(\PD{\dottheta}\LL\right)' \\
+-\PD{\theta}{\phi} &= \left(m r^2 \dottheta\right)' .
+\end{aligned}
+\end{equation}
+%
+There are a few things to observe about these equations.  One is that we can assign physically significance to an expression such as \(m r^2 \dottheta\).  If the potential has no \(\theta\) dependence this is a conserved quantity (angular momentum).
+%
+The other thing to observe here is that the dimensions for the \(\theta\) coordinate equation result has got an extra length factor in the numerator.  Thus we can not multiply these with our respective frame vectors and sum.  We can however scale that last equation by a factor of \(1/r\) and then sum:
+%
+\begin{equation}\label{eqn:tongMf1:1820}
+\zcap (m\zdot)' + \rcap \left((m\rdot)' - m r \dottheta^2\right) + \inv{r} (mr^2 \dottheta)' = - \left(\zcap \PD{z}{} + \rcap \PD{r}{} + \inv{r} \PD{\theta}{}\right) \phi.
+\end{equation}
+%
+For constant mass this is:
+\begin{equation}\label{eqn:tongMf1:1840}
+m \left( \zcap \zddot + \rcap
+\lr{ \rddot - r \dottheta^2 }
+ + \inv{r} \left(2 r \rdot \dottheta + r^2 \ddottheta\right) \right) = - \left(\zcap \PD{z}{} + \rcap \PD{r}{} + \inv{r} \thetacap \PD{\theta}{}\right) \phi.
+\end{equation}
+%
+However, is such a construction have a meaningful physical quantity?  One can easily imagine more complex generalized coordinates where guessing scale factors in this fashion would not be possible.
+%
+Let us compare this to a calculation of acceleration in cylindrical coordinates.
+%
+\begin{equation}\label{eqn:tongMf1:740}
+\begin{aligned}
+\ddot{\Br} &= \Be_3 \zddot + \Be_1
+\lr{ \rddot + r \ddottheta i + \rdot \dottheta i + \lr{ \rdot + r \dottheta i } i\dottheta }
+ e^{i\theta} \\
+           &= \Be_3 \zddot + \Be_1
+\lr{ \rddot + r \ddottheta i + 2 \rdot \dottheta i - r \dottheta^2 }
+ e^{i\theta} \\
+           &= \zcap \zddot + \rcap
+\lr{ \rddot - r \dottheta^2 }
+ + \thetacap
+\lr{ r \ddottheta + 2 \rdot \dottheta } .
+\end{aligned}
+\end{equation}
+%
+Sure enough, the ad-hoc vector that was constructed matches the acceleration vector for the constant mass case, so the right hand side must also define the gradient
+in cylindrical coordinates.
+%
+\begin{equation}\label{eqn:tongMf1:760}
+\begin{aligned}
+\grad
+&= \zcap \PD{z}{} + \rcap \PD{r}{} + \inv{r} \thetacap \PD{\theta}{} \\
+&= \zcap \PD{z}{} + \rcap \left(\PD{r}{} + \frac{i}{r} \PD{\theta}{} \right).
+\end{aligned}
+\end{equation}
+%
+Very cool result.  Seeing this I finally understand when and where statements like "angular momentum is conserved" is true.  Specifically it requires a potential that has no angular dependence (ie: like gravity acting between two point masses.)
+%
+I never found that making such an angular momentum conservation "law" statement to be obvious, even once the acceleration was expressed in a radial decomposition.  This is something that can be understood without the Lagrangian formulation.  To do so the missing factor is that before a conservation statement like this can be claimed one has to first express the gradient in cylindrical form, and then look at the coordinates with respect to the generalized frame vectors.  Conservation of angular momentum depends on an appropriately well behaved potential function!  Intuitively, I understood that something else was required to make this statement, but it took the form of an unproven axiom in most elementary texts.
+%
+FIXME: generalize this and prove to myself that angular momentum is conserved in a N-body problem and/or with a rigid body rotation constraint on \(N-1\) of the masses.
+%
+\paragraph{(i).}
+%
+The Lagrangian for this problem is:
+%
+\begin{equation}\label{eqn:tongMf1:1860}
+\LL = \inv{2} m \Bv^2 - e \BA \cdot \Bv.
+\end{equation}
+%
+Given a cylindrical decomposition, our velocity is:
+%
+\begin{equation}\label{eqn:tongMf1:780}
+\begin{aligned}
+\Br &= z \zcap + r \rcap \\
+\dot{\Br}
+&= \zdot \zcap + r\dot{\rcap} + \rdot \rcap \\
+&= \zdot \zcap + \rcap
+\lr{ \rdot + r\dottheta i } \\
+&= \zdot \zcap + \rdot \rcap + r\dottheta \thetacap.
+\end{aligned}
+\end{equation}
+%
+The specific potential for the problem, using \((z,\theta,r)\) coordinates is:
+%
+\begin{equation}\label{eqn:tongMf1:1880}
+\BA = \thetacap \frac{f(r)}{r}.
+\end{equation}
+%
+Therefore the Lagrangian is:
+\begin{equation}\label{eqn:tongMf1:1900}
+\LL = \inv{2} m \left(\zdot^2 + \rdot^2 +
+\lr{ r\dottheta }^2
+\right) - e \frac{f(r)}{r} r \dottheta.
+\end{equation}
+%
+so the equations of motion for the \(z\), \(\theta\), and \(r\) coordinates (respectively) are:
+%
+\begin{equation}\label{eqn:tongMf1:800}
+\begin{aligned}
+(m\zdot)' &= 0 \\
+(m r^2 \dottheta -e f(r))' &= 0 \\
+(m \rdot)' &= m r \dottheta^2 - e f'(r) \dottheta .
+\end{aligned}
+\end{equation}
+%
+From second of these equations we have:
+%
+\begin{equation}\label{eqn:tongMf1:1920}
+m r^2 \dottheta - e f(r) = K.
+\end{equation}
+%
+In particular this is true for \(r = r(t_0) = r_0\), so
+%
+\begin{equation}\label{eqn:tongMf1:1940}
+m {r_0}^2 \dottheta_0 - e f(r_0) = K.
+\end{equation}
+%
+Equating \( K \)'s and rearranging, we have
+\begin{equation}\label{eqn:tongMf1:1960}
+\dottheta(t) - {\left(\frac{r_0}{r}\right)}^2 \dottheta(t_0) = \frac{e}{m r^2} \left( f(r) - f(r_0) \right).
+\end{equation}
+%
+Now, the problem is to show that
+\begin{equation}\label{eqn:tongMf1:1980}
+\dottheta = \frac{e}{mr^2} \left(f(r) - f(r_0)\right).
+\end{equation}
+%
+I do not see how that follows?  Ah, I see, the velocity is in the \((r,z)\) plane for \(t=0\), so \(\dottheta(t_0) = 0\).
+%
+\paragraph{(ii).}
+%
+The potential for this problem is
+%
+\begin{equation}\label{eqn:tongMf1:2000}
+\BA =  r g(z) \thetacap.
+\end{equation}
+%
+Therefore the Lagrangian is:
+\begin{equation}\label{eqn:tongMf1:2020}
+\LL = \inv{2} m \left(\zdot^2 + \rdot^2 + (r\dottheta)^2\right) - e r^2 g(z) \dottheta.
+\end{equation}
+%
+Taking \(\theta, r, z\) derivatives:
+\begin{equation}\label{eqn:tongMf1:2040}
+0 = \left(mr^2 \dottheta - e r^2 g(z)\right)'
+\end{equation}
+\begin{equation}\label{eqn:tongMf1:2060}
+mr \dottheta^2 - 2 e r g(z) \dottheta = (m \rdot)'
+\end{equation}
+\begin{equation}\label{eqn:tongMf1:2080}
+-e r^2 g' \dottheta = ( m \zdot )'.
+\end{equation}
+%
+One constant of motion is:
+%
+\begin{equation}\label{eqn:tongMf1:2100}
+mr^2 \dottheta - e r^2 g(z) = K.
+\end{equation}
+%
+Looking at Tong's solutions another is the Hamiltonian.  (I have got to go back and read that Hamiltonian stuff since this did not occur to me).
+%
+\begin{equation}\label{eqn:tongMf1:2120}
+\dottheta = (e/m) g(z) + (r_0/r)^2 \left(\dottheta_0 - (e/m) g(z_0)\right).
+\end{equation}
+%
+With \(\dottheta_0 = 2 e g(z_0)/m\) this is:
+%
+\begin{equation}\label{eqn:tongMf1:2140}
+\dottheta = \frac{e}{m} \left(g(z) + {\left(\frac{r_0}{r}\right)}^2 g(z_0)\right).
+\end{equation}
+%
+%FIXME: think through the remainder bits of this problem more carefully.
+}
+%

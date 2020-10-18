@@ -1,0 +1,53 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeoproblem{Relativistic EOM.}{tongmf1:pr3}{\citep{TongMf1} p3.}{
+%
+Derive the relativistic equations of motion for a point particle in a position dependent potential:
+%
+\begin{equation}
+\LL = -m c^2 \sqrt{ 1 - \Bv^2/c^2} - V(\Br).
+\end{equation}
+}
+%
+\makeanswer{tongmf1:pr3}{
+%
+The first thing to observe here is that for \(\abs{\Bv} << c\), this is our familiar kinetic energy Lagrangian
+%
+\begin{equation}\label{eqn:tongMf1:160}
+\begin{aligned}
+\LL
+&= -m c^2 \left( 1 - \inv{2}\Bv^2/c^2 + \inv{2}\inv{-2}\inv{2!}(\Bv/c)^4 + \cdots \right) - V(\Br) \\
+&\approx  -m c^2 + \inv{2} m \Bv^2 - V(\Br) .
+\end{aligned}
+\end{equation}
+%
+The constant term \(-mc^2\) will not change the equations of motion and we can perhaps think of this as an additional potential term (quite large as we see from atomic fusion and fission).  For small \(\Bv\) we recover the Newtonian Kinetic energy term, and therefore expect the results will be equivalent to the Newtonian equations in that limit.
+%
+Moving on to the calculations we have:
+\begin{equation}\label{eqn:tongMf1:180}
+\begin{aligned}
+\frac{\partial L}{\partial x^i} &= \frac{d}{dt} \frac{\partial L}{\partial \xdot^i} \\
+-\PD{x^i}{V}
+&= -c^2 \frac{d}{dt} m \frac{\partial L}{\partial \xdot^i} \sqrt{ 1 - \sum
+\lr{ \xdot^j }^2/c^2
+} \\
+&= -c^2 \frac{d}{dt} m \inv{2} \inv{ \sqrt{ 1 - \Bv^2/c^2}} \frac{\partial L}{\partial \xdot^i} \left({ 1 - \sum
+\lr{ \xdot^j }^2/c^2
+}\right) \\
+&= -c^2 \frac{d}{dt} m \inv{2} \inv{ \sqrt{ 1 - \Bv^2/c^2}} (-2) \xdot^i/c^2 \\
+&= \frac{d}{dt} m \inv{ \sqrt{ 1 - \Bv^2/c^2}} \xdot^i \\
+&= \frac{d}{dt} m \gamma \xdot^i \\
+\implies \\
+- \left(\sum \Be_i \PD{x^i}{}\right) V &= \frac{d}{dt} m \gamma \sum \Be_i \xdot^i \\
+- \grad V  &= \frac{d(m \gamma \Bv)}{dt} .
+\end{aligned}
+\end{equation}
+%
+For \(v << c\), \(gamma \approx 1\), so we get our Newtonian result in the limiting case.
+%
+Now, I found this result very impressive result, buried in a couple line problem statement.  I subsequently used this as the starting point for guessing about how to formulate the Lagrange equations in a proper time form, as well as a proper velocity form for this Kinetic and potential term.  Those turn out to make it possible to express
+Maxwell's law and the Lorentz force law together in a particularly nice compact covariant form.  This catches me a up a bit in terms of my understanding and think that I am now at least learning and rediscovering things known since the early 1900s;)
+}
+%

@@ -1,0 +1,94 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeoproblem{Two circular constrained paths.}{tongmf1:pr7}{\citep{TongMf1} p7}{
+Masses connected by a spring.
+}
+%
+\makeanswer{tongmf1:pr7}{
+%
+With \(i = \Be_1 \wedge \Be_2\), the paths, (squared) speeds and separation of the masses can be written:
+%
+\begin{equation}\label{eqn:tongMf1:820}
+\begin{aligned}
+q_1 &= \Be_1 R_1 e^{i\theta} \\
+q_2 &= c\Be_3 + \Be_1
+\lr{  ai + R_2 e^{i\alpha} }
+\\
+\Abs{\qdot_1}^2 &=
+\lr{ R_1 \dottheta }^2 \\
+\Abs{\qdot_2}^2 &=
+\lr{ R_2 \dotalpha }^2 \\
+d^2 &=
+\lr{ q_1 - q_2 }^2 \\
+&= c^2 + \Abs{ai + R_2 e^{i\alpha} - R_1 e^{i\theta}}^2 \\
+&= c^2 + a^2 + {R_2}^2 + {R_1}^2 + a i \left( R_2 e^{-i\alpha} - R_1 e^{-i\theta} -R_2 e^{i\alpha} + R_1 e^{i\theta} \right) \\
+& \quad - R_1 R_2
+\lr{  e^{i\alpha} e^{-i\theta} + e^{-i\alpha} e^{i\theta}  } \\
+&= c^2 + a^2 + {R_2}^2 + {R_1}^2
+% a i \left( R_2 e^{-i\alpha} - R_1 e^{-i\theta} -R_2 e^{i\alpha} + R_1 e^{i\theta} \right)
+% a/i \left( -R_2 e^{-i\alpha} + R_1 e^{-i\theta} +R_2 e^{i\alpha} - R_1 e^{i\theta} \right)
++ 2 a
+(R_2 \sin\alpha - R_1 \sin\theta)
+- 2 R_1 R_2 \cos(\alpha - \theta).
+\end{aligned}
+\end{equation}
+%
+With the given potential:
+%
+\begin{equation}\label{eqn:tongMf1:2160}
+V = \inv{2} \omega^2 d^2.
+\end{equation}
+%
+We have the following Lagrangian (where the constant terms in the separation have been dropped) :
+%
+\begin{dmath}\label{eqn:tongMf1:2180}
+\LL = \inv{2} m_1 (R_1 \dottheta)^2 +\inv{2} m_2 (R_2 \dotalpha)^2
++ \omega^2 \left( a (R_2 \sin\alpha - R_1 \sin\theta) - R_1 R_2 \cos(\alpha - \theta) \right).
+\end{dmath}
+%
+Last part of the problem was to show that there is an additional conserved quantity when \(a=0\).  The Lagrangian in that case is:
+%
+\begin{equation}\label{eqn:tongMf1:2200}
+\LL = \inv{2} m_1
+\lr{ R_1 \dottheta }^2 +\inv{2} m_2
+\lr{ R_2 \dotalpha }^2
+- R_1 R_2 \omega^2 \cos(\alpha - \theta).
+\end{equation}
+%
+Evaluating the Lagrange equations, for this condition one has:
+%
+\begin{equation}\label{eqn:tongMf1:840}
+\begin{aligned}
+-R_1 R_2 \omega^2 \sin(\alpha - \theta) &=
+\lr{ m_1 {R_1}^2 \dottheta }' \\
+R_1 R_2 \omega^2 \sin(\alpha - \theta) &=
+\lr{ m_2 {R_2}^2 \dotalpha }'.
+\end{aligned}
+\end{equation}
+%
+Summing these one has:
+\begin{equation}\label{eqn:tongMf1:2220}
+\lr{ m_1 {R_1}^2 \dottheta }'
+ + \lr{ m_2 {R_2}^2 \dotalpha }' = 0.
+\end{equation}
+%
+Therefore the additional conserved quantity is:
+\begin{equation}\label{eqn:tongMf1:2240}
+m_1 {R_1}^2 \dottheta + m_2 {R_2}^2 \dotalpha = K.
+\end{equation}
+%
+FIXME: Is there a way to identify such a conserved quantity without evaluating the derivatives?  Noether's?
+%
+\paragraph{Spring Potential?}
+%
+Small digression.  Let us take the gradient of this spring potential and see if this matches our expectations for a \(-kx\) spring force.
+%
+\begin{equation}\label{eqn:tongMf1:2260}
+-{\grad}_d V = -\omega^2 d \dcap = -\omega^2 \Bd.
+\end{equation}
+%
+Okay, this works, \(\omega^2 = k\), which just expresses the positiveness of this constant.
+}
+%

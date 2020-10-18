@@ -1,22 +1,9 @@
 
-- Proofing checklist:
+- There is very little structure in these notes.  An extremely vicious edit is required, and it would be good to have standalone introductions to all the key ideas before diving into the problems.
 
-   - (Convert parts to chapters), first converting section -> subsection or paragraph.  review existing subsections/paragraphs.
-   - Make sure all the indexing is done.  at least chapter,section,paragraph,problems
+- Add indexing for chapter,section,paragraph,problems
 
-   - make dist, tag
-   - push
-   - copy to kdp, leanpub, landing page.
-   - bump version.
+- Switch problems done as chapters to just plain problem/answer templates.
 
-
-
-=========
-
-   - solve and write up the other phy354 problem sets and the midterm and final.  problem set 2 i/p.  want to look at the E - q \phi and do a comparison between the relativistic and non-rel results to see how they compare for small v.
-
-   - have at least one complete lecture on paper and some partially written up lecture notes to finish up and add here.
-
-   - rework some mult part goldstein and tong problems in makesubquestion/subanswer format.
-
+- Rework some mult part goldstein and tong problems in makesubquestion/subanswer format.
 

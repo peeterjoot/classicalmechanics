@@ -1,0 +1,103 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%
+%
+%
+\label{chap:PJTongMf1}
+%\date{August 25, 2008.  tongMf1.tex}
+%
+%These are my solutions to David Tong's mf1 \citep{TongMf1} problem set
+%(Lagrangian problems) associated with his excellent
+%and freely available online text \citep{TongClas}.
+%
+\makeoproblem{Purely kinetic system.)}{tongmf1:pr1}{\citep{TongMf1} p1}{
+%
+Derive the Euler-Lagrange equations for
+%
+\begin{equation}
+\LL = \inv{2} \sum  g_{a b}(q_c) \qdot^a \qdot^b.
+\end{equation}
+}
+%
+\makeanswer{tongmf1:pr1}{
+%
+I found it helpful to clarify for myself what was meant by \(g_{ab}(q^c)\).  This is a function of all the generalized coordinates:
+%
+\begin{equation}\label{eqn:tongMf1:980}
+g_{ab}(q^c) = g_{ab}( q^1, q^2, \ldots, q^N ) = g_{ab}(\Bq).
+\end{equation}
+%
+So I think that a vector parameter reminder is helpful.
+%
+\begin{equation}\label{eqn:tongMf1:1000}
+\LL = \inv{2} \sum  g_{b c}(\Bq) \qdot^b \qdot^c,
+\end{equation}
+%
+\begin{equation}\label{eqn:tong_mf1:left}
+\PD{q^a}{\LL} = \inv{2} \sum \qdot^b \qdot^c \PD{q^a}{g_{b c}(\Bq)}.
+\end{equation}
+%
+Now, proceed to calculate the generalize momentums:
+\begin{equation}\label{eqn:tongMf1:20}
+\begin{aligned}
+\PD{\qdot^a}{\LL}
+&= \inv{2} \sum g_{b c}(\Bq) \PD{\qdot^a}{
+\lr{ \qdot^b \qdot^c }
+} \\
+&= \inv{2} \sum g_{a c}(\Bq) \qdot^c + g_{b a}(\Bq) \qdot^b \\
+&= \sum g_{a b}(\Bq) \qdot^b .
+\end{aligned}
+\end{equation}
+%
+For
+\begin{equation}\label{eqn:tong_mf1:right}
+\frac{d}{dt} \PD{\qdot^a}{\LL} = \sum \PD{q^d}{ g_{a b} } \qdot^d \qdot^b + g_{b a} \qddot^b.
+\end{equation}
+%
+Taking the difference of \eqnref{eqn:tong_mf1:left} and \eqnref{eqn:tong_mf1:right} we have:
+\begin{equation}\label{eqn:tongMf1:40}
+\begin{aligned}
+0
+&= \sum \inv{2} \qdot^b \qdot^c \PD{q^a}{g_{b c}} - \PD{q^d}{g_{a b}} \qdot^d \qdot^b - g_{b a} \qddot^b \\
+&= \sum \qdot^b \qdot^c \left( \inv{2} \PD{q^a}{g_{b c}} - \PD{q^c}{g_{a b}} \right) - g_{b a} \qddot^b \\
+&= \sum \qdot^b \qdot^c \left( -\inv{2} \PD{q^a}{g_{b c}} +\inv{2} \PD{q^c}{g_{a b}} +\inv{2} \PD{q^c}{g_{a b}} \right) + g_{b a} \qddot^b \\
+&= \sum \inv{2} \qdot^b \qdot^c \left( -\PD{q^a}{g_{b c}} +\PD{q^c}{g_{a b}} +\PD{q^b}{g_{a c}} \right) + g_{b a} \qddot^b .
+\end{aligned}
+\end{equation}
+%
+Here a split of the symmetric expression
+%
+\begin{equation}\label{eqn:tongMf1:1020}
+X = \sum \qdot^b \qdot^c \PD{q^c}{g_{a b}} = \inv{2}(X + X),
+\end{equation}
+%
+was used, and then an interchange of dummy indices \(b,c\).
+%
+Now multiply this whole sum by \(g^{b a}\), and sum to remove the metric term from the generalized acceleration
+%
+\begin{equation}\label{eqn:tongMf1:60}
+\begin{aligned}
+\sum g^{d a} g_{b a} \qddot^b &= -\inv{2} \sum \qdot^b \qdot^c g^{d a} \left( - \PD{q^a}{g_{b c}} + \PD{q^c}{g_{a b}} + \PD{q^b}{g_{a c}} \right) \\
+\sum {\delta^d}_b \qddot^b &= \\
+\qddot^d &= 
+\end{aligned}
+\end{equation}
+%
+Swapping \(a\), and \(d\) indices to get form stated in the problem we have
+%
+\begin{equation}\label{eqn:tongMf1:80}
+\begin{aligned}
+0
+&= \qddot^a + \inv{2} \sum \qdot^b \qdot^c g^{a d} \left( - \PD{q^d}{g_{b c}} + \PD{q^c}{g_{d b}} + \PD{q^b}{g_{d c}} \right) \\
+&= \qddot^a + \sum \qdot^b \qdot^c {\Gamma^a}_{b c} \\
+{\Gamma^a}_{b c} &= \inv{2} g^{a d} \left( - \PD{q^d}{g_{b c}} + \PD{q^c}{g_{d b}} + \PD{q^b}{g_{d c}} \right).
+\end{aligned}
+\end{equation}
+%
+%Aside: Having typed this up, while correcting errors, some wholescale index replacements to simplify, I wonder with all these indices flying around
+%how any mathematician previously did tensor algebra without a
+%text editor that has a regular expression interface (easier than on paper).
+}
+%

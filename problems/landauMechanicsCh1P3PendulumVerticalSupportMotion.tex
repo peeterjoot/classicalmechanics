@@ -1,0 +1,64 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeoproblem{Pendulum with support moving in vertical line.}{landauMechanics:ch1:pr3c}{\citep{landau1976mechanics} p1.3c.}{
+As above, but with the support point moving up and down as \(a \cos\gamma t\).
+}
+\makeanswer{landauMechanics:ch1:pr3c}{
+Our mass point is
+%
+\begin{dmath}\label{eqn:landauMechanicsCh1P3:290}
+p = a \cos \gamma t + l e^{i \phi}.
+\end{dmath}
+%
+with velocity
+%
+\begin{dmath}\label{eqn:landauMechanicsCh1P3:310}
+\pdot
+= -a \gamma \sin \gamma t + l i \phidot e^{i \phi}
+= (-a \gamma \sin\gamma t - l \phidot \sin\phi, l \phidot \cos\phi).
+\end{dmath}
+%
+In the square this is
+%
+\begin{dmath}\label{eqn:landauMechanicsCh1P3:330}
+\Abs{\pdot}^2 =
+a^2 \gamma^2 \sin^2 \gamma t + l^2 \phidot^2 \sin^2 \phi + 2 a l \gamma \phidot \sin\gamma t \sin\phi.
+\end{dmath}
+%
+Having done the simplification in the last problem in a complicated way, let's try it, knowing what our answer is
+%
+\begin{dmath}\label{eqn:landauMechanicsCh1P3:350}
+\phidot \sin\gamma t \sin\phi
+=
+\phidot \sin\gamma t \sin\phi
+- \gamma \cos \gamma t \cos\phi
++ \gamma \cos \gamma t \cos\phi
+=
+\sin\gamma t \ddt{}\left( -\cos\phi \right)
++ \left( \ddt{}\left( -\sin \gamma t \right) \right) \cos\phi
++ \gamma \cos \gamma t \cos\phi
+=
+\gamma \cos \gamma t \cos\phi
+- \ddt{} \left(
+\sin \gamma t \cos\phi
+\right).
+\end{dmath}
+%
+With the height of the particle above the lowest point given by
+%
+\begin{dmath}\label{eqn:landauMechanicsCh1P3:370}
+h = a + l - a \cos \gamma t - l \cos\phi,
+\end{dmath}
+%
+we can write the Lagrangian immediately (dropping all the total derivative terms)
+%
+\begin{dmath}\label{eqn:landauMechanicsCh1P3:390}
+\LL =
+\inv{2} m \left( l^2 \phidot^2 \sin^2 \phi + 2 a l \gamma^2 \cos \gamma t \cos\phi \right)
++ m g l \cos\phi.
+\end{dmath}
+}
+%
+\EndArticle

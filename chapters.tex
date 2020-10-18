@@ -2,53 +2,97 @@
 % Copyright © 2013 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
-%\part{PHY354 (UofT Advanced Classical Mechanics) lecture notes.}
-   \mychapter{Runge-Lenz vector conservation.}
-      \input{lectures/RungeLenz.tex}
-   \mychapter{Phase Space and Trajectories.}
-      \input{lectures/phaseSpaceAndTrajectories.tex}
+\part{Organizational framework.}
+   \mychapter{Potential and Kinetic energy.}
+      \input{mine/potentialEnergy.tex}
+      %\section{Solutions.}
+      %   \shipoutAnswer
+   \mychapter{Calculus of variations.}
+      \input{mine/goldsteinCh12ShortestCurveVariational.tex} % p2.1
+      \input{mine/goldsteinCh12GeodesicsOnSphere.tex} % p2.2
+      \input{mine/goldsteinCh12EulerLagrange2ndOrder.tex} % p2.4
+      \section{Solutions.}
+         \shipoutAnswer
+   \mychapter{Special relativity.}
+      \paragraph{Placeholder.}
+      %\section{Solutions.}
+      %   \shipoutAnswer
+   \mychapter{Action and Euler-Langrange equations.}
+      \section{Problems.}
+         \input{problems/classicalMechanicsPs1LorentzForce.tex} % p1.1
+         \input{problems/classicalMechanicsPs1BallThrown.tex} % p1.2
+         \input{problems/classicalMechanicsPs1ChangeOfVariables.tex} % p1.3
+         \input{problems/classicalMechanicsPs2MotionInEMfields.tex} % p2.1
+         \input{problems/classicalMechanicsPs2AngularMomentumInSphericalAndCylCoords.tex} % p2.5
+         \input{mine/goldsteinCh12AngularMomentumThreeParticle.tex} % p1.8
+         \input{mine/goldsteinCh12KEforBarbell.tex} % p1.6
+         \input{galagrangian/tongMf1PurelyKinetic.tex} % p1
+         \input{galagrangian/tongMf1AlternateLagrangian.tex} % p2
+         \input{galagrangian/tongMf1RelativisticEOM.tex} % p3
+         \input{galagrangian/tongMf1DoublePendulum.tex} % p4
+         \input{galagrangian/tongMf1LorentzForceLagrangian.tex} % p6
+         \input{problems/dipoleMomentConstantElectricField.tex}
+      \section{Solutions.}
+         \shipoutAnswer
+   \mychapter{Constraints.}
+      \input{galagrangian/tongMf1PendulumOnRotatingWheel.tex} % p5
+      \input{galagrangian/tongMf1CircularlyConstrainedPaths.tex} % p7
+      \input{galagrangian/tongMf1MassesOnStringOneDangling.tex} % p8
+      \input{problems/landauMechanicsCh1P3SupportMovingInCircle.tex} % p1.3
+      \input{problems/landauMechanicsCh1P3PendulumSupportInMotion.tex} % p1.3b
+      \input{problems/landauMechanicsCh1P3PendulumVerticalSupportMotion.tex} % p1.3c
+      \section{Solutions.}
+         \shipoutAnswer
+   \mychapter{Geometric algebra.}
+      \paragraph{Placeholder.}
+      %\section{Solutions.}
+      %   \shipoutAnswer
+   \mychapter{Noether's theorem.}
+      \paragraph{Placeholder.}
+      %\section{Solutions.}
+      %   \shipoutAnswer
+   \mychapter{Hamiltonian mechanics.}
+      \input{mine/hamiltonian.tex}
+      \section{Solutions.}
+         \shipoutAnswer
+   \mychapter{Routhian procedure.}
+      \input{mine/goldsteinRouth.tex}
+      %\section{Solutions.}
+      %   \shipoutAnswer
    \mychapter{Rigid body motion.}
       \input{lectures/rigidBodyMotion.tex}
-   \mychapter{Classical Mechanics Euler Angles.}
+      %\section{Solutions.}
+      %   \shipoutAnswer
+   \mychapter{Euler angles.}
       \input{lectures/classicalMechanicsEulerAngles.tex}
+      %\section{Solutions.}
+      %   \shipoutAnswer
    \mychapter{Parallel axis theorem.}
       \input{lectures/parallelAxisTheorem.tex}
-   % had this one (partially) on paper, but was missing some of the prereqs
-   % to understand.  currently incomplete, and rest will proabably stay on
-   % paper:
-   %\input{lectures/motionOfFreeTop.tex}
-%
-%\part{Worked problems.}
-   \mychapter{PHY354 Problem set 1 (2012).}
-      \section{Problems.}
-         \input{problems/classicalMechanicsPs1.tex}
+      %\section{Solutions.}
+      %   \shipoutAnswer
+   \mychapter{Phase Space and Trajectories.}
+      \input{lectures/phaseSpaceAndTrajectories.tex}
+      %\section{Solutions.}
+      %   \shipoutAnswer
+   \mychapter{Conserved quantities.}
+      \section{Runge-Lenz vector conservation.}
+         \input{lectures/RungeLenz.tex}
       \section{Solutions.}
          \shipoutAnswer
-   \mychapter{PHY354 Problem set 2 (2012).}
-      \section{Problems.}
-         \input{problems/classicalMechanicsPs2.tex}
+   \mychapter{Field Lagrangians.}
+      \input{galagrangian/fieldLagrangian.tex}                   % Oct 10/08
       \section{Solutions.}
          \shipoutAnswer
-   \mychapter{Attempts at solutions for some Goldstein Mechanics problems.}
-      \section{Problems.}
-          \input{mine/goldsteinCh12.tex}
+   \mychapter{Noether's theorem for fields.}
+      \section{Noether's theorem.}
+         \input{galagrangian/noethersField.tex}                     % Oct 29/08
+      \section{Translation and rotation Noether field currents.}
+         \input{galagrangian/rotationCurrents.tex}
       \section{Solutions.}
-         \shipoutAnswer
-   \mychapter{Solutions to David Tong's mf1 Lagrangian problems.}
-      \section{Problems.}
-         \input{galagrangian/tongMf1.tex}
-      \section{Solutions.}
-         \shipoutAnswer
-   \mychapter{Solutions to some Landau mechanics problems.}
-      \section{Problems.}
-         \input{problems/landauMechanicsCh1P3.tex}
-      \section{Solutions.}
-         \shipoutAnswer
-   \mychapter{Other worked problems.}
-      \input{problems/dipoleMomentConstantElectricField.tex}
          \shipoutAnswer
 %
-%\part{Lagrangian Topics.}
+\part{Lagrangian Topics.}
    \mychapter{Newton's Law from Lagrangian.}
       \input{galagrangian/newtonianLagrangianAndGradient.tex}  % Aug 9/08
    \mychapter{Covariant Lagrangian, and electrodynamic potential.}
@@ -59,8 +103,6 @@
       \input{galagrangian/lagrangianFieldDensity.tex}           % Sep 8/08
    \mychapter{Revisit Lorentz force from Lagrangian.}
       \input{galagrangian/lorentzForce.tex}                      % Oct 8/08
-   \mychapter{Derivation of Euler-Lagrange field equations.}
-      \input{galagrangian/fieldLagrangian.tex}                   % Oct 10/08
    \mychapter{Tensor Derivation of Covariant Lorentz Force from Lagrangian.}
       \input{galagrangian/maxwellTensorLagrangian.tex}          % Oct 12/08
    \mychapter{Euler Lagrange Equations.}
@@ -69,8 +111,6 @@
       \input{galagrangian/boostMaxwellLagrangian.tex}           % Oct 19/08
    \mychapter{Lorentz transform Noether current (interaction Lagrangian).}
       \input{galagrangian/noethersLorentzForce.tex}             % Oct 22/08
-   \mychapter{Field form of Noether's Law.}
-      \input{galagrangian/noethersField.tex}                     % Oct 29/08
    \mychapter{Lorentz force Lagrangian with conjugate momentum.}
       \input{galagrangian/lorentzForcePQA.tex}                 % Apr 15/09
    \mychapter{Tensor Maxwell equation.}
@@ -79,25 +119,18 @@
       \input{galagrangian/stressEnergyNoethers.tex}
    \mychapter{Covariant Lorentz force Lagrangians.}
       \input{galagrangian/lForceLag2.tex}
-   \mychapter{Translation and rotation Noether field currents.}
-      \input{galagrangian/rotationCurrents.tex}
    \mychapter{Lorentz force from Lagrangian (non-covariant.)}
       \input{galagrangian/jackson12Dash9.tex}
-   %\mychapter{Spherical polar pendulum for one and multiple masses, and multivector Euler-Lagrange formulation.}
    \mychapter{Spherical polar pendulum chain (multivector.)}
       \input{galagrangian/sPolarMultiPendulum.tex}
    \mychapter{Spherical polar pendulum (take II.)}
       \input{galagrangian/multiPendulumSpherical2.tex}
 %
-%\part{Random independent study notes.}
-   \mychapter{Potential and Kinetic Energy.}
-      \input{mine/potentialEnergy.tex}
+\part{Random independent study notes.}
    \mychapter{Compare some wave equation's and their Lagrangians.}
       \input{mine/waveLagrangian.tex}
    \mychapter{Short metric tensor explanation.}
       \input{mine/lorentzMetricTensor.tex}
-   \mychapter{Hamiltonian notes.}
-      \input{mine/hamiltonian.tex}
    \mychapter{Two by two positive definite invariant tx.}
       \input{mine/quadraticForm.tex}
    \mychapter{Spherical N-pendulum problem.}
@@ -106,8 +139,6 @@
       \input{mine/1dharmonicOsc.tex}
    \mychapter{EOM for a one dimensional problem.}
       \input{mine/1dpotentialIntegral.tex}
-   \mychapter{Goldstein's Routh's procedure.}
-      \input{mine/goldsteinRouth.tex}
    \mychapter{Hoop and spring oscillator problem.}
       \input{mine/hoopSpring.tex}
    \mychapter{Infinite homogeneous plane potential.}

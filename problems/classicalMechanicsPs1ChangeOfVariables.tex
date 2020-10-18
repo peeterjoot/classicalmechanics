@@ -1,0 +1,132 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%
+\label{chap:classicalMechanicsPs1}
+%\blogpage{http://sites.google.com/site/peeterjoot2/math2012/classicalMechanicsPs1.pdf}
+%\date{Jan 24, 2012}
+%
+%\section{Disclaimer}
+%
+%Ungraded solutions to posted problem set 1 (I am auditing half the lectures for this course and will not be submitting any solutions for grading).
+%
+\makeoproblem{Coordinate changes and Euler-Lagrange equations.}{problem:classicalMechanicsPs1:3}{'12 phy356 ps1.3}{
+%
+Consider a Lagrangian \(\LL({q},{\qdot}) \equiv \LL(q_1,\cdots, q_N, \qdot_1,\cdots \qdot_N)\). Now change the coordinates to some
+new ones, e.g. let \(q_i = q_i(x_1,\cdots, x_N),i = 1 \cdots N\), or in short \(q_i = q_i({x})\). This defines a new
+Lagrangian:
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:480}
+\tilde{\LL}({x},{\xdot}) = \LL(q_1({x}),\cdots q_N({x}),\ddt{} q_1({x}),\cdots \ddt{} q_N({x})),
+\end{equation}
+%
+which is now a function of \(x_i\) and \(\xdot_i\). Show that the Euler-Lagrange equations for \(\LL({q},{\qdot})\):
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:500}
+\frac{\partial \LL({q},{\qdot})}{\partial q_i} =
+\ddt{}
+\frac{\partial \LL({q},{\qdot})}{\partial \qdot_i},
+\end{equation}
+%
+imply that the Euler-Lagrange equations for \(\tilde{\LL}({x},{\xdot})\) hold (provided the change of variables \(q \rightarrow x\) is nonsingular):
+\begin{equation}\label{eqn:classicalMechanicsPs1:520}
+\frac{\partial \tilde{\LL}({x},{\xdot})}{\partial x_i} =
+\ddt{}
+\frac{\partial \tilde{\LL}({x},{\xdot})}{\partial \xdot_i}.
+\end{equation}
+%
+The moral is that the action formalism is very convenient: one can write the Lagrangian in any set of coordinates; the Euler-Lagrange equations for the new coordinates can then be obtained by using the Lagrangian expressed in these coordinates.
+
+Hint: Solving this problem only requires repeated use of the chain rule.
+} % end problem
+%
+\makeanswer{problem:classicalMechanicsPs1:3}{
+%
+Here we want to show that after a change of variables, provided such a transformation is non-singular, the Euler-Lagrange equations are still valid.
+
+Let us write
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:320}
+r_i = r_i(q_1, q_2, \cdots q_N).
+\end{equation}
+%
+Our ``velocity'' variables in terms of the original parametrization \(q_i\) are
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:340}
+\dot{r}_j = \frac{dr_j}{dt} = \PD{q_i}{r_j} \PD{t}{q_i} = \qdot_i \PD{q_i}{r_j},
+\end{equation}
+%
+so we have
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:360}
+\PD{\qdot_i}{\dot{r}_j} = \PD{q_i}{r_j}.
+\end{equation}
+%
+Computing the LHS of the Euler Lagrange equation we find
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:380}
+\PD{q_i}{\LL} =
+\PD{r_j}{\LL} \PD{q_i}{r_j}
++\PD{\rdot_j}{\LL} \PD{q_i}{\rdot_j}.
+\end{equation}
+%
+For our RHS we start with
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:400}
+\PD{\qdot_i}{\LL}
+=
+\PD{r_j}{\LL} \PD{\qdot_i}{r_j}
++\PD{\rdot_j}{\LL} \PD{\qdot_i}{\rdot_j}
+=
+\PD{r_j}{\LL} \PD{\qdot_i}{r_j}
++\PD{\rdot_j}{\LL} \PD{q_i}{r_j},
+\end{equation}
+%
+but \(\PDi{\qdot_i}{r_j} = 0\), so this is just
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:420}
+\PD{\qdot_i}{\LL}
+=
+\PD{r_j}{\LL} \PD{\qdot_i}{r_j}
++\PD{\rdot_j}{\LL} \PD{\qdot_i}{\rdot_j}
+=
+\PD{\rdot_j}{\LL} \PD{q_i}{r_j}.
+\end{equation}
+%
+The Euler-Lagrange equations become
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:660}
+\begin{aligned}
+0 &=
+\PD{r_j}{\LL} \PD{q_i}{r_j}
++\PD{\rdot_j}{\LL} \PD{q_i}{\rdot_j}
+-
+\ddt{} \left(
+\PD{\rdot_j}{\LL} \PD{q_i}{r_j}
+\right) \\
+&=
+  \PD{r_j}{\LL} \PD{q_i}{r_j}
++ \cancel{\PD{\rdot_j}{\LL} \PD{q_i}{\rdot_j}}
+- \left( \ddt{} \PD{\rdot_j}{\LL} \right) \PD{q_i}{r_j}
+- \cancel{\PD{\rdot_j}{\LL} \ddt{} \PD{q_i}{r_j} }
+\\
+&=
+\left( \PD{r_j}{\LL}
+-\ddt{} \PD{\rdot_j}{\LL}
+\right) \PD{q_i}{r_j}.
+\end{aligned}
+\end{equation}
+%
+Since we have an assumption that the transformation is non-singular, we have for all \(j\)
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:440}
+\PD{q_i}{r_j} \ne 0,
+\end{equation}
+%
+so we have the Euler-Lagrange equations for the new abstract coordinates as well
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:460}
+0 = \PD{r_j}{\LL} -\ddt{} \PD{\rdot_j}{\LL}.
+\end{equation}
+} % end answer

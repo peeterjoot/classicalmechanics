@@ -1,0 +1,152 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeoproblem{Masses on string, one dangling.}{tongmf1:pr8}{\citep{TongMf1} p8}{
+Two particles connected by string, one on table, the other dangling.
+}
+%
+\makeanswer{tongmf1:pr8}{
+\paragraph{Part (i).}
+%
+The second particle hangs straight down (also Goldstein problem 9, also example 2.3 in Hestenes NFCM.)  First mass \(m_1\) on the table, and second, hanging.
+%
+The kinetic term for the mass on the table was calculated above in problem 7, so adding that and the KE term for the dangling mass we have:
+%
+\begin{equation}\label{eqn:tongMf1:2280}
+K = \inv{2} m_1 \left( \rdot^2 + (r\dotpsi)^2 \right) + \inv{2} m_2 \rdot^2.
+\end{equation}
+%
+Our potential, measuring down is:
+%
+\begin{equation}\label{eqn:tongMf1:2300}
+V = 0 - m_2 g (l - r).
+\end{equation}
+%
+Combining the KE and PE terms and dropping constant terms we have:
+%
+\begin{equation}\label{eqn:tongMf1:2320}
+\LL = \inv{2} m_1 \left( \rdot^2 + (r\dotpsi)^2 \right) + \inv{2} m_2 \rdot^2 - m_2 g r.
+\end{equation}
+%
+The ignorable coordinate is \(\psi\) since it has only derivatives in the Lagrangian.  EOMs are:
+%
+\begin{equation}\label{eqn:tongMf1:860}
+\begin{aligned}
+0 &=
+\lr{ m_1 r^2 \dotpsi }'
+ \\
+m_1 r \dotpsi^2 - m_2 g &= {\left( (m_1 + m_2) \rdot \right)}' = M \rddot.
+\end{aligned}
+\end{equation}
+%
+The first equation here is a conservation of angular momentum statement, whereas the second equation has all the force terms that lie along the string (radially above the table, and downwards below).  We see the \(r \dotpsi^2 = r\omega^2\) angular acceleration component when calculating radial and non-radial component of acceleration.
+%
+Goldstein asks here for the equations of motion as a second order equation, and to integrate once.  We can go all the way, but
+only implicitly, as we can write \(t = t(r)\), using \(\rdot\) as an integrating factor:
+%
+\begin{subequations}
+\label{eqn:tongMf1:2340}
+\begin{equation}\label{eqn:tongMf1:880}
+m_1 r^2 \dotpsi = m_1 {r_0}^2 \omega_0
+\end{equation}
+\begin{equation}\label{eqn:tongMf1:880a}
+\dotpsi = {\left(\frac{r_0}{r}\right)}^2 \omega_0
+\end{equation}
+\begin{equation}\label{eqn:tongMf1:880b}
+m_1 \frac{{r_0}^4}{r^3} {\omega_0}^2 - m_2 g = M \rddot
+\end{equation}
+\begin{dmath}\label{eqn:tongMf1:880c}
+m_1 \rdot \frac{{r_0}^4}{r^3} {\omega_0}^2 - m_2 g \rdot  = M \rdot \rddot
+-m_1 {r_0}^2 \left(\inv{r^2}\right)' {\omega_0}^2 - m_2 g \rdot  = M \left(\rdot^2\right)'
+K -m_1 {r_0}^4 \inv{r^2} {\omega_0}^2 - m_2 g r = M \rdot^2
+\end{dmath}
+\begin{equation}\label{eqn:tongMf1:880d}
+K = m_1 {r_0}^2 {\omega_0}^2 + m_2 g r_0 + M {\rdot_0}^2.
+\end{equation}
+\begin{equation}\label{eqn:tongMf1:880g}
+m_1 {\omega_0}^2 {r_0}^2 \left( 1 - \frac{{r_0}^2}{r^2} \right)
++ M {\rdot_0}^2
+- m_2 g \left( r - r_0 \right) = M \rdot^2
+\end{equation}
+\begin{equation}\label{eqn:tongMf1:888e}
+t = \int{
+\frac{dr}{\sqrt{
+\frac{m_1}{M} {\omega_0}^2 {r_0}^2 \left( 1 - \frac{{r_0}^2}{r^2} \right)
++ {\rdot_0}^2
+- \frac{m_2}{M} g \left( r - r_0 \right)
+}}}.
+\end{equation}
+\end{subequations}
+%
+We can also write \(\psi = \psi(r)\), but that does not look like it is any easier to solve:
+%
+\begin{equation}\label{eqn:tongMf1:900}
+\begin{aligned}
+\dotpsi &= \frac{d \psi}{dr} \frac{dr}{dt} \\
+&\implies \\
+\frac{d \psi}{dr}
+&= \frac{dt}{dr} {\left(\frac{r_0}{r}\right)}^2 \omega_0 \\
+\psi &= \int{
+\frac{{r_0}^2 \omega_0 dr}{r^2 \sqrt{
+\frac{m_1}{M} {\omega_0}^2 {r_0}^2 \left( 1 - \frac{{r_0}^2}{r^2} \right)
++ {\rdot_0}^2
+- \frac{m_2}{M} g \left( r - r_0 \right)
+}}}.
+\end{aligned}
+\end{equation}
+%
+\paragraph{(ii).  Motion of dangling mass not restricted to straight down.}
+%
+This part of the problem treats the dangling mass as a spherical pendulum.  If \(\theta\) is the angle from the vertical
+and \(\alpha\) is the angle in the horizontal plane of motion, we can describe the coordinate of the dangler
+(pointing \(\zcap = \gcap\) downwards), as:
+%
+\begin{equation}\label{eqn:tongMf1:2360}
+q_2 = R( \sin\theta \cos\alpha, \sin\theta \sin\alpha, \cos\theta ).
+\end{equation}
+%
+and the velocity as:
+\begin{equation}\label{eqn:tongMf1:920}
+\begin{aligned}
+\qdot_2
+&= \Rdot( \sin\theta \cos\alpha, \sin\theta \sin\alpha, \cos\theta ) \\
+&+ R( \cos\theta \cos\alpha, \cos\theta \sin\alpha, -\sin\theta ) \dottheta \\
+&+ R ( -\sin\theta \sin\alpha, \sin\theta \cos\alpha, 0) \dotalpha .
+\end{aligned}
+\end{equation}
+%
+and can then attempt to square this mess to get the squared speed that we need for the kinetic energy term of the Lagrangian.  Instead, lets choose an alternate parametrization:
+%
+\begin{equation}\label{eqn:tongMf1:940}
+\begin{aligned}
+q_2 &= R \cos\theta \zcap + \Be_1 R \sin\theta e^{i\alpha} \\
+\qdot_2
+&= \left(\Rdot \cos\theta - R \sin\theta \dottheta\right) \zcap
++ \Be_1 e^{i\alpha} \left( \Rdot \sin\theta + R \cos\theta \dottheta + R \sin\theta i \dotalpha \right) \\
+\Abs{\qdot_2}^2
+&= \left(\Rdot \cos\theta - R \sin\theta \dottheta\right)^2
++ \left( \Rdot \sin\theta + R \cos\theta \dottheta\right)^2
++ (R \sin\theta \dotalpha)^2 \\
+&= \Rdot^2 + (R \dottheta)^2 + (R \sin\theta \dotalpha)^2 .
+\end{aligned}
+\end{equation}
+%
+Our potential is
+%
+\begin{equation}\label{eqn:tongMf1:2380}
+V = 0 - m_2 g (l-r) \cos\theta,
+\end{equation}
+%
+so, the Lagrangian is therefore:
+%
+\begin{equation}\label{eqn:tongMf1:960}
+\LL = \inv{2} m_2 \left(\rdot^2 +
+(l-r)^2
+\lr{ \dottheta^2 + \sin\theta \dotalpha }^2
+ \right) + \inv{2} m_1 \left(\rdot^2 +
+\lr{ r\dotpsi }^2
+\right) + m_2 g
+(l-r) \cos\theta.
+\end{equation}
+}

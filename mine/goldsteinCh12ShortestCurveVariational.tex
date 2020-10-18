@@ -1,0 +1,152 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeoproblem{Shortest curve variational problem.}{gold:ch2:pr1}{\citep{goldstein1951cm} 2.1}{
+Prove that the shortest length curve between two points in space is a straight line.
+}
+%
+\makeanswer{gold:ch2:pr1}{
+In a first attempt of this I used:
+%
+\begin{equation}\label{eqn:goldsteinCh12:1180}
+ds = \sqrt{ 1 + (dy/dx)^2 + (dz/dx)^2 } dx.
+\end{equation}
+%
+Application of the Euler-Lagrange equations does show that one ends up with a linear relation between the y and z coordinates, but no mention of x.  Rather than write that up, consider instead a parametrization of the coordinates:
+%
+\begin{equation}\label{eqn:goldsteinCh12:640}
+\begin{aligned}
+x &= x_1(\lambda) \\
+y &= x_2(\lambda) \\
+z &= x_3(\lambda),
+\end{aligned}
+\end{equation}
+%
+in terms of this arbitrary parametrization we have a segment length of:
+%
+\begin{equation}\label{eqn:goldsteinCh12:1200}
+ds = \sqrt{ \sum \left(\frac{d x_i}{d\lambda}\right)^2 } d \lambda = f\left(x_i\right) d\lambda.
+\end{equation}
+%
+Application of the Euler-Lagrange equation to \(f\) we have:
+%
+\begin{equation}\label{eqn:goldsteinCh12:660}
+\begin{aligned}
+\PD{x_i}{f}
+&= 0 \\
+&= \frac{d}{d\lambda} \PD{\xdot_i}{} \sqrt{ \sum {\xdot_j}^2 } \\
+&= \frac{d}{d\lambda} \frac{ \xdot_i }{\sqrt{ \sum {\xdot_j}^2 }}.
+\end{aligned}
+\end{equation}
+%
+Therefore each of these quotients can be equated to a constant:
+%
+\begin{equation}\label{eqn:goldsteinCh12:680}
+\begin{aligned}
+\frac{ \xdot_i }{\sqrt{ \sum {\xdot_j}^2 }} &= {c_i}^{-2} \\
+{c_i}^2 \xdot_i^2 &= \sum {\xdot_j}^2 \\
+({c_i}^2 -1)\xdot_i^2 &= \sum_{j \ne i} {\xdot_j}^2 \\
+(1 - {c_i}^2)\xdot_i^2 + \sum_{j \ne i} {\xdot_j}^2 &= 0.
+\end{aligned}
+\end{equation}
+%
+This last form shows explicitly that not all of these squared derivative terms can be linearly independent.  In particular, we have a
+zero determinant:
+%
+\begin{equation}\label{eqn:goldsteinCh12:1220}
+0 =
+\begin{vmatrix}
+1 - c_1^2   & 1            & 1         & 1 & \hdots \\
+1           & 1 - c_2^2    & 1         & 1 & \vdots \\
+1           & 1            & 1 - c_3^2 & 1 & \\
+            &              &           & \ddots & \\
+            &              &           &        & 1 - {c_n}^2
+\end{vmatrix}.
+\end{equation}
+%
+Now, expanding this for a couple specific cases is not too hard.  For \(n=2\) we have:
+%
+\begin{equation}\label{eqn:goldsteinCh12:700}
+\begin{aligned}
+0 &= (1 - c_1^2)(1-c_2^2) - 1 \\
+c_1^2 + c_2^2 &= c_1^2 c_2^2 \\
+c_1^2 &= \frac{c_2^2}{ c_2^2 - 1 } \\
+c_2^2 - 1 &= \frac{c_2^2}{ c_1^2 }.
+\end{aligned}
+\end{equation}
+%
+This can be substituted back into one our \(c_2^2\) equation:
+%
+\begin{equation}\label{eqn:goldsteinCh12:720}
+\begin{aligned}
+({c_2}^2 -1)\xdot_2^2 &= {\xdot_1}^2 \\
+\frac{c_2^2}{ c_1^2 } \xdot_2^2 &= {\xdot_1}^2 \\
+\pm \frac{c_2}{ c_1 } \xdot_2 &= {\xdot_1} \\
+\pm \frac{c_2}{ c_1 } x_2 &= x_1 + \kappa .
+\end{aligned}
+\end{equation}
+%
+This is precisely the straight line that was desired, but we have setup for proving that consideration of all path variations from two points
+in \R{N} space has the shortest distance when that path is a straight line.
+%
+Despite the general setup, I am going to chicken out and show this only for the \R{3} case.  In that case our determinant expands to:
+%
+\begin{equation}\label{eqn:goldsteinCh12:1240}
+c_1^2 + c_2^2 + c_3^2 = c_1^2 c_2^2 c_3^2.
+\end{equation}
+%
+Since not all of the \(\xdot_i^2\) can be linearly independent, one can be eliminated:
+%
+\begin{equation}\label{eqn:goldsteinCh12:740}
+\begin{aligned}
+(1 - c_1^2) \xdot_1^2 + \xdot_2^2 + \xdot_3^2 &= 0 \\
+(1 - c_2^2) \xdot_2^2 + \xdot_3^2 + \xdot_1^2 &= 0 \\
+(1 - c_3^2) \xdot_3^2 + \xdot_1^2 + \xdot_2^2 &= 0.
+\end{aligned}
+\end{equation}
+%
+Let us pick \(\xdot_1^2\) to eliminate, and subst 2 into 3:
+%
+\begin{equation}\label{eqn:goldsteinCh12:760}
+\begin{aligned}
+%(1 - c_1^2) (-(1 - c_2^2) \xdot_2^2 - \xdot_3^2) + \xdot_2^2 + \xdot_3^2 &= 0 \\
+(1 - c_3^2) \xdot_3^2 + (-(1 - c_2^2) \xdot_2^2 - \xdot_3^2) + \xdot_2^2 &= 0
+\implies \\
+%\xdot_2^2 ( 1 - (1 - c_1^2)(1 - c_2^2) ) + \xdot_3^2 ( 1 - (1 - c_1^2) ) &= 0 \\
+- c_3^2 \xdot_3^2 + c_2^2 \xdot_2 &= 0 \\
+\pm c_3 \xdot_3 &= c_2 \xdot_2 .
+\end{aligned}
+\end{equation}
+%
+%Which is, once again a straight line:
+%
+%\begin{equation*}
+%\pm c_3 x_3 = c_2 x_2 + \kappa.
+%\end{equation*}
+%
+Since these equations are symmetric, we can do this for all, with the result:
+\begin{equation}\label{eqn:goldsteinCh12:780}
+\begin{aligned}
+\pm c_3 \xdot_3 &= c_2 \xdot_2 \\
+\pm c_3 \xdot_3 &= c_1 \xdot_1 \\
+\pm c_2 \xdot_2 &= c_1 \xdot_1 .
+\end{aligned}
+\end{equation}
+%
+Since the \(c_i\) constants are arbitrary, then we can for example pick the negative sign for \(\pm c_2\), and the positive for the rest, then add all of these, and scale by two:
+%
+\begin{equation}\label{eqn:goldsteinCh12:1260}
+c_3 \xdot_3 - c_2 \xdot_2 = c_1 \xdot_1,
+\end{equation}
+%
+and integrating:
+%
+\begin{equation}\label{eqn:goldsteinCh12:1280}
+c_3 x_3 - c_2 x_2 = c_1 x_1 + \kappa.
+\end{equation}
+%
+Again, we have the general equation of a line, subject to the desired constraints on the end points.  In the end we did not need to
+evaluate the determinant after all, as done in the \R{2} case.
+}
+%

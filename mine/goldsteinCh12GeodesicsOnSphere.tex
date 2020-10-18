@@ -1,0 +1,127 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeoproblem{Geodesics on sphere.}{gold:ch2:pr2}{\citep{goldstein1951cm} 2.2}{
+Prove that the geodesics (shortest length paths) on a spherical surface are great circles.
+}
+\makeanswer{gold:ch2:pr2}{
+%
+As a variational problem, the first step is to formulate an element of length on the surface.  If we write our vector in spherical coordinates (\(\phi\) on the equator, and \(\theta\) measuring from the north pole) we have:
+%
+%FIXME: Scan picture.
+%
+\begin{equation}\label{eqn:goldsteinCh12:1300}
+\Br = (x, y, z) = R( \sin\theta cos\phi, \sin\theta \sin\phi, \cos\theta).
+\end{equation}
+%
+A differential vector element on the surface is (set \(R=1\) without loss of generality) :
+%
+\begin{equation}\label{eqn:goldsteinCh12:800}
+\begin{aligned}
+d \Br
+&= \frac{d\Br}{d \theta} \frac{d \theta}{d \lambda} d \lambda + \frac{d\Br}{d \phi} \frac{d \phi}{d \lambda} d \lambda \\
+&=
+ ( \cos\theta \cos\phi, \cos\theta \sin\phi, -\sin\theta) \dottheta d\lambda
++( -\sin\theta \sin\phi, \sin\theta \cos\phi, 0) \dotphi d\lambda \\
+&=
+ ( \cos\theta \cos\phi \dottheta - \sin\theta \sin\phi \dotphi,
+   \cos\theta \sin\phi \dottheta + \sin\theta \cos\phi \dotphi,
+  -\sin\theta \dottheta) d\lambda.
+\end{aligned}
+\end{equation}
+%
+Calculation of the length \(ds\) of this vector yields:
+%
+\begin{equation}\label{eqn:goldsteinCh12:1320}
+ds = \Abs{ d\Br} = \sqrt{\dottheta^2 + (\sin\theta)^2 \dotphi^2} d\lambda.
+\end{equation}
+%
+This completes the setup for the minimization problem, and we want to
+minimize:
+%
+\begin{equation}\label{eqn:goldsteinCh12:1340}
+s = \int \sqrt{\dottheta^2 + ( \dotphi \sin\theta )^2 } d\lambda,
+\end{equation}
+%
+and can therefore apply the Euler-Lagrange equations to the function
+%
+\begin{equation}\label{eqn:goldsteinCh12:1360}
+f(\theta, \phi, \dottheta, \dotphi, \lambda) =
+\sqrt{\dottheta^2 + ( \dotphi \sin\theta )^2 }.
+\end{equation}
+%
+The \(\phi\) is cyclic, and we have:
+%
+\begin{equation}\label{eqn:goldsteinCh12:1380}
+\PD{\phi}{f} = 0 = \frac{d}{d\lambda} \frac{\dotphi \sin^2\theta}{f}.
+\end{equation}
+%
+Thus we have:
+\begin{equation}\label{eqn:goldsteinCh12:820}
+\begin{aligned}
+\dotphi^2 \sin^4\theta &= K^2 \left(\dottheta^2 +
+\lr{  \dotphi \sin\theta  }^2
+ \right) \\
+\dotphi^2 \sin^2\theta
+\lr{  \sin^2\theta - K^2  }
+ &= K^2 \dottheta^2 \\
+\dotphi^2
+&= \frac{K^2 \dottheta^2 }{ \sin^2\theta
+\lr{  \sin^2\theta - K^2  } } \\
+\dotphi
+&= \frac{K \dottheta }{ \sin\theta \sqrt{ \sin^2\theta - K^2 } } .
+\end{aligned}
+\end{equation}
+%
+This is in a nicely separated form, but it is not obvious that this describes paths that are great circles.
+%
+Let us have a look at the second equation.
+\begin{equation}\label{eqn:goldsteinCh12:840}
+\begin{aligned}
+\PD{\theta}{f} &= \frac{d}{d\lambda} \PD{\dottheta}{f} \\
+\frac{\sin\theta\cos\theta \dotphi^2}{f}
+&= \frac{d}{d\lambda} \frac{\dottheta}{f} \\
+&= \frac{\ddottheta}{f} - \inv{2} \frac{
+\lr{ \dottheta^2 + \lr{  \dotphi \sin\theta  }^2 }'
+ }{f^3} \\
+&= \frac{\ddottheta}{f} - \frac{ \dottheta \ddottheta + \dotphi \sin\theta
+\lr{  \ddotphi \sin\theta + \dotphi \cos\theta \dottheta  }
+}{f^3}.
+\end{aligned}
+\end{equation}
+This implies
+\begin{equation}\label{eqn:goldsteinCh12:1400}
+\begin{aligned}
+&-\sin\theta\cos\theta \dotphi^2
+\lr{  \dottheta^2 + \lr{  \dotphi \sin\theta  }^2  } \\
+&= -\ddottheta
+\lr{  \dottheta^2 + \lr{  \dotphi \sin\theta  }^2  }
+   + \dottheta \ddottheta
+   + \dotphi \sin\theta
+\lr{  \ddotphi \sin\theta + \dotphi \cos\theta \dottheta  },
+\end{aligned}
+\end{equation}
+%
+or,
+\begin{equation}\label{eqn:goldsteinCh12:1420}
+\begin{aligned}
+0 &=
+- \ddottheta \dottheta^2
+- \ddottheta \dotphi^2 \sin^2\theta
++ \dottheta \ddottheta \\
+&
++ \dotphi \ddotphi \sin^2\theta
++ \dotphi^2 \dottheta \sin\theta \cos\theta
++ \dotphi^2 \dottheta^2 \sin\theta \cos\theta
++ \dotphi^4 \sin^3\theta \cos\theta.
+\end{aligned}
+\end{equation}
+%
+What a mess!  I do not feel inclined to try to reduce this at the moment.  I will come back to this problem later.  Perhaps there is a better parametrization?
+%
+Did come back to this later, in \citep{miscphysics:PJbyronFullerCalcVarProblems}, but
+still did not get the problem fully solved.  Maybe the third time, some time
+later, will be the charm.
+}
+%

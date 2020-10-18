@@ -1,0 +1,102 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeoproblem{Finding trajectory through explicit minimization of the action.}{problem:classicalMechanicsPs1:2}{'12 phy356 ps1.2.}{
+For a ball thrown upward, guess a solution for the height \(y\) of the form \(y(t) = a_2 t^2+ a_1 t + a_0\).  Assuming that \(y(0) = y(T) = 0\), this quickly becomes \(y(t) = a_2(t^2- T t)\). Calculate the action (to do that, you need to first write the Lagrangian, of course) between \(t = 0\) and \(t = T\), and show that it is minimized when \(a_2= -g/2\).
+} % end problem
+%
+\makeanswer{problem:classicalMechanicsPs1:2}{
+%
+We are told to guess at a solution
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:180}
+y = a_2 t^2 + a_1 t + a_0,
+\end{equation}
+%
+for the height of a particle thrown up into the air.  With initial condition \(y(0) = 0\) we have
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:200}
+a_0 = 0,
+\end{equation}
+%
+and with a final condition of \(y(T) = 0\) we also have
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:620}
+\begin{aligned}
+0
+&=
+a_2 T^2 + a_1 T \\
+&= T( a_2 T + a_1 ),
+\end{aligned}
+\end{equation}
+%
+so have
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:220}
+\begin{aligned}
+y(t) &= a_2 t^2 - a_2 T t = a_2
+\lr{ t^2 - T t } \\
+\dot{y}(t) &=
+a_2 (2 t - T ).
+\end{aligned}
+\end{equation}
+%
+So our Lagrangian is
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:240}
+\LL =
+\inv{2} m a_2^2
+\lr{ 2 t - T }^2 - m g a_2 \lr{ t^2 - T t },
+\end{equation}
+%
+and our action is
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:260}
+S = \int_0^T dt
+\left(
+\inv{2} m a_2^2 \lr{ 2 t - T  }^2
+- m g a_2 \lr{ t^2 - T t }
+\right).
+\end{equation}
+%
+To minimize this action with respect to \(a_2\) we take the derivative
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:280}
+\PD{a_2}{S} = \int_0^T
+\left(
+m a_2 \lr{ 2 t - T  }^2
+- m g \lr{ t^2 - T t }
+\right).
+\end{equation}
+%
+Integrating we have
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:640}
+\begin{aligned}
+0 &= \PD{a_2}{S} \\
+&={\left.
+\left(
+\inv{6} m a_2
+\lr{ 2 t - T  }^3
+- m g \left(\inv{3}t^3 - \inv{2}T t^2 \right)
+\right)\right\vert}_0^T \\
+&=
+\inv{6} m a_2 T^3 - m g \left(\inv{3}T^3 - \inv{2}T^3 \right)
+-
+\inv{6} m a_2 (- T )^3 \\
+&=
+m T^3 \left( \inv{3} a_2 - g \left( \inv{3} - \inv{2} \right) \right) \\
+&=
+\inv{3} m T^3 \left( a_2 - g \left( 1 - \frac{3}{2} \right) \right) .
+\end{aligned}
+\end{equation}
+%
+or
+%
+\begin{equation}\label{eqn:classicalMechanicsPs1:300}
+a_2 + g/2 = 0,
+\end{equation}
+%
+which is the result we are required to show.
+} % end answer

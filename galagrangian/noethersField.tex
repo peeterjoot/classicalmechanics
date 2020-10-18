@@ -11,7 +11,7 @@
 \label{chap:noethersField}
 %\date{October 29, 2008.  noethersField.tex}
 %
-\section{Derivation.}
+\subsection{Derivation.}
 %
 It was seen in
 %euler_lagrange.ltx
@@ -105,9 +105,9 @@ some type of parametrized field variable transformation, then with \(J' = {J'}^\
 FIXME: GAFP evaluates things at \(\alpha = 0\) where that is the identity case.  I think this is what allows them to drop the primes later.  Must think
 this through.
 %
-\section{Examples.}
+\subsection{Examples.}
 %
-\subsection{Klein-Gordan Lagrangian invariance under phase change.}
+\subsubsection{Klein-Gordan Lagrangian invariance under phase change.}
 %
 The Klein-Gordan Lagrangian, a relativistic relative of the Schr\"{o}dinger equation is
 %
@@ -169,7 +169,7 @@ J &= i (\psi \grad {\psi}^\conj - \psi^\conj \grad {\psi} ) \\
 Apparently with charge added this quantity actually represents electric current density.  It will be interesting to
 learn some quantum mechanics and see how this works.
 %
-\subsection{Lorentz boost and rotation invariance of Maxwell Lagrangian.}
+\subsubsection{Lorentz boost and rotation invariance of Maxwell Lagrangian.}
 %
 \begin{subequations}
 \label{eqn:noetherField:lagrangian}
@@ -246,12 +246,12 @@ C = \gamma_\mu ((\gamma^\mu \cdot F) \cdot (A \cdot i)).
 %
 Here \(C\) was used instead of \(J\) for the conserved current vector since \(J\) is already taken for the current charge density itself.
 %
-\subsection{Questions.}
+\subsubsection{Questions.}
 %
 FIXME: What is this quantity?  It has the look of
 angular momentum, or torque, or an inertial tensor.  Does it have a physical significance?  Can the \(i\) be factored out of the expression, leaving a conserved quantity that is some linear function only of \(F\), and \(A\) (this was possible in the Lorentz force Lagrangian for the same invariance considerations).
 %
-\subsection{Expansion for x-axis boost.}
+\subsubsection{Expansion for x-axis boost.}
 %
 As an example to get a feel for \eqnref{eqn:noetherField:maxwellConserved}, lets expand
 this for a specific spacetime boost plane.  Using the x-axis that is \(i=\gamma_1 \wedge \gamma_0\)
@@ -317,7 +317,7 @@ C^3 &= F^{3 1} A^0 - F^{3 0} A^1 = -B_y \phi - E_z A_x .
 %
 Well, that is not particularly enlightening looking after all.
 %
-\subsection{Expansion for rotation or boost.}
+\subsubsection{Expansion for rotation or boost.}
 %
 Suppose that one takes \(i = \gamma^{\mu} \wedge \gamma^{\nu}\), so that we have a symmetry for a boost if one of \(\mu\) or \(\nu\) is zero,
 and rotational symmetry otherwise.
@@ -405,7 +405,7 @@ So we have
 %
 This first part is some sort of current-potential torque like beastie.
 That second part, the squared field term is what?  I do not see an obvious way to reduce it to something more structured.
-\section{Multivariable derivation.}
+\subsection{Multivariable derivation.}
 For completion sake, cut and pasted with most discussion omitted,
 the multiple field variable case follows in the same fashion
 as the single field variable Lagrangian.

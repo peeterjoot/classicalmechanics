@@ -1,0 +1,164 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeoproblem{Euler-Lagrange equations for second order systems.}{gold:ch2:pr3}{\citep{goldstein1951cm} 2.4}{
+For \(f = f( y, \ydot, \yddot, x )\), find the equations for extreme values of
+%
+\begin{equation*}
+I = \int_a^b f dx.
+\end{equation*}
+}
+%
+\makeanswer{gold:ch2:pr3}{
+%
+Here we want \(y\) and \(\ydot\) fixed at the end points.  Following the first derivative derivation write the
+functions in terms of the desired extremum functions plus a set of arbitrary functions:
+%
+\begin{equation}\label{eqn:goldsteinCh12:860}
+\begin{aligned}
+y( x, \alpha ) &= y( x, 0 ) + \alpha n(x) \\
+\ydot( x, \alpha ) &= \ydot( x, 0 ) + \alpha m(x).
+\end{aligned}
+\end{equation}
+%
+Here we specify that these arbitrary variational functions vanish at the endpoints:
+%
+\begin{equation}\label{eqn:goldsteinCh12:1440}
+n(a) = n(b) = m(a) = m(b) = 0.
+\end{equation}
+%
+The functions \(y(x, 0)\), and \(\ydot(x, 0)\) are the functions we are looking for as solutions to the min/max problem.
+%
+Calculating derivatives we have:
+%
+\begin{equation}\label{eqn:goldsteinCh12:1460}
+\frac{dI}{d\alpha} =
+\int \left(
+\PD{y}{f} \PD{\alpha}{y}
++\PD{\ydot}{f} \PD{\alpha}{\ydot}
++\PD{\yddot}{f} \PD{\alpha}{\yddot}
+\right) d x.
+\end{equation}
+%
+Assuming sufficient continuity look at the second term where we have:
+%
+\begin{equation}\label{eqn:goldsteinCh12:880}
+\begin{aligned}
+\PD{\alpha}{\ydot}
+&= \PD{\alpha}{} \PD{x}{y} \\
+&= \PD{x}{} \PD{\alpha}{y} \\
+&= \PD{x}{} n(x) \\
+&= \frac{d}{ d x} n(x) \\
+&= \frac{d}{ d x} \PD{\alpha}{y} .
+\end{aligned}
+\end{equation}
+%
+Similarly for the third term we have:
+%
+\begin{equation}\label{eqn:goldsteinCh12:1480}
+\PD{\alpha}{\ydot} = \frac{d}{ d x} \PD{\alpha}{\ydot},
+\end{equation}
+%
+\begin{equation}\label{eqn:goldsteinCh12:1500}
+\frac{dI}{d\alpha} =
+\int \PD{y}{f} \PD{\alpha}{y} d x +
+\mathLabelBox{\PD{\ydot}{f} \frac{d}{ d x} \PD{\alpha}{y}}{\(u v' = (u v)' - u' v \)}
+d x
++\PD{\yddot}{f} \frac{d}{ d x} \PD{\alpha}{\ydot} d x.
+\end{equation}
+%
+Now integrating by parts:
+\begin{equation}\label{eqn:goldsteinCh12:900}
+\begin{aligned}
+\frac{dI}{d\alpha}
+&=
+ \int \PD{y}{f} \PD{\alpha}{y} d x
++\int \PD{\ydot}{f} \frac{d}{ d x} \PD{\alpha}{y} d x
++\int \PD{\yddot}{f} \frac{d}{ d x} \PD{\alpha}{\ydot} d x \\
+\frac{dI}{d\alpha} &=
+ \int \PD{y}{f} \PD{\alpha}{y} d x
++
+%\Bigl(
+\PD{\ydot}{f}
+\mathLabelBox{
+\evalrange{
+\PD{\alpha}{y}
+}{a}{b}
+}{\(n(x)\)}
+%\Bigr)_a^b
+- \int \PD{\alpha}{y} \frac{d}{ d x} \PD{\ydot}{f} d x \\
+&\quad +
+%\Bigl(
+\PD{\yddot}{f}
+\mathLabelBox{
+\evalrange{
+\PD{\alpha}{\ydot}
+}{a}{b}
+}{\(m(x)\)}
+%\Bigr)_a^b
+-\int \PD{\alpha}{\ydot} \frac{d}{ d x} \PD{\yddot}{f} d x.
+\end{aligned}
+\end{equation}
+%
+Because \(m(a) = m(b) = n(a) = n(b)\) the non-integral terms are all zero, leaving:
+%
+\begin{equation}\label{eqn:goldsteinCh12:920}
+\frac{dI}{d\alpha} =
+  \int \PD{y}{f} \PD{\alpha}{y} d x
+- \int \PD{\alpha}{y} \frac{d}{ d x} \PD{\ydot}{f} d x
+- \int \PD{\alpha}{\ydot} \frac{d}{ d x} \PD{\yddot}{f} d x.
+\end{equation}
+%
+Now consider just this last integral, which we can again integrate by parts:
+\begin{equation}\label{eqn:goldsteinCh12:940}
+\begin{aligned}
+\int \PD{\alpha}{\ydot} \frac{d}{ d x} \PD{\yddot}{f} d x
+&= \int
+\mathLabelBox{\frac{d}{dx} \PD{\alpha}{y}}{\(u'\)}
+\mathLabelBox{\frac{d}{ d x} \PD{\yddot}{f}}{\(v\)}
+d x \\
+&=
+\Bigl(
+\mathLabelBox{\PD{\alpha}{y}}{\(n(x)\)}
+{\frac{d}{ d x} \PD{\yddot}{f}}
+\Bigr)_a^b
+-\int \PD{\alpha}{y} \frac{d}{dx} {\frac{d}{ d x} \PD{\yddot}{f}} d x \\
+&=
+-\int \PD{\alpha}{y} \frac{d^2}{dx^2} \PD{\yddot}{f} d x .
+\end{aligned}
+\end{equation}
+%
+This gives:
+\begin{equation}\label{eqn:goldsteinCh12:960}
+\begin{aligned}
+\frac{dI}{d\alpha} &=
+  \int \PD{y}{f} \PD{\alpha}{y} d x
+- \int \PD{\alpha}{y} \frac{d}{ d x} \PD{\ydot}{f} d x
++ \int \PD{\alpha}{y} \frac{d^2}{dx^2} \PD{\yddot}{f} d x \\
+\frac{dI}{d\alpha}
+&= \int d x \PD{\alpha}{y} \left( \PD{y}{f} - \frac{d}{ d x} \PD{\ydot}{f} + \frac{d^2}{dx^2} \PD{\yddot}{f} \right) \\
+&= \int d x n(x) \left( \PD{y}{f} - \frac{d}{ d x} \PD{\ydot}{f} + \frac{d^2}{dx^2} \PD{\yddot}{f} \right).
+\end{aligned}
+\end{equation}
+%
+So, if we want this derivative to equal zero for any \(n(x)\) we require the inner quantity to by zero:
+%
+\begin{equation}
+\PD{y}{f} - \frac{d}{ d x} \PD{\ydot}{f} + \frac{d^2}{dx^2} \PD{\yddot}{f} = 0.
+\end{equation}
+%
+Question.  Goldstein writes this in total differential form instead of a derivative:
+%
+\begin{equation}\label{eqn:goldsteinCh12:980}
+\begin{aligned}
+dI &= \frac{dI}{d\alpha} d\alpha \\
+&= \int d x \left(\PD{\alpha}{y} d \alpha\right) \left( \PD{y}{f} - \frac{d}{ d x} \PD{\ydot}{f} + \frac{d^2}{dx^2} \PD{\yddot}{f} \right) .
+\end{aligned}
+\end{equation}
+%
+and then calls this quantity \(\PD{\alpha}{y} d \alpha = \delta y\), the variation of \(y\).  There must be a mathematical subtlety which motivates this
+but it is not clear to me what that is.  Since the variational calculus texts go a different route, with norms on functional spaces and so forth, perhaps
+understanding that motivation is not worthwhile.  In the end, the conclusion is the same, namely that the inner expression must equal zero for the extremum
+condition.
+}

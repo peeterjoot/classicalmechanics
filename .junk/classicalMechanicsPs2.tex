@@ -1,0 +1,115 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%
+%\input{../blogpost.tex}
+%\renewcommand{\basename}{classicalMechanicsPs2}
+%\renewcommand{\dirname}{notes/phy354/problems/}
+%%\newcommand{\keywords}{}
+%
+%\input{../peeter_prologue_print2.tex}
+%
+%%\usepackage{lipsum}
+%
+%\beginArtNoToc
+%
+%\generatetitle{PHY354 Advanced Classical Mechanics.  Problem set 2 (2012)}
+%\label{chap:classicalMechanicsPs2}
+%
+%\section{Disclaimer}
+%
+%Ungraded solutions to two of five of the problems from problem set 2 (I audited half the lectures for this course and intend to do the course problem sets if time allows after the fact.)
+%
+%\makeoproblem{Integrals of motion in a helix potential}{classicalMechanicsPs2:problem:2}
+%{2012 PHY354 Problem set 2, problem 2}
+%{
+%Consider a particle moving in the external potential field (it could be gravitational or Coulomb, it is inessential
+%for this problem) of an infinite homogeneous cylindrical helix. Find the conserved (linear combination of)
+%components of \(\BP\) and \(\BM\).
+%} % makeoproblem
+%
+%\makeanswer{classicalMechanicsPs2:problem:2}{
+%TODO.
+%
+%Google shows that this is a problem found in \citep{landau1960classical}.  The argument there doesn't even rely on knowing what the form of the Lagrangian is (something I tried to calculate, and had trouble doing so).  %It would be nice to read that chapter of the text before attempting that problem, but that's not one that I have. ... ordered.
+%% http://books.google.ca/books?id=e-xASAehg1sC&pg=PA21&lpg=PA21&dq=potential+for+an+infinite+cylindrical+helix&source=bl&ots=XPLMLrSh_s&sig=07oTC2n9GB_0svsV1cUXbbvoAZc&hl=en&sa=X&ei=1IfwT9SXMqmR6gGX1e3RBg&ved=0CEEQ6AEwAA#v=onepage&q=potential%20for%20an%20infinite%20cylindrical%20helix&f=false
+%
+%}
+%
+%\makeoproblem{``Hidden'' symmetries and integrals of motion}{classicalMechanicsPs2:problem:3}
+%{2012 PHY354 Problem set 2, problem 3}
+%{
+%Consider the equation of motion of a particle of charge q moving in the field of a magnetic monopole:
+%
+%\begin{dmath}\label{eqn:classicalMechanicsPs2:330}
+%\BB = g \frac{\Br}{r^3}, \BE = 0.
+%\end{dmath}
+%
+%Here \(g\) is the magnetic charge, which can be found using the magnetic analogue of Gausses law: \(4 \pi Q_{\mathrm{magn}} = \int_{S^2} d\BSigma \cdot \BB = 4 \pi g\).  In this problem, do not start with a Lagrangian
+%,but simply use the Lorentz force
+%equation. Since we no longer deal with central forces, the angular momentum is no longer conserved, and
+%the motion is no longer necessarily planar. However, it can be thought that a certain amount of angular
+%momentum resides in the magnetic field, and, as first observed by Poincar\'e the total angular momentumm
+%
+%\begin{dmath}\label{eqn:classicalMechanicsPs2:350}
+%\BD = \BM + c\frac{\Br}{r}.
+%\end{dmath}
+%
+%is conserved (here \(\BM\) is the mechanical angular momentum \(\Br \cross \Bv\), and \(c\) is a constant).
+%
+%\makesubproblem{Find the value of \(c\) ensuring that \(d \BD/dt = 0\) for solutions of the equations of motion.}{classicalMechanicsPs2:problem:3:1}
+%\makesubproblem{Show that the radius vector of the trajectory for a particle moving in the field of a monopole obeys \(\dot{\rcap} \cdot \BD = c\), where \(\dot{\rcap} = \Br/r\).}{classicalMechanicsPs2:problem:3:2}
+%\makesubproblem{For a given value of \(\BD\), determined by the initial conditions, the relation found above restricts the
+%motion of the particle on a particular surface in space. Draw this surface. What happens to this
+%surface when \(g \rightarrow 0\)? Is it surprising?}{classicalMechanicsPs2:problem:3:3}
+%\makesubproblem{Is energy conserved? Find the energy of the particle \(\calE\) as a function of \(\Bv\), \(\Br\), ... as appropriate to the case in hand.}{classicalMechanicsPs2:problem:3:4}
+%
+%Note that it is a fun and challenging problem to find \(\BA\) for the magnetic monopole, but it does not belong in this class.  Besides being a fun problem, the moral here is that finding symmetries and the related integrals of motion is not always so obvious. Usually, when integrals of motion exist, they are due to a symmetry. In this example, there is a ``hidden'' symmetry responsible for the conservation of \(\BD\).
+%} % makeoproblem
+%
+%\makeanswer{classicalMechanicsPs2:problem:3}{
+%\makesubanswer{Value of \(c\)}{classicalMechanicsPs2:problem:3:1}
+%TODO.
+%\makesubanswer{Trajectory radius vector}{classicalMechanicsPs2:problem:3:2}
+%TODO.
+%\makesubanswer{Trajectory surface}{classicalMechanicsPs2:problem:3:3}
+%TODO.
+%\makesubanswer{Is energy conserved}{classicalMechanicsPs2:problem:3:4}
+%TODO.
+%}
+%
+%\makeoproblem{Symmetries and conservation laws}{classicalMechanicsPs2:problem:4}
+%{2012 PHY354 Problem set 2, problem 4}
+%{
+%What components of the momentum and angular momentum are conserved when a particle moves in the
+%(say, gravitational) field of the following objects:
+%
+%\makesubproblem{An infinite homogeneous plane}{classicalMechanicsPs2:problem:4:1}
+%\makesubproblem{An infinite homogeneous cylinder}{classicalMechanicsPs2:problem:4:2}
+%\makesubproblem{Two point particles}{classicalMechanicsPs2:problem:4:3}
+%\makesubproblem{An infinite homogeneous prism}{classicalMechanicsPs2:problem:4:4}
+%\makesubproblem{A homogeneous cone}{classicalMechanicsPs2:problem:4:5}
+%\makesubproblem{Three point particles}{classicalMechanicsPs2:problem:4:6}
+%\makesubproblem{A homogeneous torus}{classicalMechanicsPs2:problem:4:7}
+%
+%This is a problem from last year's midterm. Problems 2. and 4. are rather similar in nature. Be sure to ``internalize'' them -- they will come handy during exams but also in your life as physicists.
+%} % makeoproblem
+%
+%\makeanswer{classicalMechanicsPs2:problem:4}{
+%\makesubanswer{An infinite homogeneous plane}{classicalMechanicsPs2:problem:4:1}
+%TODO.
+%\makesubanswer{An infinite homogeneous cylinder}{classicalMechanicsPs2:problem:4:2}
+%TODO.
+%\makesubanswer{Two point particles}{classicalMechanicsPs2:problem:4:3}
+%TODO.
+%\makesubanswer{An infinite homogeneous prism}{classicalMechanicsPs2:problem:4:4}
+%TODO.
+%\makesubanswer{A homogeneous cone}{classicalMechanicsPs2:problem:4:5}
+%TODO.
+%\makesubanswer{Three point particles}{classicalMechanicsPs2:problem:4:6}
+%TODO.
+%\makesubanswer{A homogeneous torus}{classicalMechanicsPs2:problem:4:7}
+%TODO.
+%}
+%

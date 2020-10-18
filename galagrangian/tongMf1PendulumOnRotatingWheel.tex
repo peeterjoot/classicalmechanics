@@ -1,0 +1,166 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeoproblem{Pendulum on a rotating wheel.}{tongmf1:pr5}{\citep{TongMf1} p5.}{
+Lagrangian and equations of motion for pendulum with pivot moving on a circle.
+}
+%
+\makeanswer{tongmf1:pr5}{
+%
+Express the position of the pivot point on the wheel with:
+%
+\begin{equation}\label{eqn:tongMf1:1480}
+q_1 = R e^{-i\omega t}.
+\end{equation}
+%
+The position of the mass is then:
+\begin{equation}\label{eqn:tongMf1:1500}
+q_2 = R e^{-i\omega t} - il e^{i\theta}.
+\end{equation}
+%
+The velocity of the mass is then:
+\begin{equation}\label{eqn:tongMf1:1520}
+\qdot_2 = -i(\dotomega t + \omega)R e^{-i\omega t} + l \dottheta e^{i\theta}.
+\end{equation}
+%
+Let \(\omega t = \alpha\), we have a Kinetic energy of:
+%
+\begin{equation}\label{eqn:tongMf1:480}
+\begin{aligned}
+\inv{2} m \abs{\qdot_2}^2
+&= \inv{2} m \Abs{-i\dotalpha R e^{-i\omega t} + l \dottheta e^{i\theta}}^2 \\
+&= \inv{2} m \left( R^2 \dotalpha^2 + l^2 \dottheta^2 + 2 R l \dotalpha \dottheta \Real
+\lr{  -i e^{-i\alpha -i\theta} }
+ \right) \\
+&= \inv{2} m \left( R^2 \dotalpha^2 + l^2 \dottheta^2 + 2 R l \dotalpha \dottheta \cos( -\alpha -\theta -\pi/2 ) \right) \\
+&= \inv{2} m \left( R^2 \dotalpha^2 + l^2 \dottheta^2 - 2 R l \dotalpha \dottheta \sin( \alpha +\theta ) \right) .
+\end{aligned}
+\end{equation}
+%
+The potential energy in the Lagrangian does not depend on the position of the pivot, only the angle from vertical, so it is thus:
+%
+\begin{equation}\label{eqn:tongMf1:500}
+\begin{aligned}
+V &= mg l ( 1 - \cos\theta ) \\
+V' &= 0 - m g l \cos\theta.
+\end{aligned}
+\end{equation}
+%
+Depending on whether one measures the potential up from the lowest potential point, or measures decreasing potential from zero at the horizontal.
+Either way, combining the kinetic and potential terms, and dividing through by \(ml^2\) we have the Lagrangian of:
+%
+\begin{equation}\label{eqn:tongMf1:1540}
+\LL = \inv{2} \left( (R/l)^2 \dotalpha^2 + \dottheta^2 - 2 (R/l) \dotalpha \dottheta \sin( \alpha +\theta ) \right) + (g/l) \cos\theta.
+\end{equation}
+%
+\paragraph{Digression.  Reduction of the Lagrangian.}
+\label{chap:PJTongMf1:addDerivative}
+%
+Now, in Tong's solutions for this problem (which he emailed me since I questioned problem 2), he had \(\dotalpha = \omega = \text{constant}\), which allows the
+Lagrangian above to be expressed as:
+%
+\begin{dmath}\label{eqn:tongMf1:1560}
+\LL =
+\inv{2} \left( (R/l)^2 \omega^2 + \dottheta^2 \right)
++ \frac{d}{dt} ((R/l) \cos( \omega t + \theta )) + \omega (R/l) \sin(\omega t + \theta)
++ (g/l) \cos\theta.
+\end{dmath}
+%
+and he made the surprising step of removing that cosine term completely, with a statement that it would not effect the dynamics because it was a time derivative.
+That turns out to be a generalized result, but I had to prove it to myself.  I also asked around on PF about this, and it was not any named property of Lagrangians,
+but was a theorem in some texts.
+%
+First consider the simple example of a Lagrangian with such a cosine derivative term added to it:
+%
+\begin{equation}\label{eqn:tongMf1:1580}
+\LL' = \LL + \frac{d}{dt} A \cos(\omega t + \theta).
+\end{equation}
+%
+and compute the equations of motion from this:
+\begin{equation}\label{eqn:tongMf1:520}
+\begin{aligned}
+0
+&= \PD{\theta}{\LL'} - \frac{d}{dt}\left(\PD{\dottheta}{\LL'}\right) \\
+&= \PD{\theta}{\LL} - \frac{d}{dt}\left(\PD{\dottheta}{\LL}\right)
++ \PD{\theta}{} {\frac{d}{dt} A \cos(\omega t + \theta)}
+- \frac{d}{dt} \PD{\dottheta}{} \frac{d}{dt} A \cos(\omega t + \theta) \\
+&= \PD{\theta}{\LL} - \frac{d}{dt}\left(\PD{\dottheta}{\LL}\right)
+- \PD{\theta}{} A \dottheta \sin(\omega t + \theta) +
+\frac{d}{dt} \PD{\dottheta}{} A \dottheta \sin(\omega t + \theta) \\
+&= \PD{\theta}{\LL} - \frac{d}{dt}\left(\PD{\dottheta}{\LL}\right)
+- \PD{\theta}{} A \dottheta \sin(\omega t + \theta) + \frac{d}{dt} A \sin(\omega t + \theta) \\
+&= \PD{\theta}{\LL} - \frac{d}{dt}\left(\PD{\dottheta}{\LL}\right)
+- A \dottheta \cos(\omega t + \theta) + A \dottheta \cos(\omega t + \theta) \\
+&= \PD{\theta}{\LL} - \frac{d}{dt}\left(\PD{\dottheta}{\LL}\right)  .
+\end{aligned}
+\end{equation}
+%
+Now consider the general case, altering a Lagrangian by adding the time derivative of a positional dependent function:
+%
+\begin{equation}\label{eqn:tongMf1:1600}
+\LL' = \LL + \frac{df}{dt}.
+\end{equation}
+%
+and compute the equations of motion from this more generally altered function:
+\begin{equation}\label{eqn:tongMf1:540}
+\begin{aligned}
+0
+&= \PD{q^i}{\LL'} - \frac{d}{dt}\left(\PD{q^i}{\LL'}\right) \\
+&= \PD{q^i}{\LL} - \frac{d}{dt}\left(\PD{q^i}{\LL}\right)
++ \PD{q^i}{}\frac{df}{dt} - \frac{d}{dt} \PD{q^i}{} \frac{df}{dt} .
+\end{aligned}
+\end{equation}
+%
+Now, if \(f(q^j,\qdot^j,t) = f(q^j,t)\) we have:
+\begin{equation}\label{eqn:tongMf1:1620}
+\frac{df}{dt} = \sum \PD{q^j}{f} \qdot^j + \PD{t}{f}.
+\end{equation}
+%
+We want to see if the following sums to zero:
+\begin{equation}\label{eqn:tongMf1:560}
+\begin{aligned}
+\PD{q^i}{}\frac{df}{dt} - \frac{d}{dt} \PD{q^i}{} \frac{df}{dt}
+&= \sum \PD{q^i}{} \PD{q^j}{f} \left(\qdot^j + \PD{t}{f}\right) - \frac{d}{dt} \PD{\qdot^i}{} \left(\sum \PD{q^j}{f} \qdot^j + \PD{t}{f}\right) \\
+&= \sum \PDD{q^i}{q^j}{f} \qdot^j + \PDD{q^i}{t}{f} - \frac{d}{dt} \left(\sum \delta_{ij} \PD{q^j}{f} + \PDD{\qdot^i}{t}{f}\right) \\
+&= \sum \PDD{q^i}{q^j}{f} \qdot^j + \PDD{q^i}{t}{f} - \frac{d}{dt} \PD{q^i}{f} \\
+&= \sum \PDD{q^i}{q^j}{f} \qdot^j + \PDD{q^i}{t}{f} - \sum \qdot^j \PDD{q^j}{q^i}{f} - \PDD{t}{q^i}{f} .
+\end{aligned}
+\end{equation}
+%
+Therefore provided the function is sufficiently continuous that all mixed pairs of mixed partials are equal, this is zero, and the \(df/dt\) addition does not
+change the equations of motion that the Lagrangian generates.
+%
+\paragraph{Back to the problem.}
+%
+Now, return to the Lagrangian for this problem, and compute the equations of motion.  Writing \(\mu = R/l\), we have:
+%
+\begin{equation}\label{eqn:tongMf1:1640}
+\LL = \inv{2} \left( \mu^2 \dotalpha^2 + \dottheta^2 - 2 \mu \dotalpha \dottheta \sin( \alpha +\theta ) \right) + (g/l) \cos\theta.
+\end{equation}
+%
+\begin{equation}\label{eqn:tongMf1:580}
+\begin{aligned}
+0 &= \frac{d}{dt}\PD{\dottheta} -\PD{\theta} \LL \\
+&= \frac{d}{dt} \left(\dottheta - \mu \dotalpha \sin(\alpha + \theta)\right) + \mu \dotalpha \dottheta \cos(\alpha + \theta) + (g/l) \sin\theta \\
+&= \ddottheta - \mu \ddotalpha \sin(\alpha + \theta) - \mu \dotalpha \cos(\alpha + \theta) (\dotalpha + \dottheta) + \mu \dotalpha \dottheta \cos(\alpha + \theta) + (g/l) \sin\theta .
+\end{aligned}
+\end{equation}
+%
+Sure enough we have a cancellation of terms for constant \(\omega\).  In general we are left with:
+%
+\begin{equation}\label{eqn:tongMf1:1660}
+\ddottheta = \mu \ddotalpha \sin(\alpha + \theta) + \mu \dotalpha^2 \cos(\alpha + \theta) - (g/l) \sin\theta.
+\end{equation}
+%
+This expands to
+\begin{equation}\label{eqn:tongMf1:1680}
+\ddottheta = \mu (\ddotomega t + 2\dotomega) \sin(\omega t + \theta) + \mu (\dotomega t + \omega)^2 \cos(\omega t + \theta) - (g/l) \sin\theta.
+\end{equation}
+%
+For constant \(\omega\), this is just:
+\begin{equation}\label{eqn:tongMf1:1700}
+\ddottheta = \mu \omega^2 \cos(\omega t + \theta) - (g/l) \sin\theta.
+\end{equation}
+}
+%
