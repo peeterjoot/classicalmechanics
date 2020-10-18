@@ -5,19 +5,19 @@
 %
 %\chapter{Hoop and spring oscillator problem}
 \index{hoop and spring}
-\label{chap:hoopSpring}
+%\label{chap:hoopSpring}
 %\blogpage{http://sites.google.com/site/peeterjoot/math2010/hoopSpring.pdf}
 %\date{June 19, 2010}
 %
-\section{Motivation.}
-%
-Nolan was attempting to setup and solve the equations for the following system \cref{fig:hoopSpring}
+\makeproblem{Coupled hoop and spring system.}{problem:hoopSpring:1}{
+Find the Langrangian for the system sketched in \cref{fig:hoopSpring}, where
+one mass is connected between two springs to a bar.
+That bar moves up and down as forced by the motion of the other mass along a immovable hoop.
+%While Nolan did not include any gravitational force in his potential terms (ie: system lying on a table perhaps) it does not take much more to include that, and I will do so.  I also include the distance \(L\) to the center of the hoop, which I believe required.
 %
 \imageFigure{../figures/classicalmechanics/hoopSpring}{Coupled hoop and spring system.}{fig:hoopSpring}{0.4}
-%
-One mass is connected between two springs to a bar.  That bar moves up and down as forced by the motion of the other mass along a immovable hoop.  While Nolan did not include any gravitational force in his potential terms (ie: system lying on a table perhaps) it does not take much more to include that, and I will do so.  I also include the distance \(L\) to the center of the hoop, which I believe required.
-%
-\section{Guts.}
+} % problem
+\makeanswer{problem:hoopSpring:1}{
 %
 The Lagrangian can be written by inspection.  Writing \(x = x_1\), and \(x_2 = R \sin\theta\), we have
 %
@@ -224,4 +224,5 @@ U^{-1}.
 \end{aligned}
 \end{equation}
 %
-An interesting question would be how are the eigenvalues and eigenvectors changed with each small change to the initial position \(\Bx_0\) in phase space.  Can these be related to each other?
+%An interesting question would be how are the eigenvalues and eigenvectors changed with each small change to the initial position \(\Bx_0\) in phase space.  Can these be related to each other?
+} % answer
