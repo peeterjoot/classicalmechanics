@@ -4,6 +4,7 @@ chapters.tex
 galagrangian/boostMaxwellLagrangian.tex
 galagrangian/canonicalMomentum.tex
 galagrangian/eulerLagrange.tex
+galagrangian/eulerLagrangeScalarLagrangian.tex
 galagrangian/fieldLagrangian.tex
 galagrangian/jackson12Dash9.tex
 galagrangian/lForceLag2.tex
@@ -30,7 +31,6 @@ galagrangian/tongMf1PurelyKinetic.tex
 galagrangian/tongMf1RelativisticEOM.tex
 lectures/RungeLenz.tex
 lectures/classicalMechanicsEulerAngles.tex
-lectures/motionOfFreeTop.tex
 lectures/parallelAxisTheorem.tex
 lectures/phaseSpaceAndTrajectories.tex
 lectures/rigidBodyMotion.tex
@@ -52,6 +52,11 @@ mine/multiPendulumSphericalMatrix.tex
 mine/potentialEnergy.tex
 mine/quadraticForm.tex
 mine/waveLagrangian.tex
+mine/waveLagrangianDirac.tex
+mine/waveLagrangianKG.tex
+mine/waveLagrangianMoreDimensions.tex
+mine/waveLagrangianOneDimension.tex
+mine/waveLagrangianQM.tex
 multiPendulumSpherical2.tex
 multiPendulumSphericalMatrix.tex
 problems/classicalMechanicsPs1BallThrown.tex
