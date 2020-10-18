@@ -1,4 +1,10 @@
 
+- solve: 
+
+   mine/waveLagrangianQM.tex
+   mine/waveLagrangianKG.tex
+   mine/waveLagrangianDirac.tex
+
 - There is very little structure in these notes.  An extremely vicious edit is required, and it would be good to have standalone introductions to all the key ideas before diving into the problems.
 
 - Add indexing for chapter,section,paragraph,problems
