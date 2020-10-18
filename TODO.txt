@@ -1,3 +1,4 @@
+- audit: Use L for non-field lagrangian, and \LL for field lagrangian.
 
 - solve: 
 

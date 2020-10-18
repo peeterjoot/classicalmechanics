@@ -14,7 +14,7 @@ In the classical limit the Lagrangian action for a point particle in a general
 position dependent field is:
 %
 \begin{equation}
-S = \inv{2} m\Bv^2 - \varphi.
+L = \inv{2} m\Bv^2 - \varphi.
 \end{equation}
 %
 Given the Lagrange equations that minimize the action, it is fairly simple
@@ -23,7 +23,7 @@ to derive the Newtonian force law.
 \begin{equation}\label{eqn:newtonianLagrangianAndGradient:20}
 \begin{aligned}
 0
-&= \PDb{S}{x^i} - \frac{d}{dt}\PDb{S}{\dot{x}^i} \\
+&= \PDb{L}{x^i} - \frac{d}{dt}\PDb{L}{\dot{x}^i} \\
 &= -\PDb{\varphi}{x^i} - \frac{d}{dt}\left(m \dot{x}^i\right).
 \end{aligned}
 \end{equation}
@@ -79,13 +79,13 @@ spot where there is a hidden orthonormal frame vector requirement since a genera
 Expressed in full for general frame vectors the action to minimize is the following:
 %
 \begin{equation}
-S = \inv{2} m \sum \dot{x}^i \dot{x}^j \Be_i \cdot \Be_j -\varphi.
+L = \inv{2} m \sum \dot{x}^i \dot{x}^j \Be_i \cdot \Be_j -\varphi.
 \end{equation}
 %
 Expressed using a metric tensor \(g_{ij} = \Be_i \cdot \Be_j\), this is:
 %
 \begin{equation}
-S = \inv{2} m \sum \dot{x}^i \dot{x}^j g_{ij} -\varphi.
+L = \inv{2} m \sum \dot{x}^i \dot{x}^j g_{ij} -\varphi.
 \end{equation}
 %
 \section{Equations of motion for vectors in a general frame.}
@@ -95,7 +95,7 @@ Now we are in shape to properly calculate the equations of motion from the Lagra
 \begin{equation}\label{eqn:newtonianLagrangianAndGradient:40}
 \begin{aligned}
 0
-&= \PDb{S}{x^k} - \frac{d}{dt}\PDb{S}{\dot{x}^k} \\
+&= \PDb{L}{x^k} - \frac{d}{dt}\PDb{L}{\dot{x}^k} \\
 &= -\PDb{\varphi}{x^k} - \frac{d}{dt} \left( \inv{2} m \sum g_{ij} \PDb{\dot{x}^i}{\dot{x}^k} \dot{x}^j + \dot{x}^i \PDb{\dot{x}^j}{\dot{x}^k} \right) \\
 &= -\PDb{\varphi}{x^k} - \frac{d}{dt} \left( \inv{2} m \sum g_{ij} ({\delta^i}_k \dot{x}^j + \dot{x}^i {\delta^j}_k) \right) \\
 &= -\PDb{\varphi}{x^k} - \frac{d}{dt} \left( \inv{2} m \sum (g_{kj} \dot{x}^j + g_{ik}\dot{x}^i) \right) \\
