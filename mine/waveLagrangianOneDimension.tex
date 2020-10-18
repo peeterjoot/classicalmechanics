@@ -1,0 +1,35 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeproblem{One dimensional wave equation.}{problem:waveLagrangian:1}{
+The Lagrangian for a one dimensional wave is derived in \citep{goldstein1951cm}
+using a limiting argument applied to an infinite
+sequence of connected masses on springs.  The result is
+%
+\begin{equation}\label{eqn:wave_lagrangian:oneDimensionalWaveLagrangian}
+\LL = \inv{2} \left(\mu \left(\PD{t}{\eta}\right)^2 - Y \left(\PD{x}{\eta}\right)^2 \right).
+\end{equation}
+%
+Here \(\eta\) was the displacement from the equilibrium position, \(\mu\) is the mass line density and \(Y\) is Young's modulus.
+
+Using this Lagrangian, find the equations of the field, showing that it has the expected form.
+} % problem
+\makeanswer{problem:waveLagrangian:1}{
+%
+Taking derivatives confirms that this is the correct form.  The Euler-Lagrange
+equations for this equation are:
+%
+\begin{equation}\label{eqn:waveLagrangian:20}
+\begin{aligned}
+\PD{\eta}{\LL} &= \PD{t}{} \PD{\PD{t}{\eta}}{\LL} +\PD{x}{} \PD{\PD{x}{\eta}}{\LL} \\
+0 &= \PD{t}{} \mu \PD{t}{\eta} -\PD{x}{} Y \PD{x}{\eta} .
+\end{aligned}
+\end{equation}
+%
+Which has the expected form
+%
+\begin{equation}\label{eqn:waveLagrangian:40}
+\mu \PDsq{t}{\eta} - Y \PDsq{x}{\eta} = 0.
+\end{equation}
+} % answer

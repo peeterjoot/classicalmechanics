@@ -15,57 +15,11 @@ Compare the Lagrangians for the classical wave equation of a vibrating string/fi
 Observe the similarities and differences, and come back to this later after grasping some of the concepts of Field energy and momentum (energy in vibration and electromagnetism and momentum in quantum mechanics).  Do the ideas of field momentum carry in quantum have equivalents in electromagnetism?
 %
 \section{Vibrating object equations.}
-%
-\subsection{One dimensional wave equation.}
-%
-\citep{goldstein1951cm} does a nice derivation of the one dimensional wave
-equation Lagrangian, using a limiting argument applied to an infinite
-sequence of connected masses on springs.
-%
-\begin{equation}\label{eqn:wave_lagrangian:oneDimensionalWaveLagrangian}
-\LL = \inv{2} \left(\mu \left(\PD{t}{\eta}\right)^2 - Y \left(\PD{x}{\eta}\right)^2 \right).
-\end{equation}
-%
-here \(\eta\) was the displacement from the equilibrium position, \(\mu\) is the mass line density and \(Y\) is Young's modulus.
-%
-Taking derivatives confirms that this is the correct form.  The Euler-Lagrange
-equations for this equation are:
-%
-\begin{equation}\label{eqn:waveLagrangian:20}
-\begin{aligned}
-\PD{\eta}{\LL} &= \PD{t}{} \PD{\PD{t}{\eta}}{\LL} +\PD{x}{} \PD{\PD{x}{\eta}}{\LL} \\
-0 &= \PD{t}{} \mu \PD{t}{\eta} -\PD{x}{} Y \PD{x}{\eta} .
-\end{aligned}
-\end{equation}
-%
-Which has the expected form
-%
-\begin{equation}\label{eqn:waveLagrangian:40}
-\mu \PDsq{t}{\eta} - Y \PDsq{x}{\eta} = 0 .
-\end{equation}
-%
-\subsection{Higher dimension wave equation.}
-%
-For a string or film or other wavy material with more degrees of freedom than a string with back and forth motion one can guess the Lagrangian from \eqnref{eqn:wave_lagrangian:oneDimensionalWaveLagrangian}.
-%
-\begin{equation}\label{eqn:wave_lagrangian:moreDimensionalWaveLagrangian}
-\LL = \inv{2} \left(\mu \left(\PD{t}{\eta}\right)^2 - Y \sum_i \left(\PD{x^i}{\eta}\right)^2 \right).
-\end{equation}
-%
-Calculating the Euler-Lagrange equations gives
-\begin{equation}\label{eqn:waveLagrangian:60}
-\begin{aligned}
-\PD{\eta}{\LL} &= \PD{t}{} \PD{\PD{t}{\eta}}{\LL} +\sum_i \PD{x^i}{} \PD{\PD{x^i}{\eta}}{\LL} \\
-0 &= \PD{t}{} \mu \PD{t}{\eta} - \sum_i \PD{x^i}{} Y \PD{x^i}{\eta} .
-\end{aligned}
-\end{equation}
-%
-Which also has the expected form
-%
-\begin{equation}\label{eqn:waveLagrangian:80}
-\mu \PDsq{t}{\eta} - Y \sum_i \PDsq{x^i}{\eta} = 0 .
-\end{equation}
-%
+
+See \cref{problem:waveLagrangian:1} and \cref{problem:waveLagrangian:2} for vibrating string/sheet Lagrangians and their wave equations.
+%      \input{mine/waveLagrangianOneDimension.tex}
+%      \input{mine/waveLagrangianMoreDimensions.tex}
+
 \section{Electrodynamics wave equation.}
 %
 From \eqnref{eqn:wave_lagrangian:moreDimensionalWaveLagrangian} one can guess the Lagrangian for the electrodynamic potential wave equations.  Maxwell's equation in potential form are:

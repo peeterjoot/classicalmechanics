@@ -1,0 +1,29 @@
+%
+% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+\makeproblem{Wave equation in higher dimensions.}{problem:waveLagrangian:2}{
+For a string or film or other wavy material with more degrees of freedom than a string with back and forth motion, the Lagrangian is
+%\eqnref{eqn:wave_lagrangian:oneDimensionalWaveLagrangian}.
+%
+\begin{equation}\label{eqn:wave_lagrangian:moreDimensionalWaveLagrangian}
+\LL = \inv{2} \left(\mu \left(\PD{t}{\eta}\right)^2 - Y \sum_i \left(\PD{x^i}{\eta}\right)^2 \right).
+\end{equation}
+%
+Evaluate the equations for the field.
+} % problem
+\makeanswer{problem:waveLagrangian:2}{
+Calculating the Euler-Lagrange equations gives
+\begin{equation}\label{eqn:waveLagrangian:60}
+\begin{aligned}
+\PD{\eta}{\LL} &= \PD{t}{} \PD{\PD{t}{\eta}}{\LL} +\sum_i \PD{x^i}{} \PD{\PD{x^i}{\eta}}{\LL} \\
+0 &= \PD{t}{} \mu \PD{t}{\eta} - \sum_i \PD{x^i}{} Y \PD{x^i}{\eta} .
+\end{aligned}
+\end{equation}
+%
+This has the expected form
+%
+\begin{equation}\label{eqn:waveLagrangian:80}
+\mu \PDsq{t}{\eta} - Y \sum_i \PDsq{x^i}{\eta} = 0 .
+\end{equation}
+} % answer
