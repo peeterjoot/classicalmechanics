@@ -12,6 +12,9 @@
 
 \input{../latex/peeter_prologue_print2.tex}
 
+% proof:
+\usepackage{amsthm}
+
 \usepackage{peeters_layout_exercise}
 \usepackage{peeters_braket}
 \usepackage{peeters_figures}
@@ -30,7 +33,7 @@ none of these appear to have been done concisely.
 
 \section{Euler-Lagrange equations.}
 A relativistic action for a single particle system has the form
-\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\begin{dmath}\label{eqn:lorentzForceCovariant:20}
 S = \int d\tau L(x, \dot{x}),
 \end{dmath}
 where
@@ -38,22 +41,23 @@ where
 and \( \tau \) is proper time.
 %\( A \) is the four-potential,
 
-\maketheorem{Relativistic Euler-Lagrange equations.}{thm:lorentzForceCovariant:n}{
-The Euler-Lagrange equations
+\maketheorem{Relativistic Euler-Lagrange equations.}{thm:lorentzForceCovariant:40}{
+Let \( x \rightarrow x + \delta x \) be any variation of the Lagrangian four-vector coordinates, where
+\( \delta x = 0 \) at the boundaries of the action integral.  The variation of the action is
 \begin{equation*}
-\delta L = \grad L - \frac{d}{d\tau} (\grad_v L) = 0.
+\delta S = \int d\tau \delta x \cdot \delta L(x, \dot{x}),
 \end{equation*}
-follow from minimizing the action
+where
 \begin{equation*}
-\delta S = \int d\tau \delta L(x, \dot{x}) = 0,
+\delta L = \grad L - \frac{d}{d\tau} (\grad_v L).
 \end{equation*}
-with respect to all possible variations.
+The action is extremized when \( \delta S = 0 \), or when \( \delta L = 0 \).  This latter condition is called the Euler-Lagrange equations.
 } % theorem
-
-We wish to show that the equations of motion follow by requiring that the variation of the action is zero for all variations of \( x, \dot{x} \).  Such a variation is a mapping \( x \rightarrow x + \epsilon \), where \( \epsilon = 0 \) at the boundaries of the action integral.
-
-We expanding the Lagrangian in Taylor series
-\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\begin{proof}
+Let \( \epsilon = \delta x \), and expand the 
+Lagrangian in Taylor series to first order
+\begin{dmath}\label{eqn:lorentzForceCovariant:60}
+S \rightarrow
 S + \delta S
 = \int d\tau L( x + \epsilon, \dot{x} + \dot{\epsilon})
 =
@@ -62,7 +66,7 @@ S + \delta S
 }.
 \end{dmath}
 Subtracting off \( S \) and integrating by parts, leaves
-\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\begin{dmath}\label{eqn:lorentzForceCovariant:80}
 \delta S =
 \int d\tau \epsilon \cdot \lr{
    \grad L - \frac{d}{d\tau} \grad_v L
@@ -70,32 +74,78 @@ Subtracting off \( S \) and integrating by parts, leaves
 +
 \int d\tau \frac{d}{d\tau} (\grad_v L ) \cdot \epsilon.
 \end{dmath}
-This last integral can be evaluated
-\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+The boundary integral
+\begin{equation}\label{eqn:lorentzForceCovariant:100}
 \int d\tau \frac{d}{d\tau} (\grad_v L ) \cdot \epsilon
 =
-\evalbar{(\grad_v L ) \cdot \epsilon}{\Delta \tau} = 0.
-\end{dmath}
-This is zero since the variation \( \epsilon \) is required to vanish on the boundaries.  So, if \( \delta S = 0 \), we must have
-\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\evalbar{(\grad_v L ) \cdot \epsilon}{\Delta \tau} = 0,
+\end{equation}
+is zero since the variation \( \epsilon \) is required to vanish on the boundaries.  So, if \( \delta S = 0 \), we must have
+\begin{dmath}\label{eqn:lorentzForceCovariant:120}
 0 =
 \int d\tau \epsilon \cdot \lr{
    \grad L - \frac{d}{d\tau} \grad_v L
 },
 \end{dmath}
-for all \( \epsilon \).  Setting
-\begin{equation}\label{eqn:lorentzForceCovariant:n}
-\delta L = \grad L - \frac{d}{d\tau} (\grad_v L),
+for all variations \( \epsilon \).  Clearly, this requires that
+\begin{equation}\label{eqn:lorentzForceCovariant:140}
+\delta L = \grad L - \frac{d}{d\tau} (\grad_v L) = 0,
 \end{equation}
-shows that four-vector form of the Euler-Lagrange equations follow from \( \delta L = 0 \).
-
+or
+\begin{equation}\label{eqn:lorentzForceCovariant:145}
+\grad L = \frac{d}{d\tau} (\grad_v L),
+\end{equation}
+which is the coordinate free statement of the Euler-Lagrange equations.
+\end{proof}
+\makeproblem{Coordinate form of the Euler-Lagrange equations.}{problem:lorentzForceCovariant:1}{
+Working in coordinates, use the action argument show that the Euler-Lagrange equations have the form
+\begin{equation*}
+   \PD{x^\mu}{L} = \frac{d}{d\tau} \PD{\dot{x}^\mu}{L}
+\end{equation*}
+Observe that this is identical to the statement of \cref{thm:lorentzForceCovariant:40} after contraction with \( \gamma^\alpha \).
+} % problem
+\makeanswer{problem:lorentzForceCovariant:1}{
+\begin{proof}
+In terms of coordinates, the first order Taylor expansion of the action is
+\begin{dmath}\label{eqn:lorentzForceCovariant:180}
+S \rightarrow
+S + \delta S
+= \int d\tau L( x^\alpha + \epsilon^\alpha, \dot{x}^\alpha + \dot{\epsilon}^\alpha)
+=
+\int d\tau \lr{
+L(x, \dot{x}) + \epsilon^\mu \PD{x^\mu}{L} + \dot{\epsilon}^\mu \PD{\dot{x}^\mu}{L}
+}.
+\end{dmath}
+As before, we integrate by parts to separate out a pure boundary term
+\begin{dmath}\label{eqn:lorentzForceCovariant:200}
+\delta S =
+\int d\tau \epsilon^\mu
+\lr{
+   \PD{x^\mu}{L} - \frac{d}{d\tau} \PD{\dot{x}^\mu}{L}
+}
++
+\int d\tau \frac{d}{d\tau} \lr{ 
+   \epsilon^\mu \PD{\dot{x}^\mu}{L}
+}.
+\end{dmath}
+The boundary term is killed since \( \epsilon = 0 \) at the end points of the action integral, so extremization of the action (\( \delta S = 0 \), for all \( \epsilon^\mu \)) requires
+\begin{dmath}\label{eqn:lorentzForceCovariant:220}
+   \PD{x^\mu}{L} - \frac{d}{d\tau} \PD{\dot{x}^\mu}{L} = 0.
+\end{dmath}
+\end{proof}
+} % answer
+%
+%
+%
 \section{Lorentz force equations.}
 The starting point in all cases is the action
 where
-\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\begin{dmath}\label{eqn:lorentzForceCovariant:160}
 L = \inv{2} m v^2 + q A \cdot v.
 \end{dmath}
 
+%\section{Problem solutions.}
+%\shipoutAnswer
 %}
-\EndArticle
-%\EndNoBibArticle
+%\EndArticle
+\EndNoBibArticle
