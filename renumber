@@ -3,11 +3,14 @@
 #~/project/latex/bin/lgrep classicalMechanicsPs2.tex  | tee o ; . ./o
 #~/project/latex/bin/lgrep motionOfFreeTop.tex  | tee o ; . ./o
 
-~/project/latex/bin/lgrep galagrangian/canonicalMomentum.tex | tee o ; . ./o
-~/project/latex/bin/lgrep galagrangian/lagrangianFieldDensity.tex | tee o ; . ./o
-~/project/latex/bin/lgrep galagrangian/newtonianLagrangianAndGradient.tex | tee o ; . ./o
-~/project/latex/bin/lgrep galagrangian/tongMf1.tex | tee o ; . ./o
-~/project/latex/bin/lgrep mine/goldsteinCh12.tex | tee o ; . ./o
-~/project/latex/bin/lgrep mine/lorentzMetricTensor.tex | tee o ; . ./o
-~/project/latex/bin/lgrep mine/potentialEnergy.tex | tee o ; . ./o
-~/project/latex/bin/lgrep problems/classicalMechanicsPs2.tex | tee o ; . ./o
+#~/project/latex/bin/lgrep galagrangian/canonicalMomentum.tex | tee o ; . ./o
+#~/project/latex/bin/lgrep galagrangian/lagrangianFieldDensity.tex | tee o ; . ./o
+#~/project/latex/bin/lgrep galagrangian/newtonianLagrangianAndGradient.tex | tee o ; . ./o
+#~/project/latex/bin/lgrep galagrangian/tongMf1.tex | tee o ; . ./o
+#~/project/latex/bin/lgrep mine/goldsteinCh12.tex | tee o ; . ./o
+#~/project/latex/bin/lgrep mine/lorentzMetricTensor.tex | tee o ; . ./o
+#~/project/latex/bin/lgrep mine/potentialEnergy.tex | tee o ; . ./o
+#~/project/latex/bin/lgrep problems/classicalMechanicsPs2.tex | tee o ; . ./o
+#../latex/bin/lgrep lorentzForceCovariant.tex | tee o ; . ./o
+
+perl -p -i ../latex/bin/latexRegex.pl lorentzForceCovariant.tex

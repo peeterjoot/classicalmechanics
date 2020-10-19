@@ -1,0 +1,101 @@
+%
+% Copyright © 2020 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{lorentzForceCovariant}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
+
+\input{../latex/peeter_prologue_print2.tex}
+
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{verbatim}
+%\usepackage{mhchem} % \ce{}
+%\usepackage{macros_bm} % \bcM
+%\usepackage{macros_qed} % \qedmarker
+%\usepackage{txfonts} % \ointclockwise
+
+\beginArtNoToc
+
+\generatetitle{Lagrangian for the Lorentz force equation.}
+In my old classical mechanics notes it appears that I derived the Lorentz force equations a number of times, however,
+none of these appear to have been done concisely.
+
+\section{Euler-Lagrange equations.}
+A relativistic action for a single particle system has the form
+\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+S = \int d\tau L(x, \dot{x}),
+\end{dmath}
+where
+\( x \) is the spacetime coordinate, \( \dot{x} = dx/d\tau \) is the four-velocity,
+and \( \tau \) is proper time.
+%\( A \) is the four-potential,
+
+\maketheorem{Relativistic Euler-Lagrange equations.}{thm:lorentzForceCovariant:n}{
+The Euler-Lagrange equations
+\begin{equation*}
+\delta L = \grad L - \frac{d}{d\tau} (\grad_v L) = 0.
+\end{equation*}
+follow from minimizing the action
+\begin{equation*}
+\delta S = \int d\tau \delta L(x, \dot{x}) = 0,
+\end{equation*}
+with respect to all possible variations.
+} % theorem
+
+We wish to show that the equations of motion follow by requiring that the variation of the action is zero for all variations of \( x, \dot{x} \).  Such a variation is a mapping \( x \rightarrow x + \epsilon \), where \( \epsilon = 0 \) at the boundaries of the action integral.
+
+We expanding the Lagrangian in Taylor series
+\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+S + \delta S
+= \int d\tau L( x + \epsilon, \dot{x} + \dot{\epsilon})
+=
+\int d\tau \lr{
+   L(x, \dot{x}) + \epsilon \cdot \grad L + \dot{\epsilon} \cdot \grad_v L
+}.
+\end{dmath}
+Subtracting off \( S \) and integrating by parts, leaves
+\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\delta S =
+\int d\tau \epsilon \cdot \lr{
+   \grad L - \frac{d}{d\tau} \grad_v L
+}
++
+\int d\tau \frac{d}{d\tau} (\grad_v L ) \cdot \epsilon.
+\end{dmath}
+This last integral can be evaluated
+\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\int d\tau \frac{d}{d\tau} (\grad_v L ) \cdot \epsilon
+=
+\evalbar{(\grad_v L ) \cdot \epsilon}{\Delta \tau} = 0.
+\end{dmath}
+This is zero since the variation \( \epsilon \) is required to vanish on the boundaries.  So, if \( \delta S = 0 \), we must have
+\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+0 =
+\int d\tau \epsilon \cdot \lr{
+   \grad L - \frac{d}{d\tau} \grad_v L
+},
+\end{dmath}
+for all \( \epsilon \).  Setting
+\begin{equation}\label{eqn:lorentzForceCovariant:n}
+\delta L = \grad L - \frac{d}{d\tau} (\grad_v L),
+\end{equation}
+shows that four-vector form of the Euler-Lagrange equations follow from \( \delta L = 0 \).
+
+\section{Lorentz force equations.}
+The starting point in all cases is the action
+where
+\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+L = \inv{2} m v^2 + q A \cdot v.
+\end{dmath}
+
+%}
+\EndArticle
+%\EndNoBibArticle
