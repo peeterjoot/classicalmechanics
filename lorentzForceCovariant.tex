@@ -28,9 +28,12 @@
 \beginArtNoToc
 
 \generatetitle{Lagrangian for the Lorentz force equation.}
-In my old classical mechanics notes it appears that I derived the Lorentz force equations a number of times, however,
-none of these appear to have been done concisely.
+In my old classical mechanics notes it appears that I derived the Lorentz force equations a number of times, using different trial Lagrangians (relativistic and non-relativistic).
+However,
+none of these appear to have been done concisely, and a number not even coherently.
+Here I'll cover the derivation from the relativistic Lagrangian.
 
+I'll start at ground zero, with the derivation of the relativistic form of the Euler-Lagrange equations from the action.
 \section{Euler-Lagrange equations.}
 A relativistic action for a single particle system has the form
 \begin{dmath}\label{eqn:lorentzForceCovariant:20}
@@ -49,12 +52,14 @@ Let \( x \rightarrow x + \delta x \) be any variation of the Lagrangian four-vec
 \end{equation*}
 where
 \begin{equation*}
-\delta L = \grad L - \frac{d}{d\tau} (\grad_v L).
+\delta L = \grad L - \frac{d}{d\tau} (\grad_v L),
 \end{equation*}
+where \( \grad = \gamma^\mu \partial_\mu \), and \( \grad_v = \gamma^\mu \partial/\partial \dot{x}^\mu \).
+
 The action is extremized when \( \delta S = 0 \), or when \( \delta L = 0 \).  This latter condition is called the Euler-Lagrange equations.
 } % theorem
 \begin{proof}
-Let \( \epsilon = \delta x \), and expand the 
+Let \( \epsilon = \delta x \), and expand the
 Lagrangian in Taylor series to first order
 \begin{dmath}\label{eqn:lorentzForceCovariant:60}
 S \rightarrow
@@ -102,7 +107,7 @@ Working in coordinates, use the action argument show that the Euler-Lagrange equ
 \begin{equation*}
    \PD{x^\mu}{L} = \frac{d}{d\tau} \PD{\dot{x}^\mu}{L}
 \end{equation*}
-Observe that this is identical to the statement of \cref{thm:lorentzForceCovariant:40} after contraction with \( \gamma^\alpha \).
+Observe that this is identical to the statement of \cref{thm:lorentzForceCovariant:40} after contraction with \( \gamma^\mu \).
 } % problem
 \makeanswer{problem:lorentzForceCovariant:1}{
 \begin{proof}
@@ -113,7 +118,7 @@ S + \delta S
 = \int d\tau L( x^\alpha + \epsilon^\alpha, \dot{x}^\alpha + \dot{\epsilon}^\alpha)
 =
 \int d\tau \lr{
-L(x, \dot{x}) + \epsilon^\mu \PD{x^\mu}{L} + \dot{\epsilon}^\mu \PD{\dot{x}^\mu}{L}
+L(x^\alpha, \dot{x}^\alpha) + \epsilon^\mu \PD{x^\mu}{L} + \dot{\epsilon}^\mu \PD{\dot{x}^\mu}{L}
 }.
 \end{dmath}
 As before, we integrate by parts to separate out a pure boundary term
@@ -124,11 +129,11 @@ As before, we integrate by parts to separate out a pure boundary term
    \PD{x^\mu}{L} - \frac{d}{d\tau} \PD{\dot{x}^\mu}{L}
 }
 +
-\int d\tau \frac{d}{d\tau} \lr{ 
+\int d\tau \frac{d}{d\tau} \lr{
    \epsilon^\mu \PD{\dot{x}^\mu}{L}
 }.
 \end{dmath}
-The boundary term is killed since \( \epsilon = 0 \) at the end points of the action integral, so extremization of the action (\( \delta S = 0 \), for all \( \epsilon^\mu \)) requires
+The boundary term is killed since \( \epsilon^\mu = 0 \) at the end points of the action integral.  We conclude that extremization of the action (\( \delta S = 0 \), for all \( \epsilon^\mu \)) requires
 \begin{dmath}\label{eqn:lorentzForceCovariant:220}
    \PD{x^\mu}{L} - \frac{d}{d\tau} \PD{\dot{x}^\mu}{L} = 0.
 \end{dmath}
@@ -137,13 +142,93 @@ The boundary term is killed since \( \epsilon = 0 \) at the end points of the ac
 %
 %
 %
-\section{Lorentz force equations.}
-The starting point in all cases is the action
-where
-\begin{dmath}\label{eqn:lorentzForceCovariant:160}
+\section{Lorentz force equation.}
+\maketheorem{Lorentz force.}{thm:lorentzForceCovariant:2}{
+The relativistic Lagrangian for a charged particle is
+\begin{equation*}
 L = \inv{2} m v^2 + q A \cdot v.
+\end{equation*}
+Application of the Euler-Lagrange equations to this Lagrangian yields the Lorentz-force equation
+\begin{equation*}
+\frac{dp}{d\tau} = q F \cdot v,
+\end{equation*}
+where \( p = m v \) is the proper momentum, and \( F \) is the Faraday bivector \( F = \grad \wedge A \).
+} % theorem
+\begin{proof}
+To make life easier, let's take advantage of the linearity of the Lagrangian, and break it into the free particle Lagrangian \( L_0 = (1/2) m v^2 \) and a potential term \( L_1 = q A \cdot v \).  For the free particle case we have
+\begin{dmath}\label{eqn:lorentzForceCovariant:240}
+\delta L_0
+= \grad L_0 - \frac{d}{d\tau} (\grad_v L_0)
+=           - \frac{d}{d\tau} (m v)
+= - \frac{dp}{d\tau}.
 \end{dmath}
-
+For the potential contribution we have
+\begin{dmath}\label{eqn:lorentzForceCovariant:260}
+\delta L_1
+= \grad L_1 - \frac{d}{d\tau} (\grad_v L_1)
+= q \lr{ \grad (A \cdot v) - \frac{d}{d\tau} \lr{ \grad_v (A \cdot v)} }
+= q \lr{ \grad (A \cdot v) - \frac{dA}{d\tau} }.
+\end{dmath}
+The proper time derivative can be evaluated using the chain rule
+\begin{equation}\label{eqn:lorentzForceCovariant:280}
+\frac{dA}{d\tau}
+=
+\frac{\partial x^\mu}{\partial \tau} \partial_\mu A
+= (v \cdot \grad) A.
+\end{equation}
+Putting all the pieces back together we have
+\begin{dmath}\label{eqn:lorentzForceCovariant:300}
+0 =
+\delta L
+=
+-\frac{dp}{d\tau} + q\lr{ \grad (A \cdot v) -  (v \cdot \grad) A }
+=
+-\frac{dp}{d\tau} + q \lr{ \grad \wedge A } \cdot v.
+\end{dmath}
+\end{proof}
+\makeproblem{Gradient of a squared position vector.}{problem:lorentzForceCovariant:13}{
+Show that
+\begin{equation*}
+   \grad (a \cdot x) = a,
+\end{equation*}
+and
+\begin{equation*}
+   \grad x^2 = 2 x.
+\end{equation*}
+Note that special cases of this were used above, in particular \( \grad_v (v^2) = 2 v \), and \( \grad_v (A \cdot v) = A \).
+} % problem
+\makeanswer{problem:lorentzForceCovariant:13}{
+\begin{proof}
+The first identity follows easily by expansion in coordinates
+\begin{dmath}\label{eqn:lorentzForceCovariant:320}
+\grad (a \cdot x)
+=
+\gamma^\mu \partial_\mu a_\alpha x^\alpha
+=
+\gamma^\mu a_\alpha \delta_\mu^\alpha
+=
+\gamma^\mu a_\mu
+=
+a.
+\end{dmath}
+The second identity follows by linearity of the gradient
+\begin{dmath}\label{eqn:lorentzForceCovariant:340}
+\grad x^2
+=
+\grad (x \cdot x)
+=
+\evalbar{\lr{\grad (x \cdot a)}}{a = x}
++
+\evalbar{\lr{\grad (b \cdot x)}}{b = x}
+=
+\evalbar{a}{a = x}
++
+\evalbar{b}{b = x}
+=
+2x.
+\end{dmath}
+\end{proof}
+} % answer
 %\section{Problem solutions.}
 %\shipoutAnswer
 %}
