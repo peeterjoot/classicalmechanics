@@ -146,13 +146,13 @@ The boundary term is killed since \( \epsilon^\mu = 0 \) at the end points of th
 \maketheorem{Lorentz force.}{thm:lorentzForceCovariant:2}{
 The relativistic Lagrangian for a charged particle is
 \begin{equation*}
-L = \inv{2} m v^2 + q A \cdot v.
+L = \inv{2} m v^2 + q A \cdot v/c.
 \end{equation*}
 Application of the Euler-Lagrange equations to this Lagrangian yields the Lorentz-force equation
 \begin{equation*}
-\frac{dp}{d\tau} = q F \cdot v,
+\frac{dp}{d\tau} = q F \cdot v/c,
 \end{equation*}
-where \( p = m v \) is the proper momentum, and \( F \) is the Faraday bivector \( F = \grad \wedge A \).
+where \( p = m v \) is the proper momentum, \( F \) is the Faraday bivector \( F = \grad \wedge A \), and \( c \) is the speed of light.
 } % theorem
 \begin{proof}
 To make life easier, let's take advantage of the linearity of the Lagrangian, and break it into the free particle Lagrangian \( L_0 = (1/2) m v^2 \) and a potential term \( L_1 = q A \cdot v \).  For the free particle case we have
@@ -166,8 +166,8 @@ For the potential contribution we have
 \begin{dmath}\label{eqn:lorentzForceCovariant:260}
 \delta L_1
 = \grad L_1 - \frac{d}{d\tau} (\grad_v L_1)
-= q \lr{ \grad (A \cdot v) - \frac{d}{d\tau} \lr{ \grad_v (A \cdot v)} }
-= q \lr{ \grad (A \cdot v) - \frac{dA}{d\tau} }.
+= \frac{q}{c} \lr{ \grad (A \cdot v) - \frac{d}{d\tau} \lr{ \grad_v (A \cdot v)} }
+= \frac{q}{c} \lr{ \grad (A \cdot v) - \frac{dA}{d\tau} }.
 \end{dmath}
 The proper time derivative can be evaluated using the chain rule
 \begin{equation}\label{eqn:lorentzForceCovariant:280}
@@ -181,9 +181,9 @@ Putting all the pieces back together we have
 0 =
 \delta L
 =
--\frac{dp}{d\tau} + q\lr{ \grad (A \cdot v) -  (v \cdot \grad) A }
+-\frac{dp}{d\tau} + \frac{q}{c} \lr{ \grad (A \cdot v) -  (v \cdot \grad) A }
 =
--\frac{dp}{d\tau} + q \lr{ \grad \wedge A } \cdot v.
+-\frac{dp}{d\tau} + \frac{q}{c} \lr{ \grad \wedge A } \cdot v.
 \end{dmath}
 \end{proof}
 \makeproblem{Gradient of a squared position vector.}{problem:lorentzForceCovariant:13}{
