@@ -133,12 +133,70 @@ I^2
 (-1)
 = -1.
 \end{dmath}
-Commutation: TODO
-} % answer
-\makeproblem{Pseudoscalar commutation.}{problem:lorentzForceCovariant:47}{
-} % problem
-\makeanswer{problem:lorentzForceCovariant:47}{
-   TODO.
+To illustrate the anticommutation property with any vector basis element, consider the following two examples:
+\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+I \gamma_0 =
+\gamma_0
+\gamma_1
+\gamma_2
+\gamma_3
+\gamma_0
+=
+-
+\gamma_0
+\gamma_0
+\gamma_1
+\gamma_2
+\gamma_3
+=
+-
+\gamma_0 I,
+\end{dmath}
+\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+I \gamma_2 =
+\gamma_0
+\gamma_1
+\gamma_2
+\gamma_3
+\gamma_2
+=
+-
+\gamma_0
+\gamma_1
+\gamma_2
+\gamma_2
+\gamma_3
+=
+-
+\gamma_2
+\gamma_0
+\gamma_1
+\gamma_2
+\gamma_3
+= -\gamma_2 I.
+\end{dmath}
+A total of three sign swaps is required to ``percolate'' any given \(\gamma_\alpha\) through the factors of \( I \), resulting in an overall sign change of \( -1 \).
+
+For any bivector basis element \( \alpha \ne \beta \)
+\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+   I \gamma_\alpha \gamma_\beta
+   =
+   -\gamma_\alpha I \gamma_\beta
+   =
+   +\gamma_\alpha \gamma_\beta I.
+\end{dmath}
+
+Similarily
+for any trivector basis element \( \alpha \ne \beta \ne \sigma \)
+\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+   I \gamma_\alpha \gamma_\beta \gamma_\sigma
+   =
+   -\gamma_\alpha I \gamma_\beta \gamma_\sigma
+   =
+   +\gamma_\alpha \gamma_\beta I \gamma_\sigma
+   =
+   -\gamma_\alpha \gamma_\beta \gamma_\sigma I.
+\end{dmath}
 } % answer
 \makedefinition{Reciprocal frame.}{dfn:lorentzForceCovariant:19}{
 It will be useful to define a reciprocal basis defined by \( \gamma^\alpha \cdot \gamma_\beta = \delta^\alpha_\beta \).
