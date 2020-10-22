@@ -42,6 +42,8 @@ In my old classical mechanics notes it appears that I derived the Lorentz force 
 However,
 none of these appear to have been done concisely, and a number not even coherently.
 Here I'll cover the derivation from the relativistic Lagrangian and some associated concepts.  Geometric algebra in its STA (Space Time Algebra) form will be used.
+
+Note that some of the prerequisite ideas and auxillary details are presented as problems with solutions.  The reader should attempt all such problems themselves.
 \section{Conventions.}
 \makedefinition{Index conventions.}{dfn:lorentzForceCovariant:23}{
 Latin indexes \( i, j, k, r, s, t, \cdots \) are used to designate values in the range \( \setlr{ 1,2,3 } \).  Greek indexes are \( \alpha, \beta, \mu, \nu, \cdots \) are used for indexes of spacetime quantities \( \setlr{0,1,2,3} \).
@@ -134,7 +136,7 @@ I^2
 = -1.
 \end{dmath}
 To illustrate the anticommutation property with any vector basis element, consider the following two examples:
-\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\begin{dmath}\label{eqn:lorentzForceCovariant:720}
 I \gamma_0 =
 \gamma_0
 \gamma_1
@@ -152,7 +154,7 @@ I \gamma_0 =
 -
 \gamma_0 I,
 \end{dmath}
-\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\begin{dmath}\label{eqn:lorentzForceCovariant:740}
 I \gamma_2 =
 \gamma_0
 \gamma_1
@@ -178,7 +180,7 @@ I \gamma_2 =
 A total of three sign swaps is required to ``percolate'' any given \(\gamma_\alpha\) through the factors of \( I \), resulting in an overall sign change of \( -1 \).
 
 For any bivector basis element \( \alpha \ne \beta \)
-\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\begin{dmath}\label{eqn:lorentzForceCovariant:760}
    I \gamma_\alpha \gamma_\beta
    =
    -\gamma_\alpha I \gamma_\beta
@@ -188,7 +190,7 @@ For any bivector basis element \( \alpha \ne \beta \)
 
 Similarily
 for any trivector basis element \( \alpha \ne \beta \ne \sigma \)
-\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\begin{dmath}\label{eqn:lorentzForceCovariant:780}
    I \gamma_\alpha \gamma_\beta \gamma_\sigma
    =
    -\gamma_\alpha I \gamma_\beta \gamma_\sigma
@@ -199,7 +201,7 @@ for any trivector basis element \( \alpha \ne \beta \ne \sigma \)
 \end{dmath}
 } % answer
 \makedefinition{Reciprocal frame.}{dfn:lorentzForceCovariant:19}{
-It will be useful to define a reciprocal basis defined by \( \gamma^\alpha \cdot \gamma_\beta = \delta^\alpha_\beta \).
+   It will be useful to define a reciprocal basis defined by \( \gamma^\alpha \cdot \gamma_\beta = {\delta^\alpha}_\beta \).
 } % definition
 %It is easy to show that \( \gamma^0 = \gamma_0 \) and \(
 %TODO... lots more.
