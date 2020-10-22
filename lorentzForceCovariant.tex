@@ -12,8 +12,17 @@
 
 \input{../latex/peeter_prologue_print2.tex}
 
+\PassOptionsToPackage{answerdelayed}{exercise}
+
 % proof:
 \usepackage{amsthm}
+
+%\usepackage[thmmarks]{ntheorem}
+%\theoremheaderfont{\bfseries}
+%\theorembodyfont{\normalfont}
+%\theoremseparator{}
+%\theoremsymbol{$\blacksquare$}
+%\newtheorem*{answerproof}{}
 
 \usepackage{peeters_layout_exercise}
 \usepackage{peeters_braket}
@@ -28,13 +37,57 @@
 \beginArtNoToc
 
 \generatetitle{Lagrangian for the Lorentz force equation.}
+\section{Motivation.}
 In my old classical mechanics notes it appears that I derived the Lorentz force equations a number of times, using different trial Lagrangians (relativistic and non-relativistic).
 However,
 none of these appear to have been done concisely, and a number not even coherently.
-Here I'll cover the derivation from the relativistic Lagrangian.
-
-I'll start at ground zero, with the derivation of the relativistic form of the Euler-Lagrange equations from the action.
+Here I'll cover the derivation from the relativistic Lagrangian and some associated concepts.  Geometric algebra in its STA (Space Time Algebra) form will be used.
+\section{Conventions.}
+\makedefinition{Index conventions.}{dfn:lorentzForceCovariant:23}{
+Latin indexes \( i, j, k, r, s, t, \cdots \) are used to designate values in the range \( \setlr{ 1,2,3 } \).  Greek indexes are \( \alpha, \beta, \mu, \nu, \cdots \) are used for indexes of spacetime quantities \( \setlr{0,1,2,3} \).
+Summation is implied when greek indexes mixed upper and lower greek indexes are used, for example
+\begin{equation*}
+x^\alpha x_\alpha \equiv \sum_{\alpha = 0}^3 x^\alpha x_\alpha.
+\end{equation*}
+} % definition
+\section{Space Time Algebra (STA.)}
+\makedefinition{Space Time Algebra.}{dfn:lorentzForceCovariant:17}{
+Let the four-vector standard basis be designated
+\( \setlr{\gamma_0, \gamma_1, \gamma_2, \gamma_3 } \), where
+\( \gamma_0^2 = -\gamma_i^2 = 1\), and \( \gamma_\alpha \cdot \gamma_\beta = 0, \forall \alpha \ne \beta \).
+%We use a \((+,-,-,-)\) basis 
+} % definition
+\makedefinition{Pseudoscalar.}{dfn:lorentzForceCovariant:n}{
+The pseudoscalar for the space is denoted \( I = \gamma_0 \gamma_1 \gamma_2 \gamma_3 \).
+} % definition
+\makeproblem{Pseudoscalar square.}{problem:lorentzForceCovariant:99}{
+Show that \( I \) defined by \cref{dfn:lorentzForceCovariant:17} satisfies
+\begin{equation*}
+\tilde{I} = I,
+\end{equation*}
+where the tilde (\(~\)) represents reversion.
+and
+\begin{equation*}
+I^2 = -1.
+\end{equation*}
+} % problem
+\makeanswer{problem:lorentzForceCovariant:99}{
+TODO.
+%\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+%I^2 = 
+%\gamma_0
+%\gamma_1
+%\gamma_2
+%\gamma_3
+%\end{dmath}
+} % answer
+\makedefinition{Reciprocal frame.}{dfn:lorentzForceCovariant:19}{
+It will be useful to define a reciprocal basis defined by \( \gamma^\alpha \cdot \gamma_\beta = \delta^\alpha_\beta \).
+} % definition
+%It is easy to show that \( \gamma^0 = \gamma_0 \) and \(
+%TODO... lots more.
 \section{Euler-Lagrange equations.}
+I'll start at ground zero, with the derivation of the relativistic form of the Euler-Lagrange equations from the action.
 A relativistic action for a single particle system has the form
 \begin{dmath}\label{eqn:lorentzForceCovariant:20}
 S = \int d\tau L(x, \dot{x}),
@@ -110,7 +163,7 @@ Working in coordinates, use the action argument show that the Euler-Lagrange equ
 Observe that this is identical to the statement of \cref{thm:lorentzForceCovariant:40} after contraction with \( \gamma^\mu \).
 } % problem
 \makeanswer{problem:lorentzForceCovariant:1}{
-\begin{proof}
+%\begin{answerproof}
 In terms of coordinates, the first order Taylor expansion of the action is
 \begin{dmath}\label{eqn:lorentzForceCovariant:180}
 S \rightarrow
@@ -137,7 +190,7 @@ The boundary term is killed since \( \epsilon^\mu = 0 \) at the end points of th
 \begin{dmath}\label{eqn:lorentzForceCovariant:220}
    \PD{x^\mu}{L} - \frac{d}{d\tau} \PD{\dot{x}^\mu}{L} = 0.
 \end{dmath}
-\end{proof}
+%\end{answerproof}
 } % answer
 %
 %
@@ -198,7 +251,7 @@ and
 Note that special cases of this were used above, in particular \( \grad_v (v^2) = 2 v \), and \( \grad_v (A \cdot v) = A \).
 } % problem
 \makeanswer{problem:lorentzForceCovariant:13}{
-\begin{proof}
+%\begin{answerproof}
 The first identity follows easily by expansion in coordinates
 \begin{dmath}\label{eqn:lorentzForceCovariant:320}
 \grad (a \cdot x)
@@ -227,10 +280,151 @@ The second identity follows by linearity of the gradient
 =
 2x.
 \end{dmath}
-\end{proof}
+%\end{answerproof}
 } % answer
-%\section{Problem solutions.}
-%\shipoutAnswer
+
+It is desirable to put this relativistic Lorentz force equation into the usual vector and tensor forms for comparision.
+% The tensor form is pretty easy to extract.
+\maketheorem{Tensor form of the Lorentz force equation.}{thm:lorentzForceCovariant:360}{
+The tensor form of the Lorentz force equation is
+\begin{equation*}
+\frac{dp^\mu}{d\tau} = \frac{q}{c} F^{\mu\nu} v_\nu,
+\end{equation*}
+where the antisymmetric Faraday tensor is defined as \( F^{\mu\nu} = \partial^\mu A^\nu - \partial^\nu A^\mu \).
+} % theorem
+\begin{proof}
+We have only to dot both sides with \( \gamma^\mu \).  On the left we have
+\begin{dmath}\label{eqn:lorentzForceCovariant:380}
+\gamma^\mu \cdot \frac{dp}{d\tau}
+=
+\frac{dp^\mu}{d\tau}.
+\end{dmath}
+On the right, we have
+\begin{dmath}\label{eqn:lorentzForceCovariant:400}
+\gamma^\mu \cdot \lr{ \frac{q}{c} F \cdot v }
+=
+ \frac{q}{c}  (( \grad \wedge A ) \cdot v ) \cdot \gamma^\mu
+=
+ \frac{q}{c}  ( \grad ( A \cdot v ) - (v \cdot \grad) A ) \cdot \gamma^\mu
+=
+ \frac{q}{c}  \lr{ (\partial^\mu A^\nu) v_\nu - v_\nu \partial^\nu A^\mu }
+=
+ \frac{q}{c} F^{\mu\nu} v_\nu.
+\end{dmath}
+\end{proof}
+\makeproblem{Lorentz force direct tensor derivation.}{problem:lorentzForceCovariant:420}{
+Instead of using the geometric algebra form of the Lorentz force equation as a stepping stone, we may derive the tensor form from the Lagrangian directly, provided the Lagrangian is put into tensor form
+\begin{equation*}
+L = \inv{2} m v^\mu v_\mu + q A^\mu v_\mu /c.
+\end{equation*}
+Evaluate the Euler-Lagrange equations in coordinate form and compare to \cref{thm:lorentzForceCovariant:360}.
+} % problem
+%
+\makeanswer{problem:lorentzForceCovariant:420}{
+%\begin{answerproof}
+Let \( \delta_\mu L = \gamma_\mu \cdot \delta L \), so that we can write the
+Euler-Lagrange equations as
+\begin{equation}\label{eqn:lorentzForceCovariant:460}
+0 = \delta_\mu L = \PD{x^\mu}{L} - \frac{d}{d\tau} \PD{\dot{x}^\mu}{L}.
+\end{equation}
+Operating on the kinetic term of the Lagrangian, we have
+\begin{dmath}\label{eqn:lorentzForceCovariant:480}
+\delta_\mu L_0 = - \frac{d}{d\tau} m x_\mu.
+\end{dmath}
+For the potential term
+\begin{dmath}\label{eqn:lorentzForceCovariant:500}
+\delta_\mu L_1
+=
+\frac{q}{c} \lr{
+v_\nu \PD{x^\mu}{A^\nu} - \frac{d}{d\tau} A_\mu
+}
+=
+\frac{q}{c} \lr{
+v_\nu \PD{x^\mu}{A^\nu} - \frac{dx_\alpha}{d\tau} \PD{x_\alpha}{ A_\mu }
+}
+=
+\frac{q}{c} v^\nu \lr{
+\partial_\mu A_\nu - \partial_\nu A_\mu
+}
+=
+\frac{q}{c} v^\nu F_{\mu\nu}.
+\end{dmath}
+Putting the pieces together gives
+\begin{dmath}\label{eqn:lorentzForceCovariant:520}
+\frac{d}{d\tau} m x_\mu = \frac{q}{c} v^\nu F_{\mu\nu},
+\end{dmath}
+which is identical to the tensor form that we found by expanding the geometric algebra form of Maxwell's equation in coordinates (after some minor index raising and lowering gymnastics.)
+%\end{answerproof}
+} % answer
+
+Next we want to establish correspondence with the traditional vector form of the Lorentz force equation.  Before doing so, we must discuss the representation of spatial vectors.
+\makedefinition{Spatial basis.}{dfn:lorentzForceCovariant:n}{
+The position of the origin of a fixed observer frame is defined as \( \gamma_0 c \tau \).  This is a four vector that moves in time but not space.  Relative to this frame we decompose any four vector \( x \) into it's timelike and spacelike components as follows
+\begin{equation*}
+\Bx = x \wedge \gamma_0,
+\end{equation*}
+and
+\begin{equation*}
+x_0 = x \cdot \gamma_0.
+\end{equation*}
+} % definition
+Illustrating by example, let \( x = x^0 \gamma_0 + x^1 \gamma_1 + x^2 \gamma_2 + x^3 \gamma_3 \).  The timelike component is just \( x^0 \), but the spacelike component is
+\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\Bx =  x^1 \gamma_1 \gamma_0 + x^2 \gamma_2  \gamma_0+ x^3 \gamma_3 \gamma_0.
+\end{dmath}
+We see that spatial vectors are represented as bivectors in the STA, with a basis \( \setlr{ \gamma_1 \gamma_0, \gamma_2 \gamma_0, \gamma_3 \gamma_0 } \).  The reader can show that the identification \( \sigma_i = \gamma_i \gamma_0 \) is sensible, as these STA bivectors have all the characteristics of Pauli matrices.  However, since the usual standard (orthonormal) basis for \R{3} also has those characteristics in geometric algebra, we can utilize a more natural notation.
+\makedefinition{Spatial basis.}{dfn:lorentzForceCovariant:77}{
+We define \( \Be_i = \gamma_i \gamma_0 \) as the spatial basis for \R{3}.
+} % definition
+\makeproblem{Orthonormality of the spatial basis.}{problem:lorentzForceCovariant:33}{
+Show that the basis \( \setlr{ \Be_1, \Be_2, \Be_3 \), with \( \Be_i \) defined by 
+\cref{dfn:lorentzForceCovariant:77}, is an orthonormal basis.
+} % problem
+\makeanswer{problem:lorentzForceCovariant:33}{
+\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\Be_i \cdot \Be_j 
+= \gpgradezero{ \gamma_i \gamma_0 \gamma_j \gamma_0 }
+= -\gpgradezero{ \gamma_i \gamma_j }.
+\end{dmath}
+If \( i = j \) the grade zero selection above is 
+} % answer
+, with \( \setlr{ \Be_1, \Be_2, \Be_3 } \) as the standard (othnonormal) basis 
+
+ be loose with notation and set \( \Be_i = \gamma_i \gamma_0 \), and dispense with the association with the Pauli matrix algebra.
+\makeproblem{Spatial pseudoscalar.}{problem:lorentzForceCovariant:11}{
+Show that the STA pseudoscalar, and the spatial pseudoscalar 
+} % problem
+\makeanswer{problem:lorentzForceCovariant:11}{
+} % answer
+\makeproblem{Characteristics of the Pauli matrices.}{problem:lorentzForceCovariant:7}{
+The Pauli matrices obey the following commutation relations:
+\begin{equation}\label{eqn:lorentzForceCovariant:n}
+\antisymmetric{ \sigma_a}{ \sigma_b } = 2 i \epsilon_{a b c}\,\sigma_c,
+\end{equation}
+and anticommutation relations:
+\begin{equation}\label{eqn:lorentzForceCovariant:n}
+\symmetric{ \sigma_a}{\sigma_b } = 2 \delta_{a b}.
+\end{equation}
+} % problem
+\makeanswer{problem:lorentzForceCovariant:7}{
+} % answer
+
+\maketheorem{Vector Lorentz force equation.}{thm:lorentzForceCovariant:540}{
+Relative to a fixed observer's frame, the Lorentz force equation of \cref{thm:lorentzForceCovariant:2} splits into a spatial rate of change of momentum, and (timelike component) rate of change of energy, as follows
+\begin{equation*}
+\begin{aligned}
+   \ddt{(\gamma m \Bv)} &= q \lr{ \BE + \Bv \cross \BB } \\
+   \ddt{(\gamma m c^2)} &= q \Bv \cdot \BE,
+\end{aligned}
+\end{equation*}
+where \( F = \BE + I c \BB \), \( \gamma = 1/\sqrt{1 - \Bv^2/c^2 }\).
+} % theorem
+\begin{proof}
+TODO: ...
+\end{proof}
+
+\section{Solutions.}
+\shipoutAnswer
 %}
 %\EndArticle
 \EndNoBibArticle
