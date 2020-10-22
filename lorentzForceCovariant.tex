@@ -55,37 +55,98 @@ x^\alpha x_\alpha \equiv \sum_{\alpha = 0}^3 x^\alpha x_\alpha.
 Let the four-vector standard basis be designated
 \( \setlr{\gamma_0, \gamma_1, \gamma_2, \gamma_3 } \), where
 \( \gamma_0^2 = -\gamma_i^2 = 1\), and \( \gamma_\alpha \cdot \gamma_\beta = 0, \forall \alpha \ne \beta \).
-%We use a \((+,-,-,-)\) basis 
+%We use a \((+,-,-,-)\) basis
 } % definition
-\makedefinition{Pseudoscalar.}{dfn:lorentzForceCovariant:n}{
+\makedefinition{Pseudoscalar.}{dfn:lorentzForceCovariant:540}{
 The pseudoscalar for the space is denoted \( I = \gamma_0 \gamma_1 \gamma_2 \gamma_3 \).
 } % definition
-\makeproblem{Pseudoscalar square.}{problem:lorentzForceCovariant:99}{
-Show that \( I \) defined by \cref{dfn:lorentzForceCovariant:17} satisfies
+\makeproblem{Pseudoscalar.}{problem:lorentzForceCovariant:99}{
+% use parts.
+Show that the STA pseudoscalar \( I \) defined by \cref{dfn:lorentzForceCovariant:17} satisfies
 \begin{equation*}
 \tilde{I} = I,
 \end{equation*}
-where the tilde (\(~\)) represents reversion.
-and
+where the tilde operator designates reversion.
+Also show that \( I \) has the properties of an imaginary number
 \begin{equation*}
 I^2 = -1.
 \end{equation*}
+Finally, show that, unlike the spatial pseudoscalar that commutes with all grades, \( I \) anticommutes with any vector or trivector, and commutes with any bivector.
 } % problem
 \makeanswer{problem:lorentzForceCovariant:99}{
-TODO.
-%\begin{dmath}\label{eqn:lorentzForceCovariant:n}
-%I^2 = 
-%\gamma_0
-%\gamma_1
-%\gamma_2
-%\gamma_3
-%\end{dmath}
+Since
+\( \gamma_\alpha \gamma_\beta = -\gamma_\beta \gamma_\alpha \)
+for any
+\( \alpha \ne \beta \)
+, any permutation of the factors of \( I \) changes the sign once.  In particular
+\begin{dmath}\label{eqn:lorentzForceCovariant:680}
+I =
+\gamma_0
+\gamma_1
+\gamma_2
+\gamma_3
+=
+-
+\gamma_1
+\gamma_2
+\gamma_3
+\gamma_0
+=
+-
+\gamma_2
+\gamma_3
+\gamma_1
+\gamma_0
+=
++
+\gamma_3
+\gamma_2
+\gamma_1
+\gamma_0
+= \tilde{I}.
+\end{dmath}
+Using this, we have
+\begin{dmath}\label{eqn:lorentzForceCovariant:700}
+I^2
+= I \tilde{I}
+=
+(
+\gamma_0
+\gamma_1
+\gamma_2
+\gamma_3
+)(
+\gamma_3
+\gamma_2
+\gamma_1
+\gamma_0
+)
+=
+\lr{\gamma_0}^2
+\lr{\gamma_1}^2
+\lr{\gamma_2}^2
+\lr{\gamma_3}^2
+=
+(+1)
+(-1)
+(-1)
+(-1)
+= -1.
+\end{dmath}
+Commutation: TODO
+} % answer
+\makeproblem{Pseudoscalar commutation.}{problem:lorentzForceCovariant:47}{
+} % problem
+\makeanswer{problem:lorentzForceCovariant:47}{
+   TODO.
 } % answer
 \makedefinition{Reciprocal frame.}{dfn:lorentzForceCovariant:19}{
 It will be useful to define a reciprocal basis defined by \( \gamma^\alpha \cdot \gamma_\beta = \delta^\alpha_\beta \).
 } % definition
 %It is easy to show that \( \gamma^0 = \gamma_0 \) and \(
 %TODO... lots more.
+\subsection{Solutions.}
+\shipoutAnswer
 \section{Euler-Lagrange equations.}
 I'll start at ground zero, with the derivation of the relativistic form of the Euler-Lagrange equations from the action.
 A relativistic action for a single particle system has the form
@@ -192,8 +253,8 @@ The boundary term is killed since \( \epsilon^\mu = 0 \) at the end points of th
 \end{dmath}
 %\end{answerproof}
 } % answer
-%
-%
+\subsection{Solutions.}
+\shipoutAnswer
 %
 \section{Lorentz force equation.}
 \maketheorem{Lorentz force.}{thm:lorentzForceCovariant:2}{
@@ -358,7 +419,7 @@ which is identical to the tensor form that we found by expanding the geometric a
 } % answer
 
 Next we want to establish correspondence with the traditional vector form of the Lorentz force equation.  Before doing so, we must discuss the representation of spatial vectors.
-\makedefinition{Spatial basis.}{dfn:lorentzForceCovariant:n}{
+\makedefinition{Spatial basis.}{dfn:lorentzForceCovariant:580}{
 The position of the origin of a fixed observer frame is defined as \( \gamma_0 c \tau \).  This is a four vector that moves in time but not space.  Relative to this frame we decompose any four vector \( x \) into it's timelike and spacelike components as follows
 \begin{equation*}
 \Bx = x \wedge \gamma_0,
@@ -369,7 +430,7 @@ x_0 = x \cdot \gamma_0.
 \end{equation*}
 } % definition
 Illustrating by example, let \( x = x^0 \gamma_0 + x^1 \gamma_1 + x^2 \gamma_2 + x^3 \gamma_3 \).  The timelike component is just \( x^0 \), but the spacelike component is
-\begin{dmath}\label{eqn:lorentzForceCovariant:n}
+\begin{dmath}\label{eqn:lorentzForceCovariant:600}
 \Bx =  x^1 \gamma_1 \gamma_0 + x^2 \gamma_2  \gamma_0+ x^3 \gamma_3 \gamma_0.
 \end{dmath}
 We see that spatial vectors are represented as bivectors in the STA, with a basis \( \setlr{ \gamma_1 \gamma_0, \gamma_2 \gamma_0, \gamma_3 \gamma_0 } \).  The reader can show that the identification \( \sigma_i = \gamma_i \gamma_0 \) is sensible, as these STA bivectors have all the characteristics of Pauli matrices.  However, since the usual standard (orthonormal) basis for \R{3} also has those characteristics in geometric algebra, we can utilize a more natural notation.
@@ -377,32 +438,32 @@ We see that spatial vectors are represented as bivectors in the STA, with a basi
 We define \( \Be_i = \gamma_i \gamma_0 \) as the spatial basis for \R{3}.
 } % definition
 \makeproblem{Orthonormality of the spatial basis.}{problem:lorentzForceCovariant:33}{
-Show that the basis \( \setlr{ \Be_1, \Be_2, \Be_3 \), with \( \Be_i \) defined by 
+   Show that the basis \( \setlr{ \Be_1, \Be_2, \Be_3 } \), with \( \Be_i \) defined by
 \cref{dfn:lorentzForceCovariant:77}, is an orthonormal basis.
 } % problem
 \makeanswer{problem:lorentzForceCovariant:33}{
-\begin{dmath}\label{eqn:lorentzForceCovariant:n}
-\Be_i \cdot \Be_j 
+\begin{dmath}\label{eqn:lorentzForceCovariant:620}
+\Be_i \cdot \Be_j
 = \gpgradezero{ \gamma_i \gamma_0 \gamma_j \gamma_0 }
 = -\gpgradezero{ \gamma_i \gamma_j }.
 \end{dmath}
-If \( i = j \) the grade zero selection above is 
+If \( i = j \) the grade zero selection above is
 } % answer
-, with \( \setlr{ \Be_1, \Be_2, \Be_3 } \) as the standard (othnonormal) basis 
+, with \( \setlr{ \Be_1, \Be_2, \Be_3 } \) as the standard (othnonormal) basis
 
  be loose with notation and set \( \Be_i = \gamma_i \gamma_0 \), and dispense with the association with the Pauli matrix algebra.
 \makeproblem{Spatial pseudoscalar.}{problem:lorentzForceCovariant:11}{
-Show that the STA pseudoscalar, and the spatial pseudoscalar 
+Show that the STA pseudoscalar, and the spatial pseudoscalar
 } % problem
 \makeanswer{problem:lorentzForceCovariant:11}{
 } % answer
 \makeproblem{Characteristics of the Pauli matrices.}{problem:lorentzForceCovariant:7}{
 The Pauli matrices obey the following commutation relations:
-\begin{equation}\label{eqn:lorentzForceCovariant:n}
+\begin{equation}\label{eqn:lorentzForceCovariant:640}
 \antisymmetric{ \sigma_a}{ \sigma_b } = 2 i \epsilon_{a b c}\,\sigma_c,
 \end{equation}
 and anticommutation relations:
-\begin{equation}\label{eqn:lorentzForceCovariant:n}
+\begin{equation}\label{eqn:lorentzForceCovariant:660}
 \symmetric{ \sigma_a}{\sigma_b } = 2 \delta_{a b}.
 \end{equation}
 } % problem
@@ -422,8 +483,7 @@ where \( F = \BE + I c \BB \), \( \gamma = 1/\sqrt{1 - \Bv^2/c^2 }\).
 \begin{proof}
 TODO: ...
 \end{proof}
-
-\section{Solutions.}
+\subsection{Solutions.}
 \shipoutAnswer
 %}
 %\EndArticle
