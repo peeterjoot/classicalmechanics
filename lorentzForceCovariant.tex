@@ -41,9 +41,10 @@
 In my old classical mechanics notes it appears that I derived the Lorentz force equations a number of times, using different trial Lagrangians (relativistic and non-relativistic).
 However,
 none of these appear to have been done concisely, and a number not even coherently.
-Here I'll cover the derivation from the relativistic Lagrangian and some associated concepts.  Geometric algebra in its STA (Space Time Algebra) form will be used.
+Here I'll cover the derivation from the relativistic Lagrangian and some associated concepts, including a lighting review of geometric algebra in its STA (Space Time Algebra) form.
 
-Note that some of the prerequisite ideas and auxillary details are presented as problems with solutions.  The reader should attempt all such problems themselves.
+Note that some of the prerequisite ideas and auxillary details are presented as problems with solutions.
+The reader should attempt all such problems themselves.
 \section{Conventions.}
 \makedefinition{Index conventions.}{dfn:lorentzForceCovariant:23}{
 Latin indexes \( i, j, k, r, s, t, \cdots \) are used to designate values in the range \( \setlr{ 1,2,3 } \).  Greek indexes are \( \alpha, \beta, \mu, \nu, \cdots \) are used for indexes of spacetime quantities \( \setlr{0,1,2,3} \).
@@ -200,10 +201,46 @@ for any trivector basis element \( \alpha \ne \beta \ne \sigma \)
    -\gamma_\alpha \gamma_\beta \gamma_\sigma I.
 \end{dmath}
 } % answer
-\makedefinition{Reciprocal frame.}{dfn:lorentzForceCovariant:19}{
-   It will be useful to define a reciprocal basis defined by \( \gamma^\alpha \cdot \gamma_\beta = {\delta^\alpha}_\beta \).
+\makedefinition{Reciprocal basis.}{dfn:lorentzForceCovariant:19}{
+The reciprocal basis \( \setlr{ \gamma^0, \gamma^1, \gamma^2, \gamma^3 } \) is defined , such that the property \( \gamma^\alpha \cdot \gamma_\beta = {\delta^\alpha}_\beta \) holds.
 } % definition
-%It is easy to show that \( \gamma^0 = \gamma_0 \) and \(
+Observe that, \( \gamma^0 = \gamma_0 \) and \( \gamma^i = -\gamma_i \).
+\maketheorem{Coordinates.}{thm:lorentzForceCovariant:800}{
+Coordinates are defined in terms of dot products with the standard basis, or reciprocal basis
+\begin{equation*}
+\begin{aligned}
+x^\alpha &= x \cdot \gamma^\alpha \\
+x_\alpha &= x \cdot \gamma_\alpha,
+\end{aligned}
+\end{equation*}
+} % theorem
+\begin{proof}
+Suppose that we have a coordinate representation as follows
+\begin{equation}\label{eqn:lorentzForceCovariant:820}
+x = x^\alpha \gamma_\alpha = x_\beta \gamma^\beta.
+\end{equation}
+We wish to determine the representation of the \( x^\alpha \) or \( x_\beta \) coordinates in terms of \( x\) and the basis elements.  Taking the dot product with any standard basis element, we find
+\begin{dmath}\label{eqn:lorentzForceCovariant:840}
+x \cdot \gamma_\mu
+= (x_\beta \gamma^\beta) \cdot \gamma_\mu
+= x_\beta {\delta^\beta}_\mu
+= x_\mu,
+\end{dmath}
+as claimed.  Similarly, dotting with a reciprocal frame vector, we find
+\begin{dmath}\label{eqn:lorentzForceCovariant:860}
+x \cdot \gamma^\mu
+= (x^\beta \gamma_\beta) \cdot \gamma^\mu
+= x^\beta {\delta_\beta}^\mu
+= x^\mu.
+\end{dmath}
+\end{proof}
+Observe that raising or lowering the index of a coordinate toggles the sign, if that index is spatial:
+\begin{equation}\label{eqn:lorentzForceCovariant:880}
+\begin{aligned}
+x^0 &= x_0 \\
+x^i &= -x_i \\
+\end{aligned}
+\end{equation}
 %TODO... lots more.
 \subsection{Solutions.}
 \shipoutAnswer
@@ -329,7 +366,7 @@ Application of the Euler-Lagrange equations to this Lagrangian yields the Lorent
 where \( p = m v \) is the proper momentum, \( F \) is the Faraday bivector \( F = \grad \wedge A \), and \( c \) is the speed of light.
 } % theorem
 \begin{proof}
-To make life easier, let's take advantage of the linearity of the Lagrangian, and break it into the free particle Lagrangian \( L_0 = (1/2) m v^2 \) and a potential term \( L_1 = q A \cdot v \).  For the free particle case we have
+To make life easier, let's take advantage of the linearity of the Lagrangian, and break it into the free particle Lagrangian \( L_0 = (1/2) m v^2 \) and a potential term \( L_1 = q A \cdot v/c \).  For the free particle case we have
 \begin{dmath}\label{eqn:lorentzForceCovariant:240}
 \delta L_0
 = \grad L_0 - \frac{d}{d\tau} (\grad_v L_0)
@@ -433,6 +470,66 @@ On the right, we have
  \frac{q}{c} F^{\mu\nu} v_\nu.
 \end{dmath}
 \end{proof}
+\makeproblem{Tensor expansion of \(F\).}{problem:lorentzForceCovariant:37}{
+An alternate way to demonstrate \cref{thm:lorentzForceCovariant:360} is to first expand \( F \) in terms of the second rank tensor \( F^{\mu\nu} \).  Find that expansion, and re-evaluate the dot products of \cref{eqn:lorentzForceCovariant:400} using that.
+} % problem
+\makeanswer{problem:lorentzForceCovariant:37}{
+\begin{dmath}\label{eqn:lorentzForceCovariant:900}
+F =
+\grad \wedge A
+=
+\lr{ \gamma_\mu \partial^\mu } \wedge \lr{ \gamma_\nu A^\nu }
+=
+\lr{ \gamma_\mu \wedge \gamma_\nu } \partial^\mu A^\nu.
+\end{dmath}
+To this we can use the usual tensor trick (add self to self, change indexes, and divide by two), to give
+\begin{dmath}\label{eqn:lorentzForceCovariant:920}
+F =
+\inv{2} \lr{
+\lr{ \gamma_\mu \wedge \gamma_\nu } \partial^\mu A^\nu
++
+\lr{ \gamma_\nu \wedge \gamma_\mu } \partial^\nu A^\mu
+}
+=
+\inv{2}
+\lr{ \gamma_\mu \wedge \gamma_\nu } \lr{
+\partial^\mu A^\nu
+-
+\partial^\nu A^\mu
+},
+\end{dmath}
+which is just
+\begin{dmath}\label{eqn:lorentzForceCovariant:940}
+F =
+\inv{2} \lr{ \gamma_\mu \wedge \gamma_\nu } F^{\mu\nu}.
+\end{dmath}
+Now, let's expand \( (F \cdot v) \cdot \gamma^\mu \) to compare to the earlier expansion in terms of \( \grad \) and \( A \).
+\begin{dmath}\label{eqn:lorentzForceCovariant:960}
+(F \cdot v) \cdot \gamma^\mu
+=
+\inv{2}
+F^{\alpha\nu}
+\lr{ \lr{ \gamma_\alpha \wedge \gamma_\nu } \cdot \lr{ \gamma^\beta v_\beta } } \cdot \gamma^\mu
+=
+\inv{2}
+F^{\alpha\nu} v_\beta
+\lr{
+   {\delta_\nu}^\beta {\gamma_\alpha}^\mu
+-
+   {\delta_\alpha}^\beta {\gamma_\nu}^\mu
+}
+=
+\inv{2}
+\lr{
+   F^{\mu\beta} v_\beta
+   -
+   F^{\beta\mu} v_\beta
+}
+=
+F^{\mu\nu} v_\nu.
+\end{dmath}
+This alternate expansion illustrates some of the connectivity between the geometric algebra approach and the traditional tensor formalism.
+} % answer
 \makeproblem{Lorentz force direct tensor derivation.}{problem:lorentzForceCovariant:420}{
 Instead of using the geometric algebra form of the Lorentz force equation as a stepping stone, we may derive the tensor form from the Lagrangian directly, provided the Lagrangian is put into tensor form
 \begin{equation*}
