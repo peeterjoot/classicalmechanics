@@ -55,6 +55,7 @@ I'll attempt to cover
 Note that some of the prerequisite ideas and auxiliary details are presented as problems with solutions.
 If the reader has sufficient background to attempt those problems themselves, they are encouraged to do so.
 
+The STA and geometric algebra ideas used here are not logically complete, and the reader is referred to \citep{doran2003gap} for a more complete exposition of both STA and geometric algebra.
 \section{Conventions.}
 \makedefinition{Index conventions.}{dfn:lorentzForceCovariant:23}{
 Latin indexes \( i, j, k, r, s, t, \cdots \) are used to designate values in the range \( \setlr{ 1,2,3 } \).  Greek indexes are \( \alpha, \beta, \mu, \nu, \cdots \) are used for indexes of spacetime quantities \( \setlr{0,1,2,3} \).
@@ -799,16 +800,16 @@ Equating timelike and spacelike components leaves us
 \begin{subequations}
 \label{eqn:lorentzForceCovariant:1360}
 \begin{equation}\label{eqn:lorentzForceCovariant:1380}
-\ddt{ m \gamma c } = \frac{q}{c} \lr{ F \cdot \lr{ (c + \Bv) \gamma_0 } } \cdot \gamma_0,
+\ddt{ (m \gamma c) } = \frac{q}{c} \lr{ F \cdot \lr{ (c + \Bv) \gamma_0 } } \cdot \gamma_0,
 \end{equation}
 \begin{equation}\label{eqn:lorentzForceCovariant:1400}
-\ddt{ m \gamma \Bv } = \frac{q}{c} \lr{ F \cdot \lr{ (c + \Bv) \gamma_0 } } \wedge \gamma_0,
+\ddt{ (m \gamma \Bv) } = \frac{q}{c} \lr{ F \cdot \lr{ (c + \Bv) \gamma_0 } } \wedge \gamma_0,
 \end{equation}
 \end{subequations}
 Evaluating these products requires some care, but is an essentially manual process.  The reader is encouraged to do so once, but the end result may also be obtained easily using software (see lorentzForce.nb in \citep{gapauli}).  One finds
 \begin{subequations}
 \label{eqn:lorentzForceCovariant:1420}
-\begin{dmath}\label{eqn:lorentzForceCovariant:1440}
+\begin{equation}\label{eqn:lorentzForceCovariant:1440}
 F = \BE + I c \BB
 =
     E^1 \gamma_{10} +
@@ -817,7 +818,7 @@ F = \BE + I c \BB
 - c B^1 \gamma_{23} +
 - c B^2 \gamma_{31} +
 - c B^3 \gamma_{12},
-\end{dmath}
+\end{equation}
 \begin{dmath}\label{eqn:lorentzForceCovariant:1460}
 \frac{q}{c} \lr{ F \cdot \lr{ (c + \Bv) \gamma_0 } } \cdot \gamma_0
 = \frac{q}{c} \BE \cdot \Bv,
@@ -828,8 +829,33 @@ F = \BE + I c \BB
 \end{dmath}
 \end{subequations}
 \end{proof}
+\makeproblem{Algebraic spacetime split of the Lorentz force equation.}{problem:lorentzForceCovariant:69}{
+Derive the results of \cref{eqn:lorentzForceCovariant:1420} algebraically.
+} % problem
+%\makeanswer{problem:lorentzForceCovariant:69}{
+% TODO.
+%} % answer
+\makeproblem{Spacetime split of the Lorentz force tensor equation.}{problem:lorentzForceCovariant:68}{
+Show that \cref{thm:lorentzForceCovariant:540} also follows from the tensor form of the Lorentz force equation (\cref{thm:lorentzForceCovariant:360}) provided we identify
+\begin{subequations}
+\label{eqn:lorentzForceCovariant:1540}
+\begin{equation}\label{eqn:lorentzForceCovariant:1500}
+F^{k0} = E^k,
+\end{equation}
+and
+\begin{equation}\label{eqn:lorentzForceCovariant:1520}
+F^{rs} = -\epsilon^{rst} B^t.
+\end{equation}
+\end{subequations}
+
+Also verify that the identification \cref{eqn:lorentzForceCovariant:1540}
+is consistent with the geometric algebra Faraday bivector \( F = \BE + I c \BB \), where \( F = (1/2) \gamma_\mu \wedge \gamma_\nu F^{\mu\nu} \).
+} % problem
+%\makeanswer{problem:lorentzForceCovariant:68}{
+% TODO.
+%} % answer
 \subsection{Solutions.}
 \shipoutAnswer
 %}
-%\EndArticle
-\EndNoBibArticle
+\EndArticle
+%\EndNoBibArticle
