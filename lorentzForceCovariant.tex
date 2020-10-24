@@ -55,11 +55,11 @@ I'll attempt to cover
 Note that some of the prerequisite ideas and auxiliary details are presented as problems with solutions.
 If the reader has sufficient background to attempt those problems themselves, they are encouraged to do so.
 
-The STA and geometric algebra ideas used here are not logically complete, and the reader is referred to \citep{doran2003gap} for a more complete exposition of both STA and geometric algebra.
+The STA and geometric algebra ideas used here are not complete to learn from in isolation.  The reader is referred to \citep{doran2003gap} for a more complete exposition of both STA and geometric algebra.
 \section{Conventions.}
 \makedefinition{Index conventions.}{dfn:lorentzForceCovariant:23}{
 Latin indexes \( i, j, k, r, s, t, \cdots \) are used to designate values in the range \( \setlr{ 1,2,3 } \).  Greek indexes are \( \alpha, \beta, \mu, \nu, \cdots \) are used for indexes of spacetime quantities \( \setlr{0,1,2,3} \).
-Summation is implied when Greek indexes mixed upper and lower Greek indexes are used, for example
+The Einstein convention of implied summation for mixed upper and lower Greek indexes will be used, for example
 \begin{equation*}
 x^\alpha x_\alpha \equiv \sum_{\alpha = 0}^3 x^\alpha x_\alpha.
 \end{equation*}
@@ -124,7 +124,8 @@ Similarly, observe that the commutator, defined as the antisymmetric sum of prod
 -
 \gamma_\nu \gamma_\mu,
 \end{dmath}
-is twice the wedge product \( a \wedge b = (a b - b a)/2 \), providing geometric identifications for the respective anti-commutator and commutator products respectively
+is twice the wedge product \( a \wedge b = (a b - b a)/2 \).
+This provides geometric identifications for the respective anti-commutator and commutator products respectively
 \begin{equation}\label{eqn:lorentzForceCovariant:1120}
 \begin{aligned}
 \symmetric{\gamma_\mu}{\gamma_\nu} &= 2 \gamma_\mu \cdot \gamma_\nu \\
@@ -356,11 +357,12 @@ or
 x = (x^0 + \Bx) \gamma_0.
 \end{equation*}
 } % definition
-The spacetime split of a four-vector \( x \) is relative to the frame.  In the relativistic lingo, one would say that it is ``observer dependent'', as the same operations with the timelike vector \( {\gamma_0}' \) for a different frame
-yields a different set of coordinates.
-A spacetime split that utilizes the timelike standard basis vector \( \gamma_0 \) provides the view of the coordinates from a fixed observer point of view, with worldline \( c \tau \gamma_0 \).
+The spacetime split of a four-vector \( x \) is relative to the frame.  In the relativistic lingo, one would say that it is ``observer dependent'',
+as the same operations with \( {\gamma_0}' \), the timelike basis vector for a different frame,
+would yield a different set of coordinates.
+%A spacetime split that utilizes the timelike standard basis vector \( \gamma_0 \) provides the view of the coordinates from a fixed observer point of view, with worldline \( c \tau \gamma_0 \).
 
-While the dot and wedge products above provide an effective mechanism to split a four vector into a set of timelike and spacelike quantities, the spatial component of a vector has a bivector in STA.  In particular, expanding the spatial portion of a four-vector in coordinates, we have
+While the dot and wedge products above provide an effective mechanism to split a four vector into a set of timelike and spacelike quantities, the spatial component of a vector has a bivector representation in STA.  Consider the following coordinate expansion of a spatial vector
 \begin{dmath}\label{eqn:lorentzForceCovariant:1000}
 \Bx =
 x \wedge \gamma_0
@@ -372,7 +374,7 @@ x \wedge \gamma_0
 \makedefinition{Spatial basis.}{dfn:lorentzForceCovariant:77}{
 We designate \( \Be_i = \gamma_i \gamma_0 \) as the standard basis vectors for \R{3}.
 } % definition
-In the literature, this bivector representation of the spatial basis is often designated \( \sigma_i = \gamma_i \gamma_0 \), as they also have the properties of the Pauli matrices \( \sigma_i \).
+In the literature, this bivector representation of the spatial basis may be designated \( \sigma_i = \gamma_i \gamma_0 \), as these bivectors have the properties of the Pauli matrices \( \sigma_i \).
 Because I intend to expand these notes to include purely non-relativistic applications, I won't use the Pauli notation here.
 \makeproblem{Orthonormality of the spatial basis.}{problem:lorentzForceCovariant:33}{
 Show that the spatial basis \( \setlr{ \Be_1, \Be_2, \Be_3 } \), defined by \cref{dfn:lorentzForceCovariant:77}, is orthonormal.
@@ -415,9 +417,9 @@ and commutation relations:
 \end{equation}
 Show how these relate to the geometric algebra dot and wedge products, and determine the geometric algebra representation of the imaginary \( i \) above.
 } % problem
-\makeanswer{problem:lorentzForceCovariant:7}{
-TODO.
-} % answer
+%\makeanswer{problem:lorentzForceCovariant:7}{
+%TODO.
+%} % answer
 \subsection{Solutions.}
 \shipoutAnswer
 \section{Euler-Lagrange equations.}
@@ -441,7 +443,7 @@ where
 \begin{equation*}
 \delta L = \grad L - \frac{d}{d\tau} (\grad_v L),
 \end{equation*}
-where \( \grad = \gamma^\mu \partial_\mu \), and \( \grad_v = \gamma^\mu \partial/\partial \dot{x}^\mu \).
+where \( \grad = \gamma^\mu \partial_\mu \) (per \cref{dfn:lorentzForceCovariant:71}), and where we construct a similar velocity-gradient with respect to the proper-time derivatives of the coordinates \( \grad_v = \gamma^\mu \partial/\partial \dot{x}^\mu \).
 
 The action is extremized when \( \delta S = 0 \), or when \( \delta L = 0 \).  This latter condition is called the Euler-Lagrange equations.
 } % theorem
@@ -582,7 +584,7 @@ and
 \begin{equation*}
    \grad x^2 = 2 x.
 \end{equation*}
-Note that special cases of this were used above, in particular \( \grad_v (v^2) = 2 v \), and \( \grad_v (A \cdot v) = A \).
+It should be clear that the same ideas can be used for the velocity gradient, where we obtain \( \grad_v (v^2) = 2 v \), and \( \grad_v (A \cdot v) = A \), as used in the derivation above.
 } % problem
 \makeanswer{problem:lorentzForceCovariant:13}{
 %\begin{answerproof}
@@ -770,7 +772,7 @@ The corresponding four-vector velocity is
 \begin{equation}\label{eqn:lorentzForceCovariant:1160}
 v = \ddtau{x} = c \ddtau{t} \gamma_0 + \ddtau{t} \ddt{x^k} \gamma_k.
 \end{equation}
-By construction, \( v^2 = c^2 \), is a spacetime Lorentz invariant quantity (this is one of the relativistic postulates), so the LHS of \cref{eqn:lorentzForceCovariant:1160} must have the same square.  That is
+By construction, \( v^2 = c^2 \) is a Lorentz invariant quantity (this is one of the relativistic postulates), so the LHS of \cref{eqn:lorentzForceCovariant:1160} must have the same square.  That is
 \begin{dmath}\label{eqn:lorentzForceCovariant:1240}
 c^2 = \lr{ \ddtau{t} }^2 \lr{ c^2 - \Bv^2 },
 \end{dmath}
