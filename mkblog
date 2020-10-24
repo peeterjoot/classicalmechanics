@@ -1,0 +1,6 @@
+make lorblog.pdf
+tex2mathjax -f lorblog.tex | \
+grep -ve '<h3.*Solutions' -e PassOptionsToPackage -e 'Lagrangian for the Lorentz force equation.' | \
+sed 's/lorblog.pdf/lorentzForceCovariant.pdf/;' | \
+sed 's,\\emph{{\(.*\)}},\1,' | \
+perl -00 -pe '' > x.txt

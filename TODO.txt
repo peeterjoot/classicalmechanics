@@ -1,3 +1,11 @@
+- tags from lorentzForceCovariant.tex blog post:
+
+action, anti-commutator, commutator, coordinates, covariant, Dirac algebra, Dirac matrix, dot product, Einstein convention, extremize action, Faraday bivector, Faraday tensor, frame, Geometric Algebra, gradient, Lorentz force, Lorentz force Lagrangian, Lorentz invariant, minimize action, observer frame, Pauli matrix, proper momentum, proper time, proper velocity, pseudoscalar, reciprocal basis, relativity, spacelike, spacetime gradient, STA, standard basis, tensor algebra, timelike, wedge product
+
+index most of these.
+
+- incorporate lorentzForceCovariant.tex and rip out old stuff.
+
 - audit: Use L for non-field lagrangian, and \LL for field lagrangian.
 
 - solve: 
