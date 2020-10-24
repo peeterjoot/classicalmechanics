@@ -4,11 +4,15 @@ action, anti-commutator, commutator, coordinates, covariant, Dirac algebra, Dira
 
 index most of these.
 
-- incorporate lorentzForceCovariant.tex and rip out old stuff.
+- Incorporate lorentzForceCovariant.tex and rip out old stuff.
+
+   - split first parts into an STA chapter.
+   - remove :
+      "Because I intend to expand these notes to include purely non-relativistic applications, I won't use the Pauli notation here."
 
 - audit: Use L for non-field lagrangian, and \LL for field lagrangian.
 
-- solve: 
+- solve:
 
    mine/waveLagrangianQM.tex
    mine/waveLagrangianKG.tex
