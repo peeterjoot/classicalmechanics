@@ -348,7 +348,11 @@ x^0 = x \cdot \gamma_0,
 \end{equation*}
 and
 \begin{equation*}
-\Bx = x \wedge \gamma_0.
+\Bx = x \wedge \gamma_0,
+\end{equation*}
+or
+\begin{equation*}
+x = (x^0 + \Bx) \gamma_0.
 \end{equation*}
 } % definition
 The spacetime split of a four-vector \( x \) is relative to the frame.  In the relativistic lingo, one would say that it is ``observer dependent'', as the same operations with the timelike vector \( {\gamma_0}' \) for a different frame
@@ -367,7 +371,7 @@ x \wedge \gamma_0
 \makedefinition{Spatial basis.}{dfn:lorentzForceCovariant:77}{
 We designate \( \Be_i = \gamma_i \gamma_0 \) as the standard basis vectors for \R{3}.
 } % definition
-In the literature, these are often designated \( \sigma_i = \gamma_i \gamma_0 \), as they also have the properties of the Pauli matrices \( \sigma_i \).
+In the literature, this bivector representation of the spatial basis is often designated \( \sigma_i = \gamma_i \gamma_0 \), as they also have the properties of the Pauli matrices \( \sigma_i \).
 Because I intend to expand these notes to include purely non-relativistic applications, I won't use the Pauli notation here.
 \makeproblem{Orthonormality of the spatial basis.}{problem:lorentzForceCovariant:33}{
 Show that the spatial basis \( \setlr{ \Be_1, \Be_2, \Be_3 } \), defined by \cref{dfn:lorentzForceCovariant:77}, is orthonormal.
@@ -382,7 +386,7 @@ Show that the spatial basis \( \setlr{ \Be_1, \Be_2, \Be_3 } \), defined by \cre
 This is zero for all \( i \ne j \), and unity for any \( i = j \).
 } % answer
 \makeproblem{Spatial pseudoscalar.}{problem:lorentzForceCovariant:11}{
-Show that the STA pseudoscalar equals the spatial pseudoscalar.
+Show that the STA pseudoscalar \( I = \gamma_0 \gamma_1 \gamma_2 \gamma_3 \) equals the spatial pseudoscalar \( I = \Be_1 \Be_2 \Be_3 \).
 } % problem
 \makeanswer{problem:lorentzForceCovariant:11}{
 The spatial pseudoscalar, expanded in terms of the STA basis vectors, is
@@ -395,8 +399,9 @@ I
 = \lr{ \gamma_1 \gamma_0 } \gamma_2 \lr{ \gamma_0 \gamma_3 } \gamma_0
 = \lr{ -\gamma_0 \gamma_1 } \gamma_2 \lr{ -\gamma_3 \gamma_0 } \gamma_0
 =       \gamma_0 \gamma_1 \gamma_2 \gamma_3 \lr{ \gamma_0 \gamma_0 }
-= \gamma_0 \gamma_1 \gamma_2 \gamma_3.
+= \gamma_0 \gamma_1 \gamma_2 \gamma_3,
 \end{dmath}
+as claimed.
 } % answer
 \makeproblem{Characteristics of the Pauli matrices.}{problem:lorentzForceCovariant:7}{
 The Pauli matrices obey the following anticommutation relations:
@@ -641,7 +646,7 @@ On the right, we have
 \end{dmath}
 \end{proof}
 \makeproblem{Tensor expansion of \(F\).}{problem:lorentzForceCovariant:37}{
-An alternate way to demonstrate \cref{thm:lorentzForceCovariant:360} is to first expand \( F \) in terms of the second rank tensor \( F^{\mu\nu} \).  Find that expansion, and re-evaluate the dot products of \cref{eqn:lorentzForceCovariant:400} using that.
+An alternate way to demonstrate \cref{thm:lorentzForceCovariant:360} is to first expand \( F = \grad \wedge A \) in terms of coordinates, an expansion that can be expressed in terms of a second rank tensor antisymmetric tensor \( F^{\mu\nu} \).  Find that expansion, and re-evaluate the dot products of \cref{eqn:lorentzForceCovariant:400} using that.
 } % problem
 \makeanswer{problem:lorentzForceCovariant:37}{
 \begin{dmath}\label{eqn:lorentzForceCovariant:900}
@@ -717,7 +722,7 @@ Euler-Lagrange equations as
 \end{equation}
 Operating on the kinetic term of the Lagrangian, we have
 \begin{dmath}\label{eqn:lorentzForceCovariant:480}
-\delta_\mu L_0 = - \frac{d}{d\tau} m x_\mu.
+\delta_\mu L_0 = - \frac{d}{d\tau} m v_\mu.
 \end{dmath}
 For the potential term
 \begin{dmath}\label{eqn:lorentzForceCovariant:500}
@@ -739,9 +744,9 @@ v_\nu \PD{x^\mu}{A^\nu} - \frac{dx_\alpha}{d\tau} \PD{x_\alpha}{ A_\mu }
 \end{dmath}
 Putting the pieces together gives
 \begin{dmath}\label{eqn:lorentzForceCovariant:520}
-\frac{d}{d\tau} m x_\mu = \frac{q}{c} v^\nu F_{\mu\nu},
+\frac{d}{d\tau} (m v_\mu) = \frac{q}{c} v^\nu F_{\mu\nu},
 \end{dmath}
-which is identical to the tensor form that we found by expanding the geometric algebra form of Maxwell's equation in coordinates (after some minor index raising and lowering gymnastics.)
+which is identical\footnote{Some minor index raising and lowering gymnastics are required.} to the tensor form that we found by expanding the geometric algebra form of Maxwell's equation in coordinates.
 %\end{answerproof}
 } % answer
 \maketheorem{Vector Lorentz force equation.}{thm:lorentzForceCovariant:540}{
@@ -753,9 +758,75 @@ Relative to a fixed observer's frame, the Lorentz force equation of \cref{thm:lo
 \end{aligned}
 \end{equation*}
 where \( F = \BE + I c \BB \), \( \gamma = 1/\sqrt{1 - \Bv^2/c^2 }\).
+%, and \( \Bv = \sum_{k = 1}^3 \ifrac{dx^k}{dt} \Be_k \), \( \BE =
 } % theorem
 \begin{proof}
-TODO: ...
+The first step is to eliminate the proper time dependencies in the Lorentz force equation.  Consider first the coordinate representation of an arbitrary position four-vector \( x \)
+\begin{dmath}\label{eqn:lorentzForceCovariant:1140}
+x = c t \gamma_0 + x^k \gamma_k.
+\end{dmath}
+The corresponding four-vector velocity is
+\begin{equation}\label{eqn:lorentzForceCovariant:1160}
+v = \ddtau{x} = c \ddtau{t} \gamma_0 + \ddtau{t} \ddt{x^k} \gamma_k.
+\end{equation}
+By construction, \( v^2 = c^2 \), is a spacetime Lorentz invariant quantity (this is one of the relativistic postulates), so the LHS of \cref{eqn:lorentzForceCovariant:1160} must have the same square.  That is
+\begin{dmath}\label{eqn:lorentzForceCovariant:1240}
+c^2 = \lr{ \ddtau{t} }^2 \lr{ c^2 - \Bv^2 },
+\end{dmath}
+where \( \Bv = v \wedge \gamma_0 \).  This shows that we may make the identification
+\begin{equation}\label{eqn:lorentzForceCovariant:1260}
+\gamma = \ddtau{t} = \inv{1 - \Bv^2/c^2 },
+\end{equation}
+and
+\begin{equation}\label{eqn:lorentzForceCovariant:1280}
+\ddtau{} = \ddtau{t} \ddt{} = \gamma \ddt{}.
+\end{equation}
+We may now factor the four-velocity \( v \) into its spacetime split
+\begin{dmath}\label{eqn:lorentzForceCovariant:1300}
+v = \gamma \lr{ c + \Bv } \gamma_0.
+\end{dmath}
+In particular the LHS of the Lorentz force equation can be rewritten as
+\begin{dmath}\label{eqn:lorentzForceCovariant:1320}
+\ddtau{p} = \gamma \ddt{}\lr{ \gamma \lr{ c + \Bv } } \gamma_0,
+\end{dmath}
+and the RHS of the Lorentz force equation can be rewritten as
+\begin{dmath}\label{eqn:lorentzForceCovariant:1340}
+\frac{q}{c} F \cdot v
+=
+\frac{\gamma q}{c} F \cdot \lr{ (c + \Bv) \gamma_0 }.
+\end{dmath}
+Equating timelike and spacelike components leaves us
+\begin{subequations}
+\label{eqn:lorentzForceCovariant:1360}
+\begin{equation}\label{eqn:lorentzForceCovariant:1380}
+\ddt{ m \gamma c } = \frac{q}{c} \lr{ F \cdot \lr{ (c + \Bv) \gamma_0 } } \cdot \gamma_0,
+\end{equation}
+\begin{equation}\label{eqn:lorentzForceCovariant:1400}
+\ddt{ m \gamma \Bv } = \frac{q}{c} \lr{ F \cdot \lr{ (c + \Bv) \gamma_0 } } \wedge \gamma_0,
+\end{equation}
+\end{subequations}
+Evaluating these products requires some care, but is an essentially manual process.  The reader is encouraged to do so once, but the end result may also be obtained easily using software (see lorentzForce.nb in \citep{gapauli}).  One finds
+\begin{subequations}
+\label{eqn:lorentzForceCovariant:1420}
+\begin{dmath}\label{eqn:lorentzForceCovariant:1440}
+F = \BE + I c \BB
+=
+    E^1 \gamma_{10} +
++   E^2 \gamma_{20} +
++   E^3 \gamma_{30} +
+- c B^1 \gamma_{23} +
+- c B^2 \gamma_{31} +
+- c B^3 \gamma_{12},
+\end{dmath}
+\begin{dmath}\label{eqn:lorentzForceCovariant:1460}
+\frac{q}{c} \lr{ F \cdot \lr{ (c + \Bv) \gamma_0 } } \cdot \gamma_0
+= \frac{q}{c} \BE \cdot \Bv,
+\end{dmath}
+\begin{dmath}\label{eqn:lorentzForceCovariant:1480}
+\frac{q}{c} \lr{ F \cdot \lr{ (c + \Bv) \gamma_0 } } \wedge \gamma_0
+= q \lr{ \BE + \Bv \cross \BB }.
+\end{dmath}
+\end{subequations}
 \end{proof}
 \subsection{Solutions.}
 \shipoutAnswer
