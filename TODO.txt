@@ -1,3 +1,11 @@
+- have moved:
+
+multiPendulumSpherical2.tex
+
+to .junk/
+
+there were some interesting ideas in there, but it is very redundant with this tackled in a scalar fashion in this book too.  If I can figure out a better application, then perhaps resurrect some of this again.
+
 - tags from lorentzForceCovariant.tex blog post:
 
    action, anti-commutator, commutator, coordinates, covariant, Dirac algebra, Dirac matrix, dot product, Einstein convention, extremize action, Faraday bivector, Faraday tensor, frame, Geometric Algebra, gradient, Lorentz force, Lorentz force Lagrangian, Lorentz invariant, minimize action, observer frame, Pauli matrix, proper momentum, proper time, proper velocity, pseudoscalar, reciprocal basis, relativity, spacelike, spacetime gradient, STA, standard basis, tensor algebra, timelike, wedge product

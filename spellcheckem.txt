@@ -10,7 +10,6 @@ galagrangian/fieldLagrangian.tex
 galagrangian/jackson12Dash9.tex
 galagrangian/lagrangianFieldDensity.tex
 galagrangian/maxwellTensorFromLagrangian.tex
-galagrangian/multiPendulumSpherical2.tex
 galagrangian/noethersField.tex
 galagrangian/noethersLorentzForce.tex
 galagrangian/rotationCurrents.tex
