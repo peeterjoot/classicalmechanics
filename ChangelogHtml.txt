@@ -1,0 +1,13 @@
+<ul>
+<li>junk: 1dharmonicOsc.tex 1dpotentialIntegral.tex InfinitePlanePotentialTakeIII.tex cylinderPotential.tex infiniteSheetPotentials.tex lForceLag2.tex lorentzForce.tex lorentzForcePQA.tex lorentzMetricTensor.tex maxwellTensorLagrangian.tex multiPendulumSpherical2.tex newtonianLagrangianAndGradient.tex quadraticForm.tex sPolarMultiPendulum.tex srLagrangian.tex waveLagrangian.tex </li>
+<li>new chapter content: covariantSTA.tex, sta.tex (replaces various poorer versions)</li>
+<li>convert jackson12Dash9 into problem, and fix gutter issues.</li>
+<li>move remainder of \part{Lagrangian Topics} to appendix.</li>
+<li>junk a bunch of stuff</li>
+<li>move multiPendulumSphericalMatrix.tex</li>
+<li>split galagrangian/eulerLagrange.tex into E-L and Noether parts.</li>
+<li>split off waveLagrangianDirac.tex, waveLagrangianKG.tex, waveLagrangianQM.tex</li>
+<li>move some of mine/waveLagrangian.tex into problems.</li>
+<li>convert hoopSpring.tex into a problem.</li>
+<li>Try to impose some basic structure.</li>
+</ul>

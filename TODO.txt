@@ -1,3 +1,33 @@
+- an interesting way to write the Lorentz force Lagrangian (related to canonical momentum or a gauge transformation?)
+
+\begin{equation}\label{eqn:lorForcePqA:interactionLagPsq}
+\LL
+= \inv{2 m}\left( m v + \frac{q}{c} A \right)^2 - \frac{q^2}{ 2 m c^2} A^2.
+\end{equation}
+
+- could turn into a problem:
+
+\begin{equation}
+L = \inv{2} m\Bv^2 - \varphi.
+\end{equation}
+...
+In terms of the gradient operator, and with \(\Bv = \sum \Be_i \dot{x}^i\), that is
+%
+\begin{equation}
+\BF = \frac{d (m \Bv)}{dt} = - \grad \varphi.
+\end{equation}
+
+(only thing good from .junk/newtonianLagrangianAndGradient.tex)
+
+- an observation from tongMf1LorentzForceLagrangianJunk.tex that's worth keeping:
+
+   Notice the sign in the potential term, which is negative, unlike the same Lagrangian in relativistic (proper) form: \(\LL = \inv{2}m v^2 + q A \cdot v/c\).  That difference is required
+   since the lack of the use of time as one of the generalized coordinates will change the signs of some of the results.
+   Now, this does not matter for this particular problem, but also observe that this Lagrangian is almost in its proper form.  All we have to do is add a \(-\inv{2} m c^2\) constant to it, which should not effect the equations of motion.  Doing so yields:
+   \begin{equation}\label{eqn:tongMf1:1760}
+   \LL = \inv{2} m (-c^2 + \Bv^2) - q A \cdot v/c = - \left( \inv{2} mv^2 + q A \cdot v/c \right).
+   \end{equation}
+
 - have moved:
 
 multiPendulumSpherical2.tex

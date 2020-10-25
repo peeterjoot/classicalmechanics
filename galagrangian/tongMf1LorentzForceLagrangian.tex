@@ -4,132 +4,17 @@
 %
 \makeoproblem{Lorentz force Lagrangian.}{tongmf1:pr6}{\citep{TongMf1} p6.}{
 %
-Using
+Various non-orthogonal coordinate treatments of the Lorentz force Lagrangian
 %
 \begin{equation*}
 \LL = \inv{2} m \Bv^2 -q \phi + q \Bv/c \cdot \BA,
 \end{equation*}
 %
-derive the Lorentz force equation, and some other stuff.
+%derive the Lorentz force equation, and some other stuff.
+%FIXME: describe.
 }
 %
 \makeanswer{tongmf1:pr6}{
-First part of the problem is to show that the Lagrangian:
-%
-is equivalent to the Lorentz force law.
-%
-When I first tried this problem I had trouble with it, and also had trouble following the text for the same in Tong's paper.  Later I did the somewhat harder problem of exactly
-this, but for the covariant form of the Lorentz force law, so I thought I had come back to this and try again.
-%
-First step that seemed natural was to put the equation into four vector form, despite the fact that the proper time Lagrangian equations were not going to be used to
-produce the equation of motion.  For just the Lorentz part of the Lagrangian we have:
-%
-%
-\begin{equation}\label{eqn:tongMf1:600}
-\begin{aligned}
-\LL'
-&= -\phi + \Bv/c \cdot \BA \\
-&= -\phi \sum v^i/c A^j
-\mathLabelBox{\sigma_i \cdot \sigma_j}{\(\inv{2}(\gamma_{i0j0} + \gamma_{j0i0}) = - \gamma_i \cdot \gamma_j\)}
-\\
-&= -\inv{c} \phi c + \sum v^i A^i {\gamma_i}^2 \\
-&= -\inv{c} \phi c {\gamma_0}^2 + \sum v^i A^i {\gamma_i}^2 .
-\end{aligned}
-\end{equation}
-%
-Thus with \(v = c \gamma_0 + \sum v^i \gamma_i = \sum v^{\mu} \gamma_{\mu}\), and \(A = \phi \gamma_0 + \sum A^{i} \gamma_i = \sum A^{\mu} \gamma_{\mu}\), we can thus write the complete
-Lagrangian as:
-%
-\begin{equation}\label{eqn:tongMf1:1720}
-\LL = \inv{2} m \Bv^2 - q A \cdot v/c.
-\end{equation}
-%
-As usual we recover our vector forms by wedging with the time basis vector:
-%
-\begin{equation}\label{eqn:tongMf1:1740}
-A \wedge \gamma_0 = \sum A^i \gamma_{i0} = \sum A^i \sigma_i = \BA.
-\end{equation}
-%
-and \(v \wedge \gamma_0 = \cdots = \Bv\).
-%
-Notice the sign in the potential term, which is negative, unlike the same Lagrangian in relativistic (proper) form: \(\LL = \inv{2}m v^2 + q A \cdot v/c\).  That difference is required
-since the lack of the use of time as one of the generalized coordinates will change the signs of some of the results.
-%
-Now, this does not matter for this particular problem, but also observe that this Lagrangian is almost in its proper form.  All we have to do is add a \(-\inv{2} m c^2\) constant to it, which should not effect the equations of motion.  Doing so yields:
-%
-\begin{equation}\label{eqn:tongMf1:1760}
-\LL = \inv{2} m (-c^2 + \Bv^2) - q A \cdot v/c = - \left( \inv{2} mv^2 + q A \cdot v/c \right).
-\end{equation}
-%
-I did not notice that until writing this up.  So we have the same Lagrangian in both cases, which makes sense.  Whether or not one gets the traditional Lorentz force law from this
-or the equivalent covariant form depends only on whether one treats time as one of the generalized coordinates or not (and if doing so, use proper time in the place of the time
-derivatives when applying the Lagrange equations).  Cool.
-%
-Anyways, now that we have a more symmetric form of the Lagrangian, lets compute the equations of motion.
-%
-\begin{equation}\label{eqn:tongMf1:620}
-\begin{aligned}
-\PD{x^i}{\LL}
-&= \frac{d}{dt} \PD{\xdot^i}{\LL} \\
-&= \frac{d}{dt} \left(m v^i - q/c A \cdot \PD{\xdot^i}{v} \right) \\
-&= \frac{d}{dt} \left(m v^i - q/c A \cdot \gamma_i \right) \\
-&= \frac{d}{dt} \left(m v^i + q/c A^i \right) \\
-&= p^i + q/c \sum \xdot^j \PD{x^j}{A^i} \\
-q \PD{x^i}{A} \cdot v/c &= \\
-\implies \\
-\dot{p}^i
-&= -q/c \left( \PD{x^i}{A} \cdot v - \sum \xdot^j \PD{x^j}{A^i} \right) \\
-&= -q/c \left( \sum \PD{x^i}{A^{\mu}} v^{\nu} \gamma_{\mu} \cdot \gamma_{\nu} - \sum v^j \PD{x^j}{A^i} \right) \\
-&= -q/c \left( \sum \PD{x^i}{A^0} v^0 {\gamma_0}^2 +\sum \PD{x^i}{A^j} v^j {\gamma_j}^2 - \sum v^j \PD{x^j}{A^i} \right) \\
-\implies \\
-\sum \sigma_i \dot{p}^i = \Bp
-&= q/c \sum \sigma_i \left( -\PD{x^i}{A^0} v^0 {\gamma_0}^2 - \PD{x^i}{A^j} v^j {\gamma_j}^2 - v^j \PD{x^j}{A^i} \right) \\
-&= -q \grad \phi + \sum \sigma_i v^j \left( \PD{x^i}{A^j} - \PD{x^j}{A^i} \right) .
-\end{aligned}
-\end{equation}
-%
-Now, it is not obvious by looking, but this last expression is \(\Bv \cross (\grad \cross \BA)\).  Let us verify this by going backwards:
-%
-\begin{equation}\label{eqn:tongMf1:640}
-\begin{aligned}
-\Bv \cross
-\lr{ \grad \cross \BA }
-&= \inv{i} \left( \Bv \wedge
-\lr{  \grad \cross \BA  }
-\right) \\
-&= \inv{2i} \left( \Bv
-\lr{  \grad \cross \BA  }
-- \lr{  \grad \cross \BA  }
- \Bv \right) \\
-&= \inv{2i} \left( \Bv \inv{i}
-\lr{  \grad \wedge \BA  }
- - \inv{i}
-\lr{  \grad \wedge \BA  }
- \Bv \right) \\
-&= -\inv{2} \left( \Bv
-\lr{  \grad \wedge \BA  }
- -
-\lr{  \grad \wedge \BA  }
- \Bv \right) \\
-&=
-\lr{  \grad \wedge \BA  }
-\cdot \Bv \\
-&= \sum v^k \PD{x^i}{A^j} \sigma_i
-\lr{ \sigma_j \cdot \sigma_k } - \sigma_j
-\lr{ \sigma_i \cdot \sigma_k } \\
-&= \sum v^k \PD{x^i}{A^j} \sigma_i \delta_{jk} - \sigma_j \delta_{ik} \\
-&= \sum v^j \PD{x^i}{A^j} \sigma_i -v^i \PD{x^i}{A^j} \sigma_j \\
-&= \sum v^j \PD{x^i}{A^j} \sigma_i -v^j \PD{x^j}{A^i} \sigma_i \\
-&= \sum v^j \sigma_i \left(\PD{x^i}{A^j} - \PD{x^j}{A^i} \right) .
-\end{aligned}
-\end{equation}
-%
-Therefore the final result is our Lorentz force law, as expected:
-%
-\begin{equation}\label{eqn:tongMf1:1780}
-\Bp = -q \grad \phi + q \Bv/c \cross (\grad \cross \BA).
-\end{equation}
-%
 \paragraph{Cylindrical Polar Coordinates.}
 %
 The next two parts of question 6 require cylindrical polar coordinates.  I found a digression was useful (or at least interesting), to see
@@ -324,7 +209,8 @@ One constant of motion is:
 mr^2 \dottheta - e r^2 g(z) = K.
 \end{equation}
 %
-Looking at Tong's solutions another is the Hamiltonian.  (I have got to go back and read that Hamiltonian stuff since this did not occur to me).
+Looking at Tong's solutions another is the Hamiltonian.
+%  (I have got to go back and read that Hamiltonian stuff since this did not occur to me).
 %
 \begin{equation}\label{eqn:tongMf1:2120}
 \dottheta = (e/m) g(z) + (r_0/r)^2 \left(\dottheta_0 - (e/m) g(z_0)\right).

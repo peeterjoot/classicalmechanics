@@ -13,5 +13,8 @@
 #~/project/latex/bin/lgrep problems/classicalMechanicsPs2.tex | tee o ; . ./o
 
 #../latex/bin/lgrep lorentzForceCovariant.tex | tee o ; . ./o
-../latex/bin/lgrep lorblog.tex | tee o ; . ./o
+#../latex/bin/lgrep lorblog.tex | tee o ; . ./o
+
 #perl -p -i ../latex/bin/latexRegex.pl lorentzForceCovariant.tex
+#../latex/bin/lgrep lorf.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl lorf.tex
