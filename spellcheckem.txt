@@ -3,7 +3,6 @@ appendixchapters.tex
 chapters.tex
 covariantSTA.tex
 galagrangian/boostMaxwellLagrangian.tex
-galagrangian/canonicalMomentum.tex
 galagrangian/eulerLagrange.tex
 galagrangian/eulerLagrangeScalarLagrangian.tex
 galagrangian/fieldLagrangian.tex
