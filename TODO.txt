@@ -2,13 +2,10 @@
 
    action, anti-commutator, commutator, coordinates, covariant, Dirac algebra, Dirac matrix, dot product, Einstein convention, extremize action, Faraday bivector, Faraday tensor, frame, Geometric Algebra, gradient, Lorentz force, Lorentz force Lagrangian, Lorentz invariant, minimize action, observer frame, Pauli matrix, proper momentum, proper time, proper velocity, pseudoscalar, reciprocal basis, relativity, spacelike, spacetime gradient, STA, standard basis, tensor algebra, timelike, wedge product
 
-   index most of these.
-
-- Incorporate lorentzForceCovariant.tex and rip out old stuff.
-
-   - Split first parts into an STA chapter.
-   - Remove :
-      "Because I intend to expand these notes to include purely non-relativistic applications, I won't use the Pauli notation here."
+   index most of these in new locations:
+     
+      sta.tex
+      covariantSTA.tex
 
 - 
 

@@ -1,6 +1,7 @@
 FrontBackmatter/preface.tex
 appendixchapters.tex
 chapters.tex
+covariantSTA.tex
 galagrangian/boostMaxwellLagrangian.tex
 galagrangian/canonicalMomentum.tex
 galagrangian/eulerLagrange.tex
@@ -54,3 +55,4 @@ problems/dipoleMomentConstantElectricField.tex
 problems/landauMechanicsCh1P3PendulumSupportInMotion.tex
 problems/landauMechanicsCh1P3PendulumVerticalSupportMotion.tex
 problems/landauMechanicsCh1P3SupportMovingInCircle.tex
+sta.tex
