@@ -7,14 +7,10 @@ galagrangian/eulerLagrange.tex
 galagrangian/eulerLagrangeScalarLagrangian.tex
 galagrangian/fieldLagrangian.tex
 galagrangian/jackson12Dash9.tex
-galagrangian/lForceLag2.tex
 galagrangian/lagrangianFieldDensity.tex
-galagrangian/lorentzForce.tex
-galagrangian/lorentzForcePQA.tex
 galagrangian/maxwellTensorFromLagrangian.tex
 galagrangian/maxwellTensorLagrangian.tex
 galagrangian/multiPendulumSpherical2.tex
-galagrangian/newtonianLagrangianAndGradient.tex
 galagrangian/noethersField.tex
 galagrangian/noethersLorentzForce.tex
 galagrangian/rotationCurrents.tex
@@ -49,8 +45,6 @@ mine/waveLagrangianKG.tex
 mine/waveLagrangianMoreDimensions.tex
 mine/waveLagrangianOneDimension.tex
 mine/waveLagrangianQM.tex
-multiPendulumSpherical2.tex
-multiPendulumSphericalMatrix.tex
 problems/classicalMechanicsPs1BallThrown.tex
 problems/classicalMechanicsPs1ChangeOfVariables.tex
 problems/classicalMechanicsPs1LorentzForce.tex
