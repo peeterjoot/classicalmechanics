@@ -1,3 +1,9 @@
+- in canonicalMomentum.tex I identified:
+
+   p = \grad_v \LL
+
+and the canonical (covariant) momentum.  That is probably still worth noting somewhere.
+
 - review:
 
    \chapter{Maybe interesting: alternate covariant kinetic Lagrangian.}
@@ -46,11 +52,11 @@ there were some interesting ideas in there, but it is very redundant with this t
    action, anti-commutator, commutator, coordinates, covariant, Dirac algebra, Dirac matrix, dot product, Einstein convention, extremize action, Faraday bivector, Faraday tensor, frame, Geometric Algebra, gradient, Lorentz force, Lorentz force Lagrangian, Lorentz invariant, minimize action, observer frame, Pauli matrix, proper momentum, proper time, proper velocity, pseudoscalar, reciprocal basis, relativity, spacelike, spacetime gradient, STA, standard basis, tensor algebra, timelike, wedge product
 
    index most of these in new locations:
-     
+
       sta.tex
       covariantSTA.tex
 
-- 
+-
 
 Move to .junk/ has left all the following dead references: track these down, and update:
 
