@@ -1,3 +1,8 @@
+- review:
+
+   \chapter{Maybe interesting: alternate covariant kinetic Lagrangian.}
+      \input{maybeInterestingAlternateCovariantKineticLagrangian.tex}
+
 - an interesting way to write the Lorentz force Lagrangian (related to canonical momentum or a gauge transformation?)
 
 \begin{equation}\label{eqn:lorForcePqA:interactionLagPsq}
