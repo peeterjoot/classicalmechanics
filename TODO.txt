@@ -1,14 +1,24 @@
 - tags from lorentzForceCovariant.tex blog post:
 
-action, anti-commutator, commutator, coordinates, covariant, Dirac algebra, Dirac matrix, dot product, Einstein convention, extremize action, Faraday bivector, Faraday tensor, frame, Geometric Algebra, gradient, Lorentz force, Lorentz force Lagrangian, Lorentz invariant, minimize action, observer frame, Pauli matrix, proper momentum, proper time, proper velocity, pseudoscalar, reciprocal basis, relativity, spacelike, spacetime gradient, STA, standard basis, tensor algebra, timelike, wedge product
+   action, anti-commutator, commutator, coordinates, covariant, Dirac algebra, Dirac matrix, dot product, Einstein convention, extremize action, Faraday bivector, Faraday tensor, frame, Geometric Algebra, gradient, Lorentz force, Lorentz force Lagrangian, Lorentz invariant, minimize action, observer frame, Pauli matrix, proper momentum, proper time, proper velocity, pseudoscalar, reciprocal basis, relativity, spacelike, spacetime gradient, STA, standard basis, tensor algebra, timelike, wedge product
 
-index most of these.
+   index most of these.
 
 - Incorporate lorentzForceCovariant.tex and rip out old stuff.
 
-   - split first parts into an STA chapter.
-   - remove :
+   - Split first parts into an STA chapter.
+   - Remove :
       "Because I intend to expand these notes to include purely non-relativistic applications, I won't use the Pauli notation here."
+
+- 
+
+Move to .junk/ has left all the following dead references: track these down, and update:
+
+  Reference `chap:PJSrLagrangian' on page 253 undefined on input line 731
+  Reference `chap:PJSrLagrangian' on page 255 undefined on input line 15
+  Reference `chap:PJSrLorentzForce' on page 253 undefined on input line 749
+  Reference `chap:PJSrLorentzForce' on page 255 undefined on input line 15
+
 
 - audit: Use L for non-field lagrangian, and \LL for field lagrangian.
 
