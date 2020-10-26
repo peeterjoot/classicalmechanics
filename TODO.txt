@@ -1,3 +1,27 @@
+
+- what was the point of \eqnref -- replace with \cref?
+
+- need to reconcile the gradient approach that I used in lorentzForceCovariant with Lagrangians with more generalized coordinates than the size of the vector space.  In particular, a two particle system in R^2 or R^3 could have 4-6 generalized coordinates.
+
+that's probably why the 
+
+\PD{\Br}{} 
+\PD{\dot{\Br}}{} 
+
+notation is preferred in some cases.  This can reduce to the gradient (spacegrad or grad) in specific cases.
+
+Does it make sense to present the generalized coordinate case first, before the vector approach used in lorentzForceCovariant?
+
+- have some todos left in covariantSTA.tex (one is just the expansion of the energy side of the Lorentz force equation (dotting with gamma_0 instead of wedging)
+
+- need an integrated treatment of gauge transformations.  Examples to consider include the gauge transformation for the field in the Lorentz force Lagrangian:
+
+   A -> A + \grad \psi
+
+Is it possible to transform v -> v + \grad \psi to introduce the coupling of the Lorentz force?  Lookup gauge transformation notes in poppitz phy2403 and phy450 notes (and perhaps Arun's grad quantum too)
+
+- Review how coupling was modelled in the Lagrangian (believe it was with an additional parameter).
+
 - in canonicalMomentum.tex I identified:
 
    p = \grad_v \LL

@@ -10,36 +10,44 @@
 \label{chap:maxwellTensorFromLagrangian}
 %\date{April 20, 2009.  maxwellTensorFromLagrangian.tex}
 %
-\section{Motivation.}
-%
-Looking through my notes for a purely tensor derivation of Maxwell's equation, and not finding one.  Have done this on
-paper a number of times, but writing it up once for reference to refer to for signs will be useful.
-%
-\section{Lagrangian.}
-%
-Notes containing derivations of Maxwell's equation
-%
-\begin{equation}\label{eqn:maxTenLag:maxwell}
-\grad F = J/\epsilon_0 c.
-\end{equation}
-%
-From the Lagrangian
-%
-\begin{equation}\label{eqn:maxTenLag:maxlag}
-\LL = -\frac{\epsilon_0}{2} (\grad \wedge A)^2 + \frac{J}{c} \cdot A.
-\end{equation}
-%
-can be found in \chapcite{PJFieldLagrangian}, and the earlier \chapcite{PJMaxwellLagrangian}.
-
-We will work from the scalar part of this Lagrangian, expressed strictly in tensor form
-%
+\makeproblem{Tensor derivation of Maxwell's equation.}{problem:maxwellTensorFromLagrangian:1}{
+Using the Lagrangian for Maxwell's equation in it's tensor form
 \begin{equation}\label{eqn:maxwellTensorFromLagrangian:20}
 \LL = \frac{\epsilon_0}{4} F_{\mu\nu}F^{\mu\nu} + \inv{c} J_\mu \cdot A^\mu.
 \end{equation}
+show that
+\begin{equation}\label{eqn:maxwellTensorFromLagrangian:3}
+\partial_\nu F^{\nu\mu} = \inv{\epsilon_0 c} J^\mu.
+\end{equation}
+} % problem
+\makeanswer{problem:maxwellTensorFromLagrangian:1}{
+%\section{Motivation.}
+%%
+%Looking through my notes for a purely tensor derivation of Maxwell's equation, and not finding one.  Have done this on
+%paper a number of times, but writing it up once for reference to refer to for signs will be useful.
+%%
+%\section{Lagrangian.}
+%%
+%Notes containing derivations of Maxwell's equation
+%%
+%\begin{equation}\label{eqn:maxTenLag:maxwell}
+%\grad F = J/\epsilon_0 c.
+%\end{equation}
+%%
+%From the Lagrangian
+%%
+%\begin{equation}\label{eqn:maxTenLag:maxlag}
+%\LL = -\frac{\epsilon_0}{2} (\grad \wedge A)^2 + \frac{J}{c} \cdot A.
+%\end{equation}
+%%
+%can be found in \chapcite{PJFieldLagrangian}, and the earlier \chapcite{PJMaxwellLagrangian}.
 %
-\section{Calculation.}
+%We will work from the scalar part of this Lagrangian, expressed strictly in tensor form
+%%
 %
-\subsection{Preparation.}
+%\section{Calculation.}
+%
+%\subsection{Preparation.}
 %
 In preparation, an expansion of the Faraday tensor in terms of potentials is desirable
 %
@@ -65,7 +73,7 @@ So we have
 + \inv{c} J_\mu \cdot A^\mu.
 \end{equation}
 %
-\subsection{Derivatives.}
+\paragraph{Derivatives.}
 %
 We want to compute
 %
@@ -114,15 +122,21 @@ Taking the \(\beta\) derivatives and combining the results for the LHS and RHS t
 \begin{equation}\label{eqn:maxTenLag:maxwellTensor}
 \partial_\beta F^{\beta\alpha} = \inv{\epsilon_0 c} J^\alpha.
 \end{equation}
-%
-\subsection{Compare to STA form.}
-%
-To verify that no sign errors have been made during the index manipulations above, this result should also match
-the STA Maxwell equation of \eqnref{eqn:maxTenLag:maxwell}, the vector part of which is
-%
+A trivial index renaming yields \cref{eqn:maxwellTensorFromLagrangian:3}.
+} % answer
+\makeproblem{Compare to STA form.}{problem:maxwellTensorFromLagrangian:2}{
+Compare \cref{eqn:maxwellTensorFromLagrangian:3} to
 \begin{equation}\label{eqn:maxwellTensorFromLagrangian:140}
 \grad \cdot F = J/\epsilon_0 c.
 \end{equation}
+} % problem
+\makeanswer{problem:maxwellTensorFromLagrangian:2}{
+%
+%\subsection{Compare to STA form.}
+%
+%To verify that no sign errors have been made during the index manipulations above, this result should also match
+%the STA Maxwell equation of \eqnref{eqn:maxTenLag:maxwell}, the vector part of which is
+%
 %
 Dotting the LHS with \(\gamma^\alpha\) we have
 %
@@ -151,4 +165,7 @@ This gives us
 \partial_\beta F^{\beta\alpha} = J^\alpha/\epsilon_0 c.
 \end{equation}
 %
-In agreement with \eqnref{eqn:maxTenLag:maxwellTensor}.
+In agreement with
+% \eqnref{eqn:maxTenLag:maxwellTensor}.
+\cref{eqn:maxwellTensorFromLagrangian:3}
+} % answer

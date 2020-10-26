@@ -467,7 +467,8 @@ Euclidean space vector basis vectors.  Writing \(\BE = E^i \Be_i\), \(\BB = B^i 
 %
 \begin{equation}\label{eqn:lorentzForce:140}
 \gamma^{-1} (F \cdot v) \wedge \gamma_0
-= c \frac{dt}{d\tau} \left( \BE + \epsilon_{ijk} B^k \left( \frac{dx^j}{dt} \Be_{i} - \frac{dx^i}{dt} \Be_{j} \right) \right) .
+= 
+c \left( \BE + \epsilon_{ijk} B^k \left( \frac{dx^j}{dt} \Be_{i} - \frac{dx^i}{dt} \Be_{j} \right) \right) .
 \end{equation}
 %
 This inner antisymmetric sum is just the cross product.  This can be observed by expanding the determinant
@@ -495,21 +496,23 @@ q (F \cdot v/c) \wedge \gamma_0
 = \gamma q \left( \BE + \Bv \cross \BB \right).
 \end{equation}
 %
-Next expand the left hand side acceleration term in coordinates, and wedge with \(\gamma_0\)
-%
-\begin{equation}\label{eqn:lorentzForce:180}
-\begin{aligned}
-\pdot \wedge \gamma_0
-&= \left(\gamma_\mu \frac{d m \xdot^\mu}{dt}\frac{dt}{d\tau} \right) \wedge \gamma_0 \\
-&= \gamma_{i0} \frac{d m \xdot^i}{dt} \gamma,
-\end{aligned}
-\end{equation}
-%
-Equating with \eqnref{eqn:lorForce:FdotVwedge}, and cancelling the \(\gamma\) factors, we are left with
-%
+Plugging back into \cref{eqn:lorentzForceCovariant:1400} gives
+%Next expand the left hand side acceleration term in coordinates, and wedge with \(\gamma_0\)
+%%
+%\begin{equation}\label{eqn:lorentzForce:180}
+%\begin{aligned}
+%\pdot \wedge \gamma_0
+%&= \left(\gamma_\mu \frac{d m \xdot^\mu}{dt}\frac{dt}{d\tau} \right) \wedge \gamma_0 \\
+%&= \gamma_{i0} \frac{d m \xdot^i}{dt} \gamma,
+%\end{aligned}
+%\end{equation}
+%%
+%Equating with \eqnref{eqn:lorForce:FdotVwedge}, and cancelling the \(\gamma\) factors, we are left with
+%%
 \begin{equation}\label{eqn:lorentzForce:200}
 \frac{d}{dt}\left( m \gamma \Bv \right) = q \left( \BE + \Bv \cross \BB \right).
 \end{equation}
+%TODO: do the \cref{eqn:lorentzForceCovariant:1380} expansion algebraically too.
 } % answer
 \makeproblem{Spacetime split of the Lorentz force tensor equation.}{problem:lorentzForceCovariant:68}{
 Show that \cref{thm:lorentzForceCovariant:540} also follows from the tensor form of the Lorentz force equation (\cref{thm:lorentzForceCovariant:360}) provided we identify
@@ -528,6 +531,6 @@ Also verify that the identification \cref{eqn:lorentzForceCovariant:1540}
 is consistent with the geometric algebra Faraday bivector \( F = \BE + I c \BB \), and the associated coordinate expansion of the field \( F = (1/2) (\gamma_\mu \wedge \gamma_\nu) F^{\mu\nu} \).
 } % problem
 %\makeanswer{problem:lorentzForceCovariant:68}{
-% TODO.
+% TODO.  Have a matrix exposition of F^{\mu\nu} in other places in these notes.  Merge that with this, or potentially move both to the STA chapter?
 %} % answer
 %}
