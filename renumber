@@ -18,3 +18,6 @@
 #perl -p -i ../latex/bin/latexRegex.pl lorentzForceCovariant.tex
 #../latex/bin/lgrep lorf.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl lorf.tex
+
+../latex/bin/lgrep maxwells.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl maxwells.tex

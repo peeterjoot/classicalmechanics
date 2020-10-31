@@ -1,0 +1,108 @@
+%
+% Copyright © 2020 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{maxwells}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
+
+\input{../latex/peeter_prologue_print2.tex}
+
+\PassOptionsToPackage{answerdelayed}{exercise}
+
+% proof:
+\usepackage{amsthm}
+\usepackage{macros_cal} % \LL
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{verbatim}
+%\usepackage{mhchem} % \ce{}
+%\usepackage{macros_bm} % \bcM
+%\usepackage{macros_qed} % \qedmarker
+%\usepackage{txfonts} % \ointclockwise
+
+\beginArtNoToc
+
+\generatetitle{Maxwell's equation using geometric algebra Lagrangian.}
+%\chapter{XXX}
+%\label{chap:maxwells}
+\section{Motivation.}
+In my classical mechanics notes, I've got computations of Maxwell's equation (singular in it's geometric algebra form) from a Lagrangian in various ways (using a tensor, scalar and multivector Lagrangians), but all of these seem more complex than they should be.  Here's a new derivation, starting with the action principle for field variables.
+\section{Field action.}
+\maketheorem{Relativistic Euler-Lagrange field equations.}{thm:maxwells:40}{
+Let \( \phi \rightarrow \phi + \delta \phi \) be any variation of the field, such that the variation
+\( \delta \phi = 0 \) vanishes at the boundaries of the action integral
+\begin{equation*}
+S = \int d^4 x \LL(\phi, \partial_\nu \phi).
+\end{equation*}
+The extreme value of the action is found when the Euler-Lagrange equations
+\begin{equation*}
+0 = \PD{\phi}{\LL} - \partial_\nu \PD{(\partial_\nu \phi)}{\LL},
+\end{equation*}
+are satisfied.  For a Lagrangian with multiple field variables, there will be one such equation for each field.
+} % theorem
+\begin{proof}
+To ease the visual burden, designate the variation of the field by \( \delta \phi = \epsilon \), and perform a first order expansion of the Lagrangian
+\begin{dmath}\label{eqn:maxwells:20}
+\LL \rightarrow
+\LL(\phi + \epsilon, \partial_\nu (\phi + \epsilon))
+=
+\LL(\phi, \partial_\nu \phi)
++
+\PD{\phi}{\LL} \epsilon + 
+\PD{\partial_\nu \phi}{\LL} \partial_\nu \epsilon.
+\end{dmath}
+The variation of the Lagrangian is 
+\begin{dmath}\label{eqn:maxwells:40}
+\delta \LL =
+\PD{\phi}{\LL} \epsilon + 
+\PD{\partial_\nu \phi}{\LL} \partial_\nu \epsilon
+=
+\PD{\phi}{\LL} \epsilon + 
+\partial_\nu \lr{ \PD{\partial_\nu \phi}{\LL} \epsilon }
+-
+\epsilon \partial_\nu \PD{\partial_\nu \phi}{\LL},
+\end{dmath}
+which we may plug into the action integral to find
+\begin{dmath}\label{eqn:maxwells:60}
+   \delta S =
+   \int d^4 x \epsilon \lr{ 
+   \PD{\phi}{\LL} 
+   -
+   \partial_\nu \PD{\partial_\nu \phi}{\LL} 
+}
++
+   \int d^4 x 
+\partial_\nu \lr{ \PD{\partial_\nu \phi}{\LL} \epsilon }.
+\end{dmath}
+The last integral can be evaluated along the \( dx^\nu \) direction, leaving
+\begin{dmath}\label{eqn:maxwells:80}
+   \int d^3 x 
+   \evalbar{ \PD{\partial_\nu \phi}{\LL} \epsilon }{\Delta x^\nu},
+\end{dmath}
+where \( d^3 x = dx^\alpha dx^\beta dx^\gamma \) is the product of differentials that does not include \( dx^\nu \).  By construction, \( \epsilon \) vanishes on the boundary of the action integral, showing that we extremize the action when
+\begin{dmath}\label{eqn:maxwells:100}
+0 = \delta S =
+   \int d^4 x \epsilon \lr{ 
+   \PD{\phi}{\LL} 
+   -
+   \partial_\nu \PD{\partial_\nu \phi}{\LL} 
+}.
+\end{dmath}
+The proof is complete after noting that this must hold for all variations of the field \( \epsilon \) requiring
+\begin{dmath}\label{eqn:maxwells:120}
+0  = 
+   \PD{\phi}{\LL} 
+   -
+   \partial_\nu \PD{\partial_\nu \phi}{\LL} .
+\end{dmath}
+\end{proof}
+%}
+%\EndArticle
+\EndNoBibArticle
