@@ -33,7 +33,7 @@
 %\chapter{XXX}
 %\label{chap:maxwells}
 \section{Motivation.}
-In my classical mechanics notes, I've got computations of Maxwell's equation (singular in it's geometric algebra form) from a Lagrangian in various ways (using a tensor, scalar and multivector Lagrangians), but all of these seem more complex than they should be.  Here's a new derivation, starting with the action principle for field variables.
+In my classical mechanics notes, I've got computations of Maxwell's equation (singular in it's geometric algebra form) from a Lagrangian in various ways (using a tensor, scalar and multivector Lagrangians), but all of these seem more convoluted than they should be.  Here's a new derivation, starting with the action principle for field variables.
 \section{Field action.}
 \maketheorem{Relativistic Euler-Lagrange field equations.}{thm:maxwells:40}{
 Let \( \phi \rightarrow \phi + \delta \phi \) be any variation of the field, such that the variation
@@ -48,59 +48,60 @@ The extreme value of the action is found when the Euler-Lagrange equations
 are satisfied.  For a Lagrangian with multiple field variables, there will be one such equation for each field.
 } % theorem
 \begin{proof}
-To ease the visual burden, designate the variation of the field by \( \delta \phi = \epsilon \), and perform a first order expansion of the Lagrangian
+To ease the visual burden, designate the variation of the field by \( \delta \phi = \epsilon \), and perform a first order expansion of the varied Lagrangian
 \begin{dmath}\label{eqn:maxwells:20}
 \LL \rightarrow
 \LL(\phi + \epsilon, \partial_\nu (\phi + \epsilon))
 =
 \LL(\phi, \partial_\nu \phi)
 +
-\PD{\phi}{\LL} \epsilon + 
-\PD{\partial_\nu \phi}{\LL} \partial_\nu \epsilon.
+\PD{\phi}{\LL} \epsilon +
+\PD{(\partial_\nu \phi)}{\LL} \partial_\nu \epsilon.
 \end{dmath}
-The variation of the Lagrangian is 
+The variation of the Lagrangian is
 \begin{dmath}\label{eqn:maxwells:40}
 \delta \LL =
-\PD{\phi}{\LL} \epsilon + 
-\PD{\partial_\nu \phi}{\LL} \partial_\nu \epsilon
+\PD{\phi}{\LL} \epsilon +
+\PD{(\partial_\nu \phi)}{\LL} \partial_\nu \epsilon
 =
-\PD{\phi}{\LL} \epsilon + 
-\partial_\nu \lr{ \PD{\partial_\nu \phi}{\LL} \epsilon }
+\PD{\phi}{\LL} \epsilon +
+\partial_\nu \lr{ \PD{(\partial_\nu \phi)}{\LL} \epsilon }
 -
-\epsilon \partial_\nu \PD{\partial_\nu \phi}{\LL},
+\epsilon \partial_\nu \PD{(\partial_\nu \phi)}{\LL},
 \end{dmath}
 which we may plug into the action integral to find
 \begin{dmath}\label{eqn:maxwells:60}
    \delta S =
-   \int d^4 x \epsilon \lr{ 
-   \PD{\phi}{\LL} 
+   \int d^4 x \epsilon \lr{
+   \PD{\phi}{\LL}
    -
-   \partial_\nu \PD{\partial_\nu \phi}{\LL} 
+   \partial_\nu \PD{(\partial_\nu \phi)}{\LL}
 }
 +
-   \int d^4 x 
-\partial_\nu \lr{ \PD{\partial_\nu \phi}{\LL} \epsilon }.
+   \int d^4 x
+\partial_\nu \lr{ \PD{(\partial_\nu \phi)}{\LL} \epsilon }.
 \end{dmath}
 The last integral can be evaluated along the \( dx^\nu \) direction, leaving
 \begin{dmath}\label{eqn:maxwells:80}
-   \int d^3 x 
-   \evalbar{ \PD{\partial_\nu \phi}{\LL} \epsilon }{\Delta x^\nu},
+   \int d^3 x
+   \evalbar{ \PD{(\partial_\nu \phi)}{\LL} \epsilon }{\Delta x^\nu},
 \end{dmath}
-where \( d^3 x = dx^\alpha dx^\beta dx^\gamma \) is the product of differentials that does not include \( dx^\nu \).  By construction, \( \epsilon \) vanishes on the boundary of the action integral, showing that we extremize the action when
+where \( d^3 x = dx^\alpha dx^\beta dx^\gamma \) is the product of differentials that does not include \( dx^\nu \).  By construction, \( \epsilon \) vanishes on the boundary of the action integral so \cref{eqn:maxwells:80} is zero.  The action takes its extreme value when
 \begin{dmath}\label{eqn:maxwells:100}
-0 = \delta S =
-   \int d^4 x \epsilon \lr{ 
-   \PD{\phi}{\LL} 
+0 = \delta S
+=
+\int d^4 x \epsilon \lr{
+   \PD{\phi}{\LL}
    -
-   \partial_\nu \PD{\partial_\nu \phi}{\LL} 
+   \partial_\nu \PD{(\partial_\nu \phi)}{\LL}
 }.
 \end{dmath}
-The proof is complete after noting that this must hold for all variations of the field \( \epsilon \) requiring
+The proof is complete after noting that this must hold for all variations of the field \( \epsilon \), which means that we must have
 \begin{dmath}\label{eqn:maxwells:120}
-0  = 
-   \PD{\phi}{\LL} 
+0  =
+   \PD{\phi}{\LL}
    -
-   \partial_\nu \PD{\partial_\nu \phi}{\LL} .
+   \partial_\nu \PD{(\partial_\nu \phi)}{\LL}.
 \end{dmath}
 \end{proof}
 %}
