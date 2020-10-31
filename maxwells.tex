@@ -105,7 +105,7 @@ The proof is complete after noting that this must hold for all variations of the
 \end{dmath}
 \end{proof}
 %}
-Armed with the Euler-Lagrange equations, we can apply them to the Maxwell's equation Lagrangian.
+Armed with the Euler-Lagrange equations, we can apply them to the Maxwell's equation Lagrangian, which we will claim has the following form.
 \maketheorem{Maxwell's equation Lagrangian.}{thm:maxwells:140}{
 Application of the Euler-Lagrange equations to the Lagrangian
 \begin{equation*}
@@ -122,114 +122,73 @@ which implies
 This is Maxwell's equation.
 } % definition
 \begin{proof}
-Let's take advantage of the Lagrangian linearity, and apply the Euler-Lagrange equations separately to the kinetic portion of the Lagrangian
+We wish to apply all of the Euler-Lagrange equations simulaneously (i.e. for each of the \(A_\mu\) field variables), and cast it into four-vector form
 \begin{dmath}\label{eqn:maxwells:140}
-\LL_1 = - \frac{\epsilon_0 c}{2} F \cdot F,
+0 = \gamma_\nu \lr{ \PD{A_\nu}{} - \partial_\mu \PD{(\partial_\mu A_\nu)}{} } \LL.
 \end{dmath}
-and the interaction portion
+Since our Lagrangian splits nicely into kinetic and interaction terms, this gives us
 \begin{dmath}\label{eqn:maxwells:160}
-\LL_2 = J \cdot A.
+   0 = \gamma_\nu \lr{ \PD{A_\nu}{(A \cdot J)} + \frac{\epsilon_0 c}{2} \partial_\mu \PD{(\partial_\mu A_\nu)}{ (F \cdot F)} }.
 \end{dmath}
-Let's write
-\begin{dmath}\label{eqn:maxwells:180}
-\delta^\nu = \PD{A_\nu}{} - \partial_\mu \PD{(\partial_\mu A_\nu)}{}.
-\end{dmath}
-As the interaction Lagrangian has only direct dependence on \( A \), we have
+The interaction term above is just
+\begin{equation}\label{eqn:maxwells:180}
+   \gamma_\nu \PD{A_\nu}{(A \cdot J)}
+=
+\gamma_\nu \PD{A_\nu}{(A_\mu J^\mu)}
+=
+\gamma_\nu J^\nu
+=
+J.
+\end{equation}
+The kinetic term takes a bit more work.  Let's start with evaluating
 \begin{dmath}\label{eqn:maxwells:200}
-\delta^\nu \LL_2
+   \PD{(\partial_\mu A_\nu)}{ (F \cdot F)}
 =
-\PD{A_\nu}{ A \cdot J }
-=
-\PD{A_\nu}{ } A_\mu J^\mu
-=
-J^\nu.
-\end{dmath}
-For the kinetic Lagrangian we only have the second order contribution
-\begin{dmath}\label{eqn:maxwells:220}
-\delta^\nu \LL_1
-=
-- \frac{\epsilon_0 c}{2} \lr{
-   (\delta^\nu F) \cdot F
-   +
-   F \cdot (\delta^\nu F)
-}
-=
-- \epsilon_0 c (\delta^\nu F) \cdot F.
-\end{dmath}
-Here we use the fact that for any two bivectors \( A \cdot B + B \cdot A = 2 A \cdot B \).
-\begin{dmath}\label{eqn:maxwells:240}
-\delta^\nu F
-=
-- \partial_\mu \PD{(\partial_\mu A_\nu)}{F}
-=
-- \partial_\mu \PD{(\partial_\mu A_\nu)}{ } \gamma^\alpha \wedge \gamma^\beta \partial_\alpha A_\beta
-=
-- \partial_\mu \gamma^\mu \wedge \gamma^\nu
-=
-(\gamma^\nu \wedge \grad),
-\end{dmath}
-so
-\begin{equation}\label{eqn:maxwells:260}
-0
-= \delta^\nu \LL
-= J^\nu - \epsilon_0 c (\gamma^\nu \wedge \grad) \cdot F.
-\end{equation}
-This expansion has been a little bit cavalier in the handling of operator quantities, but is correct provided we allow the gradient to act bidirectionally in some of the intermediate steps (without changing the position of any multivector factors in the applications of the partials.)  Spelled out explicitly, this was a requirement for the gradient operator that resulted from the application of \( \delta^\nu \) to act as follows
-\begin{dmath}\label{eqn:maxwells:380}
-   X \lrgrad Y
-   =
-   X (\rgrad Y) +
-   (X \lgrad) Y
-   =
-   X \gamma^\mu (\partial_\mu Y)
-   +
-   (\partial_\mu X) \gamma^\mu Y.
-\end{dmath}
-Should the reader not be comfortable with this shortcut, a full expansion of \( F \cdot F \) in coordinates should demonatrate why this works.
-
-We now expand the dot product of \cref{eqn:maxwells:260} as a scalar selection to eliminate the wedge
-\begin{dmath}\label{eqn:maxwells:280}
-(\gamma^\nu \wedge \grad) \cdot F
-=
-\gpgradezero{ (\gamma^\nu \wedge \grad) F }
-=
-\gpgradezero{ \gamma^\nu \grad F }
--
-\cancel{ \gpgradezero{ (\gamma^\nu \cdot \grad) F } }
-=
-\gpgradezero{ \gamma^\nu (\grad \cdot F + \grad \wedge F) }.
-=
-\gamma^\nu \cdot (\grad \cdot F).
-\end{dmath}
-Contracting with \( \gamma_\nu \) we have
-\begin{dmath}\label{eqn:maxwells:300}
-0
-=
-\gamma_\nu (J^\nu - \epsilon_0 c  \gamma^\nu \cdot (\grad \cdot F))
-=
-J - \epsilon_0 c \grad \cdot F.
-\end{dmath}
-Finally, note that
-\begin{dmath}\label{eqn:maxwells:320}
-\grad F
-=
-\grad \cdot F
+\PD{(\partial_\mu A_\nu)}{ F } \cdot F
 +
-\grad \wedge F,
+F \cdot \PD{(\partial_\mu A_\nu)}{ F }
+=
+2 \PD{(\partial_\mu A_\nu)}{ F } \cdot F
+=
+2 \PD{(\partial_\mu A_\nu)}{ \partial_\alpha A_\beta } \lr{ \gamma^\alpha \wedge \gamma^\beta } \cdot F
+=
+2 \lr{ \gamma^\mu \wedge \gamma^\nu } \cdot F.
 \end{dmath}
-but
-\begin{equation}\label{eqn:maxwells:360}
-\grad \wedge F
+We hit this with the mu-partial and expand as a scalar selection to find
+\begin{dmath}\label{eqn:maxwells:220}
+   \partial_\mu \PD{(\partial_\mu A_\nu)}{ (F \cdot F)}
 =
-\grad \wedge (\grad \wedge A)
+2 \lr{ \partial_\mu \gamma^\mu \wedge \gamma^\nu } \cdot F
 =
-0,
+- 2 (\gamma^\nu \wedge \grad) \cdot F
+=
+- 2 \gpgradezero{ (\gamma^\nu \wedge \grad) F }
+=
+- 2 \gpgradezero{ \gamma^\nu \grad F - \cancel{ \gamma^\nu \cdot \grad F } }
+=
+- 2 \gamma^\nu \cdot \lr{ \grad \cdot F }.
+\end{dmath}
+Putting all the pieces together yields
+\begin{equation}\label{eqn:maxwells:240}
+0
+= J - \epsilon_0 c \gamma_\nu \lr{ \gamma^\nu \cdot \lr{ \grad \cdot F } }
+= J - \epsilon_0 c \lr{ \grad \cdot F },
 \end{equation}
-so
-\begin{dmath}\label{eqn:maxwells:340}
-\grad F = \inv{ \epsilon_0 c } J.
+but
+\begin{dmath}\label{eqn:maxwells:260}
+\grad \cdot F
+=
+\grad F - \grad \wedge F
+=
+\grad F - \grad \wedge (\grad \wedge A)
+=
+\grad F,
 \end{dmath}
+so the multivector field equations for this Lagrangian are
+\begin{dmath}\label{eqn:maxwells:280}
+\grad F = \inv{\epsilon_0 c} J,
+\end{dmath}
+as claimed.
 \end{proof}
-
 %\EndArticle
 \EndNoBibArticle
