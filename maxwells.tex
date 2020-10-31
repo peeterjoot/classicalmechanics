@@ -122,7 +122,7 @@ which implies
 This is Maxwell's equation.
 } % definition
 \begin{proof}
-We wish to apply all of the Euler-Lagrange equations simulaneously (i.e. for each of the \(A_\mu\) field variables), and cast it into four-vector form
+We wish to apply all of the Euler-Lagrange equations simulaneously (i.e. once for each of the four \(A_\mu\) components of the potential), and cast it into four-vector form
 \begin{dmath}\label{eqn:maxwells:140}
 0 = \gamma_\nu \lr{ \PD{A_\nu}{} - \partial_\mu \PD{(\partial_\mu A_\nu)}{} } \LL.
 \end{dmath}
@@ -138,9 +138,9 @@ The interaction term above is just
 =
 \gamma_\nu J^\nu
 =
-J.
+J,
 \end{equation}
-The kinetic term takes a bit more work.  Let's start with evaluating
+but the kinetic term takes a bit more work.  Let's start with evaluating
 \begin{dmath}\label{eqn:maxwells:200}
    \PD{(\partial_\mu A_\nu)}{ (F \cdot F)}
 =
@@ -150,7 +150,7 @@ F \cdot \PD{(\partial_\mu A_\nu)}{ F }
 =
 2 \PD{(\partial_\mu A_\nu)}{ F } \cdot F
 =
-2 \PD{(\partial_\mu A_\nu)}{ \partial_\alpha A_\beta } \lr{ \gamma^\alpha \wedge \gamma^\beta } \cdot F
+2 \PD{(\partial_\mu A_\nu)}{ (\partial_\alpha A_\beta) } \lr{ \gamma^\alpha \wedge \gamma^\beta } \cdot F
 =
 2 \lr{ \gamma^\mu \wedge \gamma^\nu } \cdot F.
 \end{dmath}
@@ -190,5 +190,223 @@ so the multivector field equations for this Lagrangian are
 \end{dmath}
 as claimed.
 \end{proof}
-%\EndArticle
-\EndNoBibArticle
+\makeproblem{Correspondence with tensor formalism.}{problem:maxwells:300}{
+Cast the Lagrangian of \cref{thm:maxwells:140} into the conventional tensor form
+\begin{dmath}\label{eqn:maxwells:300}
+\LL = \frac{\epsilon_0 c}{4} F_{\mu\nu} F^{\mu\nu} + A^\mu J_\mu.
+\end{dmath}
+Also show that the four-vector component of Maxwell's equation \( \grad \cdot F = J/(\epsilon_0 c \) is equivalent to the conventional tensor form of the Gauss-Ampere law
+\begin{dmath}\label{eqn:maxwells:320}
+\partial_\mu F^{\mu\nu} = \inv{\epsilon_0 c} J^\nu,
+\end{dmath}
+where \( F^{\mu\nu} = \partial^\mu A^\nu - \partial^\nu A^\mu \) as usual.  Also
+show that the trivector component of Maxwell's equation
+\( \grad \wedge F =  0 \) is equivalent to the tensor form of the Gauss-Faraday law
+\begin{dmath}\label{eqn:maxwells:340}
+\partial_\alpha \lr{ \epsilon^{\alpha \beta \mu \nu} F_{\mu\nu} } = 0.
+\end{dmath}
+} % problem
+\makeanswer{problem:maxwells:300}{
+To show the Lagrangian correspondence we must expand \( F \cdot F \) in coordinates
+\begin{dmath}\label{eqn:maxwells:360}
+F \cdot F
+=
+( \grad \wedge A ) \cdot
+( \grad \wedge A )
+=
+\lr{ (\gamma^\mu \partial_\mu) \wedge (\gamma^\nu A_\nu) }
+\cdot
+\lr{ (\gamma^\alpha \partial_\alpha) \wedge (\gamma^\beta A_\beta) }
+=
+\lr{ \gamma^\mu \wedge \gamma^\nu } \cdot \lr{ \gamma_\alpha \wedge \gamma_\beta }
+(\partial_\mu A_\nu )
+(\partial^\alpha A^\beta )
+=
+\lr{
+{\delta^\mu}_\beta
+{\delta^\nu}_\alpha
+-
+{\delta^\mu}_\alpha
+{\delta^\nu}_\beta
+}
+(\partial_\mu A_\nu )
+(\partial^\alpha A^\beta )
+=
+- \partial_\mu A_\nu \lr{
+   \partial^\mu A^\nu
+   -
+   \partial^\nu A^\mu
+}
+=
+- \partial_\mu A_\nu F^{\mu\nu}
+=
+- \inv{2} \lr{
+   \partial_\mu A_\nu F^{\mu\nu}
+   +
+   \partial_\nu A_\mu F^{\nu\mu}
+}
+=
+- \inv{2} \lr{
+   \partial_\mu A_\nu
+   -
+   \partial_\nu A_\mu
+}
+F^{\mu\nu}
+=
+-
+\inv{2}
+F_{\mu\nu}
+F^{\mu\nu}.
+\end{dmath}
+With a substitution of this and \( A \cdot J = A_\mu J^\mu \) back into the Lagrangian, we recover the tensor form of the Lagrangian.
+
+To recover the tensor form of Maxwell's equation, we first split it into vector and trivector parts
+\begin{dmath}\label{eqn:maxwells:1580}
+\grad \cdot F + \grad \wedge F = \inv{\epsilon_0 c} J.
+\end{dmath}
+Now the vector component may be expanded in coordinates by dotting both sides with \( \gamma^\nu \) to find
+\begin{dmath}\label{eqn:maxwells:1600}
+\inv{\epsilon_0 c} \gamma^\nu \cdot J = J^\nu,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:maxwells:1620}
+\gamma^\nu \cdot
+\lr{ \grad \cdot F }
+=
+\partial_\mu \gamma^\nu \cdot \lr{ \gamma^\mu \cdot \lr{ \gamma_\alpha \wedge \gamma_\beta } \partial^\alpha A^\beta }
+=
+\lr{
+   {\delta^\mu}_\alpha
+   {\delta^\nu}_\beta
+   -
+   {\delta^\nu}_\alpha
+   {\delta^\mu}_\beta
+}
+\partial_\mu
+\partial^\alpha A^\beta
+=
+\partial_\mu
+\lr{
+   \partial^\mu A^\nu
+   -
+   \partial^\nu A^\mu
+}
+=
+\partial_\mu F^{\mu\nu}.
+\end{dmath}
+Equating \cref{eqn:maxwells:1600} and \cref{eqn:maxwells:1620} finishes the first part of the job.  For the trivector component, we have
+\begin{dmath}\label{eqn:maxwells:1640}
+0
+= \grad \wedge F
+= (\gamma^\mu \partial_\mu) \wedge \lr{ \gamma^\alpha \wedge \gamma^\beta } \partial_\alpha A_\beta
+= \inv{2} (\gamma^\mu \partial_\mu) \wedge \lr{ \gamma^\alpha \wedge \gamma^\beta } F_{\alpha \beta}.
+\end{dmath}
+Wedging with \( \gamma^\tau \) and then multiplying by \( -2 I \) we find
+\begin{dmath}\label{eqn:maxwells:1660}
+0 = - \lr{ \gamma^\mu \wedge \gamma^\alpha \wedge \gamma^\beta \wedge \gamma^\tau } I \partial_\mu F_{\alpha \beta},
+\end{dmath}
+but
+\begin{dmath}\label{eqn:maxwells:1680}
+\gamma^\mu \wedge \gamma^\alpha \wedge \gamma^\beta \wedge \gamma^\tau = -I \epsilon^{\mu \alpha \beta \tau},
+\end{dmath}
+which leaves us with
+\begin{dmath}\label{eqn:maxwells:1700}
+\epsilon^{\mu \alpha \beta \tau}  \partial_\mu F_{\alpha \beta} = 0,
+\end{dmath}
+as expected.
+} % answer
+\makeproblem{Correspondence of tensor and Gibbs forms of Maxwell's equations.}{problem:maxwells:379}{
+Given the identifications
+%\cref{eqn:lorentzForceCovariant:1540}
+\begin{subequations}
+\label{eqn:lorentzForceCovariant:1540}
+\begin{equation}\label{eqn:lorentzForceCovariant:1500}
+F^{k0} = E^k,
+\end{equation}
+and
+\begin{equation}\label{eqn:lorentzForceCovariant:1520}
+F^{rs} = -\epsilon^{rst} B^t,
+\end{equation}
+\end{subequations}
+and
+\begin{dmath}\label{eqn:maxwells:1560}
+J^\mu = \lr{ c \rho, \BJ },
+\end{dmath}
+the reader should satisfy themselves that the traditional Gibbs form of Maxwell's equations can be recovered from \cref{eqn:maxwells:320}.
+} % problem
+\makeanswer{problem:maxwells:379}{
+The reader is referred to Exercise 3.4 ``Electrodynamics, variational principle.'' from \citep{pjootQFT}.
+} % answer
+\makeproblem{Correspondence with grad and curl form of Maxwell's equations.}{problem:maxwells:380}{
+With \( J = c \rho \gamma_0 + J^k \gamma_k \) and \( F = \BE + I c \BB \) show that Maxwell's equation, as stated in \cref{thm:maxwells:140} expand to the conventional div and curl expressions for Maxwell's equations.
+} % problem
+\makeanswer{problem:maxwells:380}{
+To obtain Maxwell's equations in their traditional vector forms, we pre-multiply both sides with \( \gamma_0 \)
+\begin{dmath}\label{eqn:maxwells:1720}
+\gamma_0 \grad F = \inv{\epsilon_0 c} \gamma_0 J,
+\end{dmath}
+and then select each grade separately.  First observe that the RHS above has scalar and bivector components, as
+\begin{dmath}\label{eqn:maxwells:1740}
+\gamma_0 J
+=
+c \rho + J^k \gamma_0 \gamma_k.
+\end{dmath}
+In terms of the spatial bivector basis \( \Be_k = \gamma_k \gamma_0 \), the RHS of \cref{eqn:maxwells:1720} is
+\begin{dmath}\label{eqn:maxwells:1760}
+\gamma_0 \frac{J}{\epsilon_0 c} = \frac{\rho}{\epsilon_0} - \mu_0 c \BJ.
+\end{dmath}
+For the LHS, first note that
+\begin{dmath}\label{eqn:maxwells:1780}
+\gamma_0 \grad
+=
+\gamma_0
+\lr{
+   \gamma_0 \partial^0 +
+   \gamma_k \partial^k
+}
+=
+\partial_0 - \gamma_0 \gamma_k \partial_k
+=
+\inv{c} \PD{t}{} + \spacegrad.
+\end{dmath}
+We can express all the the LHS of \cref{eqn:maxwells:1720} in the bivector spatial basis, so that Maxwell's equation in multivector form is
+\begin{dmath}\label{eqn:maxwells:1800}
+\lr{ \inv{c} \PD{t}{} + \spacegrad } \lr{ \BE + I c \BB } = \frac{\rho}{\epsilon_0} - \mu_0 c \BJ.
+\end{dmath}
+Selecting the scalar, vector, bivector, and trivector grades of both sides (in the spatial basis) gives the following set of respective equations
+\begin{subequations}
+\label{eqn:maxwells:1820}
+\begin{dmath}\label{eqn:maxwells:1840}
+\spacegrad \cdot \BE = \frac{\rho}{\epsilon_0}
+\end{dmath}
+\begin{dmath}\label{eqn:maxwells:1860}
+\inv{c} \partial_t \BE + I c \spacegrad \wedge \BB = - \mu_0 c \BJ
+\end{dmath}
+\begin{dmath}\label{eqn:maxwells:1880}
+\spacegrad \wedge \BE + I \partial_t \BB = 0
+\end{dmath}
+\begin{dmath}\label{eqn:maxwells:1900}
+I c \spacegrad \cdot B = 0,
+\end{dmath}
+\end{subequations}
+which we can rewrite after some duality transformations (and noting that \( \mu_0 \epsilon_0 c^2 = 1 \)), we have
+\begin{subequations}
+\label{eqn:maxwells:1920}
+\begin{dmath}\label{eqn:maxwells:1940}
+\spacegrad \cdot \BE = \frac{\rho}{\epsilon_0}
+\end{dmath}
+\begin{dmath}\label{eqn:maxwells:1960}
+\spacegrad \cross \BB - \mu_0 \epsilon_0 \PD{t}{\BE} = \mu_0 \BJ
+\end{dmath}
+\begin{dmath}\label{eqn:maxwells:1980}
+\spacegrad \cross \BE + \PD{t}{\BB} = 0
+\end{dmath}
+\begin{dmath}\label{eqn:maxwells:2000}
+\spacegrad \cdot B = 0,
+\end{dmath}
+\end{subequations}
+which are Maxwell's equations in their traditional form.
+} % answer
+\subsection{Solutions.}
+\shipoutAnswer
+\EndArticle
