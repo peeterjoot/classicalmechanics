@@ -1,3 +1,30 @@
+- incorporate maxwells.tex, and purge what it replaces.
+
+Add indexing with the blog post tags:
+
+ space time algebra
+ Lagrangian density
+ four-vector
+ bivector
+ pseudoscalar
+ multivector
+ Maxwell's equation
+ Euler-Lagrange equations
+ four potential
+ current density
+ interaction term
+ kinetic term
+ variation
+ action
+ action principle
+ dot product
+ wedge product
+ scalar selection
+ pseudoscalar selection
+ Gauss-Faraday law
+ Gauss-Ampere law
+ trivector
+ Lorentz invariant
 
 - what was the point of \eqnref -- replace with \cref?
 
