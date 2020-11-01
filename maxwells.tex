@@ -33,7 +33,17 @@
 %\chapter{XXX}
 %\label{chap:maxwells}
 \section{Motivation.}
-In my classical mechanics notes, I've got computations of Maxwell's equation (singular in it's geometric algebra form) from a Lagrangian in various ways (using a tensor, scalar and multivector Lagrangians), but all of these seem more convoluted than they should be.  Here's a new derivation, starting with the action principle for field variables.
+In my classical mechanics notes, I've got computations of Maxwell's equation (singular in it's geometric algebra form) from a Lagrangian in various ways (using a tensor, scalar and multivector Lagrangians), but all of these seem more convoluted than they should be.
+Here we do this from scratch, starting with the action principle for field variables, covering:
+%This chapter will cover
+\begin{itemize}
+   \item Derivation of the relativistic form of the Euler-Lagrange field equations from the covariant form of the action,
+   \item Derivation of Maxwell's equation (in it's STA form) from the Maxwell Lagrangian,
+   \item Relationship of the STA Maxwell Lagrangian to the tensor equivalent,
+   \item Relationship of the STA form of Maxwell's equation to it's tensor equivalents,
+   \item Relationship of the STA Maxwell's equation to it's conventional Gibbs form.
+   \item Show that we may use a multivector valued Lagrangian with all of \( F^2 \), not just the scalar part.
+\end{itemize}
 \section{Field action.}
 \maketheorem{Relativistic Euler-Lagrange field equations.}{thm:maxwells:40}{
 Let \( \phi \rightarrow \phi + \delta \phi \) be any variation of the field, such that the variation
@@ -122,7 +132,7 @@ which implies
 This is Maxwell's equation.
 } % definition
 \begin{proof}
-We wish to apply all of the Euler-Lagrange equations simulaneously (i.e. once for each of the four \(A_\mu\) components of the potential), and cast it into four-vector form
+We wish to apply all of the Euler-Lagrange equations simultaneously (i.e. once for each of the four \(A_\mu\) components of the potential), and cast it into four-vector form
 \begin{dmath}\label{eqn:maxwells:140}
 0 = \gamma_\nu \lr{ \PD{A_\nu}{} - \partial_\mu \PD{(\partial_\mu A_\nu)}{} } \LL.
 \end{dmath}
@@ -195,7 +205,7 @@ Cast the Lagrangian of \cref{thm:maxwells:140} into the conventional tensor form
 \begin{dmath}\label{eqn:maxwells:300}
 \LL = \frac{\epsilon_0 c}{4} F_{\mu\nu} F^{\mu\nu} + A^\mu J_\mu.
 \end{dmath}
-Also show that the four-vector component of Maxwell's equation \( \grad \cdot F = J/(\epsilon_0 c \) is equivalent to the conventional tensor form of the Gauss-Ampere law
+Also show that the four-vector component of Maxwell's equation \( \grad \cdot F = J/(\epsilon_0 c) \) is equivalent to the conventional tensor form of the Gauss-Ampere law
 \begin{dmath}\label{eqn:maxwells:320}
 \partial_\mu F^{\mu\nu} = \inv{\epsilon_0 c} J^\nu,
 \end{dmath}
@@ -406,6 +416,61 @@ which we can rewrite after some duality transformations (and noting that \( \mu_
 \end{dmath}
 \end{subequations}
 which are Maxwell's equations in their traditional form.
+} % answer
+\makeproblem{Alternative multivector Lagrangian.}{problem:maxwells:2020}{
+Show that a scalar+pseudoscalar Lagrangian of the following form
+\begin{equation*}
+\LL = - \frac{\epsilon_0 c}{2} F^2 + J \cdot A,
+\end{equation*}
+which omits the scalar selection of the Lagrangian in \cref{thm:maxwells:140},
+also represents Maxwell's equation.
+Discuss the scalar and pseudoscalar components of \( F^2 \), and show why the pseudoscalar inclusion is irrelevant.
+} % problem
+\makeanswer{problem:maxwells:2020}{
+The quantity
+\( F^2 = F \cdot F + F \wedge F \)
+has both scalar and pseudoscalar \footnote{Unlike vectors, a bivector wedge in 4D with itself need not be zero (example: \( \gamma_0 \gamma_1 + \gamma_2 \gamma_3 \) wedged with itself).}
+components, which can be seen if we expand it in terms of the electric and magnetic fields
+\begin{dmath}\label{eqn:maxwells:2020}
+   F^2
+   = \lr{ \BE + I c \BB }^2
+   = \BE^2 - c^2 \BB^2 + I c \lr{ \BE \BB + \BB \BE }
+   = \BE^2 - c^2 \BB^2 + 2 I c \BE \cdot \BB.
+\end{dmath}
+Both the scalar and pseudoscalar parts of \( F^2 \) are Lorentz invariant, a requirement of our Lagrangian,
+but most Maxwell equation Lagrangians only include the scalar \( \BE^2 - c^2 \BB^2 \) component of the field square.
+If we allow the Lagrangian to be multivector valued, and evaluate the Euler-Lagrange equations, we quickly find the same results
+\begin{dmath}\label{eqn:maxwells:2040}
+0
+= \gamma_\nu \lr{ \PD{A_\nu}{} - \partial_\mu \PD{(\partial_\mu A_\nu)}{} } \LL
+= \gamma_\nu \lr{ J^\nu + \frac{\epsilon_0 c}{2} \partial_\mu
+   \lr{
+      (\gamma^\mu \wedge \gamma^\nu) F
+      +
+      F (\gamma^\mu \wedge \gamma^\nu)
+   }
+}.
+\end{dmath}
+Here some steps are skipped, building on our previous scalar Euler-Lagrange evaluation experience.  We have a symmetric product of two bivectors, which we can express as a 0,4 grade selection, since
+\begin{dmath}\label{eqn:maxwells:2060}
+   \gpgrade{ X F }{0,4} = \inv{2} \lr{ X F + F X },
+\end{dmath}
+for any two bivectors \( X, F \).  This leaves
+\begin{dmath}\label{eqn:maxwells:2080}
+   0
+   = J + \epsilon_0 c \gamma_\nu \gpgrade{ (\grad \wedge \gamma^\nu) F }{0,4}
+   = J + \epsilon_0 c \gamma_\nu \gpgrade{ -\gamma^\nu \grad F + \cancel{(\gamma^\nu \cdot \grad) F} }{0,4}
+   = J - \epsilon_0 c \gamma_\nu
+   \lr{
+      \gamma^\nu \cdot \lr{ \grad \cdot F } + \gamma^\nu \wedge \grad \wedge F
+   }.
+\end{dmath}
+However, since \( \grad \wedge F = \grad \wedge \grad \wedge A = 0 \), we see that there is no contribution from the \( F \wedge F \) pseudoscalar component of the Lagrangian, and we are left with
+\begin{dmath}\label{eqn:maxwells:2100}
+   0 = J - \epsilon_0 c (\grad \cdot F)
+   = J - \epsilon_0 c \grad F,
+\end{dmath}
+which is Maxwell's equation, as before.
 } % answer
 \subsection{Solutions.}
 \shipoutAnswer
