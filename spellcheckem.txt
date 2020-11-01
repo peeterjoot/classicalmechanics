@@ -2,13 +2,13 @@ FrontBackmatter/preface.tex
 appendixchapters.tex
 chapters.tex
 covariantSTA.tex
+fieldLagrangianAndMaxwell.tex
+fieldLagrangianRest.tex
 galagrangian/boostMaxwellLagrangian.tex
 galagrangian/eulerLagrange.tex
 galagrangian/eulerLagrangeScalarLagrangian.tex
-galagrangian/fieldLagrangian.tex
 galagrangian/jackson12Dash9.tex
 galagrangian/lagrangianFieldDensity.tex
-galagrangian/maxwellTensorFromLagrangian.tex
 galagrangian/noethersField.tex
 galagrangian/noethersLorentzForce.tex
 galagrangian/rotationCurrents.tex

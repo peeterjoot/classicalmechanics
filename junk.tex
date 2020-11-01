@@ -11,10 +11,11 @@
 
 \input{../latex/peeter_prologue_print2.tex}
 
-%\usepackage{peeters_layout_exercise}
+\usepackage{amsthm}
+\usepackage{macros_cal} % \LL
+\usepackage{peeters_layout_exercise}
 %\usepackage{peeters_braket}
 \usepackage{peeters_figures}
-\usepackage{macros_cal}
 
 \newcommand{\nbref}[1]{%
 \itemRef{classicalmechanics}{#1}%
@@ -66,6 +67,9 @@
    \input{maybeInterestingAlternateCovariantKineticLagrangian.tex}
 \chapter{Vector canonical momentum.}
    \input{.junk/canonicalMomentum.tex}                 % Sep 1/08
+\chapter{Lagrangian density stuff.}
+   \input{.junk/fieldLagrangian.tex}                   % Oct 10/08
+%   \input{.junk/maxwellTensorFromLagrangian.tex}     % Apr 20/09
 
 %}
 %\EndArticle

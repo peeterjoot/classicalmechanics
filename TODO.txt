@@ -1,3 +1,42 @@
+- Reincorporate as first example of the field Euler-Lagrange equations.  Was in lagrangianFieldDensity.tex
+%
+\begin{equation}\label{eqn:lagrangianFieldDensity:1474}
+\spacegrad^2 \overbar{\phi} = \rho/2 \kappa,
+\end{equation}
+%
+provided we set the constant \(\kappa = -\epsilon_0/2\).  This also fixes the unknown constant in the associated Lagrangian density and action
+%
+\begin{equation}
+S = \int_{\Omega} \left(- \frac{\epsilon_0}{2} (\spacegrad \phi)^2 + \rho \phi \right) d\Omega.
+\end{equation}
+%
+
+(this was originally done as a 2D example.  Make it a 3D one)
+
+- Reincorporate as first example of the Euler-Lagrange equations.  Was in lagrangianFieldDensity.tex
+
+Suppose we have an action associated with a kinetic Lagrangian density \((1/2) m v^2\)
+%
+\begin{equation}\label{eqn:maxFieldLag:oneDimKinetic}
+S = \int_a^b \frac{m}{2} { \left(\frac{dx}{dt}\right) }^2 dt,
+\end{equation}
+%
+where \(x = x(t)\) is the undetermined function to solve for.  Feynman's technique is similar to \citep{goldstein1951cm} way of deriving the Euler Lagrange equations, but instead of writing
+
+...
+That is
+%
+\begin{equation}\label{eqn:lagrangianFieldDensity:1334}
+\frac{d^2\overbar{x}}{dt^2} = 0.
+\end{equation}
+%
+As the solution to the extreme value problem.  This is nothing but the equation for a straight line, which is what we expect if there are no external forces
+%
+\begin{equation}\label{eqn:lagrangianFieldDensity:1354}
+\overbar{x} - x_0 = v(t - t_0).
+\end{equation}
+%
+
 - incorporate maxwells.tex, and purge what it replaces.
 
 Add indexing with the blog post tags:

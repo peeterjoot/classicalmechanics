@@ -34,7 +34,8 @@ include ../latex/make.rules
 .PHONY: spellcheck
 spellcheck: $(patsubst %.tex,%.sp,$(filter-out $(DONT_SPELL_CHECK),$(DO_SPELL_CHECK)))
 
-all :: junk.pdf
+#all :: j
+#j :: junk.pdf
 
 %.sp : %.tex
 	spellcheck $^
