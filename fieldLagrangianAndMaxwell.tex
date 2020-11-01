@@ -1,41 +1,9 @@
 %
-% Copyright © 2020 Peeter Joot.  All Rights Reserved.
+% Copyright Â© 2020 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{maxwells}
-%\renewcommand{\dirname}{notes/phy1520/}
-\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
-%\newcommand{\dateintitle}{}
-%\newcommand{\keywords}{}
-
-\input{../latex/peeter_prologue_print2.tex}
-
-\PassOptionsToPackage{answerdelayed}{exercise}
-
-% proof:
-\usepackage{amsthm}
-\usepackage{macros_cal} % \LL
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_braket}
-\usepackage{peeters_figures}
-\usepackage{siunitx}
-\usepackage{verbatim}
-%\usepackage{mhchem} % \ce{}
-%\usepackage{macros_bm} % \bcM
-%\usepackage{macros_qed} % \qedmarker
-%\usepackage{txfonts} % \ointclockwise
-
-\beginArtNoToc
-
-\generatetitle{Maxwell's equation using geometric algebra Lagrangian.}
-%\chapter{XXX}
-%\label{chap:maxwells}
-\section{Motivation.}
-In my classical mechanics notes, I've got computations of Maxwell's equation (singular in it's geometric algebra form) from a Lagrangian in various ways (using a tensor, scalar and multivector Lagrangians), but all of these seem more convoluted than they should be.
-Here we do this from scratch, starting with the action principle for field variables, covering:
-%This chapter will cover
+This chapter will cover
 \begin{itemize}
    \item Derivation of the relativistic form of the Euler-Lagrange field equations from the covariant form of the action,
    \item Derivation of Maxwell's equation (in it's Space Time Algebra (STA) form) from the Maxwell Lagrangian,
@@ -117,6 +85,7 @@ The proof is complete after noting that this must hold for all variations of the
 \end{dmath}
 \end{proof}
 %}
+\section{Maxwell's equation.}
 Armed with the Euler-Lagrange equations, we can apply them to the Maxwell's equation Lagrangian, which we will claim has the following form.
 \maketheorem{Maxwell's equation Lagrangian.}{thm:maxwells:140}{
 Application of the Euler-Lagrange equations to the Lagrangian
@@ -328,18 +297,18 @@ which leaves us with
 as expected.
 } % answer
 \makeproblem{Correspondence of tensor and Gibbs forms of Maxwell's equations.}{problem:maxwells:379}{
-Given the identifications
-%\cref{eqn:lorentzForceCovariant:1540}
-\begin{subequations}
-\label{eqn:lorentzForceCovariant:1540}
-\begin{equation}\label{eqn:lorentzForceCovariant:1500}
-F^{k0} = E^k,
-\end{equation}
-and
-\begin{equation}\label{eqn:lorentzForceCovariant:1520}
-F^{rs} = -\epsilon^{rst} B^t,
-\end{equation}
-\end{subequations}
+Using the tensor identifications of
+\cref{eqn:lorentzForceCovariant:1540}
+%%\begin{subequations}
+%%\label{eqn:lorentzForceCovariant:1540}
+%%\begin{equation}\label{eqn:lorentzForceCovariant:1500}
+%%F^{k0} = E^k,
+%%\end{equation}
+%%and
+%%\begin{equation}\label{eqn:lorentzForceCovariant:1520}
+%%F^{rs} = -\epsilon^{rst} B^t,
+%%\end{equation}
+%%\end{subequations}
 and
 \begin{dmath}\label{eqn:maxwells:1560}
 J^\mu = \lr{ c \rho, \BJ },
@@ -474,6 +443,4 @@ However, since \( \grad \wedge F = \grad \wedge \grad \wedge A = 0 \), we see th
 \end{dmath}
 which is Maxwell's equation, as before.
 } % answer
-\subsection{Solutions.}
-\shipoutAnswer
-\EndArticle
+%}

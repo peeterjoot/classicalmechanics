@@ -1,0 +1,40 @@
+%
+% Copyright © 2020 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{maxwells}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
+
+\input{../latex/peeter_prologue_print2.tex}
+
+\PassOptionsToPackage{answerdelayed}{exercise}
+
+% proof:
+\usepackage{amsthm}
+\usepackage{macros_cal} % \LL
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{verbatim}
+%\usepackage{mhchem} % \ce{}
+%\usepackage{macros_bm} % \bcM
+%\usepackage{macros_qed} % \qedmarker
+%\usepackage{txfonts} % \ointclockwise
+
+\beginArtNoToc
+
+\generatetitle{Maxwell's equation using geometric algebra Lagrangian.}
+%\chapter{XXX}
+%\label{chap:maxwells}
+\section{Motivation.}
+In my classical mechanics notes, I've got computations of Maxwell's equation (singular in it's geometric algebra form) from a Lagrangian in various ways (using a tensor, scalar and multivector Lagrangians), but all of these seem more convoluted than they should be.
+\input{fieldLagrangianAndMaxwell.tex}
+\subsection{Solutions.}
+\shipoutAnswer
+\EndArticle
