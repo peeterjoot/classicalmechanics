@@ -146,19 +146,14 @@ there were some interesting ideas in there, but it is very redundant with this t
       sta.tex
       covariantSTA.tex
 
--
-
-Move to .junk/ has left all the following dead references: track these down, and update:
+- Move to .junk/ has left all the following dead references: track these down, and update:
 
   Reference `chap:PJSrLagrangian' on page 253 undefined on input line 731
   Reference `chap:PJSrLagrangian' on page 255 undefined on input line 15
   Reference `chap:PJSrLorentzForce' on page 253 undefined on input line 749
   Reference `chap:PJSrLorentzForce' on page 255 undefined on input line 15
 
-
-- audit: Use L for non-field lagrangian, and \LL for field lagrangian.
-
-- solve:
+- Solve:
 
    mine/waveLagrangianQM.tex
    mine/waveLagrangianKG.tex

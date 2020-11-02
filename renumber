@@ -22,3 +22,7 @@
 #../latex/bin/lgrep maxwells.tex | tee o ; . ./o
 #../latex/bin/lgrep mx.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl maxwells.tex
+
+#../latex/bin/lgrep gaugeLorentzSTA.tex | tee o ; . ./o
+#../latex/bin/lgrep gaugeLorentzSTAblog.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl gaugeLorentzSTA.tex

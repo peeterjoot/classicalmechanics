@@ -1,0 +1,61 @@
+%
+% Copyright © 2020 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+%%\input{../latex/blogpost.tex}
+%%\renewcommand{\basename}{gaugeLorentzSTA}
+%%%\renewcommand{\dirname}{notes/phy1520/}
+%%\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%%%\newcommand{\dateintitle}{}
+%%%\newcommand{\keywords}{}
+%%
+%%\input{../latex/peeter_prologue_print2.tex}
+%%
+%%\newcommand{\Lq}[0]{L}
+%%
+%%\usepackage{peeters_layout_exercise}
+%%\usepackage{peeters_braket}
+%%\usepackage{peeters_figures}
+%%\usepackage{siunitx}
+%%\usepackage{verbatim}
+%%%\usepackage{mhchem} % \ce{}
+%%%\usepackage{macros_bm} % \bcM
+%%%\usepackage{macros_qed} % \qedmarker
+%%%\usepackage{txfonts} % \ointclockwise
+%%\beginArtNoToc
+%%\generatetitle{Gauge transformation in the Lorentz force Lagrangian.}
+%%%\chapter{XXX}
+%%%\label{chap:gaugeLorentzSTA}
+\makeproblem{Lorentz force gauge transformation.}{problem:gaugeLorentzSTA:20}{
+Show that the gauge transformation \( A \rightarrow A + \grad \psi \) applied to the Lorentz force Lagrangian
+\begin{dmath}\label{eqn:gaugeLorentzSTA:20}
+\Lq = \inv{2} m v^2 + q A \cdot v/c,
+\end{dmath}
+does not change the equations of motion.
+} % problem
+\makeanswer{problem:gaugeLorentzSTA:20}{
+The gauge transformed Lagrangian is
+\begin{dmath}\label{eqn:gaugeLorentzSTA:40}
+\Lq = \inv{2} m v^2 + q A \cdot v/c + \frac{q v}{c} \cdot \grad \phi.
+\end{dmath}
+%We know that the Lorentz force equations are obtained from the first two terms, so need only consider the effects of the new \( \phi \) dependent term on the action.  
+Observe that
+\begin{dmath}\label{eqn:gaugeLorentzSTA:60}
+v \cdot \grad \phi
+=
+\frac{dx^\mu}{d\tau} \PD{x^\mu}{\phi}
+=
+\frac{d \phi}{d\tau},
+\end{dmath}
+which means that the action is transformed to
+\begin{dmath}\label{eqn:gaugeLorentzSTA:80}
+S
+\rightarrow S + \frac{q}{c} \int d\tau \frac{d\phi}{d\tau}
+= S + \frac{q}{c} \evalbar{\phi}{\Delta \tau}.
+\end{dmath}
+As the action is evaluated over the fixed interval \( \Delta \tau \), the gauge transformation only changes the action by a constant, so the equations of motion are unchanged.
+} % answer
+%}
+%%%\EndArticle
+%%\EndNoBibArticle
