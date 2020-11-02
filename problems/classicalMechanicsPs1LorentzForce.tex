@@ -6,7 +6,7 @@
 \makesubproblem{For the non-covariant electrodynamic Lorentz force Lagrangian.}{problem:classicalMechanicsPs1:1.1}{
 %
 \begin{equation}\label{eqn:classicalMechanicsPs1:40}
-\LL = \inv{2} m \Bv^2 + q \Bv \cdot \BA - q \phi,
+\Lq = \inv{2} m \Bv^2 + q \Bv \cdot \BA - q \phi,
 \end{equation}
 %
 derive the Lorentz force equation
@@ -40,18 +40,18 @@ show that the Lagrangian is invariant.
 In coordinates, employing summation convention, this Lagrangian is
 %
 \begin{equation}\label{eqn:classicalMechanicsPs1:60}
-\LL = \inv{2} m \xdot_j \xdot_j + q \xdot_j A_j - q \phi.
+\Lq = \inv{2} m \xdot_j \xdot_j + q \xdot_j A_j - q \phi.
 \end{equation}
 %
 Taking derivatives
 %
 \begin{equation}\label{eqn:classicalMechanicsPs1:80}
-\PD{\xdot_i}{\LL} = m \xdot_i + q A_i,
+\PD{\xdot_i}{\Lq} = m \xdot_i + q A_i,
 \end{equation}
 %
 \begin{equation}\label{eqn:classicalMechanicsPs1:540}
 \begin{aligned}
-\frac{d}{dt} \PD{\xdot_i}{\LL}
+\frac{d}{dt} \PD{\xdot_i}{\Lq}
 &=
 m \ddot{x}_i
 + q \PD{t}{A_i}
@@ -66,7 +66,7 @@ m \ddot{x}_i
 This must equal
 %
 \begin{equation}\label{eqn:classicalMechanicsPs1:100}
-\PD{x_i}{\LL} = q \xdot_j \PD{x_i}{A_j} - q \PD{x_i}{\phi},
+\PD{x_i}{\Lq} = q \xdot_j \PD{x_i}{A_j} - q \PD{x_i}{\phi},
 \end{equation}
 %
 so we have
@@ -131,7 +131,7 @@ v_j A_j - \phi - v_j \partial_j \chi - \PD{t}{\chi} \\
 We see then that the Lagrangian transforms as
 %
 \begin{equation}\label{eqn:classicalMechanicsPs1:160}
-\LL \rightarrow \LL + \frac{d}{dt}\left( -q \chi \right),
+\Lq \rightarrow \Lq + \frac{d}{dt}\left( -q \chi \right),
 \end{equation}
 %
 and differs only by a total derivative.  With the lemma from the lecture, we see that this gauge transformation does not have any effect on the end result of applying the Euler-Lagrange equations.

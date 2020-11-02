@@ -5,11 +5,11 @@
 \makeoproblem{Alternate Lagrangian.}{tongmf1:pr2}{\citep{TongMf1} p2.}{
 %
 %\begin{equation*}
-%\LL = \inv{12}m^2 \xdot^4 - m \xdot^2 V + V^2.
+%\Lq = \inv{12}m^2 \xdot^4 - m \xdot^2 V + V^2.
 %\end{equation*}
 %
 %\begin{align*}
-%\frac{\partial L}{\partial x} &= \frac{d}{dt} \frac{\partial L}{\partial \xdot} \\
+%\frac{\partial \Lq}{\partial x} &= \frac{d}{dt} \frac{\partial \Lq}{\partial \xdot} \\
 %-m \xdot^2 V_x + 2V V_x &= \frac{d}{dt} \left( \inv{3}m^2 \xdot^3 - 2 m \xdot V \right) \\
 %                        &= m^2 \xdot^2 \xddot - 2m \xddot V \\
 %-(m \xdot^2 -2V) V_x    &= m \xddot (m \xdot^2 - 2 V) \\
@@ -27,7 +27,7 @@
 %dependence on \(t\), \(x = x(t)\), so \(dV/dt = dV/dx dx/dt\).
 %
 \begin{equation}
-\LL = \inv{12}m^2 \xdot^4 + m \xdot^2 V - V^2.
+\Lq = \inv{12}m^2 \xdot^4 + m \xdot^2 V - V^2.
 \end{equation}
 }
 %
@@ -37,7 +37,7 @@ Digging in
 %
 \begin{equation}\label{eqn:tongMf1:100}
 \begin{aligned}
-\frac{\partial L}{\partial x} &= \frac{d}{dt} \frac{\partial L}{\partial \xdot} \\
+\frac{\partial \Lq}{\partial x} &= \frac{d}{dt} \frac{\partial \Lq}{\partial \xdot} \\
 m \xdot^2 V_x - 2V V_x &= \frac{d}{dt} \left( \inv{3}m^2 \xdot^3 + 2 m \xdot V \right) .
 \end{aligned}
 \end{equation}
@@ -50,7 +50,7 @@ Take an example, such as \(V = mgx\), where the positional parameter is dependen
 \end{equation}
 %
 Perhaps that is obvious, but I made that mistake first doing this problem (which would have been harder to make if I had used an example potential) the first time.  I subsequently constructed an alternate Lagrangian
-\(\lr{ \LL = \inv{12}m^2 \xdot^4 - m \xdot^2 V + V^2 }\)
+\(\lr{ \Lq = \inv{12}m^2 \xdot^4 - m \xdot^2 V + V^2 }\)
 that worked when this mistake was made, and emailed the author suggesting that I believed he had a sign typo in his problem set.
 %
 Anyways, continuing with the calculation:
@@ -76,12 +76,12 @@ m \xddot = -V_x.
 This is what we would get for our standard kinetic and position dependent Lagrangian too:
 %
 \begin{equation}\label{eqn:tongMf1:1080}
-\LL = \inv{2}m \xdot^2 - V.
+\Lq = \inv{2}m \xdot^2 - V.
 \end{equation}
 %
 \begin{equation}\label{eqn:tongMf1:140}
 \begin{aligned}
-\frac{\partial L}{\partial x} &= \frac{d}{dt} \frac{\partial L}{\partial \xdot} \\
+\frac{\partial \Lq}{\partial x} &= \frac{d}{dt} \frac{\partial \Lq}{\partial \xdot} \\
 -V_x &= \frac{d (m \xdot) }{dt} \\
 -V_x &= m \xddot.
 \end{aligned}

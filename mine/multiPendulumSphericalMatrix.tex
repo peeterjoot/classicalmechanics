@@ -218,7 +218,7 @@ S_\phi S_\theta \\
 The Lagrangian for the pendulum is then
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:251}
-\LL = \inv{2} m l \dot{\rcap}^T \dot{\rcap} - m g l C_\theta.
+\Lq = \inv{2} m l \dot{\rcap}^T \dot{\rcap} - m g l C_\theta.
 \end{equation}
 %
 This is somewhat unsatisfying since the unit vector derivatives have not been evaluated.  Doing so we get
@@ -272,7 +272,7 @@ Our Lagrangian now takes the explicit form
 \begin{subequations}
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:251b}
 \begin{aligned}
-\LL &= \inv{2} m l \Omega^\T A A^\T \Omega - m g l C_\theta \\
+\Lq &= \inv{2} m l \Omega^\T A A^\T \Omega - m g l C_\theta \\
 A A^\T &=
 \begin{bmatrix}
 1 & 0 \\
@@ -628,7 +628,7 @@ K &= \inv{2} \dot{\Theta}^\T Q \dot{\Theta} \\
 \mu_k &= \sum_{j=k}^N m_j \\
 \Phi &=
 g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
-\LL &= K - \Phi.
+\Lq &= K - \Phi.
 \end{aligned}
 \end{equation}
 %
@@ -700,7 +700,7 @@ g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
 %%%\dot{\BTheta} \\
 %%%\Phi &=
 %%%g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
-%%%\LL &= K - \Phi.
+%%%\Lq &= K - \Phi.
 %%%\end{aligned}
 %%%\end{equation}
 %%%\end{subequations}
@@ -747,24 +747,24 @@ It will be convenient to group the Euler-Lagrange equations into a column vector
 \dot{\Bq}         \equiv {\begin{bmatrix} \dot{q}_r \end{bmatrix}}_r
 \end{dmath}
 \begin{dmath}
-\grad_{\Bq} \LL   \equiv {\begin{bmatrix} \PD{q_r}{\LL} \end{bmatrix}}_r
+\grad_{\Bq} \Lq   \equiv {\begin{bmatrix} \PD{q_r}{\Lq} \end{bmatrix}}_r
 \end{dmath}
 \begin{dmath}
-\grad_{\dot{\Bq}} \LL   \equiv {\begin{bmatrix} \PD{\dot{q}_r}{\LL} \end{bmatrix}}_r.
+\grad_{\dot{\Bq}} \Lq   \equiv {\begin{bmatrix} \PD{\dot{q}_r}{\Lq} \end{bmatrix}}_r.
 \end{dmath}
 \end{subequations}
 %
 In this form the Euler-Lagrange equations take the form of a single vector equation
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:240}
-\grad_{\Bq} \LL   = \frac{d}{dt} \grad_{\dot{\Bq}} \LL.
+\grad_{\Bq} \Lq   = \frac{d}{dt} \grad_{\dot{\Bq}} \Lq.
 \end{equation}
 %
 We are now set to evaluate these generalized phase space gradients.  For the acceleration terms our computation reduces nicely to a function of only \(\gpgradezeroNoOp{Q}\)
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:620}
 \begin{aligned}
-\frac{d}{dt} \PD{\dot{\theta}_a}{\LL}
+\frac{d}{dt} \PD{\dot{\theta}_a}{\Lq}
 &=
 \inv{2} \frac{d}{dt}
 \left(
@@ -794,7 +794,7 @@ and
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:640}
 \begin{aligned}
-\frac{d}{dt} \PD{\dot{\phi}_a}{\LL}
+\frac{d}{dt} \PD{\dot{\phi}_a}{\Lq}
 &=
 \inv{2} \frac{d}{dt}
 \left(
@@ -824,11 +824,11 @@ The last groupings above made use of \(\gpgradezeroNoOp{Q} = \gpgradezeroNoOp{Q}
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:460}
 \begin{aligned}
-\grad_{\dot{\BTheta}} \LL =
+\grad_{\dot{\BTheta}} \Lq =
 {\begin{bmatrix}
 \begin{bmatrix}
-\PD{\dot{\theta}_r}{\LL} \\
-\PD{\dot{\phi}_r}{\LL} \\
+\PD{\dot{\theta}_r}{\Lq} \\
+\PD{\dot{\phi}_r}{\Lq} \\
 \end{bmatrix}
 \end{bmatrix}}_r = \gpgradezeroNoOp{Q} \dot{\BTheta}.
 \end{aligned}
@@ -837,7 +837,7 @@ The last groupings above made use of \(\gpgradezeroNoOp{Q} = \gpgradezeroNoOp{Q}
 A small aside on Hamiltonian form.  This velocity gradient is also the conjugate momentum of the Hamiltonian, so if we wish to express the Hamiltonian in terms of conjugate momenta, we require invertability of \(\gpgradezeroNoOp{Q}\) at the point in time that we evaluate things.  Writing
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:470}
-P_{\BTheta} = \grad_{\dot{\BTheta}} \LL,
+P_{\BTheta} = \grad_{\dot{\BTheta}} \Lq,
 \end{equation}
 %
 and noting that \((\gpgradezeroNoOp{Q}^{-1})^\T = \gpgradezeroNoOp{Q}^{-1}\), we get for the kinetic energy portion of the Hamiltonian
@@ -868,8 +868,8 @@ Returning to the evaluation of the Euler-Lagrange equations, the problem is now 
 \frac{d}{dt} \left( \gpgradezeroNoOp{Q} \dot{\BTheta} \right) =
 {\begin{bmatrix}
 \begin{bmatrix}
-\PD{\theta_r}{\LL} \\
-\PD{\phi_r}{\LL} \\
+\PD{\theta_r}{\Lq} \\
+\PD{\phi_r}{\Lq} \\
 \end{bmatrix}
 \end{bmatrix}}_r.
 \end{aligned}
@@ -879,7 +879,7 @@ With back substitution of \eqnref{eqn:multiPendulumSphericalMatrix:430}, and \eq
 %
 \begin{subequations}
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:510}
-\PD{\theta_a}{\LL}
+\PD{\theta_a}{\Lq}
 =
 \inv{2} \dot{\BTheta}^\T
 {\begin{bmatrix}
@@ -892,7 +892,7 @@ With back substitution of \eqnref{eqn:multiPendulumSphericalMatrix:430}, and \eq
 -g \mu_a l_a \sin\theta_a,
 \end{equation}
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:520}
-\PD{\phi_a}{\LL}
+\PD{\phi_a}{\Lq}
 =
 \inv{2} \dot{\BTheta}^\T
 {\begin{bmatrix}
@@ -924,13 +924,13 @@ So to proceed we must consider the \(\gpgradezeroNoOp{A_r A_c^\T}\) partials.  A
 %\end{aligned}
 \end{equation}
 %
-Observe that the diagonal term has a scalar plus its transpose, so we can drop the one half factor and one of the summands for a total contribution to \(\PDi{\theta_2}{\LL}\) of just
+Observe that the diagonal term has a scalar plus its transpose, so we can drop the one half factor and one of the summands for a total contribution to \(\PDi{\theta_2}{\Lq}\) of just
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:660}
 \mu_2 {l_2}^2 {\dot{\BTheta}_2}^\T \gpgradezeroNoOp{\PD{\theta_2}{A_2} A_2^\T} \dot{\BTheta}_2.
 \end{equation}
 %
-Now consider one of the pairs of off diagonal terms.  Adding these contributions to \(\PDi{\theta_2}{\LL}\) of
+Now consider one of the pairs of off diagonal terms.  Adding these contributions to \(\PDi{\theta_2}{\Lq}\) of
 %
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:680}
 \inv{2} \mu_2 l_1 l_2
@@ -961,7 +961,7 @@ A_1 \PD{\theta_2}{A_2}^\T
 This has exactly the same form as the diagonal term, so summing over all terms we get for the position gradient components of the Euler-Lagrange equation just
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:540}
-\PD{\theta_a}{\LL}
+\PD{\theta_a}{\Lq}
 =
 \sum_{k}
 \mu_{\max(k,a)} l_k l_a
@@ -976,7 +976,7 @@ A_k \PD{\theta_a}{A_a}^\T
 and
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:550}
-\PD{\phi_a}{\LL}
+\PD{\phi_a}{\Lq}
 =
 \sum_{k}
 \mu_{\max(k,a)} l_k l_a
@@ -1027,7 +1027,7 @@ The right hand side of the Euler-Lagrange equations now becomes
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:580}
 \begin{aligned}
-\grad_{\BTheta} \LL =
+\grad_{\BTheta} \Lq =
 \sum_k
 {\begin{bmatrix}
 \begin{bmatrix}
@@ -1083,7 +1083,7 @@ K &=
 \dot{\BTheta} \\
 \Phi &=
 g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
-\LL &= K - \Phi.
+\Lq &= K - \Phi.
 \end{aligned}
 \end{equation}
 \end{subequations}
@@ -1091,7 +1091,7 @@ g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
 Evaluating the Euler-Lagrange equations for the system, we get
 %
 \begin{dmath}\label{eqn:multiPendulumSphericalMatrix:580s}
-0 = \grad_{\BTheta} \LL - \frac{d}{dt} \left(\grad_{\dot{\BTheta}} \LL \right) =
+0 = \grad_{\BTheta} \Lq - \frac{d}{dt} \left(\grad_{\dot{\BTheta}} \Lq \right) =
 \sum_k
 {\begin{bmatrix}
 \begin{bmatrix}

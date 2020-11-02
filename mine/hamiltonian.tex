@@ -19,27 +19,27 @@ Some notation will be invented along the way as reasonable, since I had like to 
 %
 \section{Hamiltonian as a conserved quantity.}
 %
-Starting with the Lagrangian formalism the Hamiltonian can be found as a conserved quantity associated with time translation when the Lagrangian has no explicit time dependence.  This follows directly by considering the time derivative of the Lagrangian \(\LL = \LL(q^i, \qdot^i)\).
+Starting with the Lagrangian formalism the Hamiltonian can be found as a conserved quantity associated with time translation when the Lagrangian has no explicit time dependence.  This follows directly by considering the time derivative of the Lagrangian \(\Lq = \Lq(q^i, \qdot^i)\).
 %
 \begin{equation}\label{eqn:hamiltonian:63}
 \begin{aligned}
-\frac{d\LL}{dt}
-&= \PD{q^i}{\LL} \frac{dq^i}{dt} +\PD{\qdot^i}{\LL} \frac{d\qdot^i}{dt} \\
-&= \qdot^i \frac{d}{dt}\PD{\qdot^i}{\LL} +\PD{\qdot^i}{\LL} \frac{d\qdot^i}{dt} \\
-&= \frac{d}{dt} \left( \qdot^i \PD{\qdot^i}{\LL} \right).
+\frac{d\Lq}{dt}
+&= \PD{q^i}{\Lq} \frac{dq^i}{dt} +\PD{\qdot^i}{\Lq} \frac{d\qdot^i}{dt} \\
+&= \qdot^i \frac{d}{dt}\PD{\qdot^i}{\Lq} +\PD{\qdot^i}{\Lq} \frac{d\qdot^i}{dt} \\
+&= \frac{d}{dt} \left( \qdot^i \PD{\qdot^i}{\Lq} \right).
 \end{aligned}
 \end{equation}
 %
 We can therefore form the difference
 %
 \begin{equation}\label{eqn:hamiltonian:foo1}
-\frac{d}{dt} \left( \qdot^i \PD{\qdot^i}{\LL} -\LL \right) = 0,
+\frac{d}{dt} \left( \qdot^i \PD{\qdot^i}{\Lq} -\Lq \right) = 0,
 \end{equation}
 %
 and find that this quantity, labeled H, is a constant of motion for the system
 %
 \begin{equation}\label{eqn:hamiltonian:foo2}
-H \equiv \qdot^i \PD{\qdot^i}{\LL} -\LL = \text{constant}.
+H \equiv \qdot^i \PD{\qdot^i}{\Lq} -\Lq = \text{constant}.
 \end{equation}
 %
 We will see later that this constant is sometimes the total energy of the system.
@@ -47,16 +47,16 @@ We will see later that this constant is sometimes the total energy of the system
 The \(\qdot^i\) partials of the Lagrangian are called the canonical momentum conjugate to \(q^i\).  Quite a mouthful, so just canonical momenta seems like a good compromise.  We will write (reserving \(p^i = m q^i\) for the non-canonical momenta)
 %
 \begin{equation}\label{eqn:hamiltonian:foo2b}
-P_i \equiv \PD{\qdot^i}{\LL}.
+P_i \equiv \PD{\qdot^i}{\Lq}.
 \end{equation}
 %
 and note that these are the coordinates of a sort of velocity gradient of the Lagrangian.  We have seen these canonical momenta in velocity gradient form previously where it was noted that we could write the Euler-Lagrange equations in vector form in an orthonormal reciprocal frame space as
 %
 \begin{equation}\label{eqn:hamiltonian:foo9}
-\grad \LL = \frac{d}{dt} \grad_v \LL.
+\grad \Lq = \frac{d}{dt} \grad_v \Lq.
 \end{equation}
 %
-where \(\grad_v = e^i \partial \LL/\partial \xdot^i = e^i P_i\), \(\grad = e^i \partial/\partial x^i\), and \(x = e_i x^i\).
+where \(\grad_v = e^i \partial \Lq/\partial \xdot^i = e^i P_i\), \(\grad = e^i \partial/\partial x^i\), and \(x = e_i x^i\).
 %
 %Here we will be exploring phase space relationships where the position and velocity basis pairs are treated independently, but also will not have much requirement for direct use of the Euler Lagrange equations.
 %
@@ -65,7 +65,7 @@ where \(\grad_v = e^i \partial \LL/\partial \xdot^i = e^i P_i\), \(\grad = e^i \
 Following Jackson \citep{jackson1975cew} (section 12.1, relativistic Lorentz force Hamiltonian), this can be written in vector form if the velocity gradient, the vector sum of the momenta conjugate to the \(q^i\)'s is given its own symbol \(\BP\).  He writes
 %
 \begin{equation}\label{eqn:hamiltonian:foo3}
-H = \Bv \cdot \BP - \LL.
+H = \Bv \cdot \BP - \Lq.
 \end{equation}
 %
 This makes most sense when working in orthonormal coordinates, but can be generalized.  Suppose we introduce a pair of reciprocal frame basis for the generalized position and velocity coordinates, writing as vectors in configuration space
@@ -99,13 +99,13 @@ We can now define configuration space position and velocity gradients
 so the conjugate momenta in vector form is now
 %
 \begin{equation}\label{eqn:hamiltonian:foo7}
-P \equiv \grad_v \LL = f^i \PD{\qdot^i}{\LL}.
+P \equiv \grad_v \Lq = f^i \PD{\qdot^i}{\Lq}.
 \end{equation}
 %
 Our Hamiltonian takes the form
 %
 \begin{equation}\label{eqn:hamiltonian:foo8}
-H = v \cdot P - \LL.
+H = v \cdot P - \Lq.
 \end{equation}
 %
 \section{The Hamiltonian principle.}
@@ -113,7 +113,7 @@ H = v \cdot P - \LL.
 We want to take partials of \eqnref{eqn:hamiltonian:foo2} with respect to \(P_i\) and \(q^i\).  In terms of the canonical momenta we want to differentiate
 %
 \begin{equation}\label{eqn:hamiltonian:hoo1}
-H \equiv \qdot^i P_i -\LL(q^i, \qdot^i, t),
+H \equiv \qdot^i P_i -\Lq(q^i, \qdot^i, t),
 \end{equation}
 %
 for the \(P_i\) partial we have
@@ -127,8 +127,8 @@ and for the \(q^i\) partial
 \begin{equation}\label{eqn:hamiltonian:103}
 \begin{aligned}
 \PD{q^i}{H}
-&= -\PD{q^i}{\LL} \\
-&= - \frac{d}{dt} \PD{\qdot^i}{\LL}.
+&= -\PD{q^i}{\Lq} \\
+&= - \frac{d}{dt} \PD{\qdot^i}{\Lq}.
 \end{aligned}
 \end{equation}
 %
@@ -138,7 +138,7 @@ These two results taken together form what I believe is called the Hamiltonian p
 \begin{aligned}
 \PD{P_i}{H} &= \qdot^i \\
 \PD{q^i}{H} &= - \dot{P}_i \\
-P_i &= \PD{\qdot^i}{\LL}.
+P_i &= \PD{\qdot^i}{\Lq}.
 \end{aligned}
 \end{equation}
 %
@@ -149,14 +149,14 @@ A set of 2N first order equations equivalent to the second order Euler-Lagrange 
 dH &=
 \qdot^i dP_i
 + d\qdot^i P_i
-- dq^i \PD{q^i}{\LL}
-- d \qdot^i \PD{\qdot^i}{\LL}
-- dt \PD{t}{\LL} \\
+- dq^i \PD{q^i}{\Lq}
+- d \qdot^i \PD{\qdot^i}{\Lq}
+- dt \PD{t}{\Lq} \\
 &=
 \qdot^i dP_i
-+ d\qdot^i \left( P_i - \PD{\qdot^i}{\LL} \right)
-- dq^i \PD{q^i}{\LL}
-- dt \PD{t}{\LL} \\
++ d\qdot^i \left( P_i - \PD{\qdot^i}{\Lq} \right)
+- dq^i \PD{q^i}{\Lq}
+- dt \PD{t}{\Lq} \\
 &=
 \qdot^i dP_i
 - dq^i
@@ -164,8 +164,8 @@ dH &=
 [
    labelstyle={below of=m\themathLableNode, below of=m\themathLableNode}
 ]
-{\PD{q^i}{\LL}}{\(= dP_i/dt\)}
-- dt \PD{t}{\LL} .
+{\PD{q^i}{\Lq}}{\(= dP_i/dt\)}
+- dt \PD{t}{\Lq} .
 \end{aligned}
 \end{equation}
 %
@@ -184,7 +184,7 @@ allows the Hamiltonian equations to be picked off.
 \begin{aligned}
 \PD{P_i}{H} &= \qdot^i  \\
 \PD{q^i}{H} &= - \dot{P}_i  \\
-\PD{t}{H}   &= - \PD{t}{\LL}.
+\PD{t}{H}   &= - \PD{t}{\Lq}.
 \end{aligned}
 \end{equation}
 %
@@ -199,7 +199,7 @@ Now, that is just about the most abstract way we can start things off is not it?
 Our very simplest Lagrangian is that of one dimensional purely kinetic motion
 %
 \begin{equation}\label{eqn:hamiltonian:boo1}
-\LL = \inv{2} m v^2 = \inv{2} m \xdot^2.
+\Lq = \inv{2} m v^2 = \inv{2} m \xdot^2.
 \end{equation}
 %
 Our Hamiltonian is in this case just
@@ -349,7 +349,7 @@ Or just
 For the gravitational force \(F = - m g \zcap = - \spacegrad \phi\), we have \(\phi = m g z\), and a Lagrangian of
 %
 \begin{equation}\label{eqn:hamiltonian:roo1}
-\LL = \inv{2} m \Bv^2 - \phi = \inv{2} m \Bv^2 - m g z.
+\Lq = \inv{2} m \Bv^2 - \phi = \inv{2} m \Bv^2 - m g z.
 \end{equation}
 %
 Without velocity dependence the canonical momentum is the momentum \(m \Bv\), and our Hamiltonian is
@@ -493,7 +493,7 @@ I thought if I wrote this out how to solve \eqnref{eqn:hamiltonian:roo5} may be 
 Like the free particle, the harmonic oscillator is very tractable in a phase space representation.  For a restoring force \(F = - k x \xcap = -\spacegrad \phi\), we have \(\phi = k x^2/2\), and a Lagrangian of
 %
 \begin{equation}\label{eqn:hamiltonian:woo1}
-\LL = \inv{2} m \Bv^2 - \inv{2} k \Bx^2.
+\Lq = \inv{2} m \Bv^2 - \inv{2} k \Bx^2.
 \end{equation}
 %
 Our Hamiltonian is again just the total energy
@@ -922,7 +922,7 @@ In gravitational and electrostatic problems are forces are all functions of only
 The very simplest case is the two particle single dimensional Kinetic Lagrangian,
 %
 \begin{equation}\label{eqn:hamiltonian:noo1}
-\LL = \inv{2} m_1 {\rdot_1}^2 + \inv{2} m_2 {\rdot_2}^2.
+\Lq = \inv{2} m_1 {\rdot_1}^2 + \inv{2} m_2 {\rdot_2}^2.
 \end{equation}
 %
 With a change of variables
@@ -937,15 +937,15 @@ y &= r_2,
 and elimination of \(r_1\), and \(r_2\) we have
 %
 \begin{equation}\label{eqn:hamiltonian:noo3}
-\LL = \inv{2} m_1 (\ydot - \xdot)^2 + \inv{2} m_2 {\ydot}^2.
+\Lq = \inv{2} m_1 (\ydot - \xdot)^2 + \inv{2} m_2 {\ydot}^2.
 \end{equation}
 %
 We now need the conjugate momenta in terms of \(\xdot\) and \(\ydot\).  These are
 %
 \begin{equation}\label{eqn:hamiltonian:noo4}
 \begin{aligned}
-P_x &= \PD{\xdot}{\LL} = -m_1 (\ydot - \xdot) \\
-P_y &= \PD{\ydot}{\LL} = m_1 (\ydot - \xdot) + m_2 \ydot.
+P_x &= \PD{\xdot}{\Lq} = -m_1 (\ydot - \xdot) \\
+P_y &= \PD{\ydot}{\Lq} = m_1 (\ydot - \xdot) + m_2 \ydot.
 \end{aligned}
 \end{equation}
 %
@@ -1002,13 +1002,13 @@ Of these only \(\ydot\) and \(\ydot - \xdot\) are of interest and after a bit of
 From this we find the Lagrangian in terms of the conjugate momenta
 %
 \begin{equation}\label{eqn:hamiltonian:noo8}
-\LL = \inv{2 m_1} {P_x}^2 + \inv{2 m_2} (P_x + P_y)^2.
+\Lq = \inv{2 m_1} {P_x}^2 + \inv{2 m_2} (P_x + P_y)^2.
 \end{equation}
 %
 A quick check shows that \(P_x + P_y = m_2 \rdot_2\), and \(P_x = -m_1 \rdot_1\), so we have agreement with the original Lagrangian.  Generalizing to the three dimensional case is straightforward, and we have
 %
 \begin{equation}\label{eqn:hamiltonian:noo9}
-\LL = \inv{2} m_1 {\mathbf{\rdot}_1}^2 + \inv{2} m_2 {\mathbf{\rdot}_2}^2 - \phi(\Bx_1 - \Bx_2).
+\Lq = \inv{2} m_1 {\mathbf{\rdot}_1}^2 + \inv{2} m_2 {\mathbf{\rdot}_2}^2 - \phi(\Bx_1 - \Bx_2).
 \end{equation}
 %
 With
@@ -1023,14 +1023,14 @@ The 3D generalization of the above (following by adding indices then summing) be
 %
 \begin{equation}\label{eqn:hamiltonian:noo11}
 \begin{aligned}
-\BP_x &= \sigma_j \PD{\xdot^j}{\LL} = -m_1 (\mathbf{\ydot} - \mathbf{\xdot}) \\
-\BP_y &= \sigma_j \PD{\ydot^j}{\LL} = m_1 (\mathbf{\ydot} - \mathbf{\xdot}) + m_2 \mathbf{\ydot}.
+\BP_x &= \sigma_j \PD{\xdot^j}{\Lq} = -m_1 (\mathbf{\ydot} - \mathbf{\xdot}) \\
+\BP_y &= \sigma_j \PD{\ydot^j}{\Lq} = m_1 (\mathbf{\ydot} - \mathbf{\xdot}) + m_2 \mathbf{\ydot}.
 \end{aligned}
 \end{equation}
 %
 \begin{equation}\label{eqn:hamiltonian:noo12}
 \begin{aligned}
-\LL &= \inv{2 m_1} {\BP_x}^2 + \inv{2 m_2} (\BP_x + \BP_y)^2 - \phi(\Bx) \\
+\Lq &= \inv{2 m_1} {\BP_x}^2 + \inv{2 m_2} (\BP_x + \BP_y)^2 - \phi(\Bx) \\
 H &= \inv{2 m_1} {\BP_x}^2 + \inv{2 m_2} (\BP_x + \BP_y)^2 + \phi(\Bx).
 \end{aligned}
 \end{equation}
@@ -1101,14 +1101,14 @@ Guessing that the Lagrangian has a single term for the interaction potential
 %
 so that we have
 \begin{equation}\label{eqn:hamiltonian:moo3}
-\LL = \inv{2} m {\Bv_1}^2 +\inv{2} m {\Bv_2}^2 - \phi_{21}.
+\Lq = \inv{2} m {\Bv_1}^2 +\inv{2} m {\Bv_2}^2 - \phi_{21}.
 \end{equation}
 %
 We can evaluate the Euler-Lagrange equations and see if the result is consistent with the Newtonian force laws of \eqnref{eqn:hamiltonian:moo1}.  Suppose we write the coordinates of \(\Br_i\) as \({x^k}_i\).  There are then six Euler-Lagrange equations
 %
 \begin{equation}\label{eqn:hamiltonian:303}
 \begin{aligned}
-\PD{{x^j}_i}{\LL} &= \frac{d}{dt} \PD{{\dot{x}^j}_i}{\LL} \\
+\PD{{x^j}_i}{\Lq} &= \frac{d}{dt} \PD{{\dot{x}^j}_i}{\Lq} \\
 -\PD{{x^j}_i}{\phi_{21}} &= m_i {\ddot{x}^j}_i.
 \end{aligned}
 \end{equation}
@@ -1143,7 +1143,7 @@ which confirms the Lagrangian and potential guess and fixes the constant \(\kapp
 \begin{equation}\label{eqn:hamiltonian:moo5}
 \begin{aligned}
 \phi_{21} &= -\frac{G m_2 m_1 }{\Abs{\Br_2 - \Br_1}}  \\
-\LL &= \inv{2} m_1 {\Bv_1}^2 +\inv{2} m_2 {\Bv_2}^2 - \phi_{21} \\
+\Lq &= \inv{2} m_1 {\Bv_1}^2 +\inv{2} m_2 {\Bv_2}^2 - \phi_{21} \\
 H &= \inv{2 m_1} {\Bp_1}^2 +\inv{2 m_2} {\Bp_2}^2 + \phi_{21}.
 \end{aligned}
 \end{equation}
@@ -1157,7 +1157,7 @@ There is however an undesirable asymmetry to this expression, in particular a fo
 and form a scaled by two double summation over all pairs of potentials
 %
 \begin{equation}\label{eqn:hamiltonian:moo7}
-\LL = \sum_i \inv{2} m_i {\Bv_i}^2 - \inv{2} \sum_{i \ne j} \phi_{ij}.
+\Lq = \sum_i \inv{2} m_i {\Bv_i}^2 - \inv{2} \sum_{i \ne j} \phi_{ij}.
 \end{equation}
 %
 %Again since \(\), for this to have meaning an agreement to evaluate the Euler-Lagrange partials according to the following ``positive'' sense is required
@@ -1240,7 +1240,7 @@ FIXME: picture.  x-axis down, y-axis right.
 The bob speed for a stiff rod of length \(l\) is \((l \thetadot)^2\), and our potential is \(m g h = m g l (1 -\cos\theta)\).  The Lagrangian is therefore
 %
 \begin{equation}\label{eqn:hamiltonian:yoo2}
-\LL = \inv{2} m l^2 \thetadot^2 - mg l (1 -\cos\theta) .
+\Lq = \inv{2} m l^2 \thetadot^2 - mg l (1 -\cos\theta) .
 \end{equation}
 %
 The constant \(m g l\) term can be dropped, and our canonical momentum conjugate to \(\thetadot\) is \(p_\theta = m l^2 \thetadot\), so our Hamiltonian is
@@ -1759,21 +1759,21 @@ h = l (1 + \cos\theta).
 (measuring \(\theta\) down from the North pole as conventional).  The Lagrangian is therefore
 %
 \begin{equation}\label{eqn:hamiltonian:uoo2}
-\LL = \inv{2} m l^2 (\thetadot^2 + \sin^2\theta \phidot^2) - m g l (1 + \cos\theta).
+\Lq = \inv{2} m l^2 (\thetadot^2 + \sin^2\theta \phidot^2) - m g l (1 + \cos\theta).
 \end{equation}
 %
 We can drop the constant term, using the simpler Lagrangian
 %
 \begin{equation}\label{eqn:hamiltonian:uoo3}
-\LL = \inv{2} m l^2 (\thetadot^2 + \sin^2\theta \phidot^2) - m g l \cos\theta.
+\Lq = \inv{2} m l^2 (\thetadot^2 + \sin^2\theta \phidot^2) - m g l \cos\theta.
 \end{equation}
 %
 To express the Hamiltonian we need first the conjugate momenta, which are
 %
 \begin{equation}\label{eqn:hamiltonian:uoo4}
 \begin{aligned}
-P_\theta &= \PD{\thetadot}{\LL} = m l^2 \thetadot \\
-P_\phi &= \PD{\phidot}{\LL} = m l^2 \sin^2\theta \phidot.
+P_\theta &= \PD{\thetadot}{\Lq} = m l^2 \thetadot \\
+P_\phi &= \PD{\phidot}{\Lq} = m l^2 \sin^2\theta \phidot.
 \end{aligned}
 \end{equation}
 %
@@ -2051,7 +2051,7 @@ h_2 = l_1 (1 - \cos{\theta_1}) + l_2 (1 -\cos{\theta_2}).
 We now have the Lagrangian
 \begin{equation}\label{eqn:hamiltonian:voo9}
 \begin{aligned}
-\LL' &=
+\Lq' &=
 \inv{2} m_1 {l_1}^2 {\dot{\theta}_1}^2
 + \inv{2} m_2 \left(
 {l_1}^2 {\dot{\theta}_1}^2
@@ -2068,7 +2068,7 @@ m_2 g ( l_1 (1 - \cos{\theta_1}) + l_2 (1 -\cos{\theta_2}) ).
 Dropping constant terms (effectively choosing a difference reference point for the potential) and rearranging a bit, also writing \(M = m_1 + m_2\), we have the simpler Lagrangian
 %
 \begin{dmath}\label{eqn:hamiltonian:voo10}
-\LL =
+\Lq =
 \inv{2} M {l_1}^2 {\dot{\theta}_1}^2 + \inv{2} m_2 {l_2}^2 {\dot{\theta}_2}^2
 + m_2 l_1 l_2 {\dot{\theta}_1} {\dot{\theta}_2} \cos({\theta_1} - {\theta_2})
 +
@@ -2204,7 +2204,7 @@ l_1 e^{-i{\theta_1}} & l_2 e^{-i{\theta_2}}
 \end{equation}
 %
 \begin{equation}\label{eqn:hamiltonian:voo18}
-\LL =
+\Lq =
 \inv{2} \dot{\BTheta}^\T Q \dot{\BTheta}
 +
 M l_1 g \cos{\theta_1}
@@ -2222,7 +2222,7 @@ Q_k &=
 l_r l_s e^{i(\theta_r - \theta_s)}
 \end{bmatrix}}_{r,s \le k} \\
 \phi &= - g \sum_k l_k \cos\theta_k \sum_{j=k}^N m_j \\
-\LL &= K - \phi.
+\Lq &= K - \phi.
 \end{aligned}
 \end{equation}
 %
@@ -3286,7 +3286,7 @@ Wow, even to just write down the equations required to get a linear approximatio
 In \citep{jackson1975cew}, the Lagrangian for a charged particle is given as (12.9) as
 %
 \begin{equation}\label{eqn:hamiltonian:em1}
-\LL = -m c^2 \sqrt{1 - \Bu^2/c^2} + \frac{e}{c} \Bu \cdot \BA - e \Phi.
+\Lq = -m c^2 \sqrt{1 - \Bu^2/c^2} + \frac{e}{c} \Bu \cdot \BA - e \Phi.
 \end{equation}
 %
 Let us work in detail from this to the Lorentz force law and the Hamiltonian and from the Hamiltonian again to the Lorentz force law using the Hamiltonian equations.  We should get the same results in each case, and have enough details in doing so to render the text a bit more comprehensible.
@@ -3297,7 +3297,7 @@ We need the conjugate momenta for both the Euler-Lagrange evaluation and the Ham
 %
 \begin{equation}\label{eqn:hamiltonian:683}
 \begin{aligned}
-\PD{\dot{x}_i}{\LL}
+\PD{\dot{x}_i}{\Lq}
 &= - \inv{2} m c^2 \gamma (-2/c^2) \dot{x}_i + \frac{e}{c} A_i \\
 &= m \gamma \dot{x}_i + \frac{e}{c} A_i.
 \end{aligned}
@@ -3314,7 +3314,7 @@ In vector form the canonical momenta are then
 Completing the Euler-Lagrange equation evaluation is the calculation of
 %
 \begin{equation}\label{eqn:hamiltonian:em2b}
-\frac{d\BP}{dt} = \spacegrad \LL.
+\frac{d\BP}{dt} = \spacegrad \Lq.
 \end{equation}
 %
 On the left hand side we have
@@ -3326,7 +3326,7 @@ On the left hand side we have
 and on the right, with implied summation over repeated indices, we have
 %
 \begin{equation}\label{eqn:hamiltonian:em2r}
-\spacegrad \LL = \frac{e}{c} \Be_k (\Bu \cdot \partial_k \BA) - e \spacegrad \Phi.
+\spacegrad \Lq = \frac{e}{c} \Be_k (\Bu \cdot \partial_k \BA) - e \spacegrad \Phi.
 \end{equation}
 %
 Putting things together we have
@@ -3405,7 +3405,7 @@ That was an exercise previously attempting working the Tong Lagrangian problem s
 Having confirmed the by old fashioned Euler-Lagrange equation evaluation that our Lagrangian provides the desired equations of motion, let us now try it using the Hamiltonian approach.  First we need the Hamiltonian, which is nothing more than
 %
 \begin{equation}\label{eqn:hamiltonian:em10}
-H = \BP \cdot \Bu - \LL.
+H = \BP \cdot \Bu - \Lq.
 \end{equation}
 %
 However, in the Lagrangian and the dot product we have velocity terms that we must eliminate in favor of the canonical momenta.  The Hamiltonian remains valid in either form, but to apply the Hamiltonian equations we need \(H = H(\BP, \Bx)\), and not \(H = H(\Bu, \BP, \Bx)\).

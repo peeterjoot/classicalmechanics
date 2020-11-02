@@ -17,7 +17,7 @@
 Derive the Euler-Lagrange equations for
 %
 \begin{equation}
-\LL = \inv{2} \sum  g_{a b}(q_c) \qdot^a \qdot^b.
+\Lq = \inv{2} \sum  g_{a b}(q_c) \qdot^a \qdot^b.
 \end{equation}
 }
 %
@@ -32,17 +32,17 @@ g_{ab}(q^c) = g_{ab}( q^1, q^2, \ldots, q^N ) = g_{ab}(\Bq).
 So I think that a vector parameter reminder is helpful.
 %
 \begin{equation}\label{eqn:tongMf1:1000}
-\LL = \inv{2} \sum  g_{b c}(\Bq) \qdot^b \qdot^c,
+\Lq = \inv{2} \sum  g_{b c}(\Bq) \qdot^b \qdot^c,
 \end{equation}
 %
 \begin{equation}\label{eqn:tong_mf1:left}
-\PD{q^a}{\LL} = \inv{2} \sum \qdot^b \qdot^c \PD{q^a}{g_{b c}(\Bq)}.
+\PD{q^a}{\Lq} = \inv{2} \sum \qdot^b \qdot^c \PD{q^a}{g_{b c}(\Bq)}.
 \end{equation}
 %
 Now, proceed to calculate the generalize momentums:
 \begin{equation}\label{eqn:tongMf1:20}
 \begin{aligned}
-\PD{\qdot^a}{\LL}
+\PD{\qdot^a}{\Lq}
 &= \inv{2} \sum g_{b c}(\Bq) \PD{\qdot^a}{
 \lr{ \qdot^b \qdot^c }
 } \\
@@ -53,7 +53,7 @@ Now, proceed to calculate the generalize momentums:
 %
 For
 \begin{equation}\label{eqn:tong_mf1:right}
-\frac{d}{dt} \PD{\qdot^a}{\LL} = \sum \PD{q^d}{ g_{a b} } \qdot^d \qdot^b + g_{b a} \qddot^b.
+\frac{d}{dt} \PD{\qdot^a}{\Lq} = \sum \PD{q^d}{ g_{a b} } \qdot^d \qdot^b + g_{b a} \qddot^b.
 \end{equation}
 %
 Taking the difference of \eqnref{eqn:tong_mf1:left} and \eqnref{eqn:tong_mf1:right} we have:

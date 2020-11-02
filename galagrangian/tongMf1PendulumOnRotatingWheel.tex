@@ -51,7 +51,7 @@ Depending on whether one measures the potential up from the lowest potential poi
 Either way, combining the kinetic and potential terms, and dividing through by \(ml^2\) we have the Lagrangian of:
 %
 \begin{equation}\label{eqn:tongMf1:1540}
-\LL = \inv{2} \left( (R/l)^2 \dotalpha^2 + \dottheta^2 - 2 (R/l) \dotalpha \dottheta \sin( \alpha +\theta ) \right) + (g/l) \cos\theta.
+\Lq = \inv{2} \left( (R/l)^2 \dotalpha^2 + \dottheta^2 - 2 (R/l) \dotalpha \dottheta \sin( \alpha +\theta ) \right) + (g/l) \cos\theta.
 \end{equation}
 %
 \paragraph{Digression.  Reduction of the Lagrangian.}
@@ -61,7 +61,7 @@ Now, in Tong's solutions for this problem (which he emailed me since I questione
 Lagrangian above to be expressed as:
 %
 \begin{dmath}\label{eqn:tongMf1:1560}
-\LL =
+\Lq =
 \inv{2} \left( (R/l)^2 \omega^2 + \dottheta^2 \right)
 + \frac{d}{dt} ((R/l) \cos( \omega t + \theta )) + \omega (R/l) \sin(\omega t + \theta)
 + (g/l) \cos\theta.
@@ -74,40 +74,40 @@ but was a theorem in some texts.
 First consider the simple example of a Lagrangian with such a cosine derivative term added to it:
 %
 \begin{equation}\label{eqn:tongMf1:1580}
-\LL' = \LL + \frac{d}{dt} A \cos(\omega t + \theta).
+\Lq' = \Lq + \frac{d}{dt} A \cos(\omega t + \theta).
 \end{equation}
 %
 and compute the equations of motion from this:
 \begin{equation}\label{eqn:tongMf1:520}
 \begin{aligned}
 0
-&= \PD{\theta}{\LL'} - \frac{d}{dt}\left(\PD{\dottheta}{\LL'}\right) \\
-&= \PD{\theta}{\LL} - \frac{d}{dt}\left(\PD{\dottheta}{\LL}\right)
+&= \PD{\theta}{\Lq'} - \frac{d}{dt}\left(\PD{\dottheta}{\Lq'}\right) \\
+&= \PD{\theta}{\Lq} - \frac{d}{dt}\left(\PD{\dottheta}{\Lq}\right)
 + \PD{\theta}{} {\frac{d}{dt} A \cos(\omega t + \theta)}
 - \frac{d}{dt} \PD{\dottheta}{} \frac{d}{dt} A \cos(\omega t + \theta) \\
-&= \PD{\theta}{\LL} - \frac{d}{dt}\left(\PD{\dottheta}{\LL}\right)
+&= \PD{\theta}{\Lq} - \frac{d}{dt}\left(\PD{\dottheta}{\Lq}\right)
 - \PD{\theta}{} A \dottheta \sin(\omega t + \theta) +
 \frac{d}{dt} \PD{\dottheta}{} A \dottheta \sin(\omega t + \theta) \\
-&= \PD{\theta}{\LL} - \frac{d}{dt}\left(\PD{\dottheta}{\LL}\right)
+&= \PD{\theta}{\Lq} - \frac{d}{dt}\left(\PD{\dottheta}{\Lq}\right)
 - \PD{\theta}{} A \dottheta \sin(\omega t + \theta) + \frac{d}{dt} A \sin(\omega t + \theta) \\
-&= \PD{\theta}{\LL} - \frac{d}{dt}\left(\PD{\dottheta}{\LL}\right)
+&= \PD{\theta}{\Lq} - \frac{d}{dt}\left(\PD{\dottheta}{\Lq}\right)
 - A \dottheta \cos(\omega t + \theta) + A \dottheta \cos(\omega t + \theta) \\
-&= \PD{\theta}{\LL} - \frac{d}{dt}\left(\PD{\dottheta}{\LL}\right)  .
+&= \PD{\theta}{\Lq} - \frac{d}{dt}\left(\PD{\dottheta}{\Lq}\right)  .
 \end{aligned}
 \end{equation}
 %
 Now consider the general case, altering a Lagrangian by adding the time derivative of a positional dependent function:
 %
 \begin{equation}\label{eqn:tongMf1:1600}
-\LL' = \LL + \frac{df}{dt}.
+\Lq' = \Lq + \frac{df}{dt}.
 \end{equation}
 %
 and compute the equations of motion from this more generally altered function:
 \begin{equation}\label{eqn:tongMf1:540}
 \begin{aligned}
 0
-&= \PD{q^i}{\LL'} - \frac{d}{dt}\left(\PD{q^i}{\LL'}\right) \\
-&= \PD{q^i}{\LL} - \frac{d}{dt}\left(\PD{q^i}{\LL}\right)
+&= \PD{q^i}{\Lq'} - \frac{d}{dt}\left(\PD{q^i}{\Lq'}\right) \\
+&= \PD{q^i}{\Lq} - \frac{d}{dt}\left(\PD{q^i}{\Lq}\right)
 + \PD{q^i}{}\frac{df}{dt} - \frac{d}{dt} \PD{q^i}{} \frac{df}{dt} .
 \end{aligned}
 \end{equation}
@@ -136,12 +136,12 @@ change the equations of motion that the Lagrangian generates.
 Now, return to the Lagrangian for this problem, and compute the equations of motion.  Writing \(\mu = R/l\), we have:
 %
 \begin{equation}\label{eqn:tongMf1:1640}
-\LL = \inv{2} \left( \mu^2 \dotalpha^2 + \dottheta^2 - 2 \mu \dotalpha \dottheta \sin( \alpha +\theta ) \right) + (g/l) \cos\theta.
+\Lq = \inv{2} \left( \mu^2 \dotalpha^2 + \dottheta^2 - 2 \mu \dotalpha \dottheta \sin( \alpha +\theta ) \right) + (g/l) \cos\theta.
 \end{equation}
 %
 \begin{equation}\label{eqn:tongMf1:580}
 \begin{aligned}
-0 &= \frac{d}{dt}\PD{\dottheta} -\PD{\theta} \LL \\
+0 &= \frac{d}{dt}\PD{\dottheta} -\PD{\theta} \Lq \\
 &= \frac{d}{dt} \left(\dottheta - \mu \dotalpha \sin(\alpha + \theta)\right) + \mu \dotalpha \dottheta \cos(\alpha + \theta) + (g/l) \sin\theta \\
 &= \ddottheta - \mu \ddotalpha \sin(\alpha + \theta) - \mu \dotalpha \cos(\alpha + \theta) (\dotalpha + \dottheta) + \mu \dotalpha \dottheta \cos(\alpha + \theta) + (g/l) \sin\theta .
 \end{aligned}

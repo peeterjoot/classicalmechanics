@@ -15,9 +15,9 @@ Write
 %
 \begin{equation}\label{eqn:eulerLagrange:22}
 \begin{aligned}
-\LL &= \LL(q^i, \qdot^i, \lambda) \\
+\Lq &= \Lq(q^i, \qdot^i, \lambda) \\
 q^i &= \barq^i + n^i \\
-S &= \int_{\partial \lambda} \LL d\lambda.
+S &= \int_{\partial \lambda} \Lq d\lambda.
 \end{aligned}
 \end{equation}
 %
@@ -36,10 +36,10 @@ In this case the \(x^i\) take the values \(q^i\), and \(\qdot^i\), so the first
 order Lagrangian approximation requires summation over differential contributions for both sets of terms
 %
 \begin{equation}\label{eqn:euler_lagrange:linearizedLagrangian}
-\LL(q^i, \qdot^i, \lambda)
-\approx \LL(\barq^i, \barqdot^i, \lambda)
-+ \sum_i (\barq^i + n^i) \left. \PD{q^i}{\LL} \right\vert_{q^i = \barq^i}
-+ \sum_i (\barqdot^i + \ndot^i) \left. \PD{\qdot^i}{\LL} \right\vert_{q^i = \barq^i}.
+\Lq(q^i, \qdot^i, \lambda)
+\approx \Lq(\barq^i, \barqdot^i, \lambda)
++ \sum_i (\barq^i + n^i) \left. \PD{q^i}{\Lq} \right\vert_{q^i = \barq^i}
++ \sum_i (\barqdot^i + \ndot^i) \left. \PD{\qdot^i}{\Lq} \right\vert_{q^i = \barq^i}.
 \end{equation}
 %
 %Here subscript \(0\) represents evaluation of the integrals at \(q_j = \barq_j\),
@@ -49,27 +49,27 @@ Now form the action, and group the terms in fixed and variable sets
 %
 \begin{equation}\label{eqn:eulerLagrange:62}
 \begin{aligned}
-S &= \int \LL d\lambda \\
+S &= \int \Lq d\lambda \\
 &\approx
 \int d\lambda
 \left(
-\LL(\barq^i, \barqdot^i, \lambda)
-+ \sum_i \barq^i \left. \PD{q^i}{\LL} \right\vert_{q^i = \barq^i}
-+ \sum_i \barqdot^i \left. \PD{\qdot^i}{\LL} \right\vert_{q^i = \barq^i}
+\Lq(\barq^i, \barqdot^i, \lambda)
++ \sum_i \barq^i \left. \PD{q^i}{\Lq} \right\vert_{q^i = \barq^i}
++ \sum_i \barqdot^i \left. \PD{\qdot^i}{\Lq} \right\vert_{q^i = \barq^i}
 \right) \\
 &+
 \mathLabelBox{
 \sum_i \int d\lambda
 \left(
-n^i \left. \PD{q^i}{\LL} \right\vert_{q^i = \barq^i}
-+\ndot^i \left. \PD{\qdot^i}{\LL} \right\vert_{q^i = \barq^i}
+n^i \left. \PD{q^i}{\Lq} \right\vert_{q^i = \barq^i}
++\ndot^i \left. \PD{\qdot^i}{\Lq} \right\vert_{q^i = \barq^i}
 \right)
 }{\(\delta S\)}.
 \end{aligned}
 \end{equation}
 %
 For the optimal solution we want \(\delta S = 0\) for all possible paths \(n^i\).  Now do the integration by parts writing
-\(u' = \ndot^i\), and \(v = \partial \LL/{\partial \qdot^i}\)
+\(u' = \ndot^i\), and \(v = \partial \Lq/{\partial \qdot^i}\)
 %
 \begin{equation}\label{eqn:eulerLagrange:82}
 \int u' v = u v - \int u v'.
@@ -79,11 +79,11 @@ The action variation is then
 %
 \begin{equation}\label{eqn:eulerLagrange:102}
 \delta S =
-+ \sum_i \left. \left( n^i \PD{\qdot^i}{\LL} \right) \right\vert_{\partial \lambda}
++ \sum_i \left. \left( n^i \PD{\qdot^i}{\Lq} \right) \right\vert_{\partial \lambda}
 + \sum_i \int d\lambda n^i
 \left(
-\left. \PD{q^i}{\LL} \right\vert_{q^i = \barq^i}
--\frac{d}{d\lambda} \left. \PD{\qdot^i}{\LL} \right\vert_{q^i = \barq^i}
+\left. \PD{q^i}{\Lq} \right\vert_{q^i = \barq^i}
+-\frac{d}{d\lambda} \left. \PD{\qdot^i}{\Lq} \right\vert_{q^i = \barq^i}
 \right).
 \end{equation}
 %
@@ -91,7 +91,7 @@ The non-integral term is zero since by definition \(n^i = 0\) on the boundary of
 total variation to equal zero for all possible paths \(n^i\) one must have
 %
 \begin{equation}\label{eqn:euler_lagrange:eulerlag}
-\PD{q^i}{\LL} -\frac{d}{d\lambda} \PD{\qdot^i}{\LL} = 0.
+\PD{q^i}{\Lq} -\frac{d}{d\lambda} \PD{\qdot^i}{\Lq} = 0.
 \end{equation}
 %
 Evaluation of these derivatives at the optimal desired paths has been suppressed since these equations now define that path.
@@ -101,7 +101,7 @@ Evaluation of these derivatives at the optimal desired paths has been suppressed
 \citep{goldstein1951cm} calls the quantity \eqnref{eqn:euler_lagrange:eulerlag} the functional derivative
 %
 \begin{equation}\label{eqn:eulerLagrange:122}
-\frac{\delta S}{\delta q^i} = \PD{q^i}{\LL} -\frac{d}{d\lambda} \PD{\qdot^i}{\LL}.
+\frac{\delta S}{\delta q^i} = \PD{q^i}{\Lq} -\frac{d}{d\lambda} \PD{\qdot^i}{\Lq}.
 \end{equation}
 %
 (with higher order derivatives if the Lagrangian has dependencies on more than generalized position and velocity terms).  Goldstein's

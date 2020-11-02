@@ -27,7 +27,7 @@ first order derivatives, as well as the path parameter \(\lambda\).
 %
 \begin{equation}\label{eqn:eulerLagrange:162}
 \begin{aligned}
-\LL &= \LL(q^i, \qdot^i, \lambda) \\
+\Lq &= \Lq(q^i, \qdot^i, \lambda) \\
 q^i &= q^i(r^i(\lambda), \alpha).
 \end{aligned}
 \end{equation}
@@ -39,20 +39,20 @@ Application of the chain rule shows how to calculate the first order change
 of the Lagrangian with respect to the new parameter \(\alpha\).
 %
 \begin{equation}\label{eqn:euler_lagrange:nothFirstChain}
-\frac{d\LL}{d\alpha}
+\frac{d\Lq}{d\alpha}
 =
-\PD{q^i}{\LL} \PD{\alpha}{q^i}
-+\PD{\qdot^i}{\LL} \PD{\alpha}{\qdot^i}.
+\PD{q^i}{\Lq} \PD{\alpha}{q^i}
++\PD{\qdot^i}{\Lq} \PD{\alpha}{\qdot^i}.
 \end{equation}
 %
 If \(q^i\), and \(\qdot^i\) satisfy the Euler-Lagrange equations \eqnref{eqn:euler_lagrange:eulerlag}, then this can be written
 %
 \begin{equation}\label{eqn:euler_lagrange:noethchain}
-\frac{d\LL}{d\alpha}
+\frac{d\Lq}{d\alpha}
 =
-\left(\frac{d}{d\lambda} \PD{\qdot^i}{\LL}\right)
+\left(\frac{d}{d\lambda} \PD{\qdot^i}{\Lq}\right)
 \PD{\alpha}{q^i}
-+\PD{\qdot^i}{\LL} \PD{\alpha}{\qdot^i}.
++\PD{\qdot^i}{\Lq} \PD{\alpha}{\qdot^i}.
 \end{equation}
 %
 If one additionally has
@@ -64,14 +64,14 @@ so that \(\PDi{\alpha}{q^i}\), and \(\PDi{\alpha}{\qdot^i}\) are dependent only
 on \(\lambda\), then \eqnref{eqn:euler_lagrange:noethchain} can be written as a total derivative
 %
 \begin{equation}\label{eqn:euler_lagrange:noethTotalDer}
-\frac{d\LL}{d\alpha} = \frac{d}{d\lambda} \left( \PD{\qdot^i}{\LL} \PD{\alpha}{q^i} \right).
+\frac{d\Lq}{d\alpha} = \frac{d}{d\lambda} \left( \PD{\qdot^i}{\Lq} \PD{\alpha}{q^i} \right).
 \end{equation}
 %
 If there is an \(\alpha\) dependence in these derivatives a weaker total derivative statement is still possible, by evaluating the
 Lagrangian derivative and \(\PDi{\alpha}{q^i}\) at some specific constant value of \(\alpha\).  This is
 %
 \begin{equation}\label{eqn:eulerLagrange:202}
-\left.\frac{d\LL}{d\alpha}\right\vert_{\alpha = \alpha_0} = \frac{d}{d\lambda} \left( \PD{\qdot^i}{\LL} \left.\PD{\alpha}{q^i}\right\vert_{\alpha = \alpha_0} \right).
+\left.\frac{d\Lq}{d\alpha}\right\vert_{\alpha = \alpha_0} = \frac{d}{d\lambda} \left( \PD{\qdot^i}{\Lq} \left.\PD{\alpha}{q^i}\right\vert_{\alpha = \alpha_0} \right).
 \end{equation}
 %
 %
@@ -85,22 +85,22 @@ Given this type of transformation we can write
 \eqnref{eqn:euler_lagrange:noethTotalDer} as
 %
 \begin{equation}\label{eqn:euler_lagrange:ham1}
-\frac{d\LL}{d\lambda} = \frac{d}{d\lambda} \left( \PD{\qdot^i}{\LL} \PD{\lambda}{q^i} \right).
+\frac{d\Lq}{d\lambda} = \frac{d}{d\lambda} \left( \PD{\qdot^i}{\Lq} \PD{\lambda}{q^i} \right).
 \end{equation}
 %
 For this to be valid in this \(\alpha = \lambda\) case, note that the Lagrangian
 itself may not be explicitly dependent on the parameter \(\lambda\).  Such a dependence would mean that \eqnref{eqn:euler_lagrange:nothFirstChain}
-would require an additional \(\PDi{\lambda}{\LL}\) term.
+would require an additional \(\PDi{\lambda}{\Lq}\) term.
 
 The difference of the \eqnref{eqn:euler_lagrange:ham1} terms is called the Hamiltonian \(H\)
 %
 \begin{equation}\label{eqn:eulerLagrange:222}
-\frac{dH}{d\lambda} = \frac{d}{d\lambda} \left( \PD{\qdot^i}{\LL} \qdot^i - \frac{d\LL}{d\lambda} \right) = 0 .
+\frac{dH}{d\lambda} = \frac{d}{d\lambda} \left( \PD{\qdot^i}{\Lq} \qdot^i - \frac{d\Lq}{d\lambda} \right) = 0 .
 \end{equation}
 %
 Up to a constant
 \begin{equation}\label{eqn:eulerLagrange:242}
-H = \PD{\qdot^i}{\LL} \qdot^i - \frac{d\LL}{d\lambda},
+H = \PD{\qdot^i}{\Lq} \qdot^i - \frac{d\Lq}{d\lambda},
 \end{equation}
 %
 the Hamiltonian is a conserved quantity when the Lagrangian has no explicit \(\lambda\) dependence.
@@ -115,25 +115,25 @@ Write
 \begin{equation}\label{eqn:eulerLagrange:262}
 \begin{aligned}
 q &\rightarrow q' = f(q, \alpha) \\
-\LL(q, \qdot, \lambda) &\rightarrow \LL' = \LL(q', \qdot', \lambda) = \LL(f, \fdot, \lambda).
+\Lq(q, \qdot, \lambda) &\rightarrow \Lq' = \Lq(q', \qdot', \lambda) = \Lq(f, \fdot, \lambda).
 \end{aligned}
 \end{equation}
 %
 Now as before consider the derivative
 %
 \begin{equation}\label{eqn:euler_lagrange:noethtmp1}
-\DD{\alpha}{\LL'} = \PD{f}{\LL} \PD{\alpha}{f} + \PD{\fdot}{\LL} \PD{\alpha}{\fdot}.
+\DD{\alpha}{\Lq'} = \PD{f}{\Lq} \PD{\alpha}{f} + \PD{\fdot}{\Lq} \PD{\alpha}{\fdot}.
 \end{equation}
 %
 In terms of the transformed coordinates the Euler-Lagrange equations require
 %
 \begin{equation}\label{eqn:eulerLagrange:282}
-\PD{f}{\LL} = \frac{d}{d\lambda} \PD{\fdot}{\LL},
+\PD{f}{\Lq} = \frac{d}{d\lambda} \PD{\fdot}{\Lq},
 \end{equation}
 %
 and back-substitution into \eqnref{eqn:euler_lagrange:noethtmp1} gives
 \begin{equation}\label{eqn:euler_lagrange:noethtmp2}
-\DD{\alpha}{\LL'} = \frac{d}{d\lambda} \left( \PD{\fdot}{\LL} \right) \PD{\alpha}{f} + \PD{\fdot}{\LL} \PD{\alpha}{\fdot}.
+\DD{\alpha}{\Lq'} = \frac{d}{d\lambda} \left( \PD{\fdot}{\Lq} \right) \PD{\alpha}{f} + \PD{\fdot}{\Lq} \PD{\alpha}{\fdot}.
 \end{equation}
 %
 This can be written as a total derivative if
@@ -159,23 +159,23 @@ and also that \(\alphadot\) is not a function of \(\alpha\)
 %
 we have from \eqnref{eqn:euler_lagrange:noethtmp2}
 \begin{equation}\label{eqn:eulerLagrange:362}
-\DD{\alpha}{\LL'}
-= \frac{d}{d\lambda} \left( \PD{\fdot}{\LL} \PD{\alpha}{f} \right) .
+\DD{\alpha}{\Lq'}
+= \frac{d}{d\lambda} \left( \PD{\fdot}{\Lq} \PD{\alpha}{f} \right) .
 \end{equation}
 %
 This is
 \begin{equation}\label{eqn:eulerLagrange:382}
-\DD{\alpha}{\LL'}
-= \frac{d}{d\lambda} \left( \PD{\qdot'}{\LL} \PD{\alpha}{q'} \right).
+\DD{\alpha}{\Lq'}
+= \frac{d}{d\lambda} \left( \PD{\qdot'}{\Lq} \PD{\alpha}{q'} \right).
 \end{equation}
 %
 The details of generalizing this to multiple variables are almost the same, but does not really add anything to the understanding.  This generalization is included as an appendix below for completeness, but the end result is
 %
 \begin{equation}\label{eqn:euler_lagrange:noethersgeneral}
-\DD{\alpha}{\LL'}
+\DD{\alpha}{\Lq'}
 = \frac{d}{d\lambda} \left( \sum_i
-\PD{ {{\dot{q'}}^i} }{\LL}
-%\PD{ {{\qdot}^i}' }{\LL}
+\PD{ {{\dot{q'}}^i} }{\Lq}
+%\PD{ {{\qdot}^i}' }{\Lq}
 \PD{\alpha}{{q^i}'} \right).
 \end{equation}
 %
@@ -183,7 +183,7 @@ In words, when the transformed Lagrangian is symmetric (not a function of \(\alp
 inner quantity, a generalized momentum velocity product, is constant (conserved)
 %
 \begin{equation}\label{eqn:eulerLagrange:402}
-\sum_i \PD{{\dot{q'}^i}}{\LL} \PD{\alpha}{{q^i}'} = \text{constant}.
+\sum_i \PD{{\dot{q'}^i}}{\Lq} \PD{\alpha}{{q^i}'} = \text{constant}.
 \end{equation}
 %
 Transformations that leave the Lagrangian unchanged have this associated conserved quantity, which dimensionally, assuming a time parametrization, has units of
@@ -195,18 +195,18 @@ Note that it still does not quite match the multivector result from
 \citep{doran2003gap}, equation \(12.10\)
 %
 \begin{equation}\label{eqn:eulerLagrange:422}
-\left.\DD{\alpha}{\LL'}\right\vert_{\alpha=0}
+\left.\DD{\alpha}{\Lq'}\right\vert_{\alpha=0}
 = \frac{d}{dt} \sum_{i=1}^n \left(
-\PD{\alpha}{X_i'} \conj \partial_{\Xdot_i}{\LL}
+\PD{\alpha}{X_i'} \conj \partial_{\Xdot_i}{\Lq}
 \right) .
 \end{equation}
 %
 I believe there is a missing prime there, and it should read
 %
 \begin{equation}\label{eqn:eulerLagrange:442}
-\left.\DD{\alpha}{\LL'}\right\vert_{\alpha=0}
+\left.\DD{\alpha}{\Lq'}\right\vert_{\alpha=0}
 = \frac{d}{dt} \sum_{i=1}^n \left(
-\PD{\alpha}{X_i'} \conj \partial_{\Xdot_i'}{\LL}
+\PD{\alpha}{X_i'} \conj \partial_{\Xdot_i'}{\Lq}
 \right) .
 \end{equation}
 %
@@ -217,7 +217,7 @@ I believe there is a missing prime there, and it should read
 Before considering multivector Lagrangians, a step back to the simplest vector Lagrangian is in order
 %
 \begin{equation}\label{eqn:euler_lagrange:simpleKineticLagrangian}
-\LL = \inv{2}m \dot{\Bx} \cdot \dot{\Bx}.
+\Lq = \inv{2}m \dot{\Bx} \cdot \dot{\Bx}.
 \end{equation}
 %
 Writing \(\Bx(\lambda) = \overbar{\Bx} + \epsilon \Bn\), and using the variational technique directly the equation of motion for this unforced path should follow directly
@@ -260,9 +260,9 @@ used to express the gradient when operating in a non-orthonormal frame.
 In \eqnref{eqn:euler_lagrange:linearizedLagrangian}, the linear differential increment in the neighborhood of the optimal solution had the form
 %
 \begin{equation}\label{eqn:euler_lagrange:gradientMotivator}
-\Delta \LL =
-+ \sum_i (\barq^i + n^i) \left. \PD{q^i}{\LL} \right\vert_{q^i = \barq^i}
-+ \sum_i (\barqdot^i + \ndot^i) \left. \PD{\qdot^i}{\LL} \right\vert_{q^i = \barq^i}.
+\Delta \Lq =
++ \sum_i (\barq^i + n^i) \left. \PD{q^i}{\Lq} \right\vert_{q^i = \barq^i}
++ \sum_i (\barqdot^i + \ndot^i) \left. \PD{\qdot^i}{\Lq} \right\vert_{q^i = \barq^i}.
 \end{equation}
 %
 If one defines a configuration space position and velocity gradients respectively as
@@ -284,9 +284,9 @@ then the chain rule dictates the relationship between the configuration vector b
 particular, if we wish to write \eqnref{eqn:euler_lagrange:gradientMotivator} in terms of the configuration space gradients
 %
 \begin{equation}\label{eqn:eulerLagrange:582}
-\Delta \LL =
-(\overbar{\Bq} + \Bn) \cdot \left.\grad_\Bq \LL \right\vert_{\Bq = \overbar{\Bq}}
-+ (\dot{\overbar{\Bq}} + \dot{\Bn}) \cdot \left.\grad_{\dot{\Bq}} \LL \right\vert_{\dot{\Bq} = \dot{\overbar{\Bq}}}.
+\Delta \Lq =
+(\overbar{\Bq} + \Bn) \cdot \left.\grad_\Bq \Lq \right\vert_{\Bq = \overbar{\Bq}}
++ (\dot{\overbar{\Bq}} + \dot{\Bn}) \cdot \left.\grad_{\dot{\Bq}} \Lq \right\vert_{\dot{\Bq} = \dot{\overbar{\Bq}}}.
 \end{equation}
 %
 Then we must have a reciprocal relationship between the basis vector for the configuration space vectors \(e_i\), and the corresponding vectors
@@ -313,7 +313,7 @@ Note also that the size of this configuration space does not have to be the same
 by parts yields the Euler-Lagrange equations in a hybrid configuration space vector form
 %
 \begin{equation}\label{eqn:eulerLagrange:642}
-\grad_{\Bq} \LL = \frac{d}{d\lambda} \grad_{\dot{\Bq}} \LL.
+\grad_{\Bq} \Lq = \frac{d}{d\lambda} \grad_{\dot{\Bq}} \Lq.
 \end{equation}
 %
 When the configuration space equals the geometrical space being operated in (ie: generalized coordinates are regular old coordinates), this
@@ -346,7 +346,7 @@ The conservation of angular momentum case is more interesting.
 Suppose that one has a radial potential applied to a point particle
 %
 \begin{equation}\label{eqn:eulerLagrange:662}
-\LL = \inv{2}m \dot{\Bx}^2 - \phi(\Abs{\Bx}^k).
+\Lq = \inv{2}m \dot{\Bx}^2 - \phi(\Abs{\Bx}^k).
 \end{equation}
 %
 and apply a rotational transformation to the coordinates
@@ -371,8 +371,8 @@ Since \(\Abs{\Bx'} = \Abs{\Bx}\) the transformed Lagrangian is unchanged by any 
 Noether's equation \eqnref{eqn:euler_lagrange:noethersgeneral} takes the form
 %
 \begin{equation}\label{eqn:eulerLagrange:702}
-\PD{\theta}{\LL'}
-= \frac{d}{dt} \left( \PD{\theta}{\Bx'} \cdot \spacegrad_{\Bv'}{\LL} \right).
+\PD{\theta}{\Lq'}
+= \frac{d}{dt} \left( \PD{\theta}{\Bx'} \cdot \spacegrad_{\Bv'}{\Lq} \right).
 \end{equation}
 %
 Here the configuration space gradient is used to express the chain rule terms, picking the \R{3} standard basis vectors
@@ -458,16 +458,16 @@ blundering through it myself as done here was required to really see where it wa
 Consider a general kinetic form and a possibly velocity dependent potential
 %
 \begin{equation}\label{eqn:eulerLagrange:842}
-\LL = K - \phi = \inv{2} \sum_{ij} g_{ij} \qdot^i \qdot^j - \phi,
+\Lq = K - \phi = \inv{2} \sum_{ij} g_{ij} \qdot^i \qdot^j - \phi,
 \end{equation}
 %
 and form the Hamiltonian.  First calculate
 %
 \begin{equation}\label{eqn:eulerLagrange:862}
 \begin{aligned}
-\PD{\qdot^i}{\LL} &= m \sum_{j} g_{ij} \qdot^j - \PD{\qdot^i}{\phi} \\
+\PD{\qdot^i}{\Lq} &= m \sum_{j} g_{ij} \qdot^j - \PD{\qdot^i}{\phi} \\
 \implies \\
-\sum_i \qdot^i \PD{\qdot^i}{\LL}
+\sum_i \qdot^i \PD{\qdot^i}{\Lq}
 &= m \sum_{ij} g_{ij} \qdot^i \qdot^j - \sum_i \qdot^i \PD{\qdot^i}{\phi} \\
 &= 2 K - \sum_i \qdot^i \PD{\qdot^i}{\phi} \\
 .
@@ -498,7 +498,7 @@ As an example, consider the Lorentz force Lagrangian.  For
 proper velocity \(v\), four potential \(A\), and positive time metric signature \((\gamma_0)^2 = 1\), the Lorentz force Lagrangian is
 %
 \begin{equation}\label{eqn:euler_lagrange:lorentzforce}
-\LL = \inv{2}m v \cdot v + q A \cdot v/c.
+\Lq = \inv{2}m v \cdot v + q A \cdot v/c.
 \end{equation}
 %
 We therefore have
@@ -536,8 +536,8 @@ an arbitrarily parametrized coordinate worldline and their corresponding solutio
 \begin{equation}\label{eqn:eulerLagrange:1002}
 \begin{aligned}
 x &= x(\lambda) \\
-\LL &= \inv{2}m \frac{dx}{d\lambda} \cdot \frac{dx}{d\lambda} + q A \cdot \frac{dx}{d\lambda}/c \\
-\PD{\lambda}{\LL} &= \frac{d}{d\lambda} \PD{\lambda}{\LL}.
+\Lq &= \inv{2}m \frac{dx}{d\lambda} \cdot \frac{dx}{d\lambda} + q A \cdot \frac{dx}{d\lambda}/c \\
+\PD{\lambda}{\Lq} &= \frac{d}{d\lambda} \PD{\lambda}{\Lq}.
 \end{aligned}
 \end{equation}
 %
@@ -581,25 +581,25 @@ Employing a couple judicious regular expressions starting from the text for the 
 \begin{equation}\label{eqn:eulerLagrange:1042}
 \begin{aligned}
 q^i &\rightarrow {q^i}' = f^i(q^i, \alpha) \\
-\LL(q^i, \qdot^i, \lambda) &\rightarrow \LL' = \LL({q^i}', {\dot{q'}^i}, \lambda) = \LL(f^i, \fdot^i, \lambda).
+\Lq(q^i, \qdot^i, \lambda) &\rightarrow \Lq' = \Lq({q^i}', {\dot{q'}^i}, \lambda) = \Lq(f^i, \fdot^i, \lambda).
 \end{aligned}
 \end{equation}
 %
 Now as before consider the derivative
 %
 \begin{equation}\label{eqn:euler_lagrange:gnoethtmp1}
-\DD{\alpha}{\LL'} = \sum_i \PD{f^i}{\LL} \PD{\alpha}{f^i} + \PD{\fdot^i}{\LL} \PD{\alpha}{\fdot^i}.
+\DD{\alpha}{\Lq'} = \sum_i \PD{f^i}{\Lq} \PD{\alpha}{f^i} + \PD{\fdot^i}{\Lq} \PD{\alpha}{\fdot^i}.
 \end{equation}
 %
 In terms of the transformed coordinates the Euler-Lagrange equations require
 %
 \begin{equation}\label{eqn:eulerLagrange:1062}
-\PD{f^i}{\LL} = \frac{d}{d\lambda} \PD{\fdot^i}{\LL}.
+\PD{f^i}{\Lq} = \frac{d}{d\lambda} \PD{\fdot^i}{\Lq}.
 \end{equation}
 %
 and backsubstitution into \eqnref{eqn:euler_lagrange:gnoethtmp1} gives
 \begin{equation}\label{eqn:euler_lagrange:gnoethtmp2}
-\DD{\alpha}{\LL'} = \sum_i \frac{d}{d\lambda} \left( \PD{\fdot^i}{\LL} \right) \PD{\alpha}{f^i} + \PD{\fdot^i}{\LL} \PD{\alpha}{\fdot^i}.
+\DD{\alpha}{\Lq'} = \sum_i \frac{d}{d\lambda} \left( \PD{\fdot^i}{\Lq} \right) \PD{\alpha}{f^i} + \PD{\fdot^i}{\Lq} \PD{\alpha}{\fdot^i}.
 \end{equation}
 %
 This can be written as a total derivative if
@@ -625,8 +625,8 @@ and also that \(\alphadot\) is not a function of \(\alpha\)
 %
 we have from \eqnref{eqn:euler_lagrange:gnoethtmp2}
 \begin{equation}\label{eqn:eulerLagrange:1142}
-\DD{\alpha}{\LL'}
-= \frac{d}{d\lambda} \left( \sum_i \PD{\fdot^i}{\LL} \PD{\alpha}{f^i} \right) .
+\DD{\alpha}{\Lq'}
+= \frac{d}{d\lambda} \left( \sum_i \PD{\fdot^i}{\Lq} \PD{\alpha}{f^i} \right) .
 \end{equation}
 %
 QED.

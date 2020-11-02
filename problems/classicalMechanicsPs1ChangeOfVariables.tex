@@ -13,27 +13,27 @@
 %
 \makeoproblem{Change of coordinates.}{problem:classicalMechanicsPs1:3}{'12 phy356 ps1.3}{
 %
-Consider a Lagrangian \(\LL({q},{\qdot}) \equiv \LL(q_1,\cdots, q_N, \qdot_1,\cdots \qdot_N)\). Now change the coordinates to some
+Consider a Lagrangian \(\Lq({q},{\qdot}) \equiv \Lq(q_1,\cdots, q_N, \qdot_1,\cdots \qdot_N)\). Now change the coordinates to some
 new ones, e.g. let \(q_i = q_i(x_1,\cdots, x_N),i = 1 \cdots N\), or in short \(q_i = q_i({x})\). This defines a new
 Lagrangian:
 %
 \begin{equation}\label{eqn:classicalMechanicsPs1:480}
-\tilde{\LL}({x},{\xdot}) = \LL(q_1({x}),\cdots q_N({x}),\ddt{} q_1({x}),\cdots \ddt{} q_N({x})),
+\tilde{\Lq}({x},{\xdot}) = \Lq(q_1({x}),\cdots q_N({x}),\ddt{} q_1({x}),\cdots \ddt{} q_N({x})),
 \end{equation}
 %
-which is now a function of \(x_i\) and \(\xdot_i\). Show that the Euler-Lagrange equations for \(\LL({q},{\qdot})\):
+which is now a function of \(x_i\) and \(\xdot_i\). Show that the Euler-Lagrange equations for \(\Lq({q},{\qdot})\):
 %
 \begin{equation}\label{eqn:classicalMechanicsPs1:500}
-\frac{\partial \LL({q},{\qdot})}{\partial q_i} =
+\frac{\partial \Lq({q},{\qdot})}{\partial q_i} =
 \ddt{}
-\frac{\partial \LL({q},{\qdot})}{\partial \qdot_i},
+\frac{\partial \Lq({q},{\qdot})}{\partial \qdot_i},
 \end{equation}
 %
-imply that the Euler-Lagrange equations for \(\tilde{\LL}({x},{\xdot})\) hold (provided the change of variables \(q \rightarrow x\) is nonsingular):
+imply that the Euler-Lagrange equations for \(\tilde{\Lq}({x},{\xdot})\) hold (provided the change of variables \(q \rightarrow x\) is nonsingular):
 \begin{equation}\label{eqn:classicalMechanicsPs1:520}
-\frac{\partial \tilde{\LL}({x},{\xdot})}{\partial x_i} =
+\frac{\partial \tilde{\Lq}({x},{\xdot})}{\partial x_i} =
 \ddt{}
-\frac{\partial \tilde{\LL}({x},{\xdot})}{\partial \xdot_i}.
+\frac{\partial \tilde{\Lq}({x},{\xdot})}{\partial \xdot_i}.
 \end{equation}
 %
 The moral is that the action formalism is very convenient: one can write the Lagrangian in any set of coordinates; the Euler-Lagrange equations for the new coordinates can then be obtained by using the Lagrangian expressed in these coordinates.
@@ -66,32 +66,32 @@ so we have
 Computing the LHS of the Euler Lagrange equation we find
 %
 \begin{equation}\label{eqn:classicalMechanicsPs1:380}
-\PD{q_i}{\LL} =
-\PD{r_j}{\LL} \PD{q_i}{r_j}
-+\PD{\rdot_j}{\LL} \PD{q_i}{\rdot_j}.
+\PD{q_i}{\Lq} =
+\PD{r_j}{\Lq} \PD{q_i}{r_j}
++\PD{\rdot_j}{\Lq} \PD{q_i}{\rdot_j}.
 \end{equation}
 %
 For our RHS we start with
 %
 \begin{equation}\label{eqn:classicalMechanicsPs1:400}
-\PD{\qdot_i}{\LL}
+\PD{\qdot_i}{\Lq}
 =
-\PD{r_j}{\LL} \PD{\qdot_i}{r_j}
-+\PD{\rdot_j}{\LL} \PD{\qdot_i}{\rdot_j}
+\PD{r_j}{\Lq} \PD{\qdot_i}{r_j}
++\PD{\rdot_j}{\Lq} \PD{\qdot_i}{\rdot_j}
 =
-\PD{r_j}{\LL} \PD{\qdot_i}{r_j}
-+\PD{\rdot_j}{\LL} \PD{q_i}{r_j},
+\PD{r_j}{\Lq} \PD{\qdot_i}{r_j}
++\PD{\rdot_j}{\Lq} \PD{q_i}{r_j},
 \end{equation}
 %
 but \(\PDi{\qdot_i}{r_j} = 0\), so this is just
 %
 \begin{equation}\label{eqn:classicalMechanicsPs1:420}
-\PD{\qdot_i}{\LL}
+\PD{\qdot_i}{\Lq}
 =
-\PD{r_j}{\LL} \PD{\qdot_i}{r_j}
-+\PD{\rdot_j}{\LL} \PD{\qdot_i}{\rdot_j}
+\PD{r_j}{\Lq} \PD{\qdot_i}{r_j}
++\PD{\rdot_j}{\Lq} \PD{\qdot_i}{\rdot_j}
 =
-\PD{\rdot_j}{\LL} \PD{q_i}{r_j}.
+\PD{\rdot_j}{\Lq} \PD{q_i}{r_j}.
 \end{equation}
 %
 The Euler-Lagrange equations become
@@ -99,21 +99,21 @@ The Euler-Lagrange equations become
 \begin{equation}\label{eqn:classicalMechanicsPs1:660}
 \begin{aligned}
 0 &=
-\PD{r_j}{\LL} \PD{q_i}{r_j}
-+\PD{\rdot_j}{\LL} \PD{q_i}{\rdot_j}
+\PD{r_j}{\Lq} \PD{q_i}{r_j}
++\PD{\rdot_j}{\Lq} \PD{q_i}{\rdot_j}
 -
 \ddt{} \left(
-\PD{\rdot_j}{\LL} \PD{q_i}{r_j}
+\PD{\rdot_j}{\Lq} \PD{q_i}{r_j}
 \right) \\
 &=
-  \PD{r_j}{\LL} \PD{q_i}{r_j}
-+ \cancel{\PD{\rdot_j}{\LL} \PD{q_i}{\rdot_j}}
-- \left( \ddt{} \PD{\rdot_j}{\LL} \right) \PD{q_i}{r_j}
-- \cancel{\PD{\rdot_j}{\LL} \ddt{} \PD{q_i}{r_j} }
+  \PD{r_j}{\Lq} \PD{q_i}{r_j}
++ \cancel{\PD{\rdot_j}{\Lq} \PD{q_i}{\rdot_j}}
+- \left( \ddt{} \PD{\rdot_j}{\Lq} \right) \PD{q_i}{r_j}
+- \cancel{\PD{\rdot_j}{\Lq} \ddt{} \PD{q_i}{r_j} }
 \\
 &=
-\left( \PD{r_j}{\LL}
--\ddt{} \PD{\rdot_j}{\LL}
+\left( \PD{r_j}{\Lq}
+-\ddt{} \PD{\rdot_j}{\Lq}
 \right) \PD{q_i}{r_j}.
 \end{aligned}
 \end{equation}
@@ -127,6 +127,6 @@ Since we have an assumption that the transformation is non-singular, we have for
 so we have the Euler-Lagrange equations for the new abstract coordinates as well
 %
 \begin{equation}\label{eqn:classicalMechanicsPs1:460}
-0 = \PD{r_j}{\LL} -\ddt{} \PD{\rdot_j}{\LL}.
+0 = \PD{r_j}{\Lq} -\ddt{} \PD{\rdot_j}{\Lq}.
 \end{equation}
 } % end answer

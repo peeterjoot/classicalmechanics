@@ -7,7 +7,7 @@
 Various non-orthogonal coordinate treatments of the Lorentz force Lagrangian
 %
 \begin{equation*}
-\LL = \inv{2} m \Bv^2 -q \phi + q \Bv/c \cdot \BA,
+\Lq = \inv{2} m \Bv^2 -q \phi + q \Bv/c \cdot \BA,
 \end{equation*}
 %
 %derive the Lorentz force equation, and some other stuff.
@@ -37,25 +37,25 @@ We need the velocity to do so:
 Now, form the Lagrangian of a point particle with a non-velocity dependent potential:
 %
 \begin{equation}\label{eqn:tongMf1:1800}
-\LL = \inv{2} m \left(\zdot^2 + \rdot^2 + \left(r \dottheta\right)^2\right) - \phi.
+\Lq = \inv{2} m \left(\zdot^2 + \rdot^2 + \left(r \dottheta\right)^2\right) - \phi.
 \end{equation}
 %
 and calculate the equations of motion:
 \begin{equation}\label{eqn:tongMf1:680}
 \begin{aligned}
-\PD{z}\LL &= \left(\PD{\zdot}\LL\right)' \\
+\PD{z}\Lq &= \left(\PD{\zdot}\Lq\right)' \\
 -\PD{z}{\phi} &= \left(m\zdot\right)' .
 \end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:tongMf1:700}
 \begin{aligned}
-\PD{r}\LL &= \left(\PD{\rdot}\LL\right)' \\
+\PD{r}\Lq &= \left(\PD{\rdot}\Lq\right)' \\
 -\PD{r}{\phi} + m r \dottheta^2 &= \left(m\rdot\right)' .
 \end{aligned}
 \end{equation}
 \begin{equation}\label{eqn:tongMf1:720}
 \begin{aligned}
-\PD{\theta}\LL &= \left(\PD{\dottheta}\LL\right)' \\
+\PD{\theta}\Lq &= \left(\PD{\dottheta}\Lq\right)' \\
 -\PD{\theta}{\phi} &= \left(m r^2 \dottheta\right)' .
 \end{aligned}
 \end{equation}
@@ -116,7 +116,7 @@ FIXME: generalize this and prove to myself that angular momentum is conserved in
 The Lagrangian for this problem is:
 %
 \begin{equation}\label{eqn:tongMf1:1860}
-\LL = \inv{2} m \Bv^2 - e \BA \cdot \Bv.
+\Lq = \inv{2} m \Bv^2 - e \BA \cdot \Bv.
 \end{equation}
 %
 Given a cylindrical decomposition, our velocity is:
@@ -140,7 +140,7 @@ The specific potential for the problem, using \((z,\theta,r)\) coordinates is:
 %
 Therefore the Lagrangian is:
 \begin{equation}\label{eqn:tongMf1:1900}
-\LL = \inv{2} m \left(\zdot^2 + \rdot^2 +
+\Lq = \inv{2} m \left(\zdot^2 + \rdot^2 +
 \lr{ r\dottheta }^2
 \right) - e \frac{f(r)}{r} r \dottheta.
 \end{equation}
@@ -189,7 +189,7 @@ The potential for this problem is
 %
 Therefore the Lagrangian is:
 \begin{equation}\label{eqn:tongMf1:2020}
-\LL = \inv{2} m \left(\zdot^2 + \rdot^2 + (r\dottheta)^2\right) - e r^2 g(z) \dottheta.
+\Lq = \inv{2} m \left(\zdot^2 + \rdot^2 + (r\dottheta)^2\right) - e r^2 g(z) \dottheta.
 \end{equation}
 %
 Taking \(\theta, r, z\) derivatives:

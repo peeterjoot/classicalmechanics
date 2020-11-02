@@ -20,47 +20,47 @@ Let us continue studying the Lagrangian of Problem 1 of Homework 1, namely, its 
 Recall the argument for energy conservation, the result of considering time dependence of the Lagrangian.  We have
 %
 \begin{dmath}\label{eqn:classicalMechanicsPs2:370}
-\ddt{} \LL(q_i, \qdot_i, t)
+\ddt{} \Lq(q_i, \qdot_i, t)
 =
-\PD{q_i}{\LL} \PD{t}{q_i}
-+\PD{\qdot_i}{\LL} \PD{t}{\qdot_i}
-\PD{t}{\LL}
+\PD{q_i}{\Lq} \PD{t}{q_i}
++\PD{\qdot_i}{\Lq} \PD{t}{\qdot_i}
+\PD{t}{\Lq}
 =
-\left( \ddt{} \PD{\qdot_i}{\LL} \right) \PD{t}{q_i}
-+ \PD{\qdot_i}{\LL} \PD{t}{\qdot_i}
-+\PD{t}{\LL}
+\left( \ddt{} \PD{\qdot_i}{\Lq} \right) \PD{t}{q_i}
++ \PD{\qdot_i}{\Lq} \PD{t}{\qdot_i}
++\PD{t}{\Lq}
 =
-\ddt{} \left( \PD{\qdot_i}{\LL} \PD{t}{q_i} \right)
-+ \PD{t}{\LL}.
+\ddt{} \left( \PD{\qdot_i}{\Lq} \PD{t}{q_i} \right)
++ \PD{t}{\Lq}.
 \end{dmath}
 %
 Rearranging we have the conservation equation
 %
 \begin{dmath}\label{eqn:classicalMechanicsPs2:390}
-\ddt{} \left( \PD{\qdot_i}{\LL} \qdot_i -\LL \right) + \PD{t}{\LL} = 0.
+\ddt{} \left( \PD{\qdot_i}{\Lq} \qdot_i -\Lq \right) + \PD{t}{\Lq} = 0.
 \end{dmath}
 %
 We define the energy as
 %
 \boxedEquation{eqn:classicalMechanicsPs2:410}{
-\calE = \PD{\qdot_i}{\LL} \qdot_i -\LL,
+\calE = \PD{\qdot_i}{\Lq} \qdot_i -\Lq,
 }
 %
 so that the when the Lagrangian is independent of time \(\calE\) is conserved, and in general
 %
 \begin{equation}\label{eqn:classicalMechanicsPs2:430}
-\ddt{\calE} = - \PD{t}{\LL}.
+\ddt{\calE} = - \PD{t}{\Lq}.
 \end{equation}
 %
 Application to this problem where our Lagrangian is
 %
 \begin{dmath}\label{eqn:classicalMechanicsPs2:450}
-\LL = \inv{2} m \Bv^2 + q \Bv \cdot \BA - q \phi,
+\Lq = \inv{2} m \Bv^2 + q \Bv \cdot \BA - q \phi,
 \end{dmath}
 %
 we have
 \begin{dmath}\label{eqn:classicalMechanicsPs2:470}
-\PD{\Bv}{\LL} = m \Bv + q \BA.
+\PD{\Bv}{\Lq} = m \Bv + q \BA.
 \end{dmath}
 %
 so the energy is
@@ -110,7 +110,7 @@ Doing it explicitly as above is the hard way.  We can do it from the conservatio
 %
 \begin{dmath}\label{eqn:classicalMechanicsPs2:590}
 \ddt{\calE}
-= -\PD{t}{\LL}
+= -\PD{t}{\Lq}
 =
 -\PD{t}{} \left(
 \inv{2} m \Bv^2 + q \Bv \cdot \BA - q \phi
@@ -171,20 +171,20 @@ where \(\calE_{\mathrm{kin}} = \gamma m c^2\).  To first order, removing an addi
 The conserved momentum followed from a Noether's argument where we compute
 %
 \begin{dmath}\label{eqn:classicalMechanicsPs2:610}
-\frac{d\LL'}{d\epsilon}
+\frac{d\Lq'}{d\epsilon}
 =
-\PD{q_i}{\LL'} \PD{\epsilon}{q_i}
-+\PD{\qdot_i'}{\LL'} \PD{\epsilon}{\qdot_i'}
+\PD{q_i}{\Lq'} \PD{\epsilon}{q_i}
++\PD{\qdot_i'}{\Lq'} \PD{\epsilon}{\qdot_i'}
 =
-\left( \ddt{} \PD{\qdot_i}{\LL'} \right) \PD{\epsilon}{q_i}
-+\PD{\qdot_i'}{\LL'} \PD{\epsilon}{\qdot_i'}
+\left( \ddt{} \PD{\qdot_i}{\Lq'} \right) \PD{\epsilon}{q_i}
++\PD{\qdot_i'}{\Lq'} \PD{\epsilon}{\qdot_i'}
 =
-\ddt{} \left( \PD{\qdot_i'}{\LL'} \PD{\epsilon}{q_i'} \right),
+\ddt{} \left( \PD{\qdot_i'}{\Lq'} \PD{\epsilon}{q_i'} \right),
 \end{dmath}
 %
 where it has been assumed that a perturbed Lagrangian
 \begin{equation}\label{eqn:classicalMechanicsPs2:610a}
-\LL'(\epsilon) = \LL(q_i'(\epsilon), \qdot_i'(\epsilon), t),
+\Lq'(\epsilon) = \Lq(q_i'(\epsilon), \qdot_i'(\epsilon), t),
 \end{equation}
 also satisfies the Euler Lagrange equations using the transformed coordinates.
 With the coordinates transformed by a shift along some constant direction \(\Ba\) as in
@@ -196,16 +196,16 @@ With the coordinates transformed by a shift along some constant direction \(\Ba\
 we have \(\PDi{\epsilon}{\Bx'} = \Ba\), so \eqnref{eqn:classicalMechanicsPs2:610} takes the form
 %
 \begin{dmath}\label{eqn:classicalMechanicsPs2:650}
-\frac{d\LL'}{d\epsilon} = \ddt{} \left( \PD{\xdot_i}{\LL'} a_i \right).
+\frac{d\Lq'}{d\epsilon} = \ddt{} \left( \PD{\xdot_i}{\Lq'} a_i \right).
 \end{dmath}
 %
 Our shifted Lagrangian for spatially homogeneous potentials \(\phi' = \phi\) and \(\BA' = \BA\) is
 %
 \begin{dmath}\label{eqn:classicalMechanicsPs2:670}
-\LL' = \inv{2} m {\Bv'}^2 + q \Bv' \cdot \BA - q \phi = \LL,
+\Lq' = \inv{2} m {\Bv'}^2 + q \Bv' \cdot \BA - q \phi = \Lq,
 \end{dmath}
 %
-but \(\Bv' = \Bv\), so we've just got our canonical momentum \(\BM = \PDi{\xdot_i}{\LL}\) within the time derivative, and must have for all \(\Ba\)
+but \(\Bv' = \Bv\), so we've just got our canonical momentum \(\BM = \PDi{\xdot_i}{\Lq}\) within the time derivative, and must have for all \(\Ba\)
 %
 \begin{dmath}\label{eqn:classicalMechanicsPs2:690}
 \ddt{ \BM } \cdot \Ba = 0.
@@ -239,13 +239,13 @@ where \(j = \ucap \wedge \vcap\) is the geometric product of two perpendicular u
 The Noether conservation statement is then
 %
 \begin{dmath}\label{eqn:classicalMechanicsPs2:770}
-\frac{d\LL'}{d\epsilon} = \ddt{} \left( \PD{\xdot_i}{\LL'} \Be_i \cdot (\Bx' \cdot j) \right).
+\frac{d\Lq'}{d\epsilon} = \ddt{} \left( \PD{\xdot_i}{\Lq'} \Be_i \cdot (\Bx' \cdot j) \right).
 \end{dmath}
 %
 With a static scalar potential \(\phi(\Bx)\) is our Lagrangian rotation invariant?  We have
 %
 \begin{dmath}\label{eqn:classicalMechanicsPs2:790}
-\LL'
+\Lq'
 =
 \inv{2} {\Bv'}^2 - q \phi(\Bx')
 =

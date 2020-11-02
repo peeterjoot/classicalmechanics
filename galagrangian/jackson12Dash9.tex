@@ -24,7 +24,7 @@
 In \citep{jackson1975cew}, the non-covariant Lagrangian for the Lorentz equation is given as
 %
 \begin{equation}\label{eqn:jacksonLorLag:foo1}
-L = - m c^2 \sqrt{1 -\Bu^2/c^2} + \frac{e}{c} \Bu \cdot \BA - e \phi.
+\Lq = - m c^2 \sqrt{1 -\Bu^2/c^2} + \frac{e}{c} \Bu \cdot \BA - e \phi.
 \end{equation}
 %
 Evaluate this to show that this 
@@ -34,17 +34,17 @@ produces the Lorentz force law.
 } % problem
 \makeanswer{problem:jackson12Dash9:1}{
 %
-Jackson gives a tip to use the convective derivative (yet another name for the chain rule), and using this in the Euler Lagrange equations we have
+Jackson gives a tip to use the convective derivative (yet another name for the chain rule), and using this in the Euler-Lagrange equations we have
 %
 \begin{equation}\label{eqn:jacksonLorLag:foo2}
-\spacegrad \LL = \frac{d}{dt} \spacegrad_\Bu \LL = \left( \frac{\partial}{\partial t} + \Bu \cdot \spacegrad \right) \Be_a \frac{\partial \LL}{\partial \xdot^a}.
+\spacegrad \Lq = \frac{d}{dt} \spacegrad_\Bu \Lq = \left( \frac{\partial}{\partial t} + \Bu \cdot \spacegrad \right) \Be_a \frac{\partial \Lq}{\partial \xdot^a}.
 \end{equation}
 %
 where \(\{\Be_a\}\) is the spatial basis.  The first order of business is calculating the gradient and conjugate momenta.  For the latter we have
 %
 \begin{equation}\label{eqn:jackson12Dash9:23}
 \begin{aligned}
-\Be_a \frac{\partial \LL}{\partial \xdot^a}
+\Be_a \frac{\partial \Lq}{\partial \xdot^a}
 &=
 \Be_a \left(- m c^2 \gamma \inv{2} (-2) \xdot^a/c^2 + \frac{e}{c} A^a \right) \\
 &=
@@ -57,7 +57,7 @@ Applying the convective derivative we have
 %
 \begin{equation}\label{eqn:jackson12Dash9:43}
 \frac{d}{dt}
-\Be_a \frac{\partial \LL}{\partial \xdot^a}
+\Be_a \frac{\partial \Lq}{\partial \xdot^a}
 =
 \frac{d\Bp}{dt}
 + \frac{e}{c} \frac{\partial \BA}{\partial t}
@@ -67,7 +67,7 @@ Applying the convective derivative we have
 For the gradient we have
 %
 \begin{equation}\label{eqn:jackson12Dash9:63}
-\Be_a \frac{\partial \LL}{\partial x^a} = e\left( \inv{c}\xdot^b \spacegrad A^b - \spacegrad \phi \right).
+\Be_a \frac{\partial \Lq}{\partial x^a} = e\left( \inv{c}\xdot^b \spacegrad A^b - \spacegrad \phi \right).
 \end{equation}
 %
 Rearranging \eqnref{eqn:jacksonLorLag:foo2} for this Lagrangian we have

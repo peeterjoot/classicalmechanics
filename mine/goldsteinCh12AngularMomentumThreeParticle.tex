@@ -49,7 +49,7 @@ This can be used to express each of the position vectors in terms of the \(\Brho
 Now, that is enough to specify the part of the Lagrangian from the potentials that act between all the particles
 %
 \begin{equation}\label{eqn:goldsteinCh12:1120}
-\LL_V = \sum -V_{ij} = g \left( e^{-\mu \Abs{\Brho_1}} + e^{-\mu \Abs{\Brho_2}} + e^{-\mu \Abs{ \Brho_1 - \Brho_2 }} \right).
+\Lq_V = \sum -V_{ij} = g \left( e^{-\mu \Abs{\Brho_1}} + e^{-\mu \Abs{\Brho_2}} + e^{-\mu \Abs{ \Brho_1 - \Brho_2 }} \right).
 \end{equation}
 %
 Now, we need to calculate the two \(U\) potential terms.  If we consider with positions \(\Br_1\), and \(\Br_2\) to be the ones
@@ -64,7 +64,7 @@ So, the potential parts of the Lagrangian are
 %So, for the second half of the Lagrangian we have:
 %
 \begin{equation}\label{eqn:goldsteinCh12:1160}
-\LL_{U+V} =
+\Lq_{U+V} =
 g \left( e^{-\mu \Abs{\Brho_1}} + e^{-\mu \Abs{\Brho_2}} + e^{-\mu \Abs{ \Brho_1 - \Brho_2 }} \right)
 + f \left(\BR - \inv{3}(\Brho_1 + \Brho_2) \right) \cdot \left( \dot{\Brho_1} + \dot{\Brho_2} \right).
 \end{equation}
@@ -91,7 +91,7 @@ The kinetic part (omitting the m/2 factor), in terms of the CM and relative vect
 So the Kinetic part of the Lagrangian is
 %
 \begin{equation}\label{eqn:goldsteinCh12:160}
-\LL_K = \frac{3m}{2} \dot{\BR}^2 + \frac{29 m}{72} ((\dot{\Brho}_1)^2 + (\dot{\Brho}_2)^2 )
+\Lq_K = \frac{3m}{2} \dot{\BR}^2 + \frac{29 m}{72} ((\dot{\Brho}_1)^2 + (\dot{\Brho}_2)^2 )
 - \frac{5 m}{9} \dot{\Brho}_1 \cdot \dot{\Brho}_2
 - \frac{m}{6} (\dot{\Brho}_1 + \dot{\Brho}_2) \cdot \dot{\BR}  .
 \end{equation}
@@ -99,7 +99,7 @@ So the Kinetic part of the Lagrangian is
 and finally, the total Lagrangian is
 %
 \begin{dmath}\label{eqn:goldsteinCh12:180}
-\LL =
+\Lq =
 \frac{3m}{2} \dot{\BR}^2 + \frac{29 m}{72} ((\dot{\Brho}_1)^2 + (\dot{\Brho}_2)^2 )
 - \frac{5 m}{9} \dot{\Brho}_1 \cdot \dot{\Brho}_2
 - \frac{m}{6} (\dot{\Brho}_1 + \dot{\Brho}_2) \cdot \dot{\BR}
@@ -181,7 +181,7 @@ To make this easier, suppose we generalize the Lagrangian slightly to get rid of
 \(\rho_3 = \BR\), then our Lagrangian has the functional form
 %
 \begin{equation}\label{eqn:goldsteinCh12:280}
-\LL = \alpha^{ij} \dot{\Brho}_i \cdot \dot{\Brho}_j
+\Lq = \alpha^{ij} \dot{\Brho}_i \cdot \dot{\Brho}_j
 + g^i e^{-\mu \Abs{\Brho_i}}
 + g^{ij} e^{-\mu \Abs{ \Brho_i - \Brho_j }}
 + f^i \Brho_i \cdot ( \dot{\Brho}_1 + \dot{\Brho}_2 ).
@@ -197,7 +197,7 @@ vector parametrization, where as above, all our vectors come in functions of the
 absolute values) of our vectors or their time derivatives
 %
 \begin{equation}\label{eqn:goldsteinCh12:300}
-\LL = f( {\Bx_k} \cdot {{\Bx}_j}, {\Bx_k} \cdot {\dot{\Bx}_j}, {\dot{\Bx}_k} \cdot {\dot{\Bx}_j} ).
+\Lq = f( {\Bx_k} \cdot {{\Bx}_j}, {\Bx_k} \cdot {\dot{\Bx}_j}, {\dot{\Bx}_k} \cdot {\dot{\Bx}_j} ).
 \end{equation}
 %
 Having all the parametrization being functions of dot products gives the desired rotational symmetry for the Lagrangian.
@@ -217,14 +217,14 @@ Now we are in shape to compute the conserved ``current'' for a rotational symmet
 and our Lagrangian is assumed, as above with all vectors coming in dot product pairs, to have rotational invariance when all the vectors in the system are rotated
 %
 \begin{equation}\label{eqn:goldsteinCh12:340}
-\LL  \rightarrow \LL'(\Bx_k', \dot{\Bx}_j') = \LL(\Bx_k, \dot{\Bx}_j) .
+\Lq  \rightarrow \Lq'(\Bx_k', \dot{\Bx}_j') = \Lq(\Bx_k, \dot{\Bx}_j) .
 \end{equation}
 %
 The essence of Noether's theorem was applied chain rule, looking at how the transformed Lagrangian changes with respect to the transformation.  In this case
 we want to calculate
 %
 \begin{equation}\label{eqn:goldsteinCh12:360}
-{\left. \frac{d \LL'}{d\alpha} \right\vert}_{\alpha=0}.
+{\left. \frac{d \Lq'}{d\alpha} \right\vert}_{\alpha=0}.
 \end{equation}
 %
 First seeing the Noether's derivation, I did not understand why the evaluation at \(\alpha=0\) was required, even after doing this
@@ -234,24 +234,24 @@ the reason for it actually became clear with this application, as writing it up 
 Anyways, back to the derivative.  One way to evaluate this would be in terms of coordinates, writing \(\Bx_k' = \Be^m x_{km}'\),
 %
 \begin{equation}\label{eqn:goldsteinCh12:380}
-\frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
-= \sum_{k,m} \frac{\partial \LL'}{\partial x_{km}'} \PD{\alpha}{x_{km}'} + \frac{\partial \LL'}{\partial \dot{x}_{km}'} \PD{\alpha}{\dot{x}_{km}'} .
+\frac{d \Lq'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
+= \sum_{k,m} \frac{\partial \Lq'}{\partial x_{km}'} \PD{\alpha}{x_{km}'} + \frac{\partial \Lq'}{\partial \dot{x}_{km}'} \PD{\alpha}{\dot{x}_{km}'} .
 \end{equation}
 %
 This is a bit of a mess however, and begs for some shorthand.  Let us write
 %
 \begin{equation}\label{eqn:goldsteinCh12:400}
 \begin{aligned}
-\spacegrad_{\Bx_k'} \LL' &= e^m \frac{\partial \LL'}{\partial x_{km}'} \\
-\spacegrad_{\dot{\Bx}_k'} \LL' &= e^m \frac{\partial \LL'}{\partial \dot{x}_{km}'}.
+\spacegrad_{\Bx_k'} \Lq' &= e^m \frac{\partial \Lq'}{\partial x_{km}'} \\
+\spacegrad_{\dot{\Bx}_k'} \Lq' &= e^m \frac{\partial \Lq'}{\partial \dot{x}_{km}'}.
 \end{aligned}
 \end{equation}
 %
 Then the chain rule application above becomes
 %
 \begin{equation}\label{eqn:goldsteinCh12:420}
-\frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
-= \sum_{k} \left( \spacegrad_{\Bx_k'} \LL'\right) \cdot \PD{\alpha}{\Bx_k'} + \left( \spacegrad_{\dot{\Bx}_k'} \LL' \right) \cdot \PD{\alpha}{\dot{\Bx}_k'} .
+\frac{d \Lq'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
+= \sum_{k} \left( \spacegrad_{\Bx_k'} \Lq'\right) \cdot \PD{\alpha}{\Bx_k'} + \left( \spacegrad_{\dot{\Bx}_k'} \Lq' \right) \cdot \PD{\alpha}{\dot{\Bx}_k'} .
 \end{equation}
 %
 Now, while this notational sugar unfortunately has an obscuring effect, it is also practical since we can now work with the transformed position
@@ -268,15 +268,15 @@ and velocity vectors directly
 %
 So we have
 \begin{equation}\label{eqn:goldsteinCh12:460}
-\frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
-= \sum_{k} \left( \spacegrad_{\Bx_k'} \LL'\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
-+ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k'} \LL'\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) .
+\frac{d \Lq'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
+= \sum_{k} \left( \spacegrad_{\Bx_k'} \Lq'\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
++ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k'} \Lq'\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) .
 \end{equation}
 %
 Next step is to reintroduce the notational sugar noting that we can vectorize the Euler-Lagrange equations by writing
 %
 \begin{equation}\label{eqn:goldsteinCh12:480}
-\spacegrad_{\Bx_k} \LL = \frac{d}{dt} \spacegrad_{\dot{\Bx}_k} \LL.
+\spacegrad_{\Bx_k} \Lq = \frac{d}{dt} \spacegrad_{\dot{\Bx}_k} \Lq.
 \end{equation}
 %
 We have now a three fold reduction in the number of Euler-Lagrange equations.  For each of the generalized vector parameters, we have the
@@ -284,57 +284,57 @@ Lagrangian gradient with respect to that vector parameter (a generalized force) 
 %
 Inserting this we have
 \begin{equation}\label{eqn:goldsteinCh12:500}
-\frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
-= \sum_{k} \left( \frac{d}{dt} \spacegrad_{\dot{\Bx}_k'} \LL'\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
-+ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k'} \LL'\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) .
+\frac{d \Lq'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
+= \sum_{k} \left( \frac{d}{dt} \spacegrad_{\dot{\Bx}_k'} \Lq'\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
++ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k'} \Lq'\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) .
 \end{equation}
 %
 Now we can drop the primes in gradient terms because of the Lagrangian invariance for this symmetry, and are left almost with a
 perfect differential
 %
 \begin{equation}\label{eqn:goldsteinCh12:520}
-\frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
-= \sum_{k} \left( \frac{d}{dt} \spacegrad_{\dot{\Bx}_k} \LL\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
-+ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k} \LL\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) .
+\frac{d \Lq'}{d\alpha} (\Bx_k', \dot{\Bx}_j')
+= \sum_{k} \left( \frac{d}{dt} \spacegrad_{\dot{\Bx}_k} \Lq\right) \cdot \left( i (\ncap \wedge \Bx_k') \right)
++ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k} \Lq\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k') \right) .
 \end{equation}
 %
 Here is where the evaluation at \(\alpha=0\) comes in, since \(\Bx_k'(\alpha=0) = \Bx_k\), and we can now antidifferentiate
 %
 \begin{equation}\label{eqn:goldsteinCh12:540}
 \begin{aligned}
-{\left. \frac{d \LL'}{d\alpha} (\Bx_k', \dot{\Bx}_j') \right\vert}_{\alpha=0}
-&= \sum_{k} \left( \frac{d}{dt} \spacegrad_{\dot{\Bx}_k} \LL\right) \cdot \left( i (\ncap \wedge \Bx_k) \right)
-+ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k} \LL\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k) \right) \\
-&= \sum_{k} \frac{d}{dt} \left( \left( \spacegrad_{\dot{\Bx}_k} \LL\right) \cdot \left( i (\ncap \wedge \Bx_k) \right) \right) \\
-&= \sum_{k} \frac{d}{dt} \gpgradezero{ \left( \spacegrad_{\dot{\Bx}_k} \LL \right) i (\ncap \wedge \Bx_k) } \\
-&= \sum_{k} \frac{d}{dt} \inv{2} \gpgradezero{ \left( \spacegrad_{\dot{\Bx}_k} \LL \right) i (\ncap \Bx_k - \Bx_k \ncap) } \\
+{\left. \frac{d \Lq'}{d\alpha} (\Bx_k', \dot{\Bx}_j') \right\vert}_{\alpha=0}
+&= \sum_{k} \left( \frac{d}{dt} \spacegrad_{\dot{\Bx}_k} \Lq\right) \cdot \left( i (\ncap \wedge \Bx_k) \right)
++ \sum_{k} \left( \spacegrad_{\dot{\Bx}_k} \Lq\right) \cdot \left( i (\ncap \wedge \dot{\Bx}_k) \right) \\
+&= \sum_{k} \frac{d}{dt} \left( \left( \spacegrad_{\dot{\Bx}_k} \Lq\right) \cdot \left( i (\ncap \wedge \Bx_k) \right) \right) \\
+&= \sum_{k} \frac{d}{dt} \gpgradezero{ \left( \spacegrad_{\dot{\Bx}_k} \Lq \right) i (\ncap \wedge \Bx_k) } \\
+&= \sum_{k} \frac{d}{dt} \inv{2} \gpgradezero{ \left( \spacegrad_{\dot{\Bx}_k} \Lq \right) i (\ncap \Bx_k - \Bx_k \ncap) } \\
 &= \sum_{k} \frac{d}{dt} \inv{2} \gpgradezero{
-\ncap i \left( \Bx_k \left( \spacegrad_{\dot{\Bx}_k} \LL \right) -  \left( \spacegrad_{\dot{\Bx}_k} \LL \right) \Bx_k \right)
+\ncap i \left( \Bx_k \left( \spacegrad_{\dot{\Bx}_k} \Lq \right) -  \left( \spacegrad_{\dot{\Bx}_k} \Lq \right) \Bx_k \right)
 } \\
 &= \sum_{k} \frac{d}{dt} \inv{2} \gpgradezero{
-\ncap i \left( \Bx_k \left( \spacegrad_{\dot{\Bx}_k} \LL \right) -  \left( \spacegrad_{\dot{\Bx}_k} \LL \right) \Bx_k \right)
+\ncap i \left( \Bx_k \left( \spacegrad_{\dot{\Bx}_k} \Lq \right) -  \left( \spacegrad_{\dot{\Bx}_k} \Lq \right) \Bx_k \right)
 } \\
 &= \sum_{k} \frac{d}{dt} \gpgradezero{
-\ncap i \left(\Bx_k \wedge \left( \spacegrad_{\dot{\Bx}_k} \LL \right) \right)
+\ncap i \left(\Bx_k \wedge \left( \spacegrad_{\dot{\Bx}_k} \Lq \right) \right)
 } \\
 &= \sum_{k} \frac{d}{dt} \gpgradezero{
-\ncap i^2 \left(\Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \LL \right) \right)
+\ncap i^2 \left(\Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \Lq \right) \right)
 } \\
-&= \sum_{k} \frac{d}{dt} -\ncap \cdot \left(\Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \LL \right) \right) .
+&= \sum_{k} \frac{d}{dt} -\ncap \cdot \left(\Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \Lq \right) \right) .
 \end{aligned}
 \end{equation}
 %
 Because of the symmetry this entire derivative is zero, so we have
 %
 \begin{equation}\label{eqn:goldsteinCh12:560}
-\ncap \cdot \sum_{k} \left(\Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \LL \right) \right) = \text{constant}.
+\ncap \cdot \sum_{k} \left(\Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \Lq \right) \right) = \text{constant}.
 \end{equation}
 %
 The Lagrangian velocity gradient can be identified as the momentum
 (ie: the canonical momentum conjugate to \(\Bx_k\))
 %
 \begin{equation}\label{eqn:goldsteinCh12:580}
-\Bp_k \equiv \spacegrad_{\dot{\Bx}_k} \LL.
+\Bp_k \equiv \spacegrad_{\dot{\Bx}_k} \Lq.
 \end{equation}
 %
 Also noting that this is constant for any \(\ncap\), we finally have the
@@ -352,7 +352,7 @@ momentum vectors.  Only when the angular momentum is generalized, and written in
 system angular momentum conserved.  Namely, the generalized angular momentum for this problem is conserved
 %
 \begin{equation}\label{eqn:goldsteinCh12:620}
-\sum_{k} \Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \LL \right) = \text{constant}.
+\sum_{k} \Bx_k \cross \left( \spacegrad_{\dot{\Bx}_k} \Lq \right) = \text{constant}.
 \end{equation}
 %
 but the ``traditional'' angular momentum \(\sum_k \Bx_k \cross m \dot{\Bx}_k\), is not.
