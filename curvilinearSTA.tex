@@ -1,0 +1,121 @@
+%
+% Copyright © 2020 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{curvilinearSTA}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
+
+\input{../latex/peeter_prologue_print2.tex}
+
+\PassOptionsToPackage{answerdelayed}{exercise}
+
+% proof:
+\usepackage{amsthm}
+\usepackage{macros_cal} % \LL
+\newcommand{\Lq}[0]{L}
+
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{verbatim}
+%\usepackage{mhchem} % \ce{}
+%\usepackage{macros_bm} % \bcM
+%\usepackage{macros_qed} % \qedmarker
+%\usepackage{txfonts} % \ointclockwise
+
+\beginArtNoToc
+
+\generatetitle{Curvilinear coordinates and gradient in STA.}
+%\chapter{XXX}
+%\label{chap:curvilinearSTA}
+
+\section{Motivation.}
+We've seen how tidy the Euler-Lagrange equations are when expressed in terms of the gradient.  These equations are usually expressed in terms of generalized coordinates.  The two mechanisms ought to be connected by different representations of the gradient.  Let's explore the ideas required to express the STA (space-time) gradient in alternate coordinate systems.
+
+Part of our problem is actually just one of notation.  In Euclidean space we use bold face reciprocal frame vectors \( \Bx^i \cdot \Bx_j = {\delta^i}_j \), which are notationally different than the generalized coordinates \( x_i, x^j \) that satisfy \( \Bx = x^i \Bx_i = x_j \Bx^j \).  Since we drop bold face for STA vectors \( x = x^\mu \gamma_\mu = x_\mu \gamma^\mu \), we need a different notation for both our generalized coordinates and frame vectors in curvilinear coordinate systems.  To solve this problem of notation, I'll make an arbitrary choice of labelling the curvilinear basis elements by \( f^\mu, f_\mu \) to be detailed below.
+\section{Gradient.}
+Recall that Our gradient in the standard basis is just
+\begin{equation}\label{eqn:curvilinearSTA:20}
+   \grad = \gamma^\mu \PD{x^\mu}{} \qquad \lr{ = \gamma^\mu \partial_\mu }.
+\end{equation}
+Given a subspace spanned by the parameterization \( x = x(u^1, u^2, u^3, u^4) \), it's just an application of the chain rule to find the representation of the gradient.
+\maketheorem{Curvilinear representation of the gradient.}{thm:curvilinearSTA:40}{
+The curvilinear representation of the gradient can be expressed as
+\begin{equation*}
+\grad = (\grad u^\mu) \PD{u^\mu}{}.
+\end{equation*}
+} % theorem
+% d/dx = du/dx d/du
+\begin{proof}
+\begin{dmath}\label{eqn:curvilinearSTA:80}
+\grad
+= \gamma^\mu \PD{x^\mu}{}
+= \gamma^\mu \PD{u^\nu}{x^\mu} \PD{u^\nu}{}
+= (\grad u^\nu) \PD{u^\nu}{}.
+\end{dmath}
+\end{proof}
+This is not a particularly helpful representation, as the coordinates \( u^\mu = u^\mu(x) \) are implicit functions of parameterization vector \( x \) (or it's coordinates).  This implicit nature can make these gradients really hard to compute.  Charging in to rescue us are the reciprocal frame vectors associated with the tangent space of the parameterization.
+Consider the differential associated with an N-parameter surface
+\begin{dmath}\label{eqn:curvilinearSTA:60}
+dx =
+\sum_{\mu = 0}^N \PD{u^\mu}{x} du^\mu
+\end{dmath}
+If this happens to be a complete set of parameters (i.e. four of them), then each of these differentials provides one of the directions required to parameterize the space.
+If we have don't have a complete set of parameters, each of these partials represents one component of the tangent space at the point of evaluation.
+FIXME: picture.
+\makedefinition{Manifold and tangent vectors.}{dfn:curvilinearSTA:100}{
+We define
+\begin{equation*}
+f_\mu = \PD{u^\mu}{x},
+\end{equation*}
+for the each of the directions that are tangent to the hypersurface associated with the parameterization.  This subspace is called a manifold.  We can define a differential along each of these directions as
+\begin{equation*}
+df_\mu = f_\mu du^\mu,
+\end{equation*}
+(no sum).
+} % definition
+Incidentally, we now have enough prerequiste baggage that we can express the volume element for the manifold, which is just
+\( d^N x = df_1 \wedge \cdots \wedge df_N \).  We'll use this when we get to geometric calculus over spacetime, but to start with, we want to relate these differential directions to our curvilinear gradient.
+Rather miraculously, these \( f_\mu\)'s are exactly the reciprocal frame vectors that we need for the gradient.
+\maketheorem{Reciprocal frame.}{thm:curvilinearSTA:120}{
+The vectors \( f^\mu = \grad u^\mu \), and \( f_\mu = \PDi{u^\mu}{x} \) satisfy the reciprocal relationship
+\begin{equation*}
+   f^\mu \cdot f_\nu = {\delta^\mu}_\nu.
+\end{equation*}
+} % theorem
+\begin{proof}
+\begin{dmath}\label{eqn:curvilinearSTA:120}
+   f^\mu \cdot f_\nu
+   =
+   \grad u^\mu \cdot
+   \PD{u^\nu}{x}
+   =
+   \lr{
+      \gamma^\alpha \PD{x^\alpha}{u^\mu}
+   }
+   \cdot
+   \lr{
+      \PD{u^\nu}{x^\beta} \gamma_\beta
+   }
+   =
+   {\delta^\alpha}_\beta \PD{x^\alpha}{u^\mu}
+      \PD{u^\nu}{x^\beta}
+   =
+   \PD{x^\alpha}{u^\mu} \PD{u^\nu}{x^\alpha}
+   =
+   \PD{u^\nu}{u^\mu}
+   =
+   {\delta^\mu}_\nu
+.
+\end{dmath}
+\end{proof}
+Given the reciprocal nature of \( f^\mu \) and \( f_\mu \), we can avoid the complicated task of computing \( f^\mu \) using gradients, and just tackle the problem algebraically.
+%}
+%\EndArticle
+\EndNoBibArticle

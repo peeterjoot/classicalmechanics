@@ -26,3 +26,5 @@
 #../latex/bin/lgrep gaugeLorentzSTA.tex | tee o ; . ./o
 #../latex/bin/lgrep gaugeLorentzSTAblog.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl gaugeLorentzSTA.tex
+../latex/bin/lgrep curvilinearSTA.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl curvilinearSTA.tex

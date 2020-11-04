@@ -34,8 +34,9 @@ include ../latex/make.rules
 .PHONY: spellcheck
 spellcheck: $(patsubst %.tex,%.sp,$(filter-out $(DONT_SPELL_CHECK),$(DO_SPELL_CHECK)))
 
-#all :: j
-#j :: junk.pdf
+all :: junk.pdf
+all :: c
+c: curvilinearSTA.pdf
 
 %.sp : %.tex
 	spellcheck $^
