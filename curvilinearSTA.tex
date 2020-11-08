@@ -72,6 +72,7 @@ The curvilinear representation of the gradient can be expressed as
 This is not a particularly helpful representation, as the coordinates \( u^\mu = u^\mu(x) \) are implicit functions of parameterization vector \( x \) (or it's coordinates).
 This implicit nature can make these gradients really hard to compute.
 Charging in to rescue us are the reciprocal frame vectors associated with the tangent space of the parameterization.
+\section{Reciprocal frame.}
 Consider the differential associated with an N-parameter surface
 \begin{dmath}\label{eqn:curvilinearSTA:60}
 dx =
@@ -130,6 +131,74 @@ The vectors \( \Bx^\mu = \grad u^\mu \), and \( \Bx_\mu = \PDi{u^\mu}{x} \) sati
 \end{dmath}
 \end{proof}
 Given the reciprocal nature of \( \Bx^\mu \) and \( \Bx_\mu \), we can avoid the complicated task of computing \( \Bx^\mu \) using gradients, and just tackle the problem algebraically.
+\maketheorem{Compuation of reciprocal frame.}{thm:curvilinearSTA:140}{
+   Given a set of \( N \) vectors \( \setlr{\Bx_0, \cdots \Bx_{N-1}} \), let \( [\Bx_\mu] \) and \( [\Bx^\nu] \) be column matrices with the coordinates of these vectors and their reciprocals, with respect to the
+standard basis \( \setlr{\gamma_0, \gamma_1, \gamma_2, \gamma_3 } \).
+Let
+\begin{equation*}
+A =
+\begin{bmatrix}
+   [\Bx_0] & \cdots & [\Bx_{N-1}]
+\end{bmatrix}
+,\qquad
+X =
+\begin{bmatrix}
+   [\Bx^0] & \cdots & [\Bx^{N-1}]
+\end{bmatrix}.
+\end{equation*}
+The coordinates of the reciprocal frame vectors can be found by solving
+\begin{equation*}
+   A^\T G X = 1,
+\end{equation*}
+where \( G = \diag(1,-1,-1,-1) \) and the RHS \( 1 \) is an \( N \times N \) identity matrix.
+} % theorem
+\makeproblem{Reciprocal frame computation.}{problem:curvilinearSTA:140}{
+Prove \cref{thm:curvilinearSTA:140}.
+} % problem
+\makeanswer{problem:curvilinearSTA:140}{
+\begin{proof}
+Let \( \Bx_\mu = a^{\mu\alpha} \gamma_\alpha, \Bx^\nu = b^{\nu\beta} \gamma_\beta \), so that
+\begin{dmath}\label{eqn:curvilinearSTA:140}
+   A^\T =
+\begin{bmatrix}
+   a^{\mu\nu}
+\end{bmatrix},
+\end{dmath}
+and
+\begin{dmath}\label{eqn:curvilinearSTA:160}
+   X^\T =
+\begin{bmatrix}
+   b^{\mu\nu}
+\end{bmatrix},
+\end{dmath}
+The reciprocal frame satisfies \( \Bx_\mu \cdot \Bx^\nu = {\delta_\mu}^\nu \), which has the coordinate representation of
+\begin{dmath}\label{eqn:curvilinearSTA:180}
+\begin{bmatrix}
+\Bx_\mu \cdot \Bx^\nu
+\end{bmatrix}
+=
+\begin{bmatrix}
+\lr{
+   a^{\mu\alpha} \gamma_\alpha
+}
+\cdot
+\lr{
+   b^{\nu\beta} \gamma_\beta
+}
+\end{bmatrix}
+=
+\begin{bmatrix}
+   a^{\mu\alpha}
+   \eta_{\alpha\beta}
+   b^{\nu\beta}
+\end{bmatrix}
+=
+A^\T G X^T
+\end{dmath}
+\end{proof}
+} % answer
+\section{Solutions.}
+\shipoutAnswer
 %}
 %\EndArticle
 \EndNoBibArticle
