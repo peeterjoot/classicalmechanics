@@ -152,49 +152,53 @@ The coordinates of the reciprocal frame vectors can be found by solving
 \end{equation*}
 where \( G = \diag(1,-1,-1,-1) \) and the RHS \( 1 \) is an \( N \times N \) identity matrix.
 } % theorem
+Note that this is generally not a square system of equations, but can be solved analytically by Moore-Penrose inversion
+\begin{equation*}
+B = \lr{ G A A^\T G }^{-1} G A,
+\end{equation*}
+however, general software linear solvers such as Mathematica's LinearSolve are likely better options.
+f \( X \) contains zero rows, then can be removed (with corresponding adjustments to \( G, B \)), and the reduced equation, which may be square, can be solved instead.
+If we seek the reciprocal frame for a four parameter subspace, we will also have a square matrix equation, and 
+need not use more specialized solutions.
 \makeproblem{Reciprocal frame computation.}{problem:curvilinearSTA:140}{
 Prove \cref{thm:curvilinearSTA:140}.
 } % problem
 \makeanswer{problem:curvilinearSTA:140}{
 \begin{proof}
-Let \( \Bx_\mu = a^{\mu\alpha} \gamma_\alpha, \Bx^\nu = b^{\nu\beta} \gamma_\beta \), so that
+Let \( \Bx_\mu = {a_\mu}^\alpha \gamma_\alpha, \Bx^\nu = b^{\nu\beta} \gamma_\beta \), so that
 \begin{dmath}\label{eqn:curvilinearSTA:140}
-   A^\T =
+   A =
 \begin{bmatrix}
-   a^{\mu\nu}
+   {a_\nu}^\mu
 \end{bmatrix},
 \end{dmath}
 and
 \begin{dmath}\label{eqn:curvilinearSTA:160}
-   X^\T =
+   X =
 \begin{bmatrix}
-   b^{\mu\nu}
+   b^{\nu\mu}
 \end{bmatrix},
 \end{dmath}
+where \( \mu \in [0,3]\) are the row indexes and \( \nu \in [0,N-1]\) are the column indexes.
 The reciprocal frame satisfies \( \Bx_\mu \cdot \Bx^\nu = {\delta_\mu}^\nu \), which has the coordinate representation of
 \begin{dmath}\label{eqn:curvilinearSTA:180}
-\begin{bmatrix}
 \Bx_\mu \cdot \Bx^\nu
-\end{bmatrix}
 =
-\begin{bmatrix}
 \lr{
-   a^{\mu\alpha} \gamma_\alpha
+   {a_\mu}^\alpha \gamma_\alpha
 }
 \cdot
 \lr{
    b^{\nu\beta} \gamma_\beta
 }
-\end{bmatrix}
 =
-\begin{bmatrix}
-   a^{\mu\alpha}
+   {a_\mu}^\alpha
    \eta_{\alpha\beta}
    b^{\nu\beta}
-\end{bmatrix}
 =
-A^\T G X^T
+{[A^\T G B]_\mu}^\nu,
 \end{dmath}
+where \( \mu \) is the row index and \( \nu \) is the column index.
 \end{proof}
 } % answer
 \section{Solutions.}
