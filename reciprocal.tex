@@ -225,7 +225,62 @@ It is straightforward to show that these satisfy the desired duality relations, 
 
 Observe, however, that dropping the two rows of the matrix equation, really means that we are free to add anything from \( \Span \setlr{ \gamma_2, \gamma_3 } \) to our \( \Bx^\mu \) vectors, and they will still satisfy those relations.
 } % answer
-
+\makeproblem{A less trivial example.}{problem:reciprocal:480}{
+Now solve the matrix equations for the reciprocal frame that result from the basis vectors
+\begin{dmath}\label{eqn:reciprocal:480}
+	\Bx_0 = \gamma_0 + \gamma_1 + \gamma_2 + \gamma_3,
+\end{dmath}
+\begin{dmath}\label{eqn:reciprocal:500}
+	\Bx_1 = \gamma_0 - \gamma_1 + \gamma_2 - \gamma_3.
+\end{dmath}
+Find at least two sets of solutions to these equations.
+} % problem
+\makeanswer{problem:reciprocal:480}{
+Presuming that these are curvilinear coordinates at some point, the tangent space at that point is in the span of \( \Span \setlr{ \gamma_0 + \gamma_2, \gamma_1 + \gamma_3 } \).
+We really desire a solution that falls within that span, but a simple row reduction gives us a vastly different answer.  The equations that constrain the reciprocal frame are
+\begin{dmath}\label{eqn:reciprocal:520}
+	{
+	\begin{bmatrix}
+	1 & 1 \\
+	1 & -1 \\
+	1 & 1 \\
+	1 & -1
+	\end{bmatrix}
+	}^\T G X =
+\begin{bmatrix}
+	1 & 0 \\
+	0 & 1 \\
+\end{bmatrix},
+\end{dmath}
+or
+\begin{dmath}\label{eqn:reciprocal:540}
+	\begin{bmatrix}
+		1 & -1 & -1 & -1 \\
+		1 & 1 & -1 & 1 \\
+	\end{bmatrix}
+	X = 1.
+\end{dmath}
+Row reduction yields
+\begin{dmath}\label{eqn:reciprocal:620}
+\begin{bmatrix}
+1 & 0 & -1 & 0 & \frac{1}{2} & \frac{1}{2} \\
+0 & 1 & 0 & 1 & -\frac{1}{2} & \frac{1}{2} \\
+\end{bmatrix},
+\end{dmath}
+from which we can easily read off two sets of solutions
+\begin{subequations}
+\label{eqn:reciprocal:560}
+\begin{equation}\label{eqn:reciprocal:580}
+	\Bx^0 = (1/2)\lr{ \gamma_0 - \gamma_1 }, \qquad
+	\Bx^1 = (1/2)\lr{ \gamma_0 + \gamma_1 },
+\end{equation}
+\begin{equation}\label{eqn:reciprocal:600}
+	\Bx^0 = (-1/2)\lr{ \gamma_2 + \gamma_3 }, \qquad
+	\Bx^1 = (1/2)\lr{ \gamma_2 - \gamma_3 }.
+\end{equation}
+\end{subequations}
+However, neither of these is satifactory, as they clearly are not contained within the desired span.
+} % answer
 %}
 \EndArticle
 %\EndNoBibArticle
