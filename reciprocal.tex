@@ -46,7 +46,7 @@ Evaluating a multivector directional derivative, in terms of components motivate
 \end{dmath}
 where \( \partial_\mu = \PDi{x^\mu}{} \).  If we introduce a parameterization for the space
 \begin{dmath}\label{eqn:reciprocal:240}
-	x = x(u^1, u^2, u^3, u^4),
+	x = x(u^0, u^1, u^2, u^3),
 \end{dmath}
 then application of the chain rule can be used to show that the gradient takes the form
 \begin{dmath}\label{eqn:reciprocal:260}
@@ -62,7 +62,7 @@ and
 \end{dmath}
 From this one can show that these pairs of vectors satisfy \cref{eqn:reciprocal:200}.
 However, the gradients of \cref{eqn:reciprocal:280} can be really hard to compute.  Thankfully, we can avoid that computation, and compute these algebraically.
-When the set of parameters is complete, this can be done unambigously, but if we have an incomplete set of parameters (i.e. \( x = x(u^1, \cdots, u^N) \), where \( N < 4 \), then we have parameterized a subspace and not the whole space.
+When the set of parameters is complete, this can be done unambigously, but if we have an incomplete set of parameters (i.e. \( x = x(u^0, \cdots, u^{N-1}) \), where \( N < 4 \), then we have parameterized a subspace and not the whole space.
 In this case, things are not as obvious.
 
 \section{Guts.}
@@ -87,11 +87,15 @@ The coordinates of the reciprocal frame vectors can be found by solving
 \end{equation*}
 where \( G = \diag(1,-1,-1,-1) \) and the RHS \( 1 \) is an \( N \times N \) identity matrix.
 } % theorem
-In general, if \( N < 4 \), this is not a square system of equations.  We can solve it analytically using Moore-Penrose inversion
-\begin{equation*}
-B = \lr{ G A A^\T G }^{-1} G A,
-\end{equation*}
-or (probably better), use row reduction, or general software linear solvers such as Mathematica's LinearSolve.
+In general, if \( N < 4 \), this is not a square system of equations.  
+% No:!
+%%%We should be able to solve it analytically using Moore-Penrose inversion, but that is not neccessarily as simple as
+%%%\begin{equation*}
+%%%B = \lr{ G A A^\T G }^{-1} G A,
+%%%\end{equation*}
+%%%since \( G A A^T G \) may be singular.
+%%%%or (probably better), use row reduction, or general software linear solvers such as Mathematica's LinearSolve.
+% => \( G A A^T G \) will be singular if N < 4.
 
 In the special case that \( X \) contains zero rows, then they can be removed (with corresponding adjustments to \( G, B \)), and the reduced equation, which may be square, can be solved instead.  Such a reduced set of equations may provide the reciprocal frame vectors that satisfy the gradient identity
 \cref{eqn:reciprocal:260}, but that really needs to be shown.
@@ -280,7 +284,16 @@ from which we can easily read off two sets of solutions
 \end{equation}
 \end{subequations}
 However, neither of these is satifactory, as they clearly are not contained within the desired span.
+Using Mathematica's PseudoInverse gives a more satisfactory result, namely
+\begin{equation}\label{eqn:reciprocal:n}
+\Bx^0 = (1/4)\lr{ \gamma_0 - \gamma_1 - \gamma_2 - \gamma_3 }, \qquad
+\Bx^1 = (1/4)\lr{ \gamma_0 + \gamma_1 - \gamma_2 + \gamma_3 }.
+\end{equation}
+One can quickly check that this also satisfies the reciprocal relations.  Even better, this solution is in the span of the original vectors.
 } % answer
+Blundering through a numerical example above, we found that the PseudoInverse gave the best results.  However, the usual way that the reciprocal frame is expressed is as follows.
+%\makedefinition{Reciprocal relations.}{dfn:reciprocal:n}{
+%} % definition
 %}
 \EndArticle
 %\EndNoBibArticle
