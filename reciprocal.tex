@@ -25,275 +25,371 @@
 
 \beginArtNoToc
 
-\generatetitle{Reciprocal frame uniqueness}
+\generatetitle{Reciprocal frame and curvilinear coordinates.}
 %\chapter{Reciprocal frame uniqueness}
 %\label{chap:reciprocal}
 
 \section{Motivation.}
-I was pondering the computation of reciprocal frame vectors, and initially thought that the typical duality construction could be avoided, using a simpler matrix solution instead.
-The reciprocal basis \( \setlr{ \Bx^\mu} \) is related to the curvilinear basis \( \setlr{ \Bx_\mu} \) by
-\begin{dmath}\label{eqn:reciprocal:200}
-\Bx^\mu \cdot \Bx_\nu = {\delta^\mu}_\nu.
-\end{dmath}
-Exploring that idea, I realized that this is not sufficient to define the reciprocal frame, as it is not unique.
-I think that this must also be supplemented by a requirement that the span of both sets are identical.
+When studying curvilinear coordinates, reciprocal frame vectors are found to be the gradients of the parameters generating the tangent space at the point of evaluation.  We can also construct reciprocal frame vectors algebraically, but have a uniqueness doing so unless additional constraints are imposed.  In particular, the coordinates of a vector can be computed with respect to either the tangent space basis, or it's reciprocal basis, so we must impose the constraint that the reciprocal frame is restricted to the span of the tangent space basis.  Failing to impose such a constraint leads to uniqueness problems, and almost certainly means that the algebraic construction does not match the gradient construction.
 
-In these notes, I am assuming that we are using the Dirac algebra (expressed using the geometric algebra Space Time Algebra (STA) notation.)
-\section{Recap.}
-Evaluating a multivector directional derivative, in terms of components motivates the definition of the space time gradient as
-\begin{dmath}\label{eqn:reciprocal:220}
-	\grad = \gamma^\mu \partial_\mu,
-\end{dmath}
-where \( \partial_\mu = \PDi{x^\mu}{} \).  If we introduce a parameterization for the space
-\begin{dmath}\label{eqn:reciprocal:240}
-	x = x(u^0, u^1, u^2, u^3),
-\end{dmath}
-then application of the chain rule can be used to show that the gradient takes the form
-\begin{dmath}\label{eqn:reciprocal:260}
-	\grad = \lr{ \grad u^\mu } \PD{u^\mu}{}
-\end{dmath}
-We define
-\begin{dmath}\label{eqn:reciprocal:280}
-	\Bx^\mu = \grad u^\mu,
-\end{dmath}
+In these notes, I'll walk through all the ideas involved.  The focus will be on the Dirac's algebra of special relativity, known as STA (Space Time Algebra) in geometric algebra parlance.
+
+\paragraph{On notation.}
+In Euclidean space we use bold face reciprocal frame vectors \( \Bx^i \cdot \Bx_j = {\delta^i}_j \), which nicely distinguishes them from the generalized coordinates \( x_i, x^j \) associated with the basis or the reciprocal frame, that is
+\begin{equation}\label{eqn:reciprocal:640}
+\Bx = x^i \Bx_i = x_j \Bx^j.
+\end{equation}
+On the other hand, it is conventional to use non-bold face for both the four-vectors and their coordinates in STA, such as the following standard basis decomposition
+\begin{equation}\label{eqn:reciprocal:660}
+x = x^\mu \gamma_\mu = x_\mu \gamma^\mu.
+\end{equation}
+If we use non-bold face \( x^\mu, x_\nu \) for the coordinates with respect to a specified frame, then we cannot also use non-bold face for the curvilinear basis vectors.
+One way to solve this notational problem would be to choose some new symbol, say \( f^\mu, f_\nu \), for our curvilinear coordiantes.
+This seems like a grossly arbitrary choice.  Symbols that are generally available without some additional or conflicting meaning can be hard to come by, so I'll opt to
+break with the non-bold face STA conventions slightly, and uniformly use bold face \( \Bx^\mu, \Bx_\nu \) symbols as the curvilinear basis elements for both the Euclidean and relativistic cases.
+\section{Review.}
+\makedefinition{Standard Dirac basis.}{dfn:reciprocal:720}{
+The Dirac basis elements are \(\setlr{ \gamma_0, \gamma_1, \gamma_2, \gamma_3 } \), satisfying
+\begin{equation*}
+\gamma_0^2 = 1 = -\gamma_k^2, \quad \forall k = 1,2,3,
+\end{equation*}
 and
-\begin{dmath}\label{eqn:reciprocal:300}
-	\Bx_\mu = \PD{u^\mu}{x}.
-\end{dmath}
-From this one can show that these pairs of vectors satisfy \cref{eqn:reciprocal:200}.
-However, the gradients of \cref{eqn:reciprocal:280} can be really hard to compute.  Thankfully, we can avoid that computation, and compute these algebraically.
-When the set of parameters is complete, this can be done unambigously, but if we have an incomplete set of parameters (i.e. \( x = x(u^0, \cdots, u^{N-1}) \), where \( N < 4 \), then we have parameterized a subspace and not the whole space.
-In this case, things are not as obvious.
-
-\section{Guts.}
-\maketheorem{Satisfying the reciprocal frame requirement.}{thm:reciprocal:140}{
-Given a set of \( N \) vectors \( \setlr{\Bx_0, \cdots \Bx_{N-1}} \), let \( [\Bx_\mu] \) and \( [\Bx^\nu] \) be column matrices with the coordinates of these vectors and their reciprocals, with respect to the
-standard basis \( \setlr{\gamma_0, \gamma_1, \gamma_2, \gamma_3 } \).
-Let
+\begin{equation}\label{eqn:reciprocal:740}
+\gamma_\mu \cdot \gamma_\nu = 0, \quad \forall \mu \ne \nu.
+\end{equation}
+} % definition
+A conventional way of summarizing these orthogonality relationships is \( \gamma_\mu \cdot \gamma_\nu = \eta_{\mu\nu} \), where
+\( \eta_{\mu\nu} \) are the elements of the metric \( G = \diag(+,-,-,-) \).
+\makedefinition{Reciprocal basis for the standard Dirac basis.}{dfn:reciprocal:760}{
+We define a reciprocal basis \( \setlr{ \gamma^0, \gamma^1, \gamma^2, \gamma^3} \) satisfying \( \gamma^\mu \cdot \gamma_\nu = {\delta^\mu}_\nu, \forall \mu,\nu \in 0,1,2,3 \).
+} % definition
+\maketheorem{Reciprocal basis uniqueness.}{thm:reciprocal:780}{
+This reciprocal basis is unique, and for our choice of metric has the values
 \begin{equation*}
-A =
-\begin{bmatrix}
-   [\Bx_0] & \cdots & [\Bx_{N-1}]
-\end{bmatrix}
-,\qquad
-X =
-\begin{bmatrix}
-   [\Bx^0] & \cdots & [\Bx^{N-1}]
-\end{bmatrix}.
+\gamma^0 = \gamma_0, \quad \gamma^k = -\gamma_k, \quad \forall k = 1,2,3.
 \end{equation*}
-The coordinates of the reciprocal frame vectors can be found by solving
-\begin{equation*}
-   A^\T G X = 1,
-\end{equation*}
-where \( G = \diag(1,-1,-1,-1) \) and the RHS \( 1 \) is an \( N \times N \) identity matrix.
 } % theorem
-In general, if \( N < 4 \), this is not a square system of equations.  
-% No:!
-%%%We should be able to solve it analytically using Moore-Penrose inversion, but that is not neccessarily as simple as
-%%%\begin{equation*}
-%%%B = \lr{ G A A^\T G }^{-1} G A,
-%%%\end{equation*}
-%%%since \( G A A^T G \) may be singular.
-%%%%or (probably better), use row reduction, or general software linear solvers such as Mathematica's LinearSolve.
-% => \( G A A^T G \) will be singular if N < 4.
-
-In the special case that \( X \) contains zero rows, then they can be removed (with corresponding adjustments to \( G, B \)), and the reduced equation, which may be square, can be solved instead.  Such a reduced set of equations may provide the reciprocal frame vectors that satisfy the gradient identity
-\cref{eqn:reciprocal:260}, but that really needs to be shown.
-
-First, let's just satisfy ourselves that we have stated the matrix equivalent of the duality relationship correctly.
-\makeproblem{Reciprocal frame computation.}{problem:reciprocal:140}{
-Prove \cref{thm:reciprocal:140}.
-} % problem
-\makeanswer{problem:reciprocal:140}{
+Proof is left to the reader.
+\makedefinition{Coordinates.}{dfn:reciprocal:800}{
+We define the coordinates of a vector with respect to the standard basis as \( x^\mu \) satisfying
+\begin{equation*}
+x = x^\mu \gamma_\mu,
+\end{equation*}
+and define the coordinates of a vector with respect to the reciprocal basis as \( x_\mu \) satisfying
+\begin{equation*}
+x = x_\mu \gamma^\mu,
+\end{equation*}
+} % definition
+\maketheorem{Coordinates.}{thm:reciprocal:820}{
+Given the definitions above, we may compute the coordinates of a vector, simply by dotting with the basis elements
+\begin{equation*}
+x^\mu = x \cdot \gamma^\mu,
+\end{equation*}
+and
+\begin{equation*}
+x_\mu = x \cdot \gamma_\mu,
+\end{equation*}
+} % theorem
 \begin{proof}
-Let \( \Bx_\mu = {a_\mu}^\alpha \gamma_\alpha, \Bx^\nu = b^{\nu\beta} \gamma_\beta \), so that
-\begin{dmath}\label{eqn:reciprocal:140}
-   A =
-\begin{bmatrix}
-   {a_\nu}^\mu
-\end{bmatrix},
+This follows by straightforward computation
+\begin{dmath}\label{eqn:reciprocal:840}
+x \cdot \gamma^\mu
+=
+\lr{ x^\nu \gamma_\nu } \cdot \gamma^\mu
+=
+x^\nu \lr{ \gamma_\nu \cdot \gamma^\mu }
+=
+x^\nu {\delta_\nu}^\mu
+=
+x^\mu,
 \end{dmath}
 and
-\begin{dmath}\label{eqn:reciprocal:160}
-   X =
-\begin{bmatrix}
-   b^{\nu\mu}
-\end{bmatrix},
+\begin{dmath}\label{eqn:reciprocal:860}
+x \cdot \gamma_\mu
+=
+\lr{ x_\nu \gamma^\nu } \cdot \gamma_\mu
+=
+x_\nu \lr{ \gamma^\nu \cdot \gamma_\mu }
+=
+x_\nu {\delta^\nu}_\mu
+=
+x_\mu.
 \end{dmath}
-where \( \mu \in [0,3]\) are the row indexes and \( \nu \in [0,N-1]\) are the column indexes.
-The reciprocal frame satisfies \( \Bx_\mu \cdot \Bx^\nu = {\delta_\mu}^\nu \), which has the coordinate representation of
-\begin{dmath}\label{eqn:reciprocal:180}
-\Bx_\mu \cdot \Bx^\nu
-=
-\lr{
-   {a_\mu}^\alpha \gamma_\alpha
-}
-\cdot
-\lr{
-   b^{\nu\beta} \gamma_\beta
-}
-=
-   {a_\mu}^\alpha
-   \eta_{\alpha\beta}
-   b^{\nu\beta}
-=
-{[A^\T G B]_\mu}^\nu,
-\end{dmath}
-where \( \mu \) is the row index and \( \nu \) is the column index.
 \end{proof}
-} % answer
-Having done that mechanical task, let's consider some examples.
-\makeproblem{Two parameter basis.}{problem:reciprocal:320}{
-Given \( \Bx_0 = \gamma_0 + \gamma_1 \), and \( \Bx_1 = \gamma_0 - \gamma_1 \), compute a reciprocal frame.
-%These are the curvilinear frame for a parameterization such as
-%\begin{equation*}
-%x = u^0 \Bx_0 + u^1 \Bx_1,
-%\end{equation*}
-% (or anything else for which this is a first order approximation of.)
-} % problem
-\makeanswer{problem:reciprocal:320}{
-We can form
-\begin{dmath}\label{eqn:reciprocal:320}
-A =
-\begin{bmatrix}
-	1 & 1 \\
-	1 & -1 \\
-	0 & 0\\
-	0 & 0
-\end{bmatrix},
-\end{dmath}
-so that the complete system of equations for the coordinates of the reciprocal frame vectors is
-\begin{dmath}\label{eqn:reciprocal:340}
-\begin{bmatrix}
-	1 & 1 \\
-	1 & -1 \\
-	0 & 0\\
-	0 & 0
-\end{bmatrix}
-\begin{bmatrix}
-	1 & 0 & 0 & 0 \\
-	0 & -1 & 0 & 0 \\
-	0 & 0 & -1 & 0 \\
-	0 & 0 & 0 & -1 \\
-\end{bmatrix}
-X =
-\begin{bmatrix}
-	1 & 0 \\
-	0 & 1
-\end{bmatrix}.
-\end{dmath}
-Dropping all the coordinates that aren't involved in the parameterization, we can solve the simpler reduced system instead
-\begin{dmath}\label{eqn:reciprocal:360}
-\begin{bmatrix}
-	1 & 1 \\
-	1 & -1 \\
-\end{bmatrix}
-\begin{bmatrix}
-	1 & 0 \\
-	0 & -1 \\
-\end{bmatrix}
-X' =
-\begin{bmatrix}
-	1 & 0 \\
-	0 & 1
-\end{bmatrix},
-\end{dmath}
-or
-\begin{dmath}\label{eqn:reciprocal:380}
-\begin{bmatrix}
-	1 & -1 \\
-	1 & 1 \\
-\end{bmatrix}
-X' = 1.
-\end{dmath}
-This is now nicely invertable, yielding
-\begin{dmath}\label{eqn:reciprocal:400}
-	X' = \inv{2}
-\begin{bmatrix}
-	1 & 1 \\
-	-1 & 1 \\
-\end{bmatrix},
-\end{dmath}
-or
-\begin{equation}\label{eqn:reciprocal:420}
-	\Bx^0 = \inv{2} \lr{ \gamma_0 - \gamma_1 }, \qquad
-	\Bx^1 = \inv{2} \lr{ \gamma_0 + \gamma_1 }.
-\end{equation}
-It is straightforward to show that these satisfy the desired duality relations, that is
-\begin{equation}\label{eqn:reciprocal:440}
-	\Bx^0 \cdot \Bx_0 = \inv{2} \lr{ \gamma_0^2 - \gamma_1^2 } = 1 = \Bx^1 \cdot \Bx_1,
-\end{equation}
-\begin{equation}\label{eqn:reciprocal:460}
-	\Bx^0 \cdot \Bx_1 = \inv{2} \lr{ \gamma_0^2 + \gamma_1^2 } = 0 = \Bx^1 \cdot \Bx_0.
-\end{equation}
-
-Observe, however, that dropping the two rows of the matrix equation, really means that we are free to add anything from \( \Span \setlr{ \gamma_2, \gamma_3 } \) to our \( \Bx^\mu \) vectors, and they will still satisfy those relations.
-} % answer
-\makeproblem{A less trivial example.}{problem:reciprocal:480}{
-Now solve the matrix equations for the reciprocal frame that result from the basis vectors
-\begin{dmath}\label{eqn:reciprocal:480}
-	\Bx_0 = \gamma_0 + \gamma_1 + \gamma_2 + \gamma_3,
-\end{dmath}
-\begin{dmath}\label{eqn:reciprocal:500}
-	\Bx_1 = \gamma_0 - \gamma_1 + \gamma_2 - \gamma_3.
-\end{dmath}
-Find at least two sets of solutions to these equations.
-} % problem
-\makeanswer{problem:reciprocal:480}{
-Presuming that these are curvilinear coordinates at some point, the tangent space at that point is in the span of \( \Span \setlr{ \gamma_0 + \gamma_2, \gamma_1 + \gamma_3 } \).
-We really desire a solution that falls within that span, but a simple row reduction gives us a vastly different answer.  The equations that constrain the reciprocal frame are
-\begin{dmath}\label{eqn:reciprocal:520}
-	{
-	\begin{bmatrix}
-	1 & 1 \\
-	1 & -1 \\
-	1 & 1 \\
-	1 & -1
-	\end{bmatrix}
-	}^\T G X =
-\begin{bmatrix}
-	1 & 0 \\
-	0 & 1 \\
-\end{bmatrix},
-\end{dmath}
-or
-\begin{dmath}\label{eqn:reciprocal:540}
-	\begin{bmatrix}
-		1 & -1 & -1 & -1 \\
-		1 & 1 & -1 & 1 \\
-	\end{bmatrix}
-	X = 1.
-\end{dmath}
-Row reduction yields
-\begin{dmath}\label{eqn:reciprocal:620}
-\begin{bmatrix}
-1 & 0 & -1 & 0 & \frac{1}{2} & \frac{1}{2} \\
-0 & 1 & 0 & 1 & -\frac{1}{2} & \frac{1}{2} \\
-\end{bmatrix},
-\end{dmath}
-from which we can easily read off two sets of solutions
-\begin{subequations}
-\label{eqn:reciprocal:560}
-\begin{equation}\label{eqn:reciprocal:580}
-	\Bx^0 = (1/2)\lr{ \gamma_0 - \gamma_1 }, \qquad
-	\Bx^1 = (1/2)\lr{ \gamma_0 + \gamma_1 },
-\end{equation}
-\begin{equation}\label{eqn:reciprocal:600}
-	\Bx^0 = (-1/2)\lr{ \gamma_2 + \gamma_3 }, \qquad
-	\Bx^1 = (1/2)\lr{ \gamma_2 - \gamma_3 }.
-\end{equation}
-\end{subequations}
-However, neither of these is satifactory, as they clearly are not contained within the desired span.
-Using Mathematica's PseudoInverse gives a more satisfactory result, namely
-\begin{equation}\label{eqn:reciprocal:n}
-\Bx^0 = (1/4)\lr{ \gamma_0 - \gamma_1 - \gamma_2 - \gamma_3 }, \qquad
-\Bx^1 = (1/4)\lr{ \gamma_0 + \gamma_1 - \gamma_2 + \gamma_3 }.
-\end{equation}
-One can quickly check that this also satisfies the reciprocal relations.  Even better, this solution is in the span of the original vectors.
-} % answer
-Blundering through a numerical example above, we found that the PseudoInverse gave the best results.  However, the usual way that the reciprocal frame is expressed is as follows.
-%\makedefinition{Reciprocal relations.}{dfn:reciprocal:n}{
-%} % definition
+\section{Derivative operators.}
+We'd like to determine the form of the gradient operator.  The gradient can be defined in terms of coordinates directly, but we choose an implicit definition, in terms of the directional derivative.
+\makedefinition{Directional derivative and gradient.}{dfn:reciprocal:880}{
+Let \( F = F(x) \) be a four-vector parameterized multivector.  The directional derivative of \( F \) with respect to the (four-vector) direction \( a \) is denoted
+\begin{equation*}
+\lr{ a \cdot \grad } F = \lim_{\epsilon \rightarrow 0} \frac{ F(x + \epsilon a) - F(x) }{ \epsilon },
+\end{equation*}
+where \( \grad \) is called the space time gradient.
+} % definition
+As we are restricting attention to multivectors that are generated by the four-vector Dirac basis, we can refer to the space time gradient as just the gradient, without any confusion.
+%%%I wanted to understand how the gradient definition of reciprocal frame vectors was related to the algebraic definition.
+%%%was pondering the computation of reciprocal frame vectors, and initially thought that the typical duality construction could be avoided, using a simpler matrix solution instead.
+%%%The reciprocal basis \( \setlr{ \Bx^\mu} \) is related to the curvilinear basis \( \setlr{ \Bx_\mu} \) by
+%%%\begin{dmath}\label{eqn:reciprocal:200}
+%%%\Bx^\mu \cdot \Bx_\nu = {\delta^\mu}_\nu.
+%%%\end{dmath}
+%%%Exploring that idea, I realized that this is not sufficient to define the reciprocal frame, as it is not unique.
+%%%I think that this must also be supplemented by a requirement that the span of both sets are identical.
+%%%
+%%%\section{Recap.}
+%%%Evaluating a multivector directional derivative, in terms of components motivates the definition of the space time gradient as
+%%%\begin{dmath}\label{eqn:reciprocal:220}
+%%%	\grad = \gamma^\mu \partial_\mu,
+%%%\end{dmath}
+%%%where \( \partial_\mu = \PDi{x^\mu}{} \).  If we introduce a parameterization for the space
+%%%\begin{dmath}\label{eqn:reciprocal:240}
+%%%	x = x(u^0, u^1, u^2, u^3),
+%%%\end{dmath}
+%%%then application of the chain rule can be used to show that the gradient takes the form
+%%%\begin{dmath}\label{eqn:reciprocal:260}
+%%%	\grad = \lr{ \grad u^\mu } \PD{u^\mu}{}
+%%%\end{dmath}
+%%%We define
+%%%\begin{dmath}\label{eqn:reciprocal:280}
+%%%	\Bx^\mu = \grad u^\mu,
+%%%\end{dmath}
+%%%and
+%%%\begin{dmath}\label{eqn:reciprocal:300}
+%%%	\Bx_\mu = \PD{u^\mu}{x}.
+%%%\end{dmath}
+%%%From this one can show that these pairs of vectors satisfy \cref{eqn:reciprocal:200}.
+%%%However, the gradients of \cref{eqn:reciprocal:280} can be really hard to compute.  Thankfully, we can avoid that computation, and compute these algebraically.
+%%%When the set of parameters is complete, this can be done unambigously, but if we have an incomplete set of parameters (i.e. \( x = x(u^0, \cdots, u^{N-1}) \), where \( N < 4 \), then we have parameterized a subspace and not the whole space.
+%%%In this case, things are not as obvious.
+%%%
+%%%\section{Guts.}
+%%%\maketheorem{Satisfying the reciprocal frame requirement.}{thm:reciprocal:140}{
+%%%Given a set of \( N \) vectors \( \setlr{\Bx_0, \cdots \Bx_{N-1}} \), let \( [\Bx_\mu] \) and \( [\Bx^\nu] \) be column matrices with the coordinates of these vectors and their reciprocals, with respect to the
+%%%standard basis \( \setlr{\gamma_0, \gamma_1, \gamma_2, \gamma_3 } \).
+%%%Let
+%%%\begin{equation*}
+%%%A =
+%%%\begin{bmatrix}
+%%%   [\Bx_0] & \cdots & [\Bx_{N-1}]
+%%%\end{bmatrix}
+%%%,\qquad
+%%%X =
+%%%\begin{bmatrix}
+%%%   [\Bx^0] & \cdots & [\Bx^{N-1}]
+%%%\end{bmatrix}.
+%%%\end{equation*}
+%%%The coordinates of the reciprocal frame vectors can be found by solving
+%%%\begin{equation*}
+%%%   A^\T G X = 1,
+%%%\end{equation*}
+%%%where \( G = \diag(1,-1,-1,-1) \) and the RHS \( 1 \) is an \( N \times N \) identity matrix.
+%%%} % theorem
+%%%In general, if \( N < 4 \), this is not a square system of equations.
+%%%% No:!
+%%%%%%We should be able to solve it analytically using Moore-Penrose inversion, but that is not neccessarily as simple as
+%%%%%%\begin{equation*}
+%%%%%%B = \lr{ G A A^\T G }^{-1} G A,
+%%%%%%\end{equation*}
+%%%%%%since \( G A A^T G \) may be singular.
+%%%%%%%or (probably better), use row reduction, or general software linear solvers such as Mathematica's LinearSolve.
+%%%% => \( G A A^T G \) will be singular if N < 4.
+%%%
+%%%In the special case that \( X \) contains zero rows, then they can be removed (with corresponding adjustments to \( G, B \)), and the reduced equation, which may be square, can be solved instead.  Such a reduced set of equations may provide the reciprocal frame vectors that satisfy the gradient identity
+%%%\cref{eqn:reciprocal:260}, but that really needs to be shown.
+%%%
+%%%First, let's just satisfy ourselves that we have stated the matrix equivalent of the duality relationship correctly.
+%%%\makeproblem{Reciprocal frame computation.}{problem:reciprocal:140}{
+%%%Prove \cref{thm:reciprocal:140}.
+%%%} % problem
+%%%\makeanswer{problem:reciprocal:140}{
+%%%\begin{proof}
+%%%Let \( \Bx_\mu = {a_\mu}^\alpha \gamma_\alpha, \Bx^\nu = b^{\nu\beta} \gamma_\beta \), so that
+%%%\begin{dmath}\label{eqn:reciprocal:140}
+%%%   A =
+%%%\begin{bmatrix}
+%%%   {a_\nu}^\mu
+%%%\end{bmatrix},
+%%%\end{dmath}
+%%%and
+%%%\begin{dmath}\label{eqn:reciprocal:160}
+%%%   X =
+%%%\begin{bmatrix}
+%%%   b^{\nu\mu}
+%%%\end{bmatrix},
+%%%\end{dmath}
+%%%where \( \mu \in [0,3]\) are the row indexes and \( \nu \in [0,N-1]\) are the column indexes.
+%%%The reciprocal frame satisfies \( \Bx_\mu \cdot \Bx^\nu = {\delta_\mu}^\nu \), which has the coordinate representation of
+%%%\begin{dmath}\label{eqn:reciprocal:180}
+%%%\Bx_\mu \cdot \Bx^\nu
+%%%=
+%%%\lr{
+%%%   {a_\mu}^\alpha \gamma_\alpha
+%%%}
+%%%\cdot
+%%%\lr{
+%%%   b^{\nu\beta} \gamma_\beta
+%%%}
+%%%=
+%%%   {a_\mu}^\alpha
+%%%   \eta_{\alpha\beta}
+%%%   b^{\nu\beta}
+%%%=
+%%%{[A^\T G B]_\mu}^\nu,
+%%%\end{dmath}
+%%%where \( \mu \) is the row index and \( \nu \) is the column index.
+%%%\end{proof}
+%%%} % answer
+%%%Having done that mechanical task, let's consider some examples.
+%%%\makeproblem{Two parameter basis.}{problem:reciprocal:320}{
+%%%Given \( \Bx_0 = \gamma_0 + \gamma_1 \), and \( \Bx_1 = \gamma_0 - \gamma_1 \), compute a reciprocal frame.
+%%%%These are the curvilinear frame for a parameterization such as
+%%%%\begin{equation*}
+%%%%x = u^0 \Bx_0 + u^1 \Bx_1,
+%%%%\end{equation*}
+%%%% (or anything else for which this is a first order approximation of.)
+%%%} % problem
+%%%\makeanswer{problem:reciprocal:320}{
+%%%We can form
+%%%\begin{dmath}\label{eqn:reciprocal:320}
+%%%A =
+%%%\begin{bmatrix}
+%%%	1 & 1 \\
+%%%	1 & -1 \\
+%%%	0 & 0\\
+%%%	0 & 0
+%%%\end{bmatrix},
+%%%\end{dmath}
+%%%so that the complete system of equations for the coordinates of the reciprocal frame vectors is
+%%%\begin{dmath}\label{eqn:reciprocal:340}
+%%%\begin{bmatrix}
+%%%	1 & 1 \\
+%%%	1 & -1 \\
+%%%	0 & 0\\
+%%%	0 & 0
+%%%\end{bmatrix}
+%%%\begin{bmatrix}
+%%%	1 & 0 & 0 & 0 \\
+%%%	0 & -1 & 0 & 0 \\
+%%%	0 & 0 & -1 & 0 \\
+%%%	0 & 0 & 0 & -1 \\
+%%%\end{bmatrix}
+%%%X =
+%%%\begin{bmatrix}
+%%%	1 & 0 \\
+%%%	0 & 1
+%%%\end{bmatrix}.
+%%%\end{dmath}
+%%%Dropping all the coordinates that aren't involved in the parameterization, we can solve the simpler reduced system instead
+%%%\begin{dmath}\label{eqn:reciprocal:360}
+%%%\begin{bmatrix}
+%%%	1 & 1 \\
+%%%	1 & -1 \\
+%%%\end{bmatrix}
+%%%\begin{bmatrix}
+%%%	1 & 0 \\
+%%%	0 & -1 \\
+%%%\end{bmatrix}
+%%%X' =
+%%%\begin{bmatrix}
+%%%	1 & 0 \\
+%%%	0 & 1
+%%%\end{bmatrix},
+%%%\end{dmath}
+%%%or
+%%%\begin{dmath}\label{eqn:reciprocal:380}
+%%%\begin{bmatrix}
+%%%	1 & -1 \\
+%%%	1 & 1 \\
+%%%\end{bmatrix}
+%%%X' = 1.
+%%%\end{dmath}
+%%%This is now nicely invertable, yielding
+%%%\begin{dmath}\label{eqn:reciprocal:400}
+%%%	X' = \inv{2}
+%%%\begin{bmatrix}
+%%%	1 & 1 \\
+%%%	-1 & 1 \\
+%%%\end{bmatrix},
+%%%\end{dmath}
+%%%or
+%%%\begin{equation}\label{eqn:reciprocal:420}
+%%%	\Bx^0 = \inv{2} \lr{ \gamma_0 - \gamma_1 }, \qquad
+%%%	\Bx^1 = \inv{2} \lr{ \gamma_0 + \gamma_1 }.
+%%%\end{equation}
+%%%It is straightforward to show that these satisfy the desired duality relations, that is
+%%%\begin{equation}\label{eqn:reciprocal:440}
+%%%	\Bx^0 \cdot \Bx_0 = \inv{2} \lr{ \gamma_0^2 - \gamma_1^2 } = 1 = \Bx^1 \cdot \Bx_1,
+%%%\end{equation}
+%%%\begin{equation}\label{eqn:reciprocal:460}
+%%%	\Bx^0 \cdot \Bx_1 = \inv{2} \lr{ \gamma_0^2 + \gamma_1^2 } = 0 = \Bx^1 \cdot \Bx_0.
+%%%\end{equation}
+%%%
+%%%Observe, however, that dropping the two rows of the matrix equation, really means that we are free to add anything from \( \Span \setlr{ \gamma_2, \gamma_3 } \) to our \( \Bx^\mu \) vectors, and they will still satisfy those relations.
+%%%} % answer
+%%%\makeproblem{A less trivial example.}{problem:reciprocal:480}{
+%%%Now solve the matrix equations for the reciprocal frame that result from the basis vectors
+%%%\begin{dmath}\label{eqn:reciprocal:480}
+%%%	\Bx_0 = \gamma_0 + \gamma_1 + \gamma_2 + \gamma_3,
+%%%\end{dmath}
+%%%\begin{dmath}\label{eqn:reciprocal:500}
+%%%	\Bx_1 = \gamma_0 - \gamma_1 + \gamma_2 - \gamma_3.
+%%%\end{dmath}
+%%%Find at least two sets of solutions to these equations.
+%%%} % problem
+%%%\makeanswer{problem:reciprocal:480}{
+%%%Presuming that these are curvilinear coordinates at some point, the tangent space at that point is in the span of \( \Span \setlr{ \gamma_0 + \gamma_2, \gamma_1 + \gamma_3 } \).
+%%%We really desire a solution that falls within that span, but a simple row reduction gives us a vastly different answer.  The equations that constrain the reciprocal frame are
+%%%\begin{dmath}\label{eqn:reciprocal:520}
+%%%	{
+%%%	\begin{bmatrix}
+%%%	1 & 1 \\
+%%%	1 & -1 \\
+%%%	1 & 1 \\
+%%%	1 & -1
+%%%	\end{bmatrix}
+%%%	}^\T G X =
+%%%\begin{bmatrix}
+%%%	1 & 0 \\
+%%%	0 & 1 \\
+%%%\end{bmatrix},
+%%%\end{dmath}
+%%%or
+%%%\begin{dmath}\label{eqn:reciprocal:540}
+%%%	\begin{bmatrix}
+%%%		1 & -1 & -1 & -1 \\
+%%%		1 & 1 & -1 & 1 \\
+%%%	\end{bmatrix}
+%%%	X = 1.
+%%%\end{dmath}
+%%%Row reduction yields
+%%%\begin{dmath}\label{eqn:reciprocal:620}
+%%%\begin{bmatrix}
+%%%1 & 0 & -1 & 0 & \frac{1}{2} & \frac{1}{2} \\
+%%%0 & 1 & 0 & 1 & -\frac{1}{2} & \frac{1}{2} \\
+%%%\end{bmatrix},
+%%%\end{dmath}
+%%%from which we can easily read off two sets of solutions
+%%%\begin{subequations}
+%%%\label{eqn:reciprocal:560}
+%%%\begin{equation}\label{eqn:reciprocal:580}
+%%%	\Bx^0 = (1/2)\lr{ \gamma_0 - \gamma_1 }, \qquad
+%%%	\Bx^1 = (1/2)\lr{ \gamma_0 + \gamma_1 },
+%%%\end{equation}
+%%%\begin{equation}\label{eqn:reciprocal:600}
+%%%	\Bx^0 = (-1/2)\lr{ \gamma_2 + \gamma_3 }, \qquad
+%%%	\Bx^1 = (1/2)\lr{ \gamma_2 - \gamma_3 }.
+%%%\end{equation}
+%%%\end{subequations}
+%%%However, neither of these is satifactory, as they clearly are not contained within the desired span.
+%%%Using Mathematica's PseudoInverse gives a more satisfactory result, namely
+%%%\begin{equation}\label{eqn:reciprocal:680}
+%%%\Bx^0 = (1/4)\lr{ \gamma_0 - \gamma_1 - \gamma_2 - \gamma_3 }, \qquad
+%%%\Bx^1 = (1/4)\lr{ \gamma_0 + \gamma_1 - \gamma_2 + \gamma_3 }.
+%%%\end{equation}
+%%%One can quickly check that this also satisfies the reciprocal relations.  Even better, this solution is in the span of the original vectors.
+%%%} % answer
+%%%Blundering through a numerical example above, we found that the PseudoInverse gave the best results.  However, the usual way that the reciprocal frame is expressed is as follows.
+%%%%\makedefinition{Reciprocal relations.}{dfn:reciprocal:700}{
+%%%%} % definition
 %}
 \EndArticle
 %\EndNoBibArticle
