@@ -73,63 +73,6 @@ This is not a particularly helpful representation, as the coordinates \( u^\mu =
 This implicit nature can make these gradients really hard to compute.
 Charging in to rescue us are the reciprocal frame vectors associated with the tangent space of the parameterization.
 \section{Reciprocal frame.}
-Consider the differential associated with an N-parameter surface
-\begin{dmath}\label{eqn:curvilinearSTA:60}
-dx =
-\sum_{\mu = 0}^{N-1} \PD{u^\mu}{x} du^\mu
-\end{dmath}
-If this happens to be a complete set of parameters (i.e. four of them), then each of these differentials provides one of the directions required to parameterize the space.
-If we have don't have a complete set of parameters, each of these partials represents one component of the tangent space at the point of evaluation.
-FIXME: picture.
-\makedefinition{Manifold and tangent vectors.}{dfn:curvilinearSTA:100}{
-We define
-\begin{equation*}
-\Bx_\mu = \PD{u^\mu}{x},
-\end{equation*}
-for the each of the directions that are tangent to the hypersurface associated with the parameterization.
-This subspace is called a manifold.
-We can define a differential along each of these directions as
-\begin{equation*}
-d\Bx_\mu = \Bx_\mu du^\mu,
-\end{equation*}
-(no sum).
-} % definition
-Incidentally, we now have enough prerequiste baggage that we can express the volume element for the manifold, which is just
-\( d^N x = d\Bx_0 \wedge \cdots \wedge d\Bx_{N-1} \).
-We'll use this when we get to geometric calculus over spacetime, but to start with, we want to relate these differential directions to our curvilinear gradient.
-Rather miraculously, these \( \Bx_\mu\)'s are exactly the reciprocal frame vectors that we need for the gradient.
-\maketheorem{Reciprocal frame.}{thm:curvilinearSTA:120}{
-The vectors \( \Bx^\mu = \grad u^\mu \), and \( \Bx_\mu = \PDi{u^\mu}{x} \) satisfy the reciprocal relationship
-\begin{equation*}
-   \Bx^\mu \cdot \Bx_\nu = {\delta^\mu}_\nu.
-\end{equation*}
-} % theorem
-\begin{proof}
-\begin{dmath}\label{eqn:curvilinearSTA:120}
-   \Bx^\mu \cdot \Bx_\nu
-   =
-   \grad u^\mu \cdot
-   \PD{u^\nu}{x}
-   =
-   \lr{
-      \gamma^\alpha \PD{x^\alpha}{u^\mu}
-   }
-   \cdot
-   \lr{
-      \PD{u^\nu}{x^\beta} \gamma_\beta
-   }
-   =
-   {\delta^\alpha}_\beta \PD{x^\alpha}{u^\mu}
-      \PD{u^\nu}{x^\beta}
-   =
-   \PD{x^\alpha}{u^\mu} \PD{u^\nu}{x^\alpha}
-   =
-   \PD{u^\nu}{u^\mu}
-   =
-   {\delta^\mu}_\nu
-.
-\end{dmath}
-\end{proof}
 \section{Solutions.}
 \shipoutAnswer
 %}
