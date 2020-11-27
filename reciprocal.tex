@@ -46,8 +46,8 @@ x = x^\mu \gamma_\mu = x_\mu \gamma^\mu.
 If we use non-bold face \( x^\mu, x_\nu \) for the coordinates with respect to a specified frame, then we cannot also use non-bold face for the curvilinear basis vectors.
 %One way to solve this notational problem would be to choose some new symbol, say \( f^\mu, f_\nu \), for our curvilinear basis vectors.
 %This seems like a grossly arbitrary choice.  Symbols that are generally available without some additional or conflicting meaning can be hard to come by, so I'll opt to
-To resolve this notational ambiguity, I've chosen to use bold face \( \Bx^\mu, \Bx_\nu \) symbols as the curvilinear basis elements for both the Euclidean and relativistic cases.
-\section{Review.}
+To resolve this notational ambiguity, I've chosen to use bold face \( \Bx^\mu, \Bx_\nu \) symbols as the curvilinear basis elements in this relativistic context, as we do for Euclidean spaces.
+\section{Basis and coordinates.}
 \makedefinition{Standard Dirac basis.}{dfn:reciprocal:720}{
 The Dirac basis elements are \(\setlr{ \gamma_0, \gamma_1, \gamma_2, \gamma_3 } \), satisfying
 \begin{equation*}
@@ -161,6 +161,63 @@ a^\mu
 a \cdot \lr{ \gamma^\mu \partial_\mu } F.
 \end{dmath}
 \end{proof}
+\section{Curvilinear bases.}
+Curvilinear bases are the foundation of the fundamental theorem of multivector calculus.  This form of integral calculus is defined over parameterized surfaces (called manifolds) that satisfy some specific non-degeneracy and continuity requirements.
+
+A parameterized vector \( x(u,v, \cdots w) \) can be thought of as tracing out a hypersurface (curve, surface, volume, ...), where the dimension of the hypersurface depends on the number of parameters.
+At each point, a bases can be constructed from the differentials of the parameterized vector.  Such a basis is called the tangent space to the surface at the point in question.  Our curvilinear bases will be related to these differentials.  We will also be interested in a dual basis that is restricted to the span of the tangent space.  This dual basis will be called the reciprocal frame, and line the basis of the tangent space itself, also varies from point to point on the surface.
+
+One and two parameter spaces are illustrated in \cref{fig:tangentSpaceSurface:tangentSpaceSurfaceFig1}.
+%\cref{fig:oneParameterDifferentialArrows:oneParameterDifferentialArrowsFig1}.
+%\imageFigure{../figures/GAelectrodynamics/bw/oneParameterDifferentialArrowsFig1}{One parameter curve, and some tangent vectors.}{fig:oneParameterDifferentialArrows:oneParameterDifferentialArrowsFig1}{0.2}
+%\cref{fig:tangentSpaceSurface:tangentSpaceSurfaceFig1}.
+%\imageFigure{../figures/GAelectrodynamics/bw/tangentSpaceSurfaceFig1}{Two parameter curve, with some tangent planes.}{fig:tangentSpaceSurface:tangentSpaceSurfaceFig1}{0.2}
+\imageTwoFigures
+{../figures/GAelectrodynamics/bw/oneParameterDifferentialArrowsFig1}
+{../figures/GAelectrodynamics/bw/tangentSpaceSurfaceFig1}{One and two parameter curves, with illustration of tangent spaces.}
+{fig:tangentSpaceSurface:tangentSpaceSurfaceFig1}
+{scale=0.6}
+Tangent spaces associated with 3 or more parameters cannot be easily visualized in three dimensions, but the idea generalizes algebraically without trouble.
+
+Given a two parameter surface, say \( x(u^0, u^1) \), the tangent space is \( \Span\setlr{ dx_0, dx_1 } \) where
+\begin{equation}\label{eqn:reciprocal:1040}
+\begin{aligned}
+dx_0 &= \PD{u^0}{x} du^0 \\
+dx_1 &= \PD{u^1}{x} du^1,
+\end{aligned}
+\end{equation}
+which is illustrated in
+\cref{fig:twoParameterDifferentialCov:twoParameterDifferentialCovFig1}.  We
+\imageFigure{../figures/GAelectrodynamics/twoParameterDifferentialCovFig1}{Two parameter surface.}{fig:twoParameterDifferentialCov:twoParameterDifferentialCovFig1}{0.3}
+\makedefinition{Tangent basis and space.}{dfn:reciprocal:100}{
+Given a parameterization \( x = x(u^0, \cdots, u^N) \), the span of the vectors
+\begin{equation*}
+\Bx_\mu = \PD{u^\mu}{x},
+\end{equation*}
+is called the tangent space for the hypersurface associated with the parameterization, and it's basis is
+\( \setlr{ \Bx_\mu } \).
+%This subspace is called a manifold.
+} % definition
+\makedefinition{Hypervolume elements.}{dfn:reciprocal:1060}{
+The differentials that lie along each of the tangent basis directions
+\begin{equation*}
+d\Bx_\mu = \Bx_\mu du^\mu, \qquad \mbox{(no sum)},
+\end{equation*}
+we form line, surface, volume, and hypervolume elements by repeated wedge products
+\begin{equation*}
+\begin{aligned}
+d^1\Bx &= d\Bx_0 = \Bx_0 du^0 \\
+d^2\Bx &= d\Bx_0 \wedge d\Bx_1 = \lr{\Bx_0 \wedge \Bx_1} du^0 du^1 \\
+d^3\Bx &= d\Bx_0 \wedge d\Bx_1 \wedge d\Bx_2 = \lr{\Bx_0 \wedge \Bx_1 \wedge \Bx_2 } du^0 du^1 du^2 \\
+d^4\Bx &= d\Bx_0 \wedge d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_3 = \lr{\Bx_0 \wedge \Bx_1 \wedge \Bx_2 \wedge \Bx_3 } du^0 du^1 du^2 du^3 \\
+\end{aligned}
+\end{equation*}
+%will be of interest when formulating the fundamental theorem of geometric algebra.
+} % definition
+For such hypervolume elements to be meaningful, we must impose some additional constraints.
+In particular, the space must be non-degenerate, which means that the volume elements above are non-zero (the Jacobian's of the partials are not zero at the points that we are interested in.)  We also require that these volume elements are invertible, an additional constraint that is not required explicitly for Euclidean spaces.
+
+\chapter{foo}
 \maketheorem{Gradient, curvilinear representation.}{thm:reciprocal:940}{
 Given a non-degenerate spacetime parameterization \( x = x(u^0, u^1, u^2, u^3) \), the gradient with respect to the parameters \( u^\mu \) is
 \begin{equation*}
@@ -191,31 +248,8 @@ and
 \Bx_\mu = \PD{u^\mu}{x}.
 \end{dmath}
 } % definition
-\section{rewrite marker.}
+\section{REWRITE MARKER II.}
 
-Consider the differential associated with an N-parameter surface
-\begin{dmath}\label{eqn:reciprocal:1000}
-dx =
-\sum_{\mu = 0}^{N-1} \PD{u^\mu}{x} du^\mu
-\end{dmath}
-If this happens to be a complete set of parameters (i.e. four of them), then each of these differentials provides one of the directions required to parameterize the space.
-If we have don't have a complete set of parameters, each of these partials represents one component of the tangent space at the point of evaluation.
-%FIXME: picture.
-%\cref{fig:twoParameterDifferentialCov:twoParameterDifferentialCovFig1}.
-\imageFigure{../figures/GAelectrodynamics/twoParameterDifferentialCovFig1}{Two parameter surface.}{fig:twoParameterDifferentialCov:twoParameterDifferentialCovFig1}{0.3}
-\makedefinition{Manifold and tangent vectors.}{dfn:reciprocal:100}{
-We define
-\begin{equation*}
-\Bx_\mu = \PD{u^\mu}{x},
-\end{equation*}
-for the each of the directions that are tangent to the hypersurface associated with the parameterization.
-This subspace is called a manifold.
-We can define a differential along each of these directions as
-\begin{equation*}
-d\Bx_\mu = \Bx_\mu du^\mu,
-\end{equation*}
-(no sum).
-} % definition
 Incidentally, we now have enough prerequiste baggage that we can express the volume element for the manifold, which is just
 \( d^N x = d\Bx_0 \wedge \cdots \wedge d\Bx_{N-1} \).
 We'll use this when we get to geometric calculus over spacetime, but to start with, we want to relate these differential directions to our curvilinear gradient.
