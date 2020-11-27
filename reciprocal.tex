@@ -30,7 +30,8 @@
 %\label{chap:reciprocal}
 
 \section{Motivation.}
-When studying curvilinear coordinates, reciprocal frame vectors are found to be the gradients of the parameters generating the tangent space at the point of evaluation.  We can also construct reciprocal frame vectors algebraically, but have a uniqueness doing so unless additional constraints are imposed.  In particular, the coordinates of a vector can be computed with respect to either the tangent space basis, or it's reciprocal basis, so we must impose the constraint that the reciprocal frame is restricted to the span of the tangent space basis.  Failing to impose such a constraint leads to uniqueness problems, and almost certainly means that the algebraic construction does not match the gradient construction.
+When studying curvilinear coordinates, reciprocal frame vectors are found to be the gradients of the parameters generating the tangent space at the point of evaluation.  We can also construct reciprocal frame vectors algebraically, but have a uniqueness doing so unless additional constraints are imposed.
+In particular, the coordinates of a vector can be computed with respect to either the tangent space basis, or it's reciprocal basis, so we must impose the constraint that the reciprocal frame is restricted to the span of the tangent space basis.  Failing to impose such a constraint leads to uniqueness problems, and almost certainly means that the algebraic construction does not match the gradient construction.
 
 In these notes, I'll walk through all the ideas involved.  The focus will be on the Dirac's algebra of special relativity, known as STA (Space Time Algebra) in geometric algebra parlance.
 
@@ -177,20 +178,22 @@ One and two parameter spaces are illustrated in \cref{fig:tangentSpaceSurface:ta
 {../figures/GAelectrodynamics/bw/tangentSpaceSurfaceFig1}{One and two parameter curves, with illustration of tangent spaces.}
 {fig:tangentSpaceSurface:tangentSpaceSurfaceFig1}
 {scale=0.6}
-Tangent spaces associated with 3 or more parameters cannot be easily visualized in three dimensions, but the idea generalizes algebraically without trouble.
 
-Given a two parameter surface, say \( x(u^0, u^1) \), the tangent space is \( \Span\setlr{ dx_0, dx_1 } \) where
+The tangent space basis at a specific point of a two parameter
+surface, \( x(u^0, u^1) \),
+is illustrated in
+\cref{fig:twoParameterDifferentialCov:twoParameterDifferentialCovFig1}.  The differential directions that span the tangent space are
 \begin{equation}\label{eqn:reciprocal:1040}
 \begin{aligned}
-dx_0 &= \PD{u^0}{x} du^0 \\
-dx_1 &= \PD{u^1}{x} du^1,
+d\Bx_0 &= \PD{u^0}{x} du^0 \\
+d\Bx_1 &= \PD{u^1}{x} du^1,
 \end{aligned}
 \end{equation}
-which is illustrated in
-\cref{fig:twoParameterDifferentialCov:twoParameterDifferentialCovFig1}.  We
+and the tangent space itself is \( \Span\setlr{ d\Bx_0, d\Bx_1 } \).  We may form an oriented surface area element \( d\Bx_0 \wedge d\Bx_1 \) over this surface.
 \imageFigure{../figures/GAelectrodynamics/twoParameterDifferentialCovFig1}{Two parameter surface.}{fig:twoParameterDifferentialCov:twoParameterDifferentialCovFig1}{0.3}
+Tangent spaces associated with 3 or more parameters cannot be easily visualized in three dimensions, but the idea generalizes algebraically without trouble.
 \makedefinition{Tangent basis and space.}{dfn:reciprocal:100}{
-Given a parameterization \( x = x(u^0, \cdots, u^N) \), the span of the vectors
+Given a parameterization \( x = x(u^0, \cdots, u^N) \), where \( N < 4 \), the span of the vectors
 \begin{equation*}
 \Bx_\mu = \PD{u^\mu}{x},
 \end{equation*}
@@ -209,14 +212,18 @@ we form line, surface, volume, and hypervolume elements by repeated wedge produc
 d^1\Bx &= d\Bx_0 = \Bx_0 du^0 \\
 d^2\Bx &= d\Bx_0 \wedge d\Bx_1 = \lr{\Bx_0 \wedge \Bx_1} du^0 du^1 \\
 d^3\Bx &= d\Bx_0 \wedge d\Bx_1 \wedge d\Bx_2 = \lr{\Bx_0 \wedge \Bx_1 \wedge \Bx_2 } du^0 du^1 du^2 \\
-d^4\Bx &= d\Bx_0 \wedge d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_3 = \lr{\Bx_0 \wedge \Bx_1 \wedge \Bx_2 \wedge \Bx_3 } du^0 du^1 du^2 du^3 \\
+d^4\Bx &= d\Bx_0 \wedge d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_3 = \lr{\Bx_0 \wedge \Bx_1 \wedge \Bx_2 \wedge \Bx_3 } du^0 du^1 du^2 du^3.
 \end{aligned}
 \end{equation*}
 %will be of interest when formulating the fundamental theorem of geometric algebra.
 } % definition
-For such hypervolume elements to be meaningful, we must impose some additional constraints.
-In particular, the space must be non-degenerate, which means that the volume elements above are non-zero (the Jacobian's of the partials are not zero at the points that we are interested in.)  We also require that these volume elements are invertible, an additional constraint that is not required explicitly for Euclidean spaces.
+For such hypervolume elements to be meaningful, we impose a non-degeneracy constraint, and require that the
+%In particular, the space must be non-degenerate, which means that the
+volume elements above are non-zero (the Jacobian's of the partials are not zero.)  This non-zero constraint is required to ensure that the orientation of the volume elements do not change sign (as in differential forms, we do not take the absolute value of any Jacobians.)
+For non-Euclidean spaces, we must also require that these volume elements are invertible, since that does not generally follow.
+The parameterized hypersurfaces that we integrate over, when augmented with these additional constraints, are referred to as manifolds.
 
+It's worth considering a couple examples of degenerate parameterizations.  FIXME...
 \chapter{foo}
 \maketheorem{Gradient, curvilinear representation.}{thm:reciprocal:940}{
 Given a non-degenerate spacetime parameterization \( x = x(u^0, u^1, u^2, u^3) \), the gradient with respect to the parameters \( u^\mu \) is
