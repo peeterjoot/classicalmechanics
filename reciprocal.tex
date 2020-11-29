@@ -354,7 +354,7 @@ In summary,
 \end{aligned}
 \end{equation}
 } % answer
-Despite being a fairly simple parameterization, it was still fairly difficult to solve for the gradients when the parameterization introduced coupling between the coordinates.  In this particular case, we could have solved for the parameters in terms of the coordinates (but it was easilier not to), but that will not generally be true.  We want a less labour intensive strategy to find the reciprocal frame.
+Despite being a fairly simple parameterization, it was still fairly difficult to solve for the gradients when the parameterization introduced coupling between the coordinates.  In this particular case, we could have solved for the parameters in terms of the coordinates (but it was easilier not to), but that will not generally be true.  We want a less labour intensive strategy to find the reciprocal frame.  When we have a full parameterization of spacetime, then we can do this with nothing more than a matrix inversion.
 \maketheorem{Reciprocal frame matrix equations.}{thm:reciprocal:140}{
 Given a spacetime basis \( \setlr{\Bx_0, \cdots \Bx_3} \), let \( [\Bx_\mu] \) and \( [\Bx^\nu] \) be column matrices with the coordinates of these vectors and their reciprocals, with respect to the standard basis \( \setlr{\gamma_0, \gamma_1, \gamma_2, \gamma_3 } \).
 Let
@@ -412,6 +412,74 @@ The reciprocal frame satisfies \( \Bx_\mu \cdot \Bx^\nu = {\delta_\mu}^\nu \), w
 \end{dmath}
 where \( \mu \) is the row index and \( \nu \) is the column index.
 \end{proof}
+\makeproblem{Matrix inversion reciprocals.}{problem:reciprocal:1400}{
+For the parameterization of \cref{problem:reciprocal:1200}, find the reciprocal frame vectors by matrix inversion.
+} % problem
+\makeanswer{problem:reciprocal:1400}{
+We expanded \( \Bx_1 \) explicitly in \cref{eqn:reciprocal:1200}.  Doing the same for \( \Bx_2 \), we have
+\begin{dmath}\label{eqn:reciprocal:1201}
+\Bx_2 =
+-\rho \gamma_2 e^{i\theta}
+= -\rho \gamma_2 \lr{ \cos\theta + \gamma_1 \gamma_2 \sin\theta }
+= - \rho \lr{ \gamma_2 \cos\theta + \gamma_1 \sin\theta}.
+\end{dmath}
+Reading off the coordinates of our frame vectors, we have
+\begin{dmath}\label{eqn:reciprocal:1400}
+X =
+\begin{bmatrix}
+c &  0 & 0       & 0 \\
+0 &  C & -\rho S & 0 \\
+0 & -S & -\rho C & 0 \\
+0 &  0 & 0       & 1 \\
+\end{bmatrix}
+\end{dmath},
+where \( C = \cos\theta \) and \( S = \sin\theta \).
+we want
+\begin{equation}\label{eqn:reciprocal:1420}
+Y =
+{\begin{bmatrix}
+c &  0      & 0       &  0 \\
+0 & -C      &  S      &  0 \\
+0 &  \rho S &  \rho C &  0 \\
+0 &  0      & 0       & -1 \\
+\end{bmatrix}}^{-1}
+=
+\begin{bmatrix}
+\inv{c}   &  0 & 0               &  0 \\
+        0 & -C & \frac{S}{\rho}  &  0 \\
+        0 &  S & \frac{C}{\rho}  &  0 \\
+        0 &  0 & 0               & -1 \\
+\end{bmatrix}.
+\end{equation}
+We can read off the coordinates of the reciprocal frame vectors
+\begin{equation}\label{eqn:reciprocal:1440}
+\begin{aligned}
+\Bx^0 &= \inv{c} \gamma_0 \\
+\Bx^1 &= -\cos\theta \gamma_1 + \sin\theta \gamma_2 \\
+\Bx^2 &= \inv{\rho} \lr{ \sin\theta \gamma_1 + \cos\theta \gamma_2 } \\
+\Bx^3 &= -\gamma_3 \\
+\end{aligned}
+\end{equation}
+Factoring out \( \gamma^1 \) from the \( \Bx^1 \) terms, we find
+\begin{dmath}\label{eqn:reciprocal:1460}
+\Bx^1
+= -\cos\theta \gamma_1 + \sin\theta \gamma_2
+= \gamma^1 \lr{ \cos\theta + \gamma_1 \gamma_2 \sin\theta }
+= \gamma^1 e^{i\theta}.
+\end{dmath}
+Similarly for \( \Bx^2 \),
+\begin{dmath}\label{eqn:reciprocal:1480}
+\Bx^2
+= \inv{\rho} \lr{ \sin\theta \gamma_1 + \cos\theta \gamma_2 }
+= \frac{\gamma^2}{\rho} \lr{ \sin\theta \gamma_2 \gamma_1 - \cos\theta }
+= -\frac{\gamma^2}{\rho} e^{i\theta}.
+\end{dmath}
+This matches \cref{eqn:reciprocal:1380}, as expected, but required only algebraic work to compute.
+} % answer
+
+
+
+
 \chapter{INTEGRATION STUFF FOR LATER.}
 \makedefinition{Hypervolume elements.}{dfn:reciprocal:1060}{
 Wedge products of the differentials that lie along each of the tangent basis directions
