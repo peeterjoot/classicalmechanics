@@ -476,9 +476,44 @@ Similarly for \( \Bx^2 \),
 \end{dmath}
 This matches \cref{eqn:reciprocal:1380}, as expected, but required only algebraic work to compute.
 } % answer
-
-
-
+There will be circumstances where we parameterize only a subset of spacetime, and are interested in calculating quantities associated with such a surface.  For example, suppose that
+\begin{dmath}\label{eqn:reciprocal:1500}
+x(\rho,\theta) = \gamma_1 \rho e^{i \theta},
+\end{dmath}
+where \( i = \gamma_1 \gamma_2 \) as before.  We are now parameterizing only the \(x-y\) plane.  We will still find
+\begin{equation}\label{eqn:reciprocal:1520}
+\begin{aligned}
+\Bx_1 &= \gamma_1 e^{i \theta} \\
+\Bx_2 &= -\gamma_2 \rho e^{i \theta}.
+\end{aligned}
+\end{equation}
+We can compute the reciprocals of these vectors using the gradient method.  It's possible to state matrix equations representing the reciprocal relationship of \cref{thm:reciprocal:120}, which, in this case, is \( X^\T G Y = 1 \), where the RHS is a \( 2 \times 2 \) identity matrix, and \( X, Y\) are \( 4\times 2\) matrices of coordinates, with
+\begin{equation}\label{eqn:reciprocal:1540}
+X =
+\begin{bmatrix}
+  0 & 0        \\
+  C & -\rho S  \\
+ -S & -\rho C  \\
+  0 & 0
+\end{bmatrix}.
+\end{equation}
+We no longer have a square matrix problem to solve, and our solution set is multivalued.
+In particular, this matrix equation has solutions
+\begin{equation}\label{eqn:reciprocal:1460}
+\begin{aligned}
+\Bx^1 &= \gamma^1 e^{i\theta} + \alpha \gamma^0 + \beta \gamma^3 \\
+\Bx^2 &= -\frac{\gamma^2}{\rho} e^{i\theta} + \alpha' \gamma^0 + \beta' \gamma^3.
+\end{aligned}
+\end{equation}
+where \( \alpha, \alpha', \beta, \beta' \) are arbitrary constants.
+In the example we considered, we saw that our \( \rho, \theta \) parameters were functions of only \( x^1, x^2 \), so taking gradients could not introduce any \( \gamma^0, \gamma^3 \) dependence in \( \Bx^1, \Bx^2 \).
+It seems reasonable to assert that we seek an
+algebraic method of computing a set of vectors that satisfies the reciprocal relationships, where that set of vectors is restricted to the tangent space.  We will need to figure out how to prove that this reciprocal construction is identical to the parameter gradients, but let's start with figuring out what such a tangent space restricted solution looks like.
+\makeproblem{Reciprocal frame for two parameter subspace.}{problem:reciprocal:1500}{
+Let \( \Bx_1, \Bx_2 \) be two vectors.  Find \( \Bx^1, \Bx^2 \in \Span\setlr{ \Bx_1, \Bx_2 } \) such that \( \Bx^\mu \cdot \Bx_\nu = {\delta^\mu}_\nu \).
+} % problem
+\makeanswer{problem:reciprocal:1500}{
+} % answer
 
 \chapter{INTEGRATION STUFF FOR LATER.}
 \makedefinition{Hypervolume elements.}{dfn:reciprocal:1060}{
