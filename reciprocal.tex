@@ -207,7 +207,7 @@ Having introduced curvilinear coordinates associated with a parameterization, we
 \maketheorem{Gradient, curvilinear representation.}{thm:reciprocal:940}{
 Given a spacetime parameterization \( x = x(u^0, u^1, u^2, u^3) \), the gradient with respect to the parameters \( u^\mu \) is
 \begin{equation*}
-\grad = \Bx^\mu
+\grad = \sum_\mu \Bx^\mu
 	\PD{u^\mu}{},
 \end{equation*}
 where
@@ -216,9 +216,15 @@ where
 \end{equation*}
 The vectors \( \Bx^\mu \) are called the reciprocal frame vectors, and the
 ordered set \( \setlr{ \Bx^0, \Bx^1, \Bx^2, \Bx^3 } \) is called the reciprocal basis.
+
+It is convienient to define \( \partial_\mu \equiv \PDi{u^\mu}{} \), so that the gradient can be expressed in mixed index representation
+\begin{equation*}
+\grad = \Bx^\mu \partial_\mu.
+\end{equation*}
+This introduces some notational ambiguity, since we used \( \partial_\mu = \PDi{x^\mu}{} \) for the standard basis derivative operators too, but we will be careful to be explicit when there is any doubt about what is intended.
 } % theorem
 \begin{proof}
-This follows by application of the chain rule.
+The proof follows by application of the chain rule.
 \begin{dmath}\label{eqn:reciprocal:960}
 \grad F
 =
@@ -265,8 +271,148 @@ The vectors \( \Bx^\mu = \grad u^\mu \), and \( \Bx_\mu = \PDi{u^\mu}{x} \) sati
 .
 \end{dmath}
 \end{proof}
-\section{REWRITE MARKER II.}
+It is instructive to consider an example.  Here is a parameterization that scales the proper time parameter, and uses polar coordinates in the \(x-y\) plane.
+\makeproblem{Compute the curivilinear and reciprocal basis.}{problem:reciprocal:1200}{
+Given \( x(t,\rho,\theta,z) = c t \gamma_0 + \gamma_1 \rho e^{i \theta} + z \gamma_3 \), where \( i = \gamma_1 \gamma_2 \), compute the curvilinear frame vectors and their reciprocals.
+} % problem
+\makeanswer{problem:reciprocal:1200}{
+The frame vectors are all easy to compute
+\begin{equation}\label{eqn:reciprocal:1180}
+\begin{aligned}
+\Bx_0 &= \PD{t}{x} = c \gamma_0 \\
+\Bx_1 &= \PD{\rho}{x} = \gamma_1 e^{i \theta} \\
+\Bx_2 &= \PD{\theta}{x} = \rho \gamma_1 \gamma_1 \gamma_2 e^{i \theta} = - \rho \gamma_2 e^{i \theta} \\
+\Bx_3 &= \PD{z}{x} = \gamma_3.
+\end{aligned}
+\end{equation}
+The \( \Bx_1 \) vector is radial, \( \Bx^2 \) is perpendicular to that tangent to the same unit circle, as plotted in
+\cref{fig:rotationCurvilinear:rotationCurvilinearFig1}.
+\imageFigure{../figures/classicalmechanics/rotationCurvilinearFig1}{Tangent space direction vectors.}{fig:rotationCurvilinear:rotationCurvilinearFig1}{0.3}
+All of these particular frame vectors happen to be mutually perpendicular, something that will not generally be true for a more arbitrary parameterization.
 
+To compute the reciprocal frame vectors, we must express our parameters in terms of \( x^\mu \) coordinates, and use implicit integration techniques to deal with the coupling of the rotational terms.  First observe that
+\begin{dmath}\label{eqn:reciprocal:1200}
+\gamma_1 e^{i\theta}
+= \gamma_1 \lr{ \cos\theta + \gamma_1 \gamma_2 \sin\theta }
+= \gamma_1 \cos\theta - \gamma_2 \sin\theta,
+\end{dmath}
+so
+\begin{equation}\label{eqn:reciprocal:1220}
+\begin{aligned}
+x^0 &= c t \\
+x^1 &= \rho \cos\theta \\
+x^2 &= -\rho \sin\theta \\
+x^3 &= z.
+\end{aligned}
+\end{equation}
+We can easily evaluate the \( t, z \) gradients
+\begin{equation}\label{eqn:reciprocal:1240}
+\begin{aligned}
+\grad t &= \frac{\gamma^1 }{c} \\
+\grad z &= \gamma^3,
+\end{aligned}
+\end{equation}
+but the \( \rho, \theta \) gradients are not as easy.  First writing
+\begin{dmath}\label{eqn:reciprocal:1260}
+\rho^2 = \lr{x^1}^2 + \lr{x^2}^2,
+\end{dmath}
+we find
+\begin{dmath}\label{eqn:reciprocal:1280}
+2 \rho \grad \rho = 2 \lr{ x^1 \grad x^1 + x^2 \grad x^2 }
+= 2 \rho \lr{ \cos\theta \gamma^1 - \sin\theta \gamma^2 }
+= 2 \rho \gamma^1 \lr{ \cos\theta - \gamma_1 \gamma^2 \sin\theta }
+= 2 \rho \gamma^1 e^{i\theta},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:reciprocal:1300}
+\grad \rho = \gamma^1 e^{i\theta}.
+\end{dmath}
+For the \( \theta \) gradient, we can write
+\begin{dmath}\label{eqn:reciprocal:1320}
+\tan\theta = -\frac{x^2}{x^1},
+\end{dmath}
+so
+\begin{dmath}\label{eqn:reciprocal:1340}
+\inv{\cos^2 \theta} \grad \theta
+= -\frac{\gamma^2}{x^1} - x^2 \frac{-\gamma^1}{\lr{x^1}^2}
+= \inv{\lr{x^1}^2} \lr{ - \gamma^2 x^1 + \gamma^1 x^2 }
+= \frac{\rho}{\rho^2 \cos^2\theta } \lr{ - \gamma^2 \cos\theta - \gamma^1 \sin\theta }
+= -\frac{1}{\rho \cos^2\theta } \gamma^2 \lr{ \cos\theta + \gamma_2 \gamma^1 \sin\theta }
+= -\frac{\gamma^2 e^{i\theta} }{\rho \cos^2\theta },
+\end{dmath}
+or
+\begin{dmath}\label{eqn:reciprocal:1360}
+\grad\theta = -\inv{\rho} \gamma^2 e^{i\theta}.
+\end{dmath}
+In summary,
+\begin{equation}\label{eqn:reciprocal:1380}
+\begin{aligned}
+\Bx^0 &= \frac{\gamma^0}{c} \\
+\Bx^1 &= \gamma^1 e^{i\theta} \\
+\Bx^2 &= -\inv{\rho} \gamma^2 e^{i\theta} \\
+\Bx^3 &= \gamma^3.
+\end{aligned}
+\end{equation}
+} % answer
+Despite being a fairly simple parameterization, it was still fairly difficult to solve for the gradients when the parameterization introduced coupling between the coordinates.  In this particular case, we could have solved for the parameters in terms of the coordinates (but it was easilier not to), but that will not generally be true.  We want a less labour intensive strategy to find the reciprocal frame.
+\maketheorem{Reciprocal frame matrix equations.}{thm:reciprocal:140}{
+Given a spacetime basis \( \setlr{\Bx_0, \cdots \Bx_3} \), let \( [\Bx_\mu] \) and \( [\Bx^\nu] \) be column matrices with the coordinates of these vectors and their reciprocals, with respect to the standard basis \( \setlr{\gamma_0, \gamma_1, \gamma_2, \gamma_3 } \).
+Let
+\begin{equation*}
+A =
+\begin{bmatrix}
+   [\Bx_0] & \cdots & [\Bx_{3}]
+\end{bmatrix}
+,\qquad
+X =
+\begin{bmatrix}
+   [\Bx^0] & \cdots & [\Bx^{3}]
+\end{bmatrix}.
+\end{equation*}
+The coordinates of the reciprocal frame vectors can be found by solving
+\begin{equation*}
+   A^\T G X = 1,
+\end{equation*}
+where \( G = \diag(1,-1,-1,-1) \) and the RHS is an \( 4 \times 4 \) identity matrix.
+} % theorem
+%In the special case that \( X \) contains zero rows, then they can be removed (with corresponding adjustments to \( G, B \)), and the reduced equation, which may be square, can be solved instead.  Such a reduced set of equations may provide the reciprocal frame vectors that satisfy the gradient identity \cref{eqn:reciprocal:260}, but that really needs to be shown.
+\begin{proof}
+Let \( \Bx_\mu = {a_\mu}^\alpha \gamma_\alpha, \Bx^\nu = b^{\nu\beta} \gamma_\beta \), so that
+\begin{dmath}\label{eqn:reciprocal:140}
+   A =
+\begin{bmatrix}
+   {a_\nu}^\mu
+\end{bmatrix},
+\end{dmath}
+and
+\begin{dmath}\label{eqn:reciprocal:160}
+   X =
+\begin{bmatrix}
+   b^{\nu\mu}
+\end{bmatrix},
+\end{dmath}
+where \( \mu \in [0,3]\) are the row indexes and \( \nu \in [0,N-1]\) are the column indexes.
+The reciprocal frame satisfies \( \Bx_\mu \cdot \Bx^\nu = {\delta_\mu}^\nu \), which has the coordinate representation of
+\begin{dmath}\label{eqn:reciprocal:180}
+\Bx_\mu \cdot \Bx^\nu
+=
+\lr{
+   {a_\mu}^\alpha \gamma_\alpha
+}
+\cdot
+\lr{
+   b^{\nu\beta} \gamma_\beta
+}
+=
+   {a_\mu}^\alpha
+   \eta_{\alpha\beta}
+   b^{\nu\beta}
+=
+{[A^\T G B]_\mu}^\nu,
+\end{dmath}
+where \( \mu \) is the row index and \( \nu \) is the column index.
+\end{proof}
+\chapter{INTEGRATION STUFF FOR LATER.}
 \makedefinition{Hypervolume elements.}{dfn:reciprocal:1060}{
 Wedge products of the differentials that lie along each of the tangent basis directions
 \begin{equation*}
@@ -292,7 +438,7 @@ The parameterized hypersurfaces that we integrate over, when augmented with thes
 
 Consider the following example of a degenerate parameterization.
 \makeproblem{Degenerate surface parameterization.}{problem:reciprocal:480}{
-Given a spacetime plane parameterization \( x(u,v) = u \Ba + v \Bb \), where
+Given a spacetime plane parameterization \( x(u,v) = u a + v b \), where
 \begin{dmath}\label{eqn:reciprocal:480}
 	a = \gamma_0 + \gamma_1 + \gamma_2 + \gamma_3,
 \end{dmath}
