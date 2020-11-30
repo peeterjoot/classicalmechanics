@@ -499,7 +499,7 @@ X =
 \end{equation}
 We no longer have a square matrix problem to solve, and our solution set is multivalued.
 In particular, this matrix equation has solutions
-\begin{equation}\label{eqn:reciprocal:1460}
+\begin{equation}\label{eqn:reciprocal:1560}
 \begin{aligned}
 \Bx^1 &= \gamma^1 e^{i\theta} + \alpha \gamma^0 + \beta \gamma^3 \\
 \Bx^2 &= -\frac{\gamma^2}{\rho} e^{i\theta} + \alpha' \gamma^0 + \beta' \gamma^3.
@@ -509,37 +509,110 @@ where \( \alpha, \alpha', \beta, \beta' \) are arbitrary constants.
 In the example we considered, we saw that our \( \rho, \theta \) parameters were functions of only \( x^1, x^2 \), so taking gradients could not introduce any \( \gamma^0, \gamma^3 \) dependence in \( \Bx^1, \Bx^2 \).
 It seems reasonable to assert that we seek an
 algebraic method of computing a set of vectors that satisfies the reciprocal relationships, where that set of vectors is restricted to the tangent space.  We will need to figure out how to prove that this reciprocal construction is identical to the parameter gradients, but let's start with figuring out what such a tangent space restricted solution looks like.
-\makeproblem{Reciprocal frame for two parameter subspace.}{problem:reciprocal:1500}{
-Let \( \Bx_1, \Bx_2 \) be two vectors.  Find \( \Bx^1, \Bx^2 \in \Span\setlr{ \Bx_1, \Bx_2 } \) such that \( \Bx^\mu \cdot \Bx_\nu = {\delta^\mu}_\nu \).
-} % problem
-\makeanswer{problem:reciprocal:1500}{
-} % answer
-
-\chapter{INTEGRATION STUFF FOR LATER.}
-\makedefinition{Hypervolume elements.}{dfn:reciprocal:1060}{
-Wedge products of the differentials that lie along each of the tangent basis directions
-\begin{equation*}
-d\Bx_\mu = \Bx_\mu du^\mu, \qquad \mbox{(no sum)},
-\end{equation*}
-can be used to form line, surface, volume, and hypervolume elements
+\maketheorem{Reciprocal frame for two parameter subspace.}{thm:reciprocal:1500}{
+Given two vectors, \( \Bx_1, \Bx_2 \), the vectors \( \Bx^1, \Bx^2 \in \Span\setlr{ \Bx_1, \Bx_2 } \) such that \( \Bx^\mu \cdot \Bx_\nu = {\delta^\mu}_\nu \) are given by
 \begin{equation*}
 \begin{aligned}
-d^1\Bx &= d\Bx_0 = \Bx_0 du^0 \\
-d^2\Bx &= d\Bx_0 \wedge d\Bx_1 = \lr{\Bx_0 \wedge \Bx_1} du^0 du^1 \\
-d^3\Bx &= d\Bx_0 \wedge d\Bx_1 \wedge d\Bx_2 = \lr{\Bx_0 \wedge \Bx_1 \wedge \Bx_2 } du^0 du^1 du^2 \\
-d^4\Bx &= d\Bx_0 \wedge d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_3 = \lr{\Bx_0 \wedge \Bx_1 \wedge \Bx_2 \wedge \Bx_3 } du^0 du^1 du^2 du^3.
+\Bx^1 &= \Bx_2 \cdot \inv{\Bx_1 \wedge \Bx_2} \\
+\Bx^2 &= -\Bx_1 \cdot \inv{\Bx_1 \wedge \Bx_2},
 \end{aligned}
 \end{equation*}
-%will be of interest when formulating the fundamental theorem of geometric algebra.
-} % definition
-For such hypervolume elements to be meaningful, we must impose a non-degeneracy constraint, and require that the
-%In particular, the space must be non-degenerate, which means that the
-volume elements above are non-zero (the Jacobian's of the partials are not zero.)  This non-zero constraint is required to ensure that the orientation of the volume elements do not change sign (as in differential forms, we do not take the absolute value of any Jacobians.)
-We must also require that these volume elements are invertible, since non-invertible null vectors, bivectors, and trivectors,
-are possible in our non-Euclidean space.
-The parameterized hypersurfaces that we integrate over, when augmented with these additional constraints, are referred to as manifolds.
+provided \( \Bx_1 \wedge \Bx_2 \ne 0 \) and
+\( \lr{ \Bx_1 \wedge \Bx_2 }^2 \ne 0 \).
+} % theorem
+\begin{proof}
+The most general set of vectors that satisfy the span constraint are
+\begin{equation}\label{eqn:reciprocal:1580}
+\begin{aligned}
+\Bx^1 &= a \Bx_1 + b \Bx_2 \\
+\Bx^2 &= c \Bx_1 + d \Bx_2.
+\end{aligned}
+\end{equation}
+We can use wedge products with either \( \Bx_1 \) or \( \Bx_2 \) to eliminate the other from the RHS
+\begin{equation}\label{eqn:reciprocal:1600}
+\begin{aligned}
+\Bx^1 \wedge \Bx_2 &=   a \lr{ \Bx_1 \wedge \Bx_2 } \\
+\Bx^1 \wedge \Bx_1 &= - b \lr{ \Bx_1 \wedge \Bx_2 } \\
+\Bx^2 \wedge \Bx_2 &=   c \lr{ \Bx_1 \wedge \Bx_2 } \\
+\Bx^2 \wedge \Bx_1 &= - d \lr{ \Bx_1 \wedge \Bx_2 },
+\end{aligned}
+\end{equation}
+and then dot both sides with \( \Bx_1 \wedge \Bx_2 \) to produce four scalar equations
+\begin{subequations}
+\label{eqn:reciprocal:1620}
+\begin{dmath}\label{eqn:reciprocal:1640}
+a \lr{ \Bx_1 \wedge \Bx_2 }^2
+  = \lr{ \Bx^1 \wedge \Bx_2 } \cdot \lr{ \Bx_1 \wedge \Bx_2 }
+  =
+	\lr{ \Bx_2 \cdot \Bx_1 } \cancel{ \Bx^1 \cdot \Bx_2 }
+	-
+	\lr{ \Bx_2 \cdot \Bx_2 } \lr{ \Bx^1 \cdot \Bx_1 }
+  = - \Bx_2 \cdot \Bx_2
+\end{dmath}
+\begin{dmath}\label{eqn:reciprocal:1660}
+- b \lr{ \Bx_1 \wedge \Bx_2 }^2
+  =
+	\lr{ \Bx^1 \wedge \Bx_1 } \cdot \lr{ \Bx_1 \wedge \Bx_2 }
+  =
+	\cancel{ \Bx^1 \cdot \Bx_2 }
+	\lr{ \Bx_1 \cdot \Bx_1 }
+	-
+	\lr{ \Bx^1 \cdot \Bx_1 }
+	\lr{ \Bx_1 \cdot \Bx_2 }
+  = - \Bx_1 \cdot \Bx_2
+\end{dmath}
+\begin{dmath}\label{eqn:reciprocal:1680}
+  c \lr{ \Bx_1 \wedge \Bx_2 }^2
+  = \lr{ \Bx^2 \wedge \Bx_2 } \cdot \lr{ \Bx_1 \wedge \Bx_2 }
+  =
+	\lr{ \Bx_2 \cdot \Bx_1 } \lr{ \Bx^2 \cdot \Bx_2 }
+	-
+	\lr{ \Bx_2 \cdot \Bx_2 } \cancel{ \Bx^2 \cdot \Bx_1 }
+  = \Bx_2 \cdot \Bx_1
+\end{dmath}
+\begin{dmath}\label{eqn:reciprocal:1700}
+- d \lr{ \Bx_1 \wedge \Bx_2 }^2
+  = \lr{ \Bx^2 \wedge \Bx_1 } \cdot \lr{ \Bx_1 \wedge \Bx_2 }
+  =
+	\lr{ \Bx_1 \cdot \Bx_1 } \lr{ \Bx^2 \cdot \Bx_2 }
+	-
+	\lr{ \Bx_1 \cdot \Bx_2 } \cancel{ \Bx^2 \cdot \Bx_1 }
+  = \Bx_1 \cdot \Bx_1.
+\end{dmath}
+\end{subequations}
+Putting the pieces together we have
+\begin{subequations}
+\label{eqn:reciprocal:1720}
+\begin{dmath}\label{eqn:reciprocal:1740}
+\Bx^1
+= \frac{ - \lr{ \Bx_2 \cdot \Bx_2 } \Bx_1 + \lr{ \Bx_1 \cdot \Bx_2 } \Bx_2
+}{\lr{\Bx_1 \wedge \Bx_2}^2}
+=
+\frac{
+\Bx_2 \cdot \lr{ \Bx_1 \wedge \Bx_2 }
+}{\lr{\Bx_1 \wedge \Bx_2}^2}
+=
+\Bx_2 \cdot \inv{\Bx_1 \wedge \Bx_2}
+\end{dmath}
+\begin{dmath}\label{eqn:reciprocal:1760}
+\Bx^2
+=
+\frac{ \lr{ \Bx_1 \cdot \Bx_2 } \Bx_1 - \lr{ \Bx_1 \cdot \Bx_1 } \Bx_2
+}{\lr{\Bx_1 \wedge \Bx_2}^2}
+=
+\frac{ -\Bx_1 \cdot \lr{ \Bx_1 \wedge \Bx_2 } }
+{\lr{\Bx_1 \wedge \Bx_2}^2}
+=
+-\Bx_1 \cdot \inv{\Bx_1 \wedge \Bx_2}
+\end{dmath}
+\end{subequations}
+\end{proof}
+Geometrically \( \Bx_1 \wedge \Bx_2 = 0 \) means that the pair of tangent space vectors are colinear.  Clearly, such a degenerate parameterization undesirable, and we have to assume that there is no such zero area element in the region of interest.
 
-Consider the following example of a degenerate parameterization.
+Since we are working in a mixed signature space, where we have the possibility of vectors that square to zero (i.e. lightlike), we have an additional sort of possible degeneracy.
+We saw that \cref{thm:reciprocal:1500} also depended on a non-zero square for the \( \Bx_1 \wedge \Bx_2 \) bivector.  If a bivector can be factored into a pair of orthogonal vectors, but one of those is lightlike, then the bivector will square to zero.
+
+This following problem illustrates an example of this sort of degenerate parameterization.
 \makeproblem{Degenerate surface parameterization.}{problem:reciprocal:480}{
 Given a spacetime plane parameterization \( x(u,v) = u a + v b \), where
 \begin{dmath}\label{eqn:reciprocal:480}
@@ -570,7 +643,7 @@ e &= \gamma_0 + \gamma_2 \\
 f &= \gamma_1 + \gamma_3.
 \end{aligned}
 \end{equation}
-Observe that \( a = e + f, b = e - f \), and that both \( e, f \) are lightlike (\( e^2 = f^2 = 0 \).)
+Observe that \( a = e + f, b = e - f \), and \( e \) is lightlike (\( e^2 = 0 \)), whereas \( f \) is spacelike (\( f^2 = -2 \)), and \( e \cdot f = 0 \), so \( e f = - f e \).
 The bivector for the tangent plane is
 \begin{dmath}\label{eqn:reciprocal:1120}
 \gpgradetwo{
@@ -590,17 +663,49 @@ where
 \begin{dmath}\label{eqn:reciprocal:1140}
 e f = \gamma_{01} + \gamma_{21} + \gamma_{23} + \gamma_{03}.
 \end{dmath}
-Because \( e, f \) are both lightlike (zero square), the bivector \( e f \) also squares to zero (compute this if in doubt),
+Because \( e \) is lightlike (zero square), and \( e f = - f e \),
+the bivector \( e f \) squares to zero
+\begin{equation}\label{eqn:reciprocal:n}
+\lr{ e f }^2
+= -e^2 f^2
+= 0,
+\end{equation}
 which shows that the parameterization is degenerate.
 
-Despite neither \( a, b \) being lightlike, the parameterization can also be expressed as
+This parameterization can also be expressed as
 \begin{dmath}\label{eqn:reciprocal:1160}
 x(u,v)
 = u ( e + f ) + v ( e - f )
 = (u + v) e + (u - v) f,
 \end{dmath}
-a linear combination of a pair of lightlike vectors.  This is clearly not a physically meaningful spacetime surface.
+a linear combination of a lightlike and spacelike vector.
+Intuitively, we expect that a
+physically meaningful spacetime surface involves linear combinations spacelike vectors, or combinations of a timelike vector with spacelike vectors.  This beastie is something entirely different.
 } % answer
+\chapter{INTEGRATION STUFF FOR LATER.}
+\makedefinition{Hypervolume elements.}{dfn:reciprocal:1060}{
+Wedge products of the differentials that lie along each of the tangent basis directions
+\begin{equation*}
+d\Bx_\mu = \Bx_\mu du^\mu, \qquad \mbox{(no sum)},
+\end{equation*}
+can be used to form line, surface, volume, and hypervolume elements
+\begin{equation*}
+\begin{aligned}
+d^1\Bx &= d\Bx_0 = \Bx_0 du^0 \\
+d^2\Bx &= d\Bx_0 \wedge d\Bx_1 = \lr{\Bx_0 \wedge \Bx_1} du^0 du^1 \\
+d^3\Bx &= d\Bx_0 \wedge d\Bx_1 \wedge d\Bx_2 = \lr{\Bx_0 \wedge \Bx_1 \wedge \Bx_2 } du^0 du^1 du^2 \\
+d^4\Bx &= d\Bx_0 \wedge d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_3 = \lr{\Bx_0 \wedge \Bx_1 \wedge \Bx_2 \wedge \Bx_3 } du^0 du^1 du^2 du^3.
+\end{aligned}
+\end{equation*}
+%will be of interest when formulating the fundamental theorem of geometric algebra.
+} % definition
+For such hypervolume elements to be meaningful, we must impose a non-degeneracy constraint, and require that the
+%In particular, the space must be non-degenerate, which means that the
+volume elements above are non-zero (the Jacobian's of the partials are not zero.)  This non-zero constraint is required to ensure that the orientation of the volume elements do not change sign (as in differential forms, we do not take the absolute value of any Jacobians.)
+We must also require that these volume elements are invertible, since non-invertible null vectors, bivectors, and trivectors,
+are possible in our non-Euclidean space.
+The parameterized hypersurfaces that we integrate over, when augmented with these additional constraints, are referred to as manifolds.
+
 
 \EndArticle
 %\EndNoBibArticle
