@@ -35,9 +35,7 @@ include ../latex/make.rules
 spellcheck: $(patsubst %.tex,%.sp,$(filter-out $(DONT_SPELL_CHECK),$(DO_SPELL_CHECK)))
 
 all :: junk.pdf
-all :: c
 all :: r
-c: curvilinearSTA.pdf
 r: reciprocal.pdf
 
 %.sp : %.tex
