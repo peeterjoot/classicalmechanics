@@ -1,0 +1,10 @@
+make reciprocal.pdf
+#exit
+make reciprocalblog.pdf
+#grep -ve '<h3.*Solutions' -e PassOptionsToPackage | \
+tex2mathjax -f reciprocalblog.tex | \
+sed 's/reciprocalblog.pdf/reciprocal.pdf/;' | \
+sed 's,\\emph{{\(.*\)}},\1,' | \
+perl -00 -pe '' > x.txt
+pbcopy < x.txt 2>/dev/null
+clip.exe < x.txt 2>/dev/null
