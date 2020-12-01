@@ -42,16 +42,15 @@
 
 \beginArtNoToc
 
-\generatetitle{Reciprocal frame and curvilinear coordinates.}
+\generatetitle{Curvilinear coordinates and gradient in spacetime, and reciprocal frames.}
 %\chapter{Reciprocal frame uniqueness}
 %\label{chap:reciprocal}
 
 \section{Motivation.}
-When studying curvilinear coordinates, reciprocal frame vectors are found to be the gradients of the parameters generating the tangent space at the point of evaluation.  We can also construct reciprocal frame vectors algebraically, but have a uniqueness doing so unless additional constraints are imposed.
-In particular, the coordinates of a vector can be computed with respect to either the tangent space basis, or it's reciprocal basis, so we must impose the constraint that the reciprocal frame is restricted to the span of the tangent space basis.  Failing to impose such a constraint leads to uniqueness problems, and almost certainly means that the algebraic construction does not match the gradient construction.
+I started pondering some aspects of spacetime integration theory, and found that there were some aspects of the concepts of reciprocal frames that were not clear to me.  In the process of sorting those ideas out for myself, I wrote up the following notes.
 
-In these notes, I'll walk through all the ideas involved.  The focus will be on the Dirac's algebra of special relativity, known as STA (Space Time Algebra) in geometric algebra parlance.
-
+In the notes below, I will introduce the many of the prerequisite ideas that are needed to express and apply the fundamental theorem of geometric calculus in a 4D relativistic context.
+The focus will be the Dirac's algebra of special relativity, known as STA (Space Time Algebra) in geometric algebra parlance.  If desired, it should be clear how to apply these ideas to lower or higher dimensional spaces, and to plain old Euclidean metrics.
 \paragraph{On notation.}
 In Euclidean space we use bold face reciprocal frame vectors \( \Bx^i \cdot \Bx_j = {\delta^i}_j \), which nicely distinguishes them from the generalized coordinates \( x_i, x^j \) associated with the basis or the reciprocal frame, that is
 \begin{equation}\label{eqn:reciprocal:640}
@@ -687,6 +686,17 @@ Having factored out any one of the vectors, we can rearrange to find that vector
 \end{aligned}
 \end{dmath}
 \end{proof}
+In the fashion above,
+should we want the reciprocal frame for all of spacetime given dimension 4 tangent space, we can state it trivially
+\begin{dmath}\label{eqn:reciprocal:n}
+\begin{aligned}
+\Bx^0 &= (-1)^0 \lr{ \Bx_1 \wedge \Bx_2 \wedge \Bx_3 } \cdot \inv{ \Bx_0 \wedge \Bx_1 \wedge \Bx_2 \wedge \Bx_3 } \\
+\Bx^1 &= (-1)^1 \lr{ \Bx_0 \wedge \Bx_2 \wedge \Bx_3 } \cdot \inv{ \Bx_0 \wedge \Bx_1 \wedge \Bx_2 \wedge \Bx_3 } \\
+\Bx^2 &= (-1)^2 \lr{ \Bx_0 \wedge \Bx_1 \wedge \Bx_3 } \cdot \inv{ \Bx_0 \wedge \Bx_1 \wedge \Bx_2 \wedge \Bx_3 } \\
+\Bx^3 &= (-1)^3 \lr{ \Bx_0 \wedge \Bx_1 \wedge \Bx_2 } \cdot \inv{ \Bx_0 \wedge \Bx_1 \wedge \Bx_2 \wedge \Bx_3 }.
+\end{aligned}
+\end{dmath}
+This is probably not an effecient way to compute all these reciprocals, since we can utilize a single matrix inversion to solve them in one shot.  However, there are theoretical advantages to this construction that will be useful when we get to integration theory.
 
 \paragraph{On degeneracy.}
 A small mention of degeneracy was mentioned above.
@@ -764,6 +774,7 @@ a linear combination of a lightlike and spacelike vector.
 Intuitively, we expect that a
 physically meaningful spacetime surface involves linear combinations spacelike vectors, or combinations of a timelike vector with spacelike vectors.  This beastie is something entirely different.
 } % answer
+
 
 
 %%%\chapter{INTEGRATION STUFF FOR LATER.}
