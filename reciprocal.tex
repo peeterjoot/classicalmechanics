@@ -291,15 +291,15 @@ The vectors \( \Bx^\mu = \grad u^\mu \), and \( \Bx_\mu = \PDi{u^\mu}{x} \) sati
 \end{proof}
 It is instructive to consider an example.  Here is a parameterization that scales the proper time parameter, and uses polar coordinates in the \(x-y\) plane.
 \makeproblem{Compute the curvilinear and reciprocal basis.}{problem:reciprocal:1200}{
-Given \( x(t,\rho,\theta,z) = c t \gamma_0 + \gamma_1 \rho e^{i \theta} + z \gamma_3 \), where \( i = \gamma_1 \gamma_2 \), compute the curvilinear frame vectors and their reciprocals.
+Given \( x(t,\rho,\theta,z) = c t \gamma_0 + \gamma_1 \rho e^{-i \theta} + z \gamma_3 \), where \( i = \gamma_1 \gamma_2 \), compute the curvilinear frame vectors and their reciprocals.
 } % problem
 \makeanswer{problem:reciprocal:1200}{
 The frame vectors are all easy to compute
 \begin{equation}\label{eqn:reciprocal:1180}
 \begin{aligned}
 \Bx_0 &= \PD{t}{x} = c \gamma_0 \\
-\Bx_1 &= \PD{\rho}{x} = \gamma_1 e^{i \theta} \\
-\Bx_2 &= \PD{\theta}{x} = \rho \gamma_1 \gamma_1 \gamma_2 e^{i \theta} = - \rho \gamma_2 e^{i \theta} \\
+\Bx_1 &= \PD{\rho}{x} = \gamma_1 e^{-i \theta} \\
+\Bx_2 &= \PD{\theta}{x} = -\rho \gamma_1 \gamma_1 \gamma_2 e^{-i \theta} = \rho \gamma_2 e^{- i \theta} \\
 \Bx_3 &= \PD{z}{x} = \gamma_3.
 \end{aligned}
 \end{equation}
@@ -310,16 +310,16 @@ All of these particular frame vectors happen to be mutually perpendicular, somet
 
 To compute the reciprocal frame vectors, we must express our parameters in terms of \( x^\mu \) coordinates, and use implicit integration techniques to deal with the coupling of the rotational terms.  First observe that
 \begin{dmath}\label{eqn:reciprocal:1200}
-\gamma_1 e^{i\theta}
-= \gamma_1 \lr{ \cos\theta + \gamma_1 \gamma_2 \sin\theta }
-= \gamma_1 \cos\theta - \gamma_2 \sin\theta,
+\gamma_1 e^{- i \theta}
+= \gamma_1 \lr{ \cos\theta - \gamma_1 \gamma_2 \sin\theta }
+= \gamma_1 \cos\theta + \gamma_2 \sin\theta,
 \end{dmath}
-so
+so \( x = x^\mu \gamma_\mu = c t \gamma_0 + \gamma_1 \rho e^{-i \theta} + z \gamma_3 \) is equivalent to the following set of coordinate equations
 \begin{equation}\label{eqn:reciprocal:1220}
 \begin{aligned}
 x^0 &= c t \\
 x^1 &= \rho \cos\theta \\
-x^2 &= -\rho \sin\theta \\
+x^2 &= \rho \sin\theta \\
 x^3 &= z.
 \end{aligned}
 \end{equation}
@@ -337,42 +337,55 @@ but the \( \rho, \theta \) gradients are not as easy.  First writing
 we find
 \begin{dmath}\label{eqn:reciprocal:1280}
 2 \rho \grad \rho = 2 \lr{ x^1 \grad x^1 + x^2 \grad x^2 }
-= 2 \rho \lr{ \cos\theta \gamma^1 - \sin\theta \gamma^2 }
-= 2 \rho \gamma^1 \lr{ \cos\theta - \gamma_1 \gamma^2 \sin\theta }
-= 2 \rho \gamma^1 e^{i\theta},
+= 2 \rho \lr{ \cos\theta \gamma^1 + \sin\theta \gamma^2 }
+= 2 \rho \gamma^1 \lr{ \cos\theta + \gamma_1 \gamma^2 \sin\theta }
+= 2 \rho \gamma^1 e^{- i \theta},
 \end{dmath}
 so
 \begin{dmath}\label{eqn:reciprocal:1300}
-\grad \rho = \gamma^1 e^{i\theta}.
+\grad \rho = \gamma^1 e^{- i \theta}.
 \end{dmath}
 For the \( \theta \) gradient, we can write
 \begin{dmath}\label{eqn:reciprocal:1320}
-\tan\theta = -\frac{x^2}{x^1},
+\tan{\theta} = \frac{x^2}{x^1},
 \end{dmath}
 so
 \begin{dmath}\label{eqn:reciprocal:1340}
 \inv{\cos^2 \theta} \grad \theta
-= -\frac{\gamma^2}{x^1} - x^2 \frac{-\gamma^1}{\lr{x^1}^2}
-= \inv{\lr{x^1}^2} \lr{ - \gamma^2 x^1 + \gamma^1 x^2 }
-= \frac{\rho}{\rho^2 \cos^2\theta } \lr{ - \gamma^2 \cos\theta - \gamma^1 \sin\theta }
-= -\frac{1}{\rho \cos^2\theta } \gamma^2 \lr{ \cos\theta + \gamma_2 \gamma^1 \sin\theta }
-= -\frac{\gamma^2 e^{i\theta} }{\rho \cos^2\theta },
+= \frac{\gamma^2}{x^1} - x^2 \frac{\gamma^1}{\lr{x^1}^2}
+= \inv{\lr{x^1}^2} \lr{ \gamma^2 x^1 - \gamma^1 x^2 }
+= \frac{\rho}{\rho^2 \cos^2 \theta } \lr{ \gamma^2 \cos\theta - \gamma^1 \sin\theta }
+= \frac{1}{\rho \cos^2\theta } \gamma^2 \lr{ \cos\theta - \gamma_2 \gamma^1 \sin\theta }
+= \frac{\gamma^2 e^{- i \theta} }{\rho \cos^2 \theta },
 \end{dmath}
 or
 \begin{dmath}\label{eqn:reciprocal:1360}
-\grad\theta = -\inv{\rho} \gamma^2 e^{i\theta}.
+\grad \theta = \inv{\rho} \gamma^2 e^{- i \theta}.
 \end{dmath}
 In summary,
 \begin{equation}\label{eqn:reciprocal:1380}
 \begin{aligned}
 \Bx^0 &= \frac{\gamma^0}{c} \\
-\Bx^1 &= \gamma^1 e^{i\theta} \\
-\Bx^2 &= -\inv{\rho} \gamma^2 e^{i\theta} \\
+\Bx^1 &= \gamma^1 e^{- i \theta} \\
+\Bx^2 &= \inv{\rho} \gamma^2 e^{- i \theta} \\
 \Bx^3 &= \gamma^3.
 \end{aligned}
 \end{equation}
 } % answer
-Despite being a fairly simple parameterization, it was still fairly difficult to solve for the gradients when the parameterization introduced coupling between the coordinates.  In this particular case, we could have solved for the parameters in terms of the coordinates (but it was easier not to), but that will not generally be true.  We want a less labor intensive strategy to find the reciprocal frame.  When we have a full parameterization of spacetime, then we can do this with nothing more than a matrix inversion.
+Despite being a fairly simple parameterization, it was still fairly difficult to solve for the gradients when the parameterization introduced coupling between the coordinates.
+Because all the tangent space vectors are mutually orthogonal, we didn't need to go through all this trouble, since we could have just computed the inverses of all the tangent space vectors
+\begin{equation}\label{eqn:reciprocal:1940}
+\begin{aligned}
+\Bx^0 &= \inv{\Bx_0} = \inv{ c \gamma_0 } = \inv{c} \gamma^0 \\
+\Bx^1 &= \inv{\Bx_1} = \inv{ \gamma_1 e^{-i\alpha} } = \inv{ e^{-i\alpha} } \inv{ \gamma_1} = e^{i \alpha} \gamma^1 = \gamma^1 e^{-i\alpha} \\
+\Bx^2 &= \inv{\Bx_2} = \inv{ \rho \gamma_2 e^{-i\alpha} } = \inv{\rho} \inv{ e^{-i\alpha} } \inv{ \gamma_2} = \inv{\rho} e^{i \alpha} \gamma^2 = \inv{\rho} \gamma^2 e^{-i\alpha} \\
+\Bx^3 &= \inv{\Bx_3} = \inv{ \gamma_3 } = \gamma^3.
+\end{aligned}
+\end{equation}
+%In this particular case, we could have solved for the parameters in terms of the coordinates (but it was easier not to), but that will not generally be true.
+We will not generally be this lucky, and want a less labor intensive strategy to find the reciprocal frame that works for the general case.
+
+There is one additional special cawe.  When we have a full parameterization of spacetime, then we can do this with nothing more than a matrix inversion.
 \maketheorem{Reciprocal frame matrix equations.}{thm:reciprocal:140}{
 Given a spacetime basis \( \setlr{\Bx_0, \cdots \Bx_3} \), let \( [\Bx_\mu] \) and \( [\Bx^\nu] \) be column matrices with the coordinates of these vectors and their reciprocals, with respect to the standard basis \( \setlr{\gamma_0, \gamma_1, \gamma_2, \gamma_3 } \).
 Let
@@ -437,9 +450,9 @@ For the parameterization of \cref{problem:reciprocal:1200}, find the reciprocal 
 We expanded \( \Bx_1 \) explicitly in \cref{eqn:reciprocal:1200}.  Doing the same for \( \Bx_2 \), we have
 \begin{dmath}\label{eqn:reciprocal:1201}
 \Bx_2 =
--\rho \gamma_2 e^{i\theta}
-= -\rho \gamma_2 \lr{ \cos\theta + \gamma_1 \gamma_2 \sin\theta }
-= - \rho \lr{ \gamma_2 \cos\theta + \gamma_1 \sin\theta}.
+\rho \gamma_2 e^{i\theta}
+= \rho \gamma_2 \lr{ \cos\theta - \gamma_1 \gamma_2 \sin\theta }
+=  \rho \lr{ \gamma_2 \cos\theta - \gamma_1 \sin\theta}.
 \end{dmath}
 Reading off the coordinates of our frame vectors, we have
 \begin{dmath}\label{eqn:reciprocal:1400}
@@ -447,7 +460,7 @@ X =
 \begin{bmatrix}
 c &  0 & 0       & 0 \\
 0 &  C & -\rho S & 0 \\
-0 & -S & -\rho C & 0 \\
+0 &  S &  \rho C & 0 \\
 0 &  0 & 0       & 1 \\
 \end{bmatrix},
 \end{dmath}
@@ -456,23 +469,23 @@ where \( C = \cos\theta \) and \( S = \sin\theta \).  We want
 Y =
 {\begin{bmatrix}
 c &  0      & 0       &  0 \\
-0 & -C      &  S      &  0 \\
-0 &  \rho S &  \rho C &  0 \\
+0 & -C      & -S      &  0 \\
+0 &  \rho S & -\rho C &  0 \\
 0 &  0      & 0       & -1 \\
 \end{bmatrix}}^{-1}
 =
 \begin{bmatrix}
-\inv{c}   &  0 & 0               &  0 \\
-        0 & -C & \frac{S}{\rho}  &  0 \\
-        0 &  S & \frac{C}{\rho}  &  0 \\
-        0 &  0 & 0               & -1 \\
+\inv{c}   &  0 &  0               &  0 \\
+        0 & -C &  \frac{S}{\rho}  &  0 \\
+        0 & -S & -\frac{C}{\rho}  &  0 \\
+        0 &  0 &  0               & -1 \\
 \end{bmatrix}.
 \end{equation}
 We can read off the coordinates of the reciprocal frame vectors
 \begin{equation}\label{eqn:reciprocal:1440}
 \begin{aligned}
 \Bx^0 &= \inv{c} \gamma_0 \\
-\Bx^1 &= -\cos\theta \gamma_1 + \sin\theta \gamma_2 \\
+\Bx^1 &= -\cos\theta \gamma_1 - \sin\theta \gamma_2 \\
 \Bx^2 &= \inv{\rho} \lr{ \sin\theta \gamma_1 + \cos\theta \gamma_2 } \\
 \Bx^3 &= -\gamma_3.
 \end{aligned}
@@ -480,46 +493,46 @@ We can read off the coordinates of the reciprocal frame vectors
 Factoring out \( \gamma^1 \) from the \( \Bx^1 \) terms, we find
 \begin{dmath}\label{eqn:reciprocal:1460}
 \Bx^1
-= -\cos\theta \gamma_1 + \sin\theta \gamma_2
-= \gamma^1 \lr{ \cos\theta + \gamma_1 \gamma_2 \sin\theta }
-= \gamma^1 e^{i\theta}.
+= -\cos\theta \gamma_1 - \sin\theta \gamma_2
+= \gamma^1 \lr{ \cos\theta - \gamma_1 \gamma_2 \sin\theta }
+= \gamma^1 e^{-i\theta}.
 \end{dmath}
 Similarly for \( \Bx^2 \),
 \begin{dmath}\label{eqn:reciprocal:1480}
 \Bx^2
-= \inv{\rho} \lr{ \sin\theta \gamma_1 + \cos\theta \gamma_2 }
-= \frac{\gamma^2}{\rho} \lr{ \sin\theta \gamma_2 \gamma_1 - \cos\theta }
-= -\frac{\gamma^2}{\rho} e^{i\theta}.
+= \inv{\rho} \lr{ \sin\theta \gamma_1 - \cos\theta \gamma_2 }
+= \frac{\gamma^2}{\rho} \lr{ \sin\theta \gamma_2 \gamma_1 + \cos\theta }
+= \frac{\gamma^2}{\rho} e^{-i\theta}.
 \end{dmath}
 This matches \cref{eqn:reciprocal:1380}, as expected, but required only algebraic work to compute.
 } % answer
 There will be circumstances where we parameterize only a subset of spacetime, and are interested in calculating quantities associated with such a surface.  For example, suppose that
 \begin{dmath}\label{eqn:reciprocal:1500}
-x(\rho,\theta) = \gamma_1 \rho e^{i \theta},
+x(\rho,\theta) = \gamma_1 \rho e^{-i \theta},
 \end{dmath}
 where \( i = \gamma_1 \gamma_2 \) as before.  We are now parameterizing only the \(x-y\) plane.  We will still find
 \begin{equation}\label{eqn:reciprocal:1520}
 \begin{aligned}
-\Bx_1 &= \gamma_1 e^{i \theta} \\
-\Bx_2 &= -\gamma_2 \rho e^{i \theta}.
+\Bx_1 &= \gamma_1 e^{-i \theta} \\
+\Bx_2 &= \gamma_2 \rho e^{-i \theta}.
 \end{aligned}
 \end{equation}
 We can compute the reciprocals of these vectors using the gradient method.  It's possible to state matrix equations representing the reciprocal relationship of \cref{thm:reciprocal:120}, which, in this case, is \( X^\T G Y = 1 \), where the RHS is a \( 2 \times 2 \) identity matrix, and \( X, Y\) are \( 4\times 2\) matrices of coordinates, with
 \begin{equation}\label{eqn:reciprocal:1540}
 X =
 \begin{bmatrix}
-  0 & 0        \\
-  C & -\rho S  \\
- -S & -\rho C  \\
-  0 & 0
+     0 & 0       \\
+     C & -\rho S \\
+     S &  \rho C \\
+     0 & 0       \\
 \end{bmatrix}.
 \end{equation}
 We no longer have a square matrix problem to solve, and our solution set is multivalued.
 In particular, this matrix equation has solutions
 \begin{equation}\label{eqn:reciprocal:1560}
 \begin{aligned}
-\Bx^1 &= \gamma^1 e^{i\theta} + \alpha \gamma^0 + \beta \gamma^3 \\
-\Bx^2 &= -\frac{\gamma^2}{\rho} e^{i\theta} + \alpha' \gamma^0 + \beta' \gamma^3.
+\Bx^1 &= \gamma^1 e^{-i\theta} + \alpha \gamma^0 + \beta \gamma^3 \\
+\Bx^2 &= \frac{\gamma^2}{\rho} e^{-i\theta} + \alpha' \gamma^0 + \beta' \gamma^3.
 \end{aligned}
 \end{equation}
 where \( \alpha, \alpha', \beta, \beta' \) are arbitrary constants.
