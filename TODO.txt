@@ -1,3 +1,5 @@
+- tags to index in reciprocal.tex
+
 - Reincorporate as first example of the field Euler-Lagrange equations.  Was in lagrangianFieldDensity.tex
 %
 \begin{equation}\label{eqn:lagrangianFieldDensity:1474}

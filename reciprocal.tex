@@ -10,6 +10,9 @@
 %\newcommand{\dateintitle}{}
 %\newcommand{\keywords}{}
 
+% INDEX tags:
+% curvilinear coordinates, gradient, basis, bases, reciprocal frame, reciprocal vector, coordinates, Dirac basis, directional derivative, parameterization, tangent space, reciprocal relationship, direction vectors, wedge product, pseudoscalar, subspace, distribution identity, degeneracy, null vector, lightlike, spacelike, timelike, bivector, trivector, vector
+
 % https://tex.stackexchange.com/a/44277/15
 %-------
 %% code from mathabx.sty and mathabx.dcl
@@ -49,8 +52,7 @@
 \section{Motivation.}
 I started pondering some aspects of spacetime integration theory, and found that there were some aspects of the concepts of reciprocal frames that were not clear to me.  In the process of sorting those ideas out for myself, I wrote up the following notes.
 
-In the notes below, I will introduce the many of the prerequisite ideas that are needed to express and apply the fundamental theorem of geometric calculus in a 4D relativistic context.
-The focus will be the Dirac's algebra of special relativity, known as STA (Space Time Algebra) in geometric algebra parlance.  If desired, it should be clear how to apply these ideas to lower or higher dimensional spaces, and to plain old Euclidean metrics.
+In the notes below, I will introduce the many of the prerequisite ideas that are needed to express and apply the fundamental theorem of geometric calculus in a 4D relativistic context.  The focus will be the Dirac's algebra of special relativity, known as STA (Space Time Algebra) in geometric algebra parlance.  If desired, it should be clear how to apply these ideas to lower or higher dimensional spaces, and to plain old Euclidean metrics.
 \paragraph{On notation.}
 In Euclidean space we use bold face reciprocal frame vectors \( \Bx^i \cdot \Bx_j = {\delta^i}_j \), which nicely distinguishes them from the generalized coordinates \( x_i, x^j \) associated with the basis or the reciprocal frame, that is
 \begin{equation}\label{eqn:reciprocal:640}
@@ -447,10 +449,9 @@ c &  0 & 0       & 0 \\
 0 &  C & -\rho S & 0 \\
 0 & -S & -\rho C & 0 \\
 0 &  0 & 0       & 1 \\
-\end{bmatrix}
-\end{dmath},
-where \( C = \cos\theta \) and \( S = \sin\theta \).
-we want
+\end{bmatrix},
+\end{dmath}
+where \( C = \cos\theta \) and \( S = \sin\theta \).  We want
 \begin{equation}\label{eqn:reciprocal:1420}
 Y =
 {\begin{bmatrix}
@@ -473,7 +474,7 @@ We can read off the coordinates of the reciprocal frame vectors
 \Bx^0 &= \inv{c} \gamma_0 \\
 \Bx^1 &= -\cos\theta \gamma_1 + \sin\theta \gamma_2 \\
 \Bx^2 &= \inv{\rho} \lr{ \sin\theta \gamma_1 + \cos\theta \gamma_2 } \\
-\Bx^3 &= -\gamma_3 \\
+\Bx^3 &= -\gamma_3.
 \end{aligned}
 \end{equation}
 Factoring out \( \gamma^1 \) from the \( \Bx^1 \) terms, we find
