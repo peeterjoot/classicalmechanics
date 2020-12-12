@@ -57,7 +57,7 @@ x^2.
 \end{dmath}
 \end{proof}
 In particular, observe that we did not need to construct the usual infinitesimal representations of rotation and boost transformation matrices or tensors in order to demonstrate that we have spacetime invariance for the transformations.
-The rough idea of such a transformation is that the exponential commutes with components of the four-vector that lie off the spacetime plane specified by the bivector \( B \), and anticommutes with components of the four-vector  that lie in the plane.  The end result is that the sandwich operation simplfies to
+The rough idea of such a transformation is that the exponential commutes with components of the four-vector that lie off the spacetime plane specified by the bivector \( B \), and anticommutes with components of the four-vector  that lie in the plane.  The end result is that the sandwich operation simplifies to
 \begin{dmath}\label{eqn:lorentzTransform:60}
 x' = x_\parallel e^{-B} + x_\perp,
 \end{dmath}
@@ -144,12 +144,102 @@ x^0 \\
 which has the desired Lorentz boost structure.  Of course, this is usually seen with \( \vcap = \gamma_{10} \) so that the components in the coordinate column vector are \( (ct, x) \).
 \end{proof}
 \maketheorem{Spatial rotation.}{thm:lorentzTransform:100}{
-Given two linearly independent spatial bivectors \( \Ba = a^k \gamma_{k0}, \Bb = b^k \gamma_{k0} \), a rotation in the plane of \( \Ba, \Bb \) from \( \Ba \) towards \( \Bb \) of \( \theta \) radians, is given by
+Given two linearly independent spatial bivectors \( \Ba = a^k \gamma_{k0}, \Bb = b^k \gamma_{k0} \), a rotation of \(\theta\) radians in the plane of \( \Ba, \Bb \) from \( \Ba \) towards \( \Bb \), is given by
 \begin{equation*}
 x' = e^{-i\theta} x e^{i\theta},
 \end{equation*}
 where \( i = (\Ba \wedge \Bb)/\Abs{\Ba \wedge \Bb} \), is a unit (spatial) bivector.
 } % theorem
+\begin{proof}
+Without loss of generality, we may pick \( i = \acap \bcap \), where \( \acap^2 = \bcap^2 = 1 \), and \( \acap \cdot \bcap = 0 \).  With such an orthonormal basis for the plane, we can decompose our four vector into portions that lie in and off the plane
+\begin{dmath}\label{eqn:lorentzTransform:400}
+x
+= \lr{ x^0 + \Bx } \gamma_0
+= \lr{ x^0 + \Bx i i^{-1} } \gamma_0
+= \lr{ x^0 + \lr{ \Bx \cdot i } i^{-1} + \lr{ \Bx \wedge i } i^{-1} } \gamma_0.
+\end{dmath}
+The projective term lies in the plane of rotation, whereas the timelike and spatial rejection term are perpendicular.  That is
+\begin{dmath}\label{eqn:lorentzTransform:420}
+\begin{aligned}
+x_\parallel &= \lr{ \Bx \cdot i } i^{-1} \gamma_0 \\
+x_\perp &= \lr{ x^0 + \lr{ \Bx \wedge i } i^{-1} } \gamma_0,
+\end{aligned}
+\end{dmath}
+where \( x_\parallel \wedge i = 0 \), and \( x_\perp \cdot i = 0 \).  The plane pseudoscalar \( i \) anticommutes with \( x_\parallel \), and commutes with \( x_\perp \), so
+\begin{dmath}\label{eqn:lorentzTransform:440}
+x'
+= e^{-i\theta/2} \lr{ x_\parallel + x_\perp } e^{i\theta/2}
+= x_\parallel e^{i\theta} + x_\perp.
+\end{dmath}
+However
+\begin{dmath}\label{eqn:lorentzTransform:460}
+\lr{ \Bx \cdot i } i^{-1}
+=
+\lr{ \Bx \cdot \lr{ \acap \wedge \bcap } } \bcap \acap
+=
+\lr{\Bx \cdot \acap} \bcap \bcap \acap
+-\lr{\Bx \cdot \bcap} \acap \bcap \acap
+=
+\lr{\Bx \cdot \acap} \acap
++\lr{\Bx \cdot \bcap} \bcap,
+\end{dmath}
+so
+\begin{dmath}\label{eqn:lorentzTransform:480}
+x_\parallel e^{i\theta}
+=
+\lr{
+	\lr{\Bx \cdot \acap} \acap
+	+
+	\lr{\Bx \cdot \bcap} \bcap
+}
+\gamma_0
+\lr{
+	\cos\theta + \acap \bcap \sin\theta
+}
+=
+\acap \lr{
+	\lr{\Bx \cdot \acap} \cos\theta
+	-
+	\lr{\Bx \cdot \bcap} \sin\theta
+}
+\gamma_0
++
+\bcap \lr{
+	\lr{\Bx \cdot \acap} \sin\theta
+	+
+	\lr{\Bx \cdot \bcap} \cos\theta
+}
+\gamma_0,
+\end{dmath}
+so
+\begin{dmath}\label{eqn:lorentzTransform:500}
+x'
+=
+\begin{bmatrix}
+\acap & \bcap
+\end{bmatrix}
+\begin{bmatrix}
+\cos\theta & - \sin\theta \\
+\sin\theta & \cos\theta
+\end{bmatrix}
+\begin{bmatrix}
+\Bx \cdot \acap \\
+\Bx \cdot \bcap \\
+\end{bmatrix}
+\gamma_0
++
+\lr{ x \wedge i} i^{-1} \gamma_0.
+\end{dmath}
+Observe that this rejection term can be explicitly expanded to
+\begin{dmath}\label{eqn:lorentzTransform:520}
+\lr{ \Bx \wedge i} i^{-1} \gamma_0 =
+x -
+\lr{ \Bx \cdot \acap } \acap \gamma_0
+-
+\lr{ \Bx \cdot \acap } \acap \gamma_0.
+\end{dmath}
+This is the timelike component of the vector, plus the spatial component that is normal to the plane.  This exponential sandwich transformation rotates only the portion of the vector that lies in the plane, and leaves the rest (timelike and normal) untouched.
+\end{proof}
 
 \section{Problems.}
 \makeproblem{Verify components relative to boost direction.}{problem:lorentzTransform:10}{
@@ -250,6 +340,30 @@ x^t \cos\theta^s \cos\theta^t \gamma_s
 \end{dmath}
 as expected.  Is there a clever way to demonstrate this without resorting to coordinates?
 } % answer
+\makeproblem{Rotation transformation components.}{problem:lorentzTransform:20}{
+Given a unit spatial bivector \( i = \acap \bcap \), where \( \acap \cdot \bcap = 0 \) and \( i^2 = -1 \), show that
+\begin{dmath}\label{eqn:lorentzTransform:540}
+\lr{ x \cdot i } i^{-1} =
+\lr{ \Bx \cdot i } i^{-1} \gamma_0 =
+\lr{\Bx \cdot \acap } \acap \gamma_0
++
+\lr{\Bx \cdot \bcap } \bcap \gamma_0,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:lorentzTransform:560}
+\lr{ x \wedge i } i^{-1}
+=
+\lr{ \Bx \wedge i } i^{-1} \gamma_0
+=
+x -
+\lr{\Bx \cdot \acap } \acap \gamma_0
+-
+\lr{\Bx \cdot \bcap } \bcap \gamma_0.
+\end{dmath}
+Also show that \( i \) anticommutes with \( \lr{ x \cdot i } i^{-1} \) and commutes with \( \lr{ x \wedge i } i^{-1} \).
+} % problem
+%\makeanswer{problem:lorentzTransform:20}{
+%} % answer
 %}
 %\EndArticle
 \EndNoBibArticle
