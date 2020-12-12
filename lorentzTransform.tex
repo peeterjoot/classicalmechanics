@@ -28,9 +28,10 @@
 \generatetitle{Lorentz transformations in Space Time Algebra (STA)}
 %\chapter{Lorentz transformations in Space Time Algebra (STA)}
 %\label{chap:lorentzTransform}
-
+\section{Motivation.}
 One of the remarkable features of geometric algebra are the complex exponential sandwiches that can be used to encode rotations in any dimension, or rotation like operations like Lorentz transformations in Minkowski spaces.  In this post, we show some examples that unpack the geometric algebra expressions for Lorentz transformations operations of this sort.  In particular, we will look at the exponential sandwich operations for spatial rotations and Lorentz boosts in the Dirac algebra, known as Space Time Algebra (STA) in geometric algebra circles, and demonstrate that these sandwiches do have the desired effects.
 
+\section{Lorentz transformations.}
 \maketheorem{Lorentz transformation.}{thm:lorentzTransform:20}{
 The transformation
 \begin{equation*}
@@ -44,18 +45,18 @@ x^2 = {x'}^2.
 \begin{proof}
 The proof is disturbingly trivial in this geometric algebra form
 \begin{dmath}\label{eqn:lorentzTransform:40}
-{x'}^2 
-= 
+{x'}^2
+=
 e^{B} x e^{-B} e^{B} x e^{-B}
-= 
+=
 e^{B} x x e^{-B}
-= 
+=
 x^2 e^{B} e^{-B}
-= 
+=
 x^2.
 \end{dmath}
 \end{proof}
-In particular, observe that we did not need to construct the usual infinitesimal representations of rotation and boost transformation matrices or tensors in order to demonstrate that we have spacetime invariance for the transformations.  
+In particular, observe that we did not need to construct the usual infinitesimal representations of rotation and boost transformation matrices or tensors in order to demonstrate that we have spacetime invariance for the transformations.
 The rough idea of such a transformation is that the exponential commutes with components of the four-vector that lie off the spacetime plane specified by the bivector \( B \), and anticommutes with components of the four-vector  that lie in the plane.  The end result is that the sandwich operation simplfies to
 \begin{dmath}\label{eqn:lorentzTransform:60}
 x' = x_\parallel e^{-B} + x_\perp,
@@ -80,7 +81,7 @@ where \( \vcap = \gamma_{k0} \cos\theta^k \) is an STA bivector representing a s
 \begin{proof}
 We want to demonstrate that this is equivalent to the usual boost formulation.  We can start with decomposition of the four-vector \( x \) into components that lie in and off of the spacetime plane \( \vcap \).
 \begin{dmath}\label{eqn:lorentzTransform:100}
-x 
+x
 = \lr{ x^0 + \Bx } \gamma_0
 = \lr{ x^0 + \Bx \vcap^2 } \gamma_0
 = \lr{ x^0 + \lr{ \Bx \cdot \vcap} \vcap + \lr{ \Bx \wedge \vcap} \vcap } \gamma_0,
@@ -89,8 +90,8 @@ where \( \Bx = x \wedge \gamma_0 \).
 The first two components lie in the boost plane, whereas the last is the spatial component of the vector that lies perpendicular to the boost plane.
 Observe that \( \vcap \) anticommutes with the dot product term and commutes with he wedge product term, so we have
 \begin{dmath}\label{eqn:lorentzTransform:120}
-x' 
-= 
+x'
+=
 \lr{ x^0 + \lr{ \Bx \cdot \vcap } \vcap } \gamma_0
 e^{\vcap \alpha/2 }
 e^{\vcap \alpha/2 }
@@ -98,7 +99,7 @@ e^{\vcap \alpha/2 }
 \lr{ \Bx \wedge \vcap } \vcap \gamma_0
 e^{-\vcap \alpha/2 }
 e^{\vcap \alpha/2 }
-= 
+=
 \lr{ x^0 + \lr{ \Bx \cdot \vcap } \vcap } \gamma_0
 e^{\vcap \alpha }
 +
@@ -157,69 +158,70 @@ In \cref{eqn:lorentzTransform:100} the vector \( x \) was expanded in terms of t
 x
 = x \vcap^2
 = \lr{ x \cdot \vcap + x \wedge \vcap } \vcap
-= \lr{ x \cdot \vcap } \vcap + \lr{ x \wedge \vcap } \vcap,
+= \lr{ x \cdot \vcap } \vcap + \lr{ x \wedge \vcap } \vcap.
 \end{dmath}
-Show that 
+Show that
 \begin{dmath}\label{eqn:lorentzTransform:360}
-\lr{ x \cdot \vcap } \vcap 
+\lr{ x \cdot \vcap } \vcap
 =
-\lr{ x^0 + \lr{ \Bx \cdot \vcap} \vcap + \lr{ \Bx \wedge \vcap} \vcap } \gamma_0,
+\lr{ x^0 + \lr{ \Bx \cdot \vcap} \vcap } \gamma_0,
 \end{dmath}
 and
 \begin{dmath}\label{eqn:lorentzTransform:380}
-\lr{ x \wedge \vcap } \vcap 
+\lr{ x \wedge \vcap } \vcap
 =
 \lr{ \Bx \wedge \vcap} \vcap \gamma_0.
 \end{dmath}
 } % problem
 \makeanswer{problem:lorentzTransform:10}{
-%We now want to further examine the transformation of the component of the vector that lies in the spacetime plane \( \vcap \).  We can use clever geometric algebra tricks to expand that dot product term, but let's do this the dumb way first with coordinate expansion.  
+%We now want to further examine the transformation of the component of the vector that lies in the spacetime plane \( \vcap \).  We can use clever geometric algebra tricks to expand that dot product term, but let's do this the dumb way first with coordinate expansion.
 Let \( x = x^\mu \gamma_\mu \), so that
 \begin{dmath}\label{eqn:lorentzTransform:160}
-x \cdot \vcap 
+x \cdot \vcap
 =
-\gpgradeone{ x^\mu \gamma_\mu \cos\theta^k \gamma_{k 0} }
+\gpgradeone{ x^\mu \gamma_\mu \cos\theta^b \gamma_{b 0} }
 =
-x^\mu \cos\theta^k \gpgradeone{ \gamma_\mu \gamma_{k 0} }
+x^\mu \cos\theta^b \gpgradeone{ \gamma_\mu \gamma_{b 0} }
 .
 \end{dmath}
 The \( \mu = 0 \) component of this grade selection is
 \begin{dmath}\label{eqn:lorentzTransform:180}
-\gpgradeone{ \gamma_0 \gamma_{k 0} }
+\gpgradeone{ \gamma_0 \gamma_{b 0} }
 =
--\gamma_k,
+-\gamma_b,
 \end{dmath}
 and for \( \mu = a \ne 0 \), we have
 \begin{dmath}\label{eqn:lorentzTransform:200}
-\gpgradeone{ \gamma_a \gamma_{k 0} }
+\gpgradeone{ \gamma_a \gamma_{b 0} }
 =
--\delta_{a k} \gamma_0,
+-\delta_{a b} \gamma_0,
 \end{dmath}
 so we have
 \begin{dmath}\label{eqn:lorentzTransform:220}
-x \cdot \vcap 
+x \cdot \vcap
 =
-x^0 \cos\theta^k (-\gamma_k)
+x^0 \cos\theta^b (-\gamma_b)
 +
-x^a \cos\theta^k (-\delta_{ak} \gamma_0 )
+x^a \cos\theta^b (-\delta_{ab} \gamma_0 )
 =
 -x^0 \vcap \gamma_0
 -
-x^k \cos\theta^k \gamma_0 
-= 
+x^b \cos\theta^b \gamma_0
+=
 - \lr{ x^0 \vcap + \Bx \cdot \vcap } \gamma_0,
 \end{dmath}
 where \( \Bx = x \wedge \gamma_0 \) is the spatial portion of the four vector \( x \) relative to the stationary observer frame.  Since \( \vcap \) anticommutes with \( \gamma_0 \), the component of \( x \) in the spacetime plane \( \vcap \) is
 \begin{dmath}\label{eqn:lorentzTransform:240}
-\lr{ x \cdot \vcap } \vcap = 
+\lr{ x \cdot \vcap } \vcap =
 \lr{ x^0 + \lr{ \Bx \cdot \vcap} \vcap } \gamma_0,
 \end{dmath}
 as expected.
+
 For the rejection term, we have
 \begin{dmath}\label{eqn:lorentzTransform:280}
 x \wedge \vcap
 =
-x^\mu \cos\theta^k \gpgradethree{ \gamma_\mu \gamma_{k 0} }.
+x^\mu \cos\theta^s \gpgradethree{ \gamma_\mu \gamma_{s 0} }.
 \end{dmath}
 The \( \mu = 0 \) term clearly contributes nothing, leaving us with:
 \begin{dmath}\label{eqn:lorentzTransform:300}
@@ -227,26 +229,26 @@ The \( \mu = 0 \) term clearly contributes nothing, leaving us with:
 =
 \lr{ x \wedge \vcap } \cdot \vcap
 =
-x^a \cos\theta^k \cos\theta^a \lr{ \lr{ \gamma_a \wedge \gamma_{k}} \gamma_0 } \cdot \lr{ \gamma_{b0} }
+x^r \cos\theta^s \cos\theta^t \lr{ \lr{ \gamma_r \wedge \gamma_{s}} \gamma_0 } \cdot \lr{ \gamma_{t0} }
 =
-x^a \cos\theta^k \cos\theta^b \gpgradeone{ 
-	\lr{ \gamma_a \wedge \gamma_{k} } \gamma_0 \gamma_{b0} 
+x^r \cos\theta^s \cos\theta^t \gpgradeone{
+	\lr{ \gamma_r \wedge \gamma_{s} } \gamma_0 \gamma_{t0}
 }
 =
--x^a \cos\theta^k \cos\theta^b \lr{ \gamma_a \wedge \gamma_{k}} \cdot \gamma_b 
+-x^r \cos\theta^s \cos\theta^t \lr{ \gamma_r \wedge \gamma_{s}} \cdot \gamma_t
 =
--x^a \cos\theta^k \cos\theta^b \lr{ -\gamma_a \delta_{kb} + \gamma_k \delta_{ab} }
+-x^r \cos\theta^s \cos\theta^t \lr{ -\gamma_r \delta_{st} + \gamma_s \delta_{rt} }
 =
-x^a \cos\theta^b \cos\theta^b \gamma_a
+x^r \cos\theta^t \cos\theta^t \gamma_r
 -
-x^b \cos\theta^k \cos\theta^b \gamma_k
+x^t \cos\theta^s \cos\theta^t \gamma_s
 =
 \Bx \gamma_0
 - (\Bx \cdot \vcap) \vcap \gamma_0
 =
 \lr{ \Bx \wedge \vcap} \vcap \gamma_0,
 \end{dmath}
-as expected.
+as expected.  Is there a clever way to demonstrate this without resorting to coordinates?
 } % answer
 %}
 %\EndArticle
