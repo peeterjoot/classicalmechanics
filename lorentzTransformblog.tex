@@ -34,100 +34,105 @@ One of the remarkable features of geometric algebra are the complex exponential 
 \section{Lorentz transformations.}
 \maketheorem{Lorentz transformation.}{thm:lorentzTransform:20}{
 The transformation
-\begin{equation*}
+\begin{equation}\label{eqn:lorentzTransform:580}
 x \rightarrow e^{B} x e^{-B} = x',
-\end{equation*}
+\end{equation}
 where \( B = a \wedge b \), is an STA 2-blade for any two linearly independent four-vectors \( a, b \), is a norm preserving, that is
-\begin{equation*}
+\begin{equation}\label{eqn:lorentzTransform:600}
 x^2 = {x'}^2.
-\end{equation*}
+\end{equation}
 } % theorem
 \begin{proof}
 The proof is disturbingly trivial in this geometric algebra form
-\begin{dmath}\label{eqn:lorentzTransform:40}
+\begin{equation}\label{eqn:lorentzTransform:40}
+\begin{aligned}
 {x'}^2
-=
-e^{B} x e^{-B} e^{B} x e^{-B}
-=
-e^{B} x x e^{-B}
-=
-x^2 e^{B} e^{-B}
-=
+&=
+e^{B} x e^{-B} e^{B} x e^{-B} \\
+&=
+e^{B} x x e^{-B} \\
+&=
+x^2 e^{B} e^{-B} \\
+&=
 x^2.
-\end{dmath}
+\end{aligned}
+\end{equation}
 \end{proof}
-In particular, observe that we did not need to construct the usual infinitesimal representations of rotation and boost transformation matrices or tensors in order to demonstrate that we have spacetime invariance for the transformations.
-The rough idea of such a transformation is that the exponential commutes with components of the four-vector that lie off the spacetime plane specified by the bivector \( B \), and anticommutes with components of the four-vector  that lie in the plane.  The end result is that the sandwich operation simplifies to
-\begin{dmath}\label{eqn:lorentzTransform:60}
+In particular, observe that we did not need to construct the usual infinitesimal representations of rotation and boost transformation matrices or tensors in order to demonstrate that we have spacetime invariance for the transformations.  The rough idea of such a transformation is that the exponential commutes with components of the four-vector that lie off the spacetime plane specified by the bivector \( B \), and anticommutes with components of the four-vector  that lie in the plane.  The end result is that the sandwich operation simplifies to
+\begin{equation}\label{eqn:lorentzTransform:60}
 x' = x_\parallel e^{-B} + x_\perp,
-\end{dmath}
+\end{equation}
 where \( x = x_\perp + x_\parallel \) and \( x_\perp \cdot B = 0 \), and \( x_\parallel \wedge B = 0 \).  In particular, using \( x = x B B^{-1} = \lr{ x \cdot B + x \wedge B } B^{-1} \), we find that
-\begin{dmath}\label{eqn:lorentzTransform:80}
+\begin{equation}\label{eqn:lorentzTransform:80}
 \begin{aligned}
 x_\parallel &= \lr{ x \cdot B } B^{-1} \\
 x_\perp &= \lr{ x \wedge B } B^{-1}.
 \end{aligned}
-\end{dmath}
-When \( B \) is a spacetime plane \( B = b \wedge \gamma_0 \), then this exponential has a hyperbolic nature, and we end up with a Lorentz boost.  When \( B \) is a spatial bivector, we end up with a single complex exponential, encoding our plane old 3D rotation.  More general \( B \)'s that encode composite boosts and rotations are also possible, but \( B \) must be invertible (it should have no lightlike factors.)  The rough geometry of these projections is illustrated in \cref{fig:projectionsAndRejections:projectionsAndRejectionsFig1}, where the spacetime plane is represented by \( B \).
-\imageFigure{../figures/classicalmechanics/projectionsAndRejectionsFig1}{Projection and rejection geometry.}{fig:projectionsAndRejections:projectionsAndRejectionsFig1}{0.3}
+\end{equation}
+When \( B \) is a spacetime plane \( B = b \wedge \gamma_0 \), then this exponential has a hyperbolic nature, and we end up with a Lorentz boost.  When \( B \) is a spatial bivector, we end up with a single complex exponential, encoding our plane old 3D rotation.  More general \( B \)'s that encode composite boosts and rotations are also possible, but \( B \) must be invertible (it should have no lightlike factors.)
 
 What is not so obvious is how to pick \( B \)'s that correspond to specific rotation axes or boost directions.  Let's consider each of those cases in turn.
 \maketheorem{Boost.}{thm:lorentzTransform:120}{
 The boost along a direction vector \( \vcap \) and rapidity \( \alpha \) is given by
-\begin{equation*}
+\begin{equation}\label{eqn:lorentzTransform:620}
 x' = e^{-\vcap \alpha/2} x e^{\vcap \alpha/2},
-\end{equation*}
+\end{equation}
 where \( \vcap = \gamma_{k0} \cos\theta^k \) is an STA bivector representing a spatial direction with direction cosines \( \cos\theta^k \).
 } % theorem
 \begin{proof}
 We want to demonstrate that this is equivalent to the usual boost formulation.  We can start with decomposition of the four-vector \( x \) into components that lie in and off of the spacetime plane \( \vcap \).
-\begin{dmath}\label{eqn:lorentzTransform:100}
+\begin{equation}\label{eqn:lorentzTransform:100}
+\begin{aligned}
 x
-= \lr{ x^0 + \Bx } \gamma_0
-= \lr{ x^0 + \Bx \vcap^2 } \gamma_0
-= \lr{ x^0 + \lr{ \Bx \cdot \vcap} \vcap + \lr{ \Bx \wedge \vcap} \vcap } \gamma_0,
-\end{dmath}
-where \( \Bx = x \wedge \gamma_0 \).
-The first two components lie in the boost plane, whereas the last is the spatial component of the vector that lies perpendicular to the boost plane.
-Observe that \( \vcap \) anticommutes with the dot product term and commutes with he wedge product term, so we have
-\begin{dmath}\label{eqn:lorentzTransform:120}
+&= \lr{ x^0 + \Bx } \gamma_0 \\
+&= \lr{ x^0 + \Bx \vcap^2 } \gamma_0 \\
+&= \lr{ x^0 + \lr{ \Bx \cdot \vcap} \vcap + \lr{ \Bx \wedge \vcap} \vcap } \gamma_0,
+\end{aligned}
+\end{equation}
+where \( \Bx = x \wedge \gamma_0 \).  The first two components lie in the boost plane, whereas the last is the spatial component of the vector that lies perpendicular to the boost plane.  Observe that \( \vcap \) anticommutes with the dot product term and commutes with he wedge product term, so we have
+\begin{equation}\label{eqn:lorentzTransform:120}
+\begin{aligned}
 x'
-=
+&=
 \lr{ x^0 + \lr{ \Bx \cdot \vcap } \vcap } \gamma_0
 e^{\vcap \alpha/2 }
 e^{\vcap \alpha/2 }
 +
 \lr{ \Bx \wedge \vcap } \vcap \gamma_0
 e^{-\vcap \alpha/2 }
-e^{\vcap \alpha/2 }
-=
+e^{\vcap \alpha/2 } \\
+&=
 \lr{ x^0 + \lr{ \Bx \cdot \vcap } \vcap } \gamma_0
 e^{\vcap \alpha }
 +
 \lr{ \Bx \wedge \vcap } \vcap \gamma_0.
-\end{dmath}
+\end{aligned}
+\end{equation}
 Noting that \( \vcap^2 = 1 \), we may expand the exponential in hyperbolic functions, and find that the boosted portion of the vector expands as
-\begin{dmath}\label{eqn:lorentzTransform:260}
+\begin{equation}\label{eqn:lorentzTransform:260}
+\begin{aligned}
 \lr{ x^0 + \lr{ \Bx \cdot \vcap} \vcap } \gamma_0 e^{\vcap \alpha}
-=
-\lr{ x^0 + \lr{ \Bx \cdot \vcap} \vcap } \gamma_0 \lr{ \cosh\alpha + \vcap \sinh \alpha}
-=
-\lr{ x^0 + \lr{ \Bx \cdot \vcap} \vcap } \lr{ \cosh\alpha - \vcap \sinh \alpha} \gamma_0
-=
+&=
+\lr{ x^0 + \lr{ \Bx \cdot \vcap} \vcap } \gamma_0 \lr{ \cosh\alpha + \vcap \sinh \alpha} \\
+&=
+\lr{ x^0 + \lr{ \Bx \cdot \vcap} \vcap } \lr{ \cosh\alpha - \vcap \sinh \alpha} \gamma_0 \\
+&=
 \lr{ x^0 \cosh\alpha - \lr{ \Bx \cdot \vcap} \sinh \alpha} \gamma_0
 +
 \lr{ -x^0 \sinh \alpha + \lr{ \Bx \cdot \vcap} \cosh \alpha } \vcap \gamma_0.
-\end{dmath}
+\end{aligned}
+\end{equation}
 We are left with
-\begin{dmath}\label{eqn:lorentzTransform:320}
+\begin{equation}\label{eqn:lorentzTransform:320}
+\begin{aligned}
 x'
-=
+&=
 \lr{ x^0 \cosh\alpha - \lr{ \Bx \cdot \vcap} \sinh \alpha} \gamma_0
 +
 \lr{ \lr{ \Bx \cdot \vcap} \cosh \alpha -x^0 \sinh \alpha } \vcap \gamma_0
 +
-\lr{ \Bx \wedge \vcap} \vcap \gamma_0
-=
+\lr{ \Bx \wedge \vcap} \vcap \gamma_0 \\
+&=
 \begin{bmatrix}
 \gamma_0 & \vcap \gamma_0
 \end{bmatrix}
@@ -141,53 +146,61 @@ x^0 \\
 \end{bmatrix}
 +
 \lr{ \Bx \wedge \vcap} \vcap \gamma_0,
-\end{dmath}
+\end{aligned}
+\end{equation}
 which has the desired Lorentz boost structure.  Of course, this is usually seen with \( \vcap = \gamma_{10} \) so that the components in the coordinate column vector are \( (ct, x) \).
 \end{proof}
 \maketheorem{Spatial rotation.}{thm:lorentzTransform:100}{
 Given two linearly independent spatial bivectors \( \Ba = a^k \gamma_{k0}, \Bb = b^k \gamma_{k0} \), a rotation of \(\theta\) radians in the plane of \( \Ba, \Bb \) from \( \Ba \) towards \( \Bb \), is given by
-\begin{equation*}
+\begin{equation}\label{eqn:lorentzTransform:640}
 x' = e^{-i\theta} x e^{i\theta},
-\end{equation*}
+\end{equation}
 where \( i = (\Ba \wedge \Bb)/\Abs{\Ba \wedge \Bb} \), is a unit (spatial) bivector.
 } % theorem
 \begin{proof}
 Without loss of generality, we may pick \( i = \acap \bcap \), where \( \acap^2 = \bcap^2 = 1 \), and \( \acap \cdot \bcap = 0 \).  With such an orthonormal basis for the plane, we can decompose our four vector into portions that lie in and off the plane
-\begin{dmath}\label{eqn:lorentzTransform:400}
+\begin{equation}\label{eqn:lorentzTransform:400}
+\begin{aligned}
 x
-= \lr{ x^0 + \Bx } \gamma_0
-= \lr{ x^0 + \Bx i i^{-1} } \gamma_0
-= \lr{ x^0 + \lr{ \Bx \cdot i } i^{-1} + \lr{ \Bx \wedge i } i^{-1} } \gamma_0.
-\end{dmath}
+&= \lr{ x^0 + \Bx } \gamma_0 \\
+&= \lr{ x^0 + \Bx i i^{-1} } \gamma_0 \\
+&= \lr{ x^0 + \lr{ \Bx \cdot i } i^{-1} + \lr{ \Bx \wedge i } i^{-1} } \gamma_0.
+\end{aligned}
+\end{equation}
 The projective term lies in the plane of rotation, whereas the timelike and spatial rejection term are perpendicular.  That is
-\begin{dmath}\label{eqn:lorentzTransform:420}
+\begin{equation}\label{eqn:lorentzTransform:420}
 \begin{aligned}
 x_\parallel &= \lr{ \Bx \cdot i } i^{-1} \gamma_0 \\
 x_\perp &= \lr{ x^0 + \lr{ \Bx \wedge i } i^{-1} } \gamma_0,
 \end{aligned}
-\end{dmath}
+\end{equation}
 where \( x_\parallel \wedge i = 0 \), and \( x_\perp \cdot i = 0 \).  The plane pseudoscalar \( i \) anticommutes with \( x_\parallel \), and commutes with \( x_\perp \), so
-\begin{dmath}\label{eqn:lorentzTransform:440}
+\begin{equation}\label{eqn:lorentzTransform:440}
+\begin{aligned}
 x'
-= e^{-i\theta/2} \lr{ x_\parallel + x_\perp } e^{i\theta/2}
-= x_\parallel e^{i\theta} + x_\perp.
-\end{dmath}
+&= e^{-i\theta/2} \lr{ x_\parallel + x_\perp } e^{i\theta/2} \\
+&= x_\parallel e^{i\theta} + x_\perp.
+\end{aligned}
+\end{equation}
 However
-\begin{dmath}\label{eqn:lorentzTransform:460}
+\begin{equation}\label{eqn:lorentzTransform:460}
+\begin{aligned}
 \lr{ \Bx \cdot i } i^{-1}
-=
-\lr{ \Bx \cdot \lr{ \acap \wedge \bcap } } \bcap \acap
-=
+&=
+\lr{ \Bx \cdot \lr{ \acap \wedge \bcap } } \bcap \acap \\
+&=
 \lr{\Bx \cdot \acap} \bcap \bcap \acap
--\lr{\Bx \cdot \bcap} \acap \bcap \acap
-=
+-\lr{\Bx \cdot \bcap} \acap \bcap \acap \\
+&=
 \lr{\Bx \cdot \acap} \acap
 +\lr{\Bx \cdot \bcap} \bcap,
-\end{dmath}
+\end{aligned}
+\end{equation}
 so
-\begin{dmath}\label{eqn:lorentzTransform:480}
+\begin{equation}\label{eqn:lorentzTransform:480}
+\begin{aligned}
 x_\parallel e^{i\theta}
-=
+&=
 \lr{
 	\lr{\Bx \cdot \acap} \acap
 	+
@@ -196,8 +209,8 @@ x_\parallel e^{i\theta}
 \gamma_0
 \lr{
 	\cos\theta + \acap \bcap \sin\theta
-}
-=
+} \\
+&=
 \acap \lr{
 	\lr{\Bx \cdot \acap} \cos\theta
 	-
@@ -211,9 +224,10 @@ x_\parallel e^{i\theta}
 	\lr{\Bx \cdot \bcap} \cos\theta
 }
 \gamma_0,
-\end{dmath}
+\end{aligned}
+\end{equation}
 so
-\begin{dmath}\label{eqn:lorentzTransform:500}
+\begin{equation}\label{eqn:lorentzTransform:500}
 x'
 =
 \begin{bmatrix}
@@ -230,128 +244,138 @@ x'
 \gamma_0
 +
 \lr{ x \wedge i} i^{-1} \gamma_0.
-\end{dmath}
+\end{equation}
 Observe that this rejection term can be explicitly expanded to
-\begin{dmath}\label{eqn:lorentzTransform:520}
+\begin{equation}\label{eqn:lorentzTransform:520}
 \lr{ \Bx \wedge i} i^{-1} \gamma_0 =
 x -
 \lr{ \Bx \cdot \acap } \acap \gamma_0
 -
 \lr{ \Bx \cdot \acap } \acap \gamma_0.
-\end{dmath}
+\end{equation}
 This is the timelike component of the vector, plus the spatial component that is normal to the plane.  This exponential sandwich transformation rotates only the portion of the vector that lies in the plane, and leaves the rest (timelike and normal) untouched.
 \end{proof}
 
 \section{Problems.}
 \makeproblem{Verify components relative to boost direction.}{problem:lorentzTransform:10}{
 In \cref{eqn:lorentzTransform:100} the vector \( x \) was expanded in terms of the spacetime split.  An alternate approach, is to expand as
-\begin{dmath}\label{eqn:lorentzTransform:340}
+\begin{equation}\label{eqn:lorentzTransform:340}
+\begin{aligned}
 x
-= x \vcap^2
-= \lr{ x \cdot \vcap + x \wedge \vcap } \vcap
-= \lr{ x \cdot \vcap } \vcap + \lr{ x \wedge \vcap } \vcap.
-\end{dmath}
+&= x \vcap^2 \\
+&= \lr{ x \cdot \vcap + x \wedge \vcap } \vcap \\
+&= \lr{ x \cdot \vcap } \vcap + \lr{ x \wedge \vcap } \vcap.
+\end{aligned}
+\end{equation}
 Show that
-\begin{dmath}\label{eqn:lorentzTransform:360}
+\begin{equation}\label{eqn:lorentzTransform:360}
 \lr{ x \cdot \vcap } \vcap
 =
 \lr{ x^0 + \lr{ \Bx \cdot \vcap} \vcap } \gamma_0,
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:lorentzTransform:380}
+\begin{equation}\label{eqn:lorentzTransform:380}
 \lr{ x \wedge \vcap } \vcap
 =
 \lr{ \Bx \wedge \vcap} \vcap \gamma_0.
-\end{dmath}
+\end{equation}
 } % problem
 \makeanswer{problem:lorentzTransform:10}{
 %We now want to further examine the transformation of the component of the vector that lies in the spacetime plane \( \vcap \).  We can use clever geometric algebra tricks to expand that dot product term, but let's do this the dumb way first with coordinate expansion.
 Let \( x = x^\mu \gamma_\mu \), so that
-\begin{dmath}\label{eqn:lorentzTransform:160}
+\begin{equation}\label{eqn:lorentzTransform:160}
+\begin{aligned}
 x \cdot \vcap
-=
-\gpgradeone{ x^\mu \gamma_\mu \cos\theta^b \gamma_{b 0} }
-=
+&=
+\gpgradeone{ x^\mu \gamma_\mu \cos\theta^b \gamma_{b 0} } \\
+&=
 x^\mu \cos\theta^b \gpgradeone{ \gamma_\mu \gamma_{b 0} }
 .
-\end{dmath}
+\end{aligned}
+\end{equation}
 The \( \mu = 0 \) component of this grade selection is
-\begin{dmath}\label{eqn:lorentzTransform:180}
+\begin{equation}\label{eqn:lorentzTransform:180}
 \gpgradeone{ \gamma_0 \gamma_{b 0} }
 =
 -\gamma_b,
-\end{dmath}
+\end{equation}
 and for \( \mu = a \ne 0 \), we have
-\begin{dmath}\label{eqn:lorentzTransform:200}
+\begin{equation}\label{eqn:lorentzTransform:200}
 \gpgradeone{ \gamma_a \gamma_{b 0} }
 =
 -\delta_{a b} \gamma_0,
-\end{dmath}
+\end{equation}
 so we have
-\begin{dmath}\label{eqn:lorentzTransform:220}
+\begin{equation}\label{eqn:lorentzTransform:220}
+\begin{aligned}
 x \cdot \vcap
-=
+&=
 x^0 \cos\theta^b (-\gamma_b)
 +
-x^a \cos\theta^b (-\delta_{ab} \gamma_0 )
-=
+x^a \cos\theta^b (-\delta_{ab} \gamma_0 ) \\
+&=
 -x^0 \vcap \gamma_0
 -
-x^b \cos\theta^b \gamma_0
-=
+x^b \cos\theta^b \gamma_0 \\
+&=
 - \lr{ x^0 \vcap + \Bx \cdot \vcap } \gamma_0,
-\end{dmath}
+\end{aligned}
+\end{equation}
 where \( \Bx = x \wedge \gamma_0 \) is the spatial portion of the four vector \( x \) relative to the stationary observer frame.  Since \( \vcap \) anticommutes with \( \gamma_0 \), the component of \( x \) in the spacetime plane \( \vcap \) is
-\begin{dmath}\label{eqn:lorentzTransform:240}
+\begin{equation}\label{eqn:lorentzTransform:240}
 \lr{ x \cdot \vcap } \vcap =
 \lr{ x^0 + \lr{ \Bx \cdot \vcap} \vcap } \gamma_0,
-\end{dmath}
+\end{equation}
 as expected.
 
 For the rejection term, we have
-\begin{dmath}\label{eqn:lorentzTransform:280}
+\begin{equation}\label{eqn:lorentzTransform:280}
 x \wedge \vcap
 =
 x^\mu \cos\theta^s \gpgradethree{ \gamma_\mu \gamma_{s 0} }.
-\end{dmath}
+\end{equation}
 The \( \mu = 0 \) term clearly contributes nothing, leaving us with:
-\begin{dmath}\label{eqn:lorentzTransform:300}
+\begin{equation}\label{eqn:lorentzTransform:300}
+\begin{aligned}
 \lr{ x \wedge \vcap } \vcap
-=
-\lr{ x \wedge \vcap } \cdot \vcap
-=
-x^r \cos\theta^s \cos\theta^t \lr{ \lr{ \gamma_r \wedge \gamma_{s}} \gamma_0 } \cdot \lr{ \gamma_{t0} }
-=
+&=
+\lr{ x \wedge \vcap } \cdot \vcap \\
+&=
+x^r \cos\theta^s \cos\theta^t \lr{ \lr{ \gamma_r \wedge \gamma_{s}} \gamma_0 } \cdot \lr{ \gamma_{t0} } \\
+&=
 x^r \cos\theta^s \cos\theta^t \gpgradeone{
 	\lr{ \gamma_r \wedge \gamma_{s} } \gamma_0 \gamma_{t0}
-}
-=
--x^r \cos\theta^s \cos\theta^t \lr{ \gamma_r \wedge \gamma_{s}} \cdot \gamma_t
-=
--x^r \cos\theta^s \cos\theta^t \lr{ -\gamma_r \delta_{st} + \gamma_s \delta_{rt} }
-=
-x^r \cos\theta^t \cos\theta^t \gamma_r
+} \\
+&=
+-x^r \cos\theta^s \cos\theta^t \lr{ \gamma_r \wedge \gamma_{s}} \cdot \gamma_t \\
+&=
+-x^r \cos\theta^s \cos\theta^t \lr{ -\gamma_r \delta_{st} + \gamma_s \delta_{rt} } \\
+&=
+x^r \cos\theta^t \cos\theta^t \gamma_r 
 -
-x^t \cos\theta^s \cos\theta^t \gamma_s
-=
+x^t \cos\theta^s \cos\theta^t \gamma_s \\
+&=
 \Bx \gamma_0
-- (\Bx \cdot \vcap) \vcap \gamma_0
-=
+- (\Bx \cdot \vcap) \vcap \gamma_0 \\
+&=
 \lr{ \Bx \wedge \vcap} \vcap \gamma_0,
-\end{dmath}
+\end{aligned}
+\end{equation}
 as expected.  Is there a clever way to demonstrate this without resorting to coordinates?
 } % answer
 \makeproblem{Rotation transformation components.}{problem:lorentzTransform:20}{
 Given a unit spatial bivector \( i = \acap \bcap \), where \( \acap \cdot \bcap = 0 \) and \( i^2 = -1 \), show that
-\begin{dmath}\label{eqn:lorentzTransform:540}
-\lr{ x \cdot i } i^{-1} =
-\lr{ \Bx \cdot i } i^{-1} \gamma_0 =
+\begin{equation}\label{eqn:lorentzTransform:540}
+\lr{ x \cdot i } i^{-1} 
+=
+\lr{ \Bx \cdot i } i^{-1} \gamma_0 
+=
 \lr{\Bx \cdot \acap } \acap \gamma_0
 +
 \lr{\Bx \cdot \bcap } \bcap \gamma_0,
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:lorentzTransform:560}
+\begin{equation}\label{eqn:lorentzTransform:560}
 \lr{ x \wedge i } i^{-1}
 =
 \lr{ \Bx \wedge i } i^{-1} \gamma_0
@@ -360,7 +384,7 @@ x -
 \lr{\Bx \cdot \acap } \acap \gamma_0
 -
 \lr{\Bx \cdot \bcap } \bcap \gamma_0.
-\end{dmath}
+\end{equation}
 Also show that \( i \) anticommutes with \( \lr{ x \cdot i } i^{-1} \) and commutes with \( \lr{ x \wedge i } i^{-1} \).
 } % problem
 \makeanswer{problem:lorentzTransform:20}{

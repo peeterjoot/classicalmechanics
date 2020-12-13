@@ -34,4 +34,5 @@
 #perl -p -i ../latex/bin/latexRegex.pl reciprocal.tex
 #
 ../latex/bin/lgrep lorentzTransform.tex | tee o ; . ./o
+../latex/bin/lgrep lorentzTransformblog.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl lorentzTransform.tex
