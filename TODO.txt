@@ -1,3 +1,27 @@
+- Tags to index in lorentzTransform.tex
+
+ bivector
+ boost
+ Dirac algebra
+ dot product
+ exponential
+ four vector
+ Geometric Algebra
+ grade selection
+ Lorentz transform
+ projection
+ pseudoscalar
+ rejection
+ rotation
+ space time algebra
+ spacetime plane
+ spatial bivector
+ spatial plane
+ STA
+ wedge product
+
+Incorporate this into the STA content.
+
 - tags to index in reciprocal.tex
 
 - Reincorporate as first example of the field Euler-Lagrange equations.  Was in lagrangianFieldDensity.tex
