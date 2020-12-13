@@ -1,0 +1,8 @@
+make gaugeLorentzSTA.pdf
+make gaugeLorentzSTAblog.pdf
+tex2mathjax -f gaugeLorentzSTAblog.tex | \
+grep -ve '<h3.*Solutions' -e PassOptionsToPackage | \
+sed 's/gaugeLorentzSTAblog.pdf/gaugeLorentzSTA.pdf/;' | \
+sed 's,\\emph{{\(.*\)}},\1,' | \
+perl -00 -pe '' > x.txt
+pbcopy < x.txt
