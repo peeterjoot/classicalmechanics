@@ -38,6 +38,7 @@ all :: junk.pdf
 #all :: r
 all :: l
 l: lorentzTransform.pdf
+r: reciprocal.pdf
 
 %.sp : %.tex
 	spellcheck $^
