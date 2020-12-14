@@ -794,31 +794,36 @@ physically meaningful spacetime surface involves linear combinations spacelike v
 \paragraph{Final notes.}
 There are a few loose ends above.  In particular, we haven't conclusively proven that the set of reciprocal vectors \( \Bx^\mu = \grad u^\mu \) are exactly those obtained through algebraic means.  For a full parameterization of spacetime, they are necessarily the same, since both are unique.  So we know that \cref{eqn:reciprocal:1920} must equal the reciprocals obtained by evaluating the gradient for a full parameterization (and this must also equal the reciprocals that we can obtain through matrix inversion.)  We have also not proved explicitly that the three parameter construction of the reciprocals in \cref{eqn:reciprocal:1900} is in the tangent space, but that is a fairly trivial observation, so that can be left as an exercise for the reader dismissal.  Some additional thought about this is probably required, but it seems reasonable to put that on the back burner and move on to some applications.
 
-%%%\chapter{INTEGRATION STUFF FOR LATER.}
-%%%\makedefinition{Hypervolume elements.}{dfn:reciprocal:1060}{
-%%%Wedge products of the differentials that lie along each of the tangent basis directions
-%%%\begin{equation*}
-%%%d\Bx_\mu = \Bx_\mu du^\mu, \qquad \mbox{(no sum)},
-%%%\end{equation*}
-%%%can be used to form line, surface, volume, and hypervolume elements
-%%%\begin{equation*}
-%%%\begin{aligned}
-%%%d^1\Bx &= d\Bx_0 = \Bx_0 du^0 \\
-%%%d^2\Bx &= d\Bx_0 \wedge d\Bx_1 = \lr{\Bx_0 \wedge \Bx_1} du^0 du^1 \\
-%%%d^3\Bx &= d\Bx_0 \wedge d\Bx_1 \wedge d\Bx_2 = \lr{\Bx_0 \wedge \Bx_1 \wedge \Bx_2 } du^0 du^1 du^2 \\
-%%%d^4\Bx &= d\Bx_0 \wedge d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_3 = \lr{\Bx_0 \wedge \Bx_1 \wedge \Bx_2 \wedge \Bx_3 } du^0 du^1 du^2 du^3.
-%%%\end{aligned}
-%%%\end{equation*}
-%%%%will be of interest when formulating the fundamental theorem of geometric algebra.
-%%%} % definition
-%%%For such hypervolume elements to be meaningful, we must impose a non-degeneracy constraint, and require that the
-%%%%In particular, the space must be non-degenerate, which means that the
-%%%volume elements above are non-zero (the Jacobian's of the partials are not zero.)  This non-zero constraint is required to ensure that the orientation of the volume elements do not change sign (as in differential forms, we do not take the absolute value of any Jacobians.)
-%%%We must also require that these volume elements are invertible, since non-invertible null vectors, bivectors, and trivectors,
-%%%are possible in our non-Euclidean space.
-%%%The parameterized hypersurfaces that we integrate over, when augmented with these additional constraints, are referred to as manifolds.
-
-Here are a few additional examples that show how the structure of the reciprocal formulas that we derived arrive naturally.
+\section{More examples.}
+%%% new blog post:
+Here are a few additional examples of reciprocal frame calculations.
+\makeproblem{Unidirectional arbitary functional dependence.}{problem:reciprocal:13}{
+Let 
+\begin{equation*}
+x = a f(u),
+\end{equation*}
+where \( a \) is a constant vector and \( f(u)\) is some arbitrary differentiable function with a non-zero derivative in the region of interest.
+} % problem
+\makeanswer{problem:reciprocal:13}{
+Here we have just a single tangent space direction (a line in spacetime) with tangent vector
+\begin{dmath}\label{eqn:reciprocal:2400}
+\Bx_u = a \PD{u}{f} = a f_u,
+\end{dmath}
+so we see that the tangent space vectors are just rescaled values of the direction vector \( a \).
+This is a simple enough parameterization that we can compute the reciprocal frame vector explicitly using the gradient.  We expect that \( \Bx^u = 1/\Bx_u \), and find
+\begin{dmath}\label{eqn:reciprocal:2420}
+\inv{a} \cdot x = f(u),
+\end{dmath}
+but for constant \( a \), we know that \( \grad a \cdot x = a \), so taking gradients of both sides we find
+\begin{dmath}\label{eqn:reciprocal:2440}
+\inv{a} = \grad f = \PD{u}{f} \grad u,
+\end{dmath}
+so the reciprocal vector is
+\begin{dmath}\label{eqn:reciprocal:2460}
+\Bx^u = \grad u = \inv{a f_u},
+\end{dmath}
+as expected.
+} % answer
 \makeproblem{Linear two variable parameterization.}{problem:reciprocal:1960}{
 Let \( x = a u + b v \), where \( x \wedge a \wedge b = 0 \) represents spacetime plane (also the tangent space.)  Find the curvilinear coordinates and their reciprocals.
 } % problem
@@ -923,19 +928,19 @@ b \cdot \inv{ a \wedge b } \\
 \end{equation}
 A bit of rearrangement, shows that we recover \cref{eqn:reciprocal:2080} easily.  This is a second demonstration that the gradient and the algebraic formulations for the reciprocals match, at least for these special cases of linear non-coupled parameterizations.
 } % answer
-\makeproblem{Linear two variable coupled quadratic parameterization.}{problem:reciprocal:1990}{
-Let \( x = u^2 a + 2 u v b + v^2 c \), where \( a,b,c\) are all vectors.  Compute the tangent space basis, and algebraically compute the reciprocal vectors.
-} % problem
-\makeanswer{problem:reciprocal:1990}{
-The tangent space vectors are computed easily
-\begin{equation}\label{eqn:reciprocal:2140}
-\begin{aligned}
-\Bx_u &= \PD{u}{x} = 2 \lr{ u a + v b } \\
-\Bx_v &= \PD{v}{x} = 2 \lr{ u b + v c }.
-\end{aligned}
-\end{equation}
-} % answer
-\paragraph{Parameterization of a general linear transformation.}
+%%%\makeproblem{Linear two variable coupled quadratic parameterization.}{problem:reciprocal:1990}{
+%%%Let \( x = u^2 a + 2 u v b + v^2 c \), where \( a,b,c\) are all vectors.  Compute the tangent space basis, and algebraically compute the reciprocal vectors.
+%%%} % problem
+%%%\makeanswer{problem:reciprocal:1990}{
+%%%The tangent space vectors are computed easily
+%%%\begin{equation}\label{eqn:reciprocal:2140}
+%%%\begin{aligned}
+%%%\Bx_u &= \PD{u}{x} = 2 \lr{ u a + v b } \\
+%%%\Bx_v &= \PD{v}{x} = 2 \lr{ u b + v c }.
+%%%\end{aligned}
+%%%\end{equation}
+%%%} % answer
+\section{Parameterization of a general linear transformation.}
 Given \( N \) parameters \( u^0, u^1, \cdots u^{N-1} \), a general linear transformation from the parameter space to the vector space has the form
 \begin{equation}\label{eqn:reciprocal:2160}
 x =
