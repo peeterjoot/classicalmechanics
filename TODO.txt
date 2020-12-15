@@ -24,6 +24,19 @@ Incorporate this into the STA content.
 
 - tags to index in reciprocal.tex
 
+ STA, Space Time Algebra, geometric algebra, Dirac algebra, gamma matrix
+ tangent space
+ reciprocal frame
+ lorentz transformation
+ parameterization
+ rotation
+ boost
+ projection
+ coordinates
+ gradient
+
+there were other blog posts associated with that pdf (at least two.)  Grab the tags from those too.
+
 - Reincorporate as first example of the field Euler-Lagrange equations.  Was in lagrangianFieldDensity.tex
 %
 \begin{equation}\label{eqn:lagrangianFieldDensity:1474}

@@ -2,7 +2,7 @@ make reciprocal.pdf
 #exit
 make reciprocalblog.pdf
 tex2mathjax -f reciprocalblog.tex | \
-grep -ve 'Curvilinear coordinates and gradient in spacetime' | \
+grep -ve 'A couple more reciprocal frame examples.' | \
 sed 's/reciprocalblog.pdf/reciprocal.pdf/;' | \
 sed 's,\\emph{{\(.*\)}},\1,' | \
 perl -00 -pe '' > x.txt
