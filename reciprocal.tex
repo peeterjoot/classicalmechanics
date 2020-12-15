@@ -799,7 +799,7 @@
 %%% new blog post:
 Here are a few additional examples of reciprocal frame calculations.
 \makeproblem{Unidirectional arbitary functional dependence.}{problem:reciprocal:13}{
-Let 
+Let
 \begin{equation*}
 x = a f(u),
 \end{equation*}
@@ -930,13 +930,31 @@ b \cdot \inv{ a \wedge b } \\
 A bit of rearrangement, shows that we recover \cref{eqn:reciprocal:2080} easily.  This is a second demonstration that the gradient and the algebraic formulations for the reciprocals match, at least for these special cases of linear non-coupled parameterizations.
 } % answer
 \makeproblem{Reciprocal frame for generalized cylindrical parameterization.}{problem:reciprocal:17}{
-Let the vector parameterization be \( x = \rho e^{-i\theta/2} x e^{i \theta} \), where \( i^2 = \pm 1 \) is a unit bivector (\(+1\) for a boost, and \(-1\) for a rotation), and where \(\theta, \rho\) are scalars.  Find the tangent space vectors and their reciprocals.
+Let the vector parameterization be \( x(\rho,\theta) = \rho e^{-i\theta/2} x(\rho_0, \theta_0) e^{i \theta} \), where \( i^2 = \pm 1 \) is a unit bivector (\(+1\) for a boost, and \(-1\) for a rotation), and where \(\theta, \rho\) are scalars.  Find the tangent space vectors and their reciprocals.
 
-Note that this is cylindrical parameterization for the rotation case, and traces out hyperbolas for the boost case.  The boost case is illustrated in \cref{fig:boostsCylindrical:boostsCylindricalFig1} where hyperbolas in the light cone are found for boosts of \( \gamma_0\) with various values of \(\rho\), and the spacelike hyperbolas are boosts of \( \gamma_1 \), again for various values of \( \rho \).
-\imageFigure{../figures/classicalmechanics/boostsCylindricalFig1}{``Cylindical'' boost generated parameterization.}{fig:boostsCylindrical:boostsCylindricalFig1}{0.3}
+Note that this is cylindrical parameterization for the rotation case, and traces out hyperbolic regions for the boost case.  The boost case is illustrated in \cref{fig:boostsCylindrical:boostsCylindricalFig1} where hyperbolas in the light cone are found for boosts of \( \gamma_0\) with various values of \(\rho\), and the spacelike hyperbolas are boosts of \( \gamma_1 \), again for various values of \( \rho \).
+\imageFigure{../figures/classicalmechanics/boostsCylindricalFig1}{``Cylindical'' boost parameterization.}{fig:boostsCylindrical:boostsCylindricalFig1}{0.3}
 } % problem
 \makeanswer{problem:reciprocal:17}{
-	XX: FIXME.
+The tangent space vectors are
+\begin{dmath}\label{eqn:reciprocal:2480}
+\Bx_\rho = \inv{x}{\rho},
+\end{dmath}
+and
+%with \( x_0 = x(\rho_0, \theta_0) \)
+\begin{dmath}\label{eqn:reciprocal:2500}
+\Bx_\theta
+= -\frac{i}{2} x + x \frac{i}{2}
+= x \cdot i.
+\end{dmath}
+Recall that \( x \cdot i \) lies perpendicular to \( x \) (in the plane \( i \)), as illustrated in \cref{fig:projectionsAndRejections:projectionsAndRejectionsFig1}.  This means that \( \Bx_\rho \) and \( \Bx_\theta \) are orthonagonal, so we can find the reciprocal vectors by just inverting them
+\imageFigure{../figures/classicalmechanics/projectionsAndRejectionsFig1}{Projection and rejection geometry.}{fig:projectionsAndRejections:projectionsAndRejectionsFig1}{0.3}
+\begin{equation}\label{eqn:reciprocal:2520}
+\begin{aligned}
+\Bx^\rho &= \frac{\rho}{x} \\
+\Bx^\theta &= \frac{1}{x \cdot i}.
+\end{aligned}
+\end{equation}
 } % answer
 %%%\makeproblem{Linear two variable coupled quadratic parameterization.}{problem:reciprocal:1990}{
 %%%Let \( x = u^2 a + 2 u v b + v^2 c \), where \( a,b,c\) are all vectors.  Compute the tangent space basis, and algebraically compute the reciprocal vectors.
