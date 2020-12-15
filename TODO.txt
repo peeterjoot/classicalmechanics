@@ -1,3 +1,18 @@
+- these ones are not incorporated into chapters.tex:
+
+	lorentzTransform.tex
+	reciprocal.tex
+
+do that and review, comparing to:
+
+	sta.tex
+	gaugeLorentzSTA.tex
+	fieldLagrangianRest.tex
+	fieldLagrangianAndMaxwell.tex
+	covariantSTA.tex
+
+to make sure there is no redundancy.  also reciprocal.tex needs some reorganization.
+
 - Tags to index in lorentzTransform.tex
 
  bivector
