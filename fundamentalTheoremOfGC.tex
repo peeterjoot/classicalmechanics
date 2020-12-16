@@ -116,8 +116,48 @@ with reciprocal vector \( \Bx^\theta = e^{i \theta} \gamma^2 \).  The differenti
 \end{equation}
 Observe how care is required not to reorder any terms.  This particular end result is a multivector with scalar, vector, bivector, and trivector grades, but no pseudoscalar component.  The grades in the end result depend on both the function in the integrand and on the path.  For example, had we integrated all the way around the circle, the end result would have been the vector \( 2 \pi \gamma_0 \) (i.e. a \( \gamma_0 \) weighted unit circle circumference), as all the other grades would have been killed by the complex exponential integrated over a full period.
 } % answer
-
-Next we want to figure out the structure of the ``perfect'' differential for line integrals.  We can take a hint from the \R{3} vector result that we already know, namely
+\makeproblem{Line integral for boosted time direction vector.}{problem:fundamentalTheoremOfGC:20}{
+Let \( x = e^{\vcap \alpha/2} \gamma_0 e^{-\vcap \alpha/2} \) represent the spacetime curve of all the boosts of \( \gamma_0 \) along a specific velocity direction vector, where \( \vcap = (v \wedge \gamma_0)/\Norm{v \wedge \gamma_0} \) is a unit spatial bivector for any constant vector \( v \).  Compute the line integral
+\begin{dmath}\label{eqn:fundamentalTheoremOfGC:240}
+\int x\, d^1 \Bx.
+\end{dmath}
+} % problem
+\makeanswer{problem:fundamentalTheoremOfGC:20}{
+Observe that \( \vcap \) and \( \gamma_0 \) anticommute, so we may write our boost as a one sided exponential
+\begin{equation}\label{eqn:fundamentalTheoremOfGC:260}
+x(\alpha) = \gamma_0 e^{-\vcap \alpha} = e^{\vcap \alpha} \gamma_0 = \lr{ \cosh\alpha + \vcap \sinh\alpha } \gamma_0.
+\end{equation}
+The tangent vector is just
+\begin{equation}\label{eqn:fundamentalTheoremOfGC:280}
+\Bx_\alpha = \PD{\alpha}{x} = e^{\vcap\alpha} \vcap \gamma_0.
+\end{equation}
+Let's get a bit of intuition about the nature of this vector.  It's square is
+\begin{dmath}\label{eqn:fundamentalTheoremOfGC:300}
+\Bx_\alpha^2
+=
+e^{\vcap\alpha} \vcap \gamma_0
+e^{\vcap\alpha} \vcap \gamma_0
+=
+-e^{\vcap\alpha} \vcap e^{-\vcap\alpha} \vcap (\gamma_0)^2
+=
+-1,
+\end{dmath}
+so we see that the tangent vector is a spacelike unit vector.  As the vector representing points on the curve is necessarily timelike (due to Lorentz invariance), these two must be orthogonal at all points.  Let's confirm this algebraically
+\begin{dmath}\label{eqn:fundamentalTheoremOfGC:320}
+x \cdot \Bx_\alpha
+=
+\gpgradezero{ e^{\vcap \alpha} \gamma_0 e^{\vcap \alpha} \vcap \gamma_0 }
+=
+\gpgradezero{ e^{-\vcap \alpha} e^{\vcap \alpha} \vcap (\gamma_0)^2 }
+=
+\gpgradezero{ \vcap }
+= 0.
+\end{dmath}
+Here we used \( e^{\vcap \alpha} \gamma_0 = \gamma_0 e^{-\vcap \alpha} \), and \( \gpgradezero{A B} = \gpgradezero{B A} \).  Geometrically, we have the curious fact that the direction vectors to points on the curve are perpendicular (with respect to our relativistic dot product) to the tangent vectors on the curve, as illustrated in \cref{fig:boostOfGamma0AlongXdir:boostOfGamma0AlongXdirFig1}.
+\imageFigure{../figures/classicalmechanics/boostOfGamma0AlongXdirFig1}{Tangent perpendicularity in mixed metric.}{fig:boostOfGamma0AlongXdir:boostOfGamma0AlongXdirFig1}{0.3}
+} % answer
+\subsection{Perfect differentials.}
+Having seen a couple examples of multivector line integrals, let's now move on to figure out the structure of a line integral that has a ``perfect'' differential integrand.  We can take a hint from the \R{3} vector result that we already know, namely
 \begin{dmath}\label{eqn:fundamentalTheoremOfGC:120}
 \int_A^B d\Bl \cdot \spacegrad f = f(B) - f(A).
 \end{dmath}
