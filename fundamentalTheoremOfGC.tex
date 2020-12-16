@@ -64,8 +64,8 @@ What comes to our rescue is the Fundamental Theorem of Geometric Calculus (FTGC)
 \begin{equation}\label{eqn:fundamentalTheoremOfGC:40}
 \int F d^n \Bx\, \lrpartial G = \int F d^{n-1} \Bx\, G,
 \end{equation}
-where \(F,G\) are multivectors functions (i.e. sums of products of vectors.)  We've seen (\citep{aMacdonaldVAGC}, \citep{pjootGAEE}) that all the theorems above are special cases of the fundamental theorem.  Do we need any special care to state the FTGC correctly for our relativistic case?  It turns out that the answer is no!  Tangent and reciprocal frame vectors do all the heavy lifting, and we can use the fundamental theorem as is, even in our mixed signature space.  The only real change that we need to make is use spacetime gradient and vector derivative operators instead of their spatial equivalents.  Let's see how this works.
-\section{Multivector integration theory.}
+where \(F,G\) are multivectors functions (i.e. sums of products of vectors.)  We've seen (\citep{aMacdonaldVAGC}, \citep{pjootGAEE}) that all the theorems above are special cases of the fundamental theorem.  Do we need any special care to state the FTGC correctly for our relativistic case?  It turns out that the answer is no!  Tangent and reciprocal frame vectors do all the heavy lifting, and we can use the fundamental theorem as is, even in our mixed signature space.  The only real change that we need to make is use spacetime gradient and vector derivative operators instead of their spatial equivalents.  We will see how this works below.  Note that instead of starting with \cref{eqn:fundamentalTheoremOfGC:40} directly, I will attempt to build up to that point logically in a progressive fashion that is hopefully does not require the reader to make too many unjustified leaps.
+\section{Multivector line integrals.}
 We want to define multivector line integrals to start with.  Recall that in \R{3} we would say that for scalar functions \( f\), the integral
 \begin{equation*}
 \int d\Bx\, f = \int f d\Bx,
@@ -193,6 +193,9 @@ Given multivector functions \( F, G \), and a single parameter curve \( x(u) \) 
 \int_A^B F d^1\Bx \lrpartial G  = F(B) G(B) - F(A) G(A).
 \end{equation*}
 } % theorem
+\begin{proof}
+	FIXME.
+\end{proof}
 
 %}
 \EndArticle
