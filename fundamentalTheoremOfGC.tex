@@ -66,15 +66,7 @@ What comes to our rescue is the Fundamental Theorem of Geometric Calculus (FTGC)
 \end{equation}
 where \(F,G\) are multivectors functions (i.e. sums of products of vectors.)  We've seen (\citep{aMacdonaldVAGC}, \citep{pjootGAEE}) that all the theorems above are special cases of the fundamental theorem.  Do we need any special care to state the FTGC correctly for our relativistic case?  It turns out that the answer is no!  Tangent and reciprocal frame vectors do all the heavy lifting, and we can use the fundamental theorem as is, even in our mixed signature space.  The only real change that we need to make is use spacetime gradient and vector derivative operators instead of their spatial equivalents.  Let's see how this works.
 \section{Multivector integration theory.}
-\makedefinition{Vector derivative.}{dfn:fundamentalTheoremOfGC:10}{
-Given a spacetime manifold parameterized by \( x = x(u^0, \cdots u^{N-1}) \), with tangent vectors \( \Bx_\mu = \PDi{u^\mu}{x} \), and reciprocal vectors \( \Bx^\mu \in \Span\setlr{\Bx_\nu} \), such that \( \Bx^\mu \cdot \Bx_\nu = {\delta^\mu}_\nu \), the \emph{vector derivative} is defined as
-\begin{equation*}
-\partial = \sum_{\mu = 0}^{N-1} \Bx^\mu \PD{u^\mu}{}.
-\end{equation*}
-Observe that if this is a full parameterization of the space (\(N = 4\)), then the vector derivative is identical to the gradient.  The vector derivative is the projection of the gradient onto the tangent space at the point of evaluation.
-} % definition
-
-Next, let's define multivector line integrals.  Recall that in \R{3} we would say that for scalar functions \( f\), the integral
+We want to define multivector line integrals to start with.  Recall that in \R{3} we would say that for scalar functions \( f\), the integral
 \begin{equation*}
 \int d\Bx\, f = \int f d\Bx,
 \end{equation*}
@@ -82,8 +74,7 @@ is a line integral.  Also, for vector functions \( \Bf \) we call
 \begin{equation*}
 \int d\Bx \cdot \Bf = \inv{2} \int d\Bx\, \Bf + \Bf d\Bx.
 \end{equation*}
-a line integral.
-In order to generalize the idea to line integral, we will allow our multivector functions to be placed on either or both sides of the differential, as in the following.
+a line integral.  In order to generalize line integrals to multivector functions, we will allow our multivector functions to be placed on either or both sides of the differential.
 \makedefinition{Line integral.}{dfn:fundamentalTheoremOfGC:20}{
 Given a single variable parameterization \( x = x(u) \), we write \( d^1\Bx = \Bx_u du \), and call
 \begin{equation*}
@@ -91,12 +82,13 @@ Given a single variable parameterization \( x = x(u) \), we write \( d^1\Bx = \B
 \end{equation*}
 a \emph{line integral}, where \( F,G \) are arbitrary multivector functions.
 } % definition
-We must be careful not to reorder any of the factors in the integrand, since the differential may not commute with either \( F \) or \( G \).  Here is a simple example.
+We must be careful not to reorder any of the factors in the integrand, since the differential may not commute with either \( F \) or \( G \).  Here is a simple example where the integrand has a product of a vector and differential.
 \makeproblem{Circular parameterization.}{problem:fundamentalTheoremOfGC:10}{
 Given a circular parameterization \( x(\theta) = \gamma_1 e^{-i\theta} \), where \( i = \gamma_1 \gamma_2 \), the unit bivector for the \(x,y\) plane.  Compute the line integral
 \begin{dmath}\label{eqn:fundamentalTheoremOfGC:100}
-\int_0^{2\pi} \Bx^\theta d^1 \Bx.
+\int_0^{\pi/4} F(\theta)\, d^1 \Bx\, G(\theta),
 \end{dmath}
+where \( F(\theta) = \Bx^\theta + \gamma_3 + \gamma_1 \gamma_0 \) is a multivector valued function, and \( G(\theta) = \gamma_0 \) is vector valued.
 } % problem
 \makeanswer{problem:fundamentalTheoremOfGC:10}{
 The tangent vector for the curve is
@@ -105,15 +97,102 @@ The tangent vector for the curve is
 = -\gamma_1 \gamma_1 \gamma_2 e^{-i\theta}
 = \gamma_2 e^{-i\theta},
 \end{equation}
-with reciprocal vector \( \Bx^\theta = e^{i \theta} \gamma^2 \).  The differential element is \( d^1 \Bx = \gamma_2 e^{-i\theta} d\theta \), so the integrand is just a scalar
+with reciprocal vector \( \Bx^\theta = e^{i \theta} \gamma^2 \).  The differential element is \( d^1 \Bx = \gamma_2 e^{-i\theta} d\theta \), so the integrand is
 \begin{equation}\label{eqn:fundamentalTheoremOfGC:80}
-\int_0^{2\pi} \Bx^\theta d^1 \Bx
-=
-\int_0^{2\pi} d\theta
-= 2 \pi,
+\begin{aligned}
+\int_0^{\pi/4} \lr{ \Bx^\theta + \gamma_3 + \gamma_1 \gamma_0 } d^1 \Bx\, \gamma_0
+&=
+\int_0^{\pi/4} \lr{ e^{i\theta} \gamma^2 + \gamma_3 + \gamma_1 \gamma_0 } \gamma_2 e^{-i\theta} d\theta\, \gamma_0 \\
+&=
+\frac{\pi}{4} \gamma_0 + \lr{ \gamma_{32} + \gamma_{102} } \inv{-i} \lr{ e^{-i\pi/4} - 1 } \gamma_0 \\
+&=
+\frac{\pi}{4} \gamma_0 + \inv{\sqrt{2}} \lr{ \gamma_{32} + \gamma_{102} } \gamma_{120} \lr{ 1 - \gamma_{12} } \\
+&=
+\frac{\pi}{4} \gamma_0 + \inv{\sqrt{2}} \lr{ \gamma_{310} + 1 } \lr{ 1 - \gamma_{12} }.
+\end{aligned}
 \end{equation}
-the circumference of the unit circle.
+Observe how care is required not to reorder any terms.  This particular end result is a multivector with scalar, vector, bivector, and trivector grades, but no pseudoscalar component.  The grades in the end result depend on both the function in the integrand and on the path.  For example, had we integrated all the way around the circle, the end result would have been the vector \( 2 \pi \gamma_0 \) (i.e. a \( \gamma_0 \) weighted unit circle circumference), as all the other grades would have been killed by the complex exponential integrated over a full period.
 } % answer
+
+Next we want to figure out the structure of the ``perfect'' differential for line integrals.  We can take a hint from the \R{3} vector result that we already know, namely
+\begin{dmath}\label{eqn:fundamentalTheoremOfGC:120}
+\int_A^B d\Bl \cdot \spacegrad f = f(B) - f(A).
+\end{dmath}
+It seems reasonable to guess that the relativistic generalization of this is
+\begin{dmath}\label{eqn:fundamentalTheoremOfGC:140}
+\int_A^B dx \cdot \grad f = f(B) - f(A).
+\end{dmath}
+Let's check that, by expanding in coordinates
+\begin{dmath}\label{eqn:fundamentalTheoremOfGC:160}
+\int_A^B dx \cdot \grad f
+=
+\int_A^B d\tau \frac{dx^\mu}{d\tau} \partial_\mu f
+=
+\int_A^B d\tau \frac{dx^\mu}{d\tau} \PD{x^\mu}{f}
+=
+\int_A^B d\tau \frac{df}{d\tau}
+=
+f(B) - f(A).
+\end{dmath}
+If we drop the dot product, will we have such a nice result?  Let's see:
+\begin{dmath}\label{eqn:fundamentalTheoremOfGC:180}
+\int_A^B dx \grad f
+=
+\int_A^B d\tau \frac{dx^\mu}{d\tau} \gamma_\mu \gamma^\nu \partial_\nu f
+=
+\int_A^B d\tau \frac{dx^\mu}{d\tau} \partial_\mu f
++
+\int_A^B
+d\tau
+\sum_{\mu \ne \nu} \gamma_\mu \gamma^\nu
+\frac{dx^\mu}{d\tau} \partial_\nu f.
+\end{dmath}
+This scalar component of this integrand is a perfect differential, but the bivector part of the integrand is a complete mess, that we have no hope of generally integrating.  It happens that if we consider one of the simplest parameterization examples, we can get a strong hint of how to generalize the differential operator to one that ends up providing a perfect differential.  In particular, let's integrate over a linear constant path, such as \( x(\tau) = \tau \gamma_0 \).  For this path, we have
+\begin{dmath}\label{eqn:fundamentalTheoremOfGC:200}
+\int_A^B dx \grad f
+=
+\int_A^B \gamma_0 d\tau \lr{
+\gamma^0 \partial_0 +
+\gamma^1 \partial_1 +
+\gamma^2 \partial_2 +
+\gamma^3 \partial_3 } f
+=
+\int_A^B d\tau \lr{
+\PD{\tau}{f} +
+\gamma_0 \gamma^1 \PD{x^1}{f} +
+\gamma_0 \gamma^2 \PD{x^2}{f} +
+\gamma_0 \gamma^3 \PD{x^3}{f}
+}.
+\end{dmath}
+Just because the path does not have any \( x^1, x^2, x^3 \) component dependencies does not mean that these last three partials are neccessarily zero.  For example \( f = f(x(\tau)) = \lr{ x^0 }^2 \gamma_0 + x^1 \gamma_1 \) will have a non-zero contribution from the \( \partial_1 \) operator.  In that particular case, we can easily integrate \( f \), but we have to know the specifics of the function to do the integral.  However, if we had a differential operator that did not include any component off the integration path, we would ahve a perfect differential.  That is, if we were to replace the gradient with the projection of the gradient onto the tangent space, we would have a perfect differential.  We see that the function of the dot product in \cref{eqn:fundamentalTheoremOfGC:140} has the same effect, as it rejects any component of the gradient that does not lie on the tangent space.
+\makedefinition{Vector derivative.}{dfn:fundamentalTheoremOfGC:10}{
+Given a spacetime manifold parameterized by \( x = x(u^0, \cdots u^{N-1}) \), with tangent vectors \( \Bx_\mu = \PDi{u^\mu}{x} \), and reciprocal vectors \( \Bx^\mu \in \Span\setlr{\Bx_\nu} \), such that \( \Bx^\mu \cdot \Bx_\nu = {\delta^\mu}_\nu \), the \emph{vector derivative} is defined as
+\begin{equation*}
+\partial = \sum_{\mu = 0}^{N-1} \Bx^\mu \PD{u^\mu}{}.
+\end{equation*}
+Observe that if this is a full parameterization of the space (\(N = 4\)), then the vector derivative is identical to the gradient.  The vector derivative is the projection of the gradient onto the tangent space at the point of evaluation.
+We designate \( \lrpartial \) as the vector derivative allowed to act bidirectionally, as follows
+\begin{equation*}
+R \lrpartial S
+=
+R \Bx^\mu \PD{u^\mu}{S}
++
+\PD{u^\mu}{R} \Bx^\mu S,
+\end{equation*}
+where \( R, S \) are multivectors, and summation convention is implied. In this bidirectional action,
+the vector factors of the vector derivative must stay in place (as they do not neccessarily commute with \( R,S\)), but the derivative operators apply in a chain rule like fashion to both functions.
+} % definition
+Noting that \( du\, \Bx_u \cdot \grad = du\, \Bx_u \cdot \partial \), we may rewrite the scalar line integral identity \cref{eqn:fundamentalTheoremOfGC:140} as
+\begin{dmath}\label{eqn:fundamentalTheoremOfGC:220}
+\int_A^B dx \cdot \partial f = f(B) - f(A).
+\end{dmath}
+However, as our example hinted at, we can generalize this line integral to multivectors nicely.  That generalization takes the following form
+\maketheorem{Fundamental theorem for line integrals.}{thm:fundamentalTheoremOfGC:10}{
+Given multivector functions \( F, G \), and a single parameter curve \( x(u) \) with line element \( d^1 \Bx = \Bx_u du \), the differential
+\begin{equation*}
+\int_A^B F d^1\Bx \lrpartial G  = F(B) G(B) - F(A) G(A).
+\end{equation*}
+} % theorem
 
 %}
 \EndArticle
