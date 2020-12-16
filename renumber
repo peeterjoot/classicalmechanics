@@ -29,10 +29,13 @@
 #../latex/bin/lgrep curvilinearSTA.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl curvilinearSTA.tex
 
-../latex/bin/lgrep reciprocal.tex | tee o ; . ./o
-../latex/bin/lgrep reciprocalblog.tex | tee o ; . ./o
+#../latex/bin/lgrep reciprocal.tex | tee o ; . ./o
+#../latex/bin/lgrep reciprocalblog.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl reciprocal.tex
-#
+
 #../latex/bin/lgrep lorentzTransform.tex | tee o ; . ./o
 #../latex/bin/lgrep lorentzTransformblog.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl lorentzTransform.tex
+
+../latex/bin/lgrep fundamentalTheoremOfGC.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl fundamentalTheoremOfGC.tex

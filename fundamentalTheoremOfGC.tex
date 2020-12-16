@@ -1,25 +1,120 @@
+%
+% Copyright © 2020 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{fundamentalTheoremOfGC}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
 
-\chapter{INTEGRATION STUFF FOR LATER.}
-\makedefinition{Hypervolume elements.}{dfn:reciprocal:1060}{
-Wedge products of the differentials that lie along each of the tangent basis directions
+\input{../latex/peeter_prologue_print2.tex}
+
+\usepackage{txfonts}
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{verbatim}
+%\usepackage{mhchem} % \ce{}
+%\usepackage{macros_bm} % \bcM
+%\usepackage{macros_qed} % \qedmarker
+%\usepackage{txfonts} % \ointclockwise
+
+\beginArtNoToc
+
+\generatetitle{Fundamental theorem of geometric calculus (relativistic.)}
+%\chapter{Fundamental theorem of geometric calculus}
+%\label{chap:fundamentalTheoremOfGC}
+
+\section{Motivation.}
+I've been slowly working my way towards a statement of the fundamental theorem of integral calculus, where the functions being integrated are elements of the Dirac algebra (space time multivectors in the geometric algebra parlance.)
+
+This is interesting because we want to be able to do line, surface, 3-volume and 4-volume space time integrals.  We have many \R{3} integral theorems
+\begin{subequations}
+\label{eqn:fundamentalTheoremOfGC:20}
+\begin{equation}
+\int_A^B d\Bl \cdot \spacegrad f = f(B) - f(A),
+\end{equation}
+\begin{equation}
+\int_S dA\, \ncap \cross \spacegrad f = \ointctrclockwise_{\partial S} d\Bx\, f,
+\end{equation}
+\begin{equation}
+\int_S dA\, \ncap \cdot \lr{ \spacegrad \cross \Bf} = \ointctrclockwise_{\partial S} d\Bx \cdot \Bf,
+\end{equation}
+\begin{equation}
+\int_S dx dy \lr{ \PD{y}{P} - \PD{x}{Q} }
+=
+\ointclockwise_{\partial S} P dx + Q dy,
+\end{equation}
+\begin{equation}
+\int_V dV\, \spacegrad f = \int_{\partial V} dA\, \ncap f,
+\end{equation}
+\begin{equation}
+\int_V dV\, \spacegrad \cross \Bf = \int_{\partial V} dA\, \ncap \cross \Bf,
+\end{equation}
+\begin{equation}
+\int_V dV\, \spacegrad \cdot \Bf = \int_{\partial V} dA\, \ncap \cdot \Bf,
+\end{equation}
+\end{subequations}
+and want to know how to generalize these to four dimensions and also make sure that we are handling the relativistic mixed signature correctly.  If our starting point was the mess of equations above, we'd be in trouble, since it is not obvious how these generalize.  All the theorems with unit normals have to be handled completely differently in four dimensions since we don't have a unique normal to any given spacetime plane.
+What comes to our rescue is the Fundamental Theorem of Geometric Calculus (FTGC), which has the form
+\begin{equation}\label{eqn:fundamentalTheoremOfGC:40}
+\int F d^n \Bx\, \lrpartial G = \int F d^{n-1} \Bx\, G,
+\end{equation}
+where \(F,G\) are multivectors functions (i.e. sums of products of vectors.)  We've seen (\citep{aMacdonaldVAGC}, \citep{pjootGAEE}) that all the theorems above are special cases of the fundamental theorem.  Do we need any special care to state the FTGC correctly for our relativistic case?  It turns out that the answer is no!  Tangent and reciprocal frame vectors do all the heavy lifting, and we can use the fundamental theorem as is, even in our mixed signature space.  The only real change that we need to make is use spacetime gradient and vector derivative operators instead of their spatial equivalents.  Let's see how this works.
+\section{Multivector integration theory.}
+\makedefinition{Vector derivative.}{dfn:fundamentalTheoremOfGC:10}{
+Given a spacetime manifold parameterized by \( x = x(u^0, \cdots u^{N-1}) \), with tangent vectors \( \Bx_\mu = \PDi{u^\mu}{x} \), and reciprocal vectors \( \Bx^\mu \in \Span\setlr{\Bx_\nu} \), such that \( \Bx^\mu \cdot \Bx_\nu = {\delta^\mu}_\nu \), the \emph{vector derivative} is defined as
 \begin{equation*}
-d\Bx_\mu = \Bx_\mu du^\mu, \qquad \mbox{(no sum)},
+\partial = \sum_{\mu = 0}^{N-1} \Bx^\mu \PD{u^\mu}{}.
 \end{equation*}
-can be used to form line, surface, volume, and hypervolume elements
-\begin{equation*}
-\begin{aligned}
-d^1\Bx &= d\Bx_0 = \Bx_0 du^0 \\
-d^2\Bx &= d\Bx_0 \wedge d\Bx_1 = \lr{\Bx_0 \wedge \Bx_1} du^0 du^1 \\
-d^3\Bx &= d\Bx_0 \wedge d\Bx_1 \wedge d\Bx_2 = \lr{\Bx_0 \wedge \Bx_1 \wedge \Bx_2 } du^0 du^1 du^2 \\
-d^4\Bx &= d\Bx_0 \wedge d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_3 = \lr{\Bx_0 \wedge \Bx_1 \wedge \Bx_2 \wedge \Bx_3 } du^0 du^1 du^2 du^3.
-\end{aligned}
-\end{equation*}
-%will be of interest when formulating the fundamental theorem of geometric algebra.
+Observe that if this is a full parameterization of the space (\(N = 4\)), then the vector derivative is identical to the gradient.  The vector derivative is the projection of the gradient onto the tangent space at the point of evaluation.
 } % definition
-For such hypervolume elements to be meaningful, we must impose a non-degeneracy constraint, and require that the
-%In particular, the space must be non-degenerate, which means that the
-volume elements above are non-zero (the Jacobian's of the partials are not zero.)  This non-zero constraint is required to ensure that the orientation of the volume elements do not change sign (as in differential forms, we do not take the absolute value of any Jacobians.)
-We must also require that these volume elements are invertible, since non-invertible null vectors, bivectors, and trivectors,
-are possible in our non-Euclidean space.
-The parameterized hypersurfaces that we integrate over, when augmented with these additional constraints, are referred to as manifolds.
 
+Next, let's define multivector line integrals.  Recall that in \R{3} we would say that for scalar functions \( f\), the integral
+\begin{equation*}
+\int d\Bx\, f = \int f d\Bx,
+\end{equation*}
+is a line integral.  Also, for vector functions \( \Bf \) we call
+\begin{equation*}
+\int d\Bx \cdot \Bf = \inv{2} \int d\Bx\, \Bf + \Bf d\Bx.
+\end{equation*}
+a line integral.
+In order to generalize the idea to line integral, we will allow our multivector functions to be placed on either or both sides of the differential, as in the following.
+\makedefinition{Line integral.}{dfn:fundamentalTheoremOfGC:20}{
+Given a single variable parameterization \( x = x(u) \), we write \( d^1\Bx = \Bx_u du \), and call
+\begin{equation*}
+\int F d^1\Bx\, G,
+\end{equation*}
+a \emph{line integral}, where \( F,G \) are arbitrary multivector functions.
+} % definition
+We must be careful not to reorder any of the factors in the integrand, since the differential may not commute with either \( F \) or \( G \).  Here is a simple example.
+\makeproblem{Circular parameterization.}{problem:fundamentalTheoremOfGC:10}{
+Given a circular parameterization \( x(\theta) = \gamma_1 e^{-i\theta} \), where \( i = \gamma_1 \gamma_2 \), the unit bivector for the \(x,y\) plane.  Compute the line integral
+\begin{dmath}\label{eqn:fundamentalTheoremOfGC:100}
+\int_0^{2\pi} \Bx^\theta d^1 \Bx.
+\end{dmath}
+} % problem
+\makeanswer{problem:fundamentalTheoremOfGC:10}{
+The tangent vector for the curve is
+\begin{equation}\label{eqn:fundamentalTheoremOfGC:60}
+\Bx_\theta
+= -\gamma_1 \gamma_1 \gamma_2 e^{-i\theta}
+= \gamma_2 e^{-i\theta},
+\end{equation}
+with reciprocal vector \( \Bx^\theta = e^{i \theta} \gamma^2 \).  The differential element is \( d^1 \Bx = \gamma_2 e^{-i\theta} d\theta \), so the integrand is just a scalar
+\begin{equation}\label{eqn:fundamentalTheoremOfGC:80}
+\int_0^{2\pi} \Bx^\theta d^1 \Bx
+=
+\int_0^{2\pi} d\theta
+= 2 \pi,
+\end{equation}
+the circumference of the unit circle.
+} % answer
+
+%}
+\EndArticle
+%\EndNoBibArticle
