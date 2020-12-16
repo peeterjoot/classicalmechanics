@@ -12,6 +12,7 @@
 
 \input{../latex/peeter_prologue_print2.tex}
 
+\usepackage{amsthm}
 \usepackage{txfonts}
 \usepackage{peeters_layout_exercise}
 \usepackage{peeters_braket}
@@ -64,7 +65,9 @@ What comes to our rescue is the Fundamental Theorem of Geometric Calculus (FTGC)
 \begin{equation}\label{eqn:fundamentalTheoremOfGC:40}
 \int F d^n \Bx\, \lrpartial G = \int F d^{n-1} \Bx\, G,
 \end{equation}
-where \(F,G\) are multivectors functions (i.e. sums of products of vectors.)  We've seen (\citep{aMacdonaldVAGC}, \citep{pjootGAEE}) that all the theorems above are special cases of the fundamental theorem.  Do we need any special care to state the FTGC correctly for our relativistic case?  It turns out that the answer is no!  Tangent and reciprocal frame vectors do all the heavy lifting, and we can use the fundamental theorem as is, even in our mixed signature space.  The only real change that we need to make is use spacetime gradient and vector derivative operators instead of their spatial equivalents.  We will see how this works below.  Note that instead of starting with \cref{eqn:fundamentalTheoremOfGC:40} directly, I will attempt to build up to that point logically in a progressive fashion that is hopefully does not require the reader to make too many unjustified leaps.
+where \(F,G\) are multivectors functions (i.e. sums of products of vectors.)  We've seen (\citep{aMacdonaldVAGC}, \citep{pjootGAEE}) that all the identities above are special cases of the fundamental theorem.
+
+Do we need any special care to state the FTGC correctly for our relativistic case?  It turns out that the answer is no!  Tangent and reciprocal frame vectors do all the heavy lifting, and we can use the fundamental theorem as is, even in our mixed signature space.  The only real change that we need to make is use spacetime gradient and vector derivative operators instead of their spatial equivalents.  We will see how this works below.  Note that instead of starting with \cref{eqn:fundamentalTheoremOfGC:40} directly, I will attempt to build up to that point in a progressive fashion that is hopefully does not require the reader to make too many unjustified mental leaps.
 \section{Multivector line integrals.}
 We want to define multivector line integrals to start with.  Recall that in \R{3} we would say that for scalar functions \( f\), the integral
 \begin{equation*}
@@ -140,12 +143,12 @@ If we drop the dot product, will we have such a nice result?  Let's see:
 =
 \int_A^B d\tau \frac{dx^\mu}{d\tau} \gamma_\mu \gamma^\nu \partial_\nu f
 =
-\int_A^B d\tau \frac{dx^\mu}{d\tau} \partial_\mu f
+\int_A^B d\tau \frac{dx^\mu}{d\tau} \PD{x^\mu}{f}
 +
 \int_A^B
 d\tau
 \sum_{\mu \ne \nu} \gamma_\mu \gamma^\nu
-\frac{dx^\mu}{d\tau} \partial_\nu f.
+\frac{dx^\mu}{d\tau} \PD{x^\nu}{f}.
 \end{dmath}
 This scalar component of this integrand is a perfect differential, but the bivector part of the integrand is a complete mess, that we have no hope of generally integrating.  It happens that if we consider one of the simplest parameterization examples, we can get a strong hint of how to generalize the differential operator to one that ends up providing a perfect differential.  In particular, let's integrate over a linear constant path, such as \( x(\tau) = \tau \gamma_0 \).  For this path, we have
 \begin{dmath}\label{eqn:fundamentalTheoremOfGC:200}
@@ -171,7 +174,8 @@ Given a spacetime manifold parameterized by \( x = x(u^0, \cdots u^{N-1}) \), wi
 \partial = \sum_{\mu = 0}^{N-1} \Bx^\mu \PD{u^\mu}{}.
 \end{equation*}
 Observe that if this is a full parameterization of the space (\(N = 4\)), then the vector derivative is identical to the gradient.  The vector derivative is the projection of the gradient onto the tangent space at the point of evaluation.
-We designate \( \lrpartial \) as the vector derivative allowed to act bidirectionally, as follows
+
+Furthermore, we designate \( \lrpartial \) as the vector derivative allowed to act bidirectionally, as follows
 \begin{equation*}
 R \lrpartial S
 =
@@ -182,11 +186,11 @@ R \Bx^\mu \PD{u^\mu}{S}
 where \( R, S \) are multivectors, and summation convention is implied. In this bidirectional action,
 the vector factors of the vector derivative must stay in place (as they do not neccessarily commute with \( R,S\)), but the derivative operators apply in a chain rule like fashion to both functions.
 } % definition
-Noting that \( du\, \Bx_u \cdot \grad = du\, \Bx_u \cdot \partial \), we may rewrite the scalar line integral identity \cref{eqn:fundamentalTheoremOfGC:140} as
+Noting that \( \Bx_u \cdot \grad = \Bx_u \cdot \partial \), we may rewrite the scalar line integral identity \cref{eqn:fundamentalTheoremOfGC:140} as
 \begin{dmath}\label{eqn:fundamentalTheoremOfGC:220}
 \int_A^B dx \cdot \partial f = f(B) - f(A).
 \end{dmath}
-However, as our example hinted at, we can generalize this line integral to multivectors nicely.  That generalization takes the following form
+However, as our example hinted at, the fundamental theorem for line integrals has a multivector generalization that does not rely on a dot product to do the tangent space filtering, and is more powerful.  That generalization has the following form.
 \maketheorem{Fundamental theorem for line integrals.}{thm:fundamentalTheoremOfGC:10}{
 Given multivector functions \( F, G \), and a single parameter curve \( x(u) \) with line element \( d^1 \Bx = \Bx_u du \), the differential
 \begin{equation*}
