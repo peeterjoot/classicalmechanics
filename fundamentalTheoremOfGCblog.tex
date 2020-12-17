@@ -216,7 +216,7 @@ This scalar component of this integrand is a perfect differential, but the bivec
 \end{equation}
 Just because the path does not have any \( x^1, x^2, x^3 \) component dependencies does not mean that these last three partials are neccessarily zero.  For example \( f = f(x(\tau)) = \lr{ x^0 }^2 \gamma_0 + x^1 \gamma_1 \) will have a non-zero contribution from the \( \partial_1 \) operator.  In that particular case, we can easily integrate \( f \), but we have to know the specifics of the function to do the integral.  However, if we had a differential operator that did not include any component off the integration path, we would ahve a perfect differential.  That is, if we were to replace the gradient with the projection of the gradient onto the tangent space, we would have a perfect differential.  We see that the function of the dot product in \cref{eqn:fundamentalTheoremOfGC:140} has the same effect, as it rejects any component of the gradient that does not lie on the tangent space.
 \makedefinition{Vector derivative.}{dfn:fundamentalTheoremOfGC:10}{
-Given a spacetime manifold parameterized by \( x = x(u^0, \cdots u^{N-1}) \), with tangent vectors \( \Bx_\mu = \PDi{u^\mu}{x} \), and reciprocal vectors \( \Bx^\mu \in \Span\setlr{\Bx_\nu} \), such that \( \Bx^\mu \cdot \Bx_\nu = {\delta^\mu}_\nu \), the vector derivative is defined as
+Given a spacetime manifold parameterized by \( x = x(u^0, \cdots u^{N-1}) \), with tangent vectors \( \Bx_\mu = \PDi{u^\mu}{x} \), and reciprocal vectors \( \Bx^\mu \in \textrm{Span}\setlr{\Bx_\nu} \), such that \( \Bx^\mu \cdot \Bx_\nu = {\delta^\mu}_\nu \), the vector derivative is defined as
 \begin{equation}\label{eqn:fundamentalTheoremOfGC:240a}
 \partial = \sum_{\mu = 0}^{N-1} \Bx^\mu \PD{u^\mu}{}.
 \end{equation}
@@ -249,7 +249,11 @@ Writing out the integrand explicitly, we find
 \begin{equation}\label{eqn:fundamentalTheoremOfGC:340}
 \int_A^B F d^1\Bx \lrpartial G 
 =
-\int_A^B F d\alpha\, \Bx_\alpha \Bx^\alpha \lroverarrow{\PD{\alpha}{}} G 
+\int_A^B \lr{
+	\PD{\alpha}{F} d\alpha\, \Bx_\alpha \Bx^\alpha G 
+	+
+	F d\alpha\, \Bx_\alpha \Bx^\alpha \PD{\alpha}{G }
+	}
 \end{equation}
 However for a single parameter curve, we have \( \Bx^\alpha = 1/\Bx_\alpha \), so we are left with
 \begin{equation}\label{eqn:fundamentalTheoremOfGC:360}
