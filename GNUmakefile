@@ -35,11 +35,12 @@ include ../latex/make.rules
 spellcheck: $(patsubst %.tex,%.sp,$(filter-out $(DONT_SPELL_CHECK),$(DO_SPELL_CHECK)))
 
 all :: junk.pdf
-#all :: r
+all :: r
 #all :: l
 all :: f
 #l: lorentzTransform.pdf
 #r: reciprocal.pdf
+r: relativisticSurface.pdf
 f: fundamentalTheoremOfGC.pdf
 
 %.sp : %.tex

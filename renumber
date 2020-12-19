@@ -37,6 +37,9 @@
 #../latex/bin/lgrep lorentzTransformblog.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl lorentzTransform.tex
 
-../latex/bin/lgrep fundamentalTheoremOfGC.tex | tee o ; . ./o
-../latex/bin/lgrep fundamentalTheoremOfGCblog.tex | tee o ; . ./o
+#../latex/bin/lgrep fundamentalTheoremOfGC.tex | tee o ; . ./o
+#../latex/bin/lgrep fundamentalTheoremOfGCblog.tex | tee o ; . ./o
+
 #perl -p -i ../latex/bin/latexRegex.pl fundamentalTheoremOfGC.tex
+../latex/bin/lgrep relativisticSurface.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl relativisticSurface.tex

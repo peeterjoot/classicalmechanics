@@ -1,0 +1,29 @@
+% This is obvious when stated in example form that there's not much value to a specific example.
+
+\subsection{Examples of vector derivative line integrals.}
+
+\makeproblem{A double sided example.}{problem:fundamentalTheoremOfGC:11}{
+Given a parameterization \( x = \alpha \gamma_2 \), integrate the following, checking against the fundamental theorem
+\begin{dmath}\label{eqn:fundamentalTheoremOfGC:n}
+I = \int \gamma_0 e^{\gamma_{01}\alpha} d^1\Bx \lrpartial \gamma_{1} e^{\gamma_{01}\alpha}.
+\end{dmath}
+} % problem
+\makeanswer{problem:fundamentalTheoremOfGC:11}{
+The tangent vector is \( d\Bx_\alpha = \gamma_2 d\alpha \), and \( \lrpartial = \gamma^2 \PDi{\alpha}{} \), so
+\begin{dmath}\label{eqn:fundamentalTheoremOfGC:n}
+I = 
+\int d\alpha
+\gamma_0 \PD{\alpha}{e^{\gamma_{01}\alpha}} \gamma_{1} e^{\gamma_{01}\alpha}
++
+\int d\alpha
+\gamma_0 e^{\gamma_{01}\alpha} \gamma_{1} \PD{\alpha}{e^{\gamma_{01}\alpha}}
+=
+\int d\alpha 
+\PD{\alpha}{}
+\lr{
+\gamma_0 e^{\gamma_{01}\alpha} \gamma_{1} e^{\gamma_{01}\alpha}
+}
+=
+\gamma_0 e^{\gamma_{01}\alpha} \gamma_{1} e^{\gamma_{01}\alpha}
+\end{dmath}
+} % answer
