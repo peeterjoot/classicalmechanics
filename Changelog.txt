@@ -1,4 +1,6 @@
-classicalmechanics.V0.1.15-3.pdf (current version)
+classicalmechanics.V0.1.16-0.pdf (current version)
+
+classicalmechanics.V0.1.15-3.pdf, Dec 31 2020 (commit 1a33e9530f5)
 - Switch to plain L for Lagrangians and calL for Lagrangian densities (use \Lq macro to allow for easy switch back.)
 - New STA content (rough): reciprocal frames, gradient, vector derivative, line and surface integrals and fundamental theorems for both.
 
