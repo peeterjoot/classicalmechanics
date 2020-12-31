@@ -47,31 +47,34 @@ Given the hyperbolic surface parameterization \( x(\rho,\alpha) = \rho \gamma_0 
 \makeanswer{problem:relativisticSurface:10}{
 We have \( \Bx_\rho = \gamma_0 e^{-\vcap \alpha} \) and \( \Bx_\alpha = \rho\gamma_{2} e^{-\vcap \alpha} \), so
 \begin{equation}\label{eqn:relativisticSurface:60}
+\begin{aligned}
 d^2 \Bx
-=
-(\Bx_\rho \wedge \Bx_\alpha) d\rho d\alpha
-=
+&=
+(\Bx_\rho \wedge \Bx_\alpha) d\rho d\alpha \\
+&=
 \gpgradetwo{
 \gamma_{0} e^{-\vcap \alpha} \rho\gamma_{2} e^{-\vcap \alpha}
 }
-d\rho d\alpha
-=
+d\rho d\alpha \\
+&=
 \rho \gamma_{02} d\rho d\alpha,
+\end{aligned}
 \end{equation}
 so the integral is
 \begin{equation}\label{eqn:relativisticSurface:80}
+\begin{aligned}
 \int \rho \gamma_1 e^{\gamma_{21}\alpha} \gamma_{022} d\rho d\alpha
-=
--\inv{2} \rho^2 \int \gamma_1 e^{\gamma_{21}\alpha} \gamma_{0} d\alpha
-=
-\frac{\gamma_{01}}{2} \rho^2 \int e^{\gamma_{21}\alpha} d\alpha
-=
-\frac{\gamma_{01}}{2} \rho^2 \gamma^{12} e^{\gamma_{21}\alpha}
-=
+&=
+-\inv{2} \rho^2 \int \gamma_1 e^{\gamma_{21}\alpha} \gamma_{0} d\alpha \\
+&=
+\frac{\gamma_{01}}{2} \rho^2 \int e^{\gamma_{21}\alpha} d\alpha \\
+&=
+\frac{\gamma_{01}}{2} \rho^2 \gamma^{12} e^{\gamma_{21}\alpha} \\
+&=
 \frac{\rho^2 \gamma_{20}}{2} e^{\gamma_{21}\alpha}.
+\end{aligned}
 \end{equation}
-Because \( F \) and \( G \) were both vectors, the resulting integral could only have been a multivector with grades 0,2,4.
-As it happens, there were no scalar nor pseudoscalar grades in the end result, and we ended up with the spacetime plane between \( \gamma_0 \), and \( \gamma_2 e^{\gamma_{21}\alpha} \), which are rotations of \(\gamma_2\) in the x,y plane.  This is illustrated in \cref{fig:gammazeroWedgedWithXYplaneRotation:gammazeroWedgedWithXYplaneRotationFig1} (omitting scale and sign factors.)
+Because \( F \) and \( G \) were both vectors, the resulting integral could only have been a multivector with grades 0,2,4.  As it happens, there were no scalar nor pseudoscalar grades in the end result, and we ended up with the spacetime plane between \( \gamma_0 \), and \( \gamma_2 e^{\gamma_{21}\alpha} \), which are rotations of \(\gamma_2\) in the x,y plane.  This is illustrated in \cref{fig:gammazeroWedgedWithXYplaneRotation:gammazeroWedgedWithXYplaneRotationFig1} (omitting scale and sign factors.)
 \imageFigure{../figures/classicalmechanics/gammazeroWedgedWithXYplaneRotationFig1}{Spacetime plane.}{fig:gammazeroWedgedWithXYplaneRotation:gammazeroWedgedWithXYplaneRotationFig1}{0.3}
 } % answer
 \section{Fundamental theorem for surfaces.}
@@ -87,23 +90,24 @@ Given an \R{3} vector field \( \Bf \), show that
 \makeanswer{problem:relativisticSurface:17}{
 Let \( d^2 \Bx = I \ncap dA \), implicitly fixing the relative orientation of the bivector area element compared to the chosen surface normal direction.
 \begin{equation}\label{eqn:relativisticSurface:200}
+\begin{aligned}
 \int \lr{d^2\Bx \cdot \spacegrad } \cdot \Bf
-=
-\int dA \gpgradeone{I \ncap \spacegrad } \cdot \Bf
-=
-\int dA \lr{ I \lr{ \ncap \wedge \spacegrad} } \cdot \Bf
-=
-\int dA \gpgradezero{ I^2 \lr{ \ncap \cross \spacegrad} \Bf }
-=
--\int dA \lr{ \ncap \cross \spacegrad} \cdot \Bf
-=
+&=
+\int dA \gpgradeone{I \ncap \spacegrad } \cdot \Bf \\
+&=
+\int dA \lr{ I \lr{ \ncap \wedge \spacegrad} } \cdot \Bf \\
+&=
+\int dA \gpgradezero{ I^2 \lr{ \ncap \cross \spacegrad} \Bf } \\
+&=
+-\int dA \lr{ \ncap \cross \spacegrad} \cdot \Bf \\
+&=
 -\int dA \ncap \cdot \lr{ \spacegrad \cross \Bf }.
+\end{aligned}
 \end{equation}
 } % answer
 The moral of the story is that the conventional dual form of the \R{3} Stokes' theorem can be written directly by projecting the gradient onto the surface area element.  Geometrically, this projection operation has a rotational effect as well, since for bivector \( B \), and vector \( x \), the bivector-vector dot product \( B \cdot x \) is the component of \( x \) that lies in the plane \( B \wedge x = 0 \), but also rotated 90 degrees.
 
-For multivector integration, we do not want an integral operator that includes such dot products.  In the line integral case, we were able to achieve the same
-projective operation by using vector derivative instead of a dot product, and can do the same for the surface integral case.  In particular
+For multivector integration, we do not want an integral operator that includes such dot products.  In the line integral case, we were able to achieve the same projective operation by using vector derivative instead of a dot product, and can do the same for the surface integral case.  In particular
 \maketheorem{Projection of gradient onto the tangent space.}{thm:relativisticSurface:10}{
 Given a curvilinear representation of the gradient with respect to parameters \( u^0, u^1, u^2, u^3 \)
 \begin{equation*}
@@ -122,11 +126,12 @@ du^0 du^1.
 \end{equation}
 Dotting this with the gradient gives
 \begin{equation}\label{eqn:relativisticSurface:120}
+\begin{aligned}
 d^2 \Bx \cdot \grad
-=
+&=
 du^0 du^1
-\lr{ \Bx_0 \wedge \Bx_1 } \cdot \Bx^\mu \PD{u^\mu}{}
-=
+\lr{ \Bx_0 \wedge \Bx_1 } \cdot \Bx^\mu \PD{u^\mu}{} \\
+&=
 du^0 du^1
 \lr{
     \Bx_0
@@ -135,14 +140,15 @@ du^0 du^1
     \Bx_1
     \lr{\Bx_0 \cdot \Bx^\mu }
 }
-\PD{u^\mu}{}
-=
+\PD{u^\mu}{} \\
+&=
 du^0 du^1
 \lr{
     \Bx_0 \PD{u^1}{}
     -
     \Bx_0 \PD{u^1}{}
 }.
+\end{aligned}
 \end{equation}
 On the other hand, the vector derivative for this surface is
 \begin{equation}\label{eqn:relativisticSurface:140}
@@ -154,34 +160,33 @@ On the other hand, the vector derivative for this surface is
 \end{equation}
 so
 \begin{equation}\label{eqn:relativisticSurface:160}
+\begin{aligned}
 \gpgradeone{d^2 \Bx \partial}
-=
+&=
 du^0 du^1\,
 \lr{ \Bx_0 \wedge \Bx_1 } \cdot
 \lr{
     \Bx^0 \PD{u^0}{}
     +
     \Bx^1 \PD{u^1}{}
-}
-=
+} \\
+&=
 du^0 du^1
 \lr{
 \Bx_0 \PD{u^1}{}
 -
 \Bx_1 \PD{u^0}{}
 }.
+\end{aligned}
 \end{equation}
 \end{proof}
 We now want to formulate the geometric algebra form of the fundamental theorem for surface integrals.
 \maketheorem{Fundamental theorem for surface integrals.}{thm:relativisticSurface:11}{
-Given multivector functions \( F, G \),
-and surface area element \( d^2 \Bx = \lr{ \Bx_u \wedge \Bx_v }\, du dv \), associated with
-a two parameter curve \( x(u,v) \), then
+Given multivector functions \( F, G \), and surface area element \( d^2 \Bx = \lr{ \Bx_u \wedge \Bx_v }\, du dv \), associated with a two parameter curve \( x(u,v) \), then
 \begin{equation*}
 \int_S F d^2\Bx \lrpartial G = \int_{\partial S} F d^1\Bx G,
 \end{equation*}
-where \( S \) is the integration surface, and \( \partial S \) designates its boundary, and
-the line integral on the RHS is really short hand for
+where \( S \) is the integration surface, and \( \partial S \) designates its boundary, and the line integral on the RHS is really short hand for
 \begin{equation*}
 \int
 \evalbar{ \lr{ F (-d\Bx_v) G } }{\Delta u}
@@ -207,9 +212,7 @@ F d^2\Bx \lrpartial G
 +
 \PD{v}{} \lr{ F d^2\Bx\, \Bx^v G },
 \end{equation}
-where \( d^2\Bx\, \Bx^u \) is held constant with respect to \( u \), and
-\( d^2\Bx\, \Bx^v \) is held constant with respect to \( v \) (since the partials of the vector derivative act on \( F, G \), but not on the area element, nor on the reciprocal vectors of \( \lrpartial \) itself.)
-Note that
+where \( d^2\Bx\, \Bx^u \) is held constant with respect to \( u \), and \( d^2\Bx\, \Bx^v \) is held constant with respect to \( v \) (since the partials of the vector derivative act on \( F, G \), but not on the area element, nor on the reciprocal vectors of \( \lrpartial \) itself.)  Note that
 \begin{equation}\label{eqn:relativisticSurface:260}
 d^2\Bx \wedge \Bx^u
 =
@@ -217,27 +220,31 @@ du dv\, \lr{ \Bx_u \wedge \Bx_v } \wedge \Bx^u = 0,
 \end{equation}
 since \( \Bx^u \in \Span \setlr{ \Bx_u\, \Bx_v } \), so
 \begin{equation}\label{eqn:relativisticSurface:280}
+\begin{aligned}
 d^2\Bx\, \Bx^u
-=
+&=
 d^2\Bx \cdot \Bx^u
 +
-d^2\Bx \wedge \Bx^u
-=
-d^2\Bx \cdot \Bx^u
-=
-du dv\, \lr{ \Bx_u \wedge \Bx_v } \cdot \Bx^u
-=
+d^2\Bx \wedge \Bx^u \\
+&=
+d^2\Bx \cdot \Bx^u \\
+&=
+du dv\, \lr{ \Bx_u \wedge \Bx_v } \cdot \Bx^u \\
+&=
 -du dv\, \Bx_v.
+\end{aligned}
 \end{equation}
 Similarly
 \begin{equation}\label{eqn:relativisticSurface:300}
+\begin{aligned}
 d^2\Bx\, \Bx^v
-=
-d^2\Bx \cdot \Bx^v
-=
-du dv\, \lr{ \Bx_u \wedge \Bx_v } \cdot \Bx^v
-=
+&=
+d^2\Bx \cdot \Bx^v \\
+&=
+du dv\, \lr{ \Bx_u \wedge \Bx_v } \cdot \Bx^v \\
+&=
 du dv\, \Bx_u.
+\end{aligned}
 \end{equation}
 This leaves us with
 \begin{equation}\label{eqn:relativisticSurface:320}
@@ -249,8 +256,7 @@ F d^2\Bx \lrpartial G
 du dv\,
 \PD{v}{} \lr{ F \Bx_u G },
 \end{equation}
-where \( \Bx_v, \Bx_u \) are held constant with respect to \( u,v \) respectively.
-Fortuitously, this constant condition can be dropped, since the antisymmetry of the wedge in the area element results in perfect cancellation.  If these line elements are not held constant then
+where \( \Bx_v, \Bx_u \) are held constant with respect to \( u,v \) respectively.  Fortuitously, this constant condition can be dropped, since the antisymmetry of the wedge in the area element results in perfect cancellation.  If these line elements are not held constant then
 \begin{equation}\label{eqn:relativisticSurface:340}
 \PD{u}{} \lr{ F \Bx_v G }
 -
@@ -277,41 +283,45 @@ F \lr{
 \end{equation}
 but the mixed partial contribution is zero
 \begin{equation}\label{eqn:relativisticSurface:360}
+\begin{aligned}
 \PD{v}{\Bx_u}
 -
 \PD{u}{\Bx_v}
-=
+&=
 \PD{v}{} \PD{u}{x}
 -
-\PD{u}{} \PD{v}{x}
-=
+\PD{u}{} \PD{v}{x} \\
+&=
 0,
+\end{aligned}
 \end{equation}
 by equality of mixed partials.  We have two perfect differentials, and can evaluate each of these integrals
 \begin{equation}\label{eqn:relativisticSurface:380}
+\begin{aligned}
 \int F d^2\Bx \lrpartial G
-=
+&=
 -\int
 du dv\,
 \PD{u}{} \lr{ F \Bx_v G }
 +
 \int
 du dv\,
-\PD{v}{} \lr{ F \Bx_u G },
-=
+\PD{v}{} \lr{ F \Bx_u G } \\
+&=
 -\int
 dv\,
 \evalbar{ \lr{ F \Bx_v G } }{\Delta u}
 +
 \int
 du\,
-\evalbar{ \lr{ F \Bx_u G } }{\Delta v}
-=
+\evalbar{ \lr{ F \Bx_u G } }{\Delta v} \\
+&=
 \int
 \evalbar{ \lr{ F (-d\Bx_v) G } }{\Delta u}
 +
 \int
 \evalbar{ \lr{ F (d\Bx_u) G } }{\Delta v}.
+\end{aligned}
 \end{equation}
 We use the shorthand \( d^1 \Bx = d\Bx_u - d\Bx_v \) to write
 \begin{equation}\label{eqn:relativisticSurface:400}
@@ -354,11 +364,13 @@ F \gamma_0 \gamma_2 \lr{
 \end{equation}
 where the RHS, when stated explicitly, really means
 \begin{equation}\label{eqn:relativisticSurface:520}
-\int F \lr{ c \gamma_0 dt  - \gamma_2 dy } G
+\begin{aligned}
+\int &F \lr{ c \gamma_0 dt  - \gamma_2 dy } G
 =
-\int_{t_0}^{t_1} c dt \lr{ F(t,y_1) \gamma_0 G(t, y_1) - F(t,y_0) \gamma_0 G(t, y_0) }
--
+\int_{t_0}^{t_1} c dt \lr{ F(t,y_1) \gamma_0 G(t, y_1) - F(t,y_0) \gamma_0 G(t, y_0) } \\
+&\qquad -
 \int_{y_0}^{y_1} dy \lr{ F(t_1,y) \gamma_2 G(t_1, y) - F(t_0,y) \gamma_0 G(t_0, y) }.
+\end{aligned}
 \end{equation}
 In this particular case, since \( \Bx_0 = c \gamma_0, \Bx_2 = \gamma_2 \) are both constant functions that depend on neither \( t \) nor \( y \), it is easy to derive the full expansion of \cref{eqn:relativisticSurface:520} directly from the LHS of \cref{eqn:relativisticSurface:500}.
 } % answer
@@ -397,14 +409,16 @@ These vectors \( \Bx_\rho, \Bx_\alpha \) are orthogonal, as \( x \cdot \vcap \) 
 \end{equation}
 The area element is
 \begin{equation}\label{eqn:relativisticSurface:620}
+\begin{aligned}
 d^2 \Bx
-=
+&=
 d\rho d\alpha\,
-\frac{x}{\rho} \wedge \lr{ x \cdot \vcap }
-=
+\frac{x}{\rho} \wedge \lr{ x \cdot \vcap } \\
+&=
 \inv{\rho} d\rho d\alpha\,
 x \lr{ x \cdot \vcap }
 .
+\end{aligned}
 \end{equation}
 The full statement of the fundamental theorem for this surface is
 \begin{equation}\label{eqn:relativisticSurface:640}
@@ -429,9 +443,7 @@ As in the previous example, due to the orthogonality of the tangent basis vector
 %, although we would have no a-priori reason to construct that very specific LHS for which we find the perfect cancelation
 } % answer
 \makeproblem{Simple example with non-orthogonal tangent space basis vectors.}{problem:relativisticSurface:23}{
-Let \( x(u,v) = u a + v b \), where
-\( u,v \) are scalar parameters, and
-\( a, b \) are non-null and non-colinear constant four-vectors.  Write out the fundamental theorem for surfaces with respect to this parameterization.
+Let \( x(u,v) = u a + v b \), where \( u,v \) are scalar parameters, and \( a, b \) are non-null and non-colinear constant four-vectors.  Write out the fundamental theorem for surfaces with respect to this parameterization.
 } % problem
 \makeanswer{problem:relativisticSurface:23}{
 The tangent basis vectors are just \( \Bx_u = a, \Bx_v = b \), with reciprocals
@@ -451,16 +463,18 @@ The fundamental theorem, with respect to this surface, when written out explicit
 This is a good example to illustrate the geometry of the line integral circulation.
 Suppose that we are integrating over \( u \in [0,1], v \in [0,1] \).  In this case, the line integral really means
 \begin{equation}\label{eqn:relativisticSurface:720}
-\int F \lr{ a du - b dv } G
+\begin{aligned}
+\int &F \lr{ a du - b dv } G
 =
 +
 \int F(u,1) (+a du) G(u,1)
 +
-\int F(u,0) (-a du) G(u,0)
-+
+\int F(u,0) (-a du) G(u,0) \\
+&\quad+
 \int F(1,v) (-b dv) G(1,v)
 +
 \int F(0,v) (+b dv) G(0,v),
+\end{aligned}
 \end{equation}
 which is a path around the spacetime parallelogram spanned by \( u, v \), as illustrated in \cref{fig:lineIntegralAroundParallelopiped:lineIntegralAroundParallelopipedFig1}, which illustrates the orientation of the bivector area element with the arrows around the exterior of the parallelogram: \( 0 \rightarrow a \rightarrow a + b \rightarrow b \rightarrow 0 \).
 \imageFigure{../figures/classicalmechanics/lineIntegralAroundParallelopipedFig1}{Line integral orientation.}{fig:lineIntegralAroundParallelopiped:lineIntegralAroundParallelopipedFig1}{0.4}
