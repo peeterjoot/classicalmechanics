@@ -1,4 +1,19 @@
-classicalmechanics.V0.1.13.pdf (current version)
+classicalmechanics.V0.1.15-3.pdf (current version)
+
+classicalmechanics.V0.1.13-5.pdf, Oct 24 2020, (commit 7b9e0539da)
+
+- Pruned 87 pages (some just tossed, other stuff rewritten.)
+- junk: 1dharmonicOsc.tex 1dpotentialIntegral.tex InfinitePlanePotentialTakeIII.tex cylinderPotential.tex infiniteSheetPotentials.tex lForceLag2.tex lorentzForce.tex lorentzForcePQA.tex lorentzMetricTensor.tex maxwellTensorLagrangian.tex multiPendulumSpherical2.tex newtonianLagrangianAndGradient.tex quadraticForm.tex sPolarMultiPendulum.tex srLagrangian.tex waveLagrangian.tex
+- new chapter content: covariantSTA.tex, sta.tex (replaces various poorer versions)
+- convert jackson12Dash9 into problem, and fix gutter issues.
+- move remainder of \part{Lagrangian Topics} to appendix.
+- junk a bunch of stuff
+- move multiPendulumSphericalMatrix.tex
+- split galagrangian/eulerLagrange.tex into E-L and Noether parts.
+- split off waveLagrangianDirac.tex, waveLagrangianKG.tex, waveLagrangianQM.tex
+- move some of mine/waveLagrangian.tex into problems.
+- convert hoopSpring.tex into a problem.
+- Try to impose some basic structure.
 
 classicalmechanics.V0.1.12-22.pdf, Oct 12 2020, (commit 75aaee7e385)
 

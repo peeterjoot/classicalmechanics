@@ -1,3 +1,19 @@
+% https://tex.stackexchange.com/a/44277/15
+%-------
+%% code from mathabx.sty and mathabx.dcl
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{
+  <5> <6> <7> <8> <9> <10>
+  <10.95> <12> <14.4> <17.28> <20.74> <24.88>
+  mathx10
+}{}
+
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareFontSubstitution{U}{mathx}{m}{n}
+\DeclareMathAccent{\widecheck}{0}{mathx}{"71}
+%\DeclareMathAccent{\wideparen}{0}{mathx}{"75}
+\def\cs#1{\texttt{\char`\\#1}}
+
 %-----------------------------------------
 % proof env:
 \usepackage{amsthm}

@@ -3,32 +3,31 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{relativisticSurface}
-%\renewcommand{\dirname}{notes/phy1520/}
-\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
-%\newcommand{\dateintitle}{}
-%\newcommand{\keywords}{}
-
-\input{../latex/peeter_prologue_print2.tex}
-
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_braket}
-\usepackage{peeters_figures}
-\usepackage{siunitx}
-\usepackage{verbatim}
-\usepackage{amsthm}
-%\usepackage{mhchem} % \ce{}
-%\usepackage{macros_bm} % \bcM
-%\usepackage{macros_qed} % \qedmarker
-%\usepackage{txfonts} % \ointclockwise
-
-\beginArtNoToc
-
-\generatetitle{Relativistic multivector surface integrals.}
-%\chapter{Relativistic multivector surface integrals.}
+%\input{../latex/blogpost.tex}
+%\renewcommand{\basename}{relativisticSurface}
+%%\renewcommand{\dirname}{notes/phy1520/}
+%\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%%\newcommand{\dateintitle}{}
+%%\newcommand{\keywords}{}
+%
+%\input{../latex/peeter_prologue_print2.tex}
+%
+%\usepackage{peeters_layout_exercise}
+%\usepackage{peeters_braket}
+%\usepackage{peeters_figures}
+%\usepackage{siunitx}
+%\usepackage{verbatim}
+%\usepackage{amsthm}
+%%\usepackage{mhchem} % \ce{}
+%%\usepackage{macros_bm} % \bcM
+%%\usepackage{macros_qed} % \qedmarker
+%%\usepackage{txfonts} % \ointclockwise
+%
+%\beginArtNoToc
+%
+%\generatetitle{Relativistic multivector surface integrals.}
+%\section{Relativistic multivector surface integrals.}
 %\label{chap:relativisticSurface}
-
 We've now covered line integrals and the fundamental theorem for line integrals, so it's now time to move on to surface integrals.
 \makedefinition{Surface integral.}{dfn:relativisticSurface:20}{
 Given a two variable parameterization \( x = x(u,v) \), we write \( d^2\Bx = \Bx_u \wedge \Bx_v du dv \), and call
@@ -72,9 +71,9 @@ so the integral is
 \end{dmath}
 Because \( F \) and \( G \) were both vectors, the resulting integral could only have been a multivector with grades 0,2,4.
 As it happens, there were no scalar nor pseudoscalar grades in the end result, and we ended up with the spacetime plane between \( \gamma_0 \), and \( \gamma_2 e^{\gamma_{21}\alpha} \), which are rotations of \(\gamma_2\) in the x,y plane.  This is illustrated in \cref{fig:gammazeroWedgedWithXYplaneRotation:gammazeroWedgedWithXYplaneRotationFig1} (omitting scale and sign factors.)
-\imageFigure{../figures/classicalmechanics/gammazeroWedgedWithXYplaneRotationFig1}{Spacetime plane.}{fig:gammazeroWedgedWithXYplaneRotation:gammazeroWedgedWithXYplaneRotationFig1}{0.3}
 } % answer
-\section{Fundamental theorem for surfaces.}
+\imageFigure{../figures/classicalmechanics/gammazeroWedgedWithXYplaneRotationFig1}{Spacetime plane.}{fig:gammazeroWedgedWithXYplaneRotation:gammazeroWedgedWithXYplaneRotationFig1}{0.3}
+\subsection{Fundamental theorem for surfaces.}
 For line integrals we saw that \( d\Bx \cdot \grad = \gpgradezero{ d\Bx \partial } \), and obtained the fundamental theorem for multivector line integrals by omitting the grade selection and using the multivector operator \( d\Bx \partial \) in the integrand directly.  We have the same situation for surface integrals.  In particular, we know that the \R{3} Stokes theorem can be expressed in terms of \( d^2 \Bx \cdot \spacegrad \)
 \makeproblem{GA form of 3D Stokes' theorem integrand.}{problem:relativisticSurface:17}{
 Given an \R{3} vector field \( \Bf \), show that
@@ -428,7 +427,7 @@ F \lr{ d\rho \frac{x}{\rho} - d\alpha \lr{ x \cdot \vcap } } G.
 As in the previous example, due to the orthogonality of the tangent basis vectors, it's easy to show find the RHS directly from the LHS.
 %, although we would have no a-priori reason to construct that very specific LHS for which we find the perfect cancelation
 } % answer
-\makeproblem{Simple example with non-orthogonal tangent space basis vectors.}{problem:relativisticSurface:23}{
+\makeproblem{Non-orthogonal tangent space example.}{problem:relativisticSurface:23}{
 Let \( x(u,v) = u a + v b \), where
 \( u,v \) are scalar parameters, and
 \( a, b \) are non-null and non-colinear constant four-vectors.  Write out the fundamental theorem for surfaces with respect to this parameterization.
@@ -463,9 +462,9 @@ Suppose that we are integrating over \( u \in [0,1], v \in [0,1] \).  In this ca
 \int F(0,v) (+b dv) G(0,v),
 \end{dmath}
 which is a path around the spacetime parallelogram spanned by \( u, v \), as illustrated in \cref{fig:lineIntegralAroundParallelopiped:lineIntegralAroundParallelopipedFig1}, which illustrates the orientation of the bivector area element with the arrows around the exterior of the parallelogram: \( 0 \rightarrow a \rightarrow a + b \rightarrow b \rightarrow 0 \).
-\imageFigure{../figures/classicalmechanics/lineIntegralAroundParallelopipedFig1}{Line integral orientation.}{fig:lineIntegralAroundParallelopiped:lineIntegralAroundParallelopipedFig1}{0.4}
 } % answer
+\imageFigure{../figures/classicalmechanics/lineIntegralAroundParallelopipedFig1}{Line integral orientation.}{fig:lineIntegralAroundParallelopiped:lineIntegralAroundParallelopipedFig1}{0.4}
 
 %}
 %\EndArticle
-\EndNoBibArticle
+%\EndNoBibArticle

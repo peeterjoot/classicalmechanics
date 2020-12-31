@@ -1,8 +1,15 @@
-- these ones are not incorporated into chapters.tex:
+- tags from relativisticSurface.tex:
 
-	lorentzTransform.tex
-	reciprocal.tex
+ boost
+ Fundamental Theorem of Geometric Calculus
+ gradient
+ hyperbolic surface
+ line integral
+ spacetime plane
+ surface integral
+ vector derivative
 
+- review this incorporation into chapters.tex:
 do that and review, comparing to:
 
 	sta.tex

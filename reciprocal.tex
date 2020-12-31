@@ -3,54 +3,54 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{reciprocal}
-%\renewcommand{\dirname}{notes/phy1520/}
-\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
-%\newcommand{\dateintitle}{}
-%\newcommand{\keywords}{}
-
-% INDEX tags:
-% curvilinear coordinates, gradient, basis, bases, reciprocal frame, reciprocal vector, coordinates, Dirac basis, directional derivative, parameterization, tangent space, reciprocal relationship, direction vectors, wedge product, pseudoscalar, subspace, distribution identity, degeneracy, null vector, lightlike, spacelike, timelike, bivector, trivector, vector
-
-% https://tex.stackexchange.com/a/44277/15
-%-------
-%% code from mathabx.sty and mathabx.dcl
-\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
-\DeclareFontShape{U}{mathx}{m}{n}{
-  <5> <6> <7> <8> <9> <10>
-  <10.95> <12> <14.4> <17.28> <20.74> <24.88>
-  mathx10
-}{}
-
-\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
-\DeclareFontSubstitution{U}{mathx}{m}{n}
-\DeclareMathAccent{\widecheck}{0}{mathx}{"71}
-%\DeclareMathAccent{\wideparen}{0}{mathx}{"75}
-\def\cs#1{\texttt{\char`\\#1}}
-%-------
-
-\input{../latex/peeter_prologue_print2.tex}
-
-\usepackage{amsthm}
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_braket}
-\usepackage{peeters_figures}
-\usepackage{siunitx}
-\usepackage{verbatim}
-%\usepackage{mhchem} % \ce{}
-%\usepackage{macros_bm} % \bcM
-%\usepackage{macros_qed} % \qedmarker
-%\usepackage{txfonts} % \ointclockwise
-
-\beginArtNoToc
-
-\generatetitle{Curvilinear coordinates and gradient in spacetime, and reciprocal frames.}
+%\input{../latex/blogpost.tex}
+%\renewcommand{\basename}{reciprocal}
+%%\renewcommand{\dirname}{notes/phy1520/}
+%\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%%\newcommand{\dateintitle}{}
+%%\newcommand{\keywords}{}
+%
+%% INDEX tags:
+%% curvilinear coordinates, gradient, basis, bases, reciprocal frame, reciprocal vector, coordinates, Dirac basis, directional derivative, parameterization, tangent space, reciprocal relationship, direction vectors, wedge product, pseudoscalar, subspace, distribution identity, degeneracy, null vector, lightlike, spacelike, timelike, bivector, trivector, vector
+%
+%% https://tex.stackexchange.com/a/44277/15
+%%-------
+%%% code from mathabx.sty and mathabx.dcl
+%\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+%\DeclareFontShape{U}{mathx}{m}{n}{
+%  <5> <6> <7> <8> <9> <10>
+%  <10.95> <12> <14.4> <17.28> <20.74> <24.88>
+%  mathx10
+%}{}
+%
+%\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+%\DeclareFontSubstitution{U}{mathx}{m}{n}
+%\DeclareMathAccent{\widecheck}{0}{mathx}{"71}
+%%\DeclareMathAccent{\wideparen}{0}{mathx}{"75}
+%\def\cs#1{\texttt{\char`\\#1}}
+%%-------
+%
+%\input{../latex/peeter_prologue_print2.tex}
+%
+%\usepackage{amsthm}
+%\usepackage{peeters_layout_exercise}
+%\usepackage{peeters_braket}
+%\usepackage{peeters_figures}
+%\usepackage{siunitx}
+%\usepackage{verbatim}
+%%\usepackage{mhchem} % \ce{}
+%%\usepackage{macros_bm} % \bcM
+%%\usepackage{macros_qed} % \qedmarker
+%%\usepackage{txfonts} % \ointclockwise
+%
+%\beginArtNoToc
+%
+%\generatetitle{Curvilinear coordinates and gradient in spacetime, and reciprocal frames.}
+%\section{Curvilinear coordinates and gradient in spacetime, and reciprocal frames.}
 %\generatetitle{A couple more reciprocal frame examples.}
 %\chapter{Reciprocal frame uniqueness}
 %\label{chap:reciprocal}
-
-\section{Motivation.}
+\subsection{Motivation.}
 I started pondering some aspects of spacetime integration theory, and found that there were some aspects of the concepts of reciprocal frames that were not clear to me.  In the process of sorting those ideas out for myself, I wrote up the following notes.
 
 In the notes below, I will introduce the many of the prerequisite ideas that are needed to express and apply the fundamental theorem of geometric calculus in a 4D relativistic context.  The focus will be the Dirac's algebra of special relativity, known as STA (Space Time Algebra) in geometric algebra parlance.  If desired, it should be clear how to apply these ideas to lower or higher dimensional spaces, and to plain old Euclidean metrics.
@@ -67,7 +67,7 @@ If we use non-bold face \( x^\mu, x_\nu \) for the coordinates with respect to a
 %One way to solve this notational problem would be to choose some new symbol, say \( f^\mu, f_\nu \), for our curvilinear basis vectors.
 %This seems like a grossly arbitrary choice.  Symbols that are generally available without some additional or conflicting meaning can be hard to come by, so I'll opt to
 To resolve this notational ambiguity, I've chosen to use bold face \( \Bx^\mu, \Bx_\nu \) symbols as the curvilinear basis elements in this relativistic context, as we do for Euclidean spaces.
-\section{Basis and coordinates.}
+\subsection{Basis and coordinates.}
 \makedefinition{Standard Dirac basis.}{dfn:reciprocal:720}{
 The Dirac basis elements are \(\setlr{ \gamma_0, \gamma_1, \gamma_2, \gamma_3 } \), satisfying
 \begin{equation*}
@@ -136,7 +136,7 @@ x_\nu {\delta^\nu}_\mu
 x_\mu.
 \end{dmath}
 \end{proof}
-\section{Derivative operators.}
+\subsection{Derivative operators.}
 We'd like to determine the form of the (spacetime) gradient operator.  The gradient can be defined in terms of coordinates directly, but we choose an implicit definition, in terms of the directional derivative.
 \makedefinition{Directional derivative and gradient.}{dfn:reciprocal:880}{
 Let \( F = F(x) \) be a four-vector parameterized multivector.  The directional derivative of \( F \) with respect to the (four-vector) direction \( a \) is denoted
@@ -181,27 +181,21 @@ a^\mu
 a \cdot \lr{ \gamma^\mu \partial_\mu } F.
 \end{dmath}
 \end{proof}
-\section{Curvilinear bases.}
+\subsection{Curvilinear bases.}
 Curvilinear bases are the foundation of the fundamental theorem of multivector calculus.  This form of integral calculus is defined over parameterized surfaces (called manifolds) that satisfy some specific non-degeneracy and continuity requirements.
 
 A parameterized vector \( x(u,v, \cdots w) \) can be thought of as tracing out a hypersurface (curve, surface, volume, ...), where the dimension of the hypersurface depends on the number of parameters.
 At each point, a bases can be constructed from the differentials of the parameterized vector.  Such a basis is called the tangent space to the surface at the point in question.  Our curvilinear bases will be related to these differentials.  We will also be interested in a dual basis that is restricted to the span of the tangent space.  This dual basis will be called the reciprocal frame, and line the basis of the tangent space itself, also varies from point to point on the surface.
 
-One and two parameter spaces are illustrated in \cref{fig:tangentSpaceSurface:tangentSpaceSurfaceFig1}.
+One and two parameter spaces are illustrated in \cref{fig:tangentSpaceSurface:tangentSpaceSurfaceFig1},
 %\cref{fig:oneParameterDifferentialArrows:oneParameterDifferentialArrowsFig1}.
 %\imageFigure{../figures/GAelectrodynamics/bw/oneParameterDifferentialArrowsFig1}{One parameter curve, and some tangent vectors.}{fig:oneParameterDifferentialArrows:oneParameterDifferentialArrowsFig1}{0.2}
 %\cref{fig:tangentSpaceSurface:tangentSpaceSurfaceFig1}.
 %\imageFigure{../figures/GAelectrodynamics/bw/tangentSpaceSurfaceFig1}{Two parameter curve, with some tangent planes.}{fig:tangentSpaceSurface:tangentSpaceSurfaceFig1}{0.2}
-\imageTwoFigures
-{../figures/GAelectrodynamics/bw/oneParameterDifferentialArrowsFig1}
-{../figures/GAelectrodynamics/bw/tangentSpaceSurfaceFig1}{One and two parameter curves, with illustration of tangent spaces.}
-{fig:tangentSpaceSurface:tangentSpaceSurfaceFig1}
-{scale=0.6}
-
-The tangent space basis at a specific point of a two parameter
-surface, \( x(u^0, u^1) \),
-is illustrated in
-\cref{fig:twoParameterDifferentialCov:twoParameterDifferentialCovFig1}.  The differential directions that span the tangent space are
+and the tangent space basis at a specific point of a two parameter surface, \( x(u^0, u^1) \), is also illustrated in 
+\cref{fig:twoParameterDifferentialCov:twoParameterDifferentialCovFig1}
+%\cref{fig:tangentSpaceSurface:tangentSpaceSurfaceFig1}
+.  The differential directions that span the tangent space are
 \begin{equation}\label{eqn:reciprocal:1040}
 \begin{aligned}
 d\Bx_0 &= \PD{u^0}{x} du^0 \\
@@ -209,8 +203,20 @@ d\Bx_1 &= \PD{u^1}{x} du^1,
 \end{aligned}
 \end{equation}
 and the tangent space itself is \( \Span\setlr{ d\Bx_0, d\Bx_1 } \).  We may form an oriented surface area element \( d\Bx_0 \wedge d\Bx_1 \) over this surface.
+\imageTwoFigures
+{../figures/GAelectrodynamics/bw/oneParameterDifferentialArrowsFig1}
+{../figures/GAelectrodynamics/bw/tangentSpaceSurfaceFig1}{One and two parameter curves, with illustration of tangent spaces.}
+{fig:tangentSpaceSurface:tangentSpaceSurfaceFig1}
+{scale=0.6}
 \imageFigure{../figures/GAelectrodynamics/twoParameterDifferentialCovFig1}{Two parameter surface.}{fig:twoParameterDifferentialCov:twoParameterDifferentialCovFig1}{0.3}
 Tangent spaces associated with 3 or more parameters cannot be easily visualized in three dimensions, but the idea generalizes algebraically without trouble.
+%\threeFiguresOneLineNonFloat
+%{../figures/GAelectrodynamics/bw/oneParameterDifferentialArrowsFig1}
+%{../figures/GAelectrodynamics/bw/tangentSpaceSurfaceFig1}
+%{../figures/GAelectrodynamics/twoParameterDifferentialCovFig1}
+%{Tangent spaces and parameterized curves.}
+%{fig:tangentSpaceSurface:tangentSpaceSurfaceFig1}
+%{scale=0.6}
 \makedefinition{Tangent basis and space.}{dfn:reciprocal:100}{
 Given a parameterization \( x = x(u^0, \cdots, u^N) \), where \( N < 4 \), the span of the vectors
 \begin{equation*}
@@ -308,7 +314,6 @@ The frame vectors are all easy to compute
 \end{equation}
 The \( \Bx_1 \) vector is radial, \( \Bx^2 \) is perpendicular to that tangent to the same unit circle, as plotted in
 \cref{fig:rotationCurvilinear:rotationCurvilinearFig1}.
-\imageFigure{../figures/classicalmechanics/rotationCurvilinearFig1}{Tangent space direction vectors.}{fig:rotationCurvilinear:rotationCurvilinearFig1}{0.3}
 All of these particular frame vectors happen to be mutually perpendicular, something that will not generally be true for a more arbitrary parameterization.
 
 To compute the reciprocal frame vectors, we must express our parameters in terms of \( x^\mu \) coordinates, and use implicit integration techniques to deal with the coupling of the rotational terms.  First observe that
@@ -375,6 +380,7 @@ In summary,
 \end{aligned}
 \end{equation}
 } % answer
+\imageFigure{../figures/classicalmechanics/rotationCurvilinearFig1}{Tangent space direction vectors.}{fig:rotationCurvilinear:rotationCurvilinearFig1}{0.3}
 Despite being a fairly simple parameterization, it was still fairly difficult to solve for the gradients when the parameterization introduced coupling between the coordinates.
 Because all the tangent space vectors are mutually orthogonal, we didn't need to go through all this trouble, since we could have just computed the inverses of all the tangent space vectors
 \begin{equation}\label{eqn:reciprocal:1940}
@@ -640,6 +646,7 @@ Putting the pieces together we have
 \end{dmath}
 \end{subequations}
 \end{proof}
+%% XXX
 \makelemma{Distribution identity.}{lemma:reciprocal:1820}{
 Given k-vectors \( B, C \) and a vector \( a \), where the grade of \( C \) is greater than that of \( B \), then
 \begin{equation*}
@@ -794,7 +801,7 @@ physically meaningful spacetime surface involves linear combinations spacelike v
 
 \paragraph{Final notes.}
 There are a few loose ends above.  In particular, we haven't conclusively proven that the set of reciprocal vectors \( \Bx^\mu = \grad u^\mu \) are exactly those obtained through algebraic means.  For a full parameterization of spacetime, they are necessarily the same, since both are unique.  So we know that \cref{eqn:reciprocal:1920} must equal the reciprocals obtained by evaluating the gradient for a full parameterization (and this must also equal the reciprocals that we can obtain through matrix inversion.)  We have also not proved explicitly that the three parameter construction of the reciprocals in \cref{eqn:reciprocal:1900} is in the tangent space, but that is a fairly trivial observation, so that can be left as an exercise for the reader dismissal.  Some additional thought about this is probably required, but it seems reasonable to put that on the back burner and move on to some applications.
-\section{More examples.}
+\subsection{More examples.}
  new blog post:
 Here are a few additional examples of reciprocal frame calculations.
 \makeproblem{Unidirectional arbitrary functional dependence.}{problem:reciprocal:13}{
@@ -932,8 +939,8 @@ A bit of rearrangement, shows that we recover \cref{eqn:reciprocal:2080} easily.
 Let the vector parameterization be \( x(\rho,\theta) = \rho e^{-i\theta/2} x(\rho_0, \theta_0) e^{i \theta} \), where \( i^2 = \pm 1 \) is a unit bivector (\(+1\) for a boost, and \(-1\) for a rotation), and where \(\theta, \rho\) are scalars.  Find the tangent space vectors and their reciprocals.
 
 Note that this is cylindrical parameterization for the rotation case, and traces out hyperbolic regions for the boost case.  The boost case is illustrated in \cref{fig:boostsCylindrical:boostsCylindricalFig1} where hyperbolas in the light cone are found for boosts of \( \gamma_0\) with various values of \(\rho\), and the spacelike hyperbolas are boosts of \( \gamma_1 \), again for various values of \( \rho \).
-\imageFigure{../figures/classicalmechanics/boostsCylindricalFig1}{``Cylindrical'' boost parameterization.}{fig:boostsCylindrical:boostsCylindricalFig1}{0.3}
 } % problem
+\imageFigure{../figures/classicalmechanics/boostsCylindricalFig1}{``Cylindrical'' boost parameterization.}{fig:boostsCylindrical:boostsCylindricalFig1}{0.3}
 \makeanswer{problem:reciprocal:17}{
 The tangent space vectors are
 \begin{dmath}\label{eqn:reciprocal:2480}
@@ -947,7 +954,6 @@ and
 = x \cdot i.
 \end{dmath}
 Recall that \( x \cdot i \) lies perpendicular to \( x \) (in the plane \( i \)), as illustrated in \cref{fig:projectionsAndRejections:projectionsAndRejectionsFig1}.  This means that \( \Bx_\rho \) and \( \Bx_\theta \) are orthogonal, so we can find the reciprocal vectors by just inverting them
-\imageFigure{../figures/classicalmechanics/projectionsAndRejectionsFig1}{Projection and rejection geometry.}{fig:projectionsAndRejections:projectionsAndRejectionsFig1}{0.3}
 \begin{equation}\label{eqn:reciprocal:2520}
 \begin{aligned}
 \Bx^\rho &= \frac{\rho}{x} \\
@@ -955,6 +961,7 @@ Recall that \( x \cdot i \) lies perpendicular to \( x \) (in the plane \( i \))
 \end{aligned}
 \end{equation}
 } % answer
+%\imageFigure{../figures/classicalmechanics/projectionsAndRejectionsFig1}{Projection and rejection geometry.}{fig:projectionsAndRejections:projectionsAndRejectionsFig1}{0.3}
 %%%\makeproblem{Linear two variable coupled quadratic parameterization.}{problem:reciprocal:1990}{
 %%%Let \( x = u^2 a + 2 u v b + v^2 c \), where \( a,b,c\) are all vectors.  Compute the tangent space basis, and algebraically compute the reciprocal vectors.
 %%%} % problem
@@ -967,7 +974,7 @@ Recall that \( x \cdot i \) lies perpendicular to \( x \) (in the plane \( i \))
 %%%\end{aligned}
 %%%\end{equation}
 %%%} % answer
-\section{Parameterization of a general linear transformation.}
+\subsection{Parameterization of a general linear transformation.}
 Given \( N \) parameters \( u^0, u^1, \cdots u^{N-1} \), a general linear transformation from the parameter space to the vector space has the form
 \begin{equation}\label{eqn:reciprocal:2160}
 x =
@@ -1047,4 +1054,4 @@ Observe that, for the special case that all of \( \setlr{ \Bx_\mu } \) are ortho
 \end{proof}
 
 %}
-\EndArticle
+%\EndArticle

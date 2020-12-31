@@ -3,35 +3,35 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{lorentzTransform}
-%\renewcommand{\dirname}{notes/phy1520/}
-\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
-%\newcommand{\dateintitle}{}
-%\newcommand{\keywords}{}
-
-\input{../latex/peeter_prologue_print2.tex}
-
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_braket}
-\usepackage{peeters_figures}
-\usepackage{siunitx}
-\usepackage{verbatim}
-\usepackage{amsthm}
-%\usepackage{mhchem} % \ce{}
-%\usepackage{macros_bm} % \bcM
-%\usepackage{macros_qed} % \qedmarker
-%\usepackage{txfonts} % \ointclockwise
-
-\beginArtNoToc
-
-\generatetitle{Lorentz transformations in Space Time Algebra (STA)}
-%\chapter{Lorentz transformations in Space Time Algebra (STA)}
+%\input{../latex/blogpost.tex}
+%\renewcommand{\basename}{lorentzTransform}
+%%\renewcommand{\dirname}{notes/phy1520/}
+%\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%%\newcommand{\dateintitle}{}
+%%\newcommand{\keywords}{}
+%
+%\input{../latex/peeter_prologue_print2.tex}
+%
+%\usepackage{peeters_layout_exercise}
+%\usepackage{peeters_braket}
+%\usepackage{peeters_figures}
+%\usepackage{siunitx}
+%\usepackage{verbatim}
+%\usepackage{amsthm}
+%%\usepackage{mhchem} % \ce{}
+%%\usepackage{macros_bm} % \bcM
+%%\usepackage{macros_qed} % \qedmarker
+%%\usepackage{txfonts} % \ointclockwise
+%
+%\beginArtNoToc
+%
+%\generatetitle{Lorentz transformations in Space Time Algebra (STA)}
+%\section{Lorentz transformations in Space Time Algebra (STA)}
 %\label{chap:lorentzTransform}
-\section{Motivation.}
+\subsection{Motivation.}
 One of the remarkable features of geometric algebra are the complex exponential sandwiches that can be used to encode rotations in any dimension, or rotation like operations like Lorentz transformations in Minkowski spaces.  In this post, we show some examples that unpack the geometric algebra expressions for Lorentz transformations operations of this sort.  In particular, we will look at the exponential sandwich operations for spatial rotations and Lorentz boosts in the Dirac algebra, known as Space Time Algebra (STA) in geometric algebra circles, and demonstrate that these sandwiches do have the desired effects.
 
-\section{Lorentz transformations.}
+\subsection{Lorentz transformations.}
 \maketheorem{Lorentz transformation.}{thm:lorentzTransform:20}{
 The transformation
 \begin{equation*}
@@ -242,7 +242,7 @@ x -
 This is the timelike component of the vector, plus the spatial component that is normal to the plane.  This exponential sandwich transformation rotates only the portion of the vector that lies in the plane, and leaves the rest (timelike and normal) untouched.
 \end{proof}
 
-\section{Problems.}
+\subsection{Problems.}
 \makeproblem{Verify components relative to boost direction.}{problem:lorentzTransform:10}{
 In \cref{eqn:lorentzTransform:100} the vector \( x \) was expanded in terms of the spacetime split.  An alternate approach, is to expand as
 \begin{dmath}\label{eqn:lorentzTransform:340}
@@ -372,4 +372,4 @@ For the last (commutation) part of the problem, here is a hint.  Let \( x \wedge
 } % answer
 %}
 %\EndArticle
-\EndNoBibArticle
+%\EndNoBibArticle

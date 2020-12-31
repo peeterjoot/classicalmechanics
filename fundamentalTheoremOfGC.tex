@@ -3,34 +3,33 @@
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %{
-\input{../latex/blogpost.tex}
-\renewcommand{\basename}{fundamentalTheoremOfGC}
-%\renewcommand{\dirname}{notes/phy1520/}
-\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
-%\newcommand{\dateintitle}{}
-%\newcommand{\keywords}{}
-
-\input{../latex/peeter_prologue_print2.tex}
-
-\usepackage{amsthm}
-\usepackage{txfonts}
-\usepackage{peeters_layout_exercise}
-\usepackage{peeters_braket}
-\usepackage{peeters_figures}
-\usepackage{siunitx}
-\usepackage{verbatim}
-%\usepackage{mhchem} % \ce{}
-%\usepackage{macros_bm} % \bcM
-%\usepackage{macros_qed} % \qedmarker
-%\usepackage{txfonts} % \ointclockwise
-
-\beginArtNoToc
-
-\generatetitle{Fundamental theorem of geometric calculus (relativistic.)}
-%\chapter{Fundamental theorem of geometric calculus}
+%\input{../latex/blogpost.tex}
+%\renewcommand{\basename}{fundamentalTheoremOfGC}
+%%\renewcommand{\dirname}{notes/phy1520/}
+%\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%%\newcommand{\dateintitle}{}
+%%\newcommand{\keywords}{}
+%
+%\input{../latex/peeter_prologue_print2.tex}
+%
+%\usepackage{amsthm}
+%\usepackage{txfonts}
+%\usepackage{peeters_layout_exercise}
+%\usepackage{peeters_braket}
+%\usepackage{peeters_figures}
+%\usepackage{siunitx}
+%\usepackage{verbatim}
+%%\usepackage{mhchem} % \ce{}
+%%\usepackage{macros_bm} % \bcM
+%%\usepackage{macros_qed} % \qedmarker
+%%\usepackage{txfonts} % \ointclockwise
+%
+%\beginArtNoToc
+%
+%\generatetitle{Fundamental theorem of geometric calculus (relativistic.)}
+%\section{Fundamental theorem of geometric calculus (relativistic.)}
 %\label{chap:fundamentalTheoremOfGC}
-
-\section{Motivation.}
+\subsection{Motivation.}
 I've been slowly working my way towards a statement of the fundamental theorem of integral calculus, where the functions being integrated are elements of the Dirac algebra (space time multivectors in the geometric algebra parlance.)
 
 This is interesting because we want to be able to do line, surface, 3-volume and 4-volume space time integrals.  We have many \R{3} integral theorems
@@ -68,7 +67,7 @@ What comes to our rescue is the Fundamental Theorem of Geometric Calculus (FTGC)
 where \(F,G\) are multivectors functions (i.e. sums of products of vectors.)  We've seen (\citep{aMacdonaldVAGC}, \citep{pjootGAEE}) that all the identities above are special cases of the fundamental theorem.
 
 Do we need any special care to state the FTGC correctly for our relativistic case?  It turns out that the answer is no!  Tangent and reciprocal frame vectors do all the heavy lifting, and we can use the fundamental theorem as is, even in our mixed signature space.  The only real change that we need to make is use spacetime gradient and vector derivative operators instead of their spatial equivalents.  We will see how this works below.  Note that instead of starting with \cref{eqn:fundamentalTheoremOfGC:40} directly, I will attempt to build up to that point in a progressive fashion that is hopefully does not require the reader to make too many unjustified mental leaps.
-\section{Multivector line integrals.}
+\subsection{Multivector line integrals.}
 We want to define multivector line integrals to start with.  Recall that in \R{3} we would say that for scalar functions \( f\), the integral
 \begin{equation*}
 \int d\Bx\, f = \int f d\Bx,
@@ -154,8 +153,8 @@ x \cdot \Bx_\alpha
 = 0.
 \end{dmath}
 Here we used \( e^{\vcap \alpha} \gamma_0 = \gamma_0 e^{-\vcap \alpha} \), and \( \gpgradezero{A B} = \gpgradezero{B A} \).  Geometrically, we have the curious fact that the direction vectors to points on the curve are perpendicular (with respect to our relativistic dot product) to the tangent vectors on the curve, as illustrated in \cref{fig:boostOfGamma0AlongXdir:boostOfGamma0AlongXdirFig1}.
-\imageFigure{../figures/classicalmechanics/boostOfGamma0AlongXdirFig1}{Tangent perpendicularity in mixed metric.}{fig:boostOfGamma0AlongXdir:boostOfGamma0AlongXdirFig1}{0.3}
 } % answer
+\imageFigure{../figures/classicalmechanics/boostOfGamma0AlongXdirFig1}{Tangent perpendicularity in mixed metric.}{fig:boostOfGamma0AlongXdir:boostOfGamma0AlongXdirFig1}{0.3}
 \subsection{Perfect differentials.}
 Having seen a couple examples of multivector line integrals, let's now move on to figure out the structure of a line integral that has a ``perfect'' differential integrand.  We can take a hint from the \R{3} vector result that we already know, namely
 \begin{dmath}\label{eqn:fundamentalTheoremOfGC:120}
@@ -257,5 +256,4 @@ However for a single parameter curve, we have \( \Bx^\alpha = 1/\Bx_\alpha \), s
 \end{proof}
 
 %}
-\EndArticle
-%\EndNoBibArticle
+%\EndArticle
