@@ -41,5 +41,8 @@
 #../latex/bin/lgrep fundamentalTheoremOfGCblog.tex | tee o ; . ./o
 
 #perl -p -i ../latex/bin/latexRegex.pl fundamentalTheoremOfGC.tex
-../latex/bin/lgrep relativisticSurface.tex | tee o ; . ./o
+#../latex/bin/lgrep relativisticSurface.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl relativisticSurface.tex
+
+../latex/bin/lgrep volumeAndFourVolume.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl volumeAndFourVolume.tex

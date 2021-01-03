@@ -1,0 +1,276 @@
+%
+% Copyright © 2021 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+\input{../latex/blogpost.tex}
+\renewcommand{\basename}{volumeAndFourVolume}
+%\renewcommand{\dirname}{notes/phy1520/}
+\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%\newcommand{\dateintitle}{}
+%\newcommand{\keywords}{}
+
+\input{../latex/peeter_prologue_print2.tex}
+
+\usepackage{peeters_layout_exercise}
+\usepackage{peeters_braket}
+\usepackage{peeters_figures}
+\usepackage{siunitx}
+\usepackage{verbatim}
+\usepackage{amsthm}
+
+\definecolor{BlueDarker}{HTML}{0000AA}
+\definecolor{RedDarker}{HTML}{AA0000}
+\definecolor{PurpleDarker}{HTML}{550055}
+\definecolor{OrangeDarker}{HTML}{AA5500}
+\definecolor{GreenDarker}{HTML}{00AA00}
+\definecolor{YellowDarker}{HTML}{AAAA00}
+
+\beginArtNoToc
+
+\generatetitle{Fundamental theorem for volume and four-volume integrals.}
+%\chapter{Fundamental theorem for volume and four-volume integrals.}
+%\label{chap:volumeAndFourVolume}
+\section{Three volume integrals.}
+\maketheorem{Fundamental theorem for volume integrals.}{thm:volumeAndFourVolume:11}{
+Given multivector functions \( F, G \),
+and
+a three parameter curve \( x(u^1,u^2,u^3) \),
+\begin{equation*}
+\int_S F d^3\Bx \lrpartial G = \int_{\partial S} F d^2\Bx G,
+\end{equation*}
+with
+volume element \( d^3 \Bx = \lr{ d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_3 }\), and
+with bounding surface
+\begin{equation*}
+d^2 x = d \Bx_1 \wedge d\Bx_2 + d \Bx_3 \wedge d\Bx_1 + d\Bx_2 \wedge d\Bx_3,
+\end{equation*}
+where the differentials are given by \( d\Bx_k = du^k \Bx_k \) (no sum), and
+where
+\( S \) is the integration volume,
+and \( \partial S \) designates its boundary.
+} % theorem
+\begin{proof}
+Let's write \( \Bx_{ij} = \Bx_i \wedge \Bx_j \), \( \Bx_{ijk} = \Bx_i \wedge \Bx_j \wedge \Bx_k \), and
+\( \partial_k = \PDi{u^k}{} \).
+We can expand the three-volume integral as
+\begin{dmath}\label{eqn:volumeAndFourVolume:60}
+\int_S F d^3\Bx \lrpartial G
+=
+\int_S F d^3\Bx \cdot \lrpartial G
+=
+\int_S
+du^1 du^2 du^3\,
+F
+\Bx_{123} \cdot \lr{ \Bx^1 \lrpartial_1 + \Bx^2 \lrpartial_2 + \Bx^3 \lrpartial_3 }
+G
+=
+\int_S
+du^1 du^2 du^3
+\,
+F
+\lr{
+\Bx_{12} \lrpartial_3
+-
+\Bx_{13} \lrpartial_2
++
+\Bx_{23} \lrpartial_1
+}
+G
+=
+\int_S
+du^1 du^2 du^3
+\,
+\lr{
+	\partial_3 \lr{ F \Bx_{12} G }
+	-
+	\partial_2 \lr{ F \Bx_{13} G }
+	+
+	\partial_1 \lr{ F \Bx_{23} G }
+}
+-
+\int_S
+du^1 du^2 du^3
+\,
+\lr{
+	F \lr{ \partial_3 \Bx_{12} } G
+	-
+	F \lr{ \partial_2 \Bx_{13} } G
+	+
+	F \lr{ \partial_1 \Bx_{23} } G
+}
+.
+\end{dmath}
+This is an integration by parts style expansion, where we pull out a set of perfect differentials, and hope that antisymmetry kills off the second integral, as it did for the line integral case.  Let's verify the latter
+\begin{dmath}\label{eqn:volumeAndFourVolume:80}
+\partial_3 \Bx_{12}
+-
+\partial_2 \Bx_{13}
++
+\partial_1 \Bx_{23}
+=
+  \lr{ \partial_3 \Bx_{1} } \wedge \Bx_{2} + \Bx_{1} \wedge {\partial_3 \Bx_{2} }
+- \lr{ \partial_2 \Bx_{1} } \wedge \Bx_{3} - \Bx_{1} \wedge {\partial_2 \Bx_{3} }
++ \lr{ \partial_1 \Bx_{2} } \wedge \Bx_{3} + \Bx_{2} \wedge {\partial_1 \Bx_{3} }
+=
+  \lr{ \partial_{13} x } \wedge {\color{BlueDarker}\Bx_{2}}  + {\color{RedDarker}\Bx_{1}} \wedge \lr{\partial_{32} x }
+- \lr{ \partial_{12} x } \wedge {\color{GreenDarker}\Bx_{3}} - {\color{RedDarker}\Bx_{1}} \wedge \lr{\partial_{23} x }
++ \lr{ \partial_{12} x } \wedge {\color{GreenDarker}\Bx_{3}} + {\color{BlueDarker}\Bx_{2}} \wedge \lr{\partial_{13} x },
+\end{dmath}
+where
+\begin{dmath}\label{eqn:volumeAndFourVolume:40}
+\partial_{jk}x = \PDD{u^k}{u^j}{x}.
+\end{dmath}
+Assuming equality of mixed partials, everything in \cref{eqn:volumeAndFourVolume:80} cancels perfectly.  We are left with
+\begin{dmath}\label{eqn:volumeAndFourVolume:100}
+\int_S F d^3\Bx \lrpartial G
+=
+\int_S
+du^1 du^2 du^3
+\,
+\lr{
+	\partial_3 \lr{ F \Bx_{12} G }
+	-
+	\partial_2 \lr{ F \Bx_{13} G }
+	+
+	\partial_1 \lr{ F \Bx_{23} G }
+}
+=
+\int
+\,
+\lr{
+  du^1 du^2 \evalbar{\lr{F \Bx_{12} G}}{\Delta u^3 }
+- du^1 du^3 \evalbar{\lr{F \Bx_{13} G}}{\Delta u^2 }
++ du^2 du^3 \evalbar{\lr{F \Bx_{23} G}}{\Delta u^1 }
+}
+=
+\int
+\,
+\lr{
+  \evalbar{\lr{F d\Bx_{1} \wedge d\Bx_{2} G}}{\Delta u^3 }
++ \evalbar{\lr{F d\Bx_{3} \wedge d\Bx_{1} G}}{\Delta u^2 }
++ \evalbar{\lr{F d\Bx_{2} \wedge d\Bx_{3} G}}{\Delta u^1 }
+}
+.
+\end{dmath}
+This is an explicit representation of what we mean by \( \int_{\partial S} F d^2 \Bx G \).
+\end{proof}
+\section{Four volume integrals.}
+\maketheorem{Fundamental theorem for four-volume integrals.}{thm:volumeAndFourVolume:13}{
+Given multivector functions \( F, G \),
+and
+a four parameter curve \( x(u^1,u^2,u^3,u^4) \),
+\begin{equation*}
+\int_S F d^4\Bx \lrpartial G = \int_{\partial S} F d^3\Bx G,
+\end{equation*}
+with
+four-volume element \( d^3 \Bx = \lr{ d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_3 \wedge d\Bx_4 }\), and
+with bounding surface
+\begin{equation*}
+d^3 x
+=
+- d \Bx_2 \wedge d\Bx_3 \wedge d\Bx_4 % 1
++ d \Bx_1 \wedge d\Bx_3 \wedge d\Bx_4 % 2
+- d \Bx_1 \wedge d\Bx_2 \wedge d\Bx_4 % 3
++ d \Bx_1 \wedge d\Bx_2 \wedge d\Bx_3 % 4
+,
+\end{equation*}
+where the differentials are given by \( d\Bx_k = du^k \Bx_k \) (no sum), and
+where
+\( S \) is the integration volume,
+and \( \partial S \) designates its boundary.
+} % theorem
+\begin{proof}
+As before we will write \( \Bx_{ijk} = \Bx_i \wedge \Bx_j \wedge \Bx_k \), and
+\( \partial_k = \PDi{u^k}{} \).
+We can expand the four-volume integral as
+\begin{dmath}\label{eqn:volumeAndFourVolume:120}
+\int_S F d^3\Bx \lrpartial G
+=
+\int_S F d^3\Bx \cdot \lrpartial G
+=
+\int_S
+du^1 du^2 du^3 du^4 \,
+F
+\Bx_{1234} \cdot \lr{
+  \Bx^1 \lrpartial_1
++ \Bx^2 \lrpartial_2
++ \Bx^3 \lrpartial_3
++ \Bx^4 \lrpartial_4
+}
+G
+=
+\int_S
+du^1 du^2 du^3 du^4
+\,
+F
+\lr{
+- \Bx_{234} \lrpartial_1
++ \Bx_{134} \lrpartial_2
+- \Bx_{124} \lrpartial_3
++ \Bx_{123} \lrpartial_4
+}
+G
+=
+\int_S
+du^1 du^2 du^3 du^4
+\,
+\lr{
+- \partial_1 \lr{ F \Bx_{234} G }
++ \partial_2 \lr{ F \Bx_{134} G }
+- \partial_3 \lr{ F \Bx_{124} G }
++ \partial_4 \lr{ F \Bx_{123} G }
+}
+-
+\int_S
+du^1 du^2 du^3 du^4
+\,
+F \lr{
+- \partial_1 \Bx_{234}
++ \partial_2 \Bx_{134}
+- \partial_3 \Bx_{124}
++ \partial_4 \Bx_{123}
+} G
+.
+\end{dmath}
+As before, this is an integration by parts style expansion, where we pull out a set of perfect differentials, with the expectation that the partials of all the wedges to sum to zero
+\begin{dmath}\label{eqn:volumeAndFourVolume:140}
+\begin{aligned}
+&- \partial_1 \Bx_{234}
++ \partial_2 \Bx_{134}
+- \partial_3 \Bx_{124}
++ \partial_4 \Bx_{123} \\
+&=
+- \partial_{12} x \wedge {\color{BlueDarker}\Bx_{34} }
++ \partial_{21} x \wedge {\color{BlueDarker}\Bx_{34} }
+- \partial_{31} x \wedge {\color{GreenDarker}\Bx_{24} }
++ \partial_{41} x \wedge {\color{RedDarker}\Bx_{23} } \\
+&\quad + \partial_{13} x \wedge {\color{GreenDarker}\Bx_{24} }
+- \partial_{23} x \wedge {\color{PurpleDarker}\Bx_{14} }
++ \partial_{32} x \wedge {\color{PurpleDarker}\Bx_{14} }
+- \partial_{42} x \wedge {\color{OrangeDarker}\Bx_{13} } \\
+&\quad - \partial_{14} x \wedge {\color{RedDarker}\Bx_{23} }
++ \partial_{24} x \wedge {\color{OrangeDarker}\Bx_{13} }
+- \partial_{34} x \wedge {\color{YellowDarker}\Bx_{12} }
++ \partial_{43} x \wedge {\color{YellowDarker}\Bx_{12} }
+\end{aligned}
+\end{dmath}
+Again, due to
+equality of mixed partials, everything in \cref{eqn:volumeAndFourVolume:140} cancels out perfectly, leaving
+\begin{dmath}\label{eqn:volumeAndFourVolume:180}
+\int_S F d^4\Bx \lrpartial G
+=
+\int
+\lr{
+- \evalbar{ F \,d\Bx_2 \wedge d\Bx_3 \wedge d\Bx_4 \,G }{\Delta u^1}
++ \evalbar{ F \,d\Bx_1 \wedge d\Bx_3 \wedge d\Bx_4 \,G }{\Delta u^2}
+- \evalbar{ F \,d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_4 \,G }{\Delta u^3}
++ \evalbar{ F \,d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_3 \,G }{\Delta u^4}
+}
+\end{dmath}
+This is the explicit representation of \( \int_{\partial S} F d^3 \Bx G \).
+\end{proof}
+
+%}
+%\EndArticle
+\EndNoBibArticle

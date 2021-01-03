@@ -35,6 +35,8 @@ include ../latex/make.rules
 spellcheck: $(patsubst %.tex,%.sp,$(filter-out $(DONT_SPELL_CHECK),$(DO_SPELL_CHECK)))
 
 all :: junk.pdf
+all :: v
+v :: volumeAndFourVolume.pdf
 
 %.sp : %.tex
 	spellcheck $^
