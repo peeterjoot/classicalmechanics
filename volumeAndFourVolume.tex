@@ -234,7 +234,7 @@ F \lr{
 .
 \end{dmath}
 As before, this is an integration by parts style expansion, where we pull out a set of perfect differentials, with the expectation that the partials of all the wedges to sum to zero
-\begin{dmath}\label{eqn:volumeAndFourVolume:140}
+\begin{equation}\label{eqn:volumeAndFourVolume:140}
 \begin{aligned}
 &- \partial_1 \Bx_{234}
 + \partial_2 \Bx_{134}
@@ -254,21 +254,20 @@ As before, this is an integration by parts style expansion, where we pull out a 
 - \partial_{34} x \wedge {\color{YellowDarker}\Bx_{12} }
 + \partial_{43} x \wedge {\color{YellowDarker}\Bx_{12} }
 \end{aligned}
-\end{dmath}
+\end{equation}
 Again, due to
 equality of mixed partials, everything in \cref{eqn:volumeAndFourVolume:140} cancels out perfectly, leaving
-\begin{dmath}\label{eqn:volumeAndFourVolume:180}
-\int_S F d^4\Bx \lrpartial G
-=
-\int
-\lr{
-- \evalbar{ F \,d\Bx_2 \wedge d\Bx_3 \wedge d\Bx_4 \,G }{\Delta u^1}
-+ \evalbar{ F \,d\Bx_1 \wedge d\Bx_3 \wedge d\Bx_4 \,G }{\Delta u^2}
-- \evalbar{ F \,d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_4 \,G }{\Delta u^3}
-+ \evalbar{ F \,d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_3 \,G }{\Delta u^4}
-}
-\end{dmath}
-This is the explicit representation of \( \int_{\partial S} F d^3 \Bx G \).
+\begin{equation}\label{eqn:volumeAndFourVolume:180}
+\begin{aligned}
+\int_S &F d^4\Bx \lrpartial G \\
+&=
+- \int \evalbar{ F \,d\Bx_2 \wedge d\Bx_3 \wedge d\Bx_4 \,G }{\Delta u^1}
++ \int \evalbar{ F \,d\Bx_1 \wedge d\Bx_3 \wedge d\Bx_4 \,G }{\Delta u^2} \\
+&\quad- \int \evalbar{ F \,d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_4 \,G }{\Delta u^3}
++ \int \evalbar{ F \,d\Bx_1 \wedge d\Bx_2 \wedge d\Bx_3 \,G }{\Delta u^4}.
+\end{aligned}
+\end{equation}
+The RHS is the explicit representation of \( \int_{\partial S} F d^3 \Bx G \).
 \end{proof}
 
 %}
