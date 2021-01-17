@@ -44,5 +44,8 @@
 #../latex/bin/lgrep relativisticSurface.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl relativisticSurface.tex
 
-../latex/bin/lgrep volumeAndFourVolume.tex | tee o ; . ./o
+#../latex/bin/lgrep volumeAndFourVolume.tex | tee o ; . ./o
 #perl -p -i ../latex/bin/latexRegex.pl volumeAndFourVolume.tex
+#
+../latex/bin/lgrep unpackingFundamentalTheorem.tex | tee o ; . ./o
+#perl -p -i ../latex/bin/latexRegex.pl unpackingFundamentalTheorem.tex

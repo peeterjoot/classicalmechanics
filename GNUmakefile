@@ -36,7 +36,9 @@ spellcheck: $(patsubst %.tex,%.sp,$(filter-out $(DONT_SPELL_CHECK),$(DO_SPELL_CH
 
 all :: junk.pdf
 all :: v
+all :: u
 v :: volumeAndFourVolume.pdf
+u :: unpackingFundamentalTheorem.pdf
 
 %.sp : %.tex
 	spellcheck $^
