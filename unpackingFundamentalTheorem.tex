@@ -27,9 +27,9 @@
 \label{chap:unpackingFundamentalTheorem}
 
 %\section{Two dimensional vector spaces.}
-Given a two dimensional generating vector space, we have two cases of the fundamental theorem
+Given a two dimensional generating vector space, there are two instances of the fundamental theorem for multivector integration
 \begin{equation}\label{eqn:unpackingFundamentalTheorem:20}
-\int_S F d\Bx \lrpartial G = \evalbar{F G}{\Delta S}
+\int_S F d\Bx \lrpartial G = \evalbar{F G}{\Delta S},
 \end{equation}
 and
 \begin{equation}\label{eqn:unpackingFundamentalTheorem:40}
@@ -305,11 +305,19 @@ In terms of the coordinates \( x^1, x^2 \), this reduces to
 The vector \( I^{-1} d\Bx \) is orthogonal to the tangent vector along the boundary, and for Euclidean spaces it can be identified as the outwards normal.
 } % theorem
 \begin{proof}
-Setting \( F = 1 \) in \cref{eqn:unpackingFundamentalTheorem:680}, we have
+Respectively setting \( F = 1 \), and \( G = 1\) in \cref{eqn:unpackingFundamentalTheorem:680}, we have
+\begin{dmath}\label{eqn:unpackingFundamentalTheorem:940}
+\int I^{-1} d^2 \Bx \rgrad G = \ointclockwise I^{-1} d\Bx G,
+\end{dmath}
+and
+\begin{dmath}\label{eqn:unpackingFundamentalTheorem:960}
+\int F d^2 \Bx \lgrad I^{-1} = \ointclockwise F d\Bx I^{-1}.
+\end{dmath}
+Starting with \cref{eqn:unpackingFundamentalTheorem:940} we find
 \begin{equation}\label{eqn:unpackingFundamentalTheorem:700}
-\int J du dv I \rgrad G = \ointclockwise d\Bx G,
+\int I^{-1} J du dv I \rgrad G = \ointclockwise d\Bx G,
 \end{equation}
-and need only multiply on the left with \( I^{-1} \) to find \( \int dx^1 dx^2 \rgrad G = \ointclockwise I^{-1} d\Bx G \).  In terms of a parameterization \( x = x(u,v) \), the pseudoscalar for the space is
+to find \( \int dx^1 dx^2 \rgrad G = \ointclockwise I^{-1} d\Bx G \), as desireed.  In terms of a parameterization \( x = x(u,v) \), the pseudoscalar for the space is
 \begin{dmath}\label{eqn:unpackingFundamentalTheorem:720}
 I = \frac{\Bx_u \wedge \Bx_v}{J},
 \end{dmath}
@@ -336,19 +344,19 @@ so the right acting gradient integral is
 \end{dmath}
 which we write in abbreviated form as \( \int J \lr{ \Bx^v du + \Bx^u dv} G \).
 
-For the \( G = 1 \) case we have
+For the \( G = 1 \) case, from \cref{eqn:unpackingFundamentalTheorem:960} we find
 \begin{equation}\label{eqn:unpackingFundamentalTheorem:820}
-\int J du dv F I \lgrad = \ointclockwise F d\Bx.
+\int J du dv F I \lgrad I^{-1} = \ointclockwise F d\Bx I^{-1}.
 \end{equation}
-In a 2D space, regardless of metric, we have \( I a = - a I \) for any vector \( a \) (i.e. \( \grad \) or \( d\Bx\)), so multiplication by \( -I^{-1} \) gives
+However, in a 2D space, regardless of metric, we have \( I a = - a I \) for any vector \( a \) (i.e. \( \grad \) or \( d\Bx\)), so we may commute the outer pseudoscalars in
 \begin{dmath}\label{eqn:unpackingFundamentalTheorem:840}
-\int J du dv F \lgrad
-=
--\ointclockwise F d\Bx I^{-1}
-=
-\ointclockwise F I^{-1} d\Bx,
+\int J du dv F I \lgrad I^{-1} = \ointclockwise F d\Bx I^{-1},
 \end{dmath}
-as claimed.
+so
+\begin{dmath}\label{eqn:unpackingFundamentalTheorem:850}
+-\int J du dv F I I^{-1} \lgrad = -\ointclockwise F I^{-1} d\Bx.
+\end{dmath}
+After cancelling the negative sign on both sides, we have the claimed result.
 
 To see that \( I a \), for any vector \( a \) is normal to \( a \), we can compute the dot product
 \begin{dmath}\label{eqn:unpackingFundamentalTheorem:860}
@@ -371,7 +379,7 @@ Let's look at the geometry of the normal \( I^{-1} \Bx \) in a couple 2D vector 
 \Be_1 \lr{ G(x_1,y) - G(x_0,y) } dy,
 \end{equation}
 Each of the terms in the integrand above are illustrated in \cref{fig:gradientOutWardsNormal:gradientOutWardsNormalFig1}, and we see that this is a path integral weighted by the outwards normal.
-\imageFigure{../figures/classicalmechanics/gradientOutWardsNormalFig1}{Outwards normal along boundary.}{fig:gradientOutWardsNormal:gradientOutWardsNormalFig1}{0.3}
+\imageFigure{../figures/classicalmechanics/gradientOutWardsNormalFig1}{Outwards oriented normal for Euclidean space.}{fig:gradientOutWardsNormal:gradientOutWardsNormalFig1}{0.3}
 \item Spacetime:
 Let \( x(u,v) = u \gamma_0 + v \gamma_1 \), where \( (\gamma_0)^2 = -(\gamma_1)^2 = 1 \).
 With \( u = t, v = x \), the gradient integral over a \([t_0,t_1] \times [x_0,x_1]\)  of spacetime is
@@ -389,7 +397,7 @@ With \( u = t, v = x \), the gradient integral over a \([t_0,t_1] \times [x_0,x_
 .
 \end{dmath}
 With \( t \) plotted along the horizontal axis, and \( x \) along the vertical, each of the terms of this integrand is illustrated graphically in \cref{fig:gradientOutWardsNormalSpaceTime:gradientOutWardsNormalSpaceTimeFig1}.  For this mixed signature space, there is no longer any good geometrical characterization of the normal.
-\imageFigure{../figures/classicalmechanics/gradientOutWardsNormalSpaceTimeFig1}{Boundary normal orientation for a spacetime basis.}{fig:gradientOutWardsNormalSpaceTime:gradientOutWardsNormalSpaceTimeFig1}{0.3}
+\imageFigure{../figures/classicalmechanics/gradientOutWardsNormalSpaceTimeFig1}{Orientation of the boundary normal for a spacetime basis.}{fig:gradientOutWardsNormalSpaceTime:gradientOutWardsNormalSpaceTimeFig1}{0.3}
 \item Spacelike:
 Let \( x(u,v) = u \gamma_1 + v \gamma_2 \), where \( (\gamma_1)^2 = (\gamma_2)^2 = -1 \).
 With \( u = x, v = y \), the gradient integral over a \([x_0,x_1] \times [y_0,y_1]\) of this space is
@@ -410,7 +418,7 @@ Referring to
 \cref{fig:gradientOutWardsNormalSpacelikeDirac:gradientOutWardsNormalSpacelikeDiracFig1}.
 where the elements of the integrand are illustrated,
 we see that the normal \( I^{-1} d\Bx \) for the boundary of this region can be characterized as inwards.
-\imageFigure{../figures/classicalmechanics/gradientOutWardsNormalSpacelikeDiracFig1}{Boundary orientation for a Dirac spacelike basis.}{fig:gradientOutWardsNormalSpacelikeDirac:gradientOutWardsNormalSpacelikeDiracFig1}{0.3}
+\imageFigure{../figures/classicalmechanics/gradientOutWardsNormalSpacelikeDiracFig1}{Inwards oriented normal for a Dirac spacelike basis.}{fig:gradientOutWardsNormalSpacelikeDirac:gradientOutWardsNormalSpacelikeDiracFig1}{0.3}
 \end{itemize}
 
 %\section{Three dimensional vector spaces.}
