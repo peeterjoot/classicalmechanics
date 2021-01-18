@@ -52,33 +52,37 @@ Let \( \setlr{e_1, e_2} \) be an orthonormal basis for a two dimensional space, 
 } % problem
 \makeanswer{problem:unpackingFundamentalTheorem:11}{
 With parameterization \( x = x(u,v) = x^\alpha e_\alpha = x_\alpha e^\alpha \), we have
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:120}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:120} % dmath
+\begin{aligned}
 \Bx_u \wedge \Bx_v
-=
+&=
 \lr{ \PD{u}{x^\alpha} e_\alpha } \wedge
-\lr{ \PD{v}{x^\beta} e_\beta }
-=
+\lr{ \PD{v}{x^\beta} e_\beta } \\
+&=
 \PD{u}{x^\alpha}
 \PD{v}{x^\beta}
 e_\alpha
-e_\beta
-=
+e_\beta \\
+&=
 \PD{(u,v)}{(x^1,x^2)} e_1 e_2,
-\end{dmath}
+\end{aligned}
+\end{equation}
 or
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:160}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:160} % dmath
+\begin{aligned}
 \Bx_u \wedge \Bx_v
-=
+&=
 \lr{ \PD{u}{x_\alpha} e^\alpha } \wedge
-\lr{ \PD{v}{x_\beta} e^\beta }
-=
+\lr{ \PD{v}{x_\beta} e^\beta } \\
+&=
 \PD{u}{x_\alpha}
 \PD{v}{x_\beta}
 e^\alpha
-e^\beta
-=
+e^\beta \\
+&=
 \PD{(u,v)}{(x_1,x_2)} e^1 e^2.
-\end{dmath}
+\end{aligned}
+\end{equation}
 The upper and lower index pseudoscalars are related by
 \begin{equation}\label{eqn:unpackingFundamentalTheorem:180}
 e^1 e^2 e_1 e_2 =
@@ -115,13 +119,13 @@ we see that the fundamental theorem takes the form
 \int_S dx^1 dx^2\, F I \lrgrad G = \ointclockwise_{\partial S} F d\Bx G.
 \end{equation}
 In a Euclidean space, the operator \( I \lrgrad \), is a \( \pi/2 \) rotation of the gradient, but has a rotated like structure in all metrics:
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:240}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:240} % dmath
 I \grad
 =
 e_1 e_2 \lr{ e^1 \partial_1 + e^2 \partial_2 }
 =
 -e_2 \partial_1 + e_1 \partial_2.
-\end{dmath}
+\end{equation}
 \begin{itemize}
 \item \( F = 1 \) and
 \( G \in \bigwedge^0 \) or
@@ -147,8 +151,7 @@ Since a 2D bivector \( G \) can be written as \( G = I g \), where \( g \) is a 
 \int_S dx^1 dx^2\, \lr{ -e_2 \partial_1 + e_1 \partial_2 } g = \ointclockwise_{\partial S} d\Bx g,
 \end{equation}
 after right multiplying both sides with \( I^{-1} \).  Algebraically the scalar and pseudoscalar cases can be thought of as identical scalar relationships.
-\item \( F = 1, G \in \bigwedge^1 \).  For
-For \( F = 1 \) and vector \( G \) the 2D fundamental theorem for surfaces can be split into scalar
+\item \( F = 1, G \in \bigwedge^1 \).  For \( F = 1 \) and vector \( G \) the 2D fundamental theorem for surfaces can be split into scalar
 \begin{equation}\label{eqn:unpackingFundamentalTheorem:320}
 \int_S dx^1 dx^2\, \lr{ -e_2 \partial_1 + e_1 \partial_2 } \cdot G = \ointclockwise_{\partial S} d\Bx \cdot G,
 \end{equation}
@@ -161,22 +164,26 @@ To expand \cref{eqn:unpackingFundamentalTheorem:320}, let
 G = g_1 e^1 + g_2 e^2,
 \end{equation}
 for which
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:380}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:380} % dmath
+\begin{aligned}
 \lr{ -e_2 \partial_1 + e_1 \partial_2 } \cdot G
-=
+&=
 \lr{ -e_2 \partial_1 + e_1 \partial_2 } \cdot
-\lr{ g_1 e^1 + g_2 e^2 }
-=
+\lr{ g_1 e^1 + g_2 e^2 } \\
+&=
 \partial_2 g_1 - \partial_1 g_2,
-\end{dmath}
+\end{aligned}
+\end{equation}
 and
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:400}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:400} % dmath
+\begin{aligned}
 d\Bx \cdot G
-=
-\lr{ dx^1 e_1 - dx^2 e_2 } \cdot \lr{ g_1 e^1 + g_2 e^2 }
-=
+&=
+\lr{ dx^1 e_1 - dx^2 e_2 } \cdot \lr{ g_1 e^1 + g_2 e^2 } \\
+&=
 dx^1 g_1 - dx^2 g_2,
-\end{dmath}
+\end{aligned}
+\end{equation}
 so
 \cref{eqn:unpackingFundamentalTheorem:320} expands to
 \boxedEquation{eqn:unpackingFundamentalTheorem:500}{
@@ -187,13 +194,15 @@ so
 }
 This coordinate expansion illustrates how the pseudoscalar nature of the area element results in a duality transformation, as we end up with a curl like
 operation on the LHS, despite the dot product nature of the decomposition that we used.  That can also be seen directly for vector \( G \), since
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:560}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:560} % dmath
+\begin{aligned}
 dA (I \grad) \cdot G
-=
-dA \gpgradezero{ I \grad G }
-=
+&=
+dA \gpgradezero{ I \grad G } \\
+&=
 dA I \lr{ \grad \wedge G },
-\end{dmath}
+\end{aligned}
+\end{equation}
 since the scalar selection of \( I \lr{ \grad \cdot G } \) is zero.
 
 In the grade-2 relation \cref{eqn:unpackingFundamentalTheorem:340}, we expect a pseudoscalar cancellation on both sides, leaving a scalar (divergence-like) relationship.  This time, we use upper index coordinates for the vector \( G \), letting
@@ -201,23 +210,27 @@ In the grade-2 relation \cref{eqn:unpackingFundamentalTheorem:340}, we expect a 
 G = g^1 e_1 + g^2 e_2,
 \end{equation}
 so
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:460}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:460} % dmath
+\begin{aligned}
 \lr{ -e_2 \partial_1 + e_1 \partial_2 } \wedge G
-=
+&=
 \lr{ -e_2 \partial_1 + e_1 \partial_2 } \wedge G
-\lr{ g^1 e_1 + g^2 e_2 }
-=
+\lr{ g^1 e_1 + g^2 e_2 } \\
+&=
 e_1 e_2 \lr{ \partial_1 g^1 + \partial_2 g^2 },
-\end{dmath}
+\end{aligned}
+\end{equation}
 and
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:480}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:480} % dmath
+\begin{aligned}
 d\Bx \wedge G
-=
+&=
 \lr{ dx^1 e_1 - dx^2 e_2 } \wedge
-\lr{ g^1 e_1 + g^2 e_2 }
-=
+\lr{ g^1 e_1 + g^2 e_2 } \\
+&=
 e_1 e_2 \lr{ dx^1 g^2 + dx^2 g^1 }.
-\end{dmath}
+\end{aligned}
+\end{equation}
 So \cref{eqn:unpackingFundamentalTheorem:340}, after multiplication of both sides by \( I^{-1} \), is
 \boxedEquation{eqn:unpackingFundamentalTheorem:520}{
 \int_S dx^1 dx^2\,
@@ -228,13 +241,15 @@ So \cref{eqn:unpackingFundamentalTheorem:340}, after multiplication of both side
 }
 \end{itemize}
 As before, we've implicitly performed a duality transformation, and end up with a divergence operation.  That can be seen directly without coordinate expansion, by rewriting the wedge as a grade two selection, and expanding the gradient action on the vector \( G \), as follows
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:580}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:580} % dmath
+\begin{aligned}
 dA (I \grad) \wedge G
-=
-dA \gpgradetwo{ I \grad G }
-=
+&=
+dA \gpgradetwo{ I \grad G } \\
+&=
 dA I \lr{ \grad \cdot G },
-\end{dmath}
+\end{aligned}
+\end{equation}
 since \( I \lr{ \grad \wedge G } \) has only a scalar component.
 } % answer
 \imageFigure{../figures/classicalmechanics/lineIntegralAroundRectangleFig1}{Line integral around rectangular boundary.}{fig:lineIntegralAroundRectangle:lineIntegralAroundRectangleFig1}{0.3}
@@ -253,36 +268,37 @@ with suitable choices of \( P \) and \( Q \).
 } % problem
 \makeanswer{problem:unpackingFundamentalTheorem:33}{
 I will omit the subtleties related to general regions and consider just the case of an infinitesimal square region.
-\begin{proof}
+
+%\begin{proof}
 Let's start with \cref{eqn:unpackingFundamentalTheorem:500}, with \( g_1 = P \) and \( g_2 = Q \), and \( x^1 = x, x^2 = y \), the RHS is
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:600}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:600} % dmath
 \int dx dy \lr{ \PD{y}{P} - \PD{x}{Q} }.
-\end{dmath}
+\end{equation}
 On the RHS we have
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:620}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:620} % dmath
 \int \evalbar{dx P}{\Delta y} - \evalbar{ dy Q }{\Delta x}
 =
 \int dx \lr{ P(x, y_1) - P(x, y_0) } - \int dy \lr{ Q(x_1, y) - Q(x_0, y) }.
-\end{dmath}
+\end{equation}
 This pair of integrals is plotted in \cref{fig:GreensTheoremBoundary:GreensTheoremBoundaryFig1}, from which we see that
 \cref{eqn:unpackingFundamentalTheorem:620} can be expressed as the line integral, leaving us with
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:640}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:640} % dmath
 \int dx dy \lr{ \PD{y}{P} - \PD{x}{Q} }
 =
 \ointclockwise dx P + dy Q,
-\end{dmath}
+\end{equation}
 which is Green's theorem over the infinitesimal square integration region.
 
 For the equivalence of \cref{eqn:unpackingFundamentalTheorem:520} to Green's theorem, let \( g^2 = P \), and \( g^1 = -Q \).  Plugging into the LHS, we find the Green's theorem integrand.  On the RHS, the integrand expands to
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:660}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:660} % dmath
 \evalbar{dx g^2}{\Delta y} + \evalbar{dy g^1 }{\Delta x}
 =
 dx \lr{ P(x,y_1) - P(x, y_0)}
 +
 dy \lr{ -Q(x_1, y) + Q(x_0, y)},
-\end{dmath}
+\end{equation}
 which is exactly what we found in \cref{eqn:unpackingFundamentalTheorem:620}.
-\end{proof}
+%\end{proof}
 } % answer
 \imageFigure{../figures/classicalmechanics/GreensTheoremBoundaryFig1}{Path for Green's theorem.}{fig:GreensTheoremBoundary:GreensTheoremBoundaryFig1}{0.3}
 
@@ -306,42 +322,44 @@ The vector \( I^{-1} d\Bx \) is orthogonal to the tangent vector along the bound
 } % theorem
 \begin{proof}
 Respectively setting \( F = 1 \), and \( G = 1\) in \cref{eqn:unpackingFundamentalTheorem:680}, we have
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:940}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:940} % dmath
 \int I^{-1} d^2 \Bx \rgrad G = \ointclockwise I^{-1} d\Bx G,
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:960}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:960} % dmath
 \int F d^2 \Bx \lgrad I^{-1} = \ointclockwise F d\Bx I^{-1}.
-\end{dmath}
+\end{equation}
 Starting with \cref{eqn:unpackingFundamentalTheorem:940} we find
 \begin{equation}\label{eqn:unpackingFundamentalTheorem:700}
 \int I^{-1} J du dv I \rgrad G = \ointclockwise d\Bx G,
 \end{equation}
 to find \( \int dx^1 dx^2 \rgrad G = \ointclockwise I^{-1} d\Bx G \), as desireed.  In terms of a parameterization \( x = x(u,v) \), the pseudoscalar for the space is
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:720}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:720} % dmath
 I = \frac{\Bx_u \wedge \Bx_v}{J},
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:740}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:740} % dmath
 I^{-1} = \frac{J}{\Bx_u \wedge \Bx_v}.
-\end{dmath}
+\end{equation}
 Also note that \( \lr{\Bx_u \wedge \Bx_v}^{-1} = \Bx^v \wedge \Bx^u \), so
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:760}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:760} % dmath
 I^{-1} = J \lr{ \Bx^v \wedge \Bx^u },
-\end{dmath}
+\end{equation}
 and
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:780}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:780} % dmath
+\begin{aligned}
 I^{-1} d\Bx
-= I^{-1} \cdot d\Bx
-= J \lr{ \Bx^v \wedge \Bx^u } \cdot \lr{ \Bx_u du - \Bx_v dv }
-= J \lr{ \Bx^v du + \Bx^u dv },
-\end{dmath}
+&= I^{-1} \cdot d\Bx \\
+&= J \lr{ \Bx^v \wedge \Bx^u } \cdot \lr{ \Bx_u du - \Bx_v dv } \\
+&= J \lr{ \Bx^v du + \Bx^u dv },
+\end{aligned}
+\end{equation}
 so the right acting gradient integral is
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:800}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:800} % dmath
 \int J du dv \grad G =
 \int
 \evalbar{J \Bx^v G}{\Delta v} du + \evalbar{J \Bx^u G dv}{\Delta u},
-\end{dmath}
+\end{equation}
 which we write in abbreviated form as \( \int J \lr{ \Bx^v du + \Bx^u dv} G \).
 
 For the \( G = 1 \) case, from \cref{eqn:unpackingFundamentalTheorem:960} we find
@@ -349,24 +367,24 @@ For the \( G = 1 \) case, from \cref{eqn:unpackingFundamentalTheorem:960} we fin
 \int J du dv F I \lgrad I^{-1} = \ointclockwise F d\Bx I^{-1}.
 \end{equation}
 However, in a 2D space, regardless of metric, we have \( I a = - a I \) for any vector \( a \) (i.e. \( \grad \) or \( d\Bx\)), so we may commute the outer pseudoscalars in
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:840}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:840} % dmath
 \int J du dv F I \lgrad I^{-1} = \ointclockwise F d\Bx I^{-1},
-\end{dmath}
+\end{equation}
 so
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:850}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:850} % dmath
 -\int J du dv F I I^{-1} \lgrad = -\ointclockwise F I^{-1} d\Bx.
-\end{dmath}
+\end{equation}
 After cancelling the negative sign on both sides, we have the claimed result.
 
 To see that \( I a \), for any vector \( a \) is normal to \( a \), we can compute the dot product
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:860}
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:860} % dmath
 \lr{ I a } \cdot a
 =
 \gpgradezero{ I a a }
 =
 a^2 \gpgradezero{ I }
 = 0,
-\end{dmath}
+\end{equation}
 since the scalar selection of a bivector is zero.  Since \( I^{-1} = \pm I \), the same argument shows that \( I^{-1} d\Bx \) must be orthogonal to \( d\Bx \).
 \end{proof}
 Let's look at the geometry of the normal \( I^{-1} \Bx \) in a couple 2D vector spaces.  We use an integration volume of a unit square to simplify the boundary term expressions.
@@ -383,37 +401,43 @@ Each of the terms in the integrand above are illustrated in \cref{fig:gradientOu
 \item Spacetime:
 Let \( x(u,v) = u \gamma_0 + v \gamma_1 \), where \( (\gamma_0)^2 = -(\gamma_1)^2 = 1 \).
 With \( u = t, v = x \), the gradient integral over a \([t_0,t_1] \times [x_0,x_1]\)  of spacetime is
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:900}
-\int dt dx \grad G =
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:900} % dmath
+\begin{aligned}
+\int dt dx \grad G
+&=
 \int
 \gamma^1 dt \lr{ G(t, x_1) - G(t, x_0) }
 +
-\gamma^0 dx \lr{ G(t_1, x) - G(t_1, x) }
-=
+\gamma^0 dx \lr{ G(t_1, x) - G(t_1, x) } \\
+&=
 \int
 \gamma_1 dt \lr{ -G(t, x_1) + G(t, x_0) }
 +
 \gamma_0 dx \lr{ G(t_1, x) - G(t_1, x) }
 .
-\end{dmath}
+\end{aligned}
+\end{equation}
 With \( t \) plotted along the horizontal axis, and \( x \) along the vertical, each of the terms of this integrand is illustrated graphically in \cref{fig:gradientOutWardsNormalSpaceTime:gradientOutWardsNormalSpaceTimeFig1}.  For this mixed signature space, there is no longer any good geometrical characterization of the normal.
 \imageFigure{../figures/classicalmechanics/gradientOutWardsNormalSpaceTimeFig1}{Orientation of the boundary normal for a spacetime basis.}{fig:gradientOutWardsNormalSpaceTime:gradientOutWardsNormalSpaceTimeFig1}{0.3}
 \item Spacelike:
 Let \( x(u,v) = u \gamma_1 + v \gamma_2 \), where \( (\gamma_1)^2 = (\gamma_2)^2 = -1 \).
 With \( u = x, v = y \), the gradient integral over a \([x_0,x_1] \times [y_0,y_1]\) of this space is
-\begin{dmath}\label{eqn:unpackingFundamentalTheorem:920}
-\int dx dy \grad G =
+\begin{equation}\label{eqn:unpackingFundamentalTheorem:920} % dmath
+\begin{aligned}
+\int dx dy \grad G
+&=
 \int
 \gamma^2 dx \lr{ G(x, y_1) - G(x, y_0) }
 +
-\gamma^1 dy \lr{ G(x_1, y) - G(x_1, y) }
-=
+\gamma^1 dy \lr{ G(x_1, y) - G(x_1, y) } \\
+&=
 \int
 \gamma_2 dx \lr{ -G(x, y_1) + G(x, y_0) }
 +
 \gamma_1 dy \lr{ -G(x_1, y) + G(x_1, y) }
 .
-\end{dmath}
+\end{aligned}
+\end{equation}
 Referring to
 \cref{fig:gradientOutWardsNormalSpacelikeDirac:gradientOutWardsNormalSpacelikeDiracFig1}.
 where the elements of the integrand are illustrated,

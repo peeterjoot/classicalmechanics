@@ -1,8 +1,8 @@
-file=unpackingFundamentalTheorem
+file=relativisticSurface
 make ${file}.pdf
 #exit
 make ${file}Blog.pdf
-p='Unpacking the fundamental theorem in two dimensions'
+p='Relativistic multivector surface integrals'
 tex2mathjax -f ${file}Blog.tex | \
 grep -ve "$p" | \
 sed 's/${file}Blog.pdf/${file}.pdf/;' | \
