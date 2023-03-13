@@ -1,5 +1,5 @@
 %
-% Copyright © 2012 Peeter Joot.  All Rights Reserved.
+% Copyright © 2008 Peeter Joot.  All Rights Reserved.
 % Licenced as described in the file LICENSE under the root directory of this GIT repository.
 %
 %
@@ -397,13 +397,15 @@ Which gives the final transformation rule for the field bivector in tensor form
 \end{equation}
 %
 Returning to the original problem of field Lagrangian invariance, we want to examine how \({F^{ab}}' {F_{ab}}'\) transforms.  That is
-\begin{dmath}
+\begin{equation}
+\begin{aligned}
 {F^{ab}}' {F_{ab}}'
-= {\Lambda_\mu}^a {\Lambda_\nu}^b F^{\mu\nu} {\Lambda^\alpha}_a {\Lambda^\beta}_b F_{\alpha\beta}
-= ({\Lambda_\mu}^a {\Lambda^\alpha}_a) ({\Lambda_\nu}^b {\Lambda^\beta}_b) F^{\mu\nu} F_{\alpha\beta}
-= {\delta_\mu}^\alpha {\delta_\nu}^\beta F^{\mu\nu} F_{\alpha\beta}
-= F^{\mu\nu} F_{\mu\nu}.
-\end{dmath}
+&= {\Lambda_\mu}^a {\Lambda_\nu}^b F^{\mu\nu} {\Lambda^\alpha}_a {\Lambda^\beta}_b F_{\alpha\beta} \\
+&= ({\Lambda_\mu}^a {\Lambda^\alpha}_a) ({\Lambda_\nu}^b {\Lambda^\beta}_b) F^{\mu\nu} F_{\alpha\beta} \\
+&= {\delta_\mu}^\alpha {\delta_\nu}^\beta F^{\mu\nu} F_{\alpha\beta} \\
+&= F^{\mu\nu} F_{\mu\nu}.
+\end{aligned}
+\end{equation}
 %
 which is the desired result.  Since the dot product remainder of the Lagrangian \eqnref{eqn:boostMLag:lagrangian}
 has already been shown to be Lorentz invariant this is sufficient to prove the Lagrangian boost or rotational invariance using tensor algebra.

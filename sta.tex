@@ -40,17 +40,17 @@ Show that this follows from the axiomatic assumptions of geometric algebra, and 
 } % problem
 \makeanswer{problem:lorentzForceCovariant:91}{
 The anticommutator is defined as symmetric sum of products
-\begin{dmath}\label{eqn:lorentzForceCovariant:1040}
+\begin{equation}\label{eqn:lorentzForceCovariant:1040}
 \symmetric{\gamma_\mu}{\gamma_\nu}
 \equiv
 \gamma_\mu \gamma_\nu
 +
 \gamma_\nu \gamma_\mu,
-\end{dmath}
+\end{equation}
 but this is just twice the dot product in its geometric algebra form \( a b = (a b + ba)/2 \).   Observe that the properties of the basis vectors defined in \cref{dfn:lorentzForceCovariant:17} may be summarized as
-\begin{dmath}\label{eqn:lorentzForceCovariant:1060}
+\begin{equation}\label{eqn:lorentzForceCovariant:1060}
 \gamma_\mu \cdot \gamma_\nu = \eta_{\mu\nu},
-\end{dmath}
+\end{equation}
 where \( \eta_{\mu\nu} = \diag(+,-,-,-)
 =
 \begin{bsmallmatrix}
@@ -66,12 +66,12 @@ where \( \eta_{\mu\nu} = \diag(+,-,-,-)
 as claimed.
 
 Similarly, observe that the commutator, defined as the antisymmetric sum of products
-\begin{dmath}\label{eqn:lorentzForceCovariant:1100}
+\begin{equation}\label{eqn:lorentzForceCovariant:1100}
 \antisymmetric{\gamma_\mu}{\gamma_\nu} \equiv
 \gamma_\mu \gamma_\nu
 -
 \gamma_\nu \gamma_\mu,
-\end{dmath}
+\end{equation}
 is twice the wedge product \( a \wedge b = (a b - b a)/2 \).
 This provides geometric identifications for the respective anti-commutator and commutator products respectively
 \begin{equation}\label{eqn:lorentzForceCovariant:1120}
@@ -103,37 +103,41 @@ Since
 for any
 \( \alpha \ne \beta \)
 , any permutation of the factors of \( I \) changes the sign once.  In particular
-\begin{dmath}\label{eqn:lorentzForceCovariant:680}
-I =
+\begin{equation}\label{eqn:lorentzForceCovariant:680}
+\begin{aligned}
+I
+&=
 \gamma_0
 \gamma_1
 \gamma_2
-\gamma_3
-=
+\gamma_3 \\
+&=
 -
 \gamma_1
 \gamma_2
 \gamma_3
-\gamma_0
-=
+\gamma_0 \\
+&=
 -
 \gamma_2
 \gamma_3
 \gamma_1
-\gamma_0
-=
+\gamma_0 \\
+&=
 +
 \gamma_3
 \gamma_2
 \gamma_1
 \gamma_0
 = \tilde{I}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 Using this, we have
-\begin{dmath}\label{eqn:lorentzForceCovariant:700}
+\begin{equation}\label{eqn:lorentzForceCovariant:700}
+\begin{aligned}
 I^2
-= I \tilde{I}
-=
+&= I \tilde{I} \\
+&=
 (
 \gamma_0
 \gamma_1
@@ -144,83 +148,89 @@ I^2
 \gamma_2
 \gamma_1
 \gamma_0
-)
-=
+) \\
+&=
 \lr{\gamma_0}^2
 \lr{\gamma_1}^2
 \lr{\gamma_2}^2
-\lr{\gamma_3}^2
+\lr{\gamma_3}^2 \\
 =
 (+1)
 (-1)
 (-1)
-(-1)
-= -1.
-\end{dmath}
+(-1) \\
+&= -1.
+\end{aligned}
+\end{equation}
 To illustrate the anticommutation property with any vector basis element, consider the following two examples:
-\begin{dmath}\label{eqn:lorentzForceCovariant:720}
-I \gamma_0 =
+\begin{equation}\label{eqn:lorentzForceCovariant:720}
+\begin{aligned}
+I \gamma_0
+&=
 \gamma_0
 \gamma_1
 \gamma_2
 \gamma_3
-\gamma_0
-=
+\gamma_0 \\
+&=
 -
 \gamma_0
 \gamma_0
 \gamma_1
 \gamma_2
-\gamma_3
-=
+\gamma_3 \\
+&=
 -
 \gamma_0 I,
-\end{dmath}
-\begin{dmath}\label{eqn:lorentzForceCovariant:740}
-I \gamma_2 =
+\end{aligned}
+\end{equation}
+\begin{equation}\label{eqn:lorentzForceCovariant:740}
+\begin{aligned}
+   I \gamma_2
+&=
 \gamma_0
 \gamma_1
 \gamma_2
 \gamma_3
-\gamma_2
-=
+\gamma_2 \\
+&=
 -
 \gamma_0
 \gamma_1
 \gamma_2
 \gamma_2
-\gamma_3
-=
+\gamma_3 \\
+&=
 -
 \gamma_2
 \gamma_0
 \gamma_1
 \gamma_2
-\gamma_3
-= -\gamma_2 I.
-\end{dmath}
+\gamma_3 \\
+&= -\gamma_2 I.
+\end{aligned}
+\end{equation}
 A total of three sign swaps is required to ``percolate'' any given \(\gamma_\alpha\) through the factors of \( I \), resulting in an overall sign change of \( -1 \).
 
 For any bivector basis element \( \alpha \ne \beta \)
-\begin{dmath}\label{eqn:lorentzForceCovariant:760}
+\begin{equation}\label{eqn:lorentzForceCovariant:760}
+\begin{aligned}
    I \gamma_\alpha \gamma_\beta
-   =
-   -\gamma_\alpha I \gamma_\beta
-   =
-   +\gamma_\alpha \gamma_\beta I.
-\end{dmath}
+   &= -\gamma_\alpha I \gamma_\beta \\
+   &= +\gamma_\alpha \gamma_\beta I.
+\end{aligned}
+\end{equation}
 
 Similarly
 for any trivector basis element \( \alpha \ne \beta \ne \sigma \)
-\begin{dmath}\label{eqn:lorentzForceCovariant:780}
+\begin{equation}\label{eqn:lorentzForceCovariant:780}
+\begin{aligned}
    I \gamma_\alpha \gamma_\beta \gamma_\sigma
-   =
-   -\gamma_\alpha I \gamma_\beta \gamma_\sigma
-   =
-   +\gamma_\alpha \gamma_\beta I \gamma_\sigma
-   =
-   -\gamma_\alpha \gamma_\beta \gamma_\sigma I.
-\end{dmath}
+   &= -\gamma_\alpha I \gamma_\beta \gamma_\sigma \\
+   &= +\gamma_\alpha \gamma_\beta I \gamma_\sigma \\
+   &= -\gamma_\alpha \gamma_\beta \gamma_\sigma I.
+\end{aligned}
+\end{equation}
 } % answer
 \makedefinition{Reciprocal basis.}{dfn:lorentzForceCovariant:19}{
 The reciprocal basis \( \setlr{ \gamma^0, \gamma^1, \gamma^2, \gamma^3 } \) is defined , such that the property \( \gamma^\alpha \cdot \gamma_\beta = {\delta^\alpha}_\beta \) holds.
@@ -241,19 +251,23 @@ Suppose that a coordinate representation of the following form is assumed
 x = x^\alpha \gamma_\alpha = x_\beta \gamma^\beta.
 \end{equation}
 We wish to determine the representation of the \( x^\alpha \) or \( x_\beta \) coordinates in terms of \( x\) and the basis elements.  Taking the dot product with any standard basis element, we find
-\begin{dmath}\label{eqn:lorentzForceCovariant:840}
+\begin{equation}\label{eqn:lorentzForceCovariant:840}
+\begin{aligned}
 x \cdot \gamma_\mu
-= (x_\beta \gamma^\beta) \cdot \gamma_\mu
-= x_\beta {\delta^\beta}_\mu
-= x_\mu,
-\end{dmath}
+&= (x_\beta \gamma^\beta) \cdot \gamma_\mu \\
+&= x_\beta {\delta^\beta}_\mu \\
+&= x_\mu,
+\end{aligned}
+\end{equation}
 as claimed.  Similarly, dotting with a reciprocal frame vector, we find
-\begin{dmath}\label{eqn:lorentzForceCovariant:860}
+\begin{equation}\label{eqn:lorentzForceCovariant:860}
+\begin{aligned}
 x \cdot \gamma^\mu
-= (x^\beta \gamma_\beta) \cdot \gamma^\mu
-= x^\beta {\delta_\beta}^\mu
-= x^\mu.
-\end{dmath}
+&= (x^\beta \gamma_\beta) \cdot \gamma^\mu \\
+&= x^\beta {\delta_\beta}^\mu \\
+&= x^\mu.
+\end{aligned}
+\end{equation}
 \end{proof}
 Observe that raising or lowering the index of a spatial index toggles the sign of a coordinate, but timelike indexes are left unchanged.
 \begin{equation}\label{eqn:lorentzForceCovariant:880}
@@ -311,14 +325,14 @@ would yield a different set of coordinates.
 %A spacetime split that utilizes the timelike standard basis vector \( \gamma_0 \) provides the view of the coordinates from a fixed observer point of view, with worldline \( c \tau \gamma_0 \).
 
 While the dot and wedge products above provide an effective mechanism to split a four vector into a set of timelike and spacelike quantities, the spatial component of a vector has a bivector representation in STA.  Consider the following coordinate expansion of a spatial vector
-\begin{dmath}\label{eqn:lorentzForceCovariant:1000}
-\Bx =
-x \wedge \gamma_0
-=
-\lr{ x^\mu \gamma_\mu } \wedge \gamma_0
-=
-\sum_{k = 1}^3 x^k \gamma_k \gamma_0.
-\end{dmath}
+\begin{equation}\label{eqn:lorentzForceCovariant:1000}
+\begin{aligned}
+\Bx
+&= x \wedge \gamma_0 \\
+&= \lr{ x^\mu \gamma_\mu } \wedge \gamma_0 \\
+&= \sum_{k = 1}^3 x^k \gamma_k \gamma_0.
+\end{aligned}
+\end{equation}
 \makedefinition{Spatial basis.}{dfn:lorentzForceCovariant:77}{
 We designate \( \Be_i = \gamma_i \gamma_0 \) as the standard basis vectors for \R{3}.
 } % definition
@@ -328,12 +342,14 @@ Because this book a number of purely non-relativistic applications too, the Paul
 Show that the spatial basis \( \setlr{ \Be_1, \Be_2, \Be_3 } \), defined by \cref{dfn:lorentzForceCovariant:77}, is orthonormal.
 } % problem
 \makeanswer{problem:lorentzForceCovariant:33}{
-\begin{dmath}\label{eqn:lorentzForceCovariant:620}
+\begin{equation}\label{eqn:lorentzForceCovariant:620}
+\begin{aligned}
 \Be_i \cdot \Be_j
-= \gpgradezero{ \gamma_i \gamma_0 \gamma_j \gamma_0 }
-= -\gpgradezero{ \gamma_i \gamma_j }
-= - \gamma_i \cdot \gamma_j.
-\end{dmath}
+&= \gpgradezero{ \gamma_i \gamma_0 \gamma_j \gamma_0 } \\
+&= -\gpgradezero{ \gamma_i \gamma_j } \\
+&= - \gamma_i \cdot \gamma_j.
+\end{aligned}
+\end{equation}
 This is zero for all \( i \ne j \), and unity for any \( i = j \).
 } % answer
 \makeproblem{Spatial pseudoscalar.}{problem:lorentzForceCovariant:11}{
@@ -341,17 +357,19 @@ Show that the STA pseudoscalar \( I = \gamma_0 \gamma_1 \gamma_2 \gamma_3 \) equ
 } % problem
 \makeanswer{problem:lorentzForceCovariant:11}{
 The spatial pseudoscalar, expanded in terms of the STA basis vectors, is
-\begin{dmath}\label{eqn:lorentzForceCovariant:1020}
+\begin{equation}\label{eqn:lorentzForceCovariant:1020}
+\begin{aligned}
 I
-= \Be_1 \Be_2 \Be_3
-= \lr{ \gamma_1 \gamma_0 }
+&= \Be_1 \Be_2 \Be_3 \\
+&= \lr{ \gamma_1 \gamma_0 }
   \lr{ \gamma_2 \gamma_0 }
-  \lr{ \gamma_3 \gamma_0 }
-= \lr{ \gamma_1 \gamma_0 } \gamma_2 \lr{ \gamma_0 \gamma_3 } \gamma_0
-= \lr{ -\gamma_0 \gamma_1 } \gamma_2 \lr{ -\gamma_3 \gamma_0 } \gamma_0
-=       \gamma_0 \gamma_1 \gamma_2 \gamma_3 \lr{ \gamma_0 \gamma_0 }
-= \gamma_0 \gamma_1 \gamma_2 \gamma_3,
-\end{dmath}
+  \lr{ \gamma_3 \gamma_0 } \\
+&= \lr{ \gamma_1 \gamma_0 } \gamma_2 \lr{ \gamma_0 \gamma_3 } \gamma_0 \\
+&= \lr{ -\gamma_0 \gamma_1 } \gamma_2 \lr{ -\gamma_3 \gamma_0 } \gamma_0 \\
+&=       \gamma_0 \gamma_1 \gamma_2 \gamma_3 \lr{ \gamma_0 \gamma_0 } \\
+&= \gamma_0 \gamma_1 \gamma_2 \gamma_3,
+\end{aligned}
+\end{equation}
 as claimed.
 } % answer
 \makeproblem{Characteristics of the Pauli matrices.}{problem:lorentzForceCovariant:7}{

@@ -331,7 +331,7 @@ Since
 %
 The squared velocity of each mass is
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:760}
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:760}
 \Abs{ \frac{d\Bu_k}{dt} }^2
 =
 \sum_{r,s = 1}^k
@@ -340,24 +340,25 @@ l_s
 \dot{\Theta}_r^\T
 A_r
 A_s^\T \dot{\Theta}_s.
-\end{dmath}
+\end{equation}
 %
 To see the structure of this product, it is helpful to expand this sum completely, something that is feasible for this \( N = 2 \) case.  First for \( k = 1 \) we have just
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:780}
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:780}
 \Abs{ \frac{d\Bu_1}{dt} }^2
 =
 l_1^2
 \dot{\Theta}_1^\T
 A_1
 A_1^\T \dot{\Theta}_1,
-\end{dmath}
+\end{equation}
 %
 and for \( k = 2 \) we have
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:800}
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:800}
+\begin{aligned}
 \Abs{ \frac{d\Bu_2}{dt} }^2
-=
+&=
 l_1^2
 \dot{\Theta}_1^\T
 A_1
@@ -378,8 +379,8 @@ l_2
 l_1
 \dot{\Theta}_2^\T
 A_2
-A_1^\T \dot{\Theta}_1
-=
+A_1^\T \dot{\Theta}_1 \\
+&=
 \lr{
 l_1^2
 \dot{\Theta}_1^\T
@@ -404,8 +405,8 @@ l_2
 \dot{\Theta}_1^\T
 A_1
 A_2^\T
-} \dot{\Theta}_2
-=
+} \dot{\Theta}_2 \\
+&=
 \begin{bmatrix}
 \dot{\Theta}_1^\T & \dot{\Theta}_2^\T
 \end{bmatrix}
@@ -432,8 +433,8 @@ l_2^2
 A_2
 A_2^\T  \\
 \end{bmatrix}
-\dot{\Theta}_2
-=
+\dot{\Theta}_2 \\
+&=
 \begin{bmatrix}
 \dot{\Theta}_1^\T & \dot{\Theta}_2^\T
 \end{bmatrix}
@@ -445,7 +446,8 @@ l_2 l_1 A_2 A_1^\T & l_2^2 A_2 A_2^\T
 \dot{\Theta}_1 \\
 \dot{\Theta}_2 \\
 \end{bmatrix}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 Observe that these can be summarized by writing
 %
@@ -472,12 +474,14 @@ B_k B_k^\T
 %
 The kinetic energy for particle one is
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:840}
-K_1 = \inv{2} m_1
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:840}
+\begin{aligned}
+   K_1
+   &= \inv{2} m_1
 \dot{\Theta}^\T
 B_1 B_1^\T
-\dot{\Theta}
-=
+\dot{\Theta} \\
+&=
 \dot{\Theta}^\T
 \begin{bmatrix}
 m_1 l_1^2
@@ -486,11 +490,12 @@ A_1^\T  & 0 \\
 0 & 0
 \end{bmatrix}
 \dot{\Theta},
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 and for the second particle
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:860}
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:860}
 K_2 = \inv{2} m_2
 \dot{\Theta}^\T
 B_2 B_2^\T
@@ -503,11 +508,11 @@ l_1^2 A_1 A_1^\T & l_1 l_2 A_1 A_2^\T \\
 l_2 l_1 A_2 A_1^\T & l_2^2 A_2 A_2^\T
 \end{bmatrix}
 \dot{\Theta}.
-\end{dmath}
+\end{equation}
 %
 Summing these we have
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:880}
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:880}
 K =
 \inv{2}
 \dot{\Theta}^\T
@@ -516,17 +521,17 @@ K =
 m_2 l_2 l_1 A_2 A_1^\T & m_2 l_2^2 A_2 A_2^\T
 \end{bmatrix}
 \dot{\Theta}.
-\end{dmath}
+\end{equation}
 %
 For the mass sums let
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:900}
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:900}
 \mu_k \equiv \sum_{j=k}^2 m_j,
-\end{dmath}
+\end{equation}
 %
 so
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:920}
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:920}
 K =
 \inv{2}
 \dot{\Theta}^\T
@@ -535,46 +540,48 @@ K =
 \mu_2 l_2 l_1 A_2 A_1^\T & \mu_2 l_2^2 A_2 A_2^\T
 \end{bmatrix}
 \dot{\Theta}.
-\end{dmath}
+\end{equation}
 %
 If the matrix of quadradic factors is designated \( Q \), so that
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:940}
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:940}
 K =
 \inv{2}
 \dot{\Theta}^\T Q
 \dot{\Theta},
-\end{dmath}
+\end{equation}
 %
 then the (i,j) element of the matrix Q is given by
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:960}
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:960}
 Q_{ij} =
 \mu_{\max(i,j)} l_i l_j A_i A_j^\T.
-\end{dmath}
+\end{equation}
 %
 For the potential energy, things are simplest if that energy is measured from the \( z = 0 \) plane.  The potential energy for mass 1 is
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:980}
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:980}
 T_1 = m_1 g l_1 \cos\theta_1,
-\end{dmath}
+\end{equation}
 %
 and the potential energy for mass 2 is
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:1000}
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:1000}
 T_2 = m_2 g \lr{
 l_1 \cos\theta_1 +
 l_2 \cos\theta_2
 }.
-\end{dmath}
+\end{equation}
 %
 The total potential energy for the system is
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:1020}
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:1020}
+\begin{aligned}
 T
-= (m_1 + m_2) g l_1 \cos\theta_1 + m_2 g l_2 \cos\theta_2
-= \sum_{k = 1}^2 \mu_k g l_k \cos\theta_k.
-\end{dmath}
+&= (m_1 + m_2) g l_1 \cos\theta_1 + m_2 g l_2 \cos\theta_2 \\
+&= \sum_{k = 1}^2 \mu_k g l_k \cos\theta_k.
+\end{aligned}
+\end{equation}
 %
 \subsection{N spherical pendulum.}
 %
@@ -740,18 +747,18 @@ The diagonal blocks are particularly simple and have no \(\phi\) dependence
 It will be convenient to group the Euler-Lagrange equations into a column vector form, with a column vector of generalized coordinates and derivatives, and position and velocity gradients in the associated phase space
 \begin{subequations}
 \label{eqn:multiPendulumSphericalMatrix:230}
-\begin{dmath}
+\begin{equation}
 \Bq               \equiv {\begin{bmatrix} q_r \end{bmatrix}}_r
-\end{dmath}
-\begin{dmath}
+\end{equation}
+\begin{equation}
 \dot{\Bq}         \equiv {\begin{bmatrix} \dot{q}_r \end{bmatrix}}_r
-\end{dmath}
-\begin{dmath}
+\end{equation}
+\begin{equation}
 \grad_{\Bq} \Lq   \equiv {\begin{bmatrix} \PD{q_r}{\Lq} \end{bmatrix}}_r
-\end{dmath}
-\begin{dmath}
+\end{equation}
+\begin{equation}
 \grad_{\dot{\Bq}} \Lq   \equiv {\begin{bmatrix} \PD{\dot{q}_r}{\Lq} \end{bmatrix}}_r.
-\end{dmath}
+\end{equation}
 \end{subequations}
 %
 In this form the Euler-Lagrange equations take the form of a single vector equation
@@ -932,7 +939,8 @@ Observe that the diagonal term has a scalar plus its transpose, so we can drop t
 %
 Now consider one of the pairs of off diagonal terms.  Adding these contributions to \(\PDi{\theta_2}{\Lq}\) of
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:680}
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:680}
+\begin{aligned}
 \inv{2} \mu_2 l_1 l_2
 {\dot{\BTheta}_1}^\T
 \gpgradezeroNoOp{A_1 \PD{\theta_2}{A_2}^\T}
@@ -941,22 +949,23 @@ Now consider one of the pairs of off diagonal terms.  Adding these contributions
 {\dot{\BTheta}_2}^\T
 \gpgradezeroNoOp{\PD{\theta_2}{A_2} A_1^\T}
 \dot{\BTheta}_1
-=
+&=
 \inv{2} \mu_2 l_1 l_2
 {\dot{\BTheta}_1}^\T
 \left(
 A_1 \PD{\theta_2}{A_2}^\T
 +A_1 \PD{\theta_2}{A_2}^\T
 \right)
-\dot{\BTheta}_2
-=
+\dot{\BTheta}_2 \\
+&=
 \mu_2 l_1 l_2
 {\dot{\BTheta}_1}^\T
 \gpgradezeroNoOp{
 A_1 \PD{\theta_2}{A_2}^\T
 }
 \dot{\BTheta}_2.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 This has exactly the same form as the diagonal term, so summing over all terms we get for the position gradient components of the Euler-Lagrange equation just
 %
@@ -1090,8 +1099,9 @@ g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
 %
 Evaluating the Euler-Lagrange equations for the system, we get
 %
-\begin{dmath}\label{eqn:multiPendulumSphericalMatrix:580s}
-0 = \grad_{\BTheta} \Lq - \frac{d}{dt} \left(\grad_{\dot{\BTheta}} \Lq \right) =
+\begin{equation}\label{eqn:multiPendulumSphericalMatrix:580s}
+0
+= \grad_{\BTheta} \Lq - \frac{d}{dt} \left(\grad_{\dot{\BTheta}} \Lq \right) =
 \sum_k
 {\begin{bmatrix}
 \begin{bmatrix}
@@ -1111,7 +1121,7 @@ Evaluating the Euler-Lagrange equations for the system, we get
 \frac{d}{dt} \left(
 \gpgradezeroNoOp{Q} \dot{\BTheta} \right)
 .
-\end{dmath}
+\end{equation}
 %
 Making this explicit requires evaluation of some of the matrix products.  With verification in \nbref{multisphericalPendulum.nb}, those are
 %

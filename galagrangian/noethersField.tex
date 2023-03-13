@@ -173,14 +173,16 @@ learn some quantum mechanics and see how this works.
 %
 \begin{subequations}
 \label{eqn:noetherField:lagrangian}
-\begin{dmath}
+\begin{equation}
+\begin{aligned}
 \LL
-= -\gpgradezero{(\grad \wedge A)^2} + \kappa A \cdot J
-= \partial_\mu A_\nu (\partial^\mu A^\nu - \partial^\nu A^\mu) + \kappa A_\sigma J^\sigma.
-\end{dmath}
-\begin{dmath}
+&= -\gpgradezero{(\grad \wedge A)^2} + \kappa A \cdot J \\
+&= \partial_\mu A_\nu (\partial^\mu A^\nu - \partial^\nu A^\mu) + \kappa A_\sigma J^\sigma.
+\end{aligned}
+\end{equation}
+\begin{equation}
 \kappa = \frac{2}{\epsilon_0 c}.
-\end{dmath}
+\end{equation}
 \end{subequations}
 %
 The rotation and boost invariance of the Maxwell Lagrangian was demonstrated in
@@ -469,12 +471,12 @@ the field form of Noether's law takes the form
 %
 \begin{subequations}
 \label{eqn:noetherField:NoethersVector}
-\begin{dmath}
+\begin{equation}
 J = \gamma_\mu \left( \gamma_\sigma \PD{(\partial_\mu \psi_\sigma)}{\LL} \cdot \PD{\alpha}{\Psi} \right),
-\end{dmath}
-\begin{dmath}
+\end{equation}
+\begin{equation}
 \grad \cdot J = 0.
-\end{dmath}
+\end{equation}
 \end{subequations}
 %
 That is, a current vector with respect to this configuration space divergence is conserved when the Lagrangian field transformation is invariant.

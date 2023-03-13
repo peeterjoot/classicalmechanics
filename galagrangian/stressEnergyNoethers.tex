@@ -1131,14 +1131,16 @@ obvious first candidate due to simplicity.
 %Lagrangian with a single field variable, and the next ones are for multiple field Lagrangians where
 %we will need to think through a generalization of the Noether conservation current equation first.
 %
-\begin{dmath}\label{eqn:stressEnergyNoethers:1120}
+\begin{equation}\label{eqn:stressEnergyNoethers:1120}
+\begin{aligned}
 \LL
-= \inv{2} \partial_\mu \phi \partial^\mu \phi
-= \inv{2} \phi_\mu \phi^\mu
-= \inv{2} \lr{\grad \phi}^2
-= \inv{2}
+&= \inv{2} \partial_\mu \phi \partial^\mu \phi \\
+&= \inv{2} \phi_\mu \phi^\mu \\
+&= \inv{2} \lr{\grad \phi}^2 \\
+&= \inv{2}
 \lr{\dotphi^2 - (\spacegrad \phi)^2}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 In the explicit spacetime split above we have a split into terms that appear
 to correspond to kinetic and potential terms
@@ -2247,7 +2249,7 @@ This provides the adjoint energy momentum tensor, albeit in a form that looks li
 %
 We want to write this as a gradient of something, to determine the conserved quantity.  Getting part way is not too hard.
 %
-\begin{dmath}\label{eqn:stressEnergyNoethers:2540}
+\begin{equation}\label{eqn:stressEnergyNoethers:2540}
 \overbar{T}(\grad)
 = \frac{\epsilon_0}{2}
 \mathLabelBox{
@@ -2256,7 +2258,7 @@ We want to write this as a gradient of something, to determine the conserved qua
 \right)
 }{\(\conj\)}
 + \grad \left( \frac{\epsilon_0}{2} (F^\nu \cdot G_\nu + F \cdot F) - A \cdot J/c \right).
-\end{dmath}
+\end{equation}
 %
 It would be nice if these first two terms \(\conj\) cancel.
 Can we be so lucky?

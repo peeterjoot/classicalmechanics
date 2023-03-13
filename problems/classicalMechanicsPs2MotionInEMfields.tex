@@ -19,26 +19,28 @@ Let us continue studying the Lagrangian of Problem 1 of Homework 1, namely, its 
 %
 Recall the argument for energy conservation, the result of considering time dependence of the Lagrangian.  We have
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:370}
+\begin{equation}\label{eqn:classicalMechanicsPs2:370}
+\begin{aligned}
 \ddt{} \Lq(q_i, \qdot_i, t)
-=
+&=
 \PD{q_i}{\Lq} \PD{t}{q_i}
 +\PD{\qdot_i}{\Lq} \PD{t}{\qdot_i}
-\PD{t}{\Lq}
-=
+\PD{t}{\Lq} \\
+&=
 \left( \ddt{} \PD{\qdot_i}{\Lq} \right) \PD{t}{q_i}
 + \PD{\qdot_i}{\Lq} \PD{t}{\qdot_i}
-+\PD{t}{\Lq}
-=
++\PD{t}{\Lq} \\
+&=
 \ddt{} \left( \PD{\qdot_i}{\Lq} \PD{t}{q_i} \right)
 + \PD{t}{\Lq}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 Rearranging we have the conservation equation
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:390}
+\begin{equation}\label{eqn:classicalMechanicsPs2:390}
 \ddt{} \left( \PD{\qdot_i}{\Lq} \qdot_i -\Lq \right) + \PD{t}{\Lq} = 0.
-\end{dmath}
+\end{equation}
 %
 We define the energy as
 %
@@ -54,24 +56,27 @@ so that the when the Lagrangian is independent of time \(\calE\) is conserved, a
 %
 Application to this problem where our Lagrangian is
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:450}
+\begin{equation}\label{eqn:classicalMechanicsPs2:450}
 \Lq = \inv{2} m \Bv^2 + q \Bv \cdot \BA - q \phi,
-\end{dmath}
+\end{equation}
 %
 we have
-\begin{dmath}\label{eqn:classicalMechanicsPs2:470}
+\begin{equation}\label{eqn:classicalMechanicsPs2:470}
 \PD{\Bv}{\Lq} = m \Bv + q \BA.
-\end{dmath}
+\end{equation}
 %
 so the energy is
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:490}
-\calE =
+\begin{equation}\label{eqn:classicalMechanicsPs2:490}
+\begin{aligned}
+\calE
+&=
 \left( m \Bv + \cancel{q \BA} \right) \cdot \Bv -
-\left( \inv{2} m \Bv^2 + \cancel{q \Bv \cdot \BA} - q \phi \right)
-=
+\left( \inv{2} m \Bv^2 + \cancel{q \Bv \cdot \BA} - q \phi \right) \\
+&=
 \inv{2} m \Bv^2 + q \phi,
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 with an end result of
 \boxedEquation{eqn:classicalMechanicsPs2:491}{
@@ -84,17 +89,15 @@ with an end result of
 \paragraph{With direct computation.}
 There are two ways we can try this.  One is with direct computation of the derivative from \eqnref{eqn:classicalMechanicsPs2:490}
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:1150}
+\begin{equation}\label{eqn:classicalMechanicsPs2:1150}
+\begin{aligned}
 \ddt{\calE}
-=
-\Bv \cdot (m \Ba) + q \ddt{\phi}
-=
-\Bv \cdot \left( q \BE + q \Bv \cross \BB \right) + q \left( \PD{t}{\phi} + \Bv \cdot \spacegrad \phi \right)
-=
-q \Bv \cdot (\BE + \spacegrad \phi) + q \cancel{\Bv \cdot \left(\Bv \cross \BB \right)} + q \PD{t}{\phi}
-=
-q \Bv \cdot \left(-\cancel{\spacegrad \phi} - \PD{t}{\BA} + \cancel{\spacegrad \phi} \right) + q \PD{t}{\phi}.
-\end{dmath}
+&= \Bv \cdot (m \Ba) + q \ddt{\phi} \\
+&= \Bv \cdot \left( q \BE + q \Bv \cross \BB \right) + q \left( \PD{t}{\phi} + \Bv \cdot \spacegrad \phi \right) \\
+&= q \Bv \cdot (\BE + \spacegrad \phi) + q \cancel{\Bv \cdot \left(\Bv \cross \BB \right)} + q \PD{t}{\phi} \\
+&= q \Bv \cdot \left(-\cancel{\spacegrad \phi} - \PD{t}{\BA} + \cancel{\spacegrad \phi} \right) + q \PD{t}{\phi}.
+\end{aligned}
+\end{equation}
 %
 So our end result is
 %
@@ -108,16 +111,14 @@ So our end result is
 %
 Doing it explicitly as above is the hard way.  We can do it from the conservation identity \eqnref{eqn:classicalMechanicsPs2:430} instead
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:590}
+\begin{equation}\label{eqn:classicalMechanicsPs2:590}
+\begin{aligned}
 \ddt{\calE}
-= -\PD{t}{\Lq}
-=
--\PD{t}{} \left(
-\inv{2} m \Bv^2 + q \Bv \cdot \BA - q \phi
-\right)
-=
--q \Bv \cdot \PD{t}{\BA} + q \PD{t}{\phi},
-\end{dmath}
+&= -\PD{t}{\Lq} \\
+&= -\PD{t}{} \lr{ \inv{2} m \Bv^2 + q \Bv \cdot \BA - q \phi } \\
+&= -q \Bv \cdot \PD{t}{\BA} + q \PD{t}{\phi},
+\end{aligned}
+\end{equation}
 %
 as before.
 %
@@ -125,44 +126,39 @@ as before.
 %
 From the relativistic treatment I expected
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:530}
+\begin{equation}\label{eqn:classicalMechanicsPs2:530}
 \ddt{\calE} \questionEquals q \Bv \cdot \BE,
-\end{dmath}
+\end{equation}
 %
 but that's not what we got.  With \(\calE = m \Bv^2/2 + q \phi\), it appears that we get a similar result considering just the Kinetic portion of the energy
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:550}
+\begin{equation}\label{eqn:classicalMechanicsPs2:550}
 \inv{2} m \Bv^2 = \calE - q \phi.
-\end{dmath}
+\end{equation}
 %
 Computing the derivative from above we have
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:1170}
+\begin{equation}\label{eqn:classicalMechanicsPs2:1170}
+\begin{aligned}
 \ddt{}\left(
 \inv{2} m \Bv^2 \right)
-=
--q \Bv \cdot \PD{t}{\BA} + q \PD{t}{\phi}
-- q \ddt{\phi}
-=
--q \Bv \cdot \PD{t}{\BA} + \cancel{q \PD{t}{\phi}}
-- \cancel{q \PD{t}{\phi}} - q \Bv \cdot \spacegrad \phi
-=
-q \Bv \cdot \left(
--\spacegrad \phi
--\PD{t}{\BA} \right),
-\end{dmath}
+&= -q \Bv \cdot \PD{t}{\BA} + q \PD{t}{\phi} - q \ddt{\phi} \\
+&= -q \Bv \cdot \PD{t}{\BA} + \cancel{q \PD{t}{\phi}} - \cancel{q \PD{t}{\phi}} - q \Bv \cdot \spacegrad \phi \\
+&= q \Bv \cdot \left( -\spacegrad \phi -\PD{t}{\BA} \right),
+\end{aligned}
+\end{equation}
 %
 or
-\begin{dmath}\label{eqn:classicalMechanicsPs2:570}
+\begin{equation}\label{eqn:classicalMechanicsPs2:570}
 \ddt{} \left(
 \inv{2} m \Bv^2 \right) = \ddt{} \left( \calE - q \phi \right) = q \Bv \cdot \BE.
-\end{dmath}
+\end{equation}
 %
 Looking back to what we did in the relativistic treatment, I see that my confusion was due to the fact that we actually computed
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:530b}
+\begin{equation}\label{eqn:classicalMechanicsPs2:530b}
 \ddt{\calE_{\mathrm{kin}}} = q \Bv \cdot \BE,
-\end{dmath}
+\end{equation}
 %
 where \(\calE_{\mathrm{kin}} = \gamma m c^2\).  To first order, removing an additive constant, we have \(\gamma m c^2 \approx m \Bv^2/2\), so everything checks out.
 %
@@ -170,17 +166,14 @@ where \(\calE_{\mathrm{kin}} = \gamma m c^2\).  To first order, removing an addi
 %
 The conserved momentum followed from a Noether's argument where we compute
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:610}
+\begin{equation}\label{eqn:classicalMechanicsPs2:610}
+\begin{aligned}
 \frac{d\Lq'}{d\epsilon}
-=
-\PD{q_i}{\Lq'} \PD{\epsilon}{q_i}
-+\PD{\qdot_i'}{\Lq'} \PD{\epsilon}{\qdot_i'}
-=
-\left( \ddt{} \PD{\qdot_i}{\Lq'} \right) \PD{\epsilon}{q_i}
-+\PD{\qdot_i'}{\Lq'} \PD{\epsilon}{\qdot_i'}
-=
-\ddt{} \left( \PD{\qdot_i'}{\Lq'} \PD{\epsilon}{q_i'} \right),
-\end{dmath}
+&= \PD{q_i}{\Lq'} \PD{\epsilon}{q_i} +\PD{\qdot_i'}{\Lq'} \PD{\epsilon}{\qdot_i'} \\
+&= \left( \ddt{} \PD{\qdot_i}{\Lq'} \right) \PD{\epsilon}{q_i} +\PD{\qdot_i'}{\Lq'} \PD{\epsilon}{\qdot_i'} \\
+&= \ddt{} \left( \PD{\qdot_i'}{\Lq'} \PD{\epsilon}{q_i'} \right),
+\end{aligned}
+\end{equation}
 %
 where it has been assumed that a perturbed Lagrangian
 \begin{equation}\label{eqn:classicalMechanicsPs2:610a}
@@ -189,132 +182,116 @@ where it has been assumed that a perturbed Lagrangian
 also satisfies the Euler Lagrange equations using the transformed coordinates.
 With the coordinates transformed by a shift along some constant direction \(\Ba\) as in
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:630}
+\begin{equation}\label{eqn:classicalMechanicsPs2:630}
 \Bx' = \Bx + \epsilon \Ba,
-\end{dmath}
+\end{equation}
 %
 we have \(\PDi{\epsilon}{\Bx'} = \Ba\), so \eqnref{eqn:classicalMechanicsPs2:610} takes the form
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:650}
+\begin{equation}\label{eqn:classicalMechanicsPs2:650}
 \frac{d\Lq'}{d\epsilon} = \ddt{} \left( \PD{\xdot_i}{\Lq'} a_i \right).
-\end{dmath}
+\end{equation}
 %
 Our shifted Lagrangian for spatially homogeneous potentials \(\phi' = \phi\) and \(\BA' = \BA\) is
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:670}
+\begin{equation}\label{eqn:classicalMechanicsPs2:670}
 \Lq' = \inv{2} m {\Bv'}^2 + q \Bv' \cdot \BA - q \phi = \Lq,
-\end{dmath}
+\end{equation}
 %
 but \(\Bv' = \Bv\), so we've just got our canonical momentum \(\BM = \PDi{\xdot_i}{\Lq}\) within the time derivative, and must have for all \(\Ba\)
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:690}
+\begin{equation}\label{eqn:classicalMechanicsPs2:690}
 \ddt{ \BM } \cdot \Ba = 0.
-\end{dmath}
+\end{equation}
 %
 The conserved momentum is then just
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:710}
+\begin{equation}\label{eqn:classicalMechanicsPs2:710}
 \BM = m \Bv + q \BA.
-\end{dmath}
+\end{equation}
 %
 \makesubanswer{Conserved angular momentum.}{classicalMechanicsPs2:problem:1:4}
 %
 Does the conserved angular momentum take the same from as \(\Bx \cross \BM\) as we had in a non-velocity dependent Lagrangian?  We can check using the same Noether arguments using the following coordinate transformation
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:730}
+\begin{equation}\label{eqn:classicalMechanicsPs2:730}
 \Bx' = e^{-\epsilon j/2} \Bx e^{\epsilon j/2},
-\end{dmath}
+\end{equation}
 %
 where \(j = \ucap \wedge \vcap\) is the geometric product of two perpendicular unit vectors, and \(\epsilon\) is the magnitude of the rotation.  This gives us
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:750}
-\frac{d\Bx'}{d\epsilon} =
--\frac{j}{2} e^{-\epsilon j/2} \Bx e^{\epsilon j/2}
-+ e^{-\epsilon j/2} \Bx e^{\epsilon j/2} \frac{j}{2}
-=
-\inv{2} \left( \Bx' j - j \Bx' \right)
-= \Bx' \cdot j.
-\end{dmath}
+\begin{equation}\label{eqn:classicalMechanicsPs2:750}
+\begin{aligned}
+\frac{d\Bx'}{d\epsilon}
+&= -\frac{j}{2} e^{-\epsilon j/2} \Bx e^{\epsilon j/2} + e^{-\epsilon j/2} \Bx e^{\epsilon j/2} \frac{j}{2} \\
+&= \inv{2} \lr{ \Bx' j - j \Bx' } \\
+&= \Bx' \cdot j.
+\end{aligned}
+\end{equation}
 %
 The Noether conservation statement is then
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:770}
+\begin{equation}\label{eqn:classicalMechanicsPs2:770}
 \frac{d\Lq'}{d\epsilon} = \ddt{} \left( \PD{\xdot_i}{\Lq'} \Be_i \cdot (\Bx' \cdot j) \right).
-\end{dmath}
+\end{equation}
 %
 With a static scalar potential \(\phi(\Bx)\) is our Lagrangian rotation invariant?  We have
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:790}
+\begin{equation}\label{eqn:classicalMechanicsPs2:790}
+\begin{aligned}
 \Lq'
-=
-\inv{2} {\Bv'}^2 - q \phi(\Bx')
-=
-\inv{2} {\Bv}^2 - q \phi(\Bx').
-\end{dmath}
+&= \inv{2} {\Bv'}^2 - q \phi(\Bx') \\
+&= \inv{2} {\Bv}^2 - q \phi(\Bx').
+\end{aligned}
+\end{equation}
 %
 With zero vector potential, our kinetic term is invariant since the squared velocity is invariant, but we require \(\phi(\Bx') = \phi(\Bx)\) for total Lagrangian invariance.  We have that if \(\phi(\Bx) = \phi(\Abs{\Bx})\).
 %
 Evaluating the conservation identity \eqnref{eqn:classicalMechanicsPs2:770} at \(\epsilon = 0\) we have
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:810}
+\begin{equation}\label{eqn:classicalMechanicsPs2:810}
 0
 = \ddt{} \left( \BM \cdot (\Bx \cdot j) \right).
-\end{dmath}
+\end{equation}
 %
 We are used to seeing this in dual form using the cross product
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:830}
+\begin{equation}\label{eqn:classicalMechanicsPs2:830}
+\begin{aligned}
 \BM \cdot (\Bx \cdot j)
-=
-\gpgradezero{
-\BM (\Bx \cdot j)
-}
-=
-\inv{2} \gpgradezero{
-\BM \Bx j - \BM j \Bx
-}
-=
-\inv{2} \gpgradezero{
-\BM \Bx j - \Bx \BM j
-}
-=
-\inv{2} \gpgradezero{
-\BM \wedge \Bx - \Bx \wedge \BM
-}
-\cdot j
-=
-\inv{2} \gpgradezero{
-\left( \BM \wedge \Bx - \Bx \wedge \BM \right) \cdot j
-}
-=
-(\BM \wedge \Bx) \cdot j
-=
-I (\BM \cross \Bx) \cdot j.
-\end{dmath}
+&= \gpgradezero{ \BM (\Bx \cdot j) } \\
+&= \inv{2} \gpgradezero{ \BM \Bx j - \BM j \Bx } \\
+&= \inv{2} \gpgradezero{ \BM \Bx j - \Bx \BM j } \\
+&= \inv{2} \gpgradezero{ \BM \wedge \Bx - \Bx \wedge \BM } \cdot j \\
+&= \inv{2} \gpgradezero{ \left( \BM \wedge \Bx - \Bx \wedge \BM \right) \cdot j } \\
+&= (\BM \wedge \Bx) \cdot j \\
+&= I (\BM \cross \Bx) \cdot j.
+\end{aligned}
+\end{equation}
 %
 We are left with
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:910}
+\begin{equation}\label{eqn:classicalMechanicsPs2:910}
 0 = I \frac{d}{dt} (\Bx \cross \BM) \cdot j,
-\end{dmath}
+\end{equation}
 %
 but since \(j\) can be arbitrarily oriented, we have a requirement that
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:930}
+\begin{equation}\label{eqn:classicalMechanicsPs2:930}
 0 = \frac{d}{dt} (\Bx \cross \BM).
-\end{dmath}
+\end{equation}
 %
 This verifies that the our angular momentum is conserved, provided that \(\phi(\Bx) = \phi(\Abs{\Bx})\), and \(\BA = 0\).  With \(\BA = 0\), so that \(\BM = m \Bv + q \BA = m \Bv\) this is just
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:870}
+\begin{equation}\label{eqn:classicalMechanicsPs2:870}
 \Bx \cross \BM = m \Bx \cross \Bv.
-\end{dmath}
+\end{equation}
 %
 Note that the dependency on geometric algebra in the Noether's argument above can probably be eliminated by utilizing a rotational transformation of the form
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:871}
+\begin{equation}\label{eqn:classicalMechanicsPs2:871}
 \Bx' = \Bx + \ncap \cross \Bx.
-\end{dmath}
+\end{equation}
 %
 I'd guess (or perhaps recall if I attended that class), that this was the approach used.
 %
@@ -322,7 +299,7 @@ I'd guess (or perhaps recall if I attended that class), that this was the approa
 %
 %Consider the expansion of our infinisimal rotation, projecting our vector \(\Bx\) into components lying in the plane of rotation \((\Bx \cdot j) j\) and perpendicular to that plane.  We have
 %
-%\begin{dmath}\label{eqn:classicalMechanicsPs2:890}
+%\begin{equation}\label{eqn:classicalMechanicsPs2:890}
 %\Bx'
 %= e^{-j \epsilon/2} \Bx e^{j \epsilon/2}
 %= e^{-j \epsilon/2} ((\Bx \cdot j) j + (\Bx \wedge j) j) e^{j \epsilon/2}
@@ -337,7 +314,7 @@ I'd guess (or perhaps recall if I attended that class), that this was the approa
 %\inv{2} (\Bx (-Ij) - (-Ij) \Bx) (I j) \epsilon
 %=
 %( \Bx \wedge (-Ij) ) j \epsilon.
-%\end{dmath}
+%\end{equation}
 %
 %FIXME: messed up.  try on paper first.  One of the mistakes is that j^2 = -1, I've got +1 above.
 }

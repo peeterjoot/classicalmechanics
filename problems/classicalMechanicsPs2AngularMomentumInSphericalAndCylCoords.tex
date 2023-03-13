@@ -31,7 +31,7 @@ m (y v_z - z v_y) \xcap
 %
 Substituting \(x,y,z\) is easy since we have
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:10}
+\begin{equation}\label{eqn:classicalMechanicsPs2:10}
 \begin{bmatrix}
 x \\
 y \\
@@ -44,7 +44,7 @@ r
 \sin\theta \sin\phi \\
 \cos\theta
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 %
 but the \(\Bv\) substitution requires more work.  We have
 %
@@ -80,14 +80,14 @@ So we have
 %
 \begin{subequations}
 \label{eqn:classicalMechanicsPs2:30a}
-\begin{dmath}\label{eqn:classicalMechanicsPs2:30}
+\begin{equation}\label{eqn:classicalMechanicsPs2:30}
 \Bv =
 \begin{bmatrix}
 \rdot \sin\theta \cos\phi + r \cos\theta \cos\phi \thetadot - r \sin\theta \sin\phi \phidot \\
 \rdot \sin\theta \sin\phi + r \cos\theta \sin\phi \thetadot + r \sin\theta \cos\phi \phidot \\
 \rdot \cos\theta -r \sin\theta \thetadot
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 %
 \begin{equation}\label{eqn:classicalMechanicsPs2:1010}
 \frac{\BM}{mr} =
@@ -211,9 +211,9 @@ m^2 r^4 \lr{  \thetadot^2 + \sin^2\theta \phidot^2  }.
 %
 Observe that we have no \(\rdot\) factors in the angular momentum.  This makes sense when we consider that the total angular momentum is
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:190}
+\begin{equation}\label{eqn:classicalMechanicsPs2:190}
 \BM = m r \rcap \cross \Bv,
-\end{dmath}
+\end{equation}
 %
 so the \(\rdot \rcap\) term of the velocity is necessarily killed.  Let us do that simplification first.  We want our velocity completely specified in a \(\{\rcap, \thetacap, \phicap\}\) basis, and note that our basis vectors are
 %
@@ -242,7 +242,7 @@ so the \(\rdot \rcap\) term of the velocity is necessarily killed.  Let us do th
 %
 We wish to rewrite
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:230}
+\begin{equation}\label{eqn:classicalMechanicsPs2:230}
 \ddt{\rcap} =
 \begin{bmatrix}
 \cos\theta \cos\phi & - \sin\theta \sin\phi \\
@@ -253,7 +253,7 @@ We wish to rewrite
 \thetadot \\
 \phidot
 \end{bmatrix},
-\end{dmath}
+\end{equation}
 %
 in terms of these spherical unit vectors and find
 %
@@ -267,17 +267,17 @@ in terms of these spherical unit vectors and find
 %
 So our velocity is
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:270}
+\begin{equation}\label{eqn:classicalMechanicsPs2:270}
 \Bv = \rdot \rcap + r
 \lr{ \thetadot \thetacap + \phidot \sin\theta \phicap }.
-\end{dmath}
+\end{equation}
 %
 As an aside, now that we know the Euler-Lagrange methods, we could also compute this velocity from the spherical free particle Lagrangian by writing out the canonical momentum in vector form.  We have
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:290}
+\begin{equation}\label{eqn:classicalMechanicsPs2:290}
 \Lq = \inv{2} m
 \lr{  \rdot^2 + r^2 \thetadot^2 + r^2 \phidot^2 \sin^2 \theta }.
-\end{dmath}
+\end{equation}
 %
 We expect our canonical momentum in vector form to be
 %
@@ -314,10 +314,10 @@ r \left( \thetadot \phicap - \phidot \sin\theta \thetacap \right).
 %
 Our total angular momentum in vector form is
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:310}
+\begin{equation}\label{eqn:classicalMechanicsPs2:310}
 \BM = m r^2
 \left( \thetadot \phicap - \phidot \sin\theta \thetacap \right).
-\end{dmath}
+\end{equation}
 %
 Now, should we wish to extract coordinates with respect to \(x,y,z\) we just have to write our vectors \(\phicap\) and \(\thetacap\) in the \(\{\Be_1, \Be_2, \Be_3\}\) basis and have
 %
@@ -379,15 +379,17 @@ Our velocity is
 %
 Here, I have used the Clifford algebra representation of \(\rhocap\) with the plane bivector \(i = \Be_1 \Be_2\).  In coordinates we have
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:110}
+\begin{equation}\label{eqn:classicalMechanicsPs2:110}
 \phicap = \Be_2
 \lr{ \cos\phi + \Be_1 \Be_2 \sin\phi }
  = -\Be_1 \sin\phi + \Be_2 \cos\phi,
-\end{dmath}
+\end{equation}
 %
 so our velocity in matrix form is
-\begin{dmath}\label{eqn:classicalMechanicsPs2:130}
-\Bv = \rhodot
+\begin{equation}\label{eqn:classicalMechanicsPs2:130}
+\begin{aligned}
+   \Bv
+   &= \rhodot
 \begin{bmatrix}
 \cos\phi \\
 \sin\phi \\
@@ -406,14 +408,15 @@ so our velocity in matrix form is
 0 \\
 0 \\
 1
-\end{bmatrix}
-=
+\end{bmatrix} \\
+&=
 \begin{bmatrix}
 \rhodot \cos\phi - \rho \phidot \sin\phi \\
 \rhodot \sin\phi + \rho \phidot \cos\phi \\
 \zdot
 \end{bmatrix}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 For our angular momentum we get
 %
@@ -434,7 +437,7 @@ z \lr{ \rhodot \cos\phi - \rho \phidot \sin\phi } - \rho \cos\phi \zdot \\
 %
 We can now read off \(M_x, M_y, M_z\) by inspection
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:150}
+\begin{equation}\label{eqn:classicalMechanicsPs2:150}
 \BM =
 m
 \begin{bmatrix}
@@ -448,11 +451,11 @@ m
 \\
 \rho^2 \phidot
 \end{bmatrix}.
-\end{dmath}
+\end{equation}
 %
 We also want the (squared) magnitude, which is
 %
-\begin{dmath}\label{eqn:classicalMechanicsPs2:170}
+\begin{equation}\label{eqn:classicalMechanicsPs2:170}
 \BM^2
 %=
 %m^2 \left(
@@ -467,7 +470,7 @@ m^2 \left(
 %+ (z \rho \phidot)^2
 %+ \rho^4 \phidot^2
 \right).
-\end{dmath}
+\end{equation}
 }
 %
 %\vcsinfo

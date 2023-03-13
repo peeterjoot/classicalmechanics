@@ -45,8 +45,10 @@ The surface integral is more interesting.  Let's first look at the area element 
 \begin{equation}\label{eqn:unpackingFundamentalTheorem:80}
 d^2 \Bx = d\Bx_u \wedge d \Bx_v.
 \end{equation}
-Geometrically, this has the area of the parallelogram spanned by \( d\Bx_u \) and \( d\Bx_v \), but weighted by the pseudoscalar of the space.  This is explored algebraically in \cref{problem:unpackingFundamentalTheorem:11} and illustrated in \cref{fig:areaElementParallelograph:areaElementParallelographFig1}.
-\imageFigure{../figures/classicalmechanics/areaElementParallelographFig1}{2D vector space and area element.}{fig:areaElementParallelograph:areaElementParallelographFig1}{0.3}
+Geometrically, this has the area of the parallelogram spanned by \( d\Bx_u \) and \( d\Bx_v \), but weighted by the pseudoscalar of the space.  This is explored algebraically in \cref{problem:unpackingFundamentalTheorem:11} and illustrated in 
+FIXME.
+%\cref{fig:areaElementParallelograph:areaElementParallelographFig1}.
+%\imageFigure{../figures/classicalmechanics/areaElementParallelographFig1}{2D vector space and area element.}{fig:areaElementParallelograph:areaElementParallelographFig1}{0.3}
 \makeproblem{Expansion of 2D area bivector.}{problem:unpackingFundamentalTheorem:11}{
 Let \( \setlr{e_1, e_2} \) be an orthonormal basis for a two dimensional space, with reciprocal frame \( \setlr{e^1, e^2} \).  Expand the area bivector \( d^2 \Bx \) in coordinates relating the bivector to the Jacobian and the pseudoscalar.
 } % problem
@@ -145,7 +147,9 @@ where, for
 - dx^2 e_2
 \lr{ G(x^1(1),x^2) - G(x^1(0), x^2) }.
 \end{equation}
-This is sketched in \cref{fig:lineIntegralAroundRectangle:lineIntegralAroundRectangleFig1}.
+This is sketched in 
+FIXME.
+%\cref{fig:lineIntegralAroundRectangle:lineIntegralAroundRectangleFig1}.
 Since a 2D bivector \( G \) can be written as \( G = I g \), where \( g \) is a scalar, we may write the pseudoscalar case as
 \begin{equation}\label{eqn:unpackingFundamentalTheorem:300}
 \int_S dx^1 dx^2\, \lr{ -e_2 \partial_1 + e_1 \partial_2 } g = \ointclockwise_{\partial S} d\Bx g,
@@ -252,7 +256,7 @@ dA I \lr{ \grad \cdot G },
 \end{equation}
 since \( I \lr{ \grad \wedge G } \) has only a scalar component.
 } % answer
-\imageFigure{../figures/classicalmechanics/lineIntegralAroundRectangleFig1}{Line integral around rectangular boundary.}{fig:lineIntegralAroundRectangle:lineIntegralAroundRectangleFig1}{0.3}
+%\imageFigure{../figures/classicalmechanics/lineIntegralAroundRectangleFig1}{Line integral around rectangular boundary.}{fig:lineIntegralAroundRectangle:lineIntegralAroundRectangleFig1}{0.3}
 \maketheorem{Green's theorem \citep{salas1990coa}.}{thm:unpackingFundamentalTheorem:600}{
 Let \( S \) be a Jordan region with a piecewise-smooth boundary \( C \).
 If \( P, Q \) are continuously differentiable on an open set that contains \( S \), then
@@ -280,7 +284,10 @@ On the RHS we have
 =
 \int dx \lr{ P(x, y_1) - P(x, y_0) } - \int dy \lr{ Q(x_1, y) - Q(x_0, y) }.
 \end{equation}
-This pair of integrals is plotted in \cref{fig:GreensTheoremBoundary:GreensTheoremBoundaryFig1}, from which we see that
+This pair of integrals is plotted in 
+FIXME
+%\cref{fig:GreensTheoremBoundary:GreensTheoremBoundaryFig1}
+, from which we see that
 \cref{eqn:unpackingFundamentalTheorem:620} can be expressed as the line integral, leaving us with
 \begin{equation}\label{eqn:unpackingFundamentalTheorem:640} % dmath
 \int dx dy \lr{ \PD{y}{P} - \PD{x}{Q} }
@@ -300,7 +307,7 @@ dy \lr{ -Q(x_1, y) + Q(x_0, y)},
 which is exactly what we found in \cref{eqn:unpackingFundamentalTheorem:620}.
 %\end{proof}
 } % answer
-\imageFigure{../figures/classicalmechanics/GreensTheoremBoundaryFig1}{Path for Green's theorem.}{fig:GreensTheoremBoundary:GreensTheoremBoundaryFig1}{0.3}
+%\imageFigure{../figures/classicalmechanics/GreensTheoremBoundaryFig1}{Path for Green's theorem.}{fig:GreensTheoremBoundary:GreensTheoremBoundaryFig1}{0.3}
 
 We may also relate multivector gradient integrals in 2D to the normal integral around the boundary of the bounding curve.  That relationship is as follows.
 \maketheorem{2D gradient integrals.}{thm:unpackingFundamentalTheorem:44}{
@@ -396,8 +403,11 @@ Let's look at the geometry of the normal \( I^{-1} \Bx \) in a couple 2D vector 
 \Be_2 \lr{ G(x,y_1) - G(x,y_0) } dx +
 \Be_1 \lr{ G(x_1,y) - G(x_0,y) } dy,
 \end{equation}
-Each of the terms in the integrand above are illustrated in \cref{fig:gradientOutWardsNormal:gradientOutWardsNormalFig1}, and we see that this is a path integral weighted by the outwards normal.
-\imageFigure{../figures/classicalmechanics/gradientOutWardsNormalFig1}{Outwards oriented normal for Euclidean space.}{fig:gradientOutWardsNormal:gradientOutWardsNormalFig1}{0.3}
+Each of the terms in the integrand above are illustrated in 
+FIXME
+%\cref{fig:gradientOutWardsNormal:gradientOutWardsNormalFig1}
+, and we see that this is a path integral weighted by the outwards normal.
+%\imageFigure{../figures/classicalmechanics/gradientOutWardsNormalFig1}{Outwards oriented normal for Euclidean space.}{fig:gradientOutWardsNormal:gradientOutWardsNormalFig1}{0.3}
 \item Spacetime:
 Let \( x(u,v) = u \gamma_0 + v \gamma_1 \), where \( (\gamma_0)^2 = -(\gamma_1)^2 = 1 \).
 With \( u = t, v = x \), the gradient integral over a \([t_0,t_1] \times [x_0,x_1]\)  of spacetime is
@@ -417,8 +427,11 @@ With \( u = t, v = x \), the gradient integral over a \([t_0,t_1] \times [x_0,x_
 .
 \end{aligned}
 \end{equation}
-With \( t \) plotted along the horizontal axis, and \( x \) along the vertical, each of the terms of this integrand is illustrated graphically in \cref{fig:gradientOutWardsNormalSpaceTime:gradientOutWardsNormalSpaceTimeFig1}.  For this mixed signature space, there is no longer any good geometrical characterization of the normal.
-\imageFigure{../figures/classicalmechanics/gradientOutWardsNormalSpaceTimeFig1}{Orientation of the boundary normal for a spacetime basis.}{fig:gradientOutWardsNormalSpaceTime:gradientOutWardsNormalSpaceTimeFig1}{0.3}
+With \( t \) plotted along the horizontal axis, and \( x \) along the vertical, each of the terms of this integrand is illustrated graphically in 
+%\cref{fig:gradientOutWardsNormalSpaceTime:gradientOutWardsNormalSpaceTimeFig1}
+FIXME
+.  For this mixed signature space, there is no longer any good geometrical characterization of the normal.
+%\imageFigure{../figures/classicalmechanics/gradientOutWardsNormalSpaceTimeFig1}{Orientation of the boundary normal for a spacetime basis.}{fig:gradientOutWardsNormalSpaceTime:gradientOutWardsNormalSpaceTimeFig1}{0.3}
 \item Spacelike:
 Let \( x(u,v) = u \gamma_1 + v \gamma_2 \), where \( (\gamma_1)^2 = (\gamma_2)^2 = -1 \).
 With \( u = x, v = y \), the gradient integral over a \([x_0,x_1] \times [y_0,y_1]\) of this space is
@@ -439,10 +452,11 @@ With \( u = x, v = y \), the gradient integral over a \([x_0,x_1] \times [y_0,y_
 \end{aligned}
 \end{equation}
 Referring to
-\cref{fig:gradientOutWardsNormalSpacelikeDirac:gradientOutWardsNormalSpacelikeDiracFig1}.
+%\cref{fig:gradientOutWardsNormalSpacelikeDirac:gradientOutWardsNormalSpacelikeDiracFig1},
+FIXME,
 where the elements of the integrand are illustrated,
 we see that the normal \( I^{-1} d\Bx \) for the boundary of this region can be characterized as inwards.
-\imageFigure{../figures/classicalmechanics/gradientOutWardsNormalSpacelikeDiracFig1}{Inwards oriented normal for a Dirac spacelike basis.}{fig:gradientOutWardsNormalSpacelikeDirac:gradientOutWardsNormalSpacelikeDiracFig1}{0.3}
+%\imageFigure{../figures/classicalmechanics/gradientOutWardsNormalSpacelikeDiracFig1}{Inwards oriented normal for a Dirac spacelike basis.}{fig:gradientOutWardsNormalSpacelikeDirac:gradientOutWardsNormalSpacelikeDiracFig1}{0.3}
 \end{itemize}
 
 %\section{Three dimensional vector spaces.}

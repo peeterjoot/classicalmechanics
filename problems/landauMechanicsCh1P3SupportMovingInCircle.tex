@@ -29,53 +29,54 @@ Attempting a mechanics problem from Landau I get a different answer.  I wrote up
 \makeanswer{landauMechanics:ch1:pr3a}{
 The coordinates of the mass are
 %
-\begin{dmath}\label{eqn:landauMechanicsCh1P3:10}
+\begin{equation}\label{eqn:landauMechanicsCh1P3:10}
 p = a e^{i \gamma t} + i l e^{i\phi},
-\end{dmath}
+\end{equation}
 %
 or in coordinates
 %
-\begin{dmath}\label{eqn:landauMechanicsCh1P3:30}
+\begin{equation}\label{eqn:landauMechanicsCh1P3:30}
 p = (a \cos\gamma t + l \sin\phi, -a \sin\gamma t + l \cos\phi).
-\end{dmath}
+\end{equation}
 %
 The velocity is
 %
-\begin{dmath}\label{eqn:landauMechanicsCh1P3:50}
+\begin{equation}\label{eqn:landauMechanicsCh1P3:50}
 \pdot = (-a \gamma \sin\gamma t + l \phidot \cos\phi, -a \gamma \cos\gamma t - l \phidot \sin\phi),
-\end{dmath}
+\end{equation}
 %
 and in the square
-\begin{dmath}\label{eqn:landauMechanicsCh1P3:70}
-\pdot^2 =
-a^2 \gamma^2 + l^2 \phidot^2 - 2 a \gamma \phidot \sin\gamma t \cos\phi + 2 a \gamma l \phidot \cos \gamma t \sin\phi
-=
-a^2 \gamma^2 + l^2 \phidot^2 + 2 a \gamma l \phidot \sin (\gamma t - \phi).
-\end{dmath}
+\begin{equation}\label{eqn:landauMechanicsCh1P3:70}
+\begin{aligned}
+\pdot^2
+&= a^2 \gamma^2 + l^2 \phidot^2 - 2 a \gamma \phidot \sin\gamma t \cos\phi + 2 a \gamma l \phidot \cos \gamma t \sin\phi \\
+&= a^2 \gamma^2 + l^2 \phidot^2 + 2 a \gamma l \phidot \sin (\gamma t - \phi).
+\end{aligned}
+\end{equation}
 %
 For the potential our height above the minimum is
 %
-\begin{dmath}\label{eqn:landauMechanicsCh1P3:90}
+\begin{equation}\label{eqn:landauMechanicsCh1P3:90}
 h = 2a + l - a (1 -\cos\gamma t) - l \cos\phi = a ( 1 + \cos\gamma t) + l (1 - \cos\phi).
-\end{dmath}
+\end{equation}
 %
 In the potential the total derivative \(\cos\gamma t\) can be dropped, as can all the constant terms, leaving
 %
-\begin{dmath}\label{eqn:landauMechanicsCh1P3:110}
+\begin{equation}\label{eqn:landauMechanicsCh1P3:110}
 U = - m g l \cos\phi,
-\end{dmath}
+\end{equation}
 %
 so by the above the Lagrangian should be (after also dropping the constant term \(m a^2 \gamma^2/2\)
-\begin{dmath}\label{eqn:landauMechanicsCh1P3:130}
+\begin{equation}\label{eqn:landauMechanicsCh1P3:130}
 \Lq =
 \inv{2} m \left( l^2 \phidot^2 + 2 a \gamma l \phidot \sin (\gamma t - \phi) \right) + m g l \cos\phi.
-\end{dmath}
+\end{equation}
 %
 This is almost the stated value in the text
-\begin{dmath}\label{eqn:landauMechanicsCh1P3:150}
+\begin{equation}\label{eqn:landauMechanicsCh1P3:150}
 \Lq =
 \inv{2} m \left( l^2 \phidot^2 + 2 a \gamma^2 l \sin (\gamma t - \phi) \right) + m g l \cos\phi.
-\end{dmath}
+\end{equation}
 %
 We have what appears to be an innocent looking typo (text putting in a \(\gamma\) instead of a \(\phidot\)), but the subsequent text also didn't make sense.  That referred to the omission of the total derivative \(m l a \gamma \cos( \phi - \gamma t)\), which isn't even a term that I have in my result.
 

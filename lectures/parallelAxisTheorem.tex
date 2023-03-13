@@ -30,23 +30,23 @@
 %
 We can express the kinetic energy as
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:10}
+\begin{equation}\label{eqn:parallelAxisTheorem:10}
 T = \inv{2} \sum_{i, j = 1}^3 \Omega_i I_{i j} \Omega_j,
-\end{dmath}
+\end{equation}
 %
 where
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:30}
+\begin{equation}\label{eqn:parallelAxisTheorem:30}
 I_{i j} = \sum_a m_a \left( \delta_{i j} \Br_a^2 - r_{a_i} r_{a_j} \right).
-\end{dmath}
+\end{equation}
 %
 Here \(a\) is a sum over all particles in the body.
 
 If the body is continuous and \(\rho(\Br)\) is the mass density then the mass inside is
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:50}
+\begin{equation}\label{eqn:parallelAxisTheorem:50}
 m = \int d^3 \Br \rho(\Br),
-\end{dmath}
+\end{equation}
 %
 where we integrate over a volume element as in \cref{fig:parallelAxisTheorem:parallelAxisTheoremFig1}.
 %
@@ -54,10 +54,10 @@ where we integrate over a volume element as in \cref{fig:parallelAxisTheorem:par
 
 For this continuous case we have
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:70}
+\begin{equation}\label{eqn:parallelAxisTheorem:70}
 I_{i j}
 = \int_V d^3 r \rho(\Br) \left( \delta_{i j} \Br^2 - r_{i} r_{j} \right).
-\end{dmath}
+\end{equation}
 %
 Another property of \(I_{i j}\) is the \textunderline{parallel axis theorem} (or as it is known in Europe and perhaps elsewhere, as the ``Steiner theorem'').
 
@@ -67,34 +67,36 @@ Let's consider a change of origin as in \cref{fig:parallelAxisTheorem:parallelAx
 %
 We write
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:90}
+\begin{equation}\label{eqn:parallelAxisTheorem:90}
 \Br_a = \Br_a' + \Bb,
-\end{dmath}
+\end{equation}
 %
 and \(I_{i j}'\) for the inertia tensor with respect to \(O'\).  Write
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:110}
+\begin{equation}\label{eqn:parallelAxisTheorem:110}
 \Br_{a_i} = \Br_{a_i}' + \Bb_i,
-\end{dmath}
+\end{equation}
 %
 or
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:130}
+\begin{equation}\label{eqn:parallelAxisTheorem:130}
 \Br_{a_i}' = \Br_{a_i} - \Bb_i,
-\end{dmath}
+\end{equation}
 %
 so that
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:150}
-I_{i j}' =
+\begin{equation}\label{eqn:parallelAxisTheorem:150}
+\begin{aligned}
+I_{i j}'
+&=
 \sum_a m_a \left(
 \delta_{ij} \Br_a^2 - r_{a_i}' r_{b_j}'
-\right)
-=
+\right) \\
+&=
 \sum_a m_a \left(
 \delta_{ij} (\Br_a - \Bb)^2 - (r_{a_i} - b_i) (r_{b_j} - b_j)
-\right)
-=
+\right) \\
+&=
 \sum_a m_a \left(
 \delta_{ij} (
 r_{a_k}
@@ -107,33 +109,37 @@ r_{a_k}
 + r_{a_i} b_j
 + r_{b_j} b_i
 \right),
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 but, by definition of center of mass, we have
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:170}
+\begin{equation}\label{eqn:parallelAxisTheorem:170}
 \sum_a m_a r_{a_i}' = 0,
-\end{dmath}
+\end{equation}
 %
 so
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:190}
-I_{i j}' =
+\begin{equation}\label{eqn:parallelAxisTheorem:190}
+\begin{aligned}
+I_{i j}'
+&=
 \sum_a m_a \left(
 \delta_{i j} \Br_a^2 - r_{a_i} r_{a_j} - \cdots
-\right)
-= I_{i j}
+\right) \\
+&= I_{i j}
 - 2 \cancel{ \left( \sum_a m_a \Br_a \cdot \Bb \delta_{i j} \right) }
 + \mu \left( \delta_{i j} \Bb^2 - b_i b_j \right).
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 This is
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:210}
+\begin{equation}\label{eqn:parallelAxisTheorem:210}
 I_{i j}'
 = I_{i j}^{\mathrm{CM}}
 + \mu \left( \delta_{i j} \Bb^2 - b_i b_j \right).
-\end{dmath}
+\end{equation}
 %
 \paragraph{Some examples.}
 %
@@ -165,21 +171,23 @@ so
 %
 The kinetic energy is
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:290}
+\begin{equation}\label{eqn:parallelAxisTheorem:290}
+\begin{aligned}
 T
-= \inv{2} \mu V_{\mathrm{CM}}^2 + \inv{2} \Omega_3^2 I_{33}
-= \inv{2} \mu V_{\mathrm{CM}}^2 + \inv{2} \Omega^2 I.
-\end{dmath}
+&= \inv{2} \mu V_{\mathrm{CM}}^2 + \inv{2} \Omega_3^2 I_{33} \\
+&= \inv{2} \mu V_{\mathrm{CM}}^2 + \inv{2} \Omega^2 I.
+\end{aligned}
+\end{equation}
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:310}
+\begin{equation}\label{eqn:parallelAxisTheorem:310}
 V_{\mathrm{CM}} = \frac{\Delta x}{\Delta t} = R \frac{\Delta \phi}{\Delta t} = R \Omega = R \phidot,
-\end{dmath}
+\end{equation}
 %
 so
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:330}
+\begin{equation}\label{eqn:parallelAxisTheorem:330}
 T = \inv{2} \mu R^2 \phidot^2 + \inv{2} \phidot^2 I.
-\end{dmath}
+\end{equation}
 %
 (can calculate \(I\) : See notes or derive).
 
@@ -201,17 +209,17 @@ Recall for a general body as in \cref{fig:parallelAxisTheorem:parallelAxisTheore
 %
 Write
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:350}
+\begin{equation}\label{eqn:parallelAxisTheorem:350}
 \Br = \Ba + \Br',
-\end{dmath}
+\end{equation}
 %
 and
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:371}
+\begin{equation}\label{eqn:parallelAxisTheorem:371}
 \Bv
 = \BV_{\mathrm{CM}}
 + \BOmega \cross \Br,
-\end{dmath}
+\end{equation}
 %
 or
 \begin{equation}\label{eqn:parallelAxisTheorem:370}
@@ -246,50 +254,53 @@ Coordinates for this problem as in \cref{fig:parallelAxisTheorem:parallelAxisThe
 %
 Using \eqnref{eqn:parallelAxisTheorem:370} we have
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:390}
+\begin{equation}\label{eqn:parallelAxisTheorem:390}
 V_{\mathrm{CM}} = \BOmega \cross \Bb = \phidot \zcap \cross \Bb,
-\end{dmath}
+\end{equation}
 %
 where this followed from
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:410}
+\begin{equation}\label{eqn:parallelAxisTheorem:410}
 \Bv = \BOmega \cross \Br'.
-\end{dmath}
+\end{equation}
 %
 Here \(\Br'\) is the vector from axes of momentary rotation to point.
 
 Our kinetic energy is
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:430}
+\begin{equation}\label{eqn:parallelAxisTheorem:430}
 T = \inv{2} \mu V_{\mathrm{CM}}^2 + \frac{I}{2} \phidot^2,
-\end{dmath}
+\end{equation}
 %
 and our coordinates are \cref{fig:parallelAxisTheorem:parallelAxisTheoremFig13}.
 %
 \imageFigure{../figures/classicalmechanics/parallelAxisTheoremFig13}{Coordinates.}{fig:parallelAxisTheorem:parallelAxisTheoremFig13}{0.3}
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:450}
+\begin{equation}\label{eqn:parallelAxisTheorem:450}
 \BV_{\mathrm{CM}} = \BOmega \cross \Bb.
-\end{dmath}
+\end{equation}
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:470}
+\begin{equation}\label{eqn:parallelAxisTheorem:470}
+\begin{aligned}
 \Abs{\BV_{\mathrm{CM}}}
-= \Abs{\phidot} \Abs{\Bb}
-= \phidot \Abs{\Bb} \times \mbox{moving unit vector in x y plane}
-= \phidot \sqrt{ \Ba^2 + \BR^2 + 2 \Ba \cdot \BR }
-= \phidot \sqrt{ a^2 + R^2 + 2 a R \cos( \pi - \phi) }.
-\end{dmath}
+&= \Abs{\phidot} \Abs{\Bb} \\
+&= \phidot \Abs{\Bb} \times \mbox{moving unit vector in x y plane} \\
+&= \phidot \sqrt{ \Ba^2 + \BR^2 + 2 \Ba \cdot \BR } \\
+&= \phidot \sqrt{ a^2 + R^2 + 2 a R \cos( \pi - \phi) }.
+\end{aligned}
+\end{equation}
 %
 For
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:490}
+\begin{equation}\label{eqn:parallelAxisTheorem:490}
+\begin{aligned}
 T
-= \frac{\mu}{2} \phidot^2
+&= \frac{\mu}{2} \phidot^2
 \left(
 a^2 + R^2 + 2 a R \cos( \pi - \phi)
 \right)
-+ \frac{I}{2} \phidot^2
-=
++ \frac{I}{2} \phidot^2 \\
+&=
 \inv{2} \phidot^2
 \left(
 \mu
@@ -298,16 +309,17 @@ a^2 + R^2 + 2 a R \cos( \pi - \phi)
 \right)
 + I
 \right),
-\end{dmath}
+\end{aligned}
+\end{equation}
 %
 and
 %
-\begin{dmath}\label{eqn:parallelAxisTheorem:510}
+\begin{equation}\label{eqn:parallelAxisTheorem:510}
 \Lq = T - \mu g
 \mathLabelBox{
 ( R - a \cos\phi )
 }{Height of CM above plane}.
-\end{dmath}
+\end{equation}
 
 This gravity portion accounts for the torque producing interesting effects.
 %

@@ -19,9 +19,9 @@ Note that some of the prerequisite ideas and auxiliary details are presented as 
 \section{Euler-Lagrange equations.}
 I'll start at ground zero, with the derivation of the relativistic form of the Euler-Lagrange equations from the action.
 A relativistic action for a single particle system has the form
-\begin{dmath}\label{eqn:lorentzForceCovariant:20}
+\begin{equation}\label{eqn:lorentzForceCovariant:20}
 S = \int d\tau L(x, \dot{x}),
-\end{dmath}
+\end{equation}
 where
 \( x \) is the spacetime coordinate, \( \dot{x} = dx/d\tau \) is the four-velocity,
 and \( \tau \) is proper time.
@@ -44,24 +44,26 @@ The action is extremized when \( \delta S = 0 \), or when \( \delta L = 0 \).  T
 \begin{proof}
 Let \( \epsilon = \delta x \), and expand the
 Lagrangian in Taylor series to first order
-\begin{dmath}\label{eqn:lorentzForceCovariant:60}
-S \rightarrow
-S + \delta S
-= \int d\tau L( x + \epsilon, \dot{x} + \dot{\epsilon})
-=
+\begin{equation}\label{eqn:lorentzForceCovariant:60}
+\begin{aligned}
+S 
+&\rightarrow S + \delta S \\
+&= \int d\tau L( x + \epsilon, \dot{x} + \dot{\epsilon}) \\
+&=
 \int d\tau \lr{
    L(x, \dot{x}) + \epsilon \cdot \grad L + \dot{\epsilon} \cdot \grad_v L
 }.
-\end{dmath}
+\end{aligned}
+\end{equation}
 Subtracting off \( S \) and integrating by parts, leaves
-\begin{dmath}\label{eqn:lorentzForceCovariant:80}
+\begin{equation}\label{eqn:lorentzForceCovariant:80}
 \delta S =
 \int d\tau \epsilon \cdot \lr{
    \grad L - \frac{d}{d\tau} \grad_v L
 }
 +
 \int d\tau \frac{d}{d\tau} (\grad_v L ) \cdot \epsilon.
-\end{dmath}
+\end{equation}
 The boundary integral
 \begin{equation}\label{eqn:lorentzForceCovariant:100}
 \int d\tau \frac{d}{d\tau} (\grad_v L ) \cdot \epsilon
@@ -69,12 +71,12 @@ The boundary integral
 \evalbar{(\grad_v L ) \cdot \epsilon}{\Delta \tau} = 0,
 \end{equation}
 is zero since the variation \( \epsilon \) is required to vanish on the boundaries.  So, if \( \delta S = 0 \), we must have
-\begin{dmath}\label{eqn:lorentzForceCovariant:120}
+\begin{equation}\label{eqn:lorentzForceCovariant:120}
 0 =
 \int d\tau \epsilon \cdot \lr{
    \grad L - \frac{d}{d\tau} \grad_v L
 },
-\end{dmath}
+\end{equation}
 for all variations \( \epsilon \).  Clearly, this requires that
 \begin{equation}\label{eqn:lorentzForceCovariant:140}
 \delta L = \grad L - \frac{d}{d\tau} (\grad_v L) = 0,
@@ -95,17 +97,16 @@ Observe that this is identical to the statement of \cref{thm:lorentzForceCovaria
 \makeanswer{problem:lorentzForceCovariant:1}{
 %\begin{answerproof}
 In terms of coordinates, the first order Taylor expansion of the action is
-\begin{dmath}\label{eqn:lorentzForceCovariant:180}
-S \rightarrow
-S + \delta S
-= \int d\tau L( x^\alpha + \epsilon^\alpha, \dot{x}^\alpha + \dot{\epsilon}^\alpha)
-=
-\int d\tau \lr{
-L(x^\alpha, \dot{x}^\alpha) + \epsilon^\mu \PD{x^\mu}{L} + \dot{\epsilon}^\mu \PD{\dot{x}^\mu}{L}
-}.
-\end{dmath}
+\begin{equation}\label{eqn:lorentzForceCovariant:180}
+\begin{aligned}
+S 
+&\rightarrow S + \delta S \\
+&= \int d\tau L( x^\alpha + \epsilon^\alpha, \dot{x}^\alpha + \dot{\epsilon}^\alpha) \\
+&= \int d\tau \lr{ L(x^\alpha, \dot{x}^\alpha) + \epsilon^\mu \PD{x^\mu}{L} + \dot{\epsilon}^\mu \PD{\dot{x}^\mu}{L} }.
+\end{aligned}
+\end{equation}
 As before, we integrate by parts to separate out a pure boundary term
-\begin{dmath}\label{eqn:lorentzForceCovariant:200}
+\begin{equation}\label{eqn:lorentzForceCovariant:200}
 \delta S =
 \int d\tau \epsilon^\mu
 \lr{
@@ -115,11 +116,11 @@ As before, we integrate by parts to separate out a pure boundary term
 \int d\tau \frac{d}{d\tau} \lr{
    \epsilon^\mu \PD{\dot{x}^\mu}{L}
 }.
-\end{dmath}
+\end{equation}
 The boundary term is killed since \( \epsilon^\mu = 0 \) at the end points of the action integral.  We conclude that extremization of the action (\( \delta S = 0 \), for all \( \epsilon^\mu \)) requires
-\begin{dmath}\label{eqn:lorentzForceCovariant:220}
+\begin{equation}\label{eqn:lorentzForceCovariant:220}
    \PD{x^\mu}{L} - \frac{d}{d\tau} \PD{\dot{x}^\mu}{L} = 0.
-\end{dmath}
+\end{equation}
 %\end{answerproof}
 } % answer
 %\subsection{Solutions.}
@@ -139,35 +140,40 @@ where \( p = m v \) is the proper momentum, \( F \) is the Faraday bivector \( F
 } % theorem
 \begin{proof}
 To make life easier, let's take advantage of the linearity of the Lagrangian, and break it into the free particle Lagrangian \( L_0 = (1/2) m v^2 \) and a potential term \( L_1 = q A \cdot v/c \).  For the free particle case we have
-\begin{dmath}\label{eqn:lorentzForceCovariant:240}
+\begin{equation}\label{eqn:lorentzForceCovariant:240}
+\begin{aligned}
 \delta L_0
-= \grad L_0 - \frac{d}{d\tau} (\grad_v L_0)
-=           - \frac{d}{d\tau} (m v)
-= - \frac{dp}{d\tau}.
-\end{dmath}
+&= \grad L_0 - \frac{d}{d\tau} (\grad_v L_0) \\
+&=           - \frac{d}{d\tau} (m v) \\
+&= - \frac{dp}{d\tau}.
+\end{aligned}
+\end{equation}
 For the potential contribution we have
-\begin{dmath}\label{eqn:lorentzForceCovariant:260}
+\begin{equation}\label{eqn:lorentzForceCovariant:260}
+\begin{aligned}
 \delta L_1
-= \grad L_1 - \frac{d}{d\tau} (\grad_v L_1)
-= \frac{q}{c} \lr{ \grad (A \cdot v) - \frac{d}{d\tau} \lr{ \grad_v (A \cdot v)} }
-= \frac{q}{c} \lr{ \grad (A \cdot v) - \frac{dA}{d\tau} }.
-\end{dmath}
+&= \grad L_1 - \frac{d}{d\tau} (\grad_v L_1) \\
+&= \frac{q}{c} \lr{ \grad (A \cdot v) - \frac{d}{d\tau} \lr{ \grad_v (A \cdot v)} } \\
+&= \frac{q}{c} \lr{ \grad (A \cdot v) - \frac{dA}{d\tau} }.
+\end{aligned}
+\end{equation}
 The proper time derivative can be evaluated using the chain rule
 \begin{equation}\label{eqn:lorentzForceCovariant:280}
+\begin{aligned}
 \frac{dA}{d\tau}
-=
-\frac{\partial x^\mu}{\partial \tau} \partial_\mu A
-= (v \cdot \grad) A.
+&= \frac{\partial x^\mu}{\partial \tau} \partial_\mu A \\
+&= (v \cdot \grad) A.
+\end{aligned}
 \end{equation}
 Putting all the pieces back together we have
-\begin{dmath}\label{eqn:lorentzForceCovariant:300}
-0 =
-\delta L
-=
--\frac{dp}{d\tau} + \frac{q}{c} \lr{ \grad (A \cdot v) -  (v \cdot \grad) A }
-=
--\frac{dp}{d\tau} + \frac{q}{c} \lr{ \grad \wedge A } \cdot v.
-\end{dmath}
+\begin{equation}\label{eqn:lorentzForceCovariant:300}
+\begin{aligned}
+0 
+&= \delta L \\
+&= -\frac{dp}{d\tau} + \frac{q}{c} \lr{ \grad (A \cdot v) -  (v \cdot \grad) A } \\
+&= -\frac{dp}{d\tau} + \frac{q}{c} \lr{ \grad \wedge A } \cdot v.
+\end{aligned}
+\end{equation}
 \end{proof}
 \makeproblem{Gradient of a squared position vector.}{problem:lorentzForceCovariant:13}{
 Show that
@@ -183,33 +189,25 @@ It should be clear that the same ideas can be used for the velocity gradient, wh
 \makeanswer{problem:lorentzForceCovariant:13}{
 %\begin{answerproof}
 The first identity follows easily by expansion in coordinates
-\begin{dmath}\label{eqn:lorentzForceCovariant:320}
+\begin{equation}\label{eqn:lorentzForceCovariant:320}
+\begin{aligned}
 \grad (a \cdot x)
-=
-\gamma^\mu \partial_\mu a_\alpha x^\alpha
-=
-\gamma^\mu a_\alpha \delta_\mu^\alpha
-=
-\gamma^\mu a_\mu
-=
-a.
-\end{dmath}
+&= \gamma^\mu \partial_\mu a_\alpha x^\alpha \\
+&= \gamma^\mu a_\alpha \delta_\mu^\alpha \\
+&= \gamma^\mu a_\mu \\
+&= a.
+\end{aligned}
+\end{equation}
 The second identity follows by linearity of the gradient
-\begin{dmath}\label{eqn:lorentzForceCovariant:340}
+\begin{equation}\label{eqn:lorentzForceCovariant:340}
+\begin{aligned}
 \grad x^2
-=
-\grad (x \cdot x)
-=
-\evalbar{\lr{\grad (x \cdot a)}}{a = x}
-+
-\evalbar{\lr{\grad (b \cdot x)}}{b = x}
-=
-\evalbar{a}{a = x}
-+
-\evalbar{b}{b = x}
-=
-2x.
-\end{dmath}
+&= \grad (x \cdot x) \\
+&= \evalbar{\lr{\grad (x \cdot a)}}{a = x} + \evalbar{\lr{\grad (b \cdot x)}}{b = x} \\
+&= \evalbar{a}{a = x} + \evalbar{b}{b = x} \\
+&= 2x.
+\end{aligned}
+\end{equation}
 %\end{answerproof}
 } % answer
 
@@ -224,82 +222,85 @@ where the antisymmetric Faraday tensor is defined as \( F^{\mu\nu} = \partial^\m
 } % theorem
 \begin{proof}
 We have only to dot both sides with \( \gamma^\mu \).  On the left we have
-\begin{dmath}\label{eqn:lorentzForceCovariant:380}
+\begin{equation}\label{eqn:lorentzForceCovariant:380}
 \gamma^\mu \cdot \frac{dp}{d\tau}
 =
 \frac{dp^\mu}{d\tau}.
-\end{dmath}
+\end{equation}
 On the right, we have
-\begin{dmath}\label{eqn:lorentzForceCovariant:400}
+\begin{equation}\label{eqn:lorentzForceCovariant:400}
+\begin{aligned}
 \gamma^\mu \cdot \lr{ \frac{q}{c} F \cdot v }
-=
- \frac{q}{c}  (( \grad \wedge A ) \cdot v ) \cdot \gamma^\mu
-=
- \frac{q}{c}  ( \grad ( A \cdot v ) - (v \cdot \grad) A ) \cdot \gamma^\mu
-=
- \frac{q}{c}  \lr{ (\partial^\mu A^\nu) v_\nu - v_\nu \partial^\nu A^\mu }
-=
- \frac{q}{c} F^{\mu\nu} v_\nu.
-\end{dmath}
+&= \frac{q}{c}  (( \grad \wedge A ) \cdot v ) \cdot \gamma^\mu \\
+&= \frac{q}{c}  ( \grad ( A \cdot v ) - (v \cdot \grad) A ) \cdot \gamma^\mu \\
+&= \frac{q}{c}  \lr{ (\partial^\mu A^\nu) v_\nu - v_\nu \partial^\nu A^\mu } \\
+&= \frac{q}{c} F^{\mu\nu} v_\nu.
+\end{aligned}
+\end{equation}
 \end{proof}
 \makeproblem{Tensor expansion of \(F\).}{problem:lorentzForceCovariant:37}{
 An alternate way to demonstrate \cref{thm:lorentzForceCovariant:360} is to first expand \( F = \grad \wedge A \) in terms of coordinates, an expansion that can be expressed in terms of a second rank tensor antisymmetric tensor \( F^{\mu\nu} \).  Find that expansion, and re-evaluate the dot products of \cref{eqn:lorentzForceCovariant:400} using that.
 } % problem
 \makeanswer{problem:lorentzForceCovariant:37}{
-\begin{dmath}\label{eqn:lorentzForceCovariant:900}
-F =
-\grad \wedge A
-=
-\lr{ \gamma_\mu \partial^\mu } \wedge \lr{ \gamma_\nu A^\nu }
-=
-\lr{ \gamma_\mu \wedge \gamma_\nu } \partial^\mu A^\nu.
-\end{dmath}
+\begin{equation}\label{eqn:lorentzForceCovariant:900}
+\begin{aligned}
+F 
+&= \grad \wedge A \\
+&= \lr{ \gamma_\mu \partial^\mu } \wedge \lr{ \gamma_\nu A^\nu } \\
+&= \lr{ \gamma_\mu \wedge \gamma_\nu } \partial^\mu A^\nu.
+\end{aligned}
+\end{equation}
 To this we can use the usual tensor trick (add self to self, change indexes, and divide by two), to give
-\begin{dmath}\label{eqn:lorentzForceCovariant:920}
-F =
+\begin{equation}\label{eqn:lorentzForceCovariant:920}
+\begin{aligned}
+F 
+&=
 \inv{2} \lr{
 \lr{ \gamma_\mu \wedge \gamma_\nu } \partial^\mu A^\nu
 +
 \lr{ \gamma_\nu \wedge \gamma_\mu } \partial^\nu A^\mu
-}
-=
+} \\
+&=
 \inv{2}
 \lr{ \gamma_\mu \wedge \gamma_\nu } \lr{
 \partial^\mu A^\nu
 -
 \partial^\nu A^\mu
 },
-\end{dmath}
+\end{aligned}
+\end{equation}
 which is just
-\begin{dmath}\label{eqn:lorentzForceCovariant:940}
+\begin{equation}\label{eqn:lorentzForceCovariant:940}
 F =
 \inv{2} \lr{ \gamma_\mu \wedge \gamma_\nu } F^{\mu\nu}.
-\end{dmath}
+\end{equation}
 Now, let's expand \( (F \cdot v) \cdot \gamma^\mu \) to compare to the earlier expansion in terms of \( \grad \) and \( A \).
-\begin{dmath}\label{eqn:lorentzForceCovariant:960}
+\begin{equation}\label{eqn:lorentzForceCovariant:960}
+\begin{aligned}
 (F \cdot v) \cdot \gamma^\mu
-=
+&=
 \inv{2}
 F^{\alpha\nu}
-\lr{ \lr{ \gamma_\alpha \wedge \gamma_\nu } \cdot \lr{ \gamma^\beta v_\beta } } \cdot \gamma^\mu
-=
+\lr{ \lr{ \gamma_\alpha \wedge \gamma_\nu } \cdot \lr{ \gamma^\beta v_\beta } } \cdot \gamma^\mu \\
+&=
 \inv{2}
 F^{\alpha\nu} v_\beta
 \lr{
    {\delta_\nu}^\beta {\gamma_\alpha}^\mu
 -
    {\delta_\alpha}^\beta {\gamma_\nu}^\mu
-}
-=
+} \\
+&=
 \inv{2}
 \lr{
    F^{\mu\beta} v_\beta
    -
    F^{\beta\mu} v_\beta
-}
-=
+} \\
+&=
 F^{\mu\nu} v_\nu.
-\end{dmath}
+\end{aligned}
+\end{equation}
 This alternate expansion illustrates some of the connectivity between the geometric algebra approach and the traditional tensor formalism.
 } % answer
 \makeproblem{Lorentz force direct tensor derivation.}{problem:lorentzForceCovariant:420}{
@@ -318,31 +319,33 @@ Euler-Lagrange equations as
 0 = \delta_\mu L = \PD{x^\mu}{L} - \frac{d}{d\tau} \PD{\dot{x}^\mu}{L}.
 \end{equation}
 Operating on the kinetic term of the Lagrangian, we have
-\begin{dmath}\label{eqn:lorentzForceCovariant:480}
+\begin{equation}\label{eqn:lorentzForceCovariant:480}
 \delta_\mu L_0 = - \frac{d}{d\tau} m v_\mu.
-\end{dmath}
+\end{equation}
 For the potential term
-\begin{dmath}\label{eqn:lorentzForceCovariant:500}
+\begin{equation}\label{eqn:lorentzForceCovariant:500}
+\begin{aligned}
 \delta_\mu L_1
-=
+&=
 \frac{q}{c} \lr{
 v_\nu \PD{x^\mu}{A^\nu} - \frac{d}{d\tau} A_\mu
-}
-=
+} \\
+&=
 \frac{q}{c} \lr{
 v_\nu \PD{x^\mu}{A^\nu} - \frac{dx_\alpha}{d\tau} \PD{x_\alpha}{ A_\mu }
-}
-=
+} \\
+&=
 \frac{q}{c} v^\nu \lr{
 \partial_\mu A_\nu - \partial_\nu A_\mu
-}
-=
+} \\
+&=
 \frac{q}{c} v^\nu F_{\mu\nu}.
-\end{dmath}
+\end{aligned}
+\end{equation}
 Putting the pieces together gives
-\begin{dmath}\label{eqn:lorentzForceCovariant:520}
+\begin{equation}\label{eqn:lorentzForceCovariant:520}
 \frac{d}{d\tau} (m v_\mu) = \frac{q}{c} v^\nu F_{\mu\nu},
-\end{dmath}
+\end{equation}
 which is identical\footnote{Some minor index raising and lowering gymnastics are required.} to the tensor form that we found by expanding the geometric algebra form of Maxwell's equation in coordinates.
 %\end{answerproof}
 } % answer
@@ -359,17 +362,17 @@ where \( F = \BE + I c \BB \), \( \gamma = 1/\sqrt{1 - \Bv^2/c^2 }\).
 } % theorem
 \begin{proof}
 The first step is to eliminate the proper time dependencies in the Lorentz force equation.  Consider first the coordinate representation of an arbitrary position four-vector \( x \)
-\begin{dmath}\label{eqn:lorentzForceCovariant:1140}
+\begin{equation}\label{eqn:lorentzForceCovariant:1140}
 x = c t \gamma_0 + x^k \gamma_k.
-\end{dmath}
+\end{equation}
 The corresponding four-vector velocity is
 \begin{equation}\label{eqn:lorentzForceCovariant:1160}
 v = \ddtau{x} = c \ddtau{t} \gamma_0 + \ddtau{t} \ddt{x^k} \gamma_k.
 \end{equation}
 By construction, \( v^2 = c^2 \) is a Lorentz invariant quantity (this is one of the relativistic postulates), so the LHS of \cref{eqn:lorentzForceCovariant:1160} must have the same square.  That is
-\begin{dmath}\label{eqn:lorentzForceCovariant:1240}
+\begin{equation}\label{eqn:lorentzForceCovariant:1240}
 c^2 = \lr{ \ddtau{t} }^2 \lr{ c^2 - \Bv^2 },
-\end{dmath}
+\end{equation}
 where \( \Bv = v \wedge \gamma_0 \).  This shows that we may make the identification
 \begin{equation}\label{eqn:lorentzForceCovariant:1260}
 \gamma = \ddtau{t} = \inv{1 - \Bv^2/c^2 },
@@ -379,19 +382,19 @@ and
 \ddtau{} = \ddtau{t} \ddt{} = \gamma \ddt{}.
 \end{equation}
 We may now factor the four-velocity \( v \) into its spacetime split
-\begin{dmath}\label{eqn:lorentzForceCovariant:1300}
+\begin{equation}\label{eqn:lorentzForceCovariant:1300}
 v = \gamma \lr{ c + \Bv } \gamma_0.
-\end{dmath}
+\end{equation}
 In particular the LHS of the Lorentz force equation can be rewritten as
-\begin{dmath}\label{eqn:lorentzForceCovariant:1320}
+\begin{equation}\label{eqn:lorentzForceCovariant:1320}
 \ddtau{p} = \gamma \ddt{}\lr{ \gamma \lr{ c + \Bv } } \gamma_0,
-\end{dmath}
+\end{equation}
 and the RHS of the Lorentz force equation can be rewritten as
-\begin{dmath}\label{eqn:lorentzForceCovariant:1340}
+\begin{equation}\label{eqn:lorentzForceCovariant:1340}
 \frac{q}{c} F \cdot v
 =
 \frac{\gamma q}{c} F \cdot \lr{ (c + \Bv) \gamma_0 }.
-\end{dmath}
+\end{equation}
 Equating timelike and spacelike components leaves us
 \begin{subequations}
 \label{eqn:lorentzForceCovariant:1360}
@@ -405,7 +408,7 @@ Equating timelike and spacelike components leaves us
 Evaluating these products requires some care, but is an essentially manual process.  The reader is encouraged to do so once, but the end result may also be obtained easily using software (see lorentzForce.nb in \citep{gapauli}).  One finds
 \begin{subequations}
 \label{eqn:lorentzForceCovariant:1420}
-\begin{dmath}\label{eqn:lorentzForceCovariant:1440}
+\begin{equation}\label{eqn:lorentzForceCovariant:1440}
 F = \BE + I c \BB
 =
     E^1 \gamma_{10} 
@@ -414,15 +417,15 @@ F = \BE + I c \BB
 - c B^1 \gamma_{23} 
 - c B^2 \gamma_{31} 
 - c B^3 \gamma_{12},
-\end{dmath}
-\begin{dmath}\label{eqn:lorentzForceCovariant:1460}
+\end{equation}
+\begin{equation}\label{eqn:lorentzForceCovariant:1460}
 \frac{q}{c} \lr{ F \cdot \lr{ (c + \Bv) \gamma_0 } } \cdot \gamma_0
 = \frac{q}{c} \BE \cdot \Bv,
-\end{dmath}
-\begin{dmath}\label{eqn:lorentzForceCovariant:1480}
+\end{equation}
+\begin{equation}\label{eqn:lorentzForceCovariant:1480}
 \frac{q}{c} \lr{ F \cdot \lr{ (c + \Bv) \gamma_0 } } \wedge \gamma_0
 = q \lr{ \BE + \Bv \cross \BB }.
-\end{dmath}
+\end{equation}
 \end{subequations}
 \end{proof}
 \makeproblem{Algebraic spacetime split of the Lorentz force equation.}{problem:lorentzForceCovariant:69}{
