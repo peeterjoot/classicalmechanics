@@ -11,6 +11,25 @@ BOOKTEMPLATE := ../latex/classicthesis_mine/ClassicThesis2.tex
 include make.revision
 include ../latex/make.bookvars
 
+#PRINT_VERSION := 1
+#ifdef KINDLE_VERSION
+#PARAMS += --kindle
+#endif
+ifdef PRINT_VERSION
+SUBFIGDIR := bw
+else
+SUBFIGDIR := color
+endif
+ifndef PRINT_VERSION
+PARAMS += --no-print
+endif
+#PARAMS += -subfig $(SUBFIGDIR)
+#DISTEXTRA := $(SUBFIGDIR)
+ifdef PRINT_VERSION
+#DISTEXTRA := $(DISTEXTRA).kdp
+DISTEXTRA := kdp
+endif
+
 FIGURES := ../figures/$(THISBOOK)
 
 #ONCEFLAGS := -justonce
