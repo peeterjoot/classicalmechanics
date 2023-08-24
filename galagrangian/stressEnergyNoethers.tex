@@ -1121,8 +1121,8 @@ For the Maxwell Lagrangian we will need the multiple field current
 %
 \section{Wave equation.}
 %
-Having computed the general energy momentum tensor for field Lagrangians, this can now be applied
-to some specific field equations.  The Lagrangian for the relativistic wave equation is an
+The energy momentum tensor has been computed for some general field Lagrangians.  Now let's consider some specific concrete examples.
+The Lagrangian for the relativistic wave equation is an
 obvious first candidate due to simplicity.
 %
 \subsection{Tensor components and energy term.}
@@ -2250,14 +2250,17 @@ This provides the adjoint energy momentum tensor, albeit in a form that looks li
 We want to write this as a gradient of something, to determine the conserved quantity.  Getting part way is not too hard.
 %
 \begin{equation}\label{eqn:stressEnergyNoethers:2540}
+\begin{aligned}
 \overbar{T}(\grad)
-= \frac{\epsilon_0}{2}
+&= \frac{\epsilon_0}{2}
 \mathLabelBox{
 \left(
 \gpgradeone{ G_\nu \lrgrad F^\nu } + \grad \cdot (F^\nu \wedge G_\nu)
 \right)
-}{\(\conj\)}
+}{\(\conj\)} \\
+&\quad
 + \grad \left( \frac{\epsilon_0}{2} (F^\nu \cdot G_\nu + F \cdot F) - A \cdot J/c \right).
+\end{aligned}
 \end{equation}
 %
 It would be nice if these first two terms \(\conj\) cancel.

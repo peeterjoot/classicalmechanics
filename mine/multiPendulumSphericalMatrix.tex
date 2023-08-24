@@ -941,14 +941,14 @@ Now consider one of the pairs of off diagonal terms.  Adding these contributions
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:680}
 \begin{aligned}
-\inv{2} \mu_2 l_1 l_2
+\inv{2} &\mu_2 l_1 l_2
 {\dot{\BTheta}_1}^\T
 \gpgradezeroNoOp{A_1 \PD{\theta_2}{A_2}^\T}
 \dot{\BTheta}_2
 +\inv{2} \mu_2 l_2 l_1
 {\dot{\BTheta}_2}^\T
 \gpgradezeroNoOp{\PD{\theta_2}{A_2} A_1^\T}
-\dot{\BTheta}_1
+\dot{\BTheta}_1 \\
 &=
 \inv{2} \mu_2 l_1 l_2
 {\dot{\BTheta}_1}^\T
@@ -1100,8 +1100,10 @@ g \sum_{k=1}^N \mu_k l_k \cos\theta_k \\
 Evaluating the Euler-Lagrange equations for the system, we get
 %
 \begin{equation}\label{eqn:multiPendulumSphericalMatrix:580s}
+\begin{aligned}
 0
-= \grad_{\BTheta} \Lq - \frac{d}{dt} \left(\grad_{\dot{\BTheta}} \Lq \right) =
+&= \grad_{\BTheta} \Lq - \frac{d}{dt} \left(\grad_{\dot{\BTheta}} \Lq \right) \\
+&=
 \sum_k
 {\begin{bmatrix}
 \begin{bmatrix}
@@ -1121,6 +1123,7 @@ Evaluating the Euler-Lagrange equations for the system, we get
 \frac{d}{dt} \left(
 \gpgradezeroNoOp{Q} \dot{\BTheta} \right)
 .
+\end{aligned}
 \end{equation}
 %
 Making this explicit requires evaluation of some of the matrix products.  With verification in \nbref{multisphericalPendulum.nb}, those are
