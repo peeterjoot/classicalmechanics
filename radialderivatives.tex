@@ -1,0 +1,173 @@
+%
+% Copyright © 2023 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+%\input{../latex/blogpost.tex}
+%\renewcommand{\basename}{radialderivatives}
+%%\renewcommand{\dirname}{notes/phy1520/}
+%\renewcommand{\dirname}{notes/ece1228-electromagnetic-theory/}
+%%\newcommand{\dateintitle}{}
+%%\newcommand{\keywords}{}
+%
+%\input{../latex/peeter_prologue_print2.tex}
+%
+%\usepackage{peeters_layout_exercise}
+%\usepackage{peeters_braket}
+%\usepackage{peeters_macros}
+%\usepackage{peeters_figures}
+%\usepackage{siunitx}
+%\usepackage{verbatim}
+%\usepackage{amsthm}
+%%\usepackage{mhchem} % \ce{}
+%%\usepackage{macros_bm} % \bcM
+%%\usepackage{macros_qed} % \qedmarker
+%%\usepackage{txfonts} % \ointclockwise
+%
+%\beginArtNoToc
+%
+%\generatetitle{Radial vector representation, momentum, and angular momentum.}
+%%\chapter{Radial derivatives.}
+%%\label{chap:radialderivatives}
+%
+\section{Radial vector representation, momentum, and angular momentum.}
+\subsection{Motivation.}
+%In my last couple GA YouTube videos, circular and spherical coordinates were examined.  We found the form of the unit vector derivatives in both cases.
+In contrast to specific parameterizations, such as circular and spherical coordinates, let's now look at a more general case, where we write
+\begin{equation}\label{eqn:radialderivatives:20}
+\Bx = r \rcap,
+\end{equation}
+leaving the angular dependence of \( \rcap \) unspecified.  We want to find both \( \Bv = \Bx' \) and \( \rcap'\), and apply this to computation of the momentum of a point particle, also finding the kinetic energy of that particle.  This will expose a radial component and an angular momentum dependent term in both the momentum and the energy.
+\subsection{Derivatives.}
+\makelemma{Radial length derivative.}{lemma:radialderivatives:40}{
+The derivative of a spherical length \( r \) can be expressed as
+\begin{equation*}
+\frac{dr}{dt} = \rcap \cdot \frac{d\Bx}{dt}.
+\end{equation*}
+} % lemma
+\begin{proof}
+We write \( r^2 = \Bx \cdot \Bx \), and take derivatives of both sides, to find
+\begin{equation}\label{eqn:radialderivatives:60}
+2 r \frac{dr}{dt} = 2 \Bx \cdot \frac{d\Bx}{dt},
+\end{equation}
+or
+\begin{equation}\label{eqn:radialderivatives:80}
+\frac{dr}{dt} = \frac{\Bx}{r} \cdot \frac{d\Bx}{dt} = \rcap \cdot \frac{d\Bx}{dt}.
+\end{equation}
+\end{proof}
+
+Application of the chain rule to \cref{eqn:radialderivatives:20} is straightforward
+\begin{equation}\label{eqn:radialderivatives:100}
+\Bx' = r' \rcap + r \rcap',
+\end{equation}
+but we don't know the form for \( \rcap' \).  We could proceed with a niave expansion of
+\begin{equation}\label{eqn:radialderivatives:120}
+\frac{d}{dt} \lr{ \frac{\Bx}{r} },
+\end{equation}
+but we can be sneaky, and perform a projective and rejective split of \( \Bx' \) with respect to \( \rcap \).  That is
+\begin{equation}\label{eqn:radialderivatives:140}
+\begin{aligned}
+\Bx'
+&= \rcap \rcap \Bx' \\
+&= \rcap \lr{ \rcap \Bx' } \\
+&= \rcap \lr{ \rcap \cdot \Bx' + \rcap \wedge \Bx'} \\
+&= \rcap \lr{ r' + \rcap \wedge \Bx'}.
+\end{aligned}
+\end{equation}
+We used \cref{lemma:radialderivatives:40} in the last step above, and after distribution, find
+\begin{equation}\label{eqn:radialderivatives:160}
+\Bx' = r' \rcap + \rcap \lr{ \rcap \wedge \Bx' }.
+\end{equation}
+Comparing to \cref{eqn:radialderivatives:100}, we see that
+\begin{equation}\label{eqn:radialderivatives:180}
+r \rcap' = \rcap \lr{ \rcap \wedge \Bx' }.
+\end{equation}
+We see that the radial unit vector derivative is proportional to the rejection of \( \rcap \) from \( \Bx' \)
+\begin{equation}\label{eqn:radialderivatives:200}
+\rcap' = \inv{r} \Rej{\rcap}{\Bx'} = \inv{r^3} \Bx \lr{ \Bx \wedge \Bx' }.
+\end{equation}
+The vector \( \rcap' \) is perpendicular to \( \rcap \) for any parameterization of it's orientation, or in symbols
+\begin{equation}\label{eqn:radialderivatives:220}
+\rcap \cdot \rcap' = 0.
+\end{equation}
+We saw this for the circular and spherical parameterizations, and see now that this also holds more generally.
+\subsection{Angular momentum.}
+Let's now write out the momentum \( \Bp = m \Bv \) for a point particle with mass \( m \), and determine the kinetic energy \( m \Bv^2/2 = \Bp^2/2m \) for that particle.
+
+The momentum is
+\begin{equation}\label{eqn:radialderivatives:320}
+\begin{aligned}
+\Bp
+&= m r' \rcap + m \rcap \lr{ \rcap \wedge \Bv } \\
+&= m r' \rcap + \inv{r} \rcap \lr{ \Br \wedge \Bp }.
+\end{aligned}
+\end{equation}
+Observe that \( p_r = m r' \) is the radial component of the momentum.  It is natural to introduce a bivector valued angular momentum operator
+\begin{equation}\label{eqn:radialderivatives:340}
+L = \Br \wedge \Bp,
+\end{equation}
+splitting the momentum into a component that is strictly radial and a component that lies purely on the surface of a spherical surface in momentum space.  That is
+\begin{equation}\label{eqn:radialderivatives:360}
+\Bp = p_r \rcap + \inv{r} \rcap L.
+\end{equation}
+Making use of the fact that \( \rcap \) and \( \Rej{\rcap}{\Bx'} \) are perpendicular (so there are no cross terms when we square the momentum), the
+kinetic energy is
+\begin{equation}\label{eqn:radialderivatives:380}
+\begin{aligned}
+\inv{2m} \Bp^2
+&= \inv{2m} \lr{ p_r \rcap + \inv{r} \rcap L }^2 \\
+&= \inv{2m} p_r^2 + \inv{2 m r^2 } \rcap L \rcap L \\
+&= \inv{2m} p_r^2 - \inv{2 m r^2 } \rcap L^2 \rcap \\
+&= \inv{2m} p_r^2 - \inv{2 m r^2 } L^2 \rcap^2,
+\end{aligned}
+\end{equation}
+where we've used the anticommutative nature of \( \rcap \) and \( L \) (i.e.: a sign swap is needed to swap them), and used the fact that \( L^2 \) is a scalar, allowing us to commute \( \rcap \) with \( L^2 \).  This leaves us with
+\begin{equation}\label{eqn:radialderivatives:400}
+E = \inv{2m} \Bp^2 = \inv{2m} p_r^2 - \inv{2 m r^2 } L^2.
+\end{equation}
+Observe that both the radial momentum term and the angular momentum term are both strictly postive, since \( L \) is a bivector and \( L^2 \le 0 \).
+
+\subsection{Problems.}
+%\makeproblem{Perform a niave computation of \( \rcap' \).}{problem:radialderivatives:240}{
+\makeproblem{}{problem:radialderivatives:240}{
+Find \cref{eqn:radialderivatives:200} without being sneaky.
+} % problem
+\makeanswer{problem:radialderivatives:240}{
+\begin{equation}\label{eqn:radialderivatives:280}
+\begin{aligned}
+\rcap'
+&= \frac{d}{dt} \lr{ \frac{\Bx}{r} } \\
+&= \inv{r} \Bx' - \inv{r^2} \Bx r' \\
+&= \inv{r} \Bx' - \inv{r} \rcap r' \\
+&= \inv{r} \lr{ \Bx' - \rcap r' } \\
+&= \inv{r} \lr{ \rcap \rcap \Bx' - \rcap r' } \\
+&= \inv{r} \rcap \lr{ \rcap \Bx' - r' } \\
+&= \inv{r} \rcap \lr{ \rcap \Bx' - \rcap \cdot \Bx' } \\
+&= \inv{r} \rcap \lr{ \rcap \wedge \Bx' }.
+\end{aligned}
+\end{equation}
+} % answer
+\makeproblem{}{problem:radialderivatives:300}{
+Show that \cref{eqn:radialderivatives:200} can be expressed as a triple vector cross product
+\begin{equation}\label{eqn:radialderivatives:230}
+\rcap' = \inv{r^3} \lr{ \Bx \cross \Bx' } \cross \Bx,
+\end{equation}
+} % problem
+\makeanswer{problem:radialderivatives:300}{
+While this may be familiar from elementary calculus, such as in \citep{salas1990coa}, we can show follows easily from our GA result
+\begin{equation}\label{eqn:radialderivatives:300}
+\begin{aligned}
+\rcap'
+&= \inv{r} \rcap \lr{ \rcap \wedge \Bx' } \\
+&= \inv{r} \gpgradeone{ \rcap \lr{ \rcap \wedge \Bx' } } \\
+&= \inv{r} \gpgradeone{ \rcap I \lr{ \rcap \cross \Bx' } } \\
+&= \inv{r} \gpgradeone{ I \lr{ \rcap \cdot \lr{ \rcap \cross \Bx' } + \rcap \wedge \lr{ \rcap \cross \Bx' } } } \\
+&= \inv{r} \gpgradeone{ I^2 \rcap \cross \lr{ \rcap \cross \Bx' } } \\
+&= \inv{r} \lr{ \rcap \cross \Bx' } \cross \rcap.
+\end{aligned}
+\end{equation}
+} % answer
+%
+%}
+%\EndArticle
+%\EndNoBibArticle
