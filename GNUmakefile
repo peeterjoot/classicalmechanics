@@ -59,9 +59,6 @@ all :: u
 v :: volumeAndFourVolume.pdf
 u :: unpackingFundamentalTheorem.pdf
 
-scrpage2.sty : ../latex/scrpage2.sty
-	cp $^ $@
-
 %.sp : %.tex
 	spellcheck $^
 	touch $@
