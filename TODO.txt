@@ -1,3 +1,26 @@
+- tags from: unpackingFundamentalTheorem.tex
+
+ area element
+ bivector
+ Dirac algebra
+ dual transformation
+ Euclidean space
+ gradient
+ line integral
+ metric
+ multivector
+ non-Euclidean spaces
+ normal
+ parameterization
+ reciprocal vector
+ scalar
+ signature
+ surface integral
+ tangent space
+ tangent vector
+ vector
+ vector derivative
+
 - tags from relativisticSurface.tex:
 
  boost
